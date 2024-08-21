@@ -1,0 +1,693 @@
+{
+    "azurerm_application_gateway": [
+        [
+            {
+                "address": "azurerm_application_gateway.appgtw",
+                "mode": "managed",
+                "name": "appgtw",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "authentication_certificate": [],
+                    "autoscale_configuration": [],
+                    "backend_address_pool": [
+                        {
+                            "fqdns": [],
+                            "ip_addresses": []
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "authentication_certificate": [],
+                            "connection_draining": [],
+                            "trusted_root_certificate_names": []
+                        }
+                    ],
+                    "custom_error_configuration": [],
+                    "frontend_ip_configuration": [
+                        {}
+                    ],
+                    "frontend_port": [
+                        {}
+                    ],
+                    "gateway_ip_configuration": [
+                        {}
+                    ],
+                    "global": [],
+                    "http_listener": [
+                        {
+                            "custom_error_configuration": [],
+                            "host_names": []
+                        }
+                    ],
+                    "identity": [],
+                    "private_endpoint_connection": [],
+                    "private_link_configuration": [],
+                    "probe": [
+                        {
+                            "match": [
+                                {
+                                    "status_code": [
+                                        false
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "redirect_configuration": [],
+                    "request_routing_rule": [
+                        {}
+                    ],
+                    "rewrite_rule_set": [],
+                    "sku": [
+                        {}
+                    ],
+                    "ssl_certificate": [],
+                    "ssl_policy": [],
+                    "ssl_profile": [],
+                    "trusted_client_certificate": [],
+                    "trusted_root_certificate": [],
+                    "url_path_map": [],
+                    "waf_configuration": []
+                },
+                "type": "azurerm_application_gateway",
+                "values": {
+                    "authentication_certificate": [],
+                    "autoscale_configuration": [],
+                    "backend_address_pool": [
+                        {
+                            "fqdns": [],
+                            "name": "acaappgtw-vnet-beap"
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "affinity_cookie_name": "",
+                            "authentication_certificate": [],
+                            "connection_draining": [],
+                            "cookie_based_affinity": "Disabled",
+                            "name": "acaappgtw-vnet-be-htst",
+                            "path": "/",
+                            "pick_host_name_from_backend_address": false,
+                            "port": 80,
+                            "probe_name": "probe",
+                            "protocol": "Http",
+                            "request_timeout": 60,
+                            "trusted_root_certificate_names": []
+                        }
+                    ],
+                    "custom_error_configuration": [],
+                    "enable_http2": null,
+                    "fips_enabled": null,
+                    "firewall_policy_id": null,
+                    "force_firewall_policy_association": null,
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "acaappgtw-vnet-feipp",
+                            "private_ip_address_allocation": "Dynamic",
+                            "private_link_configuration_name": null,
+                            "subnet_id": null
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "acaappgtw-vnet-feport",
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "my-gateway-ip-configuration"
+                        }
+                    ],
+                    "global": [],
+                    "http_listener": [
+                        {
+                            "custom_error_configuration": [],
+                            "firewall_policy_id": "",
+                            "frontend_ip_configuration_name": "acaappgtw-vnet-feipp",
+                            "frontend_port_name": "acaappgtw-vnet-feport",
+                            "host_name": "",
+                            "host_names": [],
+                            "name": "acaappgtw-vnet-httplstn",
+                            "protocol": "Http",
+                            "require_sni": null,
+                            "ssl_certificate_name": "",
+                            "ssl_profile_name": ""
+                        }
+                    ],
+                    "identity": [],
+                    "location": "westeurope",
+                    "name": "acaappgtw-appgtw",
+                    "private_link_configuration": [],
+                    "probe": [
+                        {
+                            "interval": 30,
+                            "match": [
+                                {
+                                    "body": "",
+                                    "status_code": [
+                                        "200"
+                                    ]
+                                }
+                            ],
+                            "minimum_servers": 0,
+                            "name": "probe",
+                            "path": "/",
+                            "pick_host_name_from_backend_http_settings": false,
+                            "port": null,
+                            "protocol": "Http",
+                            "timeout": 30,
+                            "unhealthy_threshold": 3
+                        }
+                    ],
+                    "redirect_configuration": [],
+                    "request_routing_rule": [
+                        {
+                            "backend_address_pool_name": "acaappgtw-vnet-beap",
+                            "backend_http_settings_name": "acaappgtw-vnet-be-htst",
+                            "http_listener_name": "acaappgtw-vnet-httplstn",
+                            "name": "acaappgtw-vnet-rqrt",
+                            "priority": null,
+                            "redirect_configuration_name": "",
+                            "rewrite_rule_set_name": "",
+                            "rule_type": "Basic",
+                            "url_path_map_name": ""
+                        }
+                    ],
+                    "resource_group_name": "acaappgtw-rg",
+                    "rewrite_rule_set": [],
+                    "sku": [
+                        {
+                            "capacity": 1,
+                            "name": "Standard_Small",
+                            "tier": "Standard"
+                        }
+                    ],
+                    "ssl_certificate": [],
+                    "ssl_profile": [],
+                    "tags": null,
+                    "timeouts": null,
+                    "trusted_client_certificate": [],
+                    "trusted_root_certificate": [],
+                    "url_path_map": [],
+                    "waf_configuration": [],
+                    "zones": null
+                }
+            },
+            {
+                "backend_address_pool": [
+                    {
+                        "ip_addresses": [
+                            "${azurerm_container_app_environment.main.static_ip_address}"
+                        ],
+                        "name": "${local.backend_address_pool_name}"
+                    }
+                ],
+                "backend_http_settings": [
+                    {
+                        "cookie_based_affinity": "Disabled",
+                        "host_name": "${azurerm_container_app.main.latest_revision_fqdn}",
+                        "name": "${local.http_setting_name}",
+                        "path": "/",
+                        "port": 80,
+                        "probe_name": "probe",
+                        "protocol": "Http",
+                        "request_timeout": 60
+                    }
+                ],
+                "frontend_ip_configuration": [
+                    {
+                        "name": "${local.frontend_ip_configuration_name}",
+                        "public_ip_address_id": "${azurerm_public_ip.pip.id}"
+                    }
+                ],
+                "frontend_port": [
+                    {
+                        "name": "${local.frontend_port_name}",
+                        "port": 80
+                    }
+                ],
+                "gateway_ip_configuration": [
+                    {
+                        "name": "my-gateway-ip-configuration",
+                        "subnet_id": "${azurerm_subnet.appgtw.id}"
+                    }
+                ],
+                "http_listener": [
+                    {
+                        "frontend_ip_configuration_name": "${local.frontend_ip_configuration_name}",
+                        "frontend_port_name": "${local.frontend_port_name}",
+                        "name": "${local.listener_name}",
+                        "protocol": "Http"
+                    }
+                ],
+                "location": "${azurerm_resource_group.main.location}",
+                "name": "${format(\"%s-%s\", var.prefix, \"appgtw\")}",
+                "probe": [
+                    {
+                        "host": "${azurerm_container_app.main.latest_revision_fqdn}",
+                        "interval": 30,
+                        "match": [
+                            {
+                                "status_code": [
+                                    "200"
+                                ]
+                            }
+                        ],
+                        "name": "probe",
+                        "path": "/",
+                        "protocol": "Http",
+                        "timeout": 30,
+                        "unhealthy_threshold": 3
+                    }
+                ],
+                "request_routing_rule": [
+                    {
+                        "backend_address_pool_name": "${local.backend_address_pool_name}",
+                        "backend_http_settings_name": "${local.http_setting_name}",
+                        "http_listener_name": "${local.listener_name}",
+                        "name": "${local.request_routing_rule_name}",
+                        "rule_type": "Basic"
+                    }
+                ],
+                "resource_group_name": "${azurerm_resource_group.main.name}",
+                "sku": [
+                    {
+                        "capacity": 1,
+                        "name": "Standard_Small",
+                        "tier": "Standard"
+                    }
+                ]
+            },
+            "folders_azurerm_application_gateway_aca-appgtw-default-domain-master"
+        ]
+    ],
+    "azurerm_container_app": [
+        [
+            {
+                "address": "azurerm_container_app.main",
+                "mode": "managed",
+                "name": "main",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "custom_domain_verification_id": true,
+                    "dapr": [],
+                    "identity": [],
+                    "ingress": [
+                        {
+                            "custom_domain": [],
+                            "ip_security_restriction": [],
+                            "traffic_weight": [
+                                {}
+                            ]
+                        }
+                    ],
+                    "outbound_ip_addresses": [],
+                    "registry": [],
+                    "secret": [],
+                    "template": [
+                        {
+                            "azure_queue_scale_rule": [],
+                            "container": [
+                                {
+                                    "env": [],
+                                    "liveness_probe": [],
+                                    "readiness_probe": [],
+                                    "startup_probe": [],
+                                    "volume_mounts": []
+                                }
+                            ],
+                            "custom_scale_rule": [],
+                            "http_scale_rule": [],
+                            "init_container": [],
+                            "tcp_scale_rule": [],
+                            "volume": []
+                        }
+                    ]
+                },
+                "type": "azurerm_container_app",
+                "values": {
+                    "dapr": [],
+                    "identity": [],
+                    "ingress": [
+                        {
+                            "allow_insecure_connections": true,
+                            "exposed_port": null,
+                            "external_enabled": true,
+                            "ip_security_restriction": [],
+                            "target_port": 80,
+                            "traffic_weight": [
+                                {
+                                    "label": null,
+                                    "latest_revision": true,
+                                    "percentage": 100,
+                                    "revision_suffix": null
+                                }
+                            ],
+                            "transport": "auto"
+                        }
+                    ],
+                    "name": "example-app",
+                    "registry": [],
+                    "resource_group_name": "acaappgtw-rg",
+                    "revision_mode": "Single",
+                    "secret": [],
+                    "tags": null,
+                    "template": [
+                        {
+                            "azure_queue_scale_rule": [],
+                            "container": [
+                                {
+                                    "args": null,
+                                    "command": null,
+                                    "cpu": 0.25,
+                                    "env": [],
+                                    "image": "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest",
+                                    "liveness_probe": [],
+                                    "memory": "0.5Gi",
+                                    "name": "examplecontainerapp",
+                                    "readiness_probe": [],
+                                    "startup_probe": [],
+                                    "volume_mounts": []
+                                }
+                            ],
+                            "custom_scale_rule": [],
+                            "http_scale_rule": [],
+                            "init_container": [],
+                            "max_replicas": 10,
+                            "min_replicas": 0,
+                            "tcp_scale_rule": [],
+                            "volume": []
+                        }
+                    ],
+                    "timeouts": null,
+                    "workload_profile_name": null
+                }
+            },
+            {
+                "container_app_environment_id": "${azurerm_container_app_environment.main.id}",
+                "ingress": [
+                    {
+                        "allow_insecure_connections": true,
+                        "external_enabled": true,
+                        "target_port": 80,
+                        "traffic_weight": [
+                            {
+                                "latest_revision": true,
+                                "percentage": 100
+                            }
+                        ]
+                    }
+                ],
+                "name": "example-app",
+                "resource_group_name": "${azurerm_resource_group.main.name}",
+                "revision_mode": "Single",
+                "template": [
+                    {
+                        "container": [
+                            {
+                                "cpu": 0.25,
+                                "image": "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest",
+                                "memory": "0.5Gi",
+                                "name": "examplecontainerapp"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "folders_azurerm_application_gateway_aca-appgtw-default-domain-master"
+        ]
+    ],
+    "azurerm_container_app_environment": [
+        [
+            {
+                "address": "azurerm_container_app_environment.main",
+                "mode": "managed",
+                "name": "main",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "dapr_application_insights_connection_string": true,
+                    "workload_profile": []
+                },
+                "type": "azurerm_container_app_environment",
+                "values": {
+                    "dapr_application_insights_connection_string": null,
+                    "infrastructure_resource_group_name": null,
+                    "internal_load_balancer_enabled": true,
+                    "location": "westeurope",
+                    "mutual_tls_enabled": false,
+                    "name": "acaappgtw-env",
+                    "resource_group_name": "acaappgtw-rg",
+                    "tags": null,
+                    "timeouts": null,
+                    "workload_profile": [],
+                    "zone_redundancy_enabled": false
+                }
+            },
+            {
+                "infrastructure_subnet_id": "${azurerm_subnet.aca.id}",
+                "internal_load_balancer_enabled": true,
+                "location": "${azurerm_resource_group.main.location}",
+                "log_analytics_workspace_id": "${azurerm_log_analytics_workspace.main.id}",
+                "name": "${format(\"%s-%s\", var.prefix, \"env\")}",
+                "resource_group_name": "${azurerm_resource_group.main.name}"
+            },
+            "folders_azurerm_application_gateway_aca-appgtw-default-domain-master"
+        ]
+    ],
+    "azurerm_log_analytics_workspace": [
+        [
+            {
+                "address": "azurerm_log_analytics_workspace.main",
+                "mode": "managed",
+                "name": "main",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 3,
+                "sensitive_values": {
+                    "identity": [],
+                    "primary_shared_key": true,
+                    "secondary_shared_key": true
+                },
+                "type": "azurerm_log_analytics_workspace",
+                "values": {
+                    "allow_resource_only_permissions": true,
+                    "cmk_for_query_forced": null,
+                    "daily_quota_gb": -1,
+                    "data_collection_rule_id": null,
+                    "identity": [],
+                    "immediate_data_purge_on_30_days_enabled": null,
+                    "internet_ingestion_enabled": true,
+                    "internet_query_enabled": true,
+                    "local_authentication_disabled": false,
+                    "location": "westeurope",
+                    "name": "acaappgtw-logs",
+                    "reservation_capacity_in_gb_per_day": null,
+                    "resource_group_name": "acaappgtw-rg",
+                    "retention_in_days": 30,
+                    "sku": "PerGB2018",
+                    "tags": null,
+                    "timeouts": null
+                }
+            },
+            {
+                "location": "${azurerm_resource_group.main.location}",
+                "name": "${format(\"%s-%s\", var.prefix, \"logs\")}",
+                "resource_group_name": "${azurerm_resource_group.main.name}",
+                "retention_in_days": 30,
+                "sku": "PerGB2018"
+            },
+            "folders_azurerm_application_gateway_aca-appgtw-default-domain-master"
+        ]
+    ],
+    "azurerm_public_ip": [
+        [
+            {
+                "address": "azurerm_public_ip.pip",
+                "mode": "managed",
+                "name": "pip",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {},
+                "type": "azurerm_public_ip",
+                "values": {
+                    "allocation_method": "Dynamic",
+                    "ddos_protection_mode": "VirtualNetworkInherited",
+                    "ddos_protection_plan_id": null,
+                    "domain_name_label": null,
+                    "edge_zone": null,
+                    "idle_timeout_in_minutes": 4,
+                    "ip_tags": null,
+                    "ip_version": "IPv4",
+                    "location": "westeurope",
+                    "name": "example-pip",
+                    "public_ip_prefix_id": null,
+                    "resource_group_name": "acaappgtw-rg",
+                    "reverse_fqdn": null,
+                    "sku": "Basic",
+                    "sku_tier": "Regional",
+                    "tags": null,
+                    "timeouts": null,
+                    "zones": null
+                }
+            },
+            {
+                "allocation_method": "Dynamic",
+                "location": "${azurerm_resource_group.main.location}",
+                "name": "example-pip",
+                "resource_group_name": "${azurerm_resource_group.main.name}"
+            },
+            "folders_azurerm_application_gateway_aca-appgtw-default-domain-master"
+        ]
+    ],
+    "azurerm_resource_group": [
+        [
+            {
+                "address": "azurerm_resource_group.main",
+                "mode": "managed",
+                "name": "main",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {},
+                "type": "azurerm_resource_group",
+                "values": {
+                    "location": "westeurope",
+                    "managed_by": null,
+                    "name": "acaappgtw-rg",
+                    "tags": null,
+                    "timeouts": null
+                }
+            },
+            {
+                "location": "${var.location}",
+                "name": "${var.prefix}-rg"
+            },
+            "folders_azurerm_application_gateway_aca-appgtw-default-domain-master"
+        ]
+    ],
+    "azurerm_subnet": [
+        [
+            {
+                "address": "azurerm_subnet.aca",
+                "mode": "managed",
+                "name": "aca",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "address_prefixes": [
+                        false
+                    ],
+                    "delegation": []
+                },
+                "type": "azurerm_subnet",
+                "values": {
+                    "address_prefixes": [
+                        "10.0.16.0/20"
+                    ],
+                    "default_outbound_access_enabled": true,
+                    "delegation": [],
+                    "name": "aca-subnet",
+                    "resource_group_name": "acaappgtw-rg",
+                    "service_endpoint_policy_ids": null,
+                    "service_endpoints": null,
+                    "timeouts": null,
+                    "virtual_network_name": "acaappgtw-vnet"
+                }
+            },
+            {
+                "address_prefixes": [
+                    "${local.subnets[1]}"
+                ],
+                "name": "aca-subnet",
+                "resource_group_name": "${azurerm_resource_group.main.name}",
+                "virtual_network_name": "${azurerm_virtual_network.main.name}"
+            },
+            "folders_azurerm_application_gateway_aca-appgtw-default-domain-master"
+        ],
+        [
+            {
+                "address": "azurerm_subnet.appgtw",
+                "mode": "managed",
+                "name": "appgtw",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "address_prefixes": [
+                        false
+                    ],
+                    "delegation": []
+                },
+                "type": "azurerm_subnet",
+                "values": {
+                    "address_prefixes": [
+                        "10.0.0.0/20"
+                    ],
+                    "default_outbound_access_enabled": true,
+                    "delegation": [],
+                    "name": "appgtw-subnet",
+                    "resource_group_name": "acaappgtw-rg",
+                    "service_endpoint_policy_ids": null,
+                    "service_endpoints": null,
+                    "timeouts": null,
+                    "virtual_network_name": "acaappgtw-vnet"
+                }
+            },
+            {
+                "address_prefixes": [
+                    "${local.subnets[0]}"
+                ],
+                "name": "appgtw-subnet",
+                "resource_group_name": "${azurerm_resource_group.main.name}",
+                "virtual_network_name": "${azurerm_virtual_network.main.name}"
+            },
+            "folders_azurerm_application_gateway_aca-appgtw-default-domain-master"
+        ]
+    ],
+    "azurerm_virtual_network": [
+        [
+            {
+                "address": "azurerm_virtual_network.main",
+                "mode": "managed",
+                "name": "main",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "address_space": [
+                        false
+                    ],
+                    "ddos_protection_plan": [],
+                    "dns_servers": [],
+                    "encryption": [],
+                    "subnet": []
+                },
+                "type": "azurerm_virtual_network",
+                "values": {
+                    "address_space": [
+                        "10.0.0.0/16"
+                    ],
+                    "bgp_community": null,
+                    "ddos_protection_plan": [],
+                    "edge_zone": null,
+                    "encryption": [],
+                    "flow_timeout_in_minutes": null,
+                    "location": "westeurope",
+                    "name": "acaappgtw-vnet",
+                    "resource_group_name": "acaappgtw-rg",
+                    "tags": null,
+                    "timeouts": null
+                }
+            },
+            {
+                "address_space": [
+                    "${var.cidr}"
+                ],
+                "location": "${azurerm_resource_group.main.location}",
+                "name": "${var.prefix}-vnet",
+                "resource_group_name": "${azurerm_resource_group.main.name}"
+            },
+            "folders_azurerm_application_gateway_aca-appgtw-default-domain-master"
+        ]
+    ]
+}

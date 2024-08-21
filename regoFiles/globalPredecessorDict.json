@@ -1,0 +1,210 @@
+{
+    "azurerm_application_gateway": [
+        "azurerm_resource_group",
+        "azurerm_subnet",
+        "azurerm_public_ip"
+    ],
+    "azurerm_bastion_host": [
+        "azurerm_resource_group",
+        "azurerm_subnet",
+        "azurerm_public_ip"
+    ],
+    "azurerm_express_route_circuit": [
+        "azurerm_resource_group"
+    ],
+    "azurerm_firewall": [
+        "azurerm_virtual_hub",
+        "azurerm_resource_group",
+        "azurerm_subnet",
+        "azurerm_public_ip"
+    ],
+    "azurerm_firewall_network_rule_collection": [
+        "azurerm_firewall",
+        "azurerm_resource_group"
+    ],
+    "azurerm_lb": [
+        "azurerm_resource_group",
+        "azurerm_subnet",
+        "azurerm_public_ip"
+    ],
+    "azurerm_lb_backend_address_pool": [
+        "azurerm_lb"
+    ],
+    "azurerm_lb_nat_pool": [
+        "azurerm_lb",
+        "azurerm_resource_group"
+    ],
+    "azurerm_lb_nat_rule": [
+        "azurerm_resource_group",
+        "azurerm_lb_backend_address_pool",
+        "azurerm_lb",
+        "azurerm_public_ip"
+    ],
+    "azurerm_lb_outbound_rule": [
+        "azurerm_lb_backend_address_pool",
+        "azurerm_lb"
+    ],
+    "azurerm_lb_probe": [
+        "azurerm_lb"
+    ],
+    "azurerm_lb_rule": [
+        "azurerm_lb_probe",
+        "azurerm_lb_backend_address_pool",
+        "azurerm_lb"
+    ],
+    "azurerm_linux_virtual_machine": [
+        "azurerm_resource_group",
+        "azurerm_network_interface"
+    ],
+    "azurerm_local_network_gateway": [
+        "azurerm_resource_group"
+    ],
+    "azurerm_managed_disk": [
+        "azurerm_resource_group"
+    ],
+    "azurerm_nat_gateway": [
+        "azurerm_resource_group"
+    ],
+    "azurerm_nat_gateway_public_ip_association": [
+        "azurerm_nat_gateway",
+        "azurerm_public_ip"
+    ],
+    "azurerm_network_interface": [
+        "azurerm_resource_group",
+        "azurerm_subnet",
+        "azurerm_public_ip"
+    ],
+    "azurerm_network_interface_nat_rule_association": [
+        "azurerm_lb_nat_rule",
+        "azurerm_network_interface"
+    ],
+    "azurerm_network_interface_security_group_association": [
+        "azurerm_network_security_group",
+        "azurerm_network_interface"
+    ],
+    "azurerm_network_security_group": [
+        "azurerm_resource_group"
+    ],
+    "azurerm_network_security_rule": [
+        "azurerm_resource_group",
+        "azurerm_network_security_group"
+    ],
+    "azurerm_private_dns_resolver": [
+        "azurerm_resource_group",
+        "azurerm_virtual_network"
+    ],
+    "azurerm_private_dns_resolver_dns_forwarding_ruleset": [
+        "azurerm_private_dns_resolver_outbound_endpoint",
+        "azurerm_resource_group"
+    ],
+    "azurerm_private_dns_resolver_inbound_endpoint": [
+        "azurerm_private_dns_resolver",
+        "azurerm_subnet"
+    ],
+    "azurerm_private_dns_resolver_outbound_endpoint": [
+        "azurerm_private_dns_resolver",
+        "azurerm_subnet"
+    ],
+    "azurerm_private_dns_resolver_virtual_network_link": [
+        "azurerm_private_dns_resolver_dns_forwarding_ruleset",
+        "azurerm_virtual_network"
+    ],
+    "azurerm_private_endpoint": [
+        "azurerm_application_gateway",
+        "azurerm_storage_account",
+        "azurerm_private_link_service",
+        "azurerm_resource_group",
+        "azurerm_subnet"
+    ],
+    "azurerm_private_link_service": [
+        "azurerm_resource_group",
+        "azurerm_subnet"
+    ],
+    "azurerm_public_ip": [
+        "azurerm_resource_group"
+    ],
+    "azurerm_resource_group": [],
+    "azurerm_route": [
+        "azurerm_resource_group",
+        "azurerm_route_table"
+    ],
+    "azurerm_route_server": [
+        "azurerm_resource_group",
+        "azurerm_subnet",
+        "azurerm_public_ip"
+    ],
+    "azurerm_route_table": [
+        "azurerm_resource_group"
+    ],
+    "azurerm_storage_account": [
+        "azurerm_resource_group",
+        "azurerm_subnet"
+    ],
+    "azurerm_storage_account_network_rules": [
+        "azurerm_storage_account",
+        "azurerm_subnet"
+    ],
+    "azurerm_subnet": [
+        "azurerm_resource_group",
+        "azurerm_virtual_network"
+    ],
+    "azurerm_subnet_nat_gateway_association": [
+        "azurerm_nat_gateway",
+        "azurerm_subnet",
+        "azurerm_virtual_network",
+        "azurerm_resource_group"
+    ],
+    "azurerm_subnet_network_security_group_association": [
+        "azurerm_resource_group",
+        "azurerm_subnet",
+        "azurerm_network_security_group",
+        "azurerm_virtual_network"
+    ],
+    "azurerm_subnet_route_table_association": [
+        "azurerm_subnet",
+        "azurerm_route_table"
+    ],
+    "azurerm_virtual_hub": [
+        "azurerm_resource_group",
+        "azurerm_virtual_wan"
+    ],
+    "azurerm_virtual_hub_connection": [
+        "azurerm_virtual_network",
+        "azurerm_virtual_hub"
+    ],
+    "azurerm_virtual_machine": [
+        "azurerm_resource_group",
+        "azurerm_network_interface"
+    ],
+    "azurerm_virtual_machine_data_disk_attachment": [
+        "azurerm_linux_virtual_machine",
+        "azurerm_virtual_machine",
+        "azurerm_managed_disk",
+        "azurerm_windows_virtual_machine"
+    ],
+    "azurerm_virtual_network": [
+        "azurerm_resource_group"
+    ],
+    "azurerm_virtual_network_gateway": [
+        "azurerm_resource_group",
+        "azurerm_subnet",
+        "azurerm_public_ip"
+    ],
+    "azurerm_virtual_network_gateway_connection": [
+        "azurerm_resource_group",
+        "azurerm_express_route_circuit",
+        "azurerm_virtual_network_gateway",
+        "azurerm_local_network_gateway"
+    ],
+    "azurerm_virtual_network_peering": [
+        "azurerm_resource_group",
+        "azurerm_virtual_network"
+    ],
+    "azurerm_virtual_wan": [
+        "azurerm_resource_group"
+    ],
+    "azurerm_windows_virtual_machine": [
+        "azurerm_resource_group",
+        "azurerm_network_interface"
+    ]
+}

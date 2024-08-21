@@ -1,0 +1,76 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.example": [
+              "azurerm_public_ip.example",
+              "azurerm_resource_group.example",
+              "azurerm_subnet.gateway"
+            ],
+            "azurerm_key_vault.example": [],
+            "azurerm_key_vault_secret.example": [],
+            "azurerm_linux_virtual_machine.example": [
+              "azurerm_network_interface.example",
+              "azurerm_resource_group.example"
+            ],
+            "azurerm_mssql_database.example": [],
+            "azurerm_mssql_server.example": [],
+            "azurerm_network_interface.example": [
+              "azurerm_resource_group.example",
+              "azurerm_subnet.vm"
+            ],
+            "azurerm_network_security_group.example": [
+              "azurerm_resource_group.example"
+            ],
+            "azurerm_private_dns_zone.example": [],
+            "azurerm_private_dns_zone_virtual_network_link.example": [],
+            "azurerm_private_endpoint.example": [
+              "azurerm_resource_group.example",
+              "azurerm_subnet.endpoints"
+            ],
+            "azurerm_public_ip.example": [
+              "azurerm_resource_group.example"
+            ],
+            "azurerm_redis_cache.example": [],
+            "azurerm_resource_group.example": [],
+            "azurerm_subnet.endpoints": [
+              "azurerm_resource_group.example",
+              "azurerm_virtual_network.example"
+            ],
+            "azurerm_subnet.gateway": [
+              "azurerm_resource_group.example",
+              "azurerm_virtual_network.example"
+            ],
+            "azurerm_subnet.vm": [
+              "azurerm_resource_group.example",
+              "azurerm_virtual_network.example"
+            ],
+            "azurerm_subnet_network_security_group_association.endpoints": [
+              "azurerm_network_security_group.example",
+              "azurerm_subnet.endpoints"
+            ],
+            "azurerm_subnet_network_security_group_association.gateway": [
+              "azurerm_network_security_group.example",
+              "azurerm_subnet.gateway"
+            ],
+            "azurerm_subnet_network_security_group_association.vm": [
+              "azurerm_network_security_group.example",
+              "azurerm_subnet.vm"
+            ],
+            "azurerm_virtual_network.example": [
+              "azurerm_resource_group.example"
+            ],
+            "data.azurerm_client_config.current": []
+          },
+          "text": "data.assemble.referencesPredDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

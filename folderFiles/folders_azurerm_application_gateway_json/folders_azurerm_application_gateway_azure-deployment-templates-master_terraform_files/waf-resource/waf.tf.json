@@ -1,0 +1,98 @@
+{
+    "custom_rule": [
+        {
+            "action": "Block",
+            "enabled": true,
+            "match_conditions": [
+                {
+                    "match_values": [
+                        "ccnexchange.com"
+                    ],
+                    "match_variables": [
+                        {
+                            "selector": "User-Agent",
+                            "variable_name": "RequestHeaders"
+                        }
+                    ],
+                    "negation_condition": false,
+                    "operator": "Contains",
+                    "transforms": [
+                        "Lowercase"
+                    ]
+                }
+            ],
+            "name": "ccnexchange.com",
+            "priority": 1,
+            "rule_type": "MatchRule"
+        },
+        {
+            "action": "Block",
+            "enabled": true,
+            "match_conditions": [
+                {
+                    "match_values": [
+                        "ccnexchange.com"
+                    ],
+                    "match_variables": [
+                        {
+                            "selector": "User-Agent",
+                            "variable_name": "RequestHeaders"
+                        }
+                    ],
+                    "negation_condition": false,
+                    "operator": "Contains",
+                    "transforms": [
+                        "Lowercase"
+                    ]
+                }
+            ],
+            "name": "siacargo.com",
+            "priority": 2,
+            "rule_type": "MatchRule"
+        },
+        {
+            "action": "Block",
+            "enabled": true,
+            "match_conditions": [
+                {
+                    "match_values": [
+                        "cubeforall.com"
+                    ],
+                    "match_variables": [
+                        {
+                            "selector": "User-Agent",
+                            "variable_name": "RequestHeaders"
+                        }
+                    ],
+                    "negation_condition": false,
+                    "operator": "Contains",
+                    "transforms": [
+                        "Lowercase"
+                    ]
+                }
+            ],
+            "name": "cubeforall.com",
+            "priority": 3,
+            "rule_type": "MatchRule"
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "WAF_ccn-development-deployment": {
+                    "location": "${var.location}",
+                    "name": "${var.resource_group_name}"
+                }
+            }
+        },
+        {
+            "azurerm_web_application_firewall_policy": {
+                "WAF_ccnexchange.com": {
+                    "location": "${azurerm_resource_group.WAF_ccn-development-deployment.location}",
+                    "name": "WAF_ccnexchange.com",
+                    "resource_group_name": "${azurerm_resource_group.WAF_ccn-development-deployment.name}"
+                }
+            }
+        }
+    ]
+}

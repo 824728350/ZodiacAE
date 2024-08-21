@@ -1,0 +1,57 @@
+{
+    "variable": [
+        {
+            "resource_group_name": {
+                "default": "colin-rg"
+            }
+        },
+        {
+            "resource_group_location": {
+                "default": "eastus"
+            }
+        },
+        {
+            "vnet_address_space": {
+                "default": [
+                    "10.10.0.0/16"
+                ],
+                "description": "Address space for the virtual network"
+            }
+        },
+        {
+            "internal_subnet_space": {
+                "default": [
+                    "10.10.10.0/24"
+                ],
+                "description": "Address space for internal subnet space"
+            }
+        },
+        {
+            "gateway_subnet": {
+                "default": [
+                    "10.10.11.0/24"
+                ],
+                "description": "Address space for gateways"
+            }
+        },
+        {
+            "bastion_subnet": {
+                "default": [
+                    "10.10.12.0/24"
+                ],
+                "description": "Subnet for bastion host"
+            }
+        },
+        {
+            "tags": {
+                "default": {},
+                "description": "Tags"
+            }
+        },
+        {
+            "client_name": {
+                "default": "A new Client"
+            }
+        }
+    ]
+}

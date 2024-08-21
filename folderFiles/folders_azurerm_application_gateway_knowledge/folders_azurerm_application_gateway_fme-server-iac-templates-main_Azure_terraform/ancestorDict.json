@@ -1,0 +1,82 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_resource_group.fme_flow": [
+              "azurerm_resource_group.fme_flow"
+            ],
+            "module.application_gateway.azurerm_application_gateway.fme_flow": [
+              "azurerm_resource_group.fme_flow",
+              "module.application_gateway.azurerm_application_gateway.fme_flow"
+            ],
+            "module.database.azurerm_postgresql_server.fme_flow": [
+              "module.database.azurerm_postgresql_server.fme_flow"
+            ],
+            "module.database.azurerm_postgresql_virtual_network_rule.fme_flow": [
+              "module.database.azurerm_postgresql_virtual_network_rule.fme_flow"
+            ],
+            "module.database.random_string.db_name": [
+              "module.database.random_string.db_name"
+            ],
+            "module.load_balancer.azurerm_lb.fme_flow": [
+              "azurerm_resource_group.fme_flow",
+              "module.load_balancer.azurerm_lb.fme_flow"
+            ],
+            "module.load_balancer.azurerm_lb_backend_address_pool.fme_flow": [
+              "azurerm_resource_group.fme_flow",
+              "module.load_balancer.azurerm_lb.fme_flow",
+              "module.load_balancer.azurerm_lb_backend_address_pool.fme_flow"
+            ],
+            "module.load_balancer.azurerm_lb_rule.fme_flow": [
+              "azurerm_resource_group.fme_flow",
+              "module.load_balancer.azurerm_lb.fme_flow",
+              "module.load_balancer.azurerm_lb_backend_address_pool.fme_flow",
+              "module.load_balancer.azurerm_lb_rule.fme_flow"
+            ],
+            "module.network.azurerm_public_ip.fme_flow": [
+              "azurerm_resource_group.fme_flow",
+              "module.network.azurerm_public_ip.fme_flow"
+            ],
+            "module.network.azurerm_subnet.fme_flow_agw": [
+              "azurerm_resource_group.fme_flow",
+              "module.network.azurerm_subnet.fme_flow_agw",
+              "module.network.azurerm_virtual_network.fme_flow"
+            ],
+            "module.network.azurerm_subnet.fme_flow_be": [
+              "azurerm_resource_group.fme_flow",
+              "module.network.azurerm_subnet.fme_flow_be",
+              "module.network.azurerm_virtual_network.fme_flow"
+            ],
+            "module.network.azurerm_virtual_network.fme_flow": [
+              "azurerm_resource_group.fme_flow",
+              "module.network.azurerm_virtual_network.fme_flow"
+            ],
+            "module.storage.azurerm_storage_account.fme_flow": [
+              "azurerm_resource_group.fme_flow",
+              "module.storage.azurerm_storage_account.fme_flow"
+            ],
+            "module.storage.azurerm_storage_share.fme_flow": [
+              "module.storage.azurerm_storage_share.fme_flow"
+            ],
+            "module.storage.random_string.st_name": [
+              "module.storage.random_string.st_name"
+            ],
+            "module.vmss_core.azurerm_windows_virtual_machine_scale_set.fme_flow_core": [
+              "module.vmss_core.azurerm_windows_virtual_machine_scale_set.fme_flow_core"
+            ],
+            "module.vmss_standard_engine.azurerm_windows_virtual_machine_scale_set.fme_flow_engine": [
+              "module.vmss_standard_engine.azurerm_windows_virtual_machine_scale_set.fme_flow_engine"
+            ]
+          },
+          "text": "data.assemble.ancestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

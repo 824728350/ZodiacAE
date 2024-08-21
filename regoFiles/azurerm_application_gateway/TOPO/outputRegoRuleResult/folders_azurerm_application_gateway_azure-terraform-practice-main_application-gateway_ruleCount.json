@@ -1,0 +1,22 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "ReferenceThenAssociate #### azurerm_application_gateway frontend_ip_configuration.0.public_ip_address_id String #### azurerm_public_ip id String #### azurerm_application_gateway frontend_ip_configuration.0.public_ip_address_id String #### azurerm_application_gateway gateway_ip_configuration.0.subnet_id String #### azurerm_public_ip id String #### azurerm_subnet id String": 1,
+            "ReferenceThenConflictChild #### azurerm_application_gateway frontend_ip_configuration.0.public_ip_address_id String #### azurerm_public_ip id String #### azurerm_application_gateway PLACEHOLDER String #### azurerm_public_ip PLACEHOLDER String": 1,
+            "ReferenceThenConflictChild #### azurerm_application_gateway gateway_ip_configuration.0.subnet_id String #### azurerm_subnet id String #### azurerm_application_gateway PLACEHOLDER String #### azurerm_subnet PLACEHOLDER String": 1,
+            "ReferenceThenExclusive #### azurerm_application_gateway frontend_ip_configuration.0.public_ip_address_id String #### azurerm_public_ip id String #### azurerm_application_gateway PLACEHOLDER String #### azurerm_public_ip PLACEHOLDER String": 1,
+            "ReferenceThenExclusive #### azurerm_application_gateway gateway_ip_configuration.0.subnet_id String #### azurerm_subnet id String #### azurerm_application_gateway PLACEHOLDER String #### azurerm_subnet PLACEHOLDER String": 1
+          },
+          "text": "data.assemble.resultCount",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

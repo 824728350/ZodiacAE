@@ -1,0 +1,149 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.application_gateway",
+              "expressions": {
+                "autoscale_configuration": [
+                  {
+                    "max_capacity": {
+                      "references": [
+                        "each.value.autoscale_configuration.max_capacity",
+                        "each.value.autoscale_configuration",
+                        "each.value"
+                      ]
+                    },
+                    "min_capacity": {
+                      "references": [
+                        "each.value.autoscale_configuration.min_capacity",
+                        "each.value.autoscale_configuration",
+                        "each.value"
+                      ]
+                    }
+                  }
+                ],
+                "enable_http2": {
+                  "references": [
+                    "each.value.enable_http2",
+                    "each.value"
+                  ]
+                },
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "references": [
+                        "each.value.gateway_ip_configuration.name",
+                        "each.value.gateway_ip_configuration",
+                        "each.value"
+                      ]
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "var.subnet_output",
+                        "each.value.gateway_ip_configuration.subnet_name",
+                        "each.value.gateway_ip_configuration",
+                        "each.value"
+                      ]
+                    }
+                  }
+                ],
+                "global": [
+                  {
+                    "request_buffering_enabled": {
+                      "references": [
+                        "each.value.global.request_buffering_enabled",
+                        "each.value.global",
+                        "each.value"
+                      ]
+                    },
+                    "response_buffering_enabled": {
+                      "references": [
+                        "each.value.global.response_buffering_enabled",
+                        "each.value.global",
+                        "each.value"
+                      ]
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "each.value.location",
+                    "each.value"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "each.value.name",
+                    "each.value"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "var.resource_group_output",
+                    "each.value.resource_group_name",
+                    "each.value"
+                  ]
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "references": [
+                        "each.value.sku.capacity",
+                        "each.value.sku",
+                        "each.value"
+                      ]
+                    },
+                    "name": {
+                      "references": [
+                        "each.value.sku.name",
+                        "each.value.sku",
+                        "each.value"
+                      ]
+                    },
+                    "tier": {
+                      "references": [
+                        "each.value.sku.tier",
+                        "each.value.sku",
+                        "each.value"
+                      ]
+                    }
+                  }
+                ],
+                "tags": {
+                  "references": [
+                    "each.value.tags",
+                    "each.value"
+                  ]
+                },
+                "zones": {
+                  "references": [
+                    "each.value.zones",
+                    "each.value"
+                  ]
+                }
+              },
+              "for_each_expression": {
+                "references": [
+                  "local.application_gateway"
+                ]
+              },
+              "mode": "managed",
+              "name": "application_gateway",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

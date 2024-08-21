@@ -1,0 +1,73 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_application_gateway.appGateway",
+              "azurerm_public_ip.staticIP2",
+              "frontend_ip_configuration.0.public_ip_address_id",
+              "id",
+              "frontend_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_application_gateway.appGateway",
+              "azurerm_subnet.gwSubnet",
+              "gateway_ip_configuration.0.subnet_id",
+              "id",
+              "gateway_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_application_gateway.appGateway",
+              "azurerm_resource_group.rg-aleksandar-ilicic",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_public_ip.staticIP2",
+              "azurerm_resource_group.rg-aleksandar-ilicic",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.gwSubnet",
+              "azurerm_resource_group.rg-aleksandar-ilicic",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.gwSubnet",
+              "azurerm_virtual_network.vnetk8s",
+              "virtual_network_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_virtual_network.vnetk8s",
+              "azurerm_resource_group.rg-aleksandar-ilicic",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ]
+          ],
+          "text": "data.assemble.dependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

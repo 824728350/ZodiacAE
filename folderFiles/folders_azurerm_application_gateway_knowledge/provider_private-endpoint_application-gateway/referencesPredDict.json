@@ -1,0 +1,42 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.example": [
+              "azurerm_public_ip.example",
+              "azurerm_resource_group.example",
+              "azurerm_subnet.gateway"
+            ],
+            "azurerm_private_endpoint.example": [
+              "azurerm_application_gateway.example",
+              "azurerm_resource_group.example",
+              "azurerm_subnet.endpoint"
+            ],
+            "azurerm_public_ip.example": [
+              "azurerm_resource_group.example"
+            ],
+            "azurerm_resource_group.example": [],
+            "azurerm_subnet.endpoint": [
+              "azurerm_resource_group.example",
+              "azurerm_virtual_network.example"
+            ],
+            "azurerm_subnet.gateway": [
+              "azurerm_resource_group.example",
+              "azurerm_virtual_network.example"
+            ],
+            "azurerm_virtual_network.example": [
+              "azurerm_resource_group.example"
+            ]
+          },
+          "text": "data.assemble.referencesPredDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

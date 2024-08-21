@@ -1,0 +1,792 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.agw",
+              "mode": "managed",
+              "name": "agw",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [
+                  {}
+                ],
+                "backend_address_pool": [
+                  {
+                    "fqdns": [],
+                    "ip_addresses": []
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "authentication_certificate": [],
+                    "connection_draining": [],
+                    "trusted_root_certificate_names": []
+                  }
+                ],
+                "custom_error_configuration": [],
+                "frontend_ip_configuration": [
+                  {}
+                ],
+                "frontend_port": [
+                  {}
+                ],
+                "gateway_ip_configuration": [
+                  {}
+                ],
+                "global": [],
+                "http_listener": [
+                  {
+                    "custom_error_configuration": [],
+                    "host_names": []
+                  }
+                ],
+                "identity": [],
+                "private_endpoint_connection": [],
+                "private_link_configuration": [],
+                "probe": [],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                  {}
+                ],
+                "rewrite_rule_set": [],
+                "sku": [
+                  {}
+                ],
+                "ssl_certificate": [],
+                "ssl_policy": [],
+                "ssl_profile": [],
+                "tags": {},
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": [
+                  {
+                    "disabled_rule_group": [],
+                    "exclusion": []
+                  }
+                ]
+              },
+              "type": "azurerm_application_gateway",
+              "values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [
+                  {
+                    "max_capacity": 10,
+                    "min_capacity": 0
+                  }
+                ],
+                "backend_address_pool": [
+                  {
+                    "fqdns": [],
+                    "ip_addresses": [],
+                    "name": "poolBE"
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "affinity_cookie_name": "",
+                    "authentication_certificate": [],
+                    "connection_draining": [],
+                    "cookie_based_affinity": "Disabled",
+                    "host_name": "",
+                    "name": "production-be-htst",
+                    "path": "",
+                    "pick_host_name_from_backend_address": false,
+                    "port": 80,
+                    "probe_name": "",
+                    "protocol": "Http",
+                    "request_timeout": 60,
+                    "trusted_root_certificate_names": []
+                  }
+                ],
+                "custom_error_configuration": [],
+                "enable_http2": false,
+                "fips_enabled": null,
+                "firewall_policy_id": null,
+                "force_firewall_policy_association": null,
+                "frontend_ip_configuration": [
+                  {
+                    "name": "production-feip",
+                    "private_ip_address_allocation": "Dynamic",
+                    "private_link_configuration_name": null,
+                    "subnet_id": null
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": "production-feport",
+                    "port": 80
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": "Production"
+                  }
+                ],
+                "global": [],
+                "http_listener": [
+                  {
+                    "custom_error_configuration": [],
+                    "firewall_policy_id": "",
+                    "frontend_ip_configuration_name": "production-feip",
+                    "frontend_port_name": "production-feport",
+                    "host_name": "",
+                    "host_names": [],
+                    "name": "listenagw",
+                    "protocol": "Http",
+                    "require_sni": null,
+                    "ssl_certificate_name": "",
+                    "ssl_profile_name": ""
+                  }
+                ],
+                "identity": [],
+                "location": "westeurope",
+                "name": "myAppGateway",
+                "private_link_configuration": [],
+                "probe": [],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": "poolBE",
+                    "backend_http_settings_name": "production-be-htst",
+                    "http_listener_name": "listenagw",
+                    "name": "reqroutingrule",
+                    "priority": null,
+                    "redirect_configuration_name": "",
+                    "rewrite_rule_set_name": "",
+                    "rule_type": "Basic",
+                    "url_path_map_name": ""
+                  }
+                ],
+                "resource_group_name": "DemoSEG",
+                "rewrite_rule_set": [],
+                "sku": [
+                  {
+                    "capacity": null,
+                    "name": "WAF_v2",
+                    "tier": "WAF_v2"
+                  }
+                ],
+                "ssl_certificate": [],
+                "ssl_profile": [],
+                "tags": {
+                  "Project": "AGW_v2"
+                },
+                "timeouts": null,
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": [
+                  {
+                    "disabled_rule_group": [],
+                    "enabled": true,
+                    "exclusion": [],
+                    "file_upload_limit_mb": 100,
+                    "firewall_mode": "Prevention",
+                    "max_request_body_size_kb": 128,
+                    "request_body_check": true,
+                    "rule_set_type": "OWASP",
+                    "rule_set_version": "3.0"
+                  }
+                ],
+                "zones": null
+              }
+            },
+            {
+              "address": "azurerm_linux_virtual_machine.vm",
+              "mode": "managed",
+              "name": "vm",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "additional_capabilities": [],
+                "admin_password": true,
+                "admin_ssh_key": [],
+                "boot_diagnostics": [
+                  {}
+                ],
+                "custom_data": true,
+                "gallery_application": [],
+                "identity": [],
+                "network_interface_ids": [],
+                "os_disk": [
+                  {
+                    "diff_disk_settings": []
+                  }
+                ],
+                "os_image_notification": [],
+                "plan": [],
+                "private_ip_addresses": [],
+                "public_ip_addresses": [],
+                "secret": [],
+                "source_image_reference": [
+                  {}
+                ],
+                "tags": {},
+                "termination_notification": []
+              },
+              "type": "azurerm_linux_virtual_machine",
+              "values": {
+                "additional_capabilities": [],
+                "admin_password": "Password1234!",
+                "admin_ssh_key": [],
+                "admin_username": "azureuser",
+                "allow_extension_operations": true,
+                "availability_set_id": null,
+                "boot_diagnostics": [
+                  {}
+                ],
+                "bypass_platform_safety_checks_on_user_schedule_enabled": false,
+                "capacity_reservation_group_id": null,
+                "computer_name": "demovm",
+                "custom_data": "IyEvYmluL2Jhc2gKCnN1ZG8gYXB0IHVwZGF0ZSAteQpzdWRvIGFwdCBpbnN0YWxsIG5naW54IC15",
+                "dedicated_host_group_id": null,
+                "dedicated_host_id": null,
+                "disable_password_authentication": false,
+                "edge_zone": null,
+                "encryption_at_host_enabled": null,
+                "eviction_policy": null,
+                "extensions_time_budget": "PT1H30M",
+                "gallery_application": [],
+                "identity": [],
+                "license_type": null,
+                "location": "westeurope",
+                "max_bid_price": -1,
+                "name": "demovm",
+                "os_disk": [
+                  {
+                    "caching": "ReadWrite",
+                    "diff_disk_settings": [],
+                    "disk_encryption_set_id": null,
+                    "name": "DemoDeviceDisk",
+                    "secure_vm_disk_encryption_set_id": null,
+                    "security_encryption_type": null,
+                    "storage_account_type": "Premium_LRS",
+                    "write_accelerator_enabled": false
+                  }
+                ],
+                "os_image_notification": [],
+                "patch_assessment_mode": "ImageDefault",
+                "patch_mode": "ImageDefault",
+                "plan": [],
+                "platform_fault_domain": -1,
+                "priority": "Regular",
+                "provision_vm_agent": true,
+                "proximity_placement_group_id": null,
+                "reboot_setting": null,
+                "resource_group_name": "DemoSEG",
+                "secret": [],
+                "secure_boot_enabled": null,
+                "size": "Standard_DS1_v2",
+                "source_image_id": null,
+                "source_image_reference": [
+                  {
+                    "offer": "UbuntuServer",
+                    "publisher": "Canonical",
+                    "sku": "18.04-LTS",
+                    "version": "latest"
+                  }
+                ],
+                "tags": {
+                  "Project": "AGW_v2"
+                },
+                "timeouts": null,
+                "user_data": null,
+                "virtual_machine_scale_set_id": null,
+                "vm_agent_platform_updates_enabled": false,
+                "vtpm_enabled": null,
+                "zone": null
+              }
+            },
+            {
+              "address": "azurerm_linux_virtual_machine.vm_2",
+              "mode": "managed",
+              "name": "vm_2",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "additional_capabilities": [],
+                "admin_password": true,
+                "admin_ssh_key": [],
+                "boot_diagnostics": [
+                  {}
+                ],
+                "custom_data": true,
+                "gallery_application": [],
+                "identity": [],
+                "network_interface_ids": [],
+                "os_disk": [
+                  {
+                    "diff_disk_settings": []
+                  }
+                ],
+                "os_image_notification": [],
+                "plan": [],
+                "private_ip_addresses": [],
+                "public_ip_addresses": [],
+                "secret": [],
+                "source_image_reference": [
+                  {}
+                ],
+                "tags": {},
+                "termination_notification": []
+              },
+              "type": "azurerm_linux_virtual_machine",
+              "values": {
+                "additional_capabilities": [],
+                "admin_password": "Password1234!",
+                "admin_ssh_key": [],
+                "admin_username": "azureuser",
+                "allow_extension_operations": true,
+                "availability_set_id": null,
+                "boot_diagnostics": [
+                  {}
+                ],
+                "bypass_platform_safety_checks_on_user_schedule_enabled": false,
+                "capacity_reservation_group_id": null,
+                "computer_name": "demovm",
+                "custom_data": "IyEvYmluL2Jhc2gKCnN1ZG8gYXB0IHVwZGF0ZSAteQpzdWRvIGFwdCBpbnN0YWxsIG5naW54IC15",
+                "dedicated_host_group_id": null,
+                "dedicated_host_id": null,
+                "disable_password_authentication": false,
+                "edge_zone": null,
+                "encryption_at_host_enabled": null,
+                "eviction_policy": null,
+                "extensions_time_budget": "PT1H30M",
+                "gallery_application": [],
+                "identity": [],
+                "license_type": null,
+                "location": "westeurope",
+                "max_bid_price": -1,
+                "name": "demovm2",
+                "os_disk": [
+                  {
+                    "caching": "ReadWrite",
+                    "diff_disk_settings": [],
+                    "disk_encryption_set_id": null,
+                    "name": "DemoDeviceDisk2",
+                    "secure_vm_disk_encryption_set_id": null,
+                    "security_encryption_type": null,
+                    "storage_account_type": "Premium_LRS",
+                    "write_accelerator_enabled": false
+                  }
+                ],
+                "os_image_notification": [],
+                "patch_assessment_mode": "ImageDefault",
+                "patch_mode": "ImageDefault",
+                "plan": [],
+                "platform_fault_domain": -1,
+                "priority": "Regular",
+                "provision_vm_agent": true,
+                "proximity_placement_group_id": null,
+                "reboot_setting": null,
+                "resource_group_name": "DemoSEG",
+                "secret": [],
+                "secure_boot_enabled": null,
+                "size": "Standard_DS1_v2",
+                "source_image_id": null,
+                "source_image_reference": [
+                  {
+                    "offer": "UbuntuServer",
+                    "publisher": "Canonical",
+                    "sku": "18.04-LTS",
+                    "version": "latest"
+                  }
+                ],
+                "tags": {
+                  "Project": "AGW_v2"
+                },
+                "timeouts": null,
+                "user_data": null,
+                "virtual_machine_scale_set_id": null,
+                "vm_agent_platform_updates_enabled": false,
+                "vtpm_enabled": null,
+                "zone": null
+              }
+            },
+            {
+              "address": "azurerm_network_interface.nic",
+              "mode": "managed",
+              "name": "nic",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "applied_dns_servers": [],
+                "dns_servers": [],
+                "ip_configuration": [
+                  {}
+                ],
+                "private_ip_addresses": []
+              },
+              "type": "azurerm_network_interface",
+              "values": {
+                "auxiliary_mode": null,
+                "auxiliary_sku": null,
+                "edge_zone": null,
+                "internal_dns_name_label": null,
+                "ip_configuration": [
+                  {
+                    "name": "testconfiguration1",
+                    "private_ip_address_allocation": "Dynamic",
+                    "private_ip_address_version": "IPv4"
+                  }
+                ],
+                "location": "westeurope",
+                "name": "edgedevicesim-nic",
+                "resource_group_name": "DemoSEG",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_network_interface.nic_2",
+              "mode": "managed",
+              "name": "nic_2",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "applied_dns_servers": [],
+                "dns_servers": [],
+                "ip_configuration": [
+                  {}
+                ],
+                "private_ip_addresses": []
+              },
+              "type": "azurerm_network_interface",
+              "values": {
+                "auxiliary_mode": null,
+                "auxiliary_sku": null,
+                "edge_zone": null,
+                "internal_dns_name_label": null,
+                "ip_configuration": [
+                  {
+                    "name": "testconfiguration2",
+                    "private_ip_address_allocation": "Dynamic",
+                    "private_ip_address_version": "IPv4"
+                  }
+                ],
+                "location": "westeurope",
+                "name": "edgedevicesim2-nic",
+                "resource_group_name": "DemoSEG",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_network_interface_application_gateway_backend_address_pool_association.nicagw",
+              "mode": "managed",
+              "name": "nicagw",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_network_interface_application_gateway_backend_address_pool_association",
+              "values": {
+                "ip_configuration_name": "testconfiguration1",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_network_interface_application_gateway_backend_address_pool_association.nicagw2",
+              "mode": "managed",
+              "name": "nicagw2",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_network_interface_application_gateway_backend_address_pool_association",
+              "values": {
+                "ip_configuration_name": "testconfiguration2",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_public_ip.publicip",
+              "mode": "managed",
+              "name": "publicip",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_public_ip",
+              "values": {
+                "allocation_method": "Dynamic",
+                "ddos_protection_mode": "VirtualNetworkInherited",
+                "ddos_protection_plan_id": null,
+                "domain_name_label": null,
+                "edge_zone": null,
+                "idle_timeout_in_minutes": 4,
+                "ip_tags": null,
+                "ip_version": "IPv4",
+                "location": "westeurope",
+                "name": "myPublicIP",
+                "public_ip_prefix_id": null,
+                "resource_group_name": "DemoSEG",
+                "reverse_fqdn": null,
+                "sku": "Basic",
+                "sku_tier": "Regional",
+                "tags": null,
+                "timeouts": null,
+                "zones": null
+              }
+            },
+            {
+              "address": "azurerm_public_ip.publicip_2",
+              "mode": "managed",
+              "name": "publicip_2",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_public_ip",
+              "values": {
+                "allocation_method": "Dynamic",
+                "ddos_protection_mode": "VirtualNetworkInherited",
+                "ddos_protection_plan_id": null,
+                "domain_name_label": null,
+                "edge_zone": null,
+                "idle_timeout_in_minutes": 4,
+                "ip_tags": null,
+                "ip_version": "IPv4",
+                "location": "westeurope",
+                "name": "myPublicIP2",
+                "public_ip_prefix_id": null,
+                "resource_group_name": "DemoSEG",
+                "reverse_fqdn": null,
+                "sku": "Basic",
+                "sku_tier": "Regional",
+                "tags": null,
+                "timeouts": null,
+                "zones": null
+              }
+            },
+            {
+              "address": "azurerm_public_ip.publicip_agw",
+              "mode": "managed",
+              "name": "publicip_agw",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_public_ip",
+              "values": {
+                "allocation_method": "Static",
+                "ddos_protection_mode": "VirtualNetworkInherited",
+                "ddos_protection_plan_id": null,
+                "domain_name_label": null,
+                "edge_zone": null,
+                "idle_timeout_in_minutes": 4,
+                "ip_tags": null,
+                "ip_version": "IPv4",
+                "location": "westeurope",
+                "name": "myPublicIPagw",
+                "public_ip_prefix_id": null,
+                "resource_group_name": "DemoSEG",
+                "reverse_fqdn": null,
+                "sku": "Standard",
+                "sku_tier": "Regional",
+                "tags": null,
+                "timeouts": null,
+                "zones": null
+              }
+            },
+            {
+              "address": "azurerm_resource_group.rg",
+              "mode": "managed",
+              "name": "rg",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "tags": {}
+              },
+              "type": "azurerm_resource_group",
+              "values": {
+                "location": "westeurope",
+                "managed_by": null,
+                "name": "DemoSEG",
+                "tags": {
+                  "Project": "AGW_v2"
+                },
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_storage_account.sta",
+              "mode": "managed",
+              "name": "sta",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 4,
+              "sensitive_values": {
+                "azure_files_authentication": [],
+                "blob_properties": [],
+                "custom_domain": [],
+                "customer_managed_key": [],
+                "identity": [],
+                "immutability_policy": [],
+                "network_rules": [],
+                "primary_access_key": true,
+                "primary_blob_connection_string": true,
+                "primary_connection_string": true,
+                "queue_properties": [],
+                "routing": [],
+                "sas_policy": [],
+                "secondary_access_key": true,
+                "secondary_blob_connection_string": true,
+                "secondary_connection_string": true,
+                "share_properties": [],
+                "static_website": []
+              },
+              "type": "azurerm_storage_account",
+              "values": {
+                "account_kind": "StorageV2",
+                "account_replication_type": "LRS",
+                "account_tier": "Standard",
+                "allow_nested_items_to_be_public": true,
+                "allowed_copy_scope": null,
+                "azure_files_authentication": [],
+                "cross_tenant_replication_enabled": true,
+                "custom_domain": [],
+                "customer_managed_key": [],
+                "default_to_oauth_authentication": false,
+                "dns_endpoint_type": "Standard",
+                "edge_zone": null,
+                "enable_https_traffic_only": true,
+                "identity": [],
+                "immutability_policy": [],
+                "infrastructure_encryption_enabled": false,
+                "is_hns_enabled": false,
+                "local_user_enabled": true,
+                "location": "westeurope",
+                "min_tls_version": "TLS1_2",
+                "name": "demoagwssta23243",
+                "nfsv3_enabled": false,
+                "public_network_access_enabled": true,
+                "queue_encryption_key_type": "Service",
+                "resource_group_name": "DemoSEG",
+                "sas_policy": [],
+                "sftp_enabled": false,
+                "shared_access_key_enabled": true,
+                "static_website": [],
+                "table_encryption_key_type": "Service",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_storage_container.sta_container",
+              "mode": "managed",
+              "name": "sta_container",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {
+                "metadata": {}
+              },
+              "type": "azurerm_storage_container",
+              "values": {
+                "container_access_type": "private",
+                "encryption_scope_override_enabled": true,
+                "name": "tfstate",
+                "storage_account_name": "demoagwssta23243",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_subnet.subnet",
+              "mode": "managed",
+              "name": "subnet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": []
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.254.0.0/28"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "name": "agw",
+                "resource_group_name": "DemoSEG",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": null,
+                "timeouts": null,
+                "virtual_network_name": "Production"
+              }
+            },
+            {
+              "address": "azurerm_subnet.subnet2",
+              "mode": "managed",
+              "name": "subnet2",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": []
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.254.2.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "name": "frontend",
+                "resource_group_name": "DemoSEG",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": null,
+                "timeouts": null,
+                "virtual_network_name": "Production"
+              }
+            },
+            {
+              "address": "azurerm_virtual_network.vnet",
+              "mode": "managed",
+              "name": "vnet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_space": [
+                  false
+                ],
+                "ddos_protection_plan": [],
+                "dns_servers": [],
+                "encryption": [],
+                "subnet": [],
+                "tags": {}
+              },
+              "type": "azurerm_virtual_network",
+              "values": {
+                "address_space": [
+                  "10.254.0.0/16"
+                ],
+                "bgp_community": null,
+                "ddos_protection_plan": [],
+                "edge_zone": null,
+                "encryption": [],
+                "flow_timeout_in_minutes": null,
+                "location": "westeurope",
+                "name": "Production",
+                "resource_group_name": "DemoSEG",
+                "tags": {
+                  "Project": "AGW_v2"
+                },
+                "timeouts": null
+              }
+            }
+          ],
+          "text": "data.assemble.plan",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

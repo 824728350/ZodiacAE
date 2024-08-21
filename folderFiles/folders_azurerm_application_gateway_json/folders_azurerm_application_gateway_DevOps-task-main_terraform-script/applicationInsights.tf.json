@@ -1,0 +1,14 @@
+{
+    "resource": [
+        {
+            "azurerm_application_insights": {
+                "application_insights": {
+                    "application_type": "web",
+                    "location": "${azurerm_resource_group.shared-rg.location}",
+                    "name": "my-application-insights",
+                    "resource_group_name": "${azurerm_resource_group.shared-rg.name}"
+                }
+            }
+        }
+    ]
+}

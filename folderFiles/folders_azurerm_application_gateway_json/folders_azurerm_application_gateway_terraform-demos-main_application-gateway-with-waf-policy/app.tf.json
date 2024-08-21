@@ -1,0 +1,49 @@
+{
+    "resource": [
+        {
+            "azurerm_service_plan": {
+                "example": {
+                    "location": "${local.region}",
+                    "name": "asp-${local.name}-001",
+                    "os_type": "Linux",
+                    "resource_group_name": "${azurerm_resource_group.example.name}",
+                    "sku_name": "B1"
+                }
+            }
+        },
+        {
+            "azurerm_linux_web_app": {
+                "example": {
+                    "location": "${azurerm_service_plan.example.location}",
+                    "name": "app-${local.name}-001",
+                    "resource_group_name": "${azurerm_resource_group.example.name}",
+                    "service_plan_id": "${azurerm_service_plan.example.id}",
+                    "site_config": [
+                        {}
+                    ]
+                }
+            }
+        },
+        {
+            "azurerm_private_endpoint": {
+                "example": {
+                    "custom_network_interface_name": "nic-${azurerm_linux_web_app.example.name}",
+                    "location": "${local.region}",
+                    "name": "pep-${azurerm_linux_web_app.example.name}",
+                    "private_service_connection": [
+                        {
+                            "is_manual_connection": false,
+                            "name": "privateserviceconnection",
+                            "private_connection_resource_id": "${azurerm_linux_web_app.example.id}",
+                            "subresource_names": [
+                                "sites"
+                            ]
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.example.name}",
+                    "subnet_id": "${local.subnets[\"workload\"].id}"
+                }
+            }
+        }
+    ]
+}

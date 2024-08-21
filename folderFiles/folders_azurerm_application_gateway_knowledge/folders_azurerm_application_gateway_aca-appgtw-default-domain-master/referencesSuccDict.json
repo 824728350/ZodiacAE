@@ -1,0 +1,39 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgtw": [],
+            "azurerm_container_app.main": [],
+            "azurerm_container_app_environment.main": [],
+            "azurerm_log_analytics_workspace.main": [],
+            "azurerm_public_ip.pip": [
+              "azurerm_application_gateway.appgtw"
+            ],
+            "azurerm_resource_group.main": [
+              "azurerm_application_gateway.appgtw",
+              "azurerm_public_ip.pip",
+              "azurerm_subnet.aca",
+              "azurerm_subnet.appgtw",
+              "azurerm_virtual_network.main"
+            ],
+            "azurerm_subnet.aca": [],
+            "azurerm_subnet.appgtw": [
+              "azurerm_application_gateway.appgtw"
+            ],
+            "azurerm_virtual_network.main": [
+              "azurerm_subnet.aca",
+              "azurerm_subnet.appgtw"
+            ]
+          },
+          "text": "data.assemble.referencesSuccDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

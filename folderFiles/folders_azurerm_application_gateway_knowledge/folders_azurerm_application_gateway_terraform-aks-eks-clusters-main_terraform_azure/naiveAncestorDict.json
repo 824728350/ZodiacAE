@@ -1,0 +1,82 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgw": [
+              "azurerm_application_gateway.appgw",
+              "azurerm_public_ip.pip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.appgwsubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_federated_identity_credential.example": [
+              "azurerm_federated_identity_credential.example"
+            ],
+            "azurerm_kubernetes_cluster.aks": [
+              "azurerm_kubernetes_cluster.aks"
+            ],
+            "azurerm_public_ip.pip": [
+              "azurerm_public_ip.pip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_role_assignment.aks_appgw_role": [
+              "azurerm_role_assignment.aks_appgw_role"
+            ],
+            "azurerm_role_assignment.ra1": [
+              "azurerm_role_assignment.ra1"
+            ],
+            "azurerm_role_assignment.ra3": [
+              "azurerm_role_assignment.ra3"
+            ],
+            "azurerm_subnet.akssubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.akssubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.appgwsubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.appgwsubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_user_assigned_identity.testIdentity": [
+              "azurerm_user_assigned_identity.testIdentity"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_virtual_network_peering.aks_to_appgw": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet",
+              "azurerm_virtual_network_peering.aks_to_appgw"
+            ],
+            "azurerm_virtual_network_peering.appgw_to_aks": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet",
+              "azurerm_virtual_network_peering.appgw_to_aks"
+            ],
+            "data.azurerm_resources.vnet": [
+              "data.azurerm_resources.vnet"
+            ],
+            "helm_release.app": [
+              "helm_release.app"
+            ],
+            "helm_release.appgw_ingress": [
+              "helm_release.appgw_ingress"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

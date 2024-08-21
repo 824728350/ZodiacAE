@@ -1,0 +1,55 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.invalid": [
+              "azurerm_application_gateway.invalid"
+            ],
+            "azurerm_application_gateway.valid": [
+              "azurerm_application_gateway.valid"
+            ],
+            "azurerm_frontdoor_firewall_policy.example": [
+              "azurerm_frontdoor_firewall_policy.example"
+            ],
+            "azurerm_public_ip.example": [
+              "azurerm_application_gateway.invalid",
+              "azurerm_application_gateway.valid",
+              "azurerm_public_ip.example"
+            ],
+            "azurerm_resource_group.example": [
+              "azurerm_application_gateway.invalid",
+              "azurerm_application_gateway.valid",
+              "azurerm_public_ip.example",
+              "azurerm_resource_group.example",
+              "azurerm_subnet.backend",
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.example"
+            ],
+            "azurerm_subnet.backend": [
+              "azurerm_subnet.backend"
+            ],
+            "azurerm_subnet.frontend": [
+              "azurerm_application_gateway.invalid",
+              "azurerm_application_gateway.valid",
+              "azurerm_subnet.frontend"
+            ],
+            "azurerm_virtual_network.example": [
+              "azurerm_application_gateway.invalid",
+              "azurerm_application_gateway.valid",
+              "azurerm_subnet.backend",
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.example"
+            ]
+          },
+          "text": "data.assemble.offspringDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "module.bugservicedb.azurerm_postgresql_flexible_server.server",
+              "module.bugservicedb.azurerm_private_dns_zone_virtual_network_link.network_link"
+            ],
+            [
+              "module.bugservicedb.azurerm_private_dns_zone_virtual_network_link.network_link",
+              "module.bugservicedb.azurerm_subnet.subnet"
+            ],
+            [
+              "module.userservicedb.azurerm_postgresql_flexible_server.server",
+              "module.userservicedb.azurerm_private_dns_zone_virtual_network_link.network_link"
+            ],
+            [
+              "module.userservicedb.azurerm_private_dns_zone_virtual_network_link.network_link",
+              "module.userservicedb.azurerm_subnet.subnet"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

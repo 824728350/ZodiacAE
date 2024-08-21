@@ -1,0 +1,867 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_resource_group.main[0]",
+              "index": 0,
+              "mode": "managed",
+              "name": "main",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_resource_group",
+              "values": {
+                "location": "eastus",
+                "managed_by": null,
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_subnet.test[0]",
+              "index": 0,
+              "mode": "managed",
+              "name": "test",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": []
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.52.0.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_virtual_network.test[0]",
+              "index": 0,
+              "mode": "managed",
+              "name": "test",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_space": [
+                  false
+                ],
+                "ddos_protection_plan": [],
+                "dns_servers": [],
+                "encryption": [],
+                "subnet": []
+              },
+              "type": "azurerm_virtual_network",
+              "values": {
+                "address_space": [
+                  "10.52.0.0/16"
+                ],
+                "bgp_community": null,
+                "ddos_protection_plan": [],
+                "edge_zone": null,
+                "encryption": [],
+                "flow_timeout_in_minutes": null,
+                "location": "eastus",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "data.kubernetes_ingress_v1.ing",
+              "mode": "data",
+              "name": "ing",
+              "provider_name": "registry.terraform.io/hashicorp/kubernetes",
+              "schema_version": 0,
+              "sensitive_values": {
+                "metadata": [
+                  {}
+                ],
+                "spec": [],
+                "status": []
+              },
+              "type": "kubernetes_ingress_v1",
+              "values": {
+                "metadata": [
+                  {
+                    "annotations": null,
+                    "labels": null,
+                    "name": "aspnetapp",
+                    "namespace": "example"
+                  }
+                ]
+              }
+            },
+            {
+              "address": "kubernetes_ingress_v1.ing",
+              "mode": "managed",
+              "name": "ing",
+              "provider_name": "registry.terraform.io/hashicorp/kubernetes",
+              "schema_version": 0,
+              "sensitive_values": {
+                "metadata": [
+                  {
+                    "annotations": {}
+                  }
+                ],
+                "spec": [
+                  {
+                    "default_backend": [],
+                    "rule": [
+                      {
+                        "http": [
+                          {
+                            "path": [
+                              {
+                                "backend": [
+                                  {
+                                    "resource": [],
+                                    "service": [
+                                      {
+                                        "port": [
+                                          {}
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "tls": []
+                  }
+                ],
+                "status": []
+              },
+              "type": "kubernetes_ingress_v1",
+              "values": {
+                "metadata": [
+                  {
+                    "annotations": {
+                      "kubernetes.io/ingress.class": "azure/application-gateway"
+                    },
+                    "generate_name": null,
+                    "labels": null,
+                    "name": "aspnetapp",
+                    "namespace": "example"
+                  }
+                ],
+                "spec": [
+                  {
+                    "default_backend": [],
+                    "rule": [
+                      {
+                        "host": null,
+                        "http": [
+                          {
+                            "path": [
+                              {
+                                "backend": [
+                                  {
+                                    "resource": [],
+                                    "service": [
+                                      {
+                                        "name": "aspnetapp",
+                                        "port": [
+                                          {
+                                            "name": null,
+                                            "number": 80
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "path": "/",
+                                "path_type": "Exact"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "tls": []
+                  }
+                ],
+                "timeouts": null,
+                "wait_for_load_balancer": null
+              }
+            },
+            {
+              "address": "kubernetes_namespace_v1.example",
+              "mode": "managed",
+              "name": "example",
+              "provider_name": "registry.terraform.io/hashicorp/kubernetes",
+              "schema_version": 0,
+              "sensitive_values": {
+                "metadata": [
+                  {}
+                ]
+              },
+              "type": "kubernetes_namespace_v1",
+              "values": {
+                "metadata": [
+                  {
+                    "annotations": null,
+                    "generate_name": null,
+                    "labels": null,
+                    "name": "example"
+                  }
+                ],
+                "timeouts": null,
+                "wait_for_default_service_account": false
+              }
+            },
+            {
+              "address": "kubernetes_pod.aspnet_app",
+              "mode": "managed",
+              "name": "aspnet_app",
+              "provider_name": "registry.terraform.io/hashicorp/kubernetes",
+              "schema_version": 1,
+              "sensitive_values": {
+                "metadata": [
+                  {
+                    "labels": {}
+                  }
+                ],
+                "spec": [
+                  {
+                    "affinity": [],
+                    "container": [
+                      {
+                        "env": [],
+                        "env_from": [],
+                        "lifecycle": [],
+                        "liveness_probe": [],
+                        "port": [
+                          {}
+                        ],
+                        "readiness_probe": [],
+                        "resources": [
+                          {
+                            "limits": {},
+                            "requests": {}
+                          }
+                        ],
+                        "security_context": [
+                          {
+                            "capabilities": [],
+                            "se_linux_options": [],
+                            "seccomp_profile": []
+                          }
+                        ],
+                        "startup_probe": [],
+                        "volume_mount": []
+                      }
+                    ],
+                    "dns_config": [],
+                    "host_aliases": [],
+                    "image_pull_secrets": [],
+                    "init_container": [],
+                    "os": [],
+                    "readiness_gate": [],
+                    "security_context": [],
+                    "toleration": [],
+                    "topology_spread_constraint": [],
+                    "volume": []
+                  }
+                ]
+              },
+              "type": "kubernetes_pod",
+              "values": {
+                "metadata": [
+                  {
+                    "annotations": null,
+                    "generate_name": null,
+                    "labels": {
+                      "app": "aspnetapp"
+                    },
+                    "name": "aspnetapp",
+                    "namespace": "example"
+                  }
+                ],
+                "spec": [
+                  {
+                    "active_deadline_seconds": null,
+                    "affinity": [],
+                    "automount_service_account_token": true,
+                    "container": [
+                      {
+                        "args": null,
+                        "command": null,
+                        "env": [],
+                        "env_from": [],
+                        "image": "mcr.microsoft.com/dotnet/samples@sha256:7070894cc10d2b1e68e72057cca22040c5984cfae2ec3e079e34cf0a4da7fcea",
+                        "image_pull_policy": "Always",
+                        "lifecycle": [],
+                        "liveness_probe": [],
+                        "name": "aspnetapp-image",
+                        "port": [
+                          {
+                            "container_port": 80,
+                            "host_ip": null,
+                            "host_port": null,
+                            "name": null,
+                            "protocol": "TCP"
+                          }
+                        ],
+                        "readiness_probe": [],
+                        "resources": [
+                          {
+                            "limits": {
+                              "cpu": "250m",
+                              "memory": "256Mi"
+                            },
+                            "requests": {
+                              "cpu": "250m",
+                              "memory": "256Mi"
+                            }
+                          }
+                        ],
+                        "security_context": [
+                          {
+                            "allow_privilege_escalation": true,
+                            "capabilities": [],
+                            "privileged": false,
+                            "read_only_root_filesystem": false,
+                            "run_as_group": null,
+                            "run_as_non_root": null,
+                            "run_as_user": null,
+                            "se_linux_options": [],
+                            "seccomp_profile": []
+                          }
+                        ],
+                        "startup_probe": [],
+                        "stdin": false,
+                        "stdin_once": false,
+                        "termination_message_path": "/dev/termination-log",
+                        "tty": false,
+                        "volume_mount": [],
+                        "working_dir": null
+                      }
+                    ],
+                    "dns_config": [],
+                    "dns_policy": "ClusterFirst",
+                    "enable_service_links": true,
+                    "host_aliases": [],
+                    "host_ipc": false,
+                    "host_network": false,
+                    "host_pid": false,
+                    "init_container": [],
+                    "node_selector": null,
+                    "os": [],
+                    "priority_class_name": null,
+                    "restart_policy": "Always",
+                    "runtime_class_name": null,
+                    "security_context": [],
+                    "share_process_namespace": false,
+                    "subdomain": null,
+                    "termination_grace_period_seconds": 30,
+                    "toleration": [],
+                    "topology_spread_constraint": [],
+                    "volume": []
+                  }
+                ],
+                "target_state": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "kubernetes_service.svc",
+              "mode": "managed",
+              "name": "svc",
+              "provider_name": "registry.terraform.io/hashicorp/kubernetes",
+              "schema_version": 1,
+              "sensitive_values": {
+                "metadata": [
+                  {}
+                ],
+                "spec": [
+                  {
+                    "cluster_ips": [],
+                    "ip_families": [],
+                    "port": [
+                      {}
+                    ],
+                    "selector": {},
+                    "session_affinity_config": []
+                  }
+                ],
+                "status": []
+              },
+              "type": "kubernetes_service",
+              "values": {
+                "metadata": [
+                  {
+                    "annotations": null,
+                    "generate_name": null,
+                    "labels": null,
+                    "name": "aspnetapp",
+                    "namespace": "example"
+                  }
+                ],
+                "spec": [
+                  {
+                    "allocate_load_balancer_node_ports": true,
+                    "external_ips": null,
+                    "external_name": null,
+                    "load_balancer_class": null,
+                    "load_balancer_ip": null,
+                    "load_balancer_source_ranges": null,
+                    "port": [
+                      {
+                        "app_protocol": null,
+                        "name": null,
+                        "port": 80,
+                        "protocol": "TCP",
+                        "target_port": "80"
+                      }
+                    ],
+                    "publish_not_ready_addresses": false,
+                    "selector": {
+                      "app": "aspnetapp"
+                    },
+                    "session_affinity": "None",
+                    "type": "ClusterIP"
+                  }
+                ],
+                "timeouts": null,
+                "wait_for_load_balancer": true
+              }
+            },
+            {
+              "address": "random_id.name",
+              "mode": "managed",
+              "name": "name",
+              "provider_name": "registry.terraform.io/hashicorp/random",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "random_id",
+              "values": {
+                "byte_length": 8,
+                "keepers": null,
+                "prefix": null
+              }
+            },
+            {
+              "address": "random_id.prefix",
+              "mode": "managed",
+              "name": "prefix",
+              "provider_name": "registry.terraform.io/hashicorp/random",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "random_id",
+              "values": {
+                "byte_length": 8,
+                "keepers": null,
+                "prefix": null
+              }
+            },
+            {
+              "address": "time_sleep.wait_for_ingress",
+              "mode": "managed",
+              "name": "wait_for_ingress",
+              "provider_name": "registry.terraform.io/hashicorp/time",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "time_sleep",
+              "values": {
+                "create_duration": "15m",
+                "destroy_duration": null,
+                "triggers": null
+              }
+            },
+            {
+              "address": "module.aks.azapi_update_resource.aks_cluster_post_create",
+              "mode": "managed",
+              "name": "aks_cluster_post_create",
+              "provider_name": "registry.terraform.io/azure/azapi",
+              "schema_version": 1,
+              "sensitive_values": {},
+              "type": "azapi_update_resource",
+              "values": {
+                "body": "{\"properties\":{\"kubernetesVersion\":\"1.29\"}}",
+                "ignore_body_changes": null,
+                "ignore_casing": false,
+                "ignore_missing_property": true,
+                "locks": null,
+                "response_export_values": null,
+                "timeouts": null,
+                "type": "Microsoft.ContainerService/managedClusters@2024-02-01"
+              }
+            },
+            {
+              "address": "module.aks.azurerm_kubernetes_cluster.main",
+              "mode": "managed",
+              "name": "main",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 2,
+              "sensitive_values": {
+                "aci_connector_linux": [],
+                "api_server_access_profile": [],
+                "api_server_authorized_ip_ranges": [],
+                "auto_scaler_profile": [],
+                "azure_active_directory_role_based_access_control": [
+                  {
+                    "server_app_secret": true
+                  }
+                ],
+                "confidential_computing": [],
+                "default_node_pool": [
+                  {
+                    "kubelet_config": [],
+                    "linux_os_config": [
+                      {
+                        "sysctl_config": [
+                          {}
+                        ]
+                      }
+                    ],
+                    "node_labels": {},
+                    "node_network_profile": [],
+                    "upgrade_settings": [
+                      {}
+                    ],
+                    "zones": [
+                      false,
+                      false
+                    ]
+                  }
+                ],
+                "http_proxy_config": [],
+                "identity": [
+                  {}
+                ],
+                "ingress_application_gateway": [
+                  {
+                    "ingress_application_gateway_identity": []
+                  }
+                ],
+                "key_management_service": [],
+                "key_vault_secrets_provider": [],
+                "kube_admin_config": true,
+                "kube_admin_config_raw": true,
+                "kube_config": true,
+                "kube_config_raw": true,
+                "kubelet_identity": [],
+                "linux_profile": [],
+                "maintenance_window": [],
+                "maintenance_window_auto_upgrade": [],
+                "maintenance_window_node_os": [],
+                "microsoft_defender": [],
+                "monitor_metrics": [],
+                "network_profile": [
+                  {
+                    "ip_versions": [],
+                    "load_balancer_profile": [],
+                    "nat_gateway_profile": [],
+                    "outbound_ip_address_ids": [],
+                    "outbound_ip_prefix_ids": [],
+                    "pod_cidrs": [],
+                    "service_cidrs": []
+                  }
+                ],
+                "oms_agent": [],
+                "service_mesh_profile": [],
+                "service_principal": [],
+                "storage_profile": [],
+                "web_app_routing": [],
+                "windows_profile": [],
+                "workload_autoscaler_profile": []
+              },
+              "type": "azurerm_kubernetes_cluster",
+              "values": {
+                "aci_connector_linux": [],
+                "automatic_channel_upgrade": "patch",
+                "azure_active_directory_role_based_access_control": [
+                  {
+                    "admin_group_object_ids": null,
+                    "azure_rbac_enabled": null,
+                    "client_app_id": null,
+                    "managed": true,
+                    "server_app_id": null,
+                    "server_app_secret": null
+                  }
+                ],
+                "azure_policy_enabled": true,
+                "confidential_computing": [],
+                "cost_analysis_enabled": null,
+                "custom_ca_trust_certificates_base64": null,
+                "default_node_pool": [
+                  {
+                    "capacity_reservation_group_id": null,
+                    "custom_ca_trust_enabled": null,
+                    "enable_auto_scaling": true,
+                    "enable_host_encryption": true,
+                    "enable_node_public_ip": false,
+                    "fips_enabled": null,
+                    "gpu_instance": null,
+                    "host_group_id": null,
+                    "kubelet_config": [],
+                    "linux_os_config": [
+                      {
+                        "swap_file_size_mb": null,
+                        "sysctl_config": [
+                          {
+                            "fs_aio_max_nr": 65536,
+                            "fs_file_max": 100000,
+                            "fs_inotify_max_user_watches": 1000000,
+                            "fs_nr_open": null,
+                            "kernel_threads_max": null,
+                            "net_core_netdev_max_backlog": null,
+                            "net_core_optmem_max": null,
+                            "net_core_rmem_default": null,
+                            "net_core_rmem_max": null,
+                            "net_core_somaxconn": null,
+                            "net_core_wmem_default": null,
+                            "net_core_wmem_max": null,
+                            "net_ipv4_ip_local_port_range_max": null,
+                            "net_ipv4_ip_local_port_range_min": null,
+                            "net_ipv4_neigh_default_gc_thresh1": null,
+                            "net_ipv4_neigh_default_gc_thresh2": null,
+                            "net_ipv4_neigh_default_gc_thresh3": null,
+                            "net_ipv4_tcp_fin_timeout": null,
+                            "net_ipv4_tcp_keepalive_intvl": null,
+                            "net_ipv4_tcp_keepalive_probes": null,
+                            "net_ipv4_tcp_keepalive_time": null,
+                            "net_ipv4_tcp_max_syn_backlog": null,
+                            "net_ipv4_tcp_max_tw_buckets": null,
+                            "net_ipv4_tcp_tw_reuse": null,
+                            "net_netfilter_nf_conntrack_buckets": null,
+                            "net_netfilter_nf_conntrack_max": null,
+                            "vm_max_map_count": null,
+                            "vm_swappiness": null,
+                            "vm_vfs_cache_pressure": null
+                          }
+                        ],
+                        "transparent_huge_page_defrag": null,
+                        "transparent_huge_page_enabled": "always"
+                      }
+                    ],
+                    "max_count": 2,
+                    "max_pods": 100,
+                    "message_of_the_day": null,
+                    "min_count": 1,
+                    "name": "testnodepool",
+                    "node_network_profile": [],
+                    "node_public_ip_prefix_id": null,
+                    "node_taints": null,
+                    "only_critical_addons_enabled": null,
+                    "os_disk_size_gb": 60,
+                    "os_disk_type": "Managed",
+                    "pod_subnet_id": null,
+                    "proximity_placement_group_id": null,
+                    "scale_down_mode": "Delete",
+                    "snapshot_id": null,
+                    "tags": null,
+                    "temporary_name_for_rotation": null,
+                    "type": "VirtualMachineScaleSets",
+                    "ultra_ssd_enabled": false,
+                    "upgrade_settings": [
+                      {
+                        "drain_timeout_in_minutes": null,
+                        "max_surge": "10%",
+                        "node_soak_duration_in_minutes": 0
+                      }
+                    ],
+                    "vm_size": "Standard_D2s_v3",
+                    "zones": [
+                      "1",
+                      "2"
+                    ]
+                  }
+                ],
+                "disk_encryption_set_id": null,
+                "dns_prefix_private_cluster": null,
+                "edge_zone": null,
+                "enable_pod_security_policy": null,
+                "http_application_routing_enabled": null,
+                "http_proxy_config": [],
+                "identity": [
+                  {
+                    "identity_ids": null,
+                    "type": "SystemAssigned"
+                  }
+                ],
+                "image_cleaner_enabled": false,
+                "image_cleaner_interval_hours": 48,
+                "ingress_application_gateway": [
+                  {
+                    "gateway_id": null,
+                    "gateway_name": "ingress",
+                    "subnet_cidr": "10.52.1.0/24",
+                    "subnet_id": null
+                  }
+                ],
+                "key_management_service": [],
+                "key_vault_secrets_provider": [],
+                "kubernetes_version": "1.29",
+                "linux_profile": [],
+                "local_account_disabled": false,
+                "maintenance_window": [],
+                "maintenance_window_auto_upgrade": [],
+                "maintenance_window_node_os": [],
+                "microsoft_defender": [],
+                "monitor_metrics": [],
+                "network_profile": [
+                  {
+                    "dns_service_ip": "10.0.0.10",
+                    "load_balancer_sku": "standard",
+                    "network_plugin": "azure",
+                    "network_plugin_mode": null,
+                    "network_policy": "azure",
+                    "outbound_type": "loadBalancer",
+                    "service_cidr": "10.0.0.0/16"
+                  }
+                ],
+                "node_os_channel_upgrade": null,
+                "oidc_issuer_enabled": false,
+                "oms_agent": [],
+                "open_service_mesh_enabled": null,
+                "private_cluster_enabled": false,
+                "private_cluster_public_fqdn_enabled": false,
+                "public_network_access_enabled": true,
+                "role_based_access_control_enabled": true,
+                "run_command_enabled": true,
+                "service_mesh_profile": [],
+                "service_principal": [],
+                "sku_tier": "Standard",
+                "storage_profile": [],
+                "support_plan": "KubernetesOfficial",
+                "tags": null,
+                "timeouts": null,
+                "web_app_routing": [],
+                "workload_autoscaler_profile": [],
+                "workload_identity_enabled": false
+              }
+            },
+            {
+              "address": "module.aks.azurerm_role_assignment.application_gateway_byo_vnet_network_contributor[0]",
+              "index": 0,
+              "mode": "managed",
+              "name": "application_gateway_byo_vnet_network_contributor",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Network Contributor",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.aks.azurerm_role_assignment.application_gateway_resource_group_reader[0]",
+              "index": 0,
+              "mode": "managed",
+              "name": "application_gateway_resource_group_reader",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Reader",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.aks.data.azurerm_client_config.this",
+              "mode": "data",
+              "name": "this",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_client_config",
+              "values": {
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.aks.data.azurerm_resource_group.aks_rg[0]",
+              "index": 0,
+              "mode": "data",
+              "name": "aks_rg",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "tags": {}
+              },
+              "type": "azurerm_resource_group",
+              "values": {
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.aks.data.azurerm_resource_group.main",
+              "mode": "data",
+              "name": "main",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "tags": {}
+              },
+              "type": "azurerm_resource_group",
+              "values": {
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.aks.null_resource.kubernetes_cluster_name_keeper",
+              "mode": "managed",
+              "name": "kubernetes_cluster_name_keeper",
+              "provider_name": "registry.terraform.io/hashicorp/null",
+              "schema_version": 0,
+              "sensitive_values": {
+                "triggers": {}
+              },
+              "type": "null_resource",
+              "values": {
+                "triggers": {}
+              }
+            },
+            {
+              "address": "module.aks.null_resource.kubernetes_version_keeper",
+              "mode": "managed",
+              "name": "kubernetes_version_keeper",
+              "provider_name": "registry.terraform.io/hashicorp/null",
+              "schema_version": 0,
+              "sensitive_values": {
+                "triggers": {}
+              },
+              "type": "null_resource",
+              "values": {
+                "triggers": {
+                  "version": "1.29"
+                }
+              }
+            }
+          ],
+          "text": "data.assemble.plan",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgw": [
+              "azurerm_application_gateway.appgw",
+              "azurerm_public_ip.pip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.appgw-vnet"
+            ],
+            "azurerm_linux_virtual_machine.web-worker": [
+              "azurerm_linux_virtual_machine.web-worker",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_linux_virtual_machine.web-worker-failback": [
+              "azurerm_linux_virtual_machine.web-worker-failback",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_interface.nic": [
+              "azurerm_network_interface.nic",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.backend",
+              "azurerm_virtual_network.appgw-vnet"
+            ],
+            "azurerm_network_interface.nic-failback": [
+              "azurerm_network_interface.nic-failback",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.backend",
+              "azurerm_virtual_network.appgw-vnet"
+            ],
+            "azurerm_network_interface_application_gateway_backend_address_pool_association.nic-assoc01": [
+              "azurerm_network_interface_application_gateway_backend_address_pool_association.nic-assoc01"
+            ],
+            "azurerm_network_interface_application_gateway_backend_address_pool_association.nic-failback-assoc01": [
+              "azurerm_network_interface_application_gateway_backend_address_pool_association.nic-failback-assoc01"
+            ],
+            "azurerm_network_security_group.backend_nsg": [
+              "azurerm_network_security_group.backend_nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_public_ip.pip": [
+              "azurerm_public_ip.pip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_subnet.backend": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.backend",
+              "azurerm_virtual_network.appgw-vnet"
+            ],
+            "azurerm_subnet.frontend": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.appgw-vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.backend_nsg": [
+              "azurerm_network_security_group.backend_nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.backend",
+              "azurerm_subnet_network_security_group_association.backend_nsg",
+              "azurerm_virtual_network.appgw-vnet"
+            ],
+            "azurerm_virtual_network.appgw-vnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.appgw-vnet"
+            ],
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ],
+            "data.template_file.test-cloud-init": [
+              "data.template_file.test-cloud-init"
+            ],
+            "random_password.password": [
+              "random_password.password"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

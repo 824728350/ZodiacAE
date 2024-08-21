@@ -1,0 +1,37 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_key_vault.keyvault",
+              "azurerm_role_assignment.kv_admin"
+            ],
+            [
+              "azurerm_subnet.subnets",
+              "azurerm_resource_group.rg"
+            ],
+            [
+              "azurerm_subnet.subnets",
+              "azurerm_virtual_network.vnet"
+            ],
+            [
+              "azurerm_subnet_network_security_group_association.nsg_association",
+              "azurerm_subnet.subnets"
+            ],
+            [
+              "azurerm_subnet_network_security_group_association.nsg_association",
+              "azurerm_virtual_network.vnet"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

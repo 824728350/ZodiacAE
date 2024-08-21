@@ -1,0 +1,38 @@
+{
+    "resource": [
+        {
+            "azurerm_container_registry": {
+                "acr": {
+                    "admin_enabled": false,
+                    "location": "${azurerm_resource_group.sample-rs.location}",
+                    "name": "sampleacr20240324",
+                    "resource_group_name": "${azurerm_resource_group.sample-rs.name}",
+                    "sku": "Standard"
+                }
+            }
+        },
+        {
+            "azurerm_kubernetes_cluster": {
+                "aks": {
+                    "default_node_pool": [
+                        {
+                            "name": "default",
+                            "node_count": 1,
+                            "vm_size": "Standard_DS2_v2",
+                            "vnet_subnet_id": "${azurerm_subnet.sample-sn.id}"
+                        }
+                    ],
+                    "dns_prefix": "my-aks-cluster-dns-prefix",
+                    "identity": [
+                        {
+                            "type": "SystemAssigned"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.sample-rs.location}",
+                    "name": "my-aks-cluster",
+                    "resource_group_name": "${azurerm_resource_group.sample-rs.name}"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_key_vault.kv",
+              "azurerm_resource_group.rg"
+            ],
+            [
+              "azurerm_service_plan.plan",
+              "azurerm_resource_group.rg"
+            ],
+            [
+              "azurerm_storage_account.storageaccount",
+              "azurerm_resource_group.rg"
+            ],
+            [
+              "azurerm_windows_function_app.func",
+              "azurerm_service_plan.plan"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

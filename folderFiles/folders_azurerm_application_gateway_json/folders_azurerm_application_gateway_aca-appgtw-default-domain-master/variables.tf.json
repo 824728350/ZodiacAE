@@ -1,0 +1,33 @@
+{
+    "variable": [
+        {
+            "prefix": {
+                "default": "acaappgtw",
+                "description": "Prefox of the env",
+                "validation": [
+                    {
+                        "condition": "${can(regex(\"^[a-z]{2,}$\", var.prefix))}",
+                        "error_message": "Can only be lower-case letters and be at least 2 characters long."
+                    }
+                ]
+            }
+        },
+        {
+            "location": {
+                "default": "West Europe",
+                "description": "Location of the env"
+            }
+        },
+        {
+            "cidr": {
+                "default": "10.0.0.0/16",
+                "validation": [
+                    {
+                        "condition": "${can(cidrhost(var.cidr, 32))}",
+                        "error_message": "Must be valid IPv4 CIDR."
+                    }
+                ]
+            }
+        }
+    ]
+}

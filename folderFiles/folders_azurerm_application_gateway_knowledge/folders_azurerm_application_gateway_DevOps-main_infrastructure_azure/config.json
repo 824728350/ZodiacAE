@@ -1,0 +1,2125 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.app_gateway",
+              "expressions": {
+                "backend_address_pool": [
+                  {
+                    "name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    },
+                    "port": {
+                      "constant_value": 80
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "request_timeout": {
+                      "constant_value": 60
+                    }
+                  }
+                ],
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    },
+                    "public_ip_address_id": {
+                      "references": [
+                        "azurerm_public_ip.app_gateway.id",
+                        "azurerm_public_ip.app_gateway"
+                      ]
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "constant_value": "http"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "azurerm_subnet.app_gateway.id",
+                        "azurerm_subnet.app_gateway"
+                      ]
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "http"
+                    },
+                    "name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    },
+                    "backend_http_settings_name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    },
+                    "http_listener_name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    },
+                    "name": {
+                      "references": [
+                        "var.suffix"
+                      ]
+                    },
+                    "priority": {
+                      "constant_value": 100
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "constant_value": 2
+                    },
+                    "name": {
+                      "constant_value": "Standard_v2"
+                    },
+                    "tier": {
+                      "constant_value": "Standard_v2"
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "app_gateway",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "azurerm_dashboard_grafana.grafana",
+              "expressions": {
+                "azure_monitor_workspace_integrations": [
+                  {
+                    "resource_id": {
+                      "references": [
+                        "azurerm_monitor_workspace.workspace.id",
+                        "azurerm_monitor_workspace.workspace"
+                      ]
+                    }
+                  }
+                ],
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "grafana",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_dashboard_grafana"
+            },
+            {
+              "address": "azurerm_key_vault.vault",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "sku_name": {
+                  "constant_value": "standard"
+                },
+                "tenant_id": {
+                  "references": [
+                    "data.azurerm_client_config.current.tenant_id",
+                    "data.azurerm_client_config.current"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "vault",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_key_vault"
+            },
+            {
+              "address": "azurerm_key_vault_access_policy.cluster",
+              "expressions": {
+                "key_vault_id": {
+                  "references": [
+                    "azurerm_key_vault.vault.id",
+                    "azurerm_key_vault.vault"
+                  ]
+                },
+                "object_id": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider[0].secret_identity[0].object_id",
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider[0].secret_identity[0]",
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider[0].secret_identity",
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider[0]",
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                },
+                "secret_permissions": {
+                  "constant_value": [
+                    "Get"
+                  ]
+                },
+                "tenant_id": {
+                  "references": [
+                    "data.azurerm_client_config.current.tenant_id",
+                    "data.azurerm_client_config.current"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "cluster",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_key_vault_access_policy"
+            },
+            {
+              "address": "azurerm_key_vault_access_policy.policy",
+              "expressions": {
+                "key_vault_id": {
+                  "references": [
+                    "azurerm_key_vault.vault.id",
+                    "azurerm_key_vault.vault"
+                  ]
+                },
+                "object_id": {
+                  "references": [
+                    "data.azurerm_client_config.current.object_id",
+                    "data.azurerm_client_config.current"
+                  ]
+                },
+                "secret_permissions": {
+                  "constant_value": [
+                    "Get",
+                    "List",
+                    "Set"
+                  ]
+                },
+                "tenant_id": {
+                  "references": [
+                    "data.azurerm_client_config.current.tenant_id",
+                    "data.azurerm_client_config.current"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "policy",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_key_vault_access_policy"
+            },
+            {
+              "address": "azurerm_key_vault_secret.bugservicedb_connectionstring",
+              "expressions": {
+                "key_vault_id": {
+                  "references": [
+                    "azurerm_key_vault.vault.id",
+                    "azurerm_key_vault.vault"
+                  ]
+                },
+                "name": {
+                  "constant_value": "bugservicedb-connection-string"
+                },
+                "value": {
+                  "references": [
+                    "module.bugservicedb.connection_string",
+                    "module.bugservicedb"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "bugservicedb_connectionstring",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_key_vault_secret"
+            },
+            {
+              "address": "azurerm_key_vault_secret.userservicedb_connectionstring",
+              "expressions": {
+                "key_vault_id": {
+                  "references": [
+                    "azurerm_key_vault.vault.id",
+                    "azurerm_key_vault.vault"
+                  ]
+                },
+                "name": {
+                  "constant_value": "userservicedb-connection-string"
+                },
+                "value": {
+                  "references": [
+                    "module.userservicedb.connection_string",
+                    "module.userservicedb"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "userservicedb_connectionstring",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_key_vault_secret"
+            },
+            {
+              "address": "azurerm_kubernetes_cluster.cluster",
+              "expressions": {
+                "default_node_pool": [
+                  {
+                    "name": {
+                      "constant_value": "default"
+                    },
+                    "node_count": {
+                      "constant_value": 1
+                    },
+                    "vm_size": {
+                      "constant_value": "Standard_D2_v2"
+                    },
+                    "vnet_subnet_id": {
+                      "references": [
+                        "azurerm_subnet.aks_subnet.id",
+                        "azurerm_subnet.aks_subnet"
+                      ]
+                    }
+                  }
+                ],
+                "dns_prefix": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "ingress_application_gateway": [
+                  {
+                    "gateway_id": {
+                      "references": [
+                        "azurerm_application_gateway.app_gateway.id",
+                        "azurerm_application_gateway.app_gateway"
+                      ]
+                    }
+                  }
+                ],
+                "key_vault_secrets_provider": [
+                  {
+                    "secret_rotation_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "monitor_metrics": [
+                  {
+                    "annotations_allowed": {
+                      "constant_value": null
+                    },
+                    "labels_allowed": {
+                      "constant_value": null
+                    }
+                  }
+                ],
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "oms_agent": [
+                  {
+                    "log_analytics_workspace_id": {
+                      "references": [
+                        "azurerm_log_analytics_workspace.workspace.id",
+                        "azurerm_log_analytics_workspace.workspace"
+                      ]
+                    },
+                    "msi_auth_for_monitoring_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "cluster",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_kubernetes_cluster"
+            },
+            {
+              "address": "azurerm_log_analytics_workspace.workspace",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "retention_in_days": {
+                  "constant_value": 30
+                },
+                "sku": {
+                  "constant_value": "PerGB2018"
+                }
+              },
+              "mode": "managed",
+              "name": "workspace",
+              "provider_config_key": "azurerm",
+              "schema_version": 3,
+              "type": "azurerm_log_analytics_workspace"
+            },
+            {
+              "address": "azurerm_monitor_alert_prometheus_rule_group.kubernetes_recording_rules_rule_group",
+              "expressions": {
+                "cluster_name": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.name",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                },
+                "description": {
+                  "constant_value": "Kubernetes Recording Rules Rule Group"
+                },
+                "interval": {
+                  "constant_value": "PT1M"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "rule": [
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum by (cluster, namespace, pod, container) (  irate(container_cpu_usage_seconds_total{job=\"cadvisor\", image!=\"\"}[5m])) * on (cluster, namespace, pod) group_left(node) topk by (cluster, namespace, pod) (  1, max by(cluster, namespace, pod, node) (kube_pod_info{node!=\"\"}))\n"
+                    },
+                    "record": {
+                      "constant_value": "node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "container_memory_working_set_bytes{job=\"cadvisor\", image!=\"\"}* on (namespace, pod) group_left(node) topk by(namespace, pod) (1,  max by(namespace, pod, node) (kube_pod_info{node!=\"\"}))\n"
+                    },
+                    "record": {
+                      "constant_value": "node_namespace_pod_container:container_memory_working_set_bytes"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "container_memory_rss{job=\"cadvisor\", image!=\"\"}* on (namespace, pod) group_left(node) topk by(namespace, pod) (1,  max by(namespace, pod, node) (kube_pod_info{node!=\"\"}))\n"
+                    },
+                    "record": {
+                      "constant_value": "node_namespace_pod_container:container_memory_rss"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "container_memory_cache{job=\"cadvisor\", image!=\"\"}* on (namespace, pod) group_left(node) topk by(namespace, pod) (1,  max by(namespace, pod, node) (kube_pod_info{node!=\"\"}))\n"
+                    },
+                    "record": {
+                      "constant_value": "node_namespace_pod_container:container_memory_cache"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "container_memory_swap{job=\"cadvisor\", image!=\"\"}* on (namespace, pod) group_left(node) topk by(namespace, pod) (1,  max by(namespace, pod, node) (kube_pod_info{node!=\"\"}))\n"
+                    },
+                    "record": {
+                      "constant_value": "node_namespace_pod_container:container_memory_swap"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "kube_pod_container_resource_requests{resource=\"memory\",job=\"kube-state-metrics\"}  * on (namespace, pod, cluster)group_left() max by (namespace, pod, cluster) (  (kube_pod_status_phase{phase=~\"Pending|Running\"} == 1))\n"
+                    },
+                    "record": {
+                      "constant_value": "cluster:namespace:pod_memory:active:kube_pod_container_resource_requests"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum by (namespace, cluster) (    sum by (namespace, pod, cluster) (        max by (namespace, pod, container, cluster) (          kube_pod_container_resource_requests{resource=\"memory\",job=\"kube-state-metrics\"}        ) * on(namespace, pod, cluster) group_left() max by (namespace, pod, cluster) (          kube_pod_status_phase{phase=~\"Pending|Running\"} == 1        )    ))\n"
+                    },
+                    "record": {
+                      "constant_value": "namespace_memory:kube_pod_container_resource_requests:sum"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "kube_pod_container_resource_requests{resource=\"cpu\",job=\"kube-state-metrics\"}  * on (namespace, pod, cluster)group_left() max by (namespace, pod, cluster) (  (kube_pod_status_phase{phase=~\"Pending|Running\"} == 1))\n"
+                    },
+                    "record": {
+                      "constant_value": "cluster:namespace:pod_cpu:active:kube_pod_container_resource_requests"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum by (namespace, cluster) (    sum by (namespace, pod, cluster) (        max by (namespace, pod, container, cluster) (          kube_pod_container_resource_requests{resource=\"cpu\",job=\"kube-state-metrics\"}        ) * on(namespace, pod, cluster) group_left() max by (namespace, pod, cluster) (          kube_pod_status_phase{phase=~\"Pending|Running\"} == 1        )    ))\n"
+                    },
+                    "record": {
+                      "constant_value": "namespace_cpu:kube_pod_container_resource_requests:sum"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "kube_pod_container_resource_limits{resource=\"memory\",job=\"kube-state-metrics\"}  * on (namespace, pod, cluster)group_left() max by (namespace, pod, cluster) (  (kube_pod_status_phase{phase=~\"Pending|Running\"} == 1))\n"
+                    },
+                    "record": {
+                      "constant_value": "cluster:namespace:pod_memory:active:kube_pod_container_resource_limits"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum by (namespace, cluster) (    sum by (namespace, pod, cluster) (        max by (namespace, pod, container, cluster) (          kube_pod_container_resource_limits{resource=\"memory\",job=\"kube-state-metrics\"}        ) * on(namespace, pod, cluster) group_left() max by (namespace, pod, cluster) (          kube_pod_status_phase{phase=~\"Pending|Running\"} == 1        )    ))\n"
+                    },
+                    "record": {
+                      "constant_value": "namespace_memory:kube_pod_container_resource_limits:sum"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "kube_pod_container_resource_limits{resource=\"cpu\",job=\"kube-state-metrics\"}  * on (namespace, pod, cluster)group_left() max by (namespace, pod, cluster) ( (kube_pod_status_phase{phase=~\"Pending|Running\"} == 1) )\n"
+                    },
+                    "record": {
+                      "constant_value": "cluster:namespace:pod_cpu:active:kube_pod_container_resource_limits"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum by (namespace, cluster) (    sum by (namespace, pod, cluster) (        max by (namespace, pod, container, cluster) (          kube_pod_container_resource_limits{resource=\"cpu\",job=\"kube-state-metrics\"}        ) * on(namespace, pod, cluster) group_left() max by (namespace, pod, cluster) (          kube_pod_status_phase{phase=~\"Pending|Running\"} == 1        )    ))\n"
+                    },
+                    "record": {
+                      "constant_value": "namespace_cpu:kube_pod_container_resource_limits:sum"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "max by (cluster, namespace, workload, pod) (  label_replace(    label_replace(      kube_pod_owner{job=\"kube-state-metrics\", owner_kind=\"ReplicaSet\"},      \"replicaset\", \"$1\", \"owner_name\", \"(.*)\"    ) * on(replicaset, namespace) group_left(owner_name) topk by(replicaset, namespace) (      1, max by (replicaset, namespace, owner_name) (        kube_replicaset_owner{job=\"kube-state-metrics\"}      )    ),    \"workload\", \"$1\", \"owner_name\", \"(.*)\"  ))\n"
+                    },
+                    "labels": {
+                      "constant_value": {
+                        "workload_type": "deployment"
+                      }
+                    },
+                    "record": {
+                      "constant_value": "namespace_workload_pod:kube_pod_owner:relabel"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "max by (cluster, namespace, workload, pod) (  label_replace(    kube_pod_owner{job=\"kube-state-metrics\", owner_kind=\"DaemonSet\"},    \"workload\", \"$1\", \"owner_name\", \"(.*)\"  ))\n"
+                    },
+                    "labels": {
+                      "constant_value": {
+                        "workload_type": "daemonset"
+                      }
+                    },
+                    "record": {
+                      "constant_value": "namespace_workload_pod:kube_pod_owner:relabel"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "max by (cluster, namespace, workload, pod) (  label_replace(    kube_pod_owner{job=\"kube-state-metrics\", owner_kind=\"StatefulSet\"},    \"workload\", \"$1\", \"owner_name\", \"(.*)\"  ))\n"
+                    },
+                    "labels": {
+                      "constant_value": {
+                        "workload_type": "statefulset"
+                      }
+                    },
+                    "record": {
+                      "constant_value": "namespace_workload_pod:kube_pod_owner:relabel"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "max by (cluster, namespace, workload, pod) (  label_replace(    kube_pod_owner{job=\"kube-state-metrics\", owner_kind=\"Job\"},    \"workload\", \"$1\", \"owner_name\", \"(.*)\"  ))\n"
+                    },
+                    "labels": {
+                      "constant_value": {
+                        "workload_type": "job"
+                      }
+                    },
+                    "record": {
+                      "constant_value": "namespace_workload_pod:kube_pod_owner:relabel"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum(  node_memory_MemAvailable_bytes{job=\"node\"} or  (    node_memory_Buffers_bytes{job=\"node\"} +    node_memory_Cached_bytes{job=\"node\"} +    node_memory_MemFree_bytes{job=\"node\"} +    node_memory_Slab_bytes{job=\"node\"}  )) by (cluster)\n"
+                    },
+                    "record": {
+                      "constant_value": ":node_memory_MemAvailable_bytes:sum"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum(rate(node_cpu_seconds_total{job=\"node\",mode!=\"idle\",mode!=\"iowait\",mode!=\"steal\"}[5m])) by (cluster) /count(sum(node_cpu_seconds_total{job=\"node\"}) by (cluster, instance, cpu)) by (cluster)\n"
+                    },
+                    "record": {
+                      "constant_value": "cluster:node_cpu:ratio_rate5m"
+                    }
+                  }
+                ],
+                "rule_group_enabled": {
+                  "constant_value": true
+                },
+                "scopes": {
+                  "references": [
+                    "azurerm_monitor_workspace.workspace.id",
+                    "azurerm_monitor_workspace.workspace",
+                    "azurerm_kubernetes_cluster.cluster.id",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "kubernetes_recording_rules_rule_group",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_monitor_alert_prometheus_rule_group"
+            },
+            {
+              "address": "azurerm_monitor_alert_prometheus_rule_group.node_recording_rules_rule_group",
+              "expressions": {
+                "cluster_name": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.name",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                },
+                "description": {
+                  "constant_value": "Node Recording Rules Rule Group"
+                },
+                "interval": {
+                  "constant_value": "PT1M"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "rule": [
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "count without (cpu, mode) (  node_cpu_seconds_total{job=\"node\",mode=\"idle\"})\n"
+                    },
+                    "record": {
+                      "constant_value": "instance:node_num_cpu:sum"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "1 - avg without (cpu) (  sum without (mode) (rate(node_cpu_seconds_total{job=\"node\", mode=~\"idle|iowait|steal\"}[5m])))\n"
+                    },
+                    "record": {
+                      "constant_value": "instance:node_cpu_utilisation:rate5m"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "(  node_load1{job=\"node\"}/  instance:node_num_cpu:sum{job=\"node\"})\n"
+                    },
+                    "record": {
+                      "constant_value": "instance:node_load1_per_cpu:ratio"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "1 - (  (    node_memory_MemAvailable_bytes{job=\"node\"}    or    (      node_memory_Buffers_bytes{job=\"node\"}      +      node_memory_Cached_bytes{job=\"node\"}      +      node_memory_MemFree_bytes{job=\"node\"}      +      node_memory_Slab_bytes{job=\"node\"}    )  )/  node_memory_MemTotal_bytes{job=\"node\"})\n"
+                    },
+                    "record": {
+                      "constant_value": "instance:node_memory_utilisation:ratio"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "rate(node_vmstat_pgmajfault{job=\"node\"}[5m])\n"
+                    },
+                    "record": {
+                      "constant_value": "instance:node_vmstat_pgmajfault:rate5m"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "rate(node_disk_io_time_seconds_total{job=\"node\", device!=\"\"}[5m])\n"
+                    },
+                    "record": {
+                      "constant_value": "instance_device:node_disk_io_time_seconds:rate5m"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "rate(node_disk_io_time_weighted_seconds_total{job=\"node\", device!=\"\"}[5m])\n"
+                    },
+                    "record": {
+                      "constant_value": "instance_device:node_disk_io_time_weighted_seconds:rate5m"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum without (device) (  rate(node_network_receive_bytes_total{job=\"node\", device!=\"lo\"}[5m]))\n"
+                    },
+                    "record": {
+                      "constant_value": "instance:node_network_receive_bytes_excluding_lo:rate5m"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum without (device) (  rate(node_network_transmit_bytes_total{job=\"node\", device!=\"lo\"}[5m]))\n"
+                    },
+                    "record": {
+                      "constant_value": "instance:node_network_transmit_bytes_excluding_lo:rate5m"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum without (device) (  rate(node_network_receive_drop_total{job=\"node\", device!=\"lo\"}[5m]))\n"
+                    },
+                    "record": {
+                      "constant_value": "instance:node_network_receive_drop_excluding_lo:rate5m"
+                    }
+                  },
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "expression": {
+                      "constant_value": "sum without (device) (  rate(node_network_transmit_drop_total{job=\"node\", device!=\"lo\"}[5m]))\n"
+                    },
+                    "record": {
+                      "constant_value": "instance:node_network_transmit_drop_excluding_lo:rate5m"
+                    }
+                  }
+                ],
+                "rule_group_enabled": {
+                  "constant_value": true
+                },
+                "scopes": {
+                  "references": [
+                    "azurerm_monitor_workspace.workspace.id",
+                    "azurerm_monitor_workspace.workspace",
+                    "azurerm_kubernetes_cluster.cluster.id",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "node_recording_rules_rule_group",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_monitor_alert_prometheus_rule_group"
+            },
+            {
+              "address": "azurerm_monitor_data_collection_endpoint.collection_endpoint",
+              "expressions": {
+                "kind": {
+                  "constant_value": "Linux"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "collection_endpoint",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_monitor_data_collection_endpoint"
+            },
+            {
+              "address": "azurerm_monitor_data_collection_rule.ci_collection_rule",
+              "expressions": {
+                "data_flow": [
+                  {
+                    "destinations": {
+                      "references": [
+                        "local.destination_name"
+                      ]
+                    },
+                    "streams": {
+                      "references": [
+                        "local.streams"
+                      ]
+                    }
+                  },
+                  {
+                    "destinations": {
+                      "references": [
+                        "local.destination_name"
+                      ]
+                    },
+                    "streams": {
+                      "constant_value": [
+                        "Microsoft-Syslog"
+                      ]
+                    }
+                  }
+                ],
+                "data_sources": [
+                  {
+                    "extension": [
+                      {
+                        "extension_json": {},
+                        "extension_name": {
+                          "constant_value": "ContainerInsights"
+                        },
+                        "name": {
+                          "constant_value": "ContainerInsightsExtension"
+                        },
+                        "streams": {
+                          "references": [
+                            "local.streams"
+                          ]
+                        }
+                      }
+                    ],
+                    "syslog": [
+                      {
+                        "facility_names": {
+                          "references": [
+                            "local.syslog_facilities"
+                          ]
+                        },
+                        "log_levels": {
+                          "references": [
+                            "local.syslog_levels"
+                          ]
+                        },
+                        "name": {
+                          "constant_value": "sysLogsDataSource"
+                        },
+                        "streams": {
+                          "constant_value": [
+                            "Microsoft-Syslog"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "description": {
+                  "constant_value": "Data Collection Rule for Azure Monitor Container Insights"
+                },
+                "destinations": [
+                  {
+                    "log_analytics": [
+                      {
+                        "name": {
+                          "references": [
+                            "local.destination_name"
+                          ]
+                        },
+                        "workspace_resource_id": {
+                          "references": [
+                            "azurerm_log_analytics_workspace.workspace.id",
+                            "azurerm_log_analytics_workspace.workspace"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "ci_collection_rule",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_monitor_data_collection_rule"
+            },
+            {
+              "address": "azurerm_monitor_data_collection_rule.collection_rule",
+              "expressions": {
+                "data_collection_endpoint_id": {
+                  "references": [
+                    "azurerm_monitor_data_collection_endpoint.collection_endpoint.id",
+                    "azurerm_monitor_data_collection_endpoint.collection_endpoint"
+                  ]
+                },
+                "data_flow": [
+                  {
+                    "destinations": {
+                      "constant_value": [
+                        "MonitoringAccount"
+                      ]
+                    },
+                    "streams": {
+                      "constant_value": [
+                        "Microsoft-PrometheusMetrics"
+                      ]
+                    }
+                  }
+                ],
+                "data_sources": [
+                  {
+                    "prometheus_forwarder": [
+                      {
+                        "name": {
+                          "constant_value": "PrometheusDataSource"
+                        },
+                        "streams": {
+                          "constant_value": [
+                            "Microsoft-PrometheusMetrics"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "description": {
+                  "constant_value": "Data Collection Rule for Azure Monitor Metrics Profile (Managed Prometheus)"
+                },
+                "destinations": [
+                  {
+                    "monitor_account": [
+                      {
+                        "monitor_account_id": {
+                          "references": [
+                            "azurerm_monitor_workspace.workspace.id",
+                            "azurerm_monitor_workspace.workspace"
+                          ]
+                        },
+                        "name": {
+                          "constant_value": "MonitoringAccount"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "kind": {
+                  "constant_value": "Linux"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "collection_rule",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_monitor_data_collection_rule"
+            },
+            {
+              "address": "azurerm_monitor_data_collection_rule_association.ci_collection_rule_association",
+              "expressions": {
+                "data_collection_rule_id": {
+                  "references": [
+                    "azurerm_monitor_data_collection_rule.ci_collection_rule.id",
+                    "azurerm_monitor_data_collection_rule.ci_collection_rule"
+                  ]
+                },
+                "description": {
+                  "constant_value": "Association of container insights data collection rule. Deleting this association will break the data collection for this AKS Cluster."
+                },
+                "name": {
+                  "constant_value": "ContainerInsightsExtension"
+                },
+                "target_resource_id": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.id",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "ci_collection_rule_association",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_monitor_data_collection_rule_association"
+            },
+            {
+              "address": "azurerm_monitor_data_collection_rule_association.collection_rule_association",
+              "expressions": {
+                "data_collection_rule_id": {
+                  "references": [
+                    "azurerm_monitor_data_collection_rule.collection_rule.id",
+                    "azurerm_monitor_data_collection_rule.collection_rule"
+                  ]
+                },
+                "description": {
+                  "constant_value": "Association of data collection rule. Deleting this association will break the data collection for this AKS Cluster."
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "target_resource_id": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.id",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "collection_rule_association",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_monitor_data_collection_rule_association"
+            },
+            {
+              "address": "azurerm_monitor_workspace.workspace",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "workspace",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_monitor_workspace"
+            },
+            {
+              "address": "azurerm_public_ip.app_gateway",
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                }
+              },
+              "mode": "managed",
+              "name": "app_gateway",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_resource_group.group",
+              "expressions": {
+                "location": {
+                  "constant_value": "West Europe"
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "group",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_role_assignment.datareaderrole",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "azurerm_dashboard_grafana.grafana.identity[0].principal_id",
+                    "azurerm_dashboard_grafana.grafana.identity[0]",
+                    "azurerm_dashboard_grafana.grafana.identity",
+                    "azurerm_dashboard_grafana.grafana"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Monitoring Reader"
+                },
+                "scope": {
+                  "references": [
+                    "azurerm_monitor_workspace.workspace.id",
+                    "azurerm_monitor_workspace.workspace"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "datareaderrole",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "azurerm_role_assignment.grafana_owner",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "data.azurerm_client_config.current.object_id",
+                    "data.azurerm_client_config.current"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Grafana Admin"
+                },
+                "scope": {
+                  "references": [
+                    "azurerm_dashboard_grafana.grafana.id",
+                    "azurerm_dashboard_grafana.grafana"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "grafana_owner",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "azurerm_role_assignment.gv_vnet",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity[0].object_id",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity[0]",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0]",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Network Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "azurerm_virtual_network.network.id",
+                    "azurerm_virtual_network.network"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "gv_vnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "azurerm_role_assignment.gw_contributor",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity[0].object_id",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity[0]",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0]",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "azurerm_application_gateway.app_gateway.id",
+                    "azurerm_application_gateway.app_gateway"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "gw_contributor",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "azurerm_role_assignment.gw_reader",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity[0].object_id",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity[0]",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0]",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Reader"
+                },
+                "scope": {
+                  "references": [
+                    "azurerm_application_gateway.app_gateway.id",
+                    "azurerm_application_gateway.app_gateway"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "gw_reader",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "azurerm_role_assignment.gw_subnet",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity[0].object_id",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity[0]",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0].ingress_application_gateway_identity",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway[0]",
+                    "azurerm_kubernetes_cluster.cluster.ingress_application_gateway",
+                    "azurerm_kubernetes_cluster.cluster"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Network Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "azurerm_subnet.app_gateway.id",
+                    "azurerm_subnet.app_gateway"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "gw_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "azurerm_subnet.aks_subnet",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.1.1.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "aks-subnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "service_endpoints": {
+                  "constant_value": [
+                    "Microsoft.Sql"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.network.name",
+                    "azurerm_virtual_network.network"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.app_gateway",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.1.4.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "app-gateway-subnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.network.name",
+                    "azurerm_virtual_network.network"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "app_gateway",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_virtual_network.network",
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.1.0.0/16"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "network",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            },
+            {
+              "address": "helm_release.aks_secret_provider",
+              "expressions": {
+                "chart": {
+                  "references": [
+                    "path.module"
+                  ]
+                },
+                "force_update": {
+                  "constant_value": true
+                },
+                "name": {
+                  "constant_value": "aks-secret-provider"
+                },
+                "values": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider[0].secret_identity[0].client_id",
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider[0].secret_identity[0]",
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider[0].secret_identity",
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider[0]",
+                    "azurerm_kubernetes_cluster.cluster.key_vault_secrets_provider",
+                    "azurerm_kubernetes_cluster.cluster",
+                    "data.azurerm_client_config.current.tenant_id",
+                    "data.azurerm_client_config.current",
+                    "azurerm_key_vault.vault.name",
+                    "azurerm_key_vault.vault",
+                    "azurerm_key_vault_secret.userservicedb_connectionstring.name",
+                    "azurerm_key_vault_secret.userservicedb_connectionstring",
+                    "azurerm_key_vault_secret.bugservicedb_connectionstring.name",
+                    "azurerm_key_vault_secret.bugservicedb_connectionstring"
+                  ]
+                },
+                "version": {
+                  "constant_value": "1.0.0"
+                }
+              },
+              "mode": "managed",
+              "name": "aks_secret_provider",
+              "provider_config_key": "helm",
+              "schema_version": 1,
+              "type": "helm_release"
+            },
+            {
+              "address": "data.azurerm_client_config.current",
+              "mode": "data",
+              "name": "current",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_client_config"
+            },
+            {
+              "address": "module.bugservicedb.azurerm_postgresql_flexible_server.server",
+              "depends_on": [
+                "module.bugservicedb.azurerm_private_dns_zone_virtual_network_link.network_link"
+              ],
+              "expressions": {
+                "administrator_login": {
+                  "constant_value": "psqladmin"
+                },
+                "administrator_password": {
+                  "references": [
+                    "module.bugservicedb.random_password.password.result",
+                    "module.bugservicedb.random_password.password"
+                  ]
+                },
+                "delegated_subnet_id": {
+                  "references": [
+                    "module.bugservicedb.azurerm_subnet.subnet.id",
+                    "module.bugservicedb.azurerm_subnet.subnet"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "root.bugservicedb.resource_group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "private_dns_zone_id": {
+                  "references": [
+                    "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone.id",
+                    "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "root.bugservicedb.resource_group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "sku_name": {
+                  "constant_value": "GP_Standard_D2s_v3"
+                },
+                "storage_mb": {
+                  "constant_value": 32768
+                },
+                "version": {
+                  "constant_value": "12"
+                },
+                "zone": {
+                  "constant_value": "3"
+                }
+              },
+              "mode": "managed",
+              "name": "server",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_postgresql_flexible_server"
+            },
+            {
+              "address": "module.bugservicedb.azurerm_postgresql_flexible_server_database.database",
+              "expressions": {
+                "name": {
+                  "references": [
+                    "root.bugservicedb.database_name"
+                  ]
+                },
+                "server_id": {
+                  "references": [
+                    "module.bugservicedb.azurerm_postgresql_flexible_server.server.id",
+                    "module.bugservicedb.azurerm_postgresql_flexible_server.server"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "database",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_postgresql_flexible_server_database"
+            },
+            {
+              "address": "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone",
+              "expressions": {
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "root.bugservicedb.resource_group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "private_dns_zone",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_private_dns_zone"
+            },
+            {
+              "address": "module.bugservicedb.azurerm_private_dns_zone_virtual_network_link.network_link",
+              "depends_on": [
+                "module.bugservicedb.azurerm_subnet.subnet"
+              ],
+              "expressions": {
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "private_dns_zone_name": {
+                  "references": [
+                    "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone.name",
+                    "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "root.bugservicedb.resource_group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "virtual_network_id": {
+                  "references": [
+                    "root.bugservicedb.virtual_network.id",
+                    "azurerm_virtual_network.network"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "network_link",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_private_dns_zone_virtual_network_link"
+            },
+            {
+              "address": "module.bugservicedb.azurerm_subnet.subnet",
+              "expressions": {
+                "address_prefixes": {
+                  "references": [
+                    "root.bugservicedb.subnet_prefix"
+                  ]
+                },
+                "delegation": [
+                  {
+                    "name": {
+                      "constant_value": "fs"
+                    },
+                    "service_delegation": [
+                      {
+                        "actions": {
+                          "constant_value": [
+                            "Microsoft.Network/virtualNetworks/subnets/join/action"
+                          ]
+                        },
+                        "name": {
+                          "constant_value": "Microsoft.DBforPostgreSQL/flexibleServers"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "root.bugservicedb.resource_group.name",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "service_endpoints": {
+                  "constant_value": [
+                    "Microsoft.Storage"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "root.bugservicedb.virtual_network.name",
+                    "azurerm_virtual_network.network"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "module.bugservicedb.random_password.password",
+              "expressions": {
+                "length": {
+                  "constant_value": 16
+                },
+                "min_lower": {
+                  "constant_value": 1
+                },
+                "min_numeric": {
+                  "constant_value": 1
+                },
+                "min_special": {
+                  "constant_value": 1
+                },
+                "min_upper": {
+                  "constant_value": 1
+                },
+                "override_special": {
+                  "constant_value": "!_%@"
+                },
+                "special": {
+                  "constant_value": true
+                }
+              },
+              "mode": "managed",
+              "name": "password",
+              "provider_config_key": "module.bugservicedb:random",
+              "schema_version": 3,
+              "type": "random_password"
+            },
+            {
+              "address": "module.userservicedb.azurerm_postgresql_flexible_server.server",
+              "depends_on": [
+                "module.userservicedb.azurerm_private_dns_zone_virtual_network_link.network_link"
+              ],
+              "expressions": {
+                "administrator_login": {
+                  "constant_value": "psqladmin"
+                },
+                "administrator_password": {
+                  "references": [
+                    "module.userservicedb.random_password.password.result",
+                    "module.userservicedb.random_password.password"
+                  ]
+                },
+                "delegated_subnet_id": {
+                  "references": [
+                    "module.userservicedb.azurerm_subnet.subnet.id",
+                    "module.userservicedb.azurerm_subnet.subnet"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "root.userservicedb.resource_group.location",
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group",
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "private_dns_zone_id": {
+                  "references": [
+                    "module.userservicedb.azurerm_private_dns_zone.private_dns_zone.id",
+                    "module.userservicedb.azurerm_private_dns_zone.private_dns_zone"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "root.userservicedb.resource_group.name",
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group",
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "sku_name": {
+                  "constant_value": "GP_Standard_D2s_v3"
+                },
+                "storage_mb": {
+                  "constant_value": 32768
+                },
+                "version": {
+                  "constant_value": "12"
+                },
+                "zone": {
+                  "constant_value": "3"
+                }
+              },
+              "mode": "managed",
+              "name": "server",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_postgresql_flexible_server"
+            },
+            {
+              "address": "module.userservicedb.azurerm_postgresql_flexible_server_database.database",
+              "expressions": {
+                "name": {
+                  "references": [
+                    "root.userservicedb.database_name"
+                  ]
+                },
+                "server_id": {
+                  "references": [
+                    "module.userservicedb.azurerm_postgresql_flexible_server.server.id",
+                    "module.userservicedb.azurerm_postgresql_flexible_server.server"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "database",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_postgresql_flexible_server_database"
+            },
+            {
+              "address": "module.userservicedb.azurerm_private_dns_zone.private_dns_zone",
+              "expressions": {
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "root.userservicedb.resource_group.name",
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group",
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "private_dns_zone",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_private_dns_zone"
+            },
+            {
+              "address": "module.userservicedb.azurerm_private_dns_zone_virtual_network_link.network_link",
+              "depends_on": [
+                "module.userservicedb.azurerm_subnet.subnet"
+              ],
+              "expressions": {
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "private_dns_zone_name": {
+                  "references": [
+                    "module.userservicedb.azurerm_private_dns_zone.private_dns_zone.name",
+                    "module.userservicedb.azurerm_private_dns_zone.private_dns_zone"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "root.userservicedb.resource_group.name",
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group",
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "virtual_network_id": {
+                  "references": [
+                    "root.userservicedb.virtual_network.id",
+                    "azurerm_virtual_network.network.name",
+                    "azurerm_virtual_network.network",
+                    "azurerm_virtual_network.network.id",
+                    "azurerm_virtual_network.network"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "network_link",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_private_dns_zone_virtual_network_link"
+            },
+            {
+              "address": "module.userservicedb.azurerm_subnet.subnet",
+              "expressions": {
+                "address_prefixes": {
+                  "references": [
+                    "root.userservicedb.subnet_prefix"
+                  ]
+                },
+                "delegation": [
+                  {
+                    "name": {
+                      "constant_value": "fs"
+                    },
+                    "service_delegation": [
+                      {
+                        "actions": {
+                          "constant_value": [
+                            "Microsoft.Network/virtualNetworks/subnets/join/action"
+                          ]
+                        },
+                        "name": {
+                          "constant_value": "Microsoft.DBforPostgreSQL/flexibleServers"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": {
+                  "references": [
+                    "var.suffix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "root.userservicedb.resource_group.name",
+                    "azurerm_resource_group.group.name",
+                    "azurerm_resource_group.group",
+                    "azurerm_resource_group.group.location",
+                    "azurerm_resource_group.group"
+                  ]
+                },
+                "service_endpoints": {
+                  "constant_value": [
+                    "Microsoft.Storage"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "root.userservicedb.virtual_network.name",
+                    "azurerm_virtual_network.network.name",
+                    "azurerm_virtual_network.network",
+                    "azurerm_virtual_network.network.id",
+                    "azurerm_virtual_network.network"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "module.userservicedb.random_password.password",
+              "expressions": {
+                "length": {
+                  "constant_value": 16
+                },
+                "min_lower": {
+                  "constant_value": 1
+                },
+                "min_numeric": {
+                  "constant_value": 1
+                },
+                "min_special": {
+                  "constant_value": 1
+                },
+                "min_upper": {
+                  "constant_value": 1
+                },
+                "override_special": {
+                  "constant_value": "!_%@"
+                },
+                "special": {
+                  "constant_value": true
+                }
+              },
+              "mode": "managed",
+              "name": "password",
+              "provider_config_key": "module.userservicedb:random",
+              "schema_version": 3,
+              "type": "random_password"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

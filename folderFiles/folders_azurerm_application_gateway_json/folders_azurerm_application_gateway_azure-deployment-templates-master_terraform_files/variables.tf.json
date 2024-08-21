@@ -1,0 +1,46 @@
+{
+    "variable": [
+        {
+            "resource_group_name": {
+                "description": "The name of the resource group."
+            }
+        },
+        {
+            "aks_cluster_name": {
+                "description": "The name of the AKS cluster."
+            }
+        },
+        {
+            "location": {
+                "description": "The Azure region for the resources."
+            }
+        },
+        {
+            "kubernetes_version": {
+                "description": "The version of Kubernetes."
+            }
+        },
+        {
+            "node_vm_size": {
+                "description": "The size of the VMs in the node pool."
+            }
+        },
+        {
+            "enable_auto_scaling": {
+                "default": true,
+                "description": "Enable auto scaling for the node pool."
+            }
+        },
+        {
+            "min_node_count": {
+                "default": 1,
+                "description": "The minimum number of nodes in the node pool."
+            }
+        },
+        {
+            "max_node_count": {
+                "description": "The maximum number of nodes in the node pool."
+            }
+        }
+    ]
+}

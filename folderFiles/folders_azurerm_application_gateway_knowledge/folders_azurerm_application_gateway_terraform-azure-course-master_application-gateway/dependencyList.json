@@ -1,0 +1,105 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_application_gateway.app-gateway",
+              "azurerm_public_ip.demo",
+              "frontend_ip_configuration.0.public_ip_address_id",
+              "id",
+              "frontend_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_application_gateway.app-gateway",
+              "azurerm_subnet.demo-subnet-1",
+              "gateway_ip_configuration.0.subnet_id",
+              "id",
+              "gateway_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_application_gateway.app-gateway",
+              "azurerm_resource_group.demo",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_network_security_group.demo-instance",
+              "azurerm_resource_group.demo",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_public_ip.demo",
+              "azurerm_resource_group.demo",
+              "domain_name_label",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_public_ip.demo",
+              "azurerm_resource_group.demo",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.demo-subnet-1",
+              "azurerm_resource_group.demo",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.demo-subnet-1",
+              "azurerm_virtual_network.demo",
+              "virtual_network_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.demo-subnet-2",
+              "azurerm_resource_group.demo",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.demo-subnet-2",
+              "azurerm_virtual_network.demo",
+              "virtual_network_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_virtual_network.demo",
+              "azurerm_resource_group.demo",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ]
+          ],
+          "text": "data.assemble.dependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

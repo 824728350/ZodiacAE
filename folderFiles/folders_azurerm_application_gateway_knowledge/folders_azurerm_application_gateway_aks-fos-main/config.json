@@ -1,0 +1,2055 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.appgw",
+              "count_expression": {
+                "references": [
+                  "var.use_brown_field_application_gateway",
+                  "var.bring_your_own_vnet"
+                ]
+              },
+              "expressions": {
+                "backend_address_pool": [
+                  {
+                    "name": {
+                      "references": [
+                        "local.backend_address_pool_name"
+                      ]
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "name": {
+                      "references": [
+                        "local.http_setting_name"
+                      ]
+                    },
+                    "port": {
+                      "constant_value": 80
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "request_timeout": {
+                      "constant_value": 1
+                    }
+                  }
+                ],
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "references": [
+                        "local.frontend_ip_configuration_name"
+                      ]
+                    },
+                    "public_ip_address_id": {
+                      "references": [
+                        "azurerm_public_ip.pip[0].id",
+                        "azurerm_public_ip.pip[0]",
+                        "azurerm_public_ip.pip"
+                      ]
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "references": [
+                        "local.frontend_port_name"
+                      ]
+                    },
+                    "port": {
+                      "constant_value": 80
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "appGatewayIpConfig"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "azurerm_subnet.appgw[0].id",
+                        "azurerm_subnet.appgw[0]",
+                        "azurerm_subnet.appgw"
+                      ]
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "references": [
+                        "local.frontend_ip_configuration_name"
+                      ]
+                    },
+                    "frontend_port_name": {
+                      "references": [
+                        "local.frontend_port_name"
+                      ]
+                    },
+                    "name": {
+                      "references": [
+                        "local.listener_name"
+                      ]
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "local.resource_group.location",
+                    "local.resource_group"
+                  ]
+                },
+                "name": {
+                  "constant_value": "ingress"
+                },
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "references": [
+                        "local.backend_address_pool_name"
+                      ]
+                    },
+                    "backend_http_settings_name": {
+                      "references": [
+                        "local.http_setting_name"
+                      ]
+                    },
+                    "http_listener_name": {
+                      "references": [
+                        "local.listener_name"
+                      ]
+                    },
+                    "name": {
+                      "references": [
+                        "local.request_routing_rule_name"
+                      ]
+                    },
+                    "priority": {
+                      "constant_value": 1
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "local.resource_group.name",
+                    "local.resource_group"
+                  ]
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "constant_value": 1
+                    },
+                    "name": {
+                      "constant_value": "Standard_v2"
+                    },
+                    "tier": {
+                      "constant_value": "Standard_v2"
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "appgw",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "azurerm_public_ip.pip",
+              "count_expression": {
+                "references": [
+                  "var.use_brown_field_application_gateway",
+                  "var.bring_your_own_vnet"
+                ]
+              },
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "references": [
+                    "local.resource_group.location",
+                    "local.resource_group"
+                  ]
+                },
+                "name": {
+                  "constant_value": "appgw-pip"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "local.resource_group.name",
+                    "local.resource_group"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                }
+              },
+              "mode": "managed",
+              "name": "pip",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_resource_group.main",
+              "count_expression": {
+                "references": [
+                  "var.create_resource_group"
+                ]
+              },
+              "expressions": {
+                "location": {
+                  "references": [
+                    "var.location"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.resource_group_name",
+                    "random_id.prefix.hex",
+                    "random_id.prefix"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "main",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_subnet.appgw",
+              "count_expression": {
+                "references": [
+                  "var.use_brown_field_application_gateway",
+                  "var.bring_your_own_vnet"
+                ]
+              },
+              "expressions": {
+                "address_prefixes": {
+                  "references": [
+                    "local.appgw_cidr"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "random_id.prefix.hex",
+                    "random_id.prefix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "local.resource_group.name",
+                    "local.resource_group"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.test[0].name",
+                    "azurerm_virtual_network.test[0]",
+                    "azurerm_virtual_network.test"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "appgw",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.test",
+              "count_expression": {
+                "references": [
+                  "var.bring_your_own_vnet"
+                ]
+              },
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.52.0.0/24"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "random_id.prefix.hex",
+                    "random_id.prefix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "local.resource_group.name",
+                    "local.resource_group"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.test[0].name",
+                    "azurerm_virtual_network.test[0]",
+                    "azurerm_virtual_network.test"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "test",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_virtual_network.test",
+              "count_expression": {
+                "references": [
+                  "var.bring_your_own_vnet"
+                ]
+              },
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.52.0.0/16"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "local.resource_group.location",
+                    "local.resource_group"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "random_id.prefix.hex",
+                    "random_id.prefix"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "local.resource_group.name",
+                    "local.resource_group"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "test",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            },
+            {
+              "address": "kubernetes_ingress_v1.ing",
+              "depends_on": [
+                "module.aks"
+              ],
+              "expressions": {
+                "metadata": [
+                  {
+                    "annotations": {
+                      "constant_value": {
+                        "kubernetes.io/ingress.class": "azure/application-gateway"
+                      }
+                    },
+                    "name": {
+                      "constant_value": "aspnetapp"
+                    },
+                    "namespace": {
+                      "references": [
+                        "kubernetes_namespace_v1.example.metadata[0].name",
+                        "kubernetes_namespace_v1.example.metadata[0]",
+                        "kubernetes_namespace_v1.example.metadata",
+                        "kubernetes_namespace_v1.example"
+                      ]
+                    }
+                  }
+                ],
+                "spec": [
+                  {
+                    "rule": [
+                      {
+                        "http": [
+                          {
+                            "path": [
+                              {
+                                "backend": [
+                                  {
+                                    "service": [
+                                      {
+                                        "name": {
+                                          "constant_value": "aspnetapp"
+                                        },
+                                        "port": [
+                                          {
+                                            "number": {
+                                              "constant_value": 80
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "path": {
+                                  "constant_value": "/"
+                                },
+                                "path_type": {
+                                  "constant_value": "Exact"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "ing",
+              "provider_config_key": "kubernetes",
+              "schema_version": 0,
+              "type": "kubernetes_ingress_v1"
+            },
+            {
+              "address": "kubernetes_namespace_v1.example",
+              "depends_on": [
+                "module.aks"
+              ],
+              "expressions": {
+                "metadata": [
+                  {
+                    "name": {
+                      "constant_value": "example"
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "kubernetes",
+              "schema_version": 0,
+              "type": "kubernetes_namespace_v1"
+            },
+            {
+              "address": "kubernetes_pod.aspnet_app",
+              "expressions": {
+                "metadata": [
+                  {
+                    "labels": {
+                      "constant_value": {
+                        "app": "aspnetapp"
+                      }
+                    },
+                    "name": {
+                      "constant_value": "aspnetapp"
+                    },
+                    "namespace": {
+                      "references": [
+                        "kubernetes_namespace_v1.example.metadata[0].name",
+                        "kubernetes_namespace_v1.example.metadata[0]",
+                        "kubernetes_namespace_v1.example.metadata",
+                        "kubernetes_namespace_v1.example"
+                      ]
+                    }
+                  }
+                ],
+                "spec": [
+                  {
+                    "container": [
+                      {
+                        "image": {
+                          "constant_value": "mcr.microsoft.com/dotnet/samples@sha256:7070894cc10d2b1e68e72057cca22040c5984cfae2ec3e079e34cf0a4da7fcea"
+                        },
+                        "image_pull_policy": {
+                          "constant_value": "Always"
+                        },
+                        "name": {
+                          "constant_value": "aspnetapp-image"
+                        },
+                        "port": [
+                          {
+                            "container_port": {
+                              "constant_value": 80
+                            },
+                            "protocol": {
+                              "constant_value": "TCP"
+                            }
+                          }
+                        ],
+                        "resources": [
+                          {
+                            "limits": {
+                              "constant_value": {
+                                "cpu": "250m",
+                                "memory": "256Mi"
+                              }
+                            },
+                            "requests": {
+                              "constant_value": {
+                                "cpu": "250m",
+                                "memory": "256Mi"
+                              }
+                            }
+                          }
+                        ],
+                        "security_context": [
+                          {}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "aspnet_app",
+              "provider_config_key": "kubernetes",
+              "schema_version": 1,
+              "type": "kubernetes_pod"
+            },
+            {
+              "address": "kubernetes_service.svc",
+              "expressions": {
+                "metadata": [
+                  {
+                    "name": {
+                      "constant_value": "aspnetapp"
+                    },
+                    "namespace": {
+                      "references": [
+                        "kubernetes_namespace_v1.example.metadata[0].name",
+                        "kubernetes_namespace_v1.example.metadata[0]",
+                        "kubernetes_namespace_v1.example.metadata",
+                        "kubernetes_namespace_v1.example"
+                      ]
+                    }
+                  }
+                ],
+                "spec": [
+                  {
+                    "port": [
+                      {
+                        "port": {
+                          "constant_value": 80
+                        },
+                        "protocol": {
+                          "constant_value": "TCP"
+                        },
+                        "target_port": {
+                          "constant_value": 80
+                        }
+                      }
+                    ],
+                    "selector": {
+                      "constant_value": {
+                        "app": "aspnetapp"
+                      }
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "svc",
+              "provider_config_key": "kubernetes",
+              "schema_version": 1,
+              "type": "kubernetes_service"
+            },
+            {
+              "address": "random_id.name",
+              "expressions": {
+                "byte_length": {
+                  "constant_value": 8
+                }
+              },
+              "mode": "managed",
+              "name": "name",
+              "provider_config_key": "random",
+              "schema_version": 0,
+              "type": "random_id"
+            },
+            {
+              "address": "random_id.prefix",
+              "expressions": {
+                "byte_length": {
+                  "constant_value": 8
+                }
+              },
+              "mode": "managed",
+              "name": "prefix",
+              "provider_config_key": "random",
+              "schema_version": 0,
+              "type": "random_id"
+            },
+            {
+              "address": "time_sleep.wait_for_ingress",
+              "depends_on": [
+                "kubernetes_ingress_v1.ing"
+              ],
+              "expressions": {
+                "create_duration": {
+                  "constant_value": "15m"
+                }
+              },
+              "mode": "managed",
+              "name": "wait_for_ingress",
+              "provider_config_key": "time",
+              "schema_version": 0,
+              "type": "time_sleep"
+            },
+            {
+              "address": "data.kubernetes_ingress_v1.ing",
+              "depends_on": [
+                "time_sleep.wait_for_ingress"
+              ],
+              "expressions": {
+                "metadata": [
+                  {
+                    "name": {
+                      "constant_value": "aspnetapp"
+                    },
+                    "namespace": {
+                      "references": [
+                        "kubernetes_namespace_v1.example.metadata[0].name",
+                        "kubernetes_namespace_v1.example.metadata[0]",
+                        "kubernetes_namespace_v1.example.metadata",
+                        "kubernetes_namespace_v1.example"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "mode": "data",
+              "name": "ing",
+              "provider_config_key": "kubernetes",
+              "schema_version": 0,
+              "type": "kubernetes_ingress_v1"
+            },
+            {
+              "address": "module.aks.azapi_update_resource.aks_cluster_http_proxy_config_no_proxy",
+              "count_expression": {
+                "references": [
+                  "var.http_proxy_config.no_proxy[0]",
+                  "var.http_proxy_config.no_proxy",
+                  "var.http_proxy_config"
+                ]
+              },
+              "depends_on": [
+                "module.aks.azapi_update_resource.aks_cluster_post_create"
+              ],
+              "expressions": {
+                "body": {
+                  "references": [
+                    "var.http_proxy_config.no_proxy",
+                    "var.http_proxy_config"
+                  ]
+                },
+                "resource_id": {
+                  "references": [
+                    "module.aks.azurerm_kubernetes_cluster.main.id",
+                    "module.aks.azurerm_kubernetes_cluster.main"
+                  ]
+                },
+                "type": {
+                  "constant_value": "Microsoft.ContainerService/managedClusters@2024-02-01"
+                }
+              },
+              "mode": "managed",
+              "name": "aks_cluster_http_proxy_config_no_proxy",
+              "provider_config_key": "module.aks:azapi",
+              "schema_version": 1,
+              "type": "azapi_update_resource"
+            },
+            {
+              "address": "module.aks.azapi_update_resource.aks_cluster_post_create",
+              "expressions": {
+                "body": {
+                  "references": [
+                    "root.aks.kubernetes_version"
+                  ]
+                },
+                "resource_id": {
+                  "references": [
+                    "module.aks.azurerm_kubernetes_cluster.main.id",
+                    "module.aks.azurerm_kubernetes_cluster.main"
+                  ]
+                },
+                "type": {
+                  "constant_value": "Microsoft.ContainerService/managedClusters@2024-02-01"
+                }
+              },
+              "mode": "managed",
+              "name": "aks_cluster_post_create",
+              "provider_config_key": "module.aks:azapi",
+              "schema_version": 1,
+              "type": "azapi_update_resource"
+            },
+            {
+              "address": "module.aks.azurerm_kubernetes_cluster.main",
+              "expressions": {
+                "automatic_channel_upgrade": {
+                  "references": [
+                    "root.aks.automatic_channel_upgrade"
+                  ]
+                },
+                "azure_policy_enabled": {
+                  "references": [
+                    "root.aks.azure_policy_enabled"
+                  ]
+                },
+                "disk_encryption_set_id": {
+                  "references": [
+                    "var.disk_encryption_set_id"
+                  ]
+                },
+                "dns_prefix": {
+                  "references": [
+                    "random_id.name.hex",
+                    "random_id.name"
+                  ]
+                },
+                "image_cleaner_enabled": {
+                  "references": [
+                    "var.image_cleaner_enabled"
+                  ]
+                },
+                "image_cleaner_interval_hours": {
+                  "references": [
+                    "var.image_cleaner_interval_hours"
+                  ]
+                },
+                "kubernetes_version": {
+                  "references": [
+                    "root.aks.kubernetes_version"
+                  ]
+                },
+                "local_account_disabled": {
+                  "references": [
+                    "root.aks.local_account_disabled"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "var.location",
+                    "module.aks.data.azurerm_resource_group.main.location",
+                    "module.aks.data.azurerm_resource_group.main"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "local.cluster_name",
+                    "var.cluster_name_random_suffix"
+                  ]
+                },
+                "network_profile": [
+                  {
+                    "dns_service_ip": {
+                      "references": [
+                        "root.aks.net_profile_dns_service_ip"
+                      ]
+                    },
+                    "ebpf_data_plane": {
+                      "references": [
+                        "var.ebpf_data_plane"
+                      ]
+                    },
+                    "load_balancer_sku": {
+                      "references": [
+                        "var.load_balancer_sku"
+                      ]
+                    },
+                    "network_plugin": {
+                      "references": [
+                        "root.aks.network_plugin"
+                      ]
+                    },
+                    "network_plugin_mode": {
+                      "references": [
+                        "root.aks.network_plugin_mode"
+                      ]
+                    },
+                    "network_policy": {
+                      "references": [
+                        "root.aks.network_policy"
+                      ]
+                    },
+                    "outbound_type": {
+                      "references": [
+                        "var.net_profile_outbound_type"
+                      ]
+                    },
+                    "pod_cidr": {
+                      "references": [
+                        "var.net_profile_pod_cidr"
+                      ]
+                    },
+                    "service_cidr": {
+                      "references": [
+                        "root.aks.net_profile_service_cidr"
+                      ]
+                    }
+                  }
+                ],
+                "node_os_channel_upgrade": {
+                  "references": [
+                    "var.node_os_channel_upgrade"
+                  ]
+                },
+                "node_resource_group": {
+                  "references": [
+                    "var.node_resource_group"
+                  ]
+                },
+                "oidc_issuer_enabled": {
+                  "references": [
+                    "var.oidc_issuer_enabled"
+                  ]
+                },
+                "open_service_mesh_enabled": {
+                  "references": [
+                    "var.open_service_mesh_enabled"
+                  ]
+                },
+                "private_cluster_enabled": {
+                  "references": [
+                    "root.aks.private_cluster_enabled"
+                  ]
+                },
+                "private_cluster_public_fqdn_enabled": {
+                  "references": [
+                    "var.private_cluster_public_fqdn_enabled"
+                  ]
+                },
+                "private_dns_zone_id": {
+                  "references": [
+                    "var.private_dns_zone_id"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "module.aks.data.azurerm_resource_group.main.name",
+                    "module.aks.data.azurerm_resource_group.main"
+                  ]
+                },
+                "role_based_access_control_enabled": {
+                  "references": [
+                    "root.aks.role_based_access_control_enabled"
+                  ]
+                },
+                "run_command_enabled": {
+                  "references": [
+                    "var.run_command_enabled"
+                  ]
+                },
+                "sku_tier": {
+                  "references": [
+                    "root.aks.sku_tier"
+                  ]
+                },
+                "support_plan": {
+                  "references": [
+                    "var.support_plan"
+                  ]
+                },
+                "tags": {
+                  "references": [
+                    "var.tags",
+                    "var.tracing_tags_enabled",
+                    "var.tracing_tags_prefix",
+                    "var.tracing_tags_enabled",
+                    "var.tracing_tags_prefix"
+                  ]
+                },
+                "workload_identity_enabled": {
+                  "references": [
+                    "var.workload_identity_enabled"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "main",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_kubernetes_cluster"
+            },
+            {
+              "address": "module.aks.azurerm_kubernetes_cluster_node_pool.node_pool_create_after_destroy",
+              "depends_on": [
+                "module.aks.azapi_update_resource.aks_cluster_post_create"
+              ],
+              "expressions": {
+                "capacity_reservation_group_id": {
+                  "references": [
+                    "each.value.capacity_reservation_group_id",
+                    "each.value"
+                  ]
+                },
+                "custom_ca_trust_enabled": {
+                  "references": [
+                    "each.value.custom_ca_trust_enabled",
+                    "each.value"
+                  ]
+                },
+                "enable_auto_scaling": {
+                  "references": [
+                    "each.value.enable_auto_scaling",
+                    "each.value"
+                  ]
+                },
+                "enable_host_encryption": {
+                  "references": [
+                    "each.value.enable_host_encryption",
+                    "each.value"
+                  ]
+                },
+                "enable_node_public_ip": {
+                  "references": [
+                    "each.value.enable_node_public_ip",
+                    "each.value"
+                  ]
+                },
+                "eviction_policy": {
+                  "references": [
+                    "each.value.eviction_policy",
+                    "each.value"
+                  ]
+                },
+                "fips_enabled": {
+                  "references": [
+                    "each.value.fips_enabled",
+                    "each.value"
+                  ]
+                },
+                "host_group_id": {
+                  "references": [
+                    "each.value.host_group_id",
+                    "each.value"
+                  ]
+                },
+                "kubelet_disk_type": {
+                  "references": [
+                    "each.value.kubelet_disk_type",
+                    "each.value"
+                  ]
+                },
+                "kubernetes_cluster_id": {
+                  "references": [
+                    "module.aks.azurerm_kubernetes_cluster.main.id",
+                    "module.aks.azurerm_kubernetes_cluster.main"
+                  ]
+                },
+                "max_count": {
+                  "references": [
+                    "each.value.max_count",
+                    "each.value"
+                  ]
+                },
+                "max_pods": {
+                  "references": [
+                    "each.value.max_pods",
+                    "each.value"
+                  ]
+                },
+                "message_of_the_day": {
+                  "references": [
+                    "each.value.message_of_the_day",
+                    "each.value"
+                  ]
+                },
+                "min_count": {
+                  "references": [
+                    "each.value.min_count",
+                    "each.value"
+                  ]
+                },
+                "mode": {
+                  "references": [
+                    "each.value.mode",
+                    "each.value"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "each.value.name",
+                    "each.value"
+                  ]
+                },
+                "node_count": {
+                  "references": [
+                    "each.value.node_count",
+                    "each.value"
+                  ]
+                },
+                "node_labels": {
+                  "references": [
+                    "each.value.node_labels",
+                    "each.value"
+                  ]
+                },
+                "node_public_ip_prefix_id": {
+                  "references": [
+                    "each.value.node_public_ip_prefix_id",
+                    "each.value"
+                  ]
+                },
+                "node_taints": {
+                  "references": [
+                    "each.value.node_taints",
+                    "each.value"
+                  ]
+                },
+                "orchestrator_version": {
+                  "references": [
+                    "each.value.orchestrator_version",
+                    "each.value"
+                  ]
+                },
+                "os_disk_size_gb": {
+                  "references": [
+                    "each.value.os_disk_size_gb",
+                    "each.value"
+                  ]
+                },
+                "os_disk_type": {
+                  "references": [
+                    "each.value.os_disk_type",
+                    "each.value"
+                  ]
+                },
+                "os_sku": {
+                  "references": [
+                    "each.value.os_sku",
+                    "each.value"
+                  ]
+                },
+                "os_type": {
+                  "references": [
+                    "each.value.os_type",
+                    "each.value"
+                  ]
+                },
+                "pod_subnet_id": {
+                  "references": [
+                    "each.value.pod_subnet_id",
+                    "each.value"
+                  ]
+                },
+                "priority": {
+                  "references": [
+                    "each.value.priority",
+                    "each.value"
+                  ]
+                },
+                "proximity_placement_group_id": {
+                  "references": [
+                    "each.value.proximity_placement_group_id",
+                    "each.value"
+                  ]
+                },
+                "scale_down_mode": {
+                  "references": [
+                    "each.value.scale_down_mode",
+                    "each.value"
+                  ]
+                },
+                "snapshot_id": {
+                  "references": [
+                    "each.value.snapshot_id",
+                    "each.value"
+                  ]
+                },
+                "spot_max_price": {
+                  "references": [
+                    "each.value.spot_max_price",
+                    "each.value"
+                  ]
+                },
+                "tags": {
+                  "references": [
+                    "each.value.tags",
+                    "each.value",
+                    "var.tracing_tags_enabled",
+                    "var.tracing_tags_prefix"
+                  ]
+                },
+                "ultra_ssd_enabled": {
+                  "references": [
+                    "each.value.ultra_ssd_enabled",
+                    "each.value"
+                  ]
+                },
+                "vm_size": {
+                  "references": [
+                    "each.value.vm_size",
+                    "each.value"
+                  ]
+                },
+                "vnet_subnet_id": {
+                  "references": [
+                    "each.value.vnet_subnet_id",
+                    "each.value"
+                  ]
+                },
+                "workload_runtime": {
+                  "references": [
+                    "each.value.workload_runtime",
+                    "each.value"
+                  ]
+                },
+                "zones": {
+                  "references": [
+                    "each.value.zones",
+                    "each.value"
+                  ]
+                }
+              },
+              "for_each_expression": {
+                "references": [
+                  "local.node_pools_create_after_destroy"
+                ]
+              },
+              "mode": "managed",
+              "name": "node_pool_create_after_destroy",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_kubernetes_cluster_node_pool"
+            },
+            {
+              "address": "module.aks.azurerm_kubernetes_cluster_node_pool.node_pool_create_before_destroy",
+              "depends_on": [
+                "module.aks.azapi_update_resource.aks_cluster_post_create"
+              ],
+              "expressions": {
+                "capacity_reservation_group_id": {
+                  "references": [
+                    "each.value.capacity_reservation_group_id",
+                    "each.value"
+                  ]
+                },
+                "custom_ca_trust_enabled": {
+                  "references": [
+                    "each.value.custom_ca_trust_enabled",
+                    "each.value"
+                  ]
+                },
+                "enable_auto_scaling": {
+                  "references": [
+                    "each.value.enable_auto_scaling",
+                    "each.value"
+                  ]
+                },
+                "enable_host_encryption": {
+                  "references": [
+                    "each.value.enable_host_encryption",
+                    "each.value"
+                  ]
+                },
+                "enable_node_public_ip": {
+                  "references": [
+                    "each.value.enable_node_public_ip",
+                    "each.value"
+                  ]
+                },
+                "eviction_policy": {
+                  "references": [
+                    "each.value.eviction_policy",
+                    "each.value"
+                  ]
+                },
+                "fips_enabled": {
+                  "references": [
+                    "each.value.fips_enabled",
+                    "each.value"
+                  ]
+                },
+                "gpu_instance": {
+                  "references": [
+                    "each.value.gpu_instance",
+                    "each.value"
+                  ]
+                },
+                "host_group_id": {
+                  "references": [
+                    "each.value.host_group_id",
+                    "each.value"
+                  ]
+                },
+                "kubelet_disk_type": {
+                  "references": [
+                    "each.value.kubelet_disk_type",
+                    "each.value"
+                  ]
+                },
+                "kubernetes_cluster_id": {
+                  "references": [
+                    "module.aks.azurerm_kubernetes_cluster.main.id",
+                    "module.aks.azurerm_kubernetes_cluster.main"
+                  ]
+                },
+                "max_count": {
+                  "references": [
+                    "each.value.max_count",
+                    "each.value"
+                  ]
+                },
+                "max_pods": {
+                  "references": [
+                    "each.value.max_pods",
+                    "each.value"
+                  ]
+                },
+                "message_of_the_day": {
+                  "references": [
+                    "each.value.message_of_the_day",
+                    "each.value"
+                  ]
+                },
+                "min_count": {
+                  "references": [
+                    "each.value.min_count",
+                    "each.value"
+                  ]
+                },
+                "mode": {
+                  "references": [
+                    "each.value.mode",
+                    "each.value"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "each.value.name",
+                    "each.value"
+                  ]
+                },
+                "node_count": {
+                  "references": [
+                    "each.value.node_count",
+                    "each.value"
+                  ]
+                },
+                "node_labels": {
+                  "references": [
+                    "each.value.node_labels",
+                    "each.value"
+                  ]
+                },
+                "node_public_ip_prefix_id": {
+                  "references": [
+                    "each.value.node_public_ip_prefix_id",
+                    "each.value"
+                  ]
+                },
+                "node_taints": {
+                  "references": [
+                    "each.value.node_taints",
+                    "each.value"
+                  ]
+                },
+                "orchestrator_version": {
+                  "references": [
+                    "each.value.orchestrator_version",
+                    "each.value"
+                  ]
+                },
+                "os_disk_size_gb": {
+                  "references": [
+                    "each.value.os_disk_size_gb",
+                    "each.value"
+                  ]
+                },
+                "os_disk_type": {
+                  "references": [
+                    "each.value.os_disk_type",
+                    "each.value"
+                  ]
+                },
+                "os_sku": {
+                  "references": [
+                    "each.value.os_sku",
+                    "each.value"
+                  ]
+                },
+                "os_type": {
+                  "references": [
+                    "each.value.os_type",
+                    "each.value"
+                  ]
+                },
+                "pod_subnet_id": {
+                  "references": [
+                    "each.value.pod_subnet_id",
+                    "each.value"
+                  ]
+                },
+                "priority": {
+                  "references": [
+                    "each.value.priority",
+                    "each.value"
+                  ]
+                },
+                "proximity_placement_group_id": {
+                  "references": [
+                    "each.value.proximity_placement_group_id",
+                    "each.value"
+                  ]
+                },
+                "scale_down_mode": {
+                  "references": [
+                    "each.value.scale_down_mode",
+                    "each.value"
+                  ]
+                },
+                "snapshot_id": {
+                  "references": [
+                    "each.value.snapshot_id",
+                    "each.value"
+                  ]
+                },
+                "spot_max_price": {
+                  "references": [
+                    "each.value.spot_max_price",
+                    "each.value"
+                  ]
+                },
+                "tags": {
+                  "references": [
+                    "each.value.tags",
+                    "each.value",
+                    "var.tracing_tags_enabled",
+                    "var.tracing_tags_prefix"
+                  ]
+                },
+                "ultra_ssd_enabled": {
+                  "references": [
+                    "each.value.ultra_ssd_enabled",
+                    "each.value"
+                  ]
+                },
+                "vm_size": {
+                  "references": [
+                    "each.value.vm_size",
+                    "each.value"
+                  ]
+                },
+                "vnet_subnet_id": {
+                  "references": [
+                    "each.value.vnet_subnet_id",
+                    "each.value"
+                  ]
+                },
+                "workload_runtime": {
+                  "references": [
+                    "each.value.workload_runtime",
+                    "each.value"
+                  ]
+                },
+                "zones": {
+                  "references": [
+                    "each.value.zones",
+                    "each.value"
+                  ]
+                }
+              },
+              "for_each_expression": {
+                "references": [
+                  "local.node_pools_create_before_destroy"
+                ]
+              },
+              "mode": "managed",
+              "name": "node_pool_create_before_destroy",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_kubernetes_cluster_node_pool"
+            },
+            {
+              "address": "module.aks.azurerm_log_analytics_solution.main",
+              "count_expression": {
+                "references": [
+                  "local.create_analytics_solution"
+                ]
+              },
+              "expressions": {
+                "location": {
+                  "references": [
+                    "local.log_analytics_workspace.location",
+                    "local.log_analytics_workspace",
+                    "data.azurerm_log_analytics_workspace.main[0].location",
+                    "data.azurerm_log_analytics_workspace.main[0]",
+                    "module.aks.data.azurerm_log_analytics_workspace.main"
+                  ]
+                },
+                "plan": [
+                  {
+                    "product": {
+                      "constant_value": "OMSGallery/ContainerInsights"
+                    },
+                    "publisher": {
+                      "constant_value": "Microsoft"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "local.log_analytics_workspace.resource_group_name",
+                    "local.log_analytics_workspace"
+                  ]
+                },
+                "solution_name": {
+                  "constant_value": "ContainerInsights"
+                },
+                "tags": {
+                  "references": [
+                    "var.tags",
+                    "var.tracing_tags_enabled",
+                    "var.tracing_tags_prefix",
+                    "var.tracing_tags_enabled",
+                    "var.tracing_tags_prefix"
+                  ]
+                },
+                "workspace_name": {
+                  "references": [
+                    "local.log_analytics_workspace.name",
+                    "local.log_analytics_workspace"
+                  ]
+                },
+                "workspace_resource_id": {
+                  "references": [
+                    "local.log_analytics_workspace.id",
+                    "local.log_analytics_workspace"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "main",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_log_analytics_solution"
+            },
+            {
+              "address": "module.aks.azurerm_log_analytics_workspace.main",
+              "count_expression": {
+                "references": [
+                  "local.create_analytics_workspace"
+                ]
+              },
+              "expressions": {
+                "allow_resource_only_permissions": {
+                  "references": [
+                    "var.log_analytics_workspace_allow_resource_only_permissions"
+                  ]
+                },
+                "cmk_for_query_forced": {
+                  "references": [
+                    "var.log_analytics_workspace_cmk_for_query_forced"
+                  ]
+                },
+                "daily_quota_gb": {
+                  "references": [
+                    "var.log_analytics_workspace_daily_quota_gb"
+                  ]
+                },
+                "data_collection_rule_id": {
+                  "references": [
+                    "var.log_analytics_workspace_data_collection_rule_id"
+                  ]
+                },
+                "immediate_data_purge_on_30_days_enabled": {
+                  "references": [
+                    "var.log_analytics_workspace_immediate_data_purge_on_30_days_enabled"
+                  ]
+                },
+                "internet_ingestion_enabled": {
+                  "references": [
+                    "var.log_analytics_workspace_internet_ingestion_enabled"
+                  ]
+                },
+                "internet_query_enabled": {
+                  "references": [
+                    "var.log_analytics_workspace_internet_query_enabled"
+                  ]
+                },
+                "local_authentication_disabled": {
+                  "references": [
+                    "var.log_analytics_workspace_local_authentication_disabled"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "var.location",
+                    "module.aks.data.azurerm_resource_group.main.location",
+                    "module.aks.data.azurerm_resource_group.main"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.cluster_log_analytics_workspace_name",
+                    "random_id.name.hex",
+                    "random_id.name"
+                  ]
+                },
+                "reservation_capacity_in_gb_per_day": {
+                  "references": [
+                    "var.log_analytics_workspace_reservation_capacity_in_gb_per_day"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "var.log_analytics_workspace_resource_group_name",
+                    "local.resource_group.name",
+                    "local.resource_group"
+                  ]
+                },
+                "retention_in_days": {
+                  "references": [
+                    "var.log_retention_in_days"
+                  ]
+                },
+                "sku": {
+                  "references": [
+                    "var.log_analytics_workspace_sku"
+                  ]
+                },
+                "tags": {
+                  "references": [
+                    "var.tags",
+                    "var.tracing_tags_enabled",
+                    "var.tracing_tags_prefix",
+                    "var.tracing_tags_enabled",
+                    "var.tracing_tags_prefix"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "main",
+              "provider_config_key": "azurerm",
+              "schema_version": 3,
+              "type": "azurerm_log_analytics_workspace"
+            },
+            {
+              "address": "module.aks.azurerm_role_assignment.acr",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "module.aks.azurerm_kubernetes_cluster.main.kubelet_identity[0].object_id",
+                    "module.aks.azurerm_kubernetes_cluster.main.kubelet_identity[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.kubelet_identity",
+                    "module.aks.azurerm_kubernetes_cluster.main"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "AcrPull"
+                },
+                "scope": {
+                  "references": [
+                    "each.value"
+                  ]
+                },
+                "skip_service_principal_aad_check": {
+                  "constant_value": true
+                }
+              },
+              "for_each_expression": {
+                "references": [
+                  "var.attached_acr_id_map"
+                ]
+              },
+              "mode": "managed",
+              "name": "acr",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "module.aks.azurerm_role_assignment.application_gateway_byo_vnet_network_contributor",
+              "count_expression": {
+                "references": [
+                  "root.aks.create_role_assignments_for_application_gateway",
+                  "local.use_green_field_gw_for_ingress"
+                ]
+              },
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity[0].object_id",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway",
+                    "module.aks.azurerm_kubernetes_cluster.main"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Network Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "local.default_nodepool_subnet_segments",
+                    "local.default_nodepool_subnet_segments"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "application_gateway_byo_vnet_network_contributor",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "module.aks.azurerm_role_assignment.application_gateway_existing_vnet_network_contributor",
+              "count_expression": {
+                "references": [
+                  "root.aks.create_role_assignments_for_application_gateway",
+                  "local.use_brown_field_gw_for_ingress"
+                ]
+              },
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity[0].object_id",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway",
+                    "module.aks.azurerm_kubernetes_cluster.main"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Network Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "data.azurerm_virtual_network.application_gateway_vnet[0].id",
+                    "data.azurerm_virtual_network.application_gateway_vnet[0]",
+                    "module.aks.data.azurerm_virtual_network.application_gateway_vnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "application_gateway_existing_vnet_network_contributor",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "module.aks.azurerm_role_assignment.application_gateway_resource_group_reader",
+              "count_expression": {
+                "references": [
+                  "root.aks.create_role_assignments_for_application_gateway",
+                  "local.ingress_application_gateway_enabled"
+                ]
+              },
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity[0].object_id",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway",
+                    "module.aks.azurerm_kubernetes_cluster.main"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Reader"
+                },
+                "scope": {
+                  "references": [
+                    "local.use_brown_field_gw_for_ingress",
+                    "data.azurerm_resource_group.ingress_gw[0].id",
+                    "data.azurerm_resource_group.ingress_gw[0]",
+                    "module.aks.data.azurerm_resource_group.ingress_gw",
+                    "data.azurerm_resource_group.aks_rg[0].id",
+                    "data.azurerm_resource_group.aks_rg[0]",
+                    "module.aks.data.azurerm_resource_group.aks_rg"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "application_gateway_resource_group_reader",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "module.aks.azurerm_role_assignment.existing_application_gateway_contributor",
+              "count_expression": {
+                "references": [
+                  "root.aks.create_role_assignments_for_application_gateway",
+                  "local.use_brown_field_gw_for_ingress"
+                ]
+              },
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity[0].object_id",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0].ingress_application_gateway_identity",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.ingress_application_gateway",
+                    "module.aks.azurerm_kubernetes_cluster.main"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "root.aks.brown_field_application_gateway_for_ingress.id",
+                    "var.use_brown_field_application_gateway",
+                    "azurerm_application_gateway.appgw[0].id",
+                    "azurerm_application_gateway.appgw[0]",
+                    "azurerm_application_gateway.appgw",
+                    "azurerm_subnet.appgw[0].id",
+                    "azurerm_subnet.appgw[0]",
+                    "azurerm_subnet.appgw"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "existing_application_gateway_contributor",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "module.aks.azurerm_role_assignment.network_contributor",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "data.azurerm_user_assigned_identity.cluster_identity[0].principal_id",
+                    "data.azurerm_user_assigned_identity.cluster_identity[0]",
+                    "module.aks.data.azurerm_user_assigned_identity.cluster_identity",
+                    "module.aks.azurerm_kubernetes_cluster.main.identity[0].principal_id",
+                    "module.aks.azurerm_kubernetes_cluster.main.identity[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.identity",
+                    "module.aks.azurerm_kubernetes_cluster.main",
+                    "var.client_id"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Network Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "each.value"
+                  ]
+                }
+              },
+              "for_each_expression": {
+                "references": [
+                  "var.create_role_assignment_network_contributor",
+                  "var.client_id",
+                  "var.client_secret",
+                  "local.subnet_ids"
+                ]
+              },
+              "mode": "managed",
+              "name": "network_contributor",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "module.aks.azurerm_role_assignment.network_contributor_on_subnet",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "data.azurerm_user_assigned_identity.cluster_identity[0].principal_id",
+                    "data.azurerm_user_assigned_identity.cluster_identity[0]",
+                    "module.aks.data.azurerm_user_assigned_identity.cluster_identity",
+                    "module.aks.azurerm_kubernetes_cluster.main.identity[0].principal_id",
+                    "module.aks.azurerm_kubernetes_cluster.main.identity[0]",
+                    "module.aks.azurerm_kubernetes_cluster.main.identity",
+                    "module.aks.azurerm_kubernetes_cluster.main",
+                    "var.client_id"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Network Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "each.value"
+                  ]
+                }
+              },
+              "for_each_expression": {
+                "references": [
+                  "var.network_contributor_role_assigned_subnet_ids"
+                ]
+              },
+              "mode": "managed",
+              "name": "network_contributor_on_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "module.aks.null_resource.http_proxy_config_no_proxy_keeper",
+              "count_expression": {
+                "references": [
+                  "var.http_proxy_config.no_proxy[0]",
+                  "var.http_proxy_config.no_proxy",
+                  "var.http_proxy_config"
+                ]
+              },
+              "expressions": {
+                "triggers": {
+                  "references": [
+                    "var.http_proxy_config.no_proxy",
+                    "var.http_proxy_config"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "http_proxy_config_no_proxy_keeper",
+              "provider_config_key": "module.aks:null",
+              "schema_version": 0,
+              "type": "null_resource"
+            },
+            {
+              "address": "module.aks.null_resource.kubernetes_cluster_name_keeper",
+              "expressions": {
+                "triggers": {
+                  "references": [
+                    "local.cluster_name"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "kubernetes_cluster_name_keeper",
+              "provider_config_key": "module.aks:null",
+              "schema_version": 0,
+              "type": "null_resource"
+            },
+            {
+              "address": "module.aks.null_resource.kubernetes_version_keeper",
+              "expressions": {
+                "triggers": {
+                  "references": [
+                    "root.aks.kubernetes_version"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "kubernetes_version_keeper",
+              "provider_config_key": "module.aks:null",
+              "schema_version": 0,
+              "type": "null_resource"
+            },
+            {
+              "address": "module.aks.null_resource.pool_name_keeper",
+              "expressions": {
+                "triggers": {
+                  "references": [
+                    "each.value.name",
+                    "each.value"
+                  ]
+                }
+              },
+              "for_each_expression": {
+                "references": [
+                  "var.node_pools"
+                ]
+              },
+              "mode": "managed",
+              "name": "pool_name_keeper",
+              "provider_config_key": "module.aks:null",
+              "schema_version": 0,
+              "type": "null_resource"
+            },
+            {
+              "address": "module.aks.tls_private_key.ssh",
+              "count_expression": {
+                "references": [
+                  "var.admin_username"
+                ]
+              },
+              "expressions": {
+                "algorithm": {
+                  "constant_value": "RSA"
+                },
+                "rsa_bits": {
+                  "constant_value": 2048
+                }
+              },
+              "mode": "managed",
+              "name": "ssh",
+              "provider_config_key": "module.aks:tls",
+              "schema_version": 1,
+              "type": "tls_private_key"
+            },
+            {
+              "address": "module.aks.data.azurerm_client_config.this",
+              "mode": "data",
+              "name": "this",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_client_config"
+            },
+            {
+              "address": "module.aks.data.azurerm_log_analytics_workspace.main",
+              "count_expression": {
+                "references": [
+                  "local.query_datasource_for_log_analytics_workspace_location"
+                ]
+              },
+              "expressions": {
+                "name": {
+                  "references": [
+                    "var.log_analytics_workspace.name",
+                    "var.log_analytics_workspace"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "local.log_analytics_workspace.resource_group_name",
+                    "local.log_analytics_workspace"
+                  ]
+                }
+              },
+              "mode": "data",
+              "name": "main",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_log_analytics_workspace"
+            },
+            {
+              "address": "module.aks.data.azurerm_resource_group.aks_rg",
+              "count_expression": {
+                "references": [
+                  "root.aks.create_role_assignments_for_application_gateway"
+                ]
+              },
+              "expressions": {
+                "name": {
+                  "references": [
+                    "local.resource_group.name",
+                    "local.resource_group"
+                  ]
+                }
+              },
+              "mode": "data",
+              "name": "aks_rg",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "module.aks.data.azurerm_resource_group.ingress_gw",
+              "count_expression": {
+                "references": [
+                  "root.aks.create_role_assignments_for_application_gateway",
+                  "local.use_brown_field_gw_for_ingress"
+                ]
+              },
+              "expressions": {
+                "name": {
+                  "references": [
+                    "local.existing_application_gateway_resource_group_for_ingress"
+                  ]
+                }
+              },
+              "mode": "data",
+              "name": "ingress_gw",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "module.aks.data.azurerm_resource_group.main",
+              "expressions": {
+                "name": {
+                  "references": [
+                    "local.resource_group.name",
+                    "local.resource_group"
+                  ]
+                }
+              },
+              "mode": "data",
+              "name": "main",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "module.aks.data.azurerm_user_assigned_identity.cluster_identity",
+              "count_expression": {
+                "references": [
+                  "var.client_id",
+                  "var.client_secret",
+                  "var.identity_type"
+                ]
+              },
+              "expressions": {
+                "name": {
+                  "references": [
+                    "var.identity_ids[0]",
+                    "var.identity_ids"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "var.identity_ids[0]",
+                    "var.identity_ids"
+                  ]
+                }
+              },
+              "mode": "data",
+              "name": "cluster_identity",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_user_assigned_identity"
+            },
+            {
+              "address": "module.aks.data.azurerm_virtual_network.application_gateway_vnet",
+              "count_expression": {
+                "references": [
+                  "root.aks.create_role_assignments_for_application_gateway",
+                  "local.use_brown_field_gw_for_ingress"
+                ]
+              },
+              "expressions": {
+                "name": {
+                  "references": [
+                    "local.existing_application_gateway_subnet_vnet_name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "local.existing_application_gateway_subnet_resource_group_name"
+                  ]
+                }
+              },
+              "mode": "data",
+              "name": "application_gateway_vnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+[
+    [
+        "azurerm_public_ip",
+        "ATTR,ConstantThenConstant,azurerm_public_ip.ip_version == IPv6,azurerm_public_ip.sku == Standard"
+    ],
+    [
+        "azurerm_public_ip",
+        "ATTR,ConstantThenConstant,azurerm_public_ip.allocation_method == Dynamic,azurerm_public_ip.sku == Basic"
+    ],
+    [
+        "azurerm_public_ip",
+        "ATTR,ExistenceThenConstant,azurerm_public_ip.zones == Existence,azurerm_public_ip.sku == Standard"
+    ],
+    [
+        "azurerm_public_ip",
+        "ATTR,ConstantThenConstant,azurerm_public_ip.sku_tier == Global,azurerm_public_ip.sku == Standard"
+    ],
+    [
+        "azurerm_subnet",
+        "COMBO,BranchThenCIDRExcludeCombo,azurerm_subnet.resource_group_name == String,azurerm_subnet.resource_group_name == String,azurerm_resource_group.name == String,azurerm_resource_group.name == String,azurerm_subnet.address_prefixes == CIDR,azurerm_subnet.address_prefixes == CIDR"
+    ],
+    [
+        "azurerm_subnet",
+        "COMBO,BranchThenCIDRExcludeCombo,azurerm_subnet.virtual_network_name == String,azurerm_subnet.virtual_network_name == String,azurerm_virtual_network.name == String,azurerm_virtual_network.name == String,azurerm_subnet.address_prefixes == CIDR,azurerm_subnet.address_prefixes == CIDR"
+    ],
+    [
+        "azurerm_subnet",
+        "TOPO,ReferenceThenBranch,azurerm_subnet.virtual_network_name == String,azurerm_virtual_network.name == String,azurerm_subnet.resource_group_name == String,azurerm_virtual_network.resource_group_name == String,azurerm_resource_group.name == String,azurerm_resource_group.name == String"
+    ],
+    [
+        "azurerm_subnet",
+        "COMBO,BranchThenUnequalCombo,azurerm_subnet.virtual_network_name == String,azurerm_subnet.virtual_network_name == String,azurerm_virtual_network.name == String,azurerm_virtual_network.name == String,azurerm_subnet.name == String,azurerm_subnet.name == String"
+    ],
+    [
+        "azurerm_subnet",
+        "COMBO,ReferenceThenCIDRIncludeCombo,azurerm_subnet.virtual_network_name == String,azurerm_virtual_network.name == String,azurerm_subnet.address_prefixes == CIDR,azurerm_virtual_network.address_space == CIDR"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,ReferenceThenEqualCombo,azurerm_network_interface.ip_configuration.0.public_ip_address_id == String,azurerm_public_ip.id == String,azurerm_network_interface.ip_configuration.private_ip_address_version == String,azurerm_public_ip.ip_version == String"
+    ],
+    [
+        "azurerm_network_interface",
+        "ATTR,ConstantThenExistence,azurerm_network_interface.ip_configuration.private_ip_address_version == IPv4,azurerm_network_interface.ip_configuration.private_ip_address == Existence"
+    ],
+    [
+        "azurerm_network_interface",
+        "ATTR,ConstantThenExistence,azurerm_network_interface.ip_configuration.private_ip_address_allocation == Static,azurerm_network_interface.ip_configuration.private_ip_address == Existence"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,ReferenceThenConstantComboUp,azurerm_network_interface.ip_configuration.0.public_ip_address_id == String,azurerm_public_ip.id == String,azurerm_public_ip.sku_tier == Regional"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,ConstantComboDownThenReference,azurerm_network_interface.enable_ip_forwarding == true,azurerm_network_interface.ip_configuration.0.subnet_id == String,azurerm_subnet.id == String"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,ReferenceThenConstantComboDown,azurerm_network_interface.ip_configuration.0.subnet_id == String,azurerm_subnet.id == String,azurerm_network_interface.ip_configuration.private_ip_address_version == IPv4"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,ReferenceThenEqualCombo,azurerm_network_interface.ip_configuration.0.public_ip_address_id == String,azurerm_public_ip.id == String,azurerm_network_interface.location == String,azurerm_public_ip.location == String"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,BranchThenUnequalCombo,azurerm_network_interface.resource_group_name == String,azurerm_network_interface.resource_group_name == String,azurerm_resource_group.name == String,azurerm_resource_group.name == String,azurerm_network_interface.name == String,azurerm_network_interface.name == String"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,ReferenceThenExistenceComboDown,azurerm_network_interface.ip_configuration.0.subnet_id == String,azurerm_subnet.id == String,azurerm_network_interface.ip_configuration.private_ip_address == Existence"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,ConstantComboDownThenReference,azurerm_network_interface.ip_configuration.primary == true,azurerm_network_interface.ip_configuration.0.subnet_id == String,azurerm_subnet.id == String"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,AncestorReferenceThenEqualCombo,azurerm_network_interface.PLACEHOLDER == String,azurerm_virtual_network.PLACEHOLDER == String,azurerm_network_interface.location == String,azurerm_virtual_network.location == String"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,BranchThenEqualCombo,azurerm_network_interface.resource_group_name == String,azurerm_network_interface.resource_group_name == String,azurerm_resource_group.name == String,azurerm_resource_group.name == String,azurerm_network_interface.ip_configuration.private_ip_address_allocation == String,azurerm_network_interface.ip_configuration.private_ip_address_allocation == String"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,ExistenceComboDownThenReference,azurerm_network_interface.ip_configuration.private_ip_address == Existence,azurerm_network_interface.ip_configuration.0.subnet_id == String,azurerm_subnet.id == String"
+    ],
+    [
+        "azurerm_network_interface",
+        "COMBO,ReferenceThenAbsenceComboUp,azurerm_network_interface.ip_configuration.0.subnet_id == String,azurerm_subnet.id == String,azurerm_subnet.delegation == Absence"
+    ],
+    [
+        "azurerm_virtual_network",
+        "ATTR,ExistenceThenUnequal,azurerm_virtual_network.subnet == Existence,azurerm_virtual_network.subnet.name == String,azurerm_virtual_network.subnet.name == String"
+    ],
+    [
+        "azurerm_virtual_network",
+        "COMBO,BranchThenUnequalCombo,azurerm_virtual_network.resource_group_name == String,azurerm_virtual_network.resource_group_name == String,azurerm_resource_group.name == String,azurerm_resource_group.name == String,azurerm_virtual_network.name == String,azurerm_virtual_network.name == String"
+    ],
+    [
+        "azurerm_virtual_network",
+        "ATTR,ExistenceThenCIDRExclude,azurerm_virtual_network.subnet == Existence,azurerm_virtual_network.subnet.address_prefix == CIDR,azurerm_virtual_network.subnet.address_prefix == CIDR"
+    ],
+    [
+        "azurerm_public_ip",
+        "COMBO,BranchThenEqualCombo,azurerm_public_ip.resource_group_name == String,azurerm_public_ip.resource_group_name == String,azurerm_resource_group.name == String,azurerm_resource_group.name == String,azurerm_public_ip.sku_tier == String,azurerm_public_ip.sku_tier == String"
+    ],
+    [
+        "azurerm_public_ip",
+        "COMBO,BranchThenUnequalCombo,azurerm_public_ip.resource_group_name == String,azurerm_public_ip.resource_group_name == String,azurerm_resource_group.name == String,azurerm_resource_group.name == String,azurerm_public_ip.name == String,azurerm_public_ip.name == String"
+    ],
+    [
+        "azurerm_network_interface",
+        "TOPO,ReferenceThenConflictChild,azurerm_network_interface.ip_configuration.0.public_ip_address_id == String,azurerm_public_ip.id == String,azurerm_network_interface.PLACEHOLDER == String,azurerm_public_ip.PLACEHOLDER == String"
+    ],
+    [
+        "azurerm_linux_virtual_machine",
+        "COMBO,AncestorReferenceThenEqualCombo,azurerm_linux_virtual_machine.PLACEHOLDER == String,azurerm_virtual_network.PLACEHOLDER == String,azurerm_linux_virtual_machine.location == String,azurerm_virtual_network.location == String"
+    ],
+    [
+        "azurerm_linux_virtual_machine",
+        "COMBO,BranchThenUnequalCombo,azurerm_linux_virtual_machine.resource_group_name == String,azurerm_linux_virtual_machine.resource_group_name == String,azurerm_resource_group.name == String,azurerm_resource_group.name == String,azurerm_linux_virtual_machine.os_disk.name == String,azurerm_linux_virtual_machine.os_disk.name == String"
+    ],
+    [
+        "azurerm_linux_virtual_machine",
+        "COMBO,BranchThenUnequalCombo,azurerm_linux_virtual_machine.resource_group_name == String,azurerm_linux_virtual_machine.resource_group_name == String,azurerm_resource_group.name == String,azurerm_resource_group.name == String,azurerm_linux_virtual_machine.name == String,azurerm_linux_virtual_machine.name == String"
+    ],
+    [
+        "azurerm_linux_virtual_machine",
+        "TOPO,AssociateThenBranch,azurerm_linux_virtual_machine.network_interface_ids == String,azurerm_linux_virtual_machine.network_interface_ids == String,azurerm_network_interface.id == String,azurerm_network_interface.id == String,azurerm_network_interface.ip_configuration.0.subnet_id == String,azurerm_network_interface.ip_configuration.0.subnet_id == String,azurerm_subnet.id == String,azurerm_subnet.id == String"
+    ]
+]

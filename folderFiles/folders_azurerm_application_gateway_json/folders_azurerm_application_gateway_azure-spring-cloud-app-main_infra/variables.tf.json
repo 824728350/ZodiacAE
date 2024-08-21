@@ -1,0 +1,21 @@
+{
+    "variable": [
+        {
+            "location": {
+                "default": "West Europe"
+            }
+        },
+        {
+            "tags": {
+                "default": {},
+                "description": "Default tags to apply to all resources."
+            }
+        },
+        {
+            "admin_password": {
+                "default": "Br@inb0ard",
+                "sensitive": true
+            }
+        }
+    ]
+}

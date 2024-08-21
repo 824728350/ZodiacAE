@@ -1,0 +1,700 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.example",
+              "expressions": {
+                "autoscale_configuration": [
+                  {
+                    "max_capacity": {
+                      "constant_value": 3
+                    },
+                    "min_capacity": {
+                      "constant_value": 2
+                    }
+                  }
+                ],
+                "backend_address_pool": [
+                  {
+                    "fqdns": {
+                      "constant_value": []
+                    },
+                    "ip_addresses": {
+                      "references": [
+                        "azurerm_private_endpoint.example.private_service_connection[0].private_ip_address",
+                        "azurerm_private_endpoint.example.private_service_connection[0]",
+                        "azurerm_private_endpoint.example.private_service_connection",
+                        "azurerm_private_endpoint.example"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "pool-app-service"
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": null
+                    },
+                    "connection_draining": [
+                      {
+                        "drain_timeout_sec": {
+                          "constant_value": "30"
+                        },
+                        "enabled": {
+                          "constant_value": "false"
+                        }
+                      }
+                    ],
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "host_name": {
+                      "references": [
+                        "azurerm_linux_web_app.example.default_hostname",
+                        "azurerm_linux_web_app.example"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "backendsetting-001"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "port": {
+                      "constant_value": "443"
+                    },
+                    "probe_name": {
+                      "constant_value": "probe-001"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": "30"
+                    }
+                  }
+                ],
+                "enable_http2": {
+                  "constant_value": true
+                },
+                "fips_enabled": {
+                  "constant_value": false
+                },
+                "firewall_policy_id": {
+                  "references": [
+                    "azurerm_web_application_firewall_policy.example.id",
+                    "azurerm_web_application_firewall_policy.example"
+                  ]
+                },
+                "force_firewall_policy_association": {
+                  "constant_value": true
+                },
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "frontendipconfig-public"
+                    },
+                    "public_ip_address_id": {
+                      "references": [
+                        "azurerm_public_ip.example.id",
+                        "azurerm_public_ip.example"
+                      ]
+                    }
+                  },
+                  {
+                    "name": {
+                      "constant_value": "frontendipconfig-private"
+                    },
+                    "private_ip_address": {
+                      "constant_value": "10.0.0.68"
+                    },
+                    "private_ip_address_allocation": {
+                      "constant_value": "Static"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "local.subnets[\"agw\"].id",
+                        "local.subnets[\"agw\"]",
+                        "local.subnets"
+                      ]
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "constant_value": "port1"
+                    },
+                    "port": {
+                      "constant_value": "80"
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "gatewayipconfig"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "local.subnets[\"agw\"].id",
+                        "local.subnets[\"agw\"]",
+                        "local.subnets"
+                      ]
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "frontendipconfig-public"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port1"
+                    },
+                    "host_names": {
+                      "constant_value": []
+                    },
+                    "name": {
+                      "constant_value": "listener-001"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "require_sni": {
+                      "constant_value": false
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "local.region"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "local.name"
+                  ]
+                },
+                "probe": [
+                  {
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "body": {
+                          "constant_value": ""
+                        },
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "minimum_servers": {
+                      "constant_value": 0
+                    },
+                    "name": {
+                      "constant_value": "probe-001"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "pick_host_name_from_backend_http_settings": {
+                      "constant_value": true
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  }
+                ],
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "pool-app-service"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "backendsetting-001"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "listener-001"
+                    },
+                    "name": {
+                      "constant_value": "rule-001"
+                    },
+                    "priority": {
+                      "constant_value": 10
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.example.name",
+                    "azurerm_resource_group.example"
+                  ]
+                },
+                "sku": [
+                  {
+                    "name": {
+                      "constant_value": "WAF_v2"
+                    },
+                    "tier": {
+                      "constant_value": "WAF_v2"
+                    }
+                  }
+                ],
+                "ssl_policy": [
+                  {
+                    "policy_name": {
+                      "constant_value": "AppGwSslPolicy20170401S"
+                    },
+                    "policy_type": {
+                      "constant_value": "Predefined"
+                    }
+                  }
+                ],
+                "zones": {
+                  "constant_value": [
+                    "1",
+                    "2",
+                    "3"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "azurerm_linux_web_app.example",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "azurerm_service_plan.example.location",
+                    "azurerm_service_plan.example"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "local.name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.example.name",
+                    "azurerm_resource_group.example"
+                  ]
+                },
+                "service_plan_id": {
+                  "references": [
+                    "azurerm_service_plan.example.id",
+                    "azurerm_service_plan.example"
+                  ]
+                },
+                "site_config": [
+                  {}
+                ]
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_linux_web_app"
+            },
+            {
+              "address": "azurerm_private_endpoint.example",
+              "expressions": {
+                "custom_network_interface_name": {
+                  "references": [
+                    "azurerm_linux_web_app.example.name",
+                    "azurerm_linux_web_app.example"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "local.region"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "azurerm_linux_web_app.example.name",
+                    "azurerm_linux_web_app.example"
+                  ]
+                },
+                "private_service_connection": [
+                  {
+                    "is_manual_connection": {
+                      "constant_value": false
+                    },
+                    "name": {
+                      "constant_value": "privateserviceconnection"
+                    },
+                    "private_connection_resource_id": {
+                      "references": [
+                        "azurerm_linux_web_app.example.id",
+                        "azurerm_linux_web_app.example"
+                      ]
+                    },
+                    "subresource_names": {
+                      "constant_value": [
+                        "sites"
+                      ]
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.example.name",
+                    "azurerm_resource_group.example"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "local.subnets[\"workload\"].id",
+                    "local.subnets[\"workload\"]",
+                    "local.subnets"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_private_endpoint"
+            },
+            {
+              "address": "azurerm_public_ip.example",
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "references": [
+                    "local.region"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "local.name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.example.name",
+                    "azurerm_resource_group.example"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                },
+                "zones": {
+                  "constant_value": [
+                    "1",
+                    "2",
+                    "3"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_resource_group.example",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "local.region"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "local.name"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_service_plan.example",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "local.region"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "local.name"
+                  ]
+                },
+                "os_type": {
+                  "constant_value": "Linux"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.example.name",
+                    "azurerm_resource_group.example"
+                  ]
+                },
+                "sku_name": {
+                  "constant_value": "B1"
+                }
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_service_plan"
+            },
+            {
+              "address": "azurerm_virtual_network.example",
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.0.0.0/24"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "local.region"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "local.name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.example.name",
+                    "azurerm_resource_group.example"
+                  ]
+                },
+                "subnet": {
+                  "constant_value": [
+                    {
+                      "address_prefix": "10.0.0.0/26",
+                      "id": null,
+                      "name": "snet-workload",
+                      "security_group": null
+                    },
+                    {
+                      "address_prefix": "10.0.0.64/26",
+                      "id": null,
+                      "name": "snet-agw",
+                      "security_group": null
+                    }
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            },
+            {
+              "address": "azurerm_web_application_firewall_policy.example",
+              "expressions": {
+                "custom_rules": [
+                  {
+                    "action": {
+                      "constant_value": "Allow"
+                    },
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "match_conditions": [
+                      {
+                        "match_values": {
+                          "constant_value": [
+                            "bypass_owasp=1"
+                          ]
+                        },
+                        "match_variables": [
+                          {
+                            "variable_name": {
+                              "constant_value": "QueryString"
+                            }
+                          }
+                        ],
+                        "negation_condition": {
+                          "constant_value": false
+                        },
+                        "operator": {
+                          "constant_value": "Contains"
+                        },
+                        "transforms": {
+                          "constant_value": []
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "allowGary"
+                    },
+                    "priority": {
+                      "constant_value": 100
+                    },
+                    "rule_type": {
+                      "constant_value": "MatchRule"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "local.region"
+                  ]
+                },
+                "managed_rules": [
+                  {
+                    "exclusion": [
+                      {
+                        "match_variable": {
+                          "constant_value": "RequestHeaderNames"
+                        },
+                        "selector": {
+                          "constant_value": "my-secret-header"
+                        },
+                        "selector_match_operator": {
+                          "constant_value": "Equals"
+                        }
+                      },
+                      {
+                        "match_variable": {
+                          "constant_value": "RequestCookieNames"
+                        },
+                        "selector": {
+                          "constant_value": "my-sweet-cookie"
+                        },
+                        "selector_match_operator": {
+                          "constant_value": "EndsWith"
+                        }
+                      }
+                    ],
+                    "managed_rule_set": [
+                      {
+                        "rule_group_override": [
+                          {
+                            "rule": [
+                              {
+                                "action": {
+                                  "constant_value": "Log"
+                                },
+                                "enabled": {
+                                  "constant_value": true
+                                },
+                                "id": {
+                                  "constant_value": "920300"
+                                }
+                              },
+                              {
+                                "action": {
+                                  "constant_value": "Block"
+                                },
+                                "enabled": {
+                                  "constant_value": true
+                                },
+                                "id": {
+                                  "constant_value": "920440"
+                                }
+                              }
+                            ],
+                            "rule_group_name": {
+                              "constant_value": "REQUEST-920-PROTOCOL-ENFORCEMENT"
+                            }
+                          }
+                        ],
+                        "type": {
+                          "constant_value": "OWASP"
+                        },
+                        "version": {
+                          "constant_value": "3.2"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": {
+                  "references": [
+                    "local.name"
+                  ]
+                },
+                "policy_settings": [
+                  {
+                    "enabled": {
+                      "constant_value": true
+                    },
+                    "file_upload_limit_in_mb": {
+                      "constant_value": 100
+                    },
+                    "max_request_body_size_in_kb": {
+                      "constant_value": 128
+                    },
+                    "mode": {
+                      "constant_value": "Prevention"
+                    },
+                    "request_body_check": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.example.name",
+                    "azurerm_resource_group.example"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_web_application_firewall_policy"
+            },
+            {
+              "address": "random_pet.name",
+              "mode": "managed",
+              "name": "name",
+              "provider_config_key": "random",
+              "schema_version": 0,
+              "type": "random_pet"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

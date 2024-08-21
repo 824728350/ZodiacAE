@@ -1,0 +1,1195 @@
+{
+    "azurerm_application_gateway": [
+        [
+            {
+                "address": "azurerm_application_gateway.gw",
+                "mode": "managed",
+                "name": "gw",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "authentication_certificate": [],
+                    "autoscale_configuration": [],
+                    "backend_address_pool": [
+                        {
+                            "fqdns": [],
+                            "ip_addresses": []
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "authentication_certificate": [],
+                            "connection_draining": [],
+                            "trusted_root_certificate_names": []
+                        }
+                    ],
+                    "custom_error_configuration": [],
+                    "frontend_ip_configuration": [
+                        {}
+                    ],
+                    "frontend_port": [
+                        {}
+                    ],
+                    "gateway_ip_configuration": [
+                        {}
+                    ],
+                    "global": [],
+                    "http_listener": [
+                        {
+                            "custom_error_configuration": [],
+                            "host_names": []
+                        }
+                    ],
+                    "identity": [],
+                    "private_endpoint_connection": [],
+                    "private_link_configuration": [],
+                    "probe": [],
+                    "redirect_configuration": [],
+                    "request_routing_rule": [
+                        {}
+                    ],
+                    "rewrite_rule_set": [],
+                    "sku": [
+                        {}
+                    ],
+                    "ssl_certificate": [],
+                    "ssl_policy": [],
+                    "ssl_profile": [],
+                    "trusted_client_certificate": [],
+                    "trusted_root_certificate": [],
+                    "url_path_map": [],
+                    "waf_configuration": []
+                },
+                "type": "azurerm_application_gateway",
+                "values": {
+                    "authentication_certificate": [],
+                    "autoscale_configuration": [],
+                    "backend_address_pool": [
+                        {
+                            "fqdns": []
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "affinity_cookie_name": "",
+                            "authentication_certificate": [],
+                            "connection_draining": [],
+                            "cookie_based_affinity": "Disabled",
+                            "host_name": "",
+                            "path": "/",
+                            "pick_host_name_from_backend_address": false,
+                            "port": 80,
+                            "probe_name": "",
+                            "protocol": "Http",
+                            "request_timeout": 60,
+                            "trusted_root_certificate_names": []
+                        }
+                    ],
+                    "custom_error_configuration": [],
+                    "enable_http2": null,
+                    "fips_enabled": null,
+                    "firewall_policy_id": null,
+                    "force_firewall_policy_association": null,
+                    "frontend_ip_configuration": [
+                        {
+                            "private_ip_address_allocation": "Dynamic",
+                            "private_link_configuration_name": null,
+                            "subnet_id": null
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {}
+                    ],
+                    "global": [],
+                    "http_listener": [
+                        {
+                            "custom_error_configuration": [],
+                            "firewall_policy_id": "",
+                            "host_name": "",
+                            "host_names": [],
+                            "protocol": "Http",
+                            "require_sni": null,
+                            "ssl_certificate_name": "",
+                            "ssl_profile_name": ""
+                        }
+                    ],
+                    "identity": [],
+                    "location": "eastus",
+                    "private_link_configuration": [],
+                    "probe": [],
+                    "redirect_configuration": [],
+                    "request_routing_rule": [
+                        {
+                            "priority": 9,
+                            "redirect_configuration_name": "",
+                            "rewrite_rule_set_name": "",
+                            "rule_type": "Basic",
+                            "url_path_map_name": ""
+                        }
+                    ],
+                    "resource_group_name": "colin-rg",
+                    "rewrite_rule_set": [],
+                    "sku": [
+                        {
+                            "capacity": 2,
+                            "name": "Standard_v2",
+                            "tier": "Standard_v2"
+                        }
+                    ],
+                    "ssl_certificate": [],
+                    "ssl_profile": [],
+                    "tags": null,
+                    "timeouts": null,
+                    "trusted_client_certificate": [],
+                    "trusted_root_certificate": [],
+                    "url_path_map": [],
+                    "waf_configuration": [],
+                    "zones": null
+                }
+            },
+            {
+                "backend_address_pool": [
+                    {
+                        "ip_addresses": [
+                            "${azurerm_linux_virtual_machine.linux_vm.private_ip_address}"
+                        ],
+                        "name": "${local.be_address_pool}"
+                    }
+                ],
+                "backend_http_settings": [
+                    {
+                        "cookie_based_affinity": "Disabled",
+                        "name": "${local.be_http_settings}",
+                        "path": "/",
+                        "port": 80,
+                        "protocol": "Http",
+                        "request_timeout": 60
+                    }
+                ],
+                "frontend_ip_configuration": [
+                    {
+                        "name": "${local.fe_ip_configuration}",
+                        "public_ip_address_id": "${azurerm_public_ip.alb-public-ip.id}"
+                    }
+                ],
+                "frontend_port": [
+                    {
+                        "name": "${local.fe_port_name}",
+                        "port": 80
+                    }
+                ],
+                "gateway_ip_configuration": [
+                    {
+                        "name": "${local.gw_ip_configuration}",
+                        "subnet_id": "${azurerm_subnet.gw_subnet.id}"
+                    }
+                ],
+                "http_listener": [
+                    {
+                        "frontend_ip_configuration_name": "${local.fe_ip_configuration}",
+                        "frontend_port_name": "${local.fe_port_name}",
+                        "name": "${local.http_listener}",
+                        "protocol": "Http"
+                    }
+                ],
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${random_pet.pet-name.id}-load-balancer",
+                "request_routing_rule": [
+                    {
+                        "backend_address_pool_name": "${local.be_address_pool}",
+                        "backend_http_settings_name": "${local.be_http_settings}",
+                        "http_listener_name": "${local.http_listener}",
+                        "name": "${local.request_routing_rule}",
+                        "priority": 9,
+                        "rule_type": "Basic"
+                    }
+                ],
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "sku": [
+                    {
+                        "capacity": 2,
+                        "name": "Standard_v2",
+                        "tier": "Standard_v2"
+                    }
+                ]
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_key_vault": [
+        [
+            {
+                "address": "azurerm_key_vault.kv",
+                "mode": "managed",
+                "name": "kv",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 2,
+                "sensitive_values": {
+                    "access_policy": [],
+                    "contact": [],
+                    "network_acls": []
+                },
+                "type": "azurerm_key_vault",
+                "values": {
+                    "enable_rbac_authorization": true,
+                    "enabled_for_deployment": true,
+                    "enabled_for_disk_encryption": null,
+                    "enabled_for_template_deployment": null,
+                    "location": "eastus",
+                    "public_network_access_enabled": true,
+                    "purge_protection_enabled": false,
+                    "resource_group_name": "colin-rg",
+                    "sku_name": "standard",
+                    "soft_delete_retention_days": 90,
+                    "tags": null,
+                    "tenant_id": "e66e77b4-5724-44d7-8721-06df160450ce",
+                    "timeouts": null
+                }
+            },
+            {
+                "enable_rbac_authorization": true,
+                "enabled_for_deployment": true,
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${random_pet.pet-name.id}-keyvault",
+                "purge_protection_enabled": false,
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "sku_name": "standard",
+                "tenant_id": "${data.azurerm_client_config.current.tenant_id}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_linux_virtual_machine": [
+        [
+            {
+                "address": "azurerm_linux_virtual_machine.linux_vm",
+                "mode": "managed",
+                "name": "linux_vm",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "additional_capabilities": [],
+                    "admin_password": true,
+                    "admin_ssh_key": [
+                        {}
+                    ],
+                    "boot_diagnostics": [],
+                    "custom_data": true,
+                    "gallery_application": [],
+                    "identity": [
+                        {
+                            "identity_ids": []
+                        }
+                    ],
+                    "network_interface_ids": [],
+                    "os_disk": [
+                        {
+                            "diff_disk_settings": []
+                        }
+                    ],
+                    "os_image_notification": [],
+                    "plan": [],
+                    "private_ip_addresses": [],
+                    "public_ip_addresses": [],
+                    "secret": [],
+                    "source_image_reference": [
+                        {}
+                    ],
+                    "tags": {},
+                    "termination_notification": []
+                },
+                "type": "azurerm_linux_virtual_machine",
+                "values": {
+                    "additional_capabilities": [],
+                    "admin_password": null,
+                    "admin_ssh_key": [
+                        {
+                            "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTcNZBXea8DCFaCXUuH0xUWBa5zv2YRXBKSnRAaIcwF2fRJxFdG/PgnJ4HoA10id8dSILVSuXLLjp9sTtqNgtnErKy/+zTPXcb6seHd/MycZb5181jYIIyLCuYrf2ZHum4PlMQ3RQUelbjY1ye/k54rmgdx9gmKzvy0v0oyRd1XSat0mvvVm1QesVcu4qV0uyBHga+XYm6mYhJAucNLbwB9JU/gHCc4yidckWzFsFyrosZtmbEi5C8hXNojJIeMBMFoaQSO4eZHtNhlXpscRt8+WzPqS1V/6t3wa/XjdFjZPHFQOjTPBb5dZaF5Fh2lxRDM8oYPxmuVrLPlscdqGJr noname",
+                            "username": "azureuser"
+                        }
+                    ],
+                    "admin_username": "azureuser",
+                    "allow_extension_operations": true,
+                    "availability_set_id": null,
+                    "boot_diagnostics": [],
+                    "bypass_platform_safety_checks_on_user_schedule_enabled": false,
+                    "capacity_reservation_group_id": null,
+                    "custom_data": "H4sIAAAAAAAA/2SOv0vFMBCA90D+h/CWLp5PJyHi4I8ODlUQFUQc0uQaD5tLSFNI/3tpBym+6buDj/vuPnJBLvC6JNQqzGOhZHI5BqrorlUfZ3YmLzeH7rFr757fnh5uXz4OYt3gHfNEkbW6PL+QQgqAvSTF3+1seBowQ8s2OmKv1VVPZSds8YK1HO0YZwc28kBeio4CnmSSsT/G46TVZ5O+U3OmVkAN4zpyChs8cW2+/j8FIMVvAAAA//9PHdkl8wAAAA==",
+                    "dedicated_host_group_id": null,
+                    "dedicated_host_id": null,
+                    "disable_password_authentication": true,
+                    "edge_zone": null,
+                    "encryption_at_host_enabled": null,
+                    "eviction_policy": null,
+                    "extensions_time_budget": "PT1H30M",
+                    "gallery_application": [],
+                    "identity": [
+                        {
+                            "type": "UserAssigned"
+                        }
+                    ],
+                    "license_type": null,
+                    "location": "eastus",
+                    "max_bid_price": -1,
+                    "os_disk": [
+                        {
+                            "caching": "ReadWrite",
+                            "diff_disk_settings": [],
+                            "disk_encryption_set_id": null,
+                            "secure_vm_disk_encryption_set_id": null,
+                            "security_encryption_type": null,
+                            "storage_account_type": "Standard_LRS",
+                            "write_accelerator_enabled": false
+                        }
+                    ],
+                    "os_image_notification": [],
+                    "patch_assessment_mode": "ImageDefault",
+                    "patch_mode": "ImageDefault",
+                    "plan": [],
+                    "platform_fault_domain": -1,
+                    "priority": "Regular",
+                    "provision_vm_agent": true,
+                    "proximity_placement_group_id": null,
+                    "reboot_setting": null,
+                    "resource_group_name": "colin-rg",
+                    "secret": [],
+                    "secure_boot_enabled": null,
+                    "size": "Standard_A1_v2",
+                    "source_image_id": null,
+                    "source_image_reference": [
+                        {
+                            "offer": "ubuntu-24_04-lts",
+                            "publisher": "Canonical",
+                            "sku": "server-gen1",
+                            "version": "latest"
+                        }
+                    ],
+                    "tags": {
+                        "client": "A new Client"
+                    },
+                    "timeouts": null,
+                    "user_data": null,
+                    "virtual_machine_scale_set_id": null,
+                    "vm_agent_platform_updates_enabled": false,
+                    "vtpm_enabled": null,
+                    "zone": null
+                }
+            },
+            {
+                "admin_ssh_key": [
+                    {
+                        "public_key": "${azurerm_ssh_public_key.sshkey.public_key}",
+                        "username": "azureuser"
+                    }
+                ],
+                "admin_username": "azureuser",
+                "computer_name": "${local.vm_name}",
+                "custom_data": "${data.template_cloudinit_config.craftcms_config.rendered}",
+                "disable_password_authentication": true,
+                "identity": [
+                    {
+                        "identity_ids": [
+                            "${azurerm_user_assigned_identity.uai.id}"
+                        ],
+                        "type": "UserAssigned"
+                    }
+                ],
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${local.vm_name}",
+                "network_interface_ids": [
+                    "${azurerm_network_interface.nic.id}"
+                ],
+                "os_disk": [
+                    {
+                        "caching": "ReadWrite",
+                        "name": "OsDisk_1_${random_id.rnd.hex}",
+                        "storage_account_type": "Standard_LRS"
+                    }
+                ],
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "size": "Standard_A1_v2",
+                "source_image_reference": [
+                    {
+                        "offer": "ubuntu-24_04-lts",
+                        "publisher": "Canonical",
+                        "sku": "server-gen1",
+                        "version": "latest"
+                    }
+                ]
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_network_interface": [
+        [
+            {
+                "address": "azurerm_network_interface.nic",
+                "mode": "managed",
+                "name": "nic",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "applied_dns_servers": [],
+                    "dns_servers": [],
+                    "ip_configuration": [
+                        {}
+                    ],
+                    "private_ip_addresses": [],
+                    "tags": {}
+                },
+                "type": "azurerm_network_interface",
+                "values": {
+                    "auxiliary_mode": null,
+                    "auxiliary_sku": null,
+                    "edge_zone": null,
+                    "internal_dns_name_label": null,
+                    "ip_configuration": [
+                        {
+                            "private_ip_address_allocation": "Dynamic",
+                            "private_ip_address_version": "IPv4"
+                        }
+                    ],
+                    "location": "eastus",
+                    "resource_group_name": "colin-rg",
+                    "tags": {
+                        "client": "A new Client"
+                    },
+                    "timeouts": null
+                }
+            },
+            {
+                "ip_configuration": [
+                    {
+                        "name": "${local.vm_name}-ip-config",
+                        "private_ip_address_allocation": "Dynamic",
+                        "public_ip_address_id": "${azurerm_public_ip.public_ip.id}",
+                        "subnet_id": "${azurerm_subnet.subnet_internal.id}"
+                    }
+                ],
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${local.vm_name}-nic",
+                "resource_group_name": "${azurerm_resource_group.rg.name}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_network_security_group": [
+        [
+            {
+                "address": "azurerm_network_security_group.gw_nsg",
+                "mode": "managed",
+                "name": "gw_nsg",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "security_rule": [
+                        {
+                            "destination_address_prefixes": [],
+                            "destination_application_security_group_ids": [],
+                            "destination_port_ranges": [],
+                            "source_address_prefixes": [
+                                false
+                            ],
+                            "source_application_security_group_ids": [],
+                            "source_port_ranges": []
+                        },
+                        {
+                            "destination_address_prefixes": [],
+                            "destination_application_security_group_ids": [],
+                            "destination_port_ranges": [],
+                            "source_address_prefixes": [
+                                false
+                            ],
+                            "source_application_security_group_ids": [],
+                            "source_port_ranges": []
+                        }
+                    ],
+                    "tags": {}
+                },
+                "type": "azurerm_network_security_group",
+                "values": {
+                    "location": "eastus",
+                    "resource_group_name": "colin-rg",
+                    "security_rule": [
+                        {
+                            "access": "Allow",
+                            "description": "",
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": [],
+                            "destination_application_security_group_ids": [],
+                            "destination_port_range": "*",
+                            "destination_port_ranges": [],
+                            "direction": "Inbound",
+                            "name": "AllowMgmt",
+                            "priority": 100,
+                            "protocol": "*",
+                            "source_address_prefix": "",
+                            "source_address_prefixes": [
+                                "0.0.0.0/0"
+                            ],
+                            "source_application_security_group_ids": [],
+                            "source_port_range": "65200-65535",
+                            "source_port_ranges": []
+                        },
+                        {
+                            "access": "Allow",
+                            "description": "",
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": [],
+                            "destination_application_security_group_ids": [],
+                            "destination_port_range": "80",
+                            "destination_port_ranges": [],
+                            "direction": "Inbound",
+                            "name": "HTTP",
+                            "priority": 310,
+                            "protocol": "Tcp",
+                            "source_address_prefix": "",
+                            "source_address_prefixes": [
+                                "0.0.0.0/0"
+                            ],
+                            "source_application_security_group_ids": [],
+                            "source_port_range": "*",
+                            "source_port_ranges": []
+                        }
+                    ],
+                    "tags": {
+                        "client": "A new Client"
+                    },
+                    "timeouts": null
+                }
+            },
+            {
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${random_pet.pet-name.id}-gw-nsg",
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "security_rule": [
+                    {
+                        "access": "Allow",
+                        "description": null,
+                        "destination_address_prefix": "*",
+                        "destination_address_prefixes": null,
+                        "destination_application_security_group_ids": null,
+                        "destination_port_range": "80",
+                        "destination_port_ranges": null,
+                        "direction": "Inbound",
+                        "name": "HTTP",
+                        "priority": 310,
+                        "protocol": "Tcp",
+                        "source_address_prefix": null,
+                        "source_address_prefixes": [
+                            "0.0.0.0/0"
+                        ],
+                        "source_application_security_group_ids": null,
+                        "source_port_range": "*",
+                        "source_port_ranges": null
+                    },
+                    {
+                        "access": "Allow",
+                        "description": null,
+                        "destination_address_prefix": "*",
+                        "destination_address_prefixes": null,
+                        "destination_application_security_group_ids": null,
+                        "destination_port_range": "*",
+                        "destination_port_ranges": null,
+                        "direction": "Inbound",
+                        "name": "AllowMgmt",
+                        "priority": 100,
+                        "protocol": "*",
+                        "source_address_prefix": null,
+                        "source_address_prefixes": [
+                            "0.0.0.0/0"
+                        ],
+                        "source_application_security_group_ids": null,
+                        "source_port_range": "65200-65535",
+                        "source_port_ranges": null
+                    }
+                ]
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ],
+        [
+            {
+                "address": "azurerm_network_security_group.nsg",
+                "mode": "managed",
+                "name": "nsg",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "security_rule": [
+                        {
+                            "destination_address_prefixes": [],
+                            "destination_application_security_group_ids": [],
+                            "destination_port_ranges": [],
+                            "source_address_prefixes": [
+                                false
+                            ],
+                            "source_application_security_group_ids": [],
+                            "source_port_ranges": []
+                        },
+                        {
+                            "destination_address_prefixes": [],
+                            "destination_application_security_group_ids": [],
+                            "destination_port_ranges": [],
+                            "source_address_prefixes": [
+                                false
+                            ],
+                            "source_application_security_group_ids": [],
+                            "source_port_ranges": []
+                        }
+                    ],
+                    "tags": {}
+                },
+                "type": "azurerm_network_security_group",
+                "values": {
+                    "location": "eastus",
+                    "resource_group_name": "colin-rg",
+                    "security_rule": [
+                        {
+                            "access": "Allow",
+                            "description": "",
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": [],
+                            "destination_application_security_group_ids": [],
+                            "destination_port_range": "22",
+                            "destination_port_ranges": [],
+                            "direction": "Inbound",
+                            "name": "SSH",
+                            "priority": 300,
+                            "protocol": "Tcp",
+                            "source_address_prefix": "",
+                            "source_address_prefixes": [
+                                "0.0.0.0/0"
+                            ],
+                            "source_application_security_group_ids": [],
+                            "source_port_range": "*",
+                            "source_port_ranges": []
+                        },
+                        {
+                            "access": "Allow",
+                            "description": "",
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": [],
+                            "destination_application_security_group_ids": [],
+                            "destination_port_range": "80",
+                            "destination_port_ranges": [],
+                            "direction": "Inbound",
+                            "name": "HTTP",
+                            "priority": 301,
+                            "protocol": "Tcp",
+                            "source_address_prefix": "",
+                            "source_address_prefixes": [
+                                "0.0.0.0/0"
+                            ],
+                            "source_application_security_group_ids": [],
+                            "source_port_range": "*",
+                            "source_port_ranges": []
+                        }
+                    ],
+                    "tags": {
+                        "client": "A new Client"
+                    },
+                    "timeouts": null
+                }
+            },
+            {
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${random_pet.pet-name.id}-security-group",
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "security_rule": [
+                    {
+                        "access": "Allow",
+                        "description": null,
+                        "destination_address_prefix": "*",
+                        "destination_address_prefixes": null,
+                        "destination_application_security_group_ids": null,
+                        "destination_port_range": "22",
+                        "destination_port_ranges": null,
+                        "direction": "Inbound",
+                        "name": "SSH",
+                        "priority": 300,
+                        "protocol": "Tcp",
+                        "source_address_prefix": null,
+                        "source_address_prefixes": [
+                            "0.0.0.0/0"
+                        ],
+                        "source_application_security_group_ids": null,
+                        "source_port_range": "*",
+                        "source_port_ranges": null
+                    },
+                    {
+                        "access": "Allow",
+                        "description": null,
+                        "destination_address_prefix": "*",
+                        "destination_address_prefixes": null,
+                        "destination_application_security_group_ids": null,
+                        "destination_port_range": "80",
+                        "destination_port_ranges": null,
+                        "direction": "Inbound",
+                        "name": "HTTP",
+                        "priority": 301,
+                        "protocol": "Tcp",
+                        "source_address_prefix": null,
+                        "source_address_prefixes": [
+                            "0.0.0.0/0"
+                        ],
+                        "source_application_security_group_ids": null,
+                        "source_port_range": "*",
+                        "source_port_ranges": null
+                    }
+                ]
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_public_ip": [
+        [
+            {
+                "address": "azurerm_public_ip.alb-public-ip",
+                "mode": "managed",
+                "name": "alb-public-ip",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {},
+                "type": "azurerm_public_ip",
+                "values": {
+                    "allocation_method": "Static",
+                    "ddos_protection_mode": "VirtualNetworkInherited",
+                    "ddos_protection_plan_id": null,
+                    "domain_name_label": null,
+                    "edge_zone": null,
+                    "idle_timeout_in_minutes": 4,
+                    "ip_tags": null,
+                    "ip_version": "IPv4",
+                    "location": "eastus",
+                    "public_ip_prefix_id": null,
+                    "resource_group_name": "colin-rg",
+                    "reverse_fqdn": null,
+                    "sku": "Standard",
+                    "sku_tier": "Regional",
+                    "tags": null,
+                    "timeouts": null,
+                    "zones": null
+                }
+            },
+            {
+                "allocation_method": "Static",
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${random_pet.pet-name.id}-gw-pip",
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "sku": "Standard"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ],
+        [
+            {
+                "address": "azurerm_public_ip.public_ip",
+                "mode": "managed",
+                "name": "public_ip",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "tags": {}
+                },
+                "type": "azurerm_public_ip",
+                "values": {
+                    "allocation_method": "Static",
+                    "ddos_protection_mode": "VirtualNetworkInherited",
+                    "ddos_protection_plan_id": null,
+                    "domain_name_label": null,
+                    "edge_zone": null,
+                    "idle_timeout_in_minutes": 4,
+                    "ip_tags": null,
+                    "ip_version": "IPv4",
+                    "location": "eastus",
+                    "public_ip_prefix_id": null,
+                    "resource_group_name": "colin-rg",
+                    "reverse_fqdn": null,
+                    "sku": "Standard",
+                    "sku_tier": "Regional",
+                    "tags": {
+                        "client": "A new Client"
+                    },
+                    "timeouts": null,
+                    "zones": null
+                }
+            },
+            {
+                "allocation_method": "Static",
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${random_pet.pet-name.id}-bastion-public-ip",
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "sku": "Standard"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_resource_group": [
+        [
+            {
+                "address": "azurerm_resource_group.rg",
+                "mode": "managed",
+                "name": "rg",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "tags": {}
+                },
+                "type": "azurerm_resource_group",
+                "values": {
+                    "location": "eastus",
+                    "managed_by": null,
+                    "name": "colin-rg",
+                    "tags": {
+                        "client": "A new Client"
+                    },
+                    "timeouts": null
+                }
+            },
+            {
+                "location": "${var.resource_group_location}",
+                "name": "${var.resource_group_name}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_role_assignment": [
+        [
+            {
+                "address": "azurerm_role_assignment.kv_certificate_user",
+                "mode": "managed",
+                "name": "kv_certificate_user",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {},
+                "type": "azurerm_role_assignment",
+                "values": {
+                    "condition": null,
+                    "condition_version": null,
+                    "delegated_managed_identity_resource_id": null,
+                    "description": null,
+                    "role_definition_name": "Key Vault Certificate User",
+                    "scope": "/subscriptions/1b7414a3-b034-4f7b-9708-357f1ddecd7a",
+                    "timeouts": null
+                }
+            },
+            {
+                "principal_id": "${azurerm_user_assigned_identity.uai.principal_id}",
+                "role_definition_name": "Key Vault Certificate User",
+                "scope": "${data.azurerm_subscription.training.id}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ],
+        [
+            {
+                "address": "azurerm_role_assignment.kv_secrets_user",
+                "mode": "managed",
+                "name": "kv_secrets_user",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {},
+                "type": "azurerm_role_assignment",
+                "values": {
+                    "condition": null,
+                    "condition_version": null,
+                    "delegated_managed_identity_resource_id": null,
+                    "description": null,
+                    "role_definition_name": "Key Vault Secrets User",
+                    "scope": "/subscriptions/1b7414a3-b034-4f7b-9708-357f1ddecd7a",
+                    "timeouts": null
+                }
+            },
+            {
+                "principal_id": "${azurerm_user_assigned_identity.uai.principal_id}",
+                "role_definition_name": "Key Vault Secrets User",
+                "scope": "${data.azurerm_subscription.training.id}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_ssh_public_key": [
+        [
+            {
+                "address": "azurerm_ssh_public_key.sshkey",
+                "mode": "managed",
+                "name": "sshkey",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {},
+                "type": "azurerm_ssh_public_key",
+                "values": {
+                    "location": "eastus",
+                    "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTcNZBXea8DCFaCXUuH0xUWBa5zv2YRXBKSnRAaIcwF2fRJxFdG/PgnJ4HoA10id8dSILVSuXLLjp9sTtqNgtnErKy/+zTPXcb6seHd/MycZb5181jYIIyLCuYrf2ZHum4PlMQ3RQUelbjY1ye/k54rmgdx9gmKzvy0v0oyRd1XSat0mvvVm1QesVcu4qV0uyBHga+XYm6mYhJAucNLbwB9JU/gHCc4yidckWzFsFyrosZtmbEi5C8hXNojJIeMBMFoaQSO4eZHtNhlXpscRt8+WzPqS1V/6t3wa/XjdFjZPHFQOjTPBb5dZaF5Fh2lxRDM8oYPxmuVrLPlscdqGJr noname",
+                    "resource_group_name": "colin-rg",
+                    "tags": null,
+                    "timeouts": null
+                }
+            },
+            {
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${random_pet.pet-name.id}-sshkey",
+                "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTcNZBXea8DCFaCXUuH0xUWBa5zv2YRXBKSnRAaIcwF2fRJxFdG/PgnJ4HoA10id8dSILVSuXLLjp9sTtqNgtnErKy/+zTPXcb6seHd/MycZb5181jYIIyLCuYrf2ZHum4PlMQ3RQUelbjY1ye/k54rmgdx9gmKzvy0v0oyRd1XSat0mvvVm1QesVcu4qV0uyBHga+XYm6mYhJAucNLbwB9JU/gHCc4yidckWzFsFyrosZtmbEi5C8hXNojJIeMBMFoaQSO4eZHtNhlXpscRt8+WzPqS1V/6t3wa/XjdFjZPHFQOjTPBb5dZaF5Fh2lxRDM8oYPxmuVrLPlscdqGJr noname",
+                "resource_group_name": "${azurerm_resource_group.rg.name}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_subnet": [
+        [
+            {
+                "address": "azurerm_subnet.bastionsubnet",
+                "mode": "managed",
+                "name": "bastionsubnet",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "address_prefixes": [
+                        false
+                    ],
+                    "delegation": []
+                },
+                "type": "azurerm_subnet",
+                "values": {
+                    "address_prefixes": [
+                        "10.10.12.0/24"
+                    ],
+                    "default_outbound_access_enabled": true,
+                    "delegation": [],
+                    "name": "AzureBastionSubnet",
+                    "resource_group_name": "colin-rg",
+                    "service_endpoint_policy_ids": null,
+                    "service_endpoints": null,
+                    "timeouts": null
+                }
+            },
+            {
+                "address_prefixes": "${var.bastion_subnet}",
+                "name": "AzureBastionSubnet",
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ],
+        [
+            {
+                "address": "azurerm_subnet.gw_subnet",
+                "mode": "managed",
+                "name": "gw_subnet",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "address_prefixes": [
+                        false
+                    ],
+                    "delegation": []
+                },
+                "type": "azurerm_subnet",
+                "values": {
+                    "address_prefixes": [
+                        "10.10.11.0/24"
+                    ],
+                    "default_outbound_access_enabled": true,
+                    "delegation": [],
+                    "resource_group_name": "colin-rg",
+                    "service_endpoint_policy_ids": null,
+                    "service_endpoints": null,
+                    "timeouts": null
+                }
+            },
+            {
+                "address_prefixes": "${var.gateway_subnet}",
+                "name": "${random_pet.pet-name.id}-gw-subnet",
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ],
+        [
+            {
+                "address": "azurerm_subnet.subnet_internal",
+                "mode": "managed",
+                "name": "subnet_internal",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "address_prefixes": [
+                        false
+                    ],
+                    "delegation": []
+                },
+                "type": "azurerm_subnet",
+                "values": {
+                    "address_prefixes": [
+                        "10.10.10.0/24"
+                    ],
+                    "default_outbound_access_enabled": true,
+                    "delegation": [],
+                    "resource_group_name": "colin-rg",
+                    "service_endpoint_policy_ids": null,
+                    "service_endpoints": null,
+                    "timeouts": null
+                }
+            },
+            {
+                "address_prefixes": "${var.internal_subnet_space}",
+                "name": "${random_pet.pet-name.id}-subnet",
+                "resource_group_name": "${azurerm_resource_group.rg.name}",
+                "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_subnet_network_security_group_association": [
+        [
+            {
+                "address": "azurerm_subnet_network_security_group_association.nsg-assoc",
+                "mode": "managed",
+                "name": "nsg-assoc",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {},
+                "type": "azurerm_subnet_network_security_group_association",
+                "values": {
+                    "timeouts": null
+                }
+            },
+            {
+                "network_security_group_id": "${azurerm_network_security_group.nsg.id}",
+                "subnet_id": "${azurerm_subnet.subnet_internal.id}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_user_assigned_identity": [
+        [
+            {
+                "address": "azurerm_user_assigned_identity.uai",
+                "mode": "managed",
+                "name": "uai",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 1,
+                "sensitive_values": {},
+                "type": "azurerm_user_assigned_identity",
+                "values": {
+                    "location": "eastus",
+                    "resource_group_name": "colin-rg",
+                    "tags": null,
+                    "timeouts": null
+                }
+            },
+            {
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${random_pet.pet-name.id}-uai",
+                "resource_group_name": "${azurerm_resource_group.rg.name}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "azurerm_virtual_network": [
+        [
+            {
+                "address": "azurerm_virtual_network.vnet",
+                "mode": "managed",
+                "name": "vnet",
+                "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "address_space": [
+                        false
+                    ],
+                    "ddos_protection_plan": [],
+                    "dns_servers": [],
+                    "encryption": [],
+                    "subnet": [],
+                    "tags": {}
+                },
+                "type": "azurerm_virtual_network",
+                "values": {
+                    "address_space": [
+                        "10.10.0.0/16"
+                    ],
+                    "bgp_community": null,
+                    "ddos_protection_plan": [],
+                    "edge_zone": null,
+                    "encryption": [],
+                    "flow_timeout_in_minutes": null,
+                    "location": "eastus",
+                    "resource_group_name": "colin-rg",
+                    "tags": {
+                        "client": "A new Client"
+                    },
+                    "timeouts": null
+                }
+            },
+            {
+                "address_space": "${var.vnet_address_space}",
+                "location": "${azurerm_resource_group.rg.location}",
+                "name": "${random_pet.pet-name.id}-vnet",
+                "resource_group_name": "${azurerm_resource_group.rg.name}"
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "random_id": [
+        [
+            {
+                "address": "random_id.rnd",
+                "mode": "managed",
+                "name": "rnd",
+                "provider_name": "registry.terraform.io/hashicorp/random",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "keepers": {}
+                },
+                "type": "random_id",
+                "values": {
+                    "byte_length": 4,
+                    "keepers": {
+                        "resource_group": "colin-rg"
+                    },
+                    "prefix": null
+                }
+            },
+            {
+                "byte_length": 4,
+                "keepers": {
+                    "resource_group": "${azurerm_resource_group.rg.name}"
+                }
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ],
+    "random_pet": [
+        [
+            {
+                "address": "random_pet.pet-name",
+                "mode": "managed",
+                "name": "pet-name",
+                "provider_name": "registry.terraform.io/hashicorp/random",
+                "schema_version": 0,
+                "sensitive_values": {
+                    "keepers": {}
+                },
+                "type": "random_pet",
+                "values": {
+                    "keepers": {
+                        "resource_group": "colin-rg"
+                    },
+                    "length": 2,
+                    "prefix": null,
+                    "separator": "-"
+                }
+            },
+            {
+                "keepers": {
+                    "resource_group": "${azurerm_resource_group.rg.name}"
+                }
+            },
+            "folders_azurerm_application_gateway_terraform-training-main"
+        ]
+    ]
+}

@@ -1,0 +1,827 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.repro_502",
+              "expressions": {
+                "backend_address_pool": [
+                  {
+                    "ip_addresses": {
+                      "constant_value": [
+                        "10.10.1.250"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "aks-lb"
+                    }
+                  },
+                  {
+                    "ip_addresses": {
+                      "constant_value": [
+                        "10.10.1.7",
+                        "10.10.1.8",
+                        "10.10.1.9"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "aks-direct"
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "host_name": {
+                      "constant_value": "test.contoso.com"
+                    },
+                    "name": {
+                      "constant_value": "aks-https-lb"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "aks-https"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 60
+                    },
+                    "trusted_root_certificate_names": {
+                      "constant_value": [
+                        "self-signed-root"
+                      ]
+                    }
+                  },
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "host_name": {
+                      "constant_value": "test.contoso.com"
+                    },
+                    "name": {
+                      "constant_value": "aks-http-lb"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    },
+                    "probe_name": {
+                      "constant_value": "aks-http"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "request_timeout": {
+                      "constant_value": 60
+                    }
+                  },
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "host_name": {
+                      "constant_value": "test.contoso.com"
+                    },
+                    "name": {
+                      "constant_value": "aks-https-direct"
+                    },
+                    "port": {
+                      "constant_value": 31291
+                    },
+                    "probe_name": {
+                      "constant_value": "aks-https"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 60
+                    },
+                    "trusted_root_certificate_names": {
+                      "constant_value": [
+                        "self-signed-root"
+                      ]
+                    }
+                  },
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "host_name": {
+                      "constant_value": "test.contoso.com"
+                    },
+                    "name": {
+                      "constant_value": "aks-http-direct"
+                    },
+                    "port": {
+                      "constant_value": 31701
+                    },
+                    "probe_name": {
+                      "constant_value": "aks-http"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "request_timeout": {
+                      "constant_value": 60
+                    }
+                  }
+                ],
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "public"
+                    },
+                    "public_ip_address_id": {
+                      "references": [
+                        "azurerm_public_ip.agw.id",
+                        "azurerm_public_ip.agw"
+                      ]
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "constant_value": "http"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "my-gateway-ip-configuration"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "azurerm_subnet.ingress.id",
+                        "azurerm_subnet.ingress"
+                      ]
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "public"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "http"
+                    },
+                    "host_name": {
+                      "constant_value": "https-backend-lb.contoso.com"
+                    },
+                    "name": {
+                      "constant_value": "https-backend-contoso-com-lb"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "public"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "http"
+                    },
+                    "host_name": {
+                      "constant_value": "http-backend-lb.contoso.com"
+                    },
+                    "name": {
+                      "constant_value": "http-backend-contoso-com-lb"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "public"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "http"
+                    },
+                    "host_name": {
+                      "constant_value": "https-backend-direct.contoso.com"
+                    },
+                    "name": {
+                      "constant_value": "https-backend-contoso-com-direct"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "public"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "http"
+                    },
+                    "host_name": {
+                      "constant_value": "http-backend-direct.contoso.com"
+                    },
+                    "name": {
+                      "constant_value": "http-backend-contoso-com-direct"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.location",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "name": {
+                  "constant_value": "agw-repro-502"
+                },
+                "probe": [
+                  {
+                    "interval": {
+                      "constant_value": 10
+                    },
+                    "name": {
+                      "constant_value": "aks-https"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "pick_host_name_from_backend_http_settings": {
+                      "constant_value": true
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "interval": {
+                      "constant_value": 10
+                    },
+                    "name": {
+                      "constant_value": "aks-http"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "pick_host_name_from_backend_http_settings": {
+                      "constant_value": true
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  }
+                ],
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "aks-lb"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "aks-https-lb"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "https-backend-contoso-com-lb"
+                    },
+                    "name": {
+                      "constant_value": "https-backend-contoso-com-lb"
+                    },
+                    "priority": {
+                      "constant_value": 1000
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "aks-lb"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "aks-http-lb"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "http-backend-contoso-com-lb"
+                    },
+                    "name": {
+                      "constant_value": "http-backend-contoso-com-lb"
+                    },
+                    "priority": {
+                      "constant_value": 1010
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "aks-direct"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "aks-https-direct"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "https-backend-contoso-com-direct"
+                    },
+                    "name": {
+                      "constant_value": "https-backend-contoso-com-direct"
+                    },
+                    "priority": {
+                      "constant_value": 1020
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "aks-direct"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "aks-http-direct"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "http-backend-contoso-com-direct"
+                    },
+                    "name": {
+                      "constant_value": "http-backend-contoso-com-direct"
+                    },
+                    "priority": {
+                      "constant_value": 1030
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.name",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "constant_value": 10
+                    },
+                    "name": {
+                      "constant_value": "Standard_v2"
+                    },
+                    "tier": {
+                      "constant_value": "Standard_v2"
+                    }
+                  }
+                ],
+                "trusted_root_certificate": [
+                  {
+                    "data": {
+                      "constant_value": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tDQpNSUlCdHpDQ0FWMENGSEUvNk5mME92L3QxV2JCQlBTOWp2VlBJV0pOTUFvR0NDcUdTTTQ5QkFNQ01GNHhDekFKDQpCZ05WQkFZVEFrNU1NUTR3REFZRFZRUUlEQVZCZW5WeVpURVNNQkFHQTFVRUJ3d0pRVzF6ZEdWeVpHRnRNUkV3DQpEd1lEVlFRS0RBaHViR2xuYUhSbGJqRVlNQllHQTFVRUF3d1BjMlZzWm5OcFoyNWxaQzF5YjI5ME1CNFhEVEl6DQpNRFl5TWpFM05UQXpNMW9YRFRJME1EWXlNVEUzTlRBek0xb3dYakVMTUFrR0ExVUVCaE1DVGt3eERqQU1CZ05WDQpCQWdNQlVGNmRYSmxNUkl3RUFZRFZRUUhEQWxCYlhOMFpYSmtZVzB4RVRBUEJnTlZCQW9NQ0c1c2FXZG9kR1Z1DQpNUmd3RmdZRFZRUUREQTl6Wld4bWMybG5ibVZrTFhKdmIzUXdXVEFUQmdjcWhrak9QUUlCQmdncWhrak9QUU1CDQpCd05DQUFUTzZvVVpsRjBwRWdEME5nQ1Bsc1ptUjk2OVMrcHBzRlF1bVZFK1NYK1JkVDMwZ1BVRjFyRTB1WjZ2DQpLMWJRREhSSVV3bzNnZzJZTnZKb3BvbFVmL3VLTUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSVFDbDdlN1o0bHplDQoxTGowMS9zU1I2K0lCZHVESUpNTkQxamdsTTYvdDc0NXh3SWdZSHl3SjArNmw2SHgvT2tOTnlYZmxNalBvaWk0DQpoNHczNzQxNFZqMG56Qk09DQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tDQo="
+                    },
+                    "name": {
+                      "constant_value": "self-signed-root"
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "repro_502",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "azurerm_kubernetes_cluster.repro_502",
+              "expressions": {
+                "default_node_pool": [
+                  {
+                    "name": {
+                      "constant_value": "default"
+                    },
+                    "node_count": {
+                      "constant_value": 3
+                    },
+                    "only_critical_addons_enabled": {
+                      "constant_value": true
+                    },
+                    "os_disk_type": {
+                      "references": [
+                        "var.vm_disk_type"
+                      ]
+                    },
+                    "temporary_name_for_rotation": {
+                      "constant_value": "defaulttmp"
+                    },
+                    "vm_size": {
+                      "references": [
+                        "var.vm_sku"
+                      ]
+                    },
+                    "vnet_subnet_id": {
+                      "references": [
+                        "azurerm_subnet.aks.id",
+                        "azurerm_subnet.aks"
+                      ]
+                    }
+                  }
+                ],
+                "dns_prefix": {
+                  "constant_value": "repro-502"
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.location",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "name": {
+                  "constant_value": "aks-repro-502"
+                },
+                "network_profile": [
+                  {
+                    "network_plugin": {
+                      "references": [
+                        "var.aks_network_plugin"
+                      ]
+                    },
+                    "network_plugin_mode": {
+                      "references": [
+                        "var.aks_network_plugin"
+                      ]
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.name",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "repro_502",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_kubernetes_cluster"
+            },
+            {
+              "address": "azurerm_kubernetes_cluster_node_pool.user",
+              "expressions": {
+                "kubernetes_cluster_id": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.repro_502.id",
+                    "azurerm_kubernetes_cluster.repro_502"
+                  ]
+                },
+                "name": {
+                  "constant_value": "user"
+                },
+                "node_count": {
+                  "constant_value": 3
+                },
+                "os_disk_type": {
+                  "references": [
+                    "var.vm_disk_type"
+                  ]
+                },
+                "vm_size": {
+                  "references": [
+                    "var.vm_sku"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "user",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_kubernetes_cluster_node_pool"
+            },
+            {
+              "address": "azurerm_log_analytics_workspace.repro_502",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.location",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "name": {
+                  "constant_value": "la-repro-502"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.name",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "retention_in_days": {
+                  "constant_value": 30
+                },
+                "sku": {
+                  "constant_value": "PerGB2018"
+                }
+              },
+              "mode": "managed",
+              "name": "repro_502",
+              "provider_config_key": "azurerm",
+              "schema_version": 3,
+              "type": "azurerm_log_analytics_workspace"
+            },
+            {
+              "address": "azurerm_monitor_diagnostic_setting.repro_502",
+              "expressions": {
+                "enabled_log": [
+                  {
+                    "category": {
+                      "constant_value": "ApplicationGatewayAccessLog"
+                    },
+                    "retention_policy": [
+                      {
+                        "enabled": {
+                          "constant_value": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "category": {
+                      "constant_value": "ApplicationGatewayPerformanceLog"
+                    },
+                    "retention_policy": [
+                      {
+                        "enabled": {
+                          "constant_value": false
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "log_analytics_workspace_id": {
+                  "references": [
+                    "azurerm_log_analytics_workspace.repro_502.id",
+                    "azurerm_log_analytics_workspace.repro_502"
+                  ]
+                },
+                "metric": [
+                  {
+                    "category": {
+                      "constant_value": "AllMetrics"
+                    },
+                    "retention_policy": [
+                      {
+                        "enabled": {
+                          "constant_value": false
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": {
+                  "constant_value": "diag-la"
+                },
+                "target_resource_id": {
+                  "references": [
+                    "azurerm_application_gateway.repro_502.id",
+                    "azurerm_application_gateway.repro_502"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "repro_502",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_monitor_diagnostic_setting"
+            },
+            {
+              "address": "azurerm_network_watcher.repro_502",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.location",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "name": {
+                  "constant_value": "NetworkWatcher_WestEurope"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.name",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "repro_502",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_network_watcher"
+            },
+            {
+              "address": "azurerm_public_ip.agw",
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.location",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "name": {
+                  "constant_value": "pip-agw"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.name",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                }
+              },
+              "mode": "managed",
+              "name": "agw",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_resource_group.repro_502",
+              "expressions": {
+                "location": {
+                  "constant_value": "West Europe"
+                },
+                "name": {
+                  "constant_value": "repro-502"
+                }
+              },
+              "mode": "managed",
+              "name": "repro_502",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_role_assignment.aks_on_subnet",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "azurerm_kubernetes_cluster.repro_502.identity[0].principal_id",
+                    "azurerm_kubernetes_cluster.repro_502.identity[0]",
+                    "azurerm_kubernetes_cluster.repro_502.identity",
+                    "azurerm_kubernetes_cluster.repro_502"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Network Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "azurerm_virtual_network.repro_502.id",
+                    "azurerm_virtual_network.repro_502"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks_on_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "azurerm_subnet.aks",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.10.1.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "AksSubnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.name",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.repro_502.name",
+                    "azurerm_virtual_network.repro_502"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.ingress",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.10.0.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "IngressSubnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.name",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.repro_502.name",
+                    "azurerm_virtual_network.repro_502"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "ingress",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_virtual_network.repro_502",
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.10.0.0/16"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.location",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                },
+                "name": {
+                  "constant_value": "vnet-repro-502"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.repro_502.name",
+                    "azurerm_resource_group.repro_502"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "repro_502",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

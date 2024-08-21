@@ -1,0 +1,1562 @@
+{
+    "COMBO####AncestorReferenceThenEqualCombo####azurerm_application_gateway.PLACEHOLDER == String####azurerm_virtual_network.PLACEHOLDER == String####azurerm_application_gateway.location == String####azurerm_virtual_network.location == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####AssociateThenCIDRExcludeCombo####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.id == String####azurerm_subnet.address_prefixes == CIDR####azurerm_subnet.address_prefixes == CIDR": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####AssociateThenUnequalCombo####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_public_ip.id == String####azurerm_subnet.id == String####azurerm_public_ip.name == String####azurerm_subnet.name == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####AssociateThenUnequalCombo####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_public_ip.id == String####azurerm_subnet.id == String####azurerm_public_ip.name == String####azurerm_subnet.name == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####AssociateThenUnequalCombo####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.id == String####azurerm_subnet.address_prefixes == String####azurerm_subnet.address_prefixes == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####AssociateThenUnequalCombo####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.id == String####azurerm_subnet.name == String####azurerm_subnet.name == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####BranchThenEqualCombo####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.id == String####azurerm_application_gateway.location == String####azurerm_application_gateway.location == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####BranchThenEqualCombo####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.id == String####azurerm_application_gateway.name == String####azurerm_application_gateway.name == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####BranchThenEqualCombo####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.id == String####azurerm_application_gateway.location == String####azurerm_application_gateway.location == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####BranchThenEqualCombo####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.id == String####azurerm_application_gateway.name == String####azurerm_application_gateway.name == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####BranchThenUnequalCombo####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.id == String####azurerm_application_gateway.frontend_ip_configuration.name == String####azurerm_application_gateway.frontend_ip_configuration.name == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####BranchThenUnequalCombo####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.id == String####azurerm_application_gateway.frontend_ip_configuration.private_ip_address_allocation == String####azurerm_application_gateway.frontend_ip_configuration.private_ip_address_allocation == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####CountChildThenCIDRMaskComboUp####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String####azurerm_subnet.address_prefixes == CIDR": [
+        false,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    ],
+    "COMBO####CountChildThenEnumComboUp####azurerm_application_gateway.PLACEHOLDER == String####azurerm_public_ip.PLACEHOLDER == String####azurerm_public_ip.sku == Enum": [
+        false,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    ],
+    "COMBO####CountChildThenEnumComboUp####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String####azurerm_subnet.name == Enum": [
+        false,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    ],
+    "COMBO####CountParentThenCIDRMaskComboUp####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String####azurerm_subnet.address_prefixes == CIDR": [
+        false,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    ],
+    "COMBO####CountParentThenEnumComboUp####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String####azurerm_subnet.name == Enum": [
+        false,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.autoscale_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.custom_error_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.global == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.private_link_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.probe == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.redirect_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.rewrite_rule_set == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.ssl_profile == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.timeouts == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.url_path_map == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.waf_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.zones == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.autoscale_configuration == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.custom_error_configuration == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.global == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.private_link_configuration == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.probe == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.redirect_configuration == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.rewrite_rule_set == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.ssl_profile == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.timeouts == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.url_path_map == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.waf_configuration == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.zones == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.autoscale_configuration == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.custom_error_configuration == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.global == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.probe == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.redirect_configuration == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.rewrite_rule_set == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.ssl_profile == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.timeouts == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.url_path_map == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.waf_configuration == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.zones == Absence": [
+        true,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.autoscale_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.custom_error_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.global == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.private_link_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.probe == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.redirect_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.rewrite_rule_set == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.ssl_profile == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.timeouts == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.url_path_map == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.waf_configuration == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.zones == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.edge_zone == Absence": [
+        true,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.reverse_fqdn == Absence": [
+        true,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.timeouts == Absence": [
+        true,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.zones == Absence": [
+        true,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.delegation == Absence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.service_endpoints == Absence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.timeouts == Absence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.delegation == Absence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.service_endpoints == Absence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.timeouts == Absence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_resource_group.timeouts == Absence": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenConstantComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.allocation_method == Dynamic": [
+        false,
+        1,
+        1,
+        0,
+        2,
+        0,
+        2,
+        true
+    ],
+    "COMBO####ReferenceThenConstantComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.allocation_method == Static": [
+        true,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenConstantComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.ip_version == IPv4": [
+        true,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenConstantComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.sku == Basic": [
+        false,
+        1,
+        1,
+        0,
+        2,
+        0,
+        2,
+        true
+    ],
+    "COMBO####ReferenceThenConstantComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.sku == Standard": [
+        true,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenConstantComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.sku_tier == Regional": [
+        true,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenEqualCombo####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.location == String####azurerm_public_ip.location == String": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenEqualCombo####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.location == String####azurerm_resource_group.location == String": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.autoscale_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.custom_error_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.enable_http2 == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.fips_enabled == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.force_firewall_policy_association == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.global == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.private_link_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.probe == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.redirect_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.rewrite_rule_set == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.ssl_profile == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.timeouts == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.url_path_map == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.waf_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.zones == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.autoscale_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.custom_error_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.enable_http2 == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.fips_enabled == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.force_firewall_policy_association == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.global == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.private_link_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.probe == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.redirect_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.rewrite_rule_set == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.ssl_profile == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.timeouts == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.url_path_map == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.waf_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.zones == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.autoscale_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.custom_error_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.enable_http2 == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.fips_enabled == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.force_firewall_policy_association == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.global == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.private_link_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.probe == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.redirect_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.rewrite_rule_set == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.ssl_profile == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.timeouts == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.url_path_map == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.waf_configuration == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.zones == Existence": [
+        true,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.autoscale_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.custom_error_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.enable_http2 == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.fips_enabled == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.force_firewall_policy_association == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.global == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.private_link_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.probe == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.redirect_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.rewrite_rule_set == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.ssl_profile == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.timeouts == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.url_path_map == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.waf_configuration == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.zones == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.timeouts == Existence": [
+        false,
+        1,
+        1,
+        0,
+        2,
+        0,
+        2,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.zones == Existence": [
+        false,
+        1,
+        1,
+        0,
+        2,
+        0,
+        2,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.delegation == Existence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.service_endpoints == Existence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.timeouts == Existence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.delegation == Existence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.service_endpoints == Existence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.timeouts == Existence": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenExistenceComboUp####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_resource_group.timeouts == Existence": [
+        false,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        true
+    ],
+    "COMBO####ReferenceThenUnequalCombo####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.name == String####azurerm_public_ip.name == String": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenUnequalCombo####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.name == String####azurerm_subnet.name == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenUnequalCombo####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.name == String####azurerm_subnet.name == String": [
+        true,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        true
+    ],
+    "COMBO####ReferenceThenUnequalCombo####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.name == String####azurerm_resource_group.name == String": [
+        true,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        true
+    ]
+}

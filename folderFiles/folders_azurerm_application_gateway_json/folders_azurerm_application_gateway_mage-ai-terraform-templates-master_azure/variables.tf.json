@@ -1,0 +1,46 @@
+{
+    "variable": [
+        {
+            "app_environment": {
+                "default": "production",
+                "description": "Application Environment"
+            }
+        },
+        {
+            "app_name": {
+                "default": "mage-data-prep",
+                "description": "Application Name"
+            }
+        },
+        {
+            "container_cpu": {
+                "default": "2",
+                "description": "Container cpu"
+            }
+        },
+        {
+            "container_memory": {
+                "default": "2",
+                "description": "Container memory"
+            }
+        },
+        {
+            "docker_image": {
+                "default": "mageai/mageai:latest",
+                "description": "Docker image url."
+            }
+        },
+        {
+            "key_vault_name": {
+                "default": "magedataprepkeyvault",
+                "description": "Key vault name. It must be globally unique across Azure."
+            }
+        },
+        {
+            "storage_account_name": {
+                "default": "magedataprepstorage",
+                "description": "Storage account name. It must be globally unique across Azure."
+            }
+        }
+    ]
+}

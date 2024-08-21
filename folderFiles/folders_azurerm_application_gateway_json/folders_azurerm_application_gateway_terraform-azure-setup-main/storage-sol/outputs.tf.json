@@ -1,0 +1,24 @@
+{
+    "output": [
+        {
+            "vm_public_ip": {
+                "value": "${azurerm_public_ip.pip.ip_address}"
+            }
+        },
+        {
+            "public_ip_address": {
+                "value": "${data.azurerm_public_ip.pip_data}"
+            }
+        },
+        {
+            "html_url": {
+                "value": "${azurerm_storage_blob.html}"
+            }
+        },
+        {
+            "png_url": {
+                "value": "${azurerm_storage_blob.png}"
+            }
+        }
+    ]
+}

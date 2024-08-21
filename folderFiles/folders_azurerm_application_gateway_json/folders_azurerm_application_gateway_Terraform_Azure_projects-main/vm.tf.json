@@ -1,0 +1,63 @@
+{
+    "resource": [
+        {
+            "azurerm_network_interface": {
+                "app_interface": {
+                    "depends_on": [],
+                    "ip_configuration": [
+                        {
+                            "name": "internal",
+                            "private_ip_address_allocation": "Dynamic",
+                            "public_ip_address_id": "${azurerm_public_ip.app_public_ip.id}",
+                            "subnet_id": "${azurerm_subnet.backend.id}"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.example.location}",
+                    "name": "app-interface",
+                    "resource_group_name": "${azurerm_resource_group.example.name}"
+                }
+            }
+        },
+        {
+            "azurerm_windows_virtual_machine": {
+                "app_vm": {
+                    "admin_password": "Azure@123",
+                    "admin_username": "demousr",
+                    "depends_on": [],
+                    "location": "${azurerm_resource_group.example.location}",
+                    "name": "appvm",
+                    "network_interface_ids": [
+                        "${azurerm_network_interface.app_interface.id}"
+                    ],
+                    "os_disk": [
+                        {
+                            "caching": "ReadWrite",
+                            "storage_account_type": "Standard_LRS"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.example.name}",
+                    "size": "Standard_D2s_v3",
+                    "source_image_reference": [
+                        {
+                            "offer": "WindowsServer",
+                            "publisher": "MicrosoftWindowsServer",
+                            "sku": "2019-Datacenter",
+                            "version": "latest"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "app_public_ip": {
+                    "allocation_method": "Static",
+                    "depends_on": [],
+                    "location": "${azurerm_resource_group.example.location}",
+                    "name": "app-public-ip",
+                    "resource_group_name": "${azurerm_resource_group.example.name}"
+                }
+            }
+        }
+    ]
+}

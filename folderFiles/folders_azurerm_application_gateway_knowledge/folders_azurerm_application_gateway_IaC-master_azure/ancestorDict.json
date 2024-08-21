@@ -1,0 +1,46 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.sample-gw": [
+              "azurerm_application_gateway.sample-gw",
+              "azurerm_public_ip.sample_public_ip",
+              "azurerm_resource_group.sample-rs",
+              "azurerm_subnet.sample-sn",
+              "azurerm_virtual_network.sample-nw"
+            ],
+            "azurerm_container_registry.acr": [
+              "azurerm_container_registry.acr"
+            ],
+            "azurerm_kubernetes_cluster.aks": [
+              "azurerm_kubernetes_cluster.aks"
+            ],
+            "azurerm_public_ip.sample_public_ip": [
+              "azurerm_public_ip.sample_public_ip",
+              "azurerm_resource_group.sample-rs"
+            ],
+            "azurerm_resource_group.sample-rs": [
+              "azurerm_resource_group.sample-rs"
+            ],
+            "azurerm_subnet.sample-sn": [
+              "azurerm_resource_group.sample-rs",
+              "azurerm_subnet.sample-sn",
+              "azurerm_virtual_network.sample-nw"
+            ],
+            "azurerm_virtual_network.sample-nw": [
+              "azurerm_resource_group.sample-rs",
+              "azurerm_virtual_network.sample-nw"
+            ]
+          },
+          "text": "data.assemble.ancestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

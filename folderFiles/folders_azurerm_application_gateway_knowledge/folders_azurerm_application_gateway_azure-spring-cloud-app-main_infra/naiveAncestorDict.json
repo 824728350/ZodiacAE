@@ -1,0 +1,88 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.this": [
+              "azurerm_application_gateway.this",
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.this",
+              "azurerm_subnet.waf",
+              "azurerm_virtual_network.this"
+            ],
+            "azurerm_dns_zone.dns_zone": [
+              "azurerm_dns_zone.dns_zone"
+            ],
+            "azurerm_key_vault.key_vault_main": [
+              "azurerm_key_vault.key_vault_main"
+            ],
+            "azurerm_postgresql_database.this": [
+              "azurerm_postgresql_database.this"
+            ],
+            "azurerm_postgresql_server.this": [
+              "azurerm_postgresql_server.this"
+            ],
+            "azurerm_private_dns_zone.private_dns_zone": [
+              "azurerm_private_dns_zone.private_dns_zone"
+            ],
+            "azurerm_private_endpoint.private_endpoint_keyvault": [
+              "azurerm_private_endpoint.private_endpoint_keyvault",
+              "azurerm_resource_group.this",
+              "azurerm_subnet.springapps",
+              "azurerm_virtual_network.this"
+            ],
+            "azurerm_public_ip.public_ip": [
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.this"
+            ],
+            "azurerm_resource_group.this": [
+              "azurerm_resource_group.this"
+            ],
+            "azurerm_spring_cloud_app.this": [
+              "azurerm_spring_cloud_app.this"
+            ],
+            "azurerm_spring_cloud_service.this": [
+              "azurerm_spring_cloud_service.this"
+            ],
+            "azurerm_subnet.database": [
+              "azurerm_resource_group.this",
+              "azurerm_subnet.database",
+              "azurerm_virtual_network.this"
+            ],
+            "azurerm_subnet.springapps": [
+              "azurerm_resource_group.this",
+              "azurerm_subnet.springapps",
+              "azurerm_virtual_network.this"
+            ],
+            "azurerm_subnet.subnet_keyvault": [
+              "azurerm_resource_group.this",
+              "azurerm_subnet.subnet_keyvault",
+              "azurerm_virtual_network.this"
+            ],
+            "azurerm_subnet.waf": [
+              "azurerm_resource_group.this",
+              "azurerm_subnet.waf",
+              "azurerm_virtual_network.this"
+            ],
+            "azurerm_virtual_network.this": [
+              "azurerm_resource_group.this",
+              "azurerm_virtual_network.this"
+            ],
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ],
+            "random_string.kv_random_string": [
+              "random_string.kv_random_string"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

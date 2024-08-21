@@ -1,0 +1,61 @@
+{
+    "resource": [
+        {
+            "azurerm_linux_virtual_machine_scale_set": {
+                "demo": {
+                    "admin_ssh_key": [
+                        {
+                            "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTcNZBXea8DCFaCXUuH0xUWBa5zv2YRXBKSnRAaIcwF2fRJxFdG/PgnJ4HoA10id8dSILVSuXLLjp9sTtqNgtnErKy/+zTPXcb6seHd/MycZb5181jYIIyLCuYrf2ZHum4PlMQ3RQUelbjY1ye/k54rmgdx9gmKzvy0v0oyRd1XSat0mvvVm1QesVcu4qV0uyBHga+XYm6mYhJAucNLbwB9JU/gHCc4yidckWzFsFyrosZtmbEi5C8hXNojJIeMBMFoaQSO4eZHtNhlXpscRt8+WzPqS1V/6t3wa/XjdFjZPHFQOjTPBb5dZaF5Fh2lxRDM8oYPxmuVrLPlscdqGJr noname",
+                            "username": "demo"
+                        }
+                    ],
+                    "admin_username": "demo",
+                    "extension": [
+                        {
+                            "name": "InstallCustomScript",
+                            "publisher": "Microsoft.Azure.Extensions",
+                            "settings": "        {\n          \"fileUris\": [\"https://raw.githubusercontent.com/in4it/terraform-azure-course/master/application-gateway/install_nginx.sh\"],\n          \"commandToExecute\": \"./install_nginx.sh\"\n        }",
+                            "type": "CustomScript",
+                            "type_handler_version": "2.0"
+                        }
+                    ],
+                    "instances": 2,
+                    "location": "${var.location}",
+                    "name": "mytestscaleset-1",
+                    "network_interface": [
+                        {
+                            "ip_configuration": [
+                                {
+                                    "application_gateway_backend_address_pool_ids": "${azurerm_application_gateway.app-gateway.backend_address_pool[*].id}",
+                                    "name": "IPConfiguration",
+                                    "primary": true,
+                                    "subnet_id": "${azurerm_subnet.demo-subnet-2.id}"
+                                }
+                            ],
+                            "name": "networkprofile",
+                            "network_security_group_id": "${azurerm_network_security_group.demo-instance.id}",
+                            "primary": true
+                        }
+                    ],
+                    "os_disk": [
+                        {
+                            "caching": "ReadWrite",
+                            "storage_account_type": "Standard_LRS"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.demo.name}",
+                    "sku": "Standard_B1s",
+                    "source_image_reference": [
+                        {
+                            "offer": "0001-com-ubuntu-server-jammy",
+                            "publisher": "Canonical",
+                            "sku": "22_04-lts-gen2",
+                            "version": "latest"
+                        }
+                    ],
+                    "zones": "${var.zones}"
+                }
+            }
+        }
+    ]
+}

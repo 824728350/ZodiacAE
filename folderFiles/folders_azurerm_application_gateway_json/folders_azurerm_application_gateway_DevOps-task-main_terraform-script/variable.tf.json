@@ -1,0 +1,81 @@
+{
+    "variable": [
+        {
+            "client_secret": {
+                "sensitive": true
+            }
+        },
+        {
+            "OS_TYPE": {
+                "default": "Linux"
+            }
+        },
+        {
+            "WEBAPP_PLAN_NAME_1": {
+                "default": "NETApi-plan1"
+            }
+        },
+        {
+            "WEBAPP_PLAN_NAME_2": {
+                "default": "NETApi-plan2"
+            }
+        },
+        {
+            "WEBAPPNAME1": {
+                "default": "abdul-api-1"
+            }
+        },
+        {
+            "WEBAPPNAME2": {
+                "default": "abdulll-api-2"
+            }
+        },
+        {
+            "resource_group_location": {
+                "default": "uaenorth",
+                "description": "Location of the resource group."
+            }
+        },
+        {
+            "application_rg_name": {
+                "default": "application-rg",
+                "description": "Name of the application resource group"
+            }
+        },
+        {
+            "shared_rg_name": {
+                "default": "shared-rg",
+                "description": "Name of the shared resource group"
+            }
+        },
+        {
+            "SKU_NAME_1": {
+                "default": "F1"
+            }
+        },
+        {
+            "SKU_NAME_2": {
+                "default": "B1"
+            }
+        },
+        {
+            "admin_username": {
+                "default": "azureadmin",
+                "description": "The administrator username of the SQL server."
+            }
+        },
+        {
+            "admin_password": {
+                "default": "Reddeadredemption2",
+                "description": "The administrator password of the SQL server.",
+                "sensitive": true
+            }
+        },
+        {
+            "sql_db_name": {
+                "default": "SampleDB",
+                "description": "The name of the SQL Database."
+            }
+        }
+    ]
+}

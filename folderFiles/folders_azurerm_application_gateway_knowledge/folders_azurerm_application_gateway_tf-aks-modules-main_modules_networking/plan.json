@@ -1,0 +1,99 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_resource_group.rg",
+              "mode": "managed",
+              "name": "rg",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "tags": {}
+              },
+              "type": "azurerm_resource_group",
+              "values": {
+                "location": "eastus",
+                "managed_by": null,
+                "name": "test-app-network-rg",
+                "tags": {
+                  "environment_name": "dev",
+                  "owner_email": "amit.894@gmail.com"
+                },
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_subnet.aks",
+              "mode": "managed",
+              "name": "aks",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": []
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.0.0.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "enforce_private_link_endpoint_network_policies": true,
+                "enforce_private_link_service_network_policies": true,
+                "name": "test-app-aks-subnet",
+                "resource_group_name": "test-app-network-rg",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": null,
+                "timeouts": null,
+                "virtual_network_name": "test-app-vnet"
+              }
+            },
+            {
+              "address": "azurerm_virtual_network.aks_vnet",
+              "mode": "managed",
+              "name": "aks_vnet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_space": [
+                  false
+                ],
+                "ddos_protection_plan": [],
+                "dns_servers": [],
+                "encryption": [],
+                "subnet": []
+              },
+              "type": "azurerm_virtual_network",
+              "values": {
+                "address_space": [
+                  "10.0.0.0/16"
+                ],
+                "bgp_community": null,
+                "ddos_protection_plan": [],
+                "edge_zone": null,
+                "encryption": [],
+                "flow_timeout_in_minutes": null,
+                "location": "eastus",
+                "name": "test-app-vnet",
+                "resource_group_name": "test-app-network-rg",
+                "tags": null,
+                "timeouts": null
+              }
+            }
+          ],
+          "text": "data.assemble.plan",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

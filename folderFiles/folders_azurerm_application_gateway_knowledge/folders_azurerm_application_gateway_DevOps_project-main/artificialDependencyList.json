@@ -1,0 +1,37 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_application_gateway.appGateway",
+              "azurerm_virtual_network.vnetk8s"
+            ],
+            [
+              "azurerm_kubernetes_cluster.k8s",
+              "azurerm_virtual_network.vnetk8s"
+            ],
+            [
+              "azurerm_public_ip.staticIP",
+              "azurerm_kubernetes_cluster.k8s"
+            ],
+            [
+              "azurerm_public_ip.staticIP2",
+              "azurerm_virtual_network.vnetk8s"
+            ],
+            [
+              "azurerm_subnet.gwSubnet",
+              "azurerm_virtual_network.vnetk8s"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

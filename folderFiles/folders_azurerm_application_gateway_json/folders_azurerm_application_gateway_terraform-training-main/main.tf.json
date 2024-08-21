@@ -1,0 +1,139 @@
+{
+    "data": [
+        {
+            "azurerm_subscription": {
+                "training": {}
+            }
+        },
+        {
+            "template_cloudinit_config": {
+                "craftcms_config": {
+                    "base64_encode": true,
+                    "gzip": true,
+                    "part": [
+                        {
+                            "content": "packages: ['php', 'php-xml', 'npm', 'nginx']",
+                            "content_type": "text/cloud-config"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "locals": [
+        {
+            "l_tags": "${merge(var.tags, {'client': '${var.client_name}'})}",
+            "vm_name": "${random_pet.pet-name.id}"
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "rg": {
+                    "location": "${var.resource_group_location}",
+                    "name": "${var.resource_group_name}"
+                }
+            }
+        },
+        {
+            "azurerm_ssh_public_key": {
+                "sshkey": {
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${random_pet.pet-name.id}-sshkey",
+                    "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTcNZBXea8DCFaCXUuH0xUWBa5zv2YRXBKSnRAaIcwF2fRJxFdG/PgnJ4HoA10id8dSILVSuXLLjp9sTtqNgtnErKy/+zTPXcb6seHd/MycZb5181jYIIyLCuYrf2ZHum4PlMQ3RQUelbjY1ye/k54rmgdx9gmKzvy0v0oyRd1XSat0mvvVm1QesVcu4qV0uyBHga+XYm6mYhJAucNLbwB9JU/gHCc4yidckWzFsFyrosZtmbEi5C8hXNojJIeMBMFoaQSO4eZHtNhlXpscRt8+WzPqS1V/6t3wa/XjdFjZPHFQOjTPBb5dZaF5Fh2lxRDM8oYPxmuVrLPlscdqGJr noname",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}"
+                }
+            }
+        },
+        {
+            "azurerm_user_assigned_identity": {
+                "uai": {
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${random_pet.pet-name.id}-uai",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}"
+                }
+            }
+        },
+        {
+            "azurerm_role_assignment": {
+                "kv_certificate_user": {
+                    "principal_id": "${azurerm_user_assigned_identity.uai.principal_id}",
+                    "role_definition_name": "Key Vault Certificate User",
+                    "scope": "${data.azurerm_subscription.training.id}"
+                }
+            }
+        },
+        {
+            "azurerm_role_assignment": {
+                "kv_secrets_user": {
+                    "principal_id": "${azurerm_user_assigned_identity.uai.principal_id}",
+                    "role_definition_name": "Key Vault Secrets User",
+                    "scope": "${data.azurerm_subscription.training.id}"
+                }
+            }
+        },
+        {
+            "azurerm_linux_virtual_machine": {
+                "linux_vm": {
+                    "admin_ssh_key": [
+                        {
+                            "public_key": "${azurerm_ssh_public_key.sshkey.public_key}",
+                            "username": "azureuser"
+                        }
+                    ],
+                    "admin_username": "azureuser",
+                    "computer_name": "${local.vm_name}",
+                    "custom_data": "${data.template_cloudinit_config.craftcms_config.rendered}",
+                    "disable_password_authentication": true,
+                    "identity": [
+                        {
+                            "identity_ids": [
+                                "${azurerm_user_assigned_identity.uai.id}"
+                            ],
+                            "type": "UserAssigned"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${local.vm_name}",
+                    "network_interface_ids": [
+                        "${azurerm_network_interface.nic.id}"
+                    ],
+                    "os_disk": [
+                        {
+                            "caching": "ReadWrite",
+                            "name": "OsDisk_1_${random_id.rnd.hex}",
+                            "storage_account_type": "Standard_LRS"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "size": "Standard_A1_v2",
+                    "source_image_reference": [
+                        {
+                            "offer": "ubuntu-24_04-lts",
+                            "publisher": "Canonical",
+                            "sku": "server-gen1",
+                            "version": "latest"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "azurerm_network_interface": {
+                "nic": {
+                    "ip_configuration": [
+                        {
+                            "name": "${local.vm_name}-ip-config",
+                            "private_ip_address_allocation": "Dynamic",
+                            "public_ip_address_id": "${azurerm_public_ip.public_ip.id}",
+                            "subnet_id": "${azurerm_subnet.subnet_internal.id}"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${local.vm_name}-nic",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}"
+                }
+            }
+        }
+    ]
+}

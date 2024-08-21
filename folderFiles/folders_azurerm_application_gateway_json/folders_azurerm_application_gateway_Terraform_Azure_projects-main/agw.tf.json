@@ -1,0 +1,163 @@
+{
+    "locals": [
+        {
+            "backend_address_pool_name": "${azurerm_virtual_network.example.name}-beap",
+            "frontend_ip_configuration_name": "${azurerm_virtual_network.example.name}-feip",
+            "frontend_port_name": "${azurerm_virtual_network.example.name}-feport",
+            "http_setting_name": "${azurerm_virtual_network.example.name}-be-htst",
+            "listener_name": "${azurerm_virtual_network.example.name}-httplstn",
+            "redirect_configuration_name": "${azurerm_virtual_network.example.name}-rdrcfg",
+            "request_routing_rule_name": "${azurerm_virtual_network.example.name}-rqrt"
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_virtual_network": {
+                "example": {
+                    "address_space": [
+                        "10.254.0.0/16"
+                    ],
+                    "location": "${azurerm_resource_group.example.location}",
+                    "name": "example-nw",
+                    "resource_group_name": "${azurerm_resource_group.example.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "frontend": {
+                    "address_prefixes": [
+                        "10.254.0.0/24"
+                    ],
+                    "name": "frontend",
+                    "resource_group_name": "${azurerm_resource_group.example.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.example.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "backend": {
+                    "address_prefixes": [
+                        "10.254.1.0/24"
+                    ],
+                    "name": "backend",
+                    "resource_group_name": "${azurerm_resource_group.example.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.example.name}"
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "example": {
+                    "allocation_method": "Static",
+                    "location": "${azurerm_resource_group.example.location}",
+                    "name": "example-publicip",
+                    "resource_group_name": "${azurerm_resource_group.example.name}",
+                    "sku": "Standard"
+                }
+            }
+        },
+        {
+            "azurerm_application_gateway": {
+                "network": {
+                    "backend_address_pool": [
+                        {
+                            "ip_addresses": "${azurerm_network_interface.app_interface.private_ip_addresses}",
+                            "name": "${local.backend_address_pool_name}"
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "cookie_based_affinity": "Disabled",
+                            "name": "${local.http_setting_name}",
+                            "path": "/path1/",
+                            "port": 80,
+                            "protocol": "Http",
+                            "request_timeout": 60
+                        },
+                        {
+                            "cookie_based_affinity": "Disabled",
+                            "name": "httpssetting",
+                            "path": "/path1/",
+                            "port": 443,
+                            "protocol": "Https",
+                            "request_timeout": 60
+                        }
+                    ],
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "${local.frontend_ip_configuration_name}",
+                            "public_ip_address_id": "${azurerm_public_ip.example.id}"
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "${local.frontend_port_name}",
+                            "port": 80
+                        },
+                        {
+                            "name": "https-port",
+                            "port": 443
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "my-gateway-ip-configuration",
+                            "subnet_id": "${azurerm_subnet.frontend.id}"
+                        }
+                    ],
+                    "http_listener": [
+                        {
+                            "frontend_ip_configuration_name": "${local.frontend_ip_configuration_name}",
+                            "frontend_port_name": "${local.frontend_port_name}",
+                            "name": "${local.listener_name}",
+                            "protocol": "Http"
+                        },
+                        {
+                            "frontend_ip_configuration_name": "${local.frontend_ip_configuration_name}",
+                            "frontend_port_name": "https-port",
+                            "name": "httpslistner",
+                            "protocol": "Https",
+                            "ssl_certificate_name": "generated-cert"
+                        }
+                    ],
+                    "identity": [
+                        {
+                            "identity_ids": [
+                                "${azurerm_user_assigned_identity.user_managed_identity.id}"
+                            ],
+                            "type": "UserAssigned"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.example.location}",
+                    "name": "example-applicationgw",
+                    "request_routing_rule": [
+                        {
+                            "backend_address_pool_name": "${local.backend_address_pool_name}",
+                            "backend_http_settings_name": "${local.http_setting_name}",
+                            "http_listener_name": "${local.listener_name}",
+                            "name": "${local.request_routing_rule_name}",
+                            "priority": 9,
+                            "rule_type": "Basic"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.example.name}",
+                    "sku": [
+                        {
+                            "capacity": 2,
+                            "name": "Standard_v2",
+                            "tier": "Standard_v2"
+                        }
+                    ],
+                    "ssl_certificate": [
+                        {
+                            "key_vault_secret_id": "${azurerm_key_vault_certificate.example.secret_id}",
+                            "name": "generated-cert"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

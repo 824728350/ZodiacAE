@@ -1,0 +1,246 @@
+{
+    "locals": [
+        {
+            "be_address_pool": "${random_pet.pet-name.id}-bep",
+            "be_http_settings": "${random_pet.pet-name.id}-https",
+            "fe_ip_configuration": "${random_pet.pet-name.id}-fec",
+            "fe_port_name": "${random_pet.pet-name.id}-fep",
+            "gw_ip_configuration": "${random_pet.pet-name.id}-gwc",
+            "http_listener": "${random_pet.pet-name.id}-httpl",
+            "request_routing_rule": "${random_pet.pet-name.id}-rrr"
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_network_security_group": {
+                "nsg": {
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${random_pet.pet-name.id}-security-group",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "security_rule": [
+                        {
+                            "access": "Allow",
+                            "description": null,
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": null,
+                            "destination_application_security_group_ids": null,
+                            "destination_port_range": "22",
+                            "destination_port_ranges": null,
+                            "direction": "Inbound",
+                            "name": "SSH",
+                            "priority": 300,
+                            "protocol": "Tcp",
+                            "source_address_prefix": null,
+                            "source_address_prefixes": [
+                                "0.0.0.0/0"
+                            ],
+                            "source_application_security_group_ids": null,
+                            "source_port_range": "*",
+                            "source_port_ranges": null
+                        },
+                        {
+                            "access": "Allow",
+                            "description": null,
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": null,
+                            "destination_application_security_group_ids": null,
+                            "destination_port_range": "80",
+                            "destination_port_ranges": null,
+                            "direction": "Inbound",
+                            "name": "HTTP",
+                            "priority": 301,
+                            "protocol": "Tcp",
+                            "source_address_prefix": null,
+                            "source_address_prefixes": [
+                                "0.0.0.0/0"
+                            ],
+                            "source_application_security_group_ids": null,
+                            "source_port_range": "*",
+                            "source_port_ranges": null
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "azurerm_network_security_group": {
+                "gw_nsg": {
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${random_pet.pet-name.id}-gw-nsg",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "security_rule": [
+                        {
+                            "access": "Allow",
+                            "description": null,
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": null,
+                            "destination_application_security_group_ids": null,
+                            "destination_port_range": "80",
+                            "destination_port_ranges": null,
+                            "direction": "Inbound",
+                            "name": "HTTP",
+                            "priority": 310,
+                            "protocol": "Tcp",
+                            "source_address_prefix": null,
+                            "source_address_prefixes": [
+                                "0.0.0.0/0"
+                            ],
+                            "source_application_security_group_ids": null,
+                            "source_port_range": "*",
+                            "source_port_ranges": null
+                        },
+                        {
+                            "access": "Allow",
+                            "description": null,
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": null,
+                            "destination_application_security_group_ids": null,
+                            "destination_port_range": "*",
+                            "destination_port_ranges": null,
+                            "direction": "Inbound",
+                            "name": "AllowMgmt",
+                            "priority": 100,
+                            "protocol": "*",
+                            "source_address_prefix": null,
+                            "source_address_prefixes": [
+                                "0.0.0.0/0"
+                            ],
+                            "source_application_security_group_ids": null,
+                            "source_port_range": "65200-65535",
+                            "source_port_ranges": null
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "alb-public-ip": {
+                    "allocation_method": "Static",
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${random_pet.pet-name.id}-gw-pip",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "sku": "Standard"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "subnet_internal": {
+                    "address_prefixes": "${var.internal_subnet_space}",
+                    "name": "${random_pet.pet-name.id}-subnet",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "bastionsubnet": {
+                    "address_prefixes": "${var.bastion_subnet}",
+                    "name": "AzureBastionSubnet",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "gw_subnet": {
+                    "address_prefixes": "${var.gateway_subnet}",
+                    "name": "${random_pet.pet-name.id}-gw-subnet",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet_network_security_group_association": {
+                "nsg-assoc": {
+                    "network_security_group_id": "${azurerm_network_security_group.nsg.id}",
+                    "subnet_id": "${azurerm_subnet.subnet_internal.id}"
+                }
+            }
+        },
+        {
+            "azurerm_virtual_network": {
+                "vnet": {
+                    "address_space": "${var.vnet_address_space}",
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${random_pet.pet-name.id}-vnet",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}"
+                }
+            }
+        },
+        {
+            "azurerm_application_gateway": {
+                "gw": {
+                    "backend_address_pool": [
+                        {
+                            "ip_addresses": [
+                                "${azurerm_linux_virtual_machine.linux_vm.private_ip_address}"
+                            ],
+                            "name": "${local.be_address_pool}"
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "cookie_based_affinity": "Disabled",
+                            "name": "${local.be_http_settings}",
+                            "path": "/",
+                            "port": 80,
+                            "protocol": "Http",
+                            "request_timeout": 60
+                        }
+                    ],
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "${local.fe_ip_configuration}",
+                            "public_ip_address_id": "${azurerm_public_ip.alb-public-ip.id}"
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "${local.fe_port_name}",
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "${local.gw_ip_configuration}",
+                            "subnet_id": "${azurerm_subnet.gw_subnet.id}"
+                        }
+                    ],
+                    "http_listener": [
+                        {
+                            "frontend_ip_configuration_name": "${local.fe_ip_configuration}",
+                            "frontend_port_name": "${local.fe_port_name}",
+                            "name": "${local.http_listener}",
+                            "protocol": "Http"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${random_pet.pet-name.id}-load-balancer",
+                    "request_routing_rule": [
+                        {
+                            "backend_address_pool_name": "${local.be_address_pool}",
+                            "backend_http_settings_name": "${local.be_http_settings}",
+                            "http_listener_name": "${local.http_listener}",
+                            "name": "${local.request_routing_rule}",
+                            "priority": 9,
+                            "rule_type": "Basic"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "sku": [
+                        {
+                            "capacity": 2,
+                            "name": "Standard_v2",
+                            "tier": "Standard_v2"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

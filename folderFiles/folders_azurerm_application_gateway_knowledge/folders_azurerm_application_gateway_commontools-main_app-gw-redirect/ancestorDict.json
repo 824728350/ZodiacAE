@@ -1,0 +1,40 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.app-rg": [
+              "azurerm_application_gateway.app-rg",
+              "azurerm_public_ip.app-rg",
+              "azurerm_resource_group.app-rg",
+              "azurerm_subnet.app-rg",
+              "azurerm_virtual_network.app-rg"
+            ],
+            "azurerm_public_ip.app-rg": [
+              "azurerm_public_ip.app-rg",
+              "azurerm_resource_group.app-rg"
+            ],
+            "azurerm_resource_group.app-rg": [
+              "azurerm_resource_group.app-rg"
+            ],
+            "azurerm_subnet.app-rg": [
+              "azurerm_resource_group.app-rg",
+              "azurerm_subnet.app-rg",
+              "azurerm_virtual_network.app-rg"
+            ],
+            "azurerm_virtual_network.app-rg": [
+              "azurerm_resource_group.app-rg",
+              "azurerm_virtual_network.app-rg"
+            ]
+          },
+          "text": "data.assemble.ancestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

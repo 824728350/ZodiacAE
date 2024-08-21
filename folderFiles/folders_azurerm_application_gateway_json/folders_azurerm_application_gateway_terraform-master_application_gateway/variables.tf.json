@@ -1,0 +1,16 @@
+{
+    "variable": [
+        {
+            "resource_group_name": {
+                "default": "ukcfhold",
+                "description": "resouce group name"
+            }
+        },
+        {
+            "resource_group_location": {
+                "default": "eastus",
+                "description": "resource group lacation"
+            }
+        }
+    ]
+}

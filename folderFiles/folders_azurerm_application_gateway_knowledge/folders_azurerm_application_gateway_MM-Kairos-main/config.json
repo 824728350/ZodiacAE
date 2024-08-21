@@ -1,0 +1,4602 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_app_service_certificate.azmmclientrg-365",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "key_vault_secret_id": {
+                  "constant_value": "https://azmmkv01.vault.azure.net/secrets/MMWildcardKV2024/e1fac60ef8e54c1bba8d835bd1fb0d52"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMKV01-MMWildcardKV2024"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-365",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_certificate"
+            },
+            {
+              "address": "azurerm_app_service_certificate_binding.azmmclientrg-custombinding-cert-webapp-br2",
+              "expressions": {
+                "certificate_id": {
+                  "references": [
+                    "azurerm_app_service_certificate.azmmclientrg-365.id",
+                    "azurerm_app_service_certificate.azmmclientrg-365"
+                  ]
+                },
+                "hostname_binding_id": {
+                  "references": [
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-br2.id",
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-br2"
+                  ]
+                },
+                "ssl_state": {
+                  "constant_value": "SniEnabled"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-cert-webapp-br2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_certificate_binding"
+            },
+            {
+              "address": "azurerm_app_service_certificate_binding.azmmclientrg-custombinding-cert-webapp-create-online2",
+              "expressions": {
+                "certificate_id": {
+                  "references": [
+                    "azurerm_app_service_certificate.azmmclientrg-365.id",
+                    "azurerm_app_service_certificate.azmmclientrg-365"
+                  ]
+                },
+                "hostname_binding_id": {
+                  "references": [
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-create-online2.id",
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-create-online2"
+                  ]
+                },
+                "ssl_state": {
+                  "constant_value": "SniEnabled"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-cert-webapp-create-online2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_certificate_binding"
+            },
+            {
+              "address": "azurerm_app_service_certificate_binding.azmmclientrg-custombinding-cert-webapp-ir2",
+              "expressions": {
+                "certificate_id": {
+                  "references": [
+                    "azurerm_app_service_certificate.azmmclientrg-365.id",
+                    "azurerm_app_service_certificate.azmmclientrg-365"
+                  ]
+                },
+                "hostname_binding_id": {
+                  "references": [
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-ir2.id",
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-ir2"
+                  ]
+                },
+                "ssl_state": {
+                  "constant_value": "SniEnabled"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-cert-webapp-ir2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_certificate_binding"
+            },
+            {
+              "address": "azurerm_app_service_certificate_binding.azmmclientrg-custombinding-cert-webapp-pioneer-online2",
+              "expressions": {
+                "certificate_id": {
+                  "references": [
+                    "azurerm_app_service_certificate.azmmclientrg-365.id",
+                    "azurerm_app_service_certificate.azmmclientrg-365"
+                  ]
+                },
+                "hostname_binding_id": {
+                  "references": [
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-pioneer-online2.id",
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-pioneer-online2"
+                  ]
+                },
+                "ssl_state": {
+                  "constant_value": "SniEnabled"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-cert-webapp-pioneer-online2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_certificate_binding"
+            },
+            {
+              "address": "azurerm_app_service_certificate_binding.azmmclientrg-custombinding-cert-webapp-pp2",
+              "expressions": {
+                "certificate_id": {
+                  "references": [
+                    "azurerm_app_service_certificate.azmmclientrg-365.id",
+                    "azurerm_app_service_certificate.azmmclientrg-365"
+                  ]
+                },
+                "hostname_binding_id": {
+                  "references": [
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-pp2.id",
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-pp2"
+                  ]
+                },
+                "ssl_state": {
+                  "constant_value": "SniEnabled"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-cert-webapp-pp2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_certificate_binding"
+            },
+            {
+              "address": "azurerm_app_service_certificate_binding.azmmclientrg-custombinding-cert-webapp-rs2",
+              "expressions": {
+                "certificate_id": {
+                  "references": [
+                    "azurerm_app_service_certificate.azmmclientrg-365.id",
+                    "azurerm_app_service_certificate.azmmclientrg-365"
+                  ]
+                },
+                "hostname_binding_id": {
+                  "references": [
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-rs2.id",
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-rs2"
+                  ]
+                },
+                "ssl_state": {
+                  "constant_value": "SniEnabled"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-cert-webapp-rs2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_certificate_binding"
+            },
+            {
+              "address": "azurerm_app_service_certificate_binding.azmmclientrg-custombinding-cert-webapp-se2",
+              "expressions": {
+                "certificate_id": {
+                  "references": [
+                    "azurerm_app_service_certificate.azmmclientrg-365.id",
+                    "azurerm_app_service_certificate.azmmclientrg-365"
+                  ]
+                },
+                "hostname_binding_id": {
+                  "references": [
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-se2.id",
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-se2"
+                  ]
+                },
+                "ssl_state": {
+                  "constant_value": "SniEnabled"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-cert-webapp-se2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_certificate_binding"
+            },
+            {
+              "address": "azurerm_app_service_certificate_binding.azmmclientrg-custombinding-cert-webapp-smile-online2",
+              "expressions": {
+                "certificate_id": {
+                  "references": [
+                    "azurerm_app_service_certificate.azmmclientrg-365.id",
+                    "azurerm_app_service_certificate.azmmclientrg-365"
+                  ]
+                },
+                "hostname_binding_id": {
+                  "references": [
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-smile-online2.id",
+                    "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-smile-online2"
+                  ]
+                },
+                "ssl_state": {
+                  "constant_value": "SniEnabled"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-cert-webapp-smile-online2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_certificate_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-187",
+              "depends_on": [
+                "azurerm_windows_web_app.azmmclientrg-182"
+              ],
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "dt-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "dt-matchmakersoftware.azurewebsites.net"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-187",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-188",
+              "depends_on": [
+                "azurerm_windows_web_app.azmmclientrg-182"
+              ],
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "dt-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "dt.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-188",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-371",
+              "depends_on": [
+                "azurerm_windows_web_app.azmmclientrg-366"
+              ],
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "lta-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "lta-matchmakersoftware.azurewebsites.net"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-371",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-372",
+              "depends_on": [
+                "azurerm_windows_web_app.azmmclientrg-366"
+              ],
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "lta-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "lta.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-372",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-6",
+              "depends_on": [
+                "azurerm_windows_web_app.azmmclientrg-1"
+              ],
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "applehealth-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "applehealth-matchmakersoftware.azurewebsites.net"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-6",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-7",
+              "depends_on": [
+                "azurerm_windows_web_app.azmmclientrg-1"
+              ],
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "applehealth-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "applehealth.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-7",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-br2",
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "br-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "br.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-webapp-br2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-create-online2",
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "create-online-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "create-online.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-webapp-create-online2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-ir2",
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "ir-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "ir.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-webapp-ir2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-pioneer-online2",
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "pioneer-online-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "pioneer-online.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-webapp-pioneer-online2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-pp2",
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "pp-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "pp.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-webapp-pp2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-rs2",
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "rs-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "rs.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-webapp-rs2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-se2",
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "se-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "se.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-webapp-se2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-smile-online2",
+              "expressions": {
+                "app_service_name": {
+                  "constant_value": "smile-online-matchmakersoftware"
+                },
+                "hostname": {
+                  "constant_value": "smile-online.matchmakersoftware.com"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-custombinding-webapp-smile-online2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_app_service_custom_hostname_binding"
+            },
+            {
+              "address": "azurerm_application_gateway.res-4",
+              "depends_on": [
+                "azurerm_user_assigned_identity.res-3",
+                "azurerm_public_ip.res-8",
+                "azurerm_subnet.res-10"
+              ],
+              "expressions": {
+                "backend_address_pool": [
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "applehealth-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "applehealth-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "dt-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "dt-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "lta-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "lta-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "ir-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "ir-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "rs-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "rs-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "se-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "se-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "smile-online-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "smile-online-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "create-online-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "create-online-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "br-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "br-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "pp-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "pp-backendpool"
+                    }
+                  },
+                  {
+                    "fqdns": {
+                      "constant_value": [
+                        "pioneer-online-matchmakersoftware.azurewebsites.net"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "pioneer-online-backendpool"
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "applehealth-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "applehealth-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "dt-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "dt-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "lta-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "lta-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "ir-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "ir-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "rs-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "rs-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "se-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "se-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "smile-online-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "smile-online-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "create-online-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "create-online-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "br-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "br-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "pp-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "pp-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  },
+                  {
+                    "affinity_cookie_name": {
+                      "constant_value": "ApplicationGatewayAffinity"
+                    },
+                    "cookie_based_affinity": {
+                      "constant_value": "Enabled"
+                    },
+                    "name": {
+                      "constant_value": "pioneer-online-backendsetting"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    },
+                    "probe_name": {
+                      "constant_value": "pioneer-online-healthprobe"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  }
+                ],
+                "enable_http2": {
+                  "constant_value": true
+                },
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "public_ip_address_id": {
+                      "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/publicIPAddresses/AZMMAGW01PIP"
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "constant_value": "port_443"
+                    },
+                    "port": {
+                      "constant_value": 443
+                    }
+                  },
+                  {
+                    "name": {
+                      "constant_value": "port_80"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "appGatewayIpConfig"
+                    },
+                    "subnet_id": {
+                      "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AGWSNET01"
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "applehealth.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "applehealth-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "dt.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "dt-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "lta.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "lta-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "ir.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "ir-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "rs.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "rs-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "se.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "se-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "smile-online.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "smile-online-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "create-online.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "create-online-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "br.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "br-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "pp.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "pp-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_443"
+                    },
+                    "host_name": {
+                      "constant_value": "pioneer-online.matchmakersoftware.com"
+                    },
+                    "name": {
+                      "constant_value": "pioneer-online-listenerhttps"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "require_sni": {
+                      "constant_value": true
+                    },
+                    "ssl_certificate_name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  }
+                ],
+                "identity": [
+                  {
+                    "identity_ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.ManagedIdentity/userAssignedIdentities/AppGWManagedID"
+                      ]
+                    },
+                    "type": {
+                      "constant_value": "UserAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMAGW01"
+                },
+                "probe": [
+                  {
+                    "host": {
+                      "constant_value": "applehealth-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "applehealth-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "dt-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "dt-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "lta-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "lta-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "ir-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "ir-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "rs-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "rs-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "se-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "se-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "smile-online-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "smile-online-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "create-online-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "create-online-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "br-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "br-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "pp-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "pp-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  },
+                  {
+                    "host": {
+                      "constant_value": "pioneer-online-matchmakersoftware.azurewebsites.net"
+                    },
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "status_code": {
+                          "constant_value": [
+                            "200-399"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "pioneer-online-healthprobe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "protocol": {
+                      "constant_value": "Https"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  }
+                ],
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "applehealth-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "applehealth-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "applehealth-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "applehealth-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 3
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "dt-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "dt-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "dt-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "dt-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 2
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "lta-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "lta-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "lta-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "lta-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 1
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "ir-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "ir-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "ir-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "ir-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 4
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "rs-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "rs-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "rs-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "rs-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 5
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "se-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "se-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "se-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "se-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 7
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "smile-online-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "smile-online-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "smile-online-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "smile-online-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 6
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "create-online-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "create-online-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "create-online-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "create-online-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 8
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "br-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "br-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "br-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "br-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 10
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "pp-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "pp-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "pp-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "pp-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 11
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "pioneer-online-backendpool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "pioneer-online-backendsetting"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "pioneer-online-listenerhttps"
+                    },
+                    "name": {
+                      "constant_value": "pioneer-online-routingrule"
+                    },
+                    "priority": {
+                      "constant_value": 12
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "constant_value": 1
+                    },
+                    "name": {
+                      "constant_value": "Standard_v2"
+                    },
+                    "tier": {
+                      "constant_value": "Standard_v2"
+                    }
+                  }
+                ],
+                "ssl_certificate": [
+                  {
+                    "key_vault_secret_id": {
+                      "references": [
+                        "data.azurerm_key_vault_certificate.res-2.secret_id",
+                        "data.azurerm_key_vault_certificate.res-2"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "MMWildcard2024"
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "res-4",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "azurerm_application_insights.azmmclientrg-364",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "lta-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-364",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_application_insights.azmmclientrg-appinsight-webapp-br",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "br-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-appinsight-webapp-br",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_application_insights.azmmclientrg-appinsight-webapp-create-online",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "create-online-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-appinsight-webapp-create-online",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_application_insights.azmmclientrg-appinsight-webapp-ir",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "ir-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-appinsight-webapp-ir",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_application_insights.azmmclientrg-appinsight-webapp-pioneer-online",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "pioneer-online-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-appinsight-webapp-pioneer-online",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_application_insights.azmmclientrg-appinsight-webapp-pp",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "pp-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-appinsight-webapp-pp",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_application_insights.azmmclientrg-appinsight-webapp-rs",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "rs-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-appinsight-webapp-rs",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_application_insights.azmmclientrg-appinsight-webapp-se",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "se-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-appinsight-webapp-se",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_application_insights.azmmclientrg-appinsight-webapp-smile-online",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "smile-online-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-appinsight-webapp-smile-online",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_application_insights.res-16",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "application_type": {
+                  "constant_value": "web"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMApp01"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "sampling_percentage": {
+                  "constant_value": 0
+                },
+                "workspace_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/DefaultResourceGroup-NEU/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-2bd29ed6-34a6-42d7-8235-293e8ee67447-NEU"
+                }
+              },
+              "mode": "managed",
+              "name": "res-16",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_application_insights"
+            },
+            {
+              "address": "azurerm_key_vault.res-1",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMKV01"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "sku_name": {
+                  "constant_value": "standard"
+                },
+                "tenant_id": {
+                  "constant_value": "3a243d17-3d9f-43e2-96a9-222d4b6fada1"
+                }
+              },
+              "mode": "managed",
+              "name": "res-1",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_key_vault"
+            },
+            {
+              "address": "azurerm_monitor_action_group.res-15",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "arm_role_receiver": [
+                  {
+                    "name": {
+                      "constant_value": "Monitoring Contributor"
+                    },
+                    "role_id": {
+                      "constant_value": "749f88d5-cbae-40b8-bcfc-e573ddc772fa"
+                    },
+                    "use_common_alert_schema": {
+                      "constant_value": true
+                    }
+                  },
+                  {
+                    "name": {
+                      "constant_value": "Monitoring Reader"
+                    },
+                    "role_id": {
+                      "constant_value": "43d0d8ad-25c7-4714-9337-8ba259a9fe05"
+                    },
+                    "use_common_alert_schema": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "Application Insights Smart Detection"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "short_name": {
+                  "constant_value": "SmartDetect"
+                }
+              },
+              "mode": "managed",
+              "name": "res-15",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_action_group"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.azmmclientrg-363",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - lta-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmclientapps/providers/microsoft.insights/components/lta-matchmakersoftware"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-363",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.azmmclientrg-smartalert-webapp-br",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - br-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmclientapps/providers/microsoft.insights/components/br-matchmakersoftware"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-smartalert-webapp-br",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.azmmclientrg-smartalert-webapp-create-online",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - create-online-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmclientapps/providers/microsoft.insights/components/create-online-matchmakersoftware"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-smartalert-webapp-create-online",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.azmmclientrg-smartalert-webapp-ir",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - ir-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmclientapps/providers/microsoft.insights/components/ir-matchmakersoftware"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-smartalert-webapp-ir",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.azmmclientrg-smartalert-webapp-pioneer-online",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - pioneer-online-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmclientapps/providers/microsoft.insights/components/pioneer-online-matchmakersoftware"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-smartalert-webapp-pioneer-online",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.azmmclientrg-smartalert-webapp-pp",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - pp-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmclientapps/providers/microsoft.insights/components/pp-matchmakersoftware"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-smartalert-webapp-pp",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.azmmclientrg-smartalert-webapp-rs",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - rs-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmclientapps/providers/microsoft.insights/components/rs-matchmakersoftware"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-smartalert-webapp-rs",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.azmmclientrg-smartalert-webapp-se",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - se-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmclientapps/providers/microsoft.insights/components/se-matchmakersoftware"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-smartalert-webapp-se",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.azmmclientrg-smartalert-webapp-smile-online",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - smile-online-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmclientapps/providers/microsoft.insights/components/smile-online-matchmakersoftware"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-smartalert-webapp-smile-online",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_monitor_smart_detector_alert_rule.res-14",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "action_group": [
+                  {
+                    "ids": {
+                      "constant_value": [
+                        "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Insights/actionGroups/application insights smart detection"
+                      ]
+                    }
+                  }
+                ],
+                "description": {
+                  "constant_value": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls."
+                },
+                "detector_type": {
+                  "constant_value": "FailureAnomaliesDetector"
+                },
+                "frequency": {
+                  "constant_value": "PT1M"
+                },
+                "name": {
+                  "constant_value": "Failure Anomalies - AZMMApp01"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "scope_resource_ids": {
+                  "constant_value": [
+                    "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourcegroups/azmmcorerg01/providers/microsoft.insights/components/azmmapp01"
+                  ]
+                },
+                "severity": {
+                  "constant_value": "Sev3"
+                }
+              },
+              "mode": "managed",
+              "name": "res-14",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_monitor_smart_detector_alert_rule"
+            },
+            {
+              "address": "azurerm_private_dns_a_record.res-17",
+              "depends_on": [
+                "azurerm_private_dns_zone.res-5"
+              ],
+              "expressions": {
+                "name": {
+                  "constant_value": "azmmsql01"
+                },
+                "records": {
+                  "constant_value": [
+                    "10.191.2.4"
+                  ]
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmcorerg01"
+                },
+                "ttl": {
+                  "constant_value": 3600
+                },
+                "zone_name": {
+                  "constant_value": "privatelink.database.windows.net"
+                }
+              },
+              "mode": "managed",
+              "name": "res-17",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_private_dns_a_record"
+            },
+            {
+              "address": "azurerm_private_dns_zone.res-5",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "name": {
+                  "constant_value": "privatelink.database.windows.net"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                }
+              },
+              "mode": "managed",
+              "name": "res-5",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_private_dns_zone"
+            },
+            {
+              "address": "azurerm_private_dns_zone_virtual_network_link.res-6",
+              "depends_on": [
+                "azurerm_private_dns_zone.res-5",
+                "azurerm_virtual_network.res-9"
+              ],
+              "expressions": {
+                "name": {
+                  "constant_value": "mp2zoxnjsbkyw"
+                },
+                "private_dns_zone_name": {
+                  "constant_value": "privatelink.database.windows.net"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "virtual_network_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "res-6",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_private_dns_zone_virtual_network_link"
+            },
+            {
+              "address": "azurerm_private_endpoint.res-7",
+              "depends_on": [
+                "azurerm_subnet.res-12"
+              ],
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMSQL01PEP01"
+                },
+                "private_service_connection": [
+                  {
+                    "is_manual_connection": {
+                      "constant_value": false
+                    },
+                    "name": {
+                      "constant_value": "AZMMSQL01PEP01"
+                    },
+                    "private_connection_resource_id": {
+                      "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG02/providers/Microsoft.Sql/servers/azmmsql01"
+                    },
+                    "subresource_names": {
+                      "constant_value": [
+                        "SqlServer"
+                      ]
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/SQLSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "res-7",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_private_endpoint"
+            },
+            {
+              "address": "azurerm_public_ip.res-8",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMAGW01PIP"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                }
+              },
+              "mode": "managed",
+              "name": "res-8",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_resource_group.azmmclientrg-0",
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMClientApps"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-0",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_resource_group.res-0",
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMCoreRG01"
+                }
+              },
+              "mode": "managed",
+              "name": "res-0",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_service_plan.res-13",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMASP01"
+                },
+                "os_type": {
+                  "constant_value": "Windows"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "sku_name": {
+                  "constant_value": "S1"
+                }
+              },
+              "mode": "managed",
+              "name": "res-13",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_service_plan"
+            },
+            {
+              "address": "azurerm_service_plan.webappsp2",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMASP02"
+                },
+                "os_type": {
+                  "constant_value": "Windows"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "sku_name": {
+                  "constant_value": "P0v3"
+                }
+              },
+              "mode": "managed",
+              "name": "webappsp2",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_service_plan"
+            },
+            {
+              "address": "azurerm_service_plan.webappsp3",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMASP03"
+                },
+                "os_type": {
+                  "constant_value": "Windows"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "sku_name": {
+                  "constant_value": "S1"
+                }
+              },
+              "mode": "managed",
+              "name": "webappsp3",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_service_plan"
+            },
+            {
+              "address": "azurerm_service_plan.webappsp4",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMASP04"
+                },
+                "os_type": {
+                  "constant_value": "Windows"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "sku_name": {
+                  "constant_value": "P0v3"
+                }
+              },
+              "mode": "managed",
+              "name": "webappsp4",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_service_plan"
+            },
+            {
+              "address": "azurerm_service_plan.webappsp5",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMASP05"
+                },
+                "os_type": {
+                  "constant_value": "Windows"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "sku_name": {
+                  "constant_value": "S1"
+                }
+              },
+              "mode": "managed",
+              "name": "webappsp5",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_service_plan"
+            },
+            {
+              "address": "azurerm_subnet.res-10",
+              "depends_on": [
+                "azurerm_virtual_network.res-9"
+              ],
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.191.3.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "AGWSNET01"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "virtual_network_name": {
+                  "constant_value": "AZMMVNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "res-10",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.res-11",
+              "depends_on": [
+                "azurerm_virtual_network.res-9"
+              ],
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.191.1.0/24"
+                  ]
+                },
+                "delegation": [
+                  {
+                    "name": {
+                      "constant_value": "delegation"
+                    },
+                    "service_delegation": [
+                      {
+                        "actions": {
+                          "constant_value": [
+                            "Microsoft.Network/virtualNetworks/subnets/action"
+                          ]
+                        },
+                        "name": {
+                          "constant_value": "Microsoft.Web/serverFarms"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "name": {
+                  "constant_value": "AppSNET01"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "service_endpoints": {
+                  "constant_value": [
+                    "Microsoft.Storage"
+                  ]
+                },
+                "virtual_network_name": {
+                  "constant_value": "AZMMVNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "res-11",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.res-12",
+              "depends_on": [
+                "azurerm_virtual_network.res-9"
+              ],
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.191.2.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "SQLSNET01"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                },
+                "virtual_network_name": {
+                  "constant_value": "AZMMVNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "res-12",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_user_assigned_identity.res-3",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "location": {
+                  "constant_value": "uksouth"
+                },
+                "name": {
+                  "constant_value": "AppGWManagedID"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                }
+              },
+              "mode": "managed",
+              "name": "res-3",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_user_assigned_identity"
+            },
+            {
+              "address": "azurerm_virtual_network.res-9",
+              "depends_on": [
+                "azurerm_resource_group.res-0"
+              ],
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.191.0.0/16"
+                  ]
+                },
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "AZMMVNET01"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMCoreRG01"
+                }
+              },
+              "mode": "managed",
+              "name": "res-9",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-1",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "MM_DEFAULT_VERSION": "mmakerah",
+                    "MM_EXTENSION_VERSION": "\u0026_#;|,N,FTX{SQs\\i*{n(c(x\\Z|A1qS,^VVjX#[20{Z7)7;$f6",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=17008;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "applehealth-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP01"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-1",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-182",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "MM_DEFAULT_VERSION": "mmakerdt",
+                    "MM_EXTENSION_VERSION": "\u0026)ku4\\92MxA_j|\u003e*V,YS(@(#3=Ivs4\u003c*0k^mwzpiS7JWe4QjC(",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=17009;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "dt-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "AZMMClientApps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP01"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-182",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-366",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=e62501d5-31c1-45f2-a54e-8ea998494ed0;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                    "ApplicationInsightsAgent_EXTENSION_VERSION": "~2",
+                    "MM_DEFAULT_VERSION": "mmakerlta",
+                    "MM_EXTENSION_VERSION": "n4-UL:g5aHw%et+Wt!r}i%$Hm6q4T%CupX2B8M)ftbco]*!?g%",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time",
+                    "XDT_MicrosoftApplicationInsights_Mode": "default"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=2179;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "lta-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP01"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "sticky_settings": [
+                  {
+                    "app_setting_names": {
+                      "constant_value": [
+                        "WEBSITE_TIME_ZONE"
+                      ]
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-366",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-webbapp-br",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=e62501d5-31c1-45f2-a54e-8ea998494ed0;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                    "ApplicationInsightsAgent_EXTENSION_VERSION": "~2",
+                    "MM_DEFAULT_VERSION": "mmakerbr",
+                    "MM_EXTENSION_VERSION": "n4-UL:g5aHw%et+Wt!r}i%$Hm6q4T%CupX2B8M)ftbco]*!?g%",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time",
+                    "XDT_MicrosoftApplicationInsights_Mode": "default"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=2179;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "br-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP02"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "sticky_settings": [
+                  {
+                    "app_setting_names": {
+                      "constant_value": [
+                        "WEBSITE_TIME_ZONE"
+                      ]
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-webbapp-br",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-webbapp-create-online",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=e62501d5-31c1-45f2-a54e-8ea998494ed0;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                    "ApplicationInsightsAgent_EXTENSION_VERSION": "~2",
+                    "MM_DEFAULT_VERSION": "mmakercreate-online",
+                    "MM_EXTENSION_VERSION": "n4-UL:g5aHw%et+Wt!r}i%$Hm6q4T%CupX2B8M)ftbco]*!?g%",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time",
+                    "XDT_MicrosoftApplicationInsights_Mode": "default"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=2179;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "create-online-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP03"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "sticky_settings": [
+                  {
+                    "app_setting_names": {
+                      "constant_value": [
+                        "WEBSITE_TIME_ZONE"
+                      ]
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-webbapp-create-online",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-webbapp-ir",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=e62501d5-31c1-45f2-a54e-8ea998494ed0;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                    "ApplicationInsightsAgent_EXTENSION_VERSION": "~2",
+                    "MM_DEFAULT_VERSION": "mmakerir",
+                    "MM_EXTENSION_VERSION": "n4-UL:g5aHw%et+Wt!r}i%$Hm6q4T%CupX2B8M)ftbco]*!?g%",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time",
+                    "XDT_MicrosoftApplicationInsights_Mode": "default"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=2179;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "ir-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP02"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "sticky_settings": [
+                  {
+                    "app_setting_names": {
+                      "constant_value": [
+                        "WEBSITE_TIME_ZONE"
+                      ]
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-webbapp-ir",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-webbapp-pioneer-online",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=e62501d5-31c1-45f2-a54e-8ea998494ed0;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                    "ApplicationInsightsAgent_EXTENSION_VERSION": "~2",
+                    "MM_DEFAULT_VERSION": "mmakerpioneer-online",
+                    "MM_EXTENSION_VERSION": "n4-UL:g5aHw%et+Wt!r}i%$Hm6q4T%CupX2B8M)ftbco]*!?g%",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time",
+                    "XDT_MicrosoftApplicationInsights_Mode": "default"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=2179;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "pioneer-online-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP05"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "sticky_settings": [
+                  {
+                    "app_setting_names": {
+                      "constant_value": [
+                        "WEBSITE_TIME_ZONE"
+                      ]
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-webbapp-pioneer-online",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-webbapp-pp",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=e62501d5-31c1-45f2-a54e-8ea998494ed0;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                    "ApplicationInsightsAgent_EXTENSION_VERSION": "~2",
+                    "MM_DEFAULT_VERSION": "mmakerpp",
+                    "MM_EXTENSION_VERSION": "n4-UL:g5aHw%et+Wt!r}i%$Hm6q4T%CupX2B8M)ftbco]*!?g%",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time",
+                    "XDT_MicrosoftApplicationInsights_Mode": "default"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=2179;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "pp-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP02"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "sticky_settings": [
+                  {
+                    "app_setting_names": {
+                      "constant_value": [
+                        "WEBSITE_TIME_ZONE"
+                      ]
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-webbapp-pp",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-webbapp-rs",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=e62501d5-31c1-45f2-a54e-8ea998494ed0;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                    "ApplicationInsightsAgent_EXTENSION_VERSION": "~2",
+                    "MM_DEFAULT_VERSION": "mmakerrs",
+                    "MM_EXTENSION_VERSION": "n4-UL:g5aHw%et+Wt!r}i%$Hm6q4T%CupX2B8M)ftbco]*!?g%",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time",
+                    "XDT_MicrosoftApplicationInsights_Mode": "default"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=2179;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "rs-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP02"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "sticky_settings": [
+                  {
+                    "app_setting_names": {
+                      "constant_value": [
+                        "WEBSITE_TIME_ZONE"
+                      ]
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-webbapp-rs",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-webbapp-se",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=e62501d5-31c1-45f2-a54e-8ea998494ed0;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                    "ApplicationInsightsAgent_EXTENSION_VERSION": "~2",
+                    "MM_DEFAULT_VERSION": "mmakerse",
+                    "MM_EXTENSION_VERSION": "n4-UL:g5aHw%et+Wt!r}i%$Hm6q4T%CupX2B8M)ftbco]*!?g%",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time",
+                    "XDT_MicrosoftApplicationInsights_Mode": "default"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=2179;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "se-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP04"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "sticky_settings": [
+                  {
+                    "app_setting_names": {
+                      "constant_value": [
+                        "WEBSITE_TIME_ZONE"
+                      ]
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-webbapp-se",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "azurerm_windows_web_app.azmmclientrg-webbapp-smile-online",
+              "depends_on": [
+                "azurerm_resource_group.azmmclientrg-0"
+              ],
+              "expressions": {
+                "app_settings": {
+                  "constant_value": {
+                    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=e62501d5-31c1-45f2-a54e-8ea998494ed0;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                    "ApplicationInsightsAgent_EXTENSION_VERSION": "~2",
+                    "MM_DEFAULT_VERSION": "mmakersmile-online",
+                    "MM_EXTENSION_VERSION": "n4-UL:g5aHw%et+Wt!r}i%$Hm6q4T%CupX2B8M)ftbco]*!?g%",
+                    "WEBSITE_TIME_ZONE": "GMT Standard Time",
+                    "XDT_MicrosoftApplicationInsights_Mode": "default"
+                  }
+                },
+                "client_affinity_enabled": {
+                  "constant_value": true
+                },
+                "connection_string": [
+                  {
+                    "name": {
+                      "constant_value": "mmakerConnString"
+                    },
+                    "type": {
+                      "constant_value": "SQLAzure"
+                    },
+                    "value": {
+                      "constant_value": "data source=tcp:azmmsql01.database.windows.net;initial catalog=2179;persist security info=True;App=EntityFramework;Connection Timeout=60"
+                    }
+                  }
+                ],
+                "https_only": {
+                  "constant_value": true
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "logs": [
+                  {
+                    "detailed_error_messages": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "name": {
+                  "constant_value": "smile-online-matchmakersoftware"
+                },
+                "resource_group_name": {
+                  "constant_value": "azmmclientapps"
+                },
+                "service_plan_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Web/serverFarms/AZMMASP03"
+                },
+                "site_config": [
+                  {
+                    "ftps_state": {
+                      "constant_value": "FtpsOnly"
+                    },
+                    "ip_restriction": [
+                      {
+                        "description": {
+                          "constant_value": "AccessFromAppGateway"
+                        },
+                        "priority": {
+                          "constant_value": 200
+                        },
+                        "service_tag": {
+                          "constant_value": "GatewayManager"
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "Applicaiton Gateway FrontEnd"
+                        },
+                        "ip_address": {
+                          "constant_value": "98.71.72.6/32"
+                        },
+                        "priority": {
+                          "constant_value": 300
+                        }
+                      },
+                      {
+                        "description": {
+                          "constant_value": "MatchMaker Office"
+                        },
+                        "ip_address": {
+                          "constant_value": "217.37.57.250/32"
+                        },
+                        "priority": {
+                          "constant_value": 400
+                        }
+                      }
+                    ],
+                    "ip_restriction_default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "use_32_bit_worker": {
+                      "constant_value": false
+                    },
+                    "vnet_route_all_enabled": {
+                      "constant_value": true
+                    },
+                    "websockets_enabled": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "sticky_settings": [
+                  {
+                    "app_setting_names": {
+                      "constant_value": [
+                        "WEBSITE_TIME_ZONE"
+                      ]
+                    }
+                  }
+                ],
+                "virtual_network_subnet_id": {
+                  "constant_value": "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AppSNET01"
+                }
+              },
+              "mode": "managed",
+              "name": "azmmclientrg-webbapp-smile-online",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_windows_web_app"
+            },
+            {
+              "address": "data.azurerm_key_vault_certificate.res-2",
+              "expressions": {
+                "key_vault_id": {
+                  "references": [
+                    "azurerm_key_vault.res-1.id",
+                    "azurerm_key_vault.res-1"
+                  ]
+                },
+                "name": {
+                  "constant_value": "AZMMKV01-MMWildcardKV2024"
+                }
+              },
+              "mode": "data",
+              "name": "res-2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_key_vault_certificate"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

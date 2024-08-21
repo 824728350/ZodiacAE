@@ -1,0 +1,21 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "module.bootstrap.azurerm_storage_share_file.this",
+              "module.bootstrap.azurerm_storage_share_directory.this"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

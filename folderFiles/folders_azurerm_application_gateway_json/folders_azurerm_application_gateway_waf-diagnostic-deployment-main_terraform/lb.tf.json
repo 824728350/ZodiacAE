@@ -1,0 +1,122 @@
+{
+    "locals": [
+        {
+            "backend_address_pool_name": "${azurerm_virtual_network.this.name}-beap",
+            "frontend_ip_configuration_name": "${azurerm_virtual_network.this.name}-feip",
+            "frontend_port_name": "${azurerm_virtual_network.this.name}-feport",
+            "http_setting_name": "${azurerm_virtual_network.this.name}-be-htst",
+            "listener_name": "${azurerm_virtual_network.this.name}-httplstn",
+            "redirect_configuration_name": "${azurerm_virtual_network.this.name}-rdrcfg",
+            "request_routing_rule_name": "${azurerm_virtual_network.this.name}-rqrt"
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_virtual_network": {
+                "this": {
+                    "address_space": [
+                        "10.0.0.0/22"
+                    ],
+                    "location": "${azurerm_resource_group.this.location}",
+                    "name": "vnet-prod-we-webdemo",
+                    "resource_group_name": "${azurerm_resource_group.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "this": {
+                    "address_prefixes": [
+                        "10.0.0.0/24"
+                    ],
+                    "name": "sn-prod-we-app",
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "this": {
+                    "allocation_method": "Static",
+                    "location": "${azurerm_resource_group.this.location}",
+                    "name": "pip-prod-we-lb",
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "sku": "Standard"
+                }
+            }
+        },
+        {
+            "azurerm_application_gateway": {
+                "this": {
+                    "backend_address_pool": [
+                        {
+                            "fqdns": [
+                                "app-prod-we-webdemo.azurewebsites.net"
+                            ],
+                            "name": "${local.backend_address_pool_name}"
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "cookie_based_affinity": "Disabled",
+                            "name": "${local.http_setting_name}",
+                            "path": "/",
+                            "pick_host_name_from_backend_address": true,
+                            "port": 443,
+                            "protocol": "Https",
+                            "request_timeout": 60
+                        }
+                    ],
+                    "firewall_policy_id": "${azurerm_web_application_firewall_policy.this.id}",
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "${local.frontend_ip_configuration_name}",
+                            "public_ip_address_id": "${azurerm_public_ip.this.id}"
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "${local.frontend_port_name}",
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "my-gateway-ip-configuration",
+                            "subnet_id": "${azurerm_subnet.this.id}"
+                        }
+                    ],
+                    "http_listener": [
+                        {
+                            "frontend_ip_configuration_name": "${local.frontend_ip_configuration_name}",
+                            "frontend_port_name": "${local.frontend_port_name}",
+                            "name": "${local.listener_name}",
+                            "protocol": "Http"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.this.location}",
+                    "name": "agw-prod-we-webdemo",
+                    "request_routing_rule": [
+                        {
+                            "backend_address_pool_name": "${local.backend_address_pool_name}",
+                            "backend_http_settings_name": "${local.http_setting_name}",
+                            "http_listener_name": "${local.listener_name}",
+                            "name": "${local.request_routing_rule_name}",
+                            "priority": 9,
+                            "rule_type": "Basic"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "sku": [
+                        {
+                            "capacity": 2,
+                            "name": "Standard_v2",
+                            "tier": "Standard_v2"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

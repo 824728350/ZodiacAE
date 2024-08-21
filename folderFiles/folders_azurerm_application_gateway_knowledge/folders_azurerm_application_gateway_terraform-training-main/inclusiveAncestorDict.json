@@ -1,0 +1,155 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.gw": [
+              "azurerm_application_gateway.gw",
+              "azurerm_linux_virtual_machine.linux_vm",
+              "azurerm_network_interface.nic",
+              "azurerm_public_ip.alb-public-ip",
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.rg",
+              "azurerm_ssh_public_key.sshkey",
+              "azurerm_subnet.gw_subnet",
+              "azurerm_subnet.subnet_internal",
+              "azurerm_user_assigned_identity.uai",
+              "azurerm_virtual_network.vnet",
+              "data.template_cloudinit_config.craftcms_config",
+              "random_id.rnd",
+              "random_pet.pet-name"
+            ],
+            "azurerm_key_vault.kv": [
+              "azurerm_key_vault.kv",
+              "azurerm_resource_group.rg",
+              "data.azurerm_client_config.current",
+              "random_pet.pet-name"
+            ],
+            "azurerm_linux_virtual_machine.linux_vm": [
+              "azurerm_linux_virtual_machine.linux_vm",
+              "azurerm_network_interface.nic",
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.rg",
+              "azurerm_ssh_public_key.sshkey",
+              "azurerm_subnet.subnet_internal",
+              "azurerm_user_assigned_identity.uai",
+              "azurerm_virtual_network.vnet",
+              "data.template_cloudinit_config.craftcms_config",
+              "random_id.rnd",
+              "random_pet.pet-name"
+            ],
+            "azurerm_network_interface.nic": [
+              "azurerm_network_interface.nic",
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.subnet_internal",
+              "azurerm_virtual_network.vnet",
+              "random_pet.pet-name"
+            ],
+            "azurerm_network_security_group.gw_nsg": [
+              "azurerm_network_security_group.gw_nsg",
+              "azurerm_resource_group.rg",
+              "random_pet.pet-name"
+            ],
+            "azurerm_network_security_group.nsg": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg",
+              "random_pet.pet-name"
+            ],
+            "azurerm_public_ip.alb-public-ip": [
+              "azurerm_public_ip.alb-public-ip",
+              "azurerm_resource_group.rg",
+              "random_pet.pet-name"
+            ],
+            "azurerm_public_ip.public_ip": [
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.rg",
+              "random_pet.pet-name"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_role_assignment.kv_certificate_user": [
+              "azurerm_resource_group.rg",
+              "azurerm_role_assignment.kv_certificate_user",
+              "azurerm_user_assigned_identity.uai",
+              "data.azurerm_subscription.training",
+              "random_pet.pet-name"
+            ],
+            "azurerm_role_assignment.kv_secrets_user": [
+              "azurerm_resource_group.rg",
+              "azurerm_role_assignment.kv_secrets_user",
+              "azurerm_user_assigned_identity.uai",
+              "data.azurerm_subscription.training",
+              "random_pet.pet-name"
+            ],
+            "azurerm_ssh_public_key.sshkey": [
+              "azurerm_resource_group.rg",
+              "azurerm_ssh_public_key.sshkey",
+              "random_pet.pet-name"
+            ],
+            "azurerm_subnet.bastionsubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.bastionsubnet",
+              "azurerm_virtual_network.vnet",
+              "random_pet.pet-name"
+            ],
+            "azurerm_subnet.gw_subnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.gw_subnet",
+              "azurerm_virtual_network.vnet",
+              "random_pet.pet-name"
+            ],
+            "azurerm_subnet.subnet_internal": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.subnet_internal",
+              "azurerm_virtual_network.vnet",
+              "random_pet.pet-name"
+            ],
+            "azurerm_subnet_network_security_group_association.nsg-assoc": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.subnet_internal",
+              "azurerm_subnet_network_security_group_association.nsg-assoc",
+              "azurerm_virtual_network.vnet",
+              "random_pet.pet-name"
+            ],
+            "azurerm_user_assigned_identity.uai": [
+              "azurerm_resource_group.rg",
+              "azurerm_user_assigned_identity.uai",
+              "random_pet.pet-name"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet",
+              "random_pet.pet-name"
+            ],
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ],
+            "data.azurerm_subscription.training": [
+              "data.azurerm_subscription.training"
+            ],
+            "data.template_cloudinit_config.craftcms_config": [
+              "data.template_cloudinit_config.craftcms_config"
+            ],
+            "random_id.rnd": [
+              "azurerm_resource_group.rg",
+              "random_id.rnd"
+            ],
+            "random_pet.pet-name": [
+              "azurerm_resource_group.rg",
+              "random_pet.pet-name"
+            ]
+          },
+          "text": "data.assemble.inclusiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

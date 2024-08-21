@@ -1,0 +1,1049 @@
+{
+    "azurerm_application_gateway.appgw": [
+        {
+            "address": "azurerm_application_gateway.appgw",
+            "mode": "managed",
+            "name": "appgw",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [],
+                "backend_address_pool": [
+                    {
+                        "fqdns": [],
+                        "ip_addresses": []
+                    }
+                ],
+                "backend_http_settings": [
+                    {
+                        "authentication_certificate": [],
+                        "connection_draining": [],
+                        "trusted_root_certificate_names": []
+                    }
+                ],
+                "custom_error_configuration": [],
+                "frontend_ip_configuration": [
+                    {}
+                ],
+                "frontend_port": [
+                    {}
+                ],
+                "gateway_ip_configuration": [
+                    {}
+                ],
+                "global": [],
+                "http_listener": [
+                    {
+                        "custom_error_configuration": [],
+                        "host_names": []
+                    }
+                ],
+                "identity": [],
+                "private_endpoint_connection": [],
+                "private_link_configuration": [],
+                "probe": [
+                    {
+                        "match": []
+                    }
+                ],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                    {}
+                ],
+                "rewrite_rule_set": [],
+                "sku": [
+                    {}
+                ],
+                "ssl_certificate": [],
+                "ssl_policy": [],
+                "ssl_profile": [],
+                "tags": {},
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": []
+            },
+            "type": "azurerm_application_gateway",
+            "values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [],
+                "backend_address_pool": [
+                    {
+                        "fqdns": [],
+                        "ip_addresses": [],
+                        "name": "test-mind-io-backend-address-pool"
+                    }
+                ],
+                "backend_http_settings": [
+                    {
+                        "affinity_cookie_name": "",
+                        "authentication_certificate": [],
+                        "connection_draining": [],
+                        "cookie_based_affinity": "Disabled",
+                        "host_name": "",
+                        "name": "test-mind-io-http-settings",
+                        "path": "",
+                        "pick_host_name_from_backend_address": false,
+                        "port": 80,
+                        "probe_name": "test-mind-io-probe",
+                        "protocol": "Http",
+                        "request_timeout": 20,
+                        "trusted_root_certificate_names": []
+                    }
+                ],
+                "custom_error_configuration": [],
+                "enable_http2": null,
+                "fips_enabled": null,
+                "firewall_policy_id": null,
+                "force_firewall_policy_association": null,
+                "frontend_ip_configuration": [
+                    {
+                        "name": "test-mind-io-frontend-ip-config",
+                        "private_ip_address_allocation": "Dynamic",
+                        "private_link_configuration_name": null,
+                        "subnet_id": null
+                    }
+                ],
+                "frontend_port": [
+                    {
+                        "name": "test-mind-io-frontend-port",
+                        "port": 80
+                    }
+                ],
+                "gateway_ip_configuration": [
+                    {
+                        "name": "test-mind-io-gateway-ip-config"
+                    }
+                ],
+                "global": [],
+                "http_listener": [
+                    {
+                        "custom_error_configuration": [],
+                        "firewall_policy_id": "",
+                        "frontend_ip_configuration_name": "test-mind-io-frontend-ip-config",
+                        "frontend_port_name": "test-mind-io-frontend-port",
+                        "host_name": "",
+                        "host_names": [],
+                        "name": "test-mind-io-http-listener",
+                        "protocol": "Http",
+                        "require_sni": null,
+                        "ssl_certificate_name": "",
+                        "ssl_profile_name": ""
+                    }
+                ],
+                "identity": [],
+                "location": "westus2",
+                "name": "test-mind-io-app-gateway",
+                "private_link_configuration": [],
+                "probe": [
+                    {
+                        "host": "127.0.0.1",
+                        "interval": 30,
+                        "match": [],
+                        "minimum_servers": 0,
+                        "name": "test-mind-io-probe",
+                        "path": "/",
+                        "pick_host_name_from_backend_http_settings": false,
+                        "port": 80,
+                        "protocol": "Http",
+                        "timeout": 20,
+                        "unhealthy_threshold": 3
+                    }
+                ],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                    {
+                        "backend_address_pool_name": "test-mind-io-backend-address-pool",
+                        "backend_http_settings_name": "test-mind-io-http-settings",
+                        "http_listener_name": "test-mind-io-http-listener",
+                        "name": "test-mind-io-routing-rule",
+                        "priority": 100,
+                        "redirect_configuration_name": "",
+                        "rewrite_rule_set_name": "",
+                        "rule_type": "Basic",
+                        "url_path_map_name": ""
+                    }
+                ],
+                "resource_group_name": "test-mind-io-resource-group",
+                "rewrite_rule_set": [],
+                "sku": [
+                    {
+                        "capacity": 2,
+                        "name": "Standard_v2",
+                        "tier": "Standard_v2"
+                    }
+                ],
+                "ssl_certificate": [],
+                "ssl_profile": [],
+                "tags": {
+                    "env": "test-mind-io"
+                },
+                "timeouts": null,
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": [],
+                "zones": null
+            }
+        },
+        {
+            "backend_address_pool": [
+                {
+                    "name": "${var.prefix}-backend-address-pool"
+                }
+            ],
+            "backend_http_settings": [
+                {
+                    "cookie_based_affinity": "Disabled",
+                    "name": "${var.prefix}-http-settings",
+                    "port": 80,
+                    "probe_name": "${var.prefix}-probe",
+                    "protocol": "Http",
+                    "request_timeout": 20
+                }
+            ],
+            "depends_on": [],
+            "frontend_ip_configuration": [
+                {
+                    "name": "${var.prefix}-frontend-ip-config",
+                    "public_ip_address_id": "${azurerm_public_ip.pip.id}"
+                }
+            ],
+            "frontend_port": [
+                {
+                    "name": "${var.prefix}-frontend-port",
+                    "port": 80
+                }
+            ],
+            "gateway_ip_configuration": [
+                {
+                    "name": "${var.prefix}-gateway-ip-config",
+                    "subnet_id": "${azurerm_subnet.appgwsubnet.id}"
+                }
+            ],
+            "http_listener": [
+                {
+                    "frontend_ip_configuration_name": "${var.prefix}-frontend-ip-config",
+                    "frontend_port_name": "${var.prefix}-frontend-port",
+                    "name": "${var.prefix}-http-listener",
+                    "protocol": "Http"
+                }
+            ],
+            "location": "${azurerm_resource_group.rg.location}",
+            "name": "${var.prefix}-app-gateway",
+            "probe": [
+                {
+                    "host": "127.0.0.1",
+                    "interval": 30,
+                    "name": "${var.prefix}-probe",
+                    "path": "/",
+                    "port": 80,
+                    "protocol": "Http",
+                    "timeout": 20,
+                    "unhealthy_threshold": 3
+                }
+            ],
+            "request_routing_rule": [
+                {
+                    "backend_address_pool_name": "${var.prefix}-backend-address-pool",
+                    "backend_http_settings_name": "${var.prefix}-http-settings",
+                    "http_listener_name": "${var.prefix}-http-listener",
+                    "name": "${var.prefix}-routing-rule",
+                    "priority": 100,
+                    "rule_type": "Basic"
+                }
+            ],
+            "resource_group_name": "${azurerm_resource_group.rg.name}",
+            "sku": [
+                {
+                    "capacity": 2,
+                    "name": "Standard_v2",
+                    "tier": "Standard_v2"
+                }
+            ]
+        }
+    ],
+    "azurerm_federated_identity_credential.example": [
+        {
+            "address": "azurerm_federated_identity_credential.example",
+            "mode": "managed",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {
+                "audience": [
+                    false
+                ]
+            },
+            "type": "azurerm_federated_identity_credential",
+            "values": {
+                "audience": [
+                    "api://AzureADTokenExchange"
+                ],
+                "name": "test-mind-io-federated-identity",
+                "resource_group_name": "test-mind-io-resource-group",
+                "subject": "system:serviceaccount:default:ingress-azure",
+                "timeouts": null
+            }
+        },
+        {
+            "audience": [
+                "api://AzureADTokenExchange"
+            ],
+            "depends_on": [],
+            "issuer": "${azurerm_kubernetes_cluster.aks.oidc_issuer_url}",
+            "name": "${var.prefix}-federated-identity",
+            "parent_id": "${azurerm_user_assigned_identity.testIdentity.id}",
+            "resource_group_name": "${azurerm_resource_group.rg.name}",
+            "subject": "system:serviceaccount:default:ingress-azure"
+        }
+    ],
+    "azurerm_kubernetes_cluster.aks": [
+        {
+            "address": "azurerm_kubernetes_cluster.aks",
+            "mode": "managed",
+            "name": "aks",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 2,
+            "sensitive_values": {
+                "aci_connector_linux": [],
+                "api_server_access_profile": [],
+                "api_server_authorized_ip_ranges": [],
+                "auto_scaler_profile": [],
+                "azure_active_directory_role_based_access_control": [],
+                "confidential_computing": [],
+                "default_node_pool": [
+                    {
+                        "kubelet_config": [],
+                        "linux_os_config": [],
+                        "node_labels": {},
+                        "node_network_profile": [],
+                        "upgrade_settings": []
+                    }
+                ],
+                "http_proxy_config": [],
+                "identity": [
+                    {}
+                ],
+                "ingress_application_gateway": [],
+                "key_management_service": [],
+                "key_vault_secrets_provider": [],
+                "kube_admin_config": true,
+                "kube_admin_config_raw": true,
+                "kube_config": true,
+                "kube_config_raw": true,
+                "kubelet_identity": [],
+                "linux_profile": [],
+                "maintenance_window": [],
+                "maintenance_window_auto_upgrade": [],
+                "maintenance_window_node_os": [],
+                "microsoft_defender": [],
+                "monitor_metrics": [],
+                "network_profile": [
+                    {
+                        "ip_versions": [],
+                        "load_balancer_profile": [],
+                        "nat_gateway_profile": [],
+                        "outbound_ip_address_ids": [],
+                        "outbound_ip_prefix_ids": [],
+                        "pod_cidrs": [],
+                        "service_cidrs": []
+                    }
+                ],
+                "oms_agent": [],
+                "service_mesh_profile": [],
+                "service_principal": [],
+                "storage_profile": [],
+                "tags": {},
+                "web_app_routing": [],
+                "windows_profile": [],
+                "workload_autoscaler_profile": []
+            },
+            "type": "azurerm_kubernetes_cluster",
+            "values": {
+                "aci_connector_linux": [],
+                "automatic_channel_upgrade": null,
+                "azure_active_directory_role_based_access_control": [],
+                "azure_policy_enabled": null,
+                "confidential_computing": [],
+                "cost_analysis_enabled": null,
+                "custom_ca_trust_certificates_base64": null,
+                "default_node_pool": [
+                    {
+                        "capacity_reservation_group_id": null,
+                        "custom_ca_trust_enabled": null,
+                        "enable_auto_scaling": null,
+                        "enable_host_encryption": null,
+                        "enable_node_public_ip": null,
+                        "fips_enabled": null,
+                        "gpu_instance": null,
+                        "host_group_id": null,
+                        "kubelet_config": [],
+                        "linux_os_config": [],
+                        "max_count": null,
+                        "message_of_the_day": null,
+                        "min_count": null,
+                        "name": "default",
+                        "node_count": 1,
+                        "node_network_profile": [],
+                        "node_public_ip_prefix_id": null,
+                        "node_taints": null,
+                        "only_critical_addons_enabled": null,
+                        "os_disk_type": "Managed",
+                        "pod_subnet_id": null,
+                        "proximity_placement_group_id": null,
+                        "scale_down_mode": "Delete",
+                        "snapshot_id": null,
+                        "tags": null,
+                        "temporary_name_for_rotation": null,
+                        "type": "VirtualMachineScaleSets",
+                        "ultra_ssd_enabled": false,
+                        "upgrade_settings": [],
+                        "vm_size": "Standard_D4ps_v5",
+                        "vnet_subnet_id": null,
+                        "zones": null
+                    }
+                ],
+                "disk_encryption_set_id": null,
+                "dns_prefix": "test-mind-io-aks",
+                "dns_prefix_private_cluster": null,
+                "edge_zone": null,
+                "enable_pod_security_policy": null,
+                "http_application_routing_enabled": null,
+                "http_proxy_config": [],
+                "identity": [
+                    {
+                        "identity_ids": null,
+                        "type": "SystemAssigned"
+                    }
+                ],
+                "image_cleaner_enabled": false,
+                "image_cleaner_interval_hours": 48,
+                "ingress_application_gateway": [],
+                "key_management_service": [],
+                "key_vault_secrets_provider": [],
+                "linux_profile": [],
+                "local_account_disabled": null,
+                "location": "westus2",
+                "maintenance_window": [],
+                "maintenance_window_auto_upgrade": [],
+                "maintenance_window_node_os": [],
+                "microsoft_defender": [],
+                "monitor_metrics": [],
+                "name": "test-mind-io-aks-cluster",
+                "network_profile": [
+                    {
+                        "dns_service_ip": "10.0.1.10",
+                        "load_balancer_sku": "standard",
+                        "network_plugin": "azure",
+                        "network_plugin_mode": null,
+                        "outbound_type": "loadBalancer",
+                        "service_cidr": "10.0.1.0/24"
+                    }
+                ],
+                "node_os_channel_upgrade": null,
+                "oidc_issuer_enabled": true,
+                "oms_agent": [],
+                "open_service_mesh_enabled": null,
+                "private_cluster_enabled": false,
+                "private_cluster_public_fqdn_enabled": false,
+                "public_network_access_enabled": true,
+                "resource_group_name": "test-mind-io-resource-group",
+                "role_based_access_control_enabled": true,
+                "run_command_enabled": true,
+                "service_mesh_profile": [],
+                "service_principal": [],
+                "sku_tier": "Free",
+                "storage_profile": [],
+                "support_plan": "KubernetesOfficial",
+                "tags": {
+                    "env": "test-mind-io"
+                },
+                "timeouts": null,
+                "web_app_routing": [],
+                "workload_autoscaler_profile": [],
+                "workload_identity_enabled": true
+            }
+        },
+        {
+            "default_node_pool": [
+                {
+                    "name": "default",
+                    "node_count": 1,
+                    "vm_size": "Standard_D4ps_v5"
+                }
+            ],
+            "dns_prefix": "${var.prefix}-aks",
+            "identity": [
+                {
+                    "type": "SystemAssigned"
+                }
+            ],
+            "location": "${azurerm_resource_group.rg.location}",
+            "name": "${var.prefix}-aks-cluster",
+            "network_profile": [
+                {
+                    "dns_service_ip": "10.0.1.10",
+                    "network_plugin": "azure",
+                    "service_cidr": "${azurerm_subnet.akssubnet.address_prefixes[0]}"
+                }
+            ],
+            "oidc_issuer_enabled": true,
+            "resource_group_name": "${azurerm_resource_group.rg.name}",
+            "workload_identity_enabled": true
+        }
+    ],
+    "azurerm_public_ip.pip": [
+        {
+            "address": "azurerm_public_ip.pip",
+            "mode": "managed",
+            "name": "pip",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {
+                "tags": {}
+            },
+            "type": "azurerm_public_ip",
+            "values": {
+                "allocation_method": "Static",
+                "ddos_protection_mode": "VirtualNetworkInherited",
+                "ddos_protection_plan_id": null,
+                "domain_name_label": null,
+                "edge_zone": null,
+                "idle_timeout_in_minutes": 4,
+                "ip_tags": null,
+                "ip_version": "IPv4",
+                "location": "westus2",
+                "name": "test-mind-io-public-ip",
+                "public_ip_prefix_id": null,
+                "resource_group_name": "test-mind-io-resource-group",
+                "reverse_fqdn": null,
+                "sku": "Standard",
+                "sku_tier": "Regional",
+                "tags": {
+                    "env": "test-mind-io"
+                },
+                "timeouts": null,
+                "zones": null
+            }
+        },
+        {
+            "allocation_method": "Static",
+            "depends_on": [],
+            "location": "${azurerm_resource_group.rg.location}",
+            "name": "${var.prefix}-public-ip",
+            "resource_group_name": "${azurerm_resource_group.rg.name}",
+            "sku": "Standard"
+        }
+    ],
+    "azurerm_resource_group.rg": [
+        {
+            "address": "azurerm_resource_group.rg",
+            "mode": "managed",
+            "name": "rg",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {
+                "tags": {}
+            },
+            "type": "azurerm_resource_group",
+            "values": {
+                "location": "westus2",
+                "managed_by": null,
+                "name": "test-mind-io-resource-group",
+                "tags": {
+                    "env": "test-mind-io"
+                },
+                "timeouts": null
+            }
+        },
+        {
+            "location": "westus2",
+            "name": "${var.prefix}-resource-group"
+        }
+    ],
+    "azurerm_role_assignment.aks_appgw_role": [
+        {
+            "address": "azurerm_role_assignment.aks_appgw_role",
+            "mode": "managed",
+            "name": "aks_appgw_role",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {},
+            "type": "azurerm_role_assignment",
+            "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Contributor",
+                "timeouts": null
+            }
+        },
+        {
+            "principal_id": "${azurerm_user_assigned_identity.testIdentity.principal_id}",
+            "role_definition_name": "Contributor",
+            "scope": "${azurerm_application_gateway.appgw.id}"
+        }
+    ],
+    "azurerm_role_assignment.ra1": [
+        {
+            "address": "azurerm_role_assignment.ra1",
+            "mode": "managed",
+            "name": "ra1",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {},
+            "type": "azurerm_role_assignment",
+            "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Network Contributor",
+                "timeouts": null
+            }
+        },
+        {
+            "depends_on": [],
+            "principal_id": "${azurerm_user_assigned_identity.testIdentity.principal_id}",
+            "role_definition_name": "Network Contributor",
+            "scope": "${azurerm_virtual_network.vnet.id}"
+        }
+    ],
+    "azurerm_role_assignment.ra3": [
+        {
+            "address": "azurerm_role_assignment.ra3",
+            "mode": "managed",
+            "name": "ra3",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {},
+            "type": "azurerm_role_assignment",
+            "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Contributor",
+                "timeouts": null
+            }
+        },
+        {
+            "principal_id": "${azurerm_user_assigned_identity.testIdentity.principal_id}",
+            "role_definition_name": "Contributor",
+            "scope": "${azurerm_resource_group.rg.id}"
+        }
+    ],
+    "azurerm_subnet.akssubnet": [
+        {
+            "address": "azurerm_subnet.akssubnet",
+            "mode": "managed",
+            "name": "akssubnet",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {
+                "address_prefixes": [
+                    false
+                ],
+                "delegation": []
+            },
+            "type": "azurerm_subnet",
+            "values": {
+                "address_prefixes": [
+                    "10.0.1.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "name": "test-mind-io-aks-subnet",
+                "resource_group_name": "test-mind-io-resource-group",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": null,
+                "timeouts": null,
+                "virtual_network_name": "test-mind-io-vnet"
+            }
+        },
+        {
+            "address_prefixes": [
+                "10.0.1.0/24"
+            ],
+            "depends_on": [],
+            "name": "${var.prefix}-aks-subnet",
+            "resource_group_name": "${azurerm_resource_group.rg.name}",
+            "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+        }
+    ],
+    "azurerm_subnet.appgwsubnet": [
+        {
+            "address": "azurerm_subnet.appgwsubnet",
+            "mode": "managed",
+            "name": "appgwsubnet",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {
+                "address_prefixes": [
+                    false
+                ],
+                "delegation": []
+            },
+            "type": "azurerm_subnet",
+            "values": {
+                "address_prefixes": [
+                    "10.0.2.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "name": "test-mind-io-appgw-subnet",
+                "resource_group_name": "test-mind-io-resource-group",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": null,
+                "timeouts": null,
+                "virtual_network_name": "test-mind-io-vnet"
+            }
+        },
+        {
+            "address_prefixes": [
+                "10.0.2.0/24"
+            ],
+            "depends_on": [],
+            "name": "${var.prefix}-appgw-subnet",
+            "resource_group_name": "${azurerm_resource_group.rg.name}",
+            "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+        }
+    ],
+    "azurerm_user_assigned_identity.testIdentity": [
+        {
+            "address": "azurerm_user_assigned_identity.testIdentity",
+            "mode": "managed",
+            "name": "testIdentity",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 1,
+            "sensitive_values": {
+                "tags": {}
+            },
+            "type": "azurerm_user_assigned_identity",
+            "values": {
+                "location": "westus2",
+                "name": "test-mind-io-identity1",
+                "resource_group_name": "test-mind-io-resource-group",
+                "tags": {
+                    "env": "test-mind-io"
+                },
+                "timeouts": null
+            }
+        },
+        {
+            "location": "${azurerm_resource_group.rg.location}",
+            "name": "${var.prefix}-identity1",
+            "resource_group_name": "${azurerm_resource_group.rg.name}"
+        }
+    ],
+    "azurerm_virtual_network.vnet": [
+        {
+            "address": "azurerm_virtual_network.vnet",
+            "mode": "managed",
+            "name": "vnet",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {
+                "address_space": [
+                    false
+                ],
+                "ddos_protection_plan": [],
+                "dns_servers": [],
+                "encryption": [],
+                "subnet": [],
+                "tags": {}
+            },
+            "type": "azurerm_virtual_network",
+            "values": {
+                "address_space": [
+                    "10.0.0.0/16"
+                ],
+                "bgp_community": null,
+                "ddos_protection_plan": [],
+                "edge_zone": null,
+                "encryption": [],
+                "flow_timeout_in_minutes": null,
+                "location": "westus2",
+                "name": "test-mind-io-vnet",
+                "resource_group_name": "test-mind-io-resource-group",
+                "tags": {
+                    "env": "test-mind-io"
+                },
+                "timeouts": null
+            }
+        },
+        {
+            "address_space": [
+                "10.0.0.0/16"
+            ],
+            "location": "${azurerm_resource_group.rg.location}",
+            "name": "${var.prefix}-vnet",
+            "resource_group_name": "${azurerm_resource_group.rg.name}"
+        }
+    ],
+    "azurerm_virtual_network_peering.aks_to_appgw": [
+        {
+            "address": "azurerm_virtual_network_peering.aks_to_appgw",
+            "mode": "managed",
+            "name": "aks_to_appgw",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {},
+            "type": "azurerm_virtual_network_peering",
+            "values": {
+                "allow_forwarded_traffic": true,
+                "allow_gateway_transit": false,
+                "allow_virtual_network_access": true,
+                "local_subnet_names": null,
+                "name": "test-mind-io-aks-to-appgw",
+                "only_ipv6_peering_enabled": null,
+                "peer_complete_virtual_networks_enabled": true,
+                "remote_subnet_names": null,
+                "timeouts": null,
+                "triggers": null,
+                "use_remote_gateways": false
+            }
+        },
+        {
+            "allow_forwarded_traffic": true,
+            "allow_gateway_transit": false,
+            "depends_on": [],
+            "name": "${var.prefix}-aks-to-appgw",
+            "remote_virtual_network_id": "${azurerm_virtual_network.vnet.id}",
+            "resource_group_name": "${azurerm_kubernetes_cluster.aks.node_resource_group}",
+            "use_remote_gateways": false,
+            "virtual_network_name": "${data.azurerm_resources.vnet.resources[0].name}"
+        }
+    ],
+    "azurerm_virtual_network_peering.appgw_to_aks": [
+        {
+            "address": "azurerm_virtual_network_peering.appgw_to_aks",
+            "mode": "managed",
+            "name": "appgw_to_aks",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "schema_version": 0,
+            "sensitive_values": {},
+            "type": "azurerm_virtual_network_peering",
+            "values": {
+                "allow_forwarded_traffic": true,
+                "allow_gateway_transit": false,
+                "allow_virtual_network_access": true,
+                "local_subnet_names": null,
+                "name": "test-mind-io-appgw-to-aks",
+                "only_ipv6_peering_enabled": null,
+                "peer_complete_virtual_networks_enabled": true,
+                "remote_subnet_names": null,
+                "resource_group_name": "test-mind-io-resource-group",
+                "timeouts": null,
+                "triggers": null,
+                "use_remote_gateways": false,
+                "virtual_network_name": "test-mind-io-vnet"
+            }
+        },
+        {
+            "allow_forwarded_traffic": true,
+            "allow_gateway_transit": false,
+            "depends_on": [],
+            "name": "${var.prefix}-appgw-to-aks",
+            "remote_virtual_network_id": "${data.azurerm_resources.vnet.resources[0].id}",
+            "resource_group_name": "${azurerm_resource_group.rg.name}",
+            "use_remote_gateways": false,
+            "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+        }
+    ],
+    "helm_release.app": [
+        {
+            "address": "helm_release.app",
+            "mode": "managed",
+            "name": "app",
+            "provider_name": "registry.terraform.io/hashicorp/helm",
+            "schema_version": 1,
+            "sensitive_values": {
+                "metadata": [],
+                "postrender": [],
+                "repository_password": true,
+                "set": [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {}
+                ],
+                "set_list": [],
+                "set_sensitive": []
+            },
+            "type": "helm_release",
+            "values": {
+                "atomic": false,
+                "chart": "../../k8s/app",
+                "cleanup_on_fail": false,
+                "create_namespace": false,
+                "dependency_update": false,
+                "description": null,
+                "devel": null,
+                "disable_crd_hooks": false,
+                "disable_openapi_validation": false,
+                "disable_webhooks": false,
+                "force_update": false,
+                "keyring": null,
+                "lint": false,
+                "max_history": 0,
+                "name": "app",
+                "namespace": "default",
+                "pass_credentials": false,
+                "postrender": [],
+                "recreate_pods": false,
+                "render_subchart_notes": true,
+                "replace": false,
+                "repository": null,
+                "repository_ca_file": null,
+                "repository_cert_file": null,
+                "repository_key_file": null,
+                "repository_password": null,
+                "repository_username": null,
+                "reset_values": false,
+                "reuse_values": false,
+                "set": [
+                    {
+                        "name": "hosts.app",
+                        "type": "",
+                        "value": "app.vigregus.com"
+                    },
+                    {
+                        "name": "image.repository",
+                        "type": "",
+                        "value": "nginxdemos/hello"
+                    },
+                    {
+                        "name": "image.tag",
+                        "type": "",
+                        "value": "0.4-plain-text"
+                    },
+                    {
+                        "name": "namespace.name",
+                        "type": "",
+                        "value": "example1"
+                    },
+                    {
+                        "name": "replicas.count",
+                        "type": "",
+                        "value": "3"
+                    }
+                ],
+                "set_list": [],
+                "set_sensitive": [],
+                "skip_crds": false,
+                "status": "deployed",
+                "timeout": 300,
+                "upgrade_install": null,
+                "values": null,
+                "verify": false,
+                "version": "0.1.0",
+                "wait": true,
+                "wait_for_jobs": false
+            }
+        },
+        {
+            "chart": "../../k8s/app",
+            "name": "app",
+            "set": [
+                {
+                    "name": "namespace.name",
+                    "value": "${var.namespace}"
+                },
+                {
+                    "name": "hosts.app",
+                    "value": "${var.host-name}"
+                },
+                {
+                    "name": "replicas.count",
+                    "value": "${var.replicas-count}"
+                },
+                {
+                    "name": "image.repository",
+                    "value": "${var.image_repository}"
+                },
+                {
+                    "name": "image.tag",
+                    "value": "${var.image_tag}"
+                }
+            ]
+        }
+    ],
+    "helm_release.appgw_ingress": [
+        {
+            "address": "helm_release.appgw_ingress",
+            "mode": "managed",
+            "name": "appgw_ingress",
+            "provider_name": "registry.terraform.io/hashicorp/helm",
+            "schema_version": 1,
+            "sensitive_values": {
+                "metadata": [],
+                "postrender": [],
+                "repository_password": true,
+                "set": [],
+                "set_list": [],
+                "set_sensitive": [],
+                "values": []
+            },
+            "type": "helm_release",
+            "values": {
+                "atomic": false,
+                "chart": "ingress-azure",
+                "cleanup_on_fail": false,
+                "create_namespace": true,
+                "dependency_update": false,
+                "description": null,
+                "devel": null,
+                "disable_crd_hooks": false,
+                "disable_openapi_validation": false,
+                "disable_webhooks": false,
+                "force_update": false,
+                "keyring": null,
+                "lint": false,
+                "max_history": 0,
+                "name": "ingress-azure",
+                "namespace": "default",
+                "pass_credentials": false,
+                "postrender": [],
+                "recreate_pods": false,
+                "render_subchart_notes": true,
+                "replace": false,
+                "repository": "https://appgwingress.blob.core.windows.net/ingress-azure-helm-package/",
+                "repository_ca_file": null,
+                "repository_cert_file": null,
+                "repository_key_file": null,
+                "repository_password": null,
+                "repository_username": null,
+                "reset_values": false,
+                "reuse_values": false,
+                "set": [],
+                "set_list": [],
+                "set_sensitive": [],
+                "skip_crds": false,
+                "status": "deployed",
+                "timeout": 125,
+                "upgrade_install": null,
+                "verify": false,
+                "version": "1.7.5",
+                "wait": true,
+                "wait_for_jobs": false
+            }
+        },
+        {
+            "chart": "ingress-azure",
+            "create_namespace": true,
+            "depends_on": [],
+            "name": "ingress-azure",
+            "namespace": "default",
+            "repository": "https://appgwingress.blob.core.windows.net/ingress-azure-helm-package/",
+            "timeout": 125,
+            "values": [
+                "verbosityLevel: 5\nappgw:\n  subscriptionId: c59cf824-2a78-42de-92c6-c0d6a5f25cb1\n  resourceGroup: \"${azurerm_resource_group.rg.name}\"\n  name: \"${azurerm_application_gateway.appgw.name}\"\n  shared: false\narmAuth:\n  type: workloadIdentity\n  identityClientID: \"${azurerm_user_assigned_identity.testIdentity.client_id}\"\nrbac:\n  enabled: true\naksClusterConfiguration:\n  apiServerAddress: \"${azurerm_kubernetes_cluster.aks.kube_config[0].host}\""
+            ]
+        }
+    ]
+}

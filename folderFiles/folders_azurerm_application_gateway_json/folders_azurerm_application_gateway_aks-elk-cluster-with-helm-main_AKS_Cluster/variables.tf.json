@@ -1,0 +1,19 @@
+{
+    "variable": [
+        {
+            "name_prefix": {
+                "default": ""
+            }
+        },
+        {
+            "location": {
+                "default": "West Europe"
+            }
+        },
+        {
+            "vm_size": {
+                "default": "Standard_B4ms"
+            }
+        }
+    ]
+}

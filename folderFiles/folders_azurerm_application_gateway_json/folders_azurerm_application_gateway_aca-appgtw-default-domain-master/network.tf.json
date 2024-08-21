@@ -1,0 +1,45 @@
+{
+    "locals": [
+        {
+            "subnets": "${cidrsubnets(var.cidr, 4, 4)}"
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_virtual_network": {
+                "main": {
+                    "address_space": [
+                        "${var.cidr}"
+                    ],
+                    "location": "${azurerm_resource_group.main.location}",
+                    "name": "${var.prefix}-vnet",
+                    "resource_group_name": "${azurerm_resource_group.main.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "appgtw": {
+                    "address_prefixes": [
+                        "${local.subnets[0]}"
+                    ],
+                    "name": "appgtw-subnet",
+                    "resource_group_name": "${azurerm_resource_group.main.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.main.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "aca": {
+                    "address_prefixes": [
+                        "${local.subnets[1]}"
+                    ],
+                    "name": "aca-subnet",
+                    "resource_group_name": "${azurerm_resource_group.main.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.main.name}"
+                }
+            }
+        }
+    ]
+}

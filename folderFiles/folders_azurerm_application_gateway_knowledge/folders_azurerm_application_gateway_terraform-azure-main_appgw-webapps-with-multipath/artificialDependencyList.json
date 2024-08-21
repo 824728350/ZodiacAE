@@ -1,0 +1,53 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "module.bastion.azurerm_bastion_host.bastion",
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion"
+            ],
+            [
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-azurecloud-out"
+            ],
+            [
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-bastioncommunication-out"
+            ],
+            [
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-gsi-out"
+            ],
+            [
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-gwm"
+            ],
+            [
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-hc"
+            ],
+            [
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-https"
+            ],
+            [
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-lb"
+            ],
+            [
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-sshrdp-out"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

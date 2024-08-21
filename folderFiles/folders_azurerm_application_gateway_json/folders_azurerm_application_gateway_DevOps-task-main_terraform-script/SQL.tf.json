@@ -1,0 +1,25 @@
+{
+    "resource": [
+        {
+            "azurerm_mssql_server": {
+                "server": {
+                    "administrator_login": "${var.admin_username}",
+                    "administrator_login_password": "${var.admin_password}",
+                    "location": "${azurerm_resource_group.shared-rg.location}",
+                    "minimum_tls_version": "1.2",
+                    "name": "abdul-sql-server",
+                    "resource_group_name": "${azurerm_resource_group.shared-rg.name}",
+                    "version": "12.0"
+                }
+            }
+        },
+        {
+            "azurerm_mssql_database": {
+                "db": {
+                    "name": "${var.sql_db_name}",
+                    "server_id": "${azurerm_mssql_server.server.id}"
+                }
+            }
+        }
+    ]
+}

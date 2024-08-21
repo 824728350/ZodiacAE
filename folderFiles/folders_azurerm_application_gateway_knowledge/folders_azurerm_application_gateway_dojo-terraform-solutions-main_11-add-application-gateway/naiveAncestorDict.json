@@ -1,0 +1,82 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgateway": [
+              "azurerm_application_gateway.appgateway",
+              "azurerm_public_ip.agw_pip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_key_vault.keyvault": [
+              "azurerm_key_vault.keyvault"
+            ],
+            "azurerm_key_vault_secret.bad_secret": [
+              "azurerm_key_vault_secret.bad_secret"
+            ],
+            "azurerm_network_interface.vm1_nic": [
+              "azurerm_network_interface.vm1_nic",
+              "azurerm_public_ip.vm1_pip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.nsg": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.nsg_rule_blocks": [
+              "azurerm_network_security_group.nsg_rule_blocks",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_rule.nsg_rules": [
+              "azurerm_network_security_group.nsg_rule_blocks",
+              "azurerm_network_security_rule.nsg_rules",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_public_ip.agw_pip": [
+              "azurerm_public_ip.agw_pip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_public_ip.vm1_pip": [
+              "azurerm_public_ip.vm1_pip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_role_assignment.kv_admin": [
+              "azurerm_role_assignment.kv_admin"
+            ],
+            "azurerm_subnet.subnets": [
+              "azurerm_subnet.subnets"
+            ],
+            "azurerm_subnet_network_security_group_association.nsg_association": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet_network_security_group_association.nsg_association",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_windows_virtual_machine.vm1": [
+              "azurerm_network_interface.vm1_nic",
+              "azurerm_public_ip.vm1_pip",
+              "azurerm_resource_group.rg",
+              "azurerm_windows_virtual_machine.vm1"
+            ],
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

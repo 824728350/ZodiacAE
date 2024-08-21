@@ -1,0 +1,46 @@
+{
+    "variable": [
+        {
+            "prefix": {
+                "default": "test-mind-io",
+                "description": "Prefix for resource names"
+            }
+        },
+        {
+            "location": {
+                "default": "westus2",
+                "description": "The location where resources will be created"
+            }
+        },
+        {
+            "replicas-count": {
+                "default": 3,
+                "description": "count of pods"
+            }
+        },
+        {
+            "namespace": {
+                "default": "example1",
+                "description": "namespace of the deployment."
+            }
+        },
+        {
+            "host-name": {
+                "default": "app.vigregus.com",
+                "description": "host name of the deployment."
+            }
+        },
+        {
+            "image_repository": {
+                "default": "nginxdemos/hello",
+                "description": "Docker image repository."
+            }
+        },
+        {
+            "image_tag": {
+                "default": "0.4-plain-text",
+                "description": "Docker image tag."
+            }
+        }
+    ]
+}

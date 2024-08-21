@@ -1,0 +1,95 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ],
+            "module.AzureBastionSubnet.azurerm_subnet.subnet": [
+              "module.AzureBastionSubnet.azurerm_subnet.subnet"
+            ],
+            "module.access_policy_aks_cluster.azurerm_key_vault_access_policy.access_policy": [
+              "module.access_policy_aks_cluster.azurerm_key_vault_access_policy.access_policy"
+            ],
+            "module.access_policy_current_user.azurerm_key_vault_access_policy.access_policy": [
+              "module.access_policy_current_user.azurerm_key_vault_access_policy.access_policy"
+            ],
+            "module.access_policy_identity.azurerm_key_vault_access_policy.access_policy": [
+              "module.access_policy_identity.azurerm_key_vault_access_policy.access_policy"
+            ],
+            "module.aks_cluster.azurerm_kubernetes_cluster.aks_cluster": [
+              "module.aks_cluster.azurerm_kubernetes_cluster.aks_cluster"
+            ],
+            "module.aks_cluster.local_file.kubeconfig": [
+              "module.aks_cluster.local_file.kubeconfig"
+            ],
+            "module.aks_subnet.azurerm_subnet.subnet": [
+              "module.aks_subnet.azurerm_subnet.subnet"
+            ],
+            "module.appgw_subnet.azurerm_subnet.subnet": [
+              "module.appgw_subnet.azurerm_subnet.subnet"
+            ],
+            "module.application_gateway.azurerm_application_gateway.appgw": [
+              "module.application_gateway.azurerm_application_gateway.appgw"
+            ],
+            "module.bastion.azurerm_bastion_host.bastion": [
+              "module.bastion.azurerm_bastion_host.bastion"
+            ],
+            "module.container_registry.azurerm_container_registry.cr": [
+              "module.container_registry.azurerm_container_registry.cr"
+            ],
+            "module.identity.azurerm_user_assigned_identity.identity": [
+              "module.identity.azurerm_user_assigned_identity.identity"
+            ],
+            "module.ip_appgw.azurerm_public_ip.publicIp": [
+              "module.ip_appgw.azurerm_public_ip.publicIp"
+            ],
+            "module.ip_bastion.azurerm_public_ip.publicIp": [
+              "module.ip_bastion.azurerm_public_ip.publicIp"
+            ],
+            "module.key_vault.azurerm_key_vault.key_vault": [
+              "module.key_vault.azurerm_key_vault.key_vault"
+            ],
+            "module.key_vault_secret_webserver-config.azurerm_key_vault_secret.key_vault_secret": [
+              "module.key_vault_secret_webserver-config.azurerm_key_vault_secret.key_vault_secret"
+            ],
+            "module.key_vault_secret_webserver_properties.azurerm_key_vault_secret.key_vault_secret": [
+              "module.key_vault_secret_webserver_properties.azurerm_key_vault_secret.key_vault_secret"
+            ],
+            "module.peeringAppgwToCluster.azurerm_virtual_network_peering.ClustertoAppGWVnetPeering": [
+              "module.peeringAppgwToCluster.azurerm_virtual_network_peering.ClustertoAppGWVnetPeering"
+            ],
+            "module.peeringClusterToAppgw.azurerm_virtual_network_peering.ClustertoAppGWVnetPeering": [
+              "module.peeringClusterToAppgw.azurerm_virtual_network_peering.ClustertoAppGWVnetPeering"
+            ],
+            "module.resource_group.azurerm_resource_group.rg": [
+              "module.resource_group.azurerm_resource_group.rg"
+            ],
+            "module.role_aks_cluster.azurerm_role_assignment.role": [
+              "module.role_aks_cluster.azurerm_role_assignment.role"
+            ],
+            "module.role_key_vault_access.azurerm_role_assignment.role": [
+              "module.role_key_vault_access.azurerm_role_assignment.role"
+            ],
+            "module.virtual_network_aks.azurerm_virtual_network.vn": [
+              "module.virtual_network_aks.azurerm_virtual_network.vn"
+            ],
+            "module.virtual_network_appigw.azurerm_virtual_network.vn": [
+              "module.virtual_network_appigw.azurerm_virtual_network.vn"
+            ],
+            "null_resource.execute_script": [
+              "null_resource.execute_script"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.network": [
+              "azurerm_public_ip.agwIP",
+              "azurerm_subnet.frontend"
+            ],
+            "azurerm_linux_virtual_machine.myVms": [],
+            "azurerm_monitor_action_group.actionGrp": [],
+            "azurerm_monitor_metric_alert.metric": [],
+            "azurerm_nat_gateway.nat": [],
+            "azurerm_nat_gateway_public_ip_association.natAssocPubIP": [
+              "azurerm_nat_gateway.nat",
+              "azurerm_public_ip.natPubIP"
+            ],
+            "azurerm_network_interface.nic": [
+              "azurerm_subnet.mySubnet"
+            ],
+            "azurerm_public_ip.agwIP": [],
+            "azurerm_public_ip.natPubIP": [],
+            "azurerm_subnet.frontend": [
+              "azurerm_virtual_network.vNet"
+            ],
+            "azurerm_subnet.mySubnet": [
+              "azurerm_virtual_network.vNet"
+            ],
+            "azurerm_subnet_nat_gateway_association.subnetNatgwAssoc": [
+              "azurerm_nat_gateway.nat",
+              "azurerm_subnet.mySubnet"
+            ],
+            "azurerm_virtual_network.vNet": [],
+            "data.template_file.linux-vm-cloud-init": []
+          },
+          "text": "data.assemble.referencesPredDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

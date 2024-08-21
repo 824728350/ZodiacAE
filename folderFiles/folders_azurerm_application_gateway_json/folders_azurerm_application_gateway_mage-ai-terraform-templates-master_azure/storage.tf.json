@@ -1,0 +1,25 @@
+{
+    "resource": [
+        {
+            "azurerm_storage_account": {
+                "aci_storage": {
+                    "account_replication_type": "LRS",
+                    "account_tier": "Standard",
+                    "location": "${azurerm_resource_group.resource_group.location}",
+                    "min_tls_version": "TLS1_2",
+                    "name": "${var.storage_account_name}",
+                    "resource_group_name": "${azurerm_resource_group.resource_group.name}"
+                }
+            }
+        },
+        {
+            "azurerm_storage_share": {
+                "container_share": {
+                    "name": "${var.app_name}-${var.app_environment}-data",
+                    "quota": 100,
+                    "storage_account_name": "${azurerm_storage_account.aci_storage.name}"
+                }
+            }
+        }
+    ]
+}

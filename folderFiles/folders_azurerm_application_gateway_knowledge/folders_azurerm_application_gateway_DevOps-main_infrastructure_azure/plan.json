@@ -1,0 +1,2177 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.app_gateway",
+              "mode": "managed",
+              "name": "app_gateway",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [],
+                "backend_address_pool": [
+                  {
+                    "fqdns": [],
+                    "ip_addresses": []
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "authentication_certificate": [],
+                    "connection_draining": [],
+                    "trusted_root_certificate_names": []
+                  }
+                ],
+                "custom_error_configuration": [],
+                "frontend_ip_configuration": [
+                  {}
+                ],
+                "frontend_port": [
+                  {}
+                ],
+                "gateway_ip_configuration": [
+                  {}
+                ],
+                "global": [],
+                "http_listener": [
+                  {
+                    "custom_error_configuration": [],
+                    "host_names": []
+                  }
+                ],
+                "identity": [],
+                "private_endpoint_connection": [],
+                "private_link_configuration": [],
+                "probe": [],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                  {}
+                ],
+                "rewrite_rule_set": [],
+                "sku": [
+                  {}
+                ],
+                "ssl_certificate": [],
+                "ssl_policy": [],
+                "ssl_profile": [],
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": []
+              },
+              "type": "azurerm_application_gateway",
+              "values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [],
+                "backend_address_pool": [
+                  {
+                    "fqdns": [],
+                    "ip_addresses": [],
+                    "name": "app-gateway-pool-ms02"
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "affinity_cookie_name": "",
+                    "authentication_certificate": [],
+                    "connection_draining": [],
+                    "cookie_based_affinity": "Disabled",
+                    "host_name": "",
+                    "name": "app-gateway-settings-ms02",
+                    "path": "",
+                    "pick_host_name_from_backend_address": false,
+                    "port": 80,
+                    "probe_name": "",
+                    "protocol": "Http",
+                    "request_timeout": 60,
+                    "trusted_root_certificate_names": []
+                  }
+                ],
+                "custom_error_configuration": [],
+                "enable_http2": null,
+                "fips_enabled": null,
+                "firewall_policy_id": null,
+                "force_firewall_policy_association": null,
+                "frontend_ip_configuration": [
+                  {
+                    "name": "app-gateway-ip-ms02",
+                    "private_ip_address_allocation": "Dynamic",
+                    "private_link_configuration_name": null,
+                    "subnet_id": null
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": "http",
+                    "port": 80
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": "app-gateway-ip-ms02"
+                  }
+                ],
+                "global": [],
+                "http_listener": [
+                  {
+                    "custom_error_configuration": [],
+                    "firewall_policy_id": "",
+                    "frontend_ip_configuration_name": "app-gateway-ip-ms02",
+                    "frontend_port_name": "http",
+                    "host_name": "",
+                    "host_names": [],
+                    "name": "app-gateway-http-listener-ms02",
+                    "protocol": "Http",
+                    "require_sni": null,
+                    "ssl_certificate_name": "",
+                    "ssl_profile_name": ""
+                  }
+                ],
+                "identity": [],
+                "location": "westeurope",
+                "name": "app-gateway-ms02",
+                "private_link_configuration": [],
+                "probe": [],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": "app-gateway-pool-ms02",
+                    "backend_http_settings_name": "app-gateway-settings-ms02",
+                    "http_listener_name": "app-gateway-http-listener-ms02",
+                    "name": "app-gateway-rule-ms02",
+                    "priority": 100,
+                    "redirect_configuration_name": "",
+                    "rewrite_rule_set_name": "",
+                    "rule_type": "Basic",
+                    "url_path_map_name": ""
+                  }
+                ],
+                "resource_group_name": "bugtracker-ms02",
+                "rewrite_rule_set": [],
+                "sku": [
+                  {
+                    "capacity": 2,
+                    "name": "Standard_v2",
+                    "tier": "Standard_v2"
+                  }
+                ],
+                "ssl_certificate": [],
+                "ssl_profile": [],
+                "tags": null,
+                "timeouts": null,
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": [],
+                "zones": null
+              }
+            },
+            {
+              "address": "azurerm_dashboard_grafana.grafana",
+              "mode": "managed",
+              "name": "grafana",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "azure_monitor_workspace_integrations": [
+                  {}
+                ],
+                "identity": [
+                  {}
+                ],
+                "outbound_ip": [],
+                "smtp": []
+              },
+              "type": "azurerm_dashboard_grafana",
+              "values": {
+                "api_key_enabled": false,
+                "auto_generated_domain_name_label_scope": "TenantReuse",
+                "azure_monitor_workspace_integrations": [
+                  {}
+                ],
+                "deterministic_outbound_ip_enabled": false,
+                "grafana_major_version": "9",
+                "identity": [
+                  {
+                    "identity_ids": null,
+                    "type": "SystemAssigned"
+                  }
+                ],
+                "location": "westeurope",
+                "name": "bugtracker-ms02-grafana",
+                "public_network_access_enabled": true,
+                "resource_group_name": "bugtracker-ms02",
+                "sku": "Standard",
+                "smtp": [],
+                "tags": null,
+                "timeouts": null,
+                "zone_redundancy_enabled": false
+              }
+            },
+            {
+              "address": "azurerm_key_vault.vault",
+              "mode": "managed",
+              "name": "vault",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 2,
+              "sensitive_values": {
+                "access_policy": [],
+                "contact": [],
+                "network_acls": []
+              },
+              "type": "azurerm_key_vault",
+              "values": {
+                "enable_rbac_authorization": null,
+                "enabled_for_deployment": null,
+                "enabled_for_disk_encryption": null,
+                "enabled_for_template_deployment": null,
+                "location": "westeurope",
+                "name": "bugtracker-ms02",
+                "public_network_access_enabled": true,
+                "purge_protection_enabled": null,
+                "resource_group_name": "bugtracker-ms02",
+                "sku_name": "standard",
+                "soft_delete_retention_days": 90,
+                "tags": null,
+                "tenant_id": "e66e77b4-5724-44d7-8721-06df160450ce",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_key_vault_access_policy.cluster",
+              "mode": "managed",
+              "name": "cluster",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "secret_permissions": [
+                  false
+                ]
+              },
+              "type": "azurerm_key_vault_access_policy",
+              "values": {
+                "application_id": null,
+                "certificate_permissions": null,
+                "key_permissions": null,
+                "secret_permissions": [
+                  "Get"
+                ],
+                "storage_permissions": null,
+                "tenant_id": "e66e77b4-5724-44d7-8721-06df160450ce",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_key_vault_access_policy.policy",
+              "mode": "managed",
+              "name": "policy",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "secret_permissions": [
+                  false,
+                  false,
+                  false
+                ]
+              },
+              "type": "azurerm_key_vault_access_policy",
+              "values": {
+                "application_id": null,
+                "certificate_permissions": null,
+                "key_permissions": null,
+                "object_id": "62e5370a-2bf4-4734-8511-cc798825f062",
+                "secret_permissions": [
+                  "Get",
+                  "List",
+                  "Set"
+                ],
+                "storage_permissions": null,
+                "tenant_id": "e66e77b4-5724-44d7-8721-06df160450ce",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_key_vault_secret.bugservicedb_connectionstring",
+              "mode": "managed",
+              "name": "bugservicedb_connectionstring",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "value": true
+              },
+              "type": "azurerm_key_vault_secret",
+              "values": {
+                "content_type": null,
+                "expiration_date": null,
+                "name": "bugservicedb-connection-string",
+                "not_before_date": null,
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_key_vault_secret.userservicedb_connectionstring",
+              "mode": "managed",
+              "name": "userservicedb_connectionstring",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "value": true
+              },
+              "type": "azurerm_key_vault_secret",
+              "values": {
+                "content_type": null,
+                "expiration_date": null,
+                "name": "userservicedb-connection-string",
+                "not_before_date": null,
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_kubernetes_cluster.cluster",
+              "mode": "managed",
+              "name": "cluster",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 2,
+              "sensitive_values": {
+                "aci_connector_linux": [],
+                "api_server_access_profile": [],
+                "api_server_authorized_ip_ranges": [],
+                "auto_scaler_profile": [],
+                "azure_active_directory_role_based_access_control": [],
+                "confidential_computing": [],
+                "default_node_pool": [
+                  {
+                    "kubelet_config": [],
+                    "linux_os_config": [],
+                    "node_labels": {},
+                    "node_network_profile": [],
+                    "upgrade_settings": []
+                  }
+                ],
+                "http_proxy_config": [],
+                "identity": [
+                  {}
+                ],
+                "ingress_application_gateway": [
+                  {
+                    "ingress_application_gateway_identity": []
+                  }
+                ],
+                "key_management_service": [],
+                "key_vault_secrets_provider": [
+                  {
+                    "secret_identity": []
+                  }
+                ],
+                "kube_admin_config": true,
+                "kube_admin_config_raw": true,
+                "kube_config": true,
+                "kube_config_raw": true,
+                "kubelet_identity": [],
+                "linux_profile": [],
+                "maintenance_window": [],
+                "maintenance_window_auto_upgrade": [],
+                "maintenance_window_node_os": [],
+                "microsoft_defender": [],
+                "monitor_metrics": [
+                  {}
+                ],
+                "network_profile": [],
+                "oms_agent": [
+                  {
+                    "oms_agent_identity": []
+                  }
+                ],
+                "service_mesh_profile": [],
+                "service_principal": [],
+                "storage_profile": [],
+                "web_app_routing": [],
+                "windows_profile": [],
+                "workload_autoscaler_profile": []
+              },
+              "type": "azurerm_kubernetes_cluster",
+              "values": {
+                "aci_connector_linux": [],
+                "automatic_channel_upgrade": null,
+                "azure_active_directory_role_based_access_control": [],
+                "azure_policy_enabled": null,
+                "confidential_computing": [],
+                "cost_analysis_enabled": null,
+                "custom_ca_trust_certificates_base64": null,
+                "default_node_pool": [
+                  {
+                    "capacity_reservation_group_id": null,
+                    "custom_ca_trust_enabled": null,
+                    "enable_auto_scaling": null,
+                    "enable_host_encryption": null,
+                    "enable_node_public_ip": null,
+                    "fips_enabled": null,
+                    "gpu_instance": null,
+                    "host_group_id": null,
+                    "kubelet_config": [],
+                    "linux_os_config": [],
+                    "max_count": null,
+                    "message_of_the_day": null,
+                    "min_count": null,
+                    "name": "default",
+                    "node_count": 1,
+                    "node_network_profile": [],
+                    "node_public_ip_prefix_id": null,
+                    "node_taints": null,
+                    "only_critical_addons_enabled": null,
+                    "os_disk_type": "Managed",
+                    "pod_subnet_id": null,
+                    "proximity_placement_group_id": null,
+                    "scale_down_mode": "Delete",
+                    "snapshot_id": null,
+                    "tags": null,
+                    "temporary_name_for_rotation": null,
+                    "type": "VirtualMachineScaleSets",
+                    "ultra_ssd_enabled": false,
+                    "upgrade_settings": [],
+                    "vm_size": "Standard_D2_v2",
+                    "zones": null
+                  }
+                ],
+                "disk_encryption_set_id": null,
+                "dns_prefix": "bugtracker-ms02",
+                "dns_prefix_private_cluster": null,
+                "edge_zone": null,
+                "enable_pod_security_policy": null,
+                "http_application_routing_enabled": null,
+                "http_proxy_config": [],
+                "identity": [
+                  {
+                    "identity_ids": null,
+                    "type": "SystemAssigned"
+                  }
+                ],
+                "image_cleaner_enabled": false,
+                "image_cleaner_interval_hours": 48,
+                "ingress_application_gateway": [
+                  {
+                    "gateway_name": null,
+                    "subnet_cidr": null,
+                    "subnet_id": null
+                  }
+                ],
+                "key_management_service": [],
+                "key_vault_secrets_provider": [
+                  {
+                    "secret_rotation_enabled": true,
+                    "secret_rotation_interval": "2m"
+                  }
+                ],
+                "linux_profile": [],
+                "local_account_disabled": null,
+                "location": "westeurope",
+                "maintenance_window": [],
+                "maintenance_window_auto_upgrade": [],
+                "maintenance_window_node_os": [],
+                "microsoft_defender": [],
+                "monitor_metrics": [
+                  {
+                    "annotations_allowed": null,
+                    "labels_allowed": null
+                  }
+                ],
+                "name": "bugtracker-ms02",
+                "node_os_channel_upgrade": null,
+                "oidc_issuer_enabled": null,
+                "oms_agent": [
+                  {
+                    "msi_auth_for_monitoring_enabled": true
+                  }
+                ],
+                "open_service_mesh_enabled": null,
+                "private_cluster_enabled": false,
+                "private_cluster_public_fqdn_enabled": false,
+                "public_network_access_enabled": true,
+                "resource_group_name": "bugtracker-ms02",
+                "role_based_access_control_enabled": true,
+                "run_command_enabled": true,
+                "service_mesh_profile": [],
+                "service_principal": [],
+                "sku_tier": "Free",
+                "storage_profile": [],
+                "support_plan": "KubernetesOfficial",
+                "tags": null,
+                "timeouts": null,
+                "web_app_routing": [],
+                "workload_autoscaler_profile": [],
+                "workload_identity_enabled": false
+              }
+            },
+            {
+              "address": "azurerm_log_analytics_workspace.workspace",
+              "mode": "managed",
+              "name": "workspace",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 3,
+              "sensitive_values": {
+                "identity": [],
+                "primary_shared_key": true,
+                "secondary_shared_key": true
+              },
+              "type": "azurerm_log_analytics_workspace",
+              "values": {
+                "allow_resource_only_permissions": true,
+                "cmk_for_query_forced": null,
+                "daily_quota_gb": -1,
+                "data_collection_rule_id": null,
+                "identity": [],
+                "immediate_data_purge_on_30_days_enabled": null,
+                "internet_ingestion_enabled": true,
+                "internet_query_enabled": true,
+                "local_authentication_disabled": false,
+                "location": "westeurope",
+                "name": "bugtracker-ms02-logs",
+                "reservation_capacity_in_gb_per_day": null,
+                "resource_group_name": "bugtracker-ms02",
+                "retention_in_days": 30,
+                "sku": "PerGB2018",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_monitor_alert_prometheus_rule_group.kubernetes_recording_rules_rule_group",
+              "mode": "managed",
+              "name": "kubernetes_recording_rules_rule_group",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "rule": [
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": [],
+                    "labels": {}
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": [],
+                    "labels": {}
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": [],
+                    "labels": {}
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": [],
+                    "labels": {}
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  }
+                ],
+                "scopes": []
+              },
+              "type": "azurerm_monitor_alert_prometheus_rule_group",
+              "values": {
+                "cluster_name": "bugtracker-ms02",
+                "description": "Kubernetes Recording Rules Rule Group",
+                "interval": "PT1M",
+                "location": "westeurope",
+                "name": "KubernetesRecordingRulesRuleGroup-ms02",
+                "resource_group_name": "bugtracker-ms02",
+                "rule": [
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum by (cluster, namespace, pod, container) (  irate(container_cpu_usage_seconds_total{job=\"cadvisor\", image!=\"\"}[5m])) * on (cluster, namespace, pod) group_left(node) topk by (cluster, namespace, pod) (  1, max by(cluster, namespace, pod, node) (kube_pod_info{node!=\"\"}))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "container_memory_working_set_bytes{job=\"cadvisor\", image!=\"\"}* on (namespace, pod) group_left(node) topk by(namespace, pod) (1,  max by(namespace, pod, node) (kube_pod_info{node!=\"\"}))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "node_namespace_pod_container:container_memory_working_set_bytes",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "container_memory_rss{job=\"cadvisor\", image!=\"\"}* on (namespace, pod) group_left(node) topk by(namespace, pod) (1,  max by(namespace, pod, node) (kube_pod_info{node!=\"\"}))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "node_namespace_pod_container:container_memory_rss",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "container_memory_cache{job=\"cadvisor\", image!=\"\"}* on (namespace, pod) group_left(node) topk by(namespace, pod) (1,  max by(namespace, pod, node) (kube_pod_info{node!=\"\"}))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "node_namespace_pod_container:container_memory_cache",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "container_memory_swap{job=\"cadvisor\", image!=\"\"}* on (namespace, pod) group_left(node) topk by(namespace, pod) (1,  max by(namespace, pod, node) (kube_pod_info{node!=\"\"}))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "node_namespace_pod_container:container_memory_swap",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "kube_pod_container_resource_requests{resource=\"memory\",job=\"kube-state-metrics\"}  * on (namespace, pod, cluster)group_left() max by (namespace, pod, cluster) (  (kube_pod_status_phase{phase=~\"Pending|Running\"} == 1))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "cluster:namespace:pod_memory:active:kube_pod_container_resource_requests",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum by (namespace, cluster) (    sum by (namespace, pod, cluster) (        max by (namespace, pod, container, cluster) (          kube_pod_container_resource_requests{resource=\"memory\",job=\"kube-state-metrics\"}        ) * on(namespace, pod, cluster) group_left() max by (namespace, pod, cluster) (          kube_pod_status_phase{phase=~\"Pending|Running\"} == 1        )    ))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "namespace_memory:kube_pod_container_resource_requests:sum",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "kube_pod_container_resource_requests{resource=\"cpu\",job=\"kube-state-metrics\"}  * on (namespace, pod, cluster)group_left() max by (namespace, pod, cluster) (  (kube_pod_status_phase{phase=~\"Pending|Running\"} == 1))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "cluster:namespace:pod_cpu:active:kube_pod_container_resource_requests",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum by (namespace, cluster) (    sum by (namespace, pod, cluster) (        max by (namespace, pod, container, cluster) (          kube_pod_container_resource_requests{resource=\"cpu\",job=\"kube-state-metrics\"}        ) * on(namespace, pod, cluster) group_left() max by (namespace, pod, cluster) (          kube_pod_status_phase{phase=~\"Pending|Running\"} == 1        )    ))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "namespace_cpu:kube_pod_container_resource_requests:sum",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "kube_pod_container_resource_limits{resource=\"memory\",job=\"kube-state-metrics\"}  * on (namespace, pod, cluster)group_left() max by (namespace, pod, cluster) (  (kube_pod_status_phase{phase=~\"Pending|Running\"} == 1))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "cluster:namespace:pod_memory:active:kube_pod_container_resource_limits",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum by (namespace, cluster) (    sum by (namespace, pod, cluster) (        max by (namespace, pod, container, cluster) (          kube_pod_container_resource_limits{resource=\"memory\",job=\"kube-state-metrics\"}        ) * on(namespace, pod, cluster) group_left() max by (namespace, pod, cluster) (          kube_pod_status_phase{phase=~\"Pending|Running\"} == 1        )    ))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "namespace_memory:kube_pod_container_resource_limits:sum",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "kube_pod_container_resource_limits{resource=\"cpu\",job=\"kube-state-metrics\"}  * on (namespace, pod, cluster)group_left() max by (namespace, pod, cluster) ( (kube_pod_status_phase{phase=~\"Pending|Running\"} == 1) )\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "cluster:namespace:pod_cpu:active:kube_pod_container_resource_limits",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum by (namespace, cluster) (    sum by (namespace, pod, cluster) (        max by (namespace, pod, container, cluster) (          kube_pod_container_resource_limits{resource=\"cpu\",job=\"kube-state-metrics\"}        ) * on(namespace, pod, cluster) group_left() max by (namespace, pod, cluster) (          kube_pod_status_phase{phase=~\"Pending|Running\"} == 1        )    ))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "namespace_cpu:kube_pod_container_resource_limits:sum",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "max by (cluster, namespace, workload, pod) (  label_replace(    label_replace(      kube_pod_owner{job=\"kube-state-metrics\", owner_kind=\"ReplicaSet\"},      \"replicaset\", \"$1\", \"owner_name\", \"(.*)\"    ) * on(replicaset, namespace) group_left(owner_name) topk by(replicaset, namespace) (      1, max by (replicaset, namespace, owner_name) (        kube_replicaset_owner{job=\"kube-state-metrics\"}      )    ),    \"workload\", \"$1\", \"owner_name\", \"(.*)\"  ))\n",
+                    "for": null,
+                    "labels": {
+                      "workload_type": "deployment"
+                    },
+                    "record": "namespace_workload_pod:kube_pod_owner:relabel",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "max by (cluster, namespace, workload, pod) (  label_replace(    kube_pod_owner{job=\"kube-state-metrics\", owner_kind=\"DaemonSet\"},    \"workload\", \"$1\", \"owner_name\", \"(.*)\"  ))\n",
+                    "for": null,
+                    "labels": {
+                      "workload_type": "daemonset"
+                    },
+                    "record": "namespace_workload_pod:kube_pod_owner:relabel",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "max by (cluster, namespace, workload, pod) (  label_replace(    kube_pod_owner{job=\"kube-state-metrics\", owner_kind=\"StatefulSet\"},    \"workload\", \"$1\", \"owner_name\", \"(.*)\"  ))\n",
+                    "for": null,
+                    "labels": {
+                      "workload_type": "statefulset"
+                    },
+                    "record": "namespace_workload_pod:kube_pod_owner:relabel",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "max by (cluster, namespace, workload, pod) (  label_replace(    kube_pod_owner{job=\"kube-state-metrics\", owner_kind=\"Job\"},    \"workload\", \"$1\", \"owner_name\", \"(.*)\"  ))\n",
+                    "for": null,
+                    "labels": {
+                      "workload_type": "job"
+                    },
+                    "record": "namespace_workload_pod:kube_pod_owner:relabel",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum(  node_memory_MemAvailable_bytes{job=\"node\"} or  (    node_memory_Buffers_bytes{job=\"node\"} +    node_memory_Cached_bytes{job=\"node\"} +    node_memory_MemFree_bytes{job=\"node\"} +    node_memory_Slab_bytes{job=\"node\"}  )) by (cluster)\n",
+                    "for": null,
+                    "labels": null,
+                    "record": ":node_memory_MemAvailable_bytes:sum",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum(rate(node_cpu_seconds_total{job=\"node\",mode!=\"idle\",mode!=\"iowait\",mode!=\"steal\"}[5m])) by (cluster) /count(sum(node_cpu_seconds_total{job=\"node\"}) by (cluster, instance, cpu)) by (cluster)\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "cluster:node_cpu:ratio_rate5m",
+                    "severity": null
+                  }
+                ],
+                "rule_group_enabled": true,
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_monitor_alert_prometheus_rule_group.node_recording_rules_rule_group",
+              "mode": "managed",
+              "name": "node_recording_rules_rule_group",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "rule": [
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  },
+                  {
+                    "action": [],
+                    "alert_resolution": []
+                  }
+                ],
+                "scopes": []
+              },
+              "type": "azurerm_monitor_alert_prometheus_rule_group",
+              "values": {
+                "cluster_name": "bugtracker-ms02",
+                "description": "Node Recording Rules Rule Group",
+                "interval": "PT1M",
+                "location": "westeurope",
+                "name": "NodeRecordingRulesRuleGroup-ms02",
+                "resource_group_name": "bugtracker-ms02",
+                "rule": [
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "count without (cpu, mode) (  node_cpu_seconds_total{job=\"node\",mode=\"idle\"})\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance:node_num_cpu:sum",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "1 - avg without (cpu) (  sum without (mode) (rate(node_cpu_seconds_total{job=\"node\", mode=~\"idle|iowait|steal\"}[5m])))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance:node_cpu_utilisation:rate5m",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "(  node_load1{job=\"node\"}/  instance:node_num_cpu:sum{job=\"node\"})\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance:node_load1_per_cpu:ratio",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "1 - (  (    node_memory_MemAvailable_bytes{job=\"node\"}    or    (      node_memory_Buffers_bytes{job=\"node\"}      +      node_memory_Cached_bytes{job=\"node\"}      +      node_memory_MemFree_bytes{job=\"node\"}      +      node_memory_Slab_bytes{job=\"node\"}    )  )/  node_memory_MemTotal_bytes{job=\"node\"})\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance:node_memory_utilisation:ratio",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "rate(node_vmstat_pgmajfault{job=\"node\"}[5m])\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance:node_vmstat_pgmajfault:rate5m",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "rate(node_disk_io_time_seconds_total{job=\"node\", device!=\"\"}[5m])\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance_device:node_disk_io_time_seconds:rate5m",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "rate(node_disk_io_time_weighted_seconds_total{job=\"node\", device!=\"\"}[5m])\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance_device:node_disk_io_time_weighted_seconds:rate5m",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum without (device) (  rate(node_network_receive_bytes_total{job=\"node\", device!=\"lo\"}[5m]))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance:node_network_receive_bytes_excluding_lo:rate5m",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum without (device) (  rate(node_network_transmit_bytes_total{job=\"node\", device!=\"lo\"}[5m]))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance:node_network_transmit_bytes_excluding_lo:rate5m",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum without (device) (  rate(node_network_receive_drop_total{job=\"node\", device!=\"lo\"}[5m]))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance:node_network_receive_drop_excluding_lo:rate5m",
+                    "severity": null
+                  },
+                  {
+                    "action": [],
+                    "alert": null,
+                    "alert_resolution": [],
+                    "annotations": null,
+                    "enabled": true,
+                    "expression": "sum without (device) (  rate(node_network_transmit_drop_total{job=\"node\", device!=\"lo\"}[5m]))\n",
+                    "for": null,
+                    "labels": null,
+                    "record": "instance:node_network_transmit_drop_excluding_lo:rate5m",
+                    "severity": null
+                  }
+                ],
+                "rule_group_enabled": true,
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_monitor_data_collection_endpoint.collection_endpoint",
+              "mode": "managed",
+              "name": "collection_endpoint",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_monitor_data_collection_endpoint",
+              "values": {
+                "description": null,
+                "kind": "Linux",
+                "location": "westeurope",
+                "name": "bugtracker-ms02-prometheus",
+                "public_network_access_enabled": true,
+                "resource_group_name": "bugtracker-ms02",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_monitor_data_collection_rule.ci_collection_rule",
+              "mode": "managed",
+              "name": "ci_collection_rule",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "data_flow": [
+                  {
+                    "destinations": [
+                      false
+                    ],
+                    "streams": [
+                      false,
+                      false,
+                      false,
+                      false,
+                      false,
+                      false,
+                      false,
+                      false,
+                      false,
+                      false,
+                      false,
+                      false
+                    ]
+                  },
+                  {
+                    "destinations": [
+                      false
+                    ],
+                    "streams": [
+                      false
+                    ]
+                  }
+                ],
+                "data_sources": [
+                  {
+                    "data_import": [],
+                    "extension": [
+                      {
+                        "streams": [
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false
+                        ]
+                      }
+                    ],
+                    "iis_log": [],
+                    "log_file": [],
+                    "performance_counter": [],
+                    "platform_telemetry": [],
+                    "prometheus_forwarder": [],
+                    "syslog": [
+                      {
+                        "facility_names": [
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "log_levels": [
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "streams": [
+                          false
+                        ]
+                      }
+                    ],
+                    "windows_event_log": [],
+                    "windows_firewall_log": []
+                  }
+                ],
+                "destinations": [
+                  {
+                    "azure_monitor_metrics": [],
+                    "event_hub": [],
+                    "event_hub_direct": [],
+                    "log_analytics": [
+                      {}
+                    ],
+                    "monitor_account": [],
+                    "storage_blob": [],
+                    "storage_blob_direct": [],
+                    "storage_table_direct": []
+                  }
+                ],
+                "identity": [],
+                "stream_declaration": []
+              },
+              "type": "azurerm_monitor_data_collection_rule",
+              "values": {
+                "data_collection_endpoint_id": null,
+                "data_flow": [
+                  {
+                    "built_in_transform": null,
+                    "destinations": [
+                      "ciworkspace"
+                    ],
+                    "output_stream": null,
+                    "streams": [
+                      "Microsoft-ContainerLog",
+                      "Microsoft-ContainerLogV2",
+                      "Microsoft-KubeEvents",
+                      "Microsoft-KubePodInventory",
+                      "Microsoft-KubeNodeInventory",
+                      "Microsoft-KubePVInventory",
+                      "Microsoft-KubeServices",
+                      "Microsoft-KubeMonAgentEvents",
+                      "Microsoft-InsightsMetrics",
+                      "Microsoft-ContainerInventory",
+                      "Microsoft-ContainerNodeInventory",
+                      "Microsoft-Perf"
+                    ],
+                    "transform_kql": null
+                  },
+                  {
+                    "built_in_transform": null,
+                    "destinations": [
+                      "ciworkspace"
+                    ],
+                    "output_stream": null,
+                    "streams": [
+                      "Microsoft-Syslog"
+                    ],
+                    "transform_kql": null
+                  }
+                ],
+                "data_sources": [
+                  {
+                    "data_import": [],
+                    "extension": [
+                      {
+                        "extension_json": "{\"dataCollectionSettings\":{\"enableContainerLogV2\":true,\"interval\":\"1m\",\"namespaceFilteringMode\":\"Off\",\"namespaces\":[\"kube-system\",\"gatekeeper-system\",\"azure-arc\"]}}",
+                        "extension_name": "ContainerInsights",
+                        "input_data_sources": null,
+                        "name": "ContainerInsightsExtension",
+                        "streams": [
+                          "Microsoft-ContainerLog",
+                          "Microsoft-ContainerLogV2",
+                          "Microsoft-KubeEvents",
+                          "Microsoft-KubePodInventory",
+                          "Microsoft-KubeNodeInventory",
+                          "Microsoft-KubePVInventory",
+                          "Microsoft-KubeServices",
+                          "Microsoft-KubeMonAgentEvents",
+                          "Microsoft-InsightsMetrics",
+                          "Microsoft-ContainerInventory",
+                          "Microsoft-ContainerNodeInventory",
+                          "Microsoft-Perf"
+                        ]
+                      }
+                    ],
+                    "iis_log": [],
+                    "log_file": [],
+                    "performance_counter": [],
+                    "platform_telemetry": [],
+                    "prometheus_forwarder": [],
+                    "syslog": [
+                      {
+                        "facility_names": [
+                          "auth",
+                          "authpriv",
+                          "cron",
+                          "daemon",
+                          "mark",
+                          "kern",
+                          "local0",
+                          "local1",
+                          "local2",
+                          "local3",
+                          "local4",
+                          "local5",
+                          "local6",
+                          "local7",
+                          "lpr",
+                          "mail",
+                          "news",
+                          "syslog",
+                          "user",
+                          "uucp"
+                        ],
+                        "log_levels": [
+                          "Debug",
+                          "Info",
+                          "Notice",
+                          "Warning",
+                          "Error",
+                          "Critical",
+                          "Alert",
+                          "Emergency"
+                        ],
+                        "name": "sysLogsDataSource",
+                        "streams": [
+                          "Microsoft-Syslog"
+                        ]
+                      }
+                    ],
+                    "windows_event_log": [],
+                    "windows_firewall_log": []
+                  }
+                ],
+                "description": "Data Collection Rule for Azure Monitor Container Insights",
+                "destinations": [
+                  {
+                    "azure_monitor_metrics": [],
+                    "event_hub": [],
+                    "event_hub_direct": [],
+                    "log_analytics": [
+                      {
+                        "name": "ciworkspace"
+                      }
+                    ],
+                    "monitor_account": [],
+                    "storage_blob": [],
+                    "storage_blob_direct": [],
+                    "storage_table_direct": []
+                  }
+                ],
+                "identity": [],
+                "kind": null,
+                "location": "westeurope",
+                "name": "MS-ContainerInsights-ms02",
+                "resource_group_name": "bugtracker-ms02",
+                "stream_declaration": [],
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_monitor_data_collection_rule.collection_rule",
+              "mode": "managed",
+              "name": "collection_rule",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "data_flow": [
+                  {
+                    "destinations": [
+                      false
+                    ],
+                    "streams": [
+                      false
+                    ]
+                  }
+                ],
+                "data_sources": [
+                  {
+                    "data_import": [],
+                    "extension": [],
+                    "iis_log": [],
+                    "log_file": [],
+                    "performance_counter": [],
+                    "platform_telemetry": [],
+                    "prometheus_forwarder": [
+                      {
+                        "label_include_filter": [],
+                        "streams": [
+                          false
+                        ]
+                      }
+                    ],
+                    "syslog": [],
+                    "windows_event_log": [],
+                    "windows_firewall_log": []
+                  }
+                ],
+                "destinations": [
+                  {
+                    "azure_monitor_metrics": [],
+                    "event_hub": [],
+                    "event_hub_direct": [],
+                    "log_analytics": [],
+                    "monitor_account": [
+                      {}
+                    ],
+                    "storage_blob": [],
+                    "storage_blob_direct": [],
+                    "storage_table_direct": []
+                  }
+                ],
+                "identity": [],
+                "stream_declaration": []
+              },
+              "type": "azurerm_monitor_data_collection_rule",
+              "values": {
+                "data_flow": [
+                  {
+                    "built_in_transform": null,
+                    "destinations": [
+                      "MonitoringAccount"
+                    ],
+                    "output_stream": null,
+                    "streams": [
+                      "Microsoft-PrometheusMetrics"
+                    ],
+                    "transform_kql": null
+                  }
+                ],
+                "data_sources": [
+                  {
+                    "data_import": [],
+                    "extension": [],
+                    "iis_log": [],
+                    "log_file": [],
+                    "performance_counter": [],
+                    "platform_telemetry": [],
+                    "prometheus_forwarder": [
+                      {
+                        "label_include_filter": [],
+                        "name": "PrometheusDataSource",
+                        "streams": [
+                          "Microsoft-PrometheusMetrics"
+                        ]
+                      }
+                    ],
+                    "syslog": [],
+                    "windows_event_log": [],
+                    "windows_firewall_log": []
+                  }
+                ],
+                "description": "Data Collection Rule for Azure Monitor Metrics Profile (Managed Prometheus)",
+                "destinations": [
+                  {
+                    "azure_monitor_metrics": [],
+                    "event_hub": [],
+                    "event_hub_direct": [],
+                    "log_analytics": [],
+                    "monitor_account": [
+                      {
+                        "name": "MonitoringAccount"
+                      }
+                    ],
+                    "storage_blob": [],
+                    "storage_blob_direct": [],
+                    "storage_table_direct": []
+                  }
+                ],
+                "identity": [],
+                "kind": "Linux",
+                "location": "westeurope",
+                "name": "bugtracker-ms02-prometheus-rule",
+                "resource_group_name": "bugtracker-ms02",
+                "stream_declaration": [],
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_monitor_data_collection_rule_association.ci_collection_rule_association",
+              "mode": "managed",
+              "name": "ci_collection_rule_association",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_monitor_data_collection_rule_association",
+              "values": {
+                "data_collection_endpoint_id": null,
+                "description": "Association of container insights data collection rule. Deleting this association will break the data collection for this AKS Cluster.",
+                "name": "ContainerInsightsExtension",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_monitor_data_collection_rule_association.collection_rule_association",
+              "mode": "managed",
+              "name": "collection_rule_association",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_monitor_data_collection_rule_association",
+              "values": {
+                "data_collection_endpoint_id": null,
+                "description": "Association of data collection rule. Deleting this association will break the data collection for this AKS Cluster.",
+                "name": "bugtracker-ms02-prometheus-rule-association",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_monitor_workspace.workspace",
+              "mode": "managed",
+              "name": "workspace",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_monitor_workspace",
+              "values": {
+                "location": "westeurope",
+                "name": "bugtracker-ms02-workspace",
+                "public_network_access_enabled": true,
+                "resource_group_name": "bugtracker-ms02",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_public_ip.app_gateway",
+              "mode": "managed",
+              "name": "app_gateway",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_public_ip",
+              "values": {
+                "allocation_method": "Static",
+                "ddos_protection_mode": "VirtualNetworkInherited",
+                "ddos_protection_plan_id": null,
+                "domain_name_label": null,
+                "edge_zone": null,
+                "idle_timeout_in_minutes": 4,
+                "ip_tags": null,
+                "ip_version": "IPv4",
+                "location": "westeurope",
+                "name": "app-gateway-ip-ms02",
+                "public_ip_prefix_id": null,
+                "resource_group_name": "bugtracker-ms02",
+                "reverse_fqdn": null,
+                "sku": "Standard",
+                "sku_tier": "Regional",
+                "tags": null,
+                "timeouts": null,
+                "zones": null
+              }
+            },
+            {
+              "address": "azurerm_resource_group.group",
+              "mode": "managed",
+              "name": "group",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_resource_group",
+              "values": {
+                "location": "westeurope",
+                "managed_by": null,
+                "name": "bugtracker-ms02",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_role_assignment.datareaderrole",
+              "mode": "managed",
+              "name": "datareaderrole",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Monitoring Reader",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_role_assignment.grafana_owner",
+              "mode": "managed",
+              "name": "grafana_owner",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "principal_id": "62e5370a-2bf4-4734-8511-cc798825f062",
+                "role_definition_name": "Grafana Admin",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_role_assignment.gv_vnet",
+              "mode": "managed",
+              "name": "gv_vnet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Network Contributor",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_role_assignment.gw_contributor",
+              "mode": "managed",
+              "name": "gw_contributor",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Contributor",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_role_assignment.gw_reader",
+              "mode": "managed",
+              "name": "gw_reader",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Reader",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_role_assignment.gw_subnet",
+              "mode": "managed",
+              "name": "gw_subnet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Network Contributor",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_subnet.aks_subnet",
+              "mode": "managed",
+              "name": "aks_subnet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": [],
+                "service_endpoints": [
+                  false
+                ]
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.1.1.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "name": "aks-subnet",
+                "resource_group_name": "bugtracker-ms02",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": [
+                  "Microsoft.Sql"
+                ],
+                "timeouts": null,
+                "virtual_network_name": "bugtracker-ms02"
+              }
+            },
+            {
+              "address": "azurerm_subnet.app_gateway",
+              "mode": "managed",
+              "name": "app_gateway",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": []
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.1.4.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "name": "app-gateway-subnet",
+                "resource_group_name": "bugtracker-ms02",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": null,
+                "timeouts": null,
+                "virtual_network_name": "bugtracker-ms02"
+              }
+            },
+            {
+              "address": "azurerm_virtual_network.network",
+              "mode": "managed",
+              "name": "network",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_space": [
+                  false
+                ],
+                "ddos_protection_plan": [],
+                "dns_servers": [],
+                "encryption": [],
+                "subnet": []
+              },
+              "type": "azurerm_virtual_network",
+              "values": {
+                "address_space": [
+                  "10.1.0.0/16"
+                ],
+                "bgp_community": null,
+                "ddos_protection_plan": [],
+                "edge_zone": null,
+                "encryption": [],
+                "flow_timeout_in_minutes": null,
+                "location": "westeurope",
+                "name": "bugtracker-ms02",
+                "resource_group_name": "bugtracker-ms02",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "helm_release.aks_secret_provider",
+              "mode": "managed",
+              "name": "aks_secret_provider",
+              "provider_name": "registry.terraform.io/hashicorp/helm",
+              "schema_version": 1,
+              "sensitive_values": {
+                "metadata": [],
+                "postrender": [],
+                "repository_password": true,
+                "set": [],
+                "set_list": [],
+                "set_sensitive": [],
+                "values": []
+              },
+              "type": "helm_release",
+              "values": {
+                "atomic": false,
+                "chart": "./../helm/aks-secret-provider",
+                "cleanup_on_fail": false,
+                "create_namespace": false,
+                "dependency_update": false,
+                "description": null,
+                "devel": null,
+                "disable_crd_hooks": false,
+                "disable_openapi_validation": false,
+                "disable_webhooks": false,
+                "force_update": true,
+                "keyring": null,
+                "lint": false,
+                "max_history": 0,
+                "name": "aks-secret-provider",
+                "namespace": "default",
+                "pass_credentials": false,
+                "postrender": [],
+                "recreate_pods": false,
+                "render_subchart_notes": true,
+                "replace": false,
+                "repository": null,
+                "repository_ca_file": null,
+                "repository_cert_file": null,
+                "repository_key_file": null,
+                "repository_password": null,
+                "repository_username": null,
+                "reset_values": false,
+                "reuse_values": false,
+                "set": [],
+                "set_list": [],
+                "set_sensitive": [],
+                "skip_crds": false,
+                "status": "deployed",
+                "timeout": 300,
+                "upgrade_install": null,
+                "verify": false,
+                "version": "1.0.0",
+                "wait": true,
+                "wait_for_jobs": false
+              }
+            },
+            {
+              "address": "module.bugservicedb.azurerm_postgresql_flexible_server.server",
+              "mode": "managed",
+              "name": "server",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "administrator_password": true,
+                "authentication": [],
+                "customer_managed_key": [],
+                "high_availability": [],
+                "identity": [],
+                "maintenance_window": []
+              },
+              "type": "azurerm_postgresql_flexible_server",
+              "values": {
+                "administrator_login": "psqladmin",
+                "auto_grow_enabled": false,
+                "create_mode": null,
+                "customer_managed_key": [],
+                "geo_redundant_backup_enabled": false,
+                "high_availability": [],
+                "identity": [],
+                "location": "westeurope",
+                "maintenance_window": [],
+                "name": "bugservicedb-ms02",
+                "point_in_time_restore_time_in_utc": null,
+                "public_network_access_enabled": true,
+                "replication_role": null,
+                "resource_group_name": "bugtracker-ms02",
+                "sku_name": "GP_Standard_D2s_v3",
+                "source_server_id": null,
+                "storage_mb": 32768,
+                "tags": null,
+                "timeouts": null,
+                "version": "12",
+                "zone": "3"
+              }
+            },
+            {
+              "address": "module.bugservicedb.azurerm_postgresql_flexible_server_database.database",
+              "mode": "managed",
+              "name": "database",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_postgresql_flexible_server_database",
+              "values": {
+                "charset": "UTF8",
+                "collation": "en_US.utf8",
+                "name": "bugs",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone",
+              "mode": "managed",
+              "name": "private_dns_zone",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "soa_record": []
+              },
+              "type": "azurerm_private_dns_zone",
+              "values": {
+                "name": "bugservicedb-ms02-zone.postgres.database.azure.com",
+                "resource_group_name": "bugtracker-ms02",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.bugservicedb.azurerm_private_dns_zone_virtual_network_link.network_link",
+              "mode": "managed",
+              "name": "network_link",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_private_dns_zone_virtual_network_link",
+              "values": {
+                "name": "bugservicedb-ms02VnetZone.com",
+                "private_dns_zone_name": "bugservicedb-ms02-zone.postgres.database.azure.com",
+                "registration_enabled": false,
+                "resource_group_name": "bugtracker-ms02",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.bugservicedb.azurerm_subnet.subnet",
+              "mode": "managed",
+              "name": "subnet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": [
+                  {
+                    "service_delegation": [
+                      {
+                        "actions": [
+                          false
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "service_endpoints": [
+                  false
+                ]
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.1.3.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [
+                  {
+                    "name": "fs",
+                    "service_delegation": [
+                      {
+                        "actions": [
+                          "Microsoft.Network/virtualNetworks/subnets/join/action"
+                        ],
+                        "name": "Microsoft.DBforPostgreSQL/flexibleServers"
+                      }
+                    ]
+                  }
+                ],
+                "name": "bugservicedb-ms02-subnet",
+                "resource_group_name": "bugtracker-ms02",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": [
+                  "Microsoft.Storage"
+                ],
+                "timeouts": null,
+                "virtual_network_name": "bugtracker-ms02"
+              }
+            },
+            {
+              "address": "module.bugservicedb.random_password.password",
+              "mode": "managed",
+              "name": "password",
+              "provider_name": "registry.terraform.io/hashicorp/random",
+              "schema_version": 3,
+              "sensitive_values": {
+                "bcrypt_hash": true,
+                "result": true
+              },
+              "type": "random_password",
+              "values": {
+                "keepers": null,
+                "length": 16,
+                "lower": true,
+                "min_lower": 1,
+                "min_numeric": 1,
+                "min_special": 1,
+                "min_upper": 1,
+                "number": true,
+                "numeric": true,
+                "override_special": "!_%@",
+                "special": true,
+                "upper": true
+              }
+            },
+            {
+              "address": "module.userservicedb.azurerm_postgresql_flexible_server.server",
+              "mode": "managed",
+              "name": "server",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "administrator_password": true,
+                "authentication": [],
+                "customer_managed_key": [],
+                "high_availability": [],
+                "identity": [],
+                "maintenance_window": []
+              },
+              "type": "azurerm_postgresql_flexible_server",
+              "values": {
+                "administrator_login": "psqladmin",
+                "auto_grow_enabled": false,
+                "create_mode": null,
+                "customer_managed_key": [],
+                "geo_redundant_backup_enabled": false,
+                "high_availability": [],
+                "identity": [],
+                "location": "westeurope",
+                "maintenance_window": [],
+                "name": "userservicedb-ms02",
+                "point_in_time_restore_time_in_utc": null,
+                "public_network_access_enabled": true,
+                "replication_role": null,
+                "resource_group_name": "bugtracker-ms02",
+                "sku_name": "GP_Standard_D2s_v3",
+                "source_server_id": null,
+                "storage_mb": 32768,
+                "tags": null,
+                "timeouts": null,
+                "version": "12",
+                "zone": "3"
+              }
+            },
+            {
+              "address": "module.userservicedb.azurerm_postgresql_flexible_server_database.database",
+              "mode": "managed",
+              "name": "database",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_postgresql_flexible_server_database",
+              "values": {
+                "charset": "UTF8",
+                "collation": "en_US.utf8",
+                "name": "users",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.userservicedb.azurerm_private_dns_zone.private_dns_zone",
+              "mode": "managed",
+              "name": "private_dns_zone",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "soa_record": []
+              },
+              "type": "azurerm_private_dns_zone",
+              "values": {
+                "name": "userservicedb-ms02-zone.postgres.database.azure.com",
+                "resource_group_name": "bugtracker-ms02",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.userservicedb.azurerm_private_dns_zone_virtual_network_link.network_link",
+              "mode": "managed",
+              "name": "network_link",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_private_dns_zone_virtual_network_link",
+              "values": {
+                "name": "userservicedb-ms02VnetZone.com",
+                "private_dns_zone_name": "userservicedb-ms02-zone.postgres.database.azure.com",
+                "registration_enabled": false,
+                "resource_group_name": "bugtracker-ms02",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.userservicedb.azurerm_subnet.subnet",
+              "mode": "managed",
+              "name": "subnet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": [
+                  {
+                    "service_delegation": [
+                      {
+                        "actions": [
+                          false
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "service_endpoints": [
+                  false
+                ]
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.1.2.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [
+                  {
+                    "name": "fs",
+                    "service_delegation": [
+                      {
+                        "actions": [
+                          "Microsoft.Network/virtualNetworks/subnets/join/action"
+                        ],
+                        "name": "Microsoft.DBforPostgreSQL/flexibleServers"
+                      }
+                    ]
+                  }
+                ],
+                "name": "userservicedb-ms02-subnet",
+                "resource_group_name": "bugtracker-ms02",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": [
+                  "Microsoft.Storage"
+                ],
+                "timeouts": null,
+                "virtual_network_name": "bugtracker-ms02"
+              }
+            },
+            {
+              "address": "module.userservicedb.random_password.password",
+              "mode": "managed",
+              "name": "password",
+              "provider_name": "registry.terraform.io/hashicorp/random",
+              "schema_version": 3,
+              "sensitive_values": {
+                "bcrypt_hash": true,
+                "result": true
+              },
+              "type": "random_password",
+              "values": {
+                "keepers": null,
+                "length": 16,
+                "lower": true,
+                "min_lower": 1,
+                "min_numeric": 1,
+                "min_special": 1,
+                "min_upper": 1,
+                "number": true,
+                "numeric": true,
+                "override_special": "!_%@",
+                "special": true,
+                "upper": true
+              }
+            }
+          ],
+          "text": "data.assemble.plan",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

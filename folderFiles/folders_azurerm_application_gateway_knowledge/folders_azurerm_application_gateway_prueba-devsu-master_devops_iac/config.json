@@ -1,0 +1,989 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_api_management.apim",
+              "expressions": {
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-ApiManagement"
+                },
+                "publisher_email": {
+                  "constant_value": "devsu@example.com"
+                },
+                "publisher_name": {
+                  "constant_value": "devsu-test"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "sku_name": {
+                  "constant_value": "Developer_1"
+                },
+                "virtual_network_configuration": [
+                  {
+                    "subnet_id": {
+                      "references": [
+                        "azurerm_subnet.apim_subnet.id",
+                        "azurerm_subnet.apim_subnet"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "apim",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_api_management"
+            },
+            {
+              "address": "azurerm_application_gateway.app_gateway",
+              "expressions": {
+                "backend_address_pool": [
+                  {
+                    "name": {
+                      "constant_value": "AppGwBackendPool"
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "name": {
+                      "constant_value": "AppGwHttpSettings"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  }
+                ],
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "AppGwFrontendIpConfig"
+                    },
+                    "public_ip_address_id": {
+                      "references": [
+                        "azurerm_public_ip.app_gateway_public_ip.id",
+                        "azurerm_public_ip.app_gateway_public_ip"
+                      ]
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "constant_value": "http"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "AppGwIpConfig"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "azurerm_subnet.agic_subnet.id",
+                        "azurerm_subnet.agic_subnet"
+                      ]
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "AppGwFrontendIpConfig"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "http"
+                    },
+                    "name": {
+                      "constant_value": "AppGwHttpListener"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-AppGateway"
+                },
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "AppGwBackendPool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "AppGwHttpSettings"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "AppGwHttpListener"
+                    },
+                    "name": {
+                      "constant_value": "AppGwRoutingRule"
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "constant_value": 2
+                    },
+                    "name": {
+                      "constant_value": "Standard_v2"
+                    },
+                    "tier": {
+                      "constant_value": "Standard_v2"
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "app_gateway",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "azurerm_container_registry.acr",
+              "expressions": {
+                "admin_enabled": {
+                  "constant_value": true
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsuContainerRegistry"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Basic"
+                }
+              },
+              "mode": "managed",
+              "name": "acr",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_container_registry"
+            },
+            {
+              "address": "azurerm_key_vault.key_vault",
+              "expressions": {
+                "enabled_for_disk_encryption": {
+                  "constant_value": true
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-KeyVault"
+                },
+                "network_acls": [
+                  {
+                    "bypass": {
+                      "constant_value": "AzureServices"
+                    },
+                    "default_action": {
+                      "constant_value": "Allow"
+                    },
+                    "ip_rules": {
+                      "constant_value": [
+                        "0.0.0.0/0"
+                      ]
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "sku_name": {
+                  "constant_value": "standard"
+                },
+                "tenant_id": {
+                  "references": [
+                    "data.azurerm_client_config.current.tenant_id",
+                    "data.azurerm_client_config.current"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "key_vault",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_key_vault"
+            },
+            {
+              "address": "azurerm_kubernetes_cluster.aks",
+              "expressions": {
+                "default_node_pool": [
+                  {
+                    "name": {
+                      "constant_value": "default"
+                    },
+                    "node_count": {
+                      "constant_value": 1
+                    },
+                    "vm_size": {
+                      "constant_value": "Standard_DS2_v2"
+                    },
+                    "vnet_subnet_id": {
+                      "references": [
+                        "azurerm_subnet.aks_subnet.id",
+                        "azurerm_subnet.aks_subnet"
+                      ]
+                    }
+                  }
+                ],
+                "dns_prefix": {
+                  "constant_value": "myaks"
+                },
+                "identity": [
+                  {
+                    "identity_ids": {
+                      "references": [
+                        "azurerm_user_assigned_identity.aks_identity.id",
+                        "azurerm_user_assigned_identity.aks_identity"
+                      ]
+                    },
+                    "type": {
+                      "constant_value": "UserAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-AKSCluster"
+                },
+                "network_profile": [
+                  {
+                    "dns_service_ip": {
+                      "constant_value": "10.0.0.10"
+                    },
+                    "network_plugin": {
+                      "constant_value": "azure"
+                    },
+                    "service_cidr": {
+                      "constant_value": "10.0.0.0/16"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_kubernetes_cluster"
+            },
+            {
+              "address": "azurerm_mssql_firewall_rule.example",
+              "expressions": {
+                "end_ip_address": {
+                  "constant_value": "10.0.255.255"
+                },
+                "name": {
+                  "constant_value": "allow-vnet"
+                },
+                "server_id": {
+                  "references": [
+                    "azurerm_mssql_server.sql_server.id",
+                    "azurerm_mssql_server.sql_server"
+                  ]
+                },
+                "start_ip_address": {
+                  "constant_value": "10.0.0.0"
+                }
+              },
+              "mode": "managed",
+              "name": "example",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_mssql_firewall_rule"
+            },
+            {
+              "address": "azurerm_mssql_server.sql_server",
+              "expressions": {
+                "administrator_login": {
+                  "constant_value": "sqladmin"
+                },
+                "administrator_login_password": {
+                  "constant_value": "H@Sh1CoR3!"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "minimum_tls_version": {
+                  "constant_value": "1.2"
+                },
+                "name": {
+                  "constant_value": "devsusqlserver"
+                },
+                "public_network_access_enabled": {
+                  "constant_value": false
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "version": {
+                  "constant_value": "12.0"
+                }
+              },
+              "mode": "managed",
+              "name": "sql_server",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_mssql_server"
+            },
+            {
+              "address": "azurerm_network_security_group.nsg",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-myNSG"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "security_rule": {
+                  "constant_value": [
+                    {
+                      "access": "Allow",
+                      "description": null,
+                      "destination_address_prefix": "10.0.4.0/24",
+                      "destination_address_prefixes": null,
+                      "destination_application_security_group_ids": null,
+                      "destination_port_range": null,
+                      "destination_port_ranges": [
+                        "1433"
+                      ],
+                      "direction": "Inbound",
+                      "name": "allow_sql",
+                      "priority": 100,
+                      "protocol": "Tcp",
+                      "source_address_prefix": "10.0.0.0/16",
+                      "source_address_prefixes": null,
+                      "source_application_security_group_ids": null,
+                      "source_port_range": "*",
+                      "source_port_ranges": null
+                    },
+                    {
+                      "access": "Allow",
+                      "description": null,
+                      "destination_address_prefix": "10.0.5.0/24",
+                      "destination_address_prefixes": null,
+                      "destination_application_security_group_ids": null,
+                      "destination_port_range": null,
+                      "destination_port_ranges": [
+                        "443"
+                      ],
+                      "direction": "Inbound",
+                      "name": "allow_acr",
+                      "priority": 101,
+                      "protocol": "Tcp",
+                      "source_address_prefix": "10.0.0.0/16",
+                      "source_address_prefixes": null,
+                      "source_application_security_group_ids": null,
+                      "source_port_range": "*",
+                      "source_port_ranges": null
+                    },
+                    {
+                      "access": "Allow",
+                      "description": null,
+                      "destination_address_prefix": "10.0.2.0/24",
+                      "destination_address_prefixes": null,
+                      "destination_application_security_group_ids": null,
+                      "destination_port_range": null,
+                      "destination_port_ranges": [
+                        "80"
+                      ],
+                      "direction": "Inbound",
+                      "name": "allow_http",
+                      "priority": 102,
+                      "protocol": "Tcp",
+                      "source_address_prefix": "10.0.0.0/16",
+                      "source_address_prefixes": null,
+                      "source_application_security_group_ids": null,
+                      "source_port_range": "*",
+                      "source_port_ranges": null
+                    },
+                    {
+                      "access": "Allow",
+                      "description": null,
+                      "destination_address_prefix": "10.0.2.0/24",
+                      "destination_address_prefixes": null,
+                      "destination_application_security_group_ids": null,
+                      "destination_port_range": null,
+                      "destination_port_ranges": [
+                        "443"
+                      ],
+                      "direction": "Inbound",
+                      "name": "allow_https",
+                      "priority": 103,
+                      "protocol": "Tcp",
+                      "source_address_prefix": "10.0.0.0/16",
+                      "source_address_prefixes": null,
+                      "source_application_security_group_ids": null,
+                      "source_port_range": "*",
+                      "source_port_ranges": null
+                    },
+                    {
+                      "access": "Allow",
+                      "description": null,
+                      "destination_address_prefix": "10.0.1.0/24",
+                      "destination_address_prefixes": null,
+                      "destination_application_security_group_ids": null,
+                      "destination_port_range": null,
+                      "destination_port_ranges": [
+                        "443"
+                      ],
+                      "direction": "Inbound",
+                      "name": "allow_apim",
+                      "priority": 104,
+                      "protocol": "Tcp",
+                      "source_address_prefix": "10.0.0.0/16",
+                      "source_address_prefixes": null,
+                      "source_application_security_group_ids": null,
+                      "source_port_range": "*",
+                      "source_port_ranges": null
+                    }
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "nsg",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_network_security_group"
+            },
+            {
+              "address": "azurerm_public_ip.app_gateway_public_ip",
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "AppGwPublicIP"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                }
+              },
+              "mode": "managed",
+              "name": "app_gateway_public_ip",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_resource_group.rg",
+              "expressions": {
+                "location": {
+                  "constant_value": "East US"
+                },
+                "name": {
+                  "constant_value": "devsu-rg"
+                }
+              },
+              "mode": "managed",
+              "name": "rg",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_role_assignment.acr_pull",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "azurerm_user_assigned_identity.aks_identity.principal_id",
+                    "azurerm_user_assigned_identity.aks_identity"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "AcrPull"
+                },
+                "scope": {
+                  "references": [
+                    "azurerm_container_registry.acr.id",
+                    "azurerm_container_registry.acr"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "acr_pull",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "azurerm_role_assignment.sql_access",
+              "expressions": {
+                "principal_id": {
+                  "references": [
+                    "azurerm_user_assigned_identity.aks_identity.principal_id",
+                    "azurerm_user_assigned_identity.aks_identity"
+                  ]
+                },
+                "role_definition_name": {
+                  "constant_value": "Contributor"
+                },
+                "scope": {
+                  "references": [
+                    "azurerm_mssql_server.sql_server.id",
+                    "azurerm_mssql_server.sql_server"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "sql_access",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_role_assignment"
+            },
+            {
+              "address": "azurerm_subnet.acr_subnet",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.5.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-ACRSubnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.vnet.name",
+                    "azurerm_virtual_network.vnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "acr_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.agic_subnet",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.2.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-AgicSubnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.vnet.name",
+                    "azurerm_virtual_network.vnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "agic_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.aks_subnet",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.3.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-AksSubnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.vnet.name",
+                    "azurerm_virtual_network.vnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.apim_subnet",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.1.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-ApimSubnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.vnet.name",
+                    "azurerm_virtual_network.vnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "apim_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.sql_subnet",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.4.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-SQLSubnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.vnet.name",
+                    "azurerm_virtual_network.vnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "sql_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet_network_security_group_association.acr_nsg",
+              "expressions": {
+                "network_security_group_id": {
+                  "references": [
+                    "azurerm_network_security_group.nsg.id",
+                    "azurerm_network_security_group.nsg"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "azurerm_subnet.acr_subnet.id",
+                    "azurerm_subnet.acr_subnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "acr_nsg",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet_network_security_group_association"
+            },
+            {
+              "address": "azurerm_subnet_network_security_group_association.agic_nsg",
+              "expressions": {
+                "network_security_group_id": {
+                  "references": [
+                    "azurerm_network_security_group.nsg.id",
+                    "azurerm_network_security_group.nsg"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "azurerm_subnet.agic_subnet.id",
+                    "azurerm_subnet.agic_subnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "agic_nsg",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet_network_security_group_association"
+            },
+            {
+              "address": "azurerm_subnet_network_security_group_association.aks_nsg",
+              "expressions": {
+                "network_security_group_id": {
+                  "references": [
+                    "azurerm_network_security_group.nsg.id",
+                    "azurerm_network_security_group.nsg"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "azurerm_subnet.aks_subnet.id",
+                    "azurerm_subnet.aks_subnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks_nsg",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet_network_security_group_association"
+            },
+            {
+              "address": "azurerm_subnet_network_security_group_association.apim_nsg",
+              "expressions": {
+                "network_security_group_id": {
+                  "references": [
+                    "azurerm_network_security_group.nsg.id",
+                    "azurerm_network_security_group.nsg"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "azurerm_subnet.apim_subnet.id",
+                    "azurerm_subnet.apim_subnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "apim_nsg",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet_network_security_group_association"
+            },
+            {
+              "address": "azurerm_subnet_network_security_group_association.sql_nsg",
+              "expressions": {
+                "network_security_group_id": {
+                  "references": [
+                    "azurerm_network_security_group.nsg.id",
+                    "azurerm_network_security_group.nsg"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "azurerm_subnet.sql_subnet.id",
+                    "azurerm_subnet.sql_subnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "sql_nsg",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet_network_security_group_association"
+            },
+            {
+              "address": "azurerm_user_assigned_identity.aks_identity",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "aks-identity"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks_identity",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_user_assigned_identity"
+            },
+            {
+              "address": "azurerm_virtual_network.vnet",
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.0.0.0/16"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "devsu-Vnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "vnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            },
+            {
+              "address": "data.azurerm_client_config.current",
+              "mode": "data",
+              "name": "current",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_client_config"
+            },
+            {
+              "address": "data.azurerm_mssql_database.sql_database",
+              "expressions": {
+                "name": {
+                  "constant_value": "example-mssql-db"
+                },
+                "server_id": {
+                  "references": [
+                    "azurerm_mssql_server.sql_server.id",
+                    "azurerm_mssql_server.sql_server"
+                  ]
+                }
+              },
+              "mode": "data",
+              "name": "sql_database",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_mssql_database"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

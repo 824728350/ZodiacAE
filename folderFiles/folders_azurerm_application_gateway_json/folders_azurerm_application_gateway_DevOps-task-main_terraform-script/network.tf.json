@@ -1,0 +1,39 @@
+{
+    "resource": [
+        {
+            "azurerm_virtual_network": {
+                "gateway-vnet": {
+                    "address_space": [
+                        "10.0.0.0/16"
+                    ],
+                    "location": "${azurerm_resource_group.application-rg.location}",
+                    "name": "Application-gateway-vnet",
+                    "resource_group_name": "${azurerm_resource_group.application-rg.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "gateway-subnet": {
+                    "address_prefixes": [
+                        "10.0.0.0/24"
+                    ],
+                    "name": "default",
+                    "resource_group_name": "${azurerm_resource_group.application-rg.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.gateway-vnet.name}"
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "pip": {
+                    "allocation_method": "Static",
+                    "location": "${azurerm_resource_group.application-rg.location}",
+                    "name": "gateway-pip",
+                    "resource_group_name": "${azurerm_resource_group.application-rg.name}",
+                    "sku": "Standard"
+                }
+            }
+        }
+    ]
+}

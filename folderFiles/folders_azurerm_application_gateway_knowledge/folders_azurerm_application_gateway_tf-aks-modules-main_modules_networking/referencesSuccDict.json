@@ -1,0 +1,32 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.network": [],
+            "azurerm_public_ip.gw_ip": [],
+            "azurerm_resource_group.rg": [
+              "azurerm_application_gateway.network",
+              "azurerm_public_ip.gw_ip",
+              "azurerm_subnet.aks",
+              "azurerm_subnet.gateway",
+              "azurerm_virtual_network.aks_vnet"
+            ],
+            "azurerm_subnet.aks": [],
+            "azurerm_subnet.gateway": [],
+            "azurerm_virtual_network.aks_vnet": [
+              "azurerm_subnet.aks",
+              "azurerm_subnet.gateway"
+            ]
+          },
+          "text": "data.assemble.referencesSuccDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

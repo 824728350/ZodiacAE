@@ -1,0 +1,71 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.network": [
+              "azurerm_application_gateway.network"
+            ],
+            "azurerm_linux_virtual_machine.myVms": [
+              "azurerm_linux_virtual_machine.myVms"
+            ],
+            "azurerm_monitor_action_group.actionGrp": [
+              "azurerm_monitor_action_group.actionGrp"
+            ],
+            "azurerm_monitor_metric_alert.metric": [
+              "azurerm_monitor_metric_alert.metric"
+            ],
+            "azurerm_nat_gateway.nat": [
+              "azurerm_nat_gateway.nat",
+              "azurerm_nat_gateway_public_ip_association.natAssocPubIP",
+              "azurerm_subnet_nat_gateway_association.subnetNatgwAssoc"
+            ],
+            "azurerm_nat_gateway_public_ip_association.natAssocPubIP": [
+              "azurerm_nat_gateway_public_ip_association.natAssocPubIP"
+            ],
+            "azurerm_network_interface.nic": [
+              "azurerm_network_interface.nic"
+            ],
+            "azurerm_public_ip.agwIP": [
+              "azurerm_application_gateway.network",
+              "azurerm_public_ip.agwIP"
+            ],
+            "azurerm_public_ip.natPubIP": [
+              "azurerm_nat_gateway_public_ip_association.natAssocPubIP",
+              "azurerm_public_ip.natPubIP"
+            ],
+            "azurerm_subnet.frontend": [
+              "azurerm_application_gateway.network",
+              "azurerm_subnet.frontend"
+            ],
+            "azurerm_subnet.mySubnet": [
+              "azurerm_network_interface.nic",
+              "azurerm_subnet.mySubnet",
+              "azurerm_subnet_nat_gateway_association.subnetNatgwAssoc"
+            ],
+            "azurerm_subnet_nat_gateway_association.subnetNatgwAssoc": [
+              "azurerm_subnet_nat_gateway_association.subnetNatgwAssoc"
+            ],
+            "azurerm_virtual_network.vNet": [
+              "azurerm_application_gateway.network",
+              "azurerm_network_interface.nic",
+              "azurerm_subnet.frontend",
+              "azurerm_subnet.mySubnet",
+              "azurerm_subnet_nat_gateway_association.subnetNatgwAssoc",
+              "azurerm_virtual_network.vNet"
+            ],
+            "data.template_file.linux-vm-cloud-init": [
+              "data.template_file.linux-vm-cloud-init"
+            ]
+          },
+          "text": "data.assemble.offspringDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

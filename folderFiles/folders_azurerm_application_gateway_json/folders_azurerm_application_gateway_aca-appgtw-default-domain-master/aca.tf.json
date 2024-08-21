@@ -1,0 +1,62 @@
+{
+    "resource": [
+        {
+            "azurerm_log_analytics_workspace": {
+                "main": {
+                    "location": "${azurerm_resource_group.main.location}",
+                    "name": "${format(\"%s-%s\", var.prefix, \"logs\")}",
+                    "resource_group_name": "${azurerm_resource_group.main.name}",
+                    "retention_in_days": 30,
+                    "sku": "PerGB2018"
+                }
+            }
+        },
+        {
+            "azurerm_container_app_environment": {
+                "main": {
+                    "infrastructure_subnet_id": "${azurerm_subnet.aca.id}",
+                    "internal_load_balancer_enabled": true,
+                    "location": "${azurerm_resource_group.main.location}",
+                    "log_analytics_workspace_id": "${azurerm_log_analytics_workspace.main.id}",
+                    "name": "${format(\"%s-%s\", var.prefix, \"env\")}",
+                    "resource_group_name": "${azurerm_resource_group.main.name}"
+                }
+            }
+        },
+        {
+            "azurerm_container_app": {
+                "main": {
+                    "container_app_environment_id": "${azurerm_container_app_environment.main.id}",
+                    "ingress": [
+                        {
+                            "allow_insecure_connections": true,
+                            "external_enabled": true,
+                            "target_port": 80,
+                            "traffic_weight": [
+                                {
+                                    "latest_revision": true,
+                                    "percentage": 100
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "example-app",
+                    "resource_group_name": "${azurerm_resource_group.main.name}",
+                    "revision_mode": "Single",
+                    "template": [
+                        {
+                            "container": [
+                                {
+                                    "cpu": 0.25,
+                                    "image": "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest",
+                                    "memory": "0.5Gi",
+                                    "name": "examplecontainerapp"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

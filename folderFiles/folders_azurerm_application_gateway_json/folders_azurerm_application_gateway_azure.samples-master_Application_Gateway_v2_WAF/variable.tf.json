@@ -1,0 +1,420 @@
+{
+    "variable": [
+        {
+            "location": {
+                "default": "westeurope",
+                "description": "(Required) Location of the all services to be created"
+            }
+        },
+        {
+            "resource_group_name": {
+                "default": "DemoSEG",
+                "description": "(Required) Resource group name of the all services to be created"
+            }
+        },
+        {
+            "tags": {
+                "default": {
+                    "Project": "AGW_v2"
+                },
+                "description": "(Required) Tags to be applied to the all services to be created"
+            }
+        },
+        {
+            "name-vnet": {
+                "default": "Production",
+                "description": "(Required) Name of the Virtual Network."
+            }
+        },
+        {
+            "address_space": {
+                "default": [
+                    "10.254.0.0/16"
+                ],
+                "description": "(Required) The Address Spaces of the Virtual Network."
+            }
+        },
+        {
+            "name_subnet_1": {
+                "default": "agw",
+                "description": "(Required) Name of subnets to create."
+            }
+        },
+        {
+            "address_space_subnet_1": {
+                "default": [
+                    "10.254.0.0/28"
+                ],
+                "description": "(Required) Ip Address of subnets to create."
+            }
+        },
+        {
+            "name_subnet_2": {
+                "default": "frontend",
+                "description": "(Required) Name of subnets to create."
+            }
+        },
+        {
+            "address_space_subnet_2": {
+                "default": [
+                    "10.254.2.0/24"
+                ],
+                "description": "(Required) Ip Address of subnets to create."
+            }
+        },
+        {
+            "name-publicip": {
+                "default": "myPublicIP",
+                "description": "(Required) Name of Public IP"
+            }
+        },
+        {
+            "name-publicipagw": {
+                "default": "myPublicIPagw",
+                "description": "(Required) Name of Public IP"
+            }
+        },
+        {
+            "name-publicip_2": {
+                "default": "myPublicIP2",
+                "description": "(Required) Name of Public IP"
+            }
+        },
+        {
+            "allocation-method-publicip": {
+                "default": "Dynamic",
+                "description": "(Required) Allocation Method of Public IP"
+            }
+        },
+        {
+            "allocation-method-publicipagw": {
+                "default": "Static",
+                "description": "(Required) Allocation Method of Public IP"
+            }
+        },
+        {
+            "sku-publicipagw": {
+                "default": "Standard",
+                "description": "(Required) Allocation Method of Public IP"
+            }
+        },
+        {
+            "name-sta": {
+                "default": "demoagwssta23243",
+                "description": "(Required) Name of Storage Account"
+            }
+        },
+        {
+            "sku-sta": {
+                "default": "Standard",
+                "description": "(Required) Sku Storage Account"
+            }
+        },
+        {
+            "replication-type-sta": {
+                "default": "LRS",
+                "description": "(Required) Replication type on Storage Account"
+            }
+        },
+        {
+            "http-traffic-only-sta": {
+                "default": true,
+                "description": "(Required) http-traffic-only-sta Storage Account"
+            }
+        },
+        {
+            "name-sta-container": {
+                "default": "tfstate",
+                "description": "(Required) Name of Storage Account Container"
+            }
+        },
+        {
+            "access-type-sta-container": {
+                "default": "private",
+                "description": "(Required) Access Type of Storage Account Container"
+            }
+        },
+        {
+            "name-vm": {
+                "default": "demovm",
+                "description": "(Required) Name of Virtual Machine"
+            }
+        },
+        {
+            "name-vm-2": {
+                "default": "demovm2",
+                "description": "(Required) Name of Virtual Machine"
+            }
+        },
+        {
+            "sku-vm": {
+                "default": "Standard_DS1_v2",
+                "description": "(Required) Name of Virtual Machine"
+            }
+        },
+        {
+            "name-disk-vm": {
+                "default": "DemoDeviceDisk",
+                "description": "(Required) Name of disk - Virtual Machine"
+            }
+        },
+        {
+            "name-disk-vm-2": {
+                "default": "DemoDeviceDisk2",
+                "description": "(Required) Name of disk - Virtual Machine"
+            }
+        },
+        {
+            "caching-disk-vm": {
+                "default": "ReadWrite",
+                "description": "(Required) Caching of disk - Virtual Machine"
+            }
+        },
+        {
+            "sta-disk-vm": {
+                "default": "Premium_LRS",
+                "description": "(Required) Storage Account Type of disl - Virtual Machine"
+            }
+        },
+        {
+            "image-publisher-vm": {
+                "default": "Canonical",
+                "description": "(Required) Image Publisher SO of Virtual Machine"
+            }
+        },
+        {
+            "image-offer-vm": {
+                "default": "UbuntuServer",
+                "description": "(Required) Image Publisher SO of Virtual Machine"
+            }
+        },
+        {
+            "image-sku-vm": {
+                "default": "18.04-LTS",
+                "description": "(Required) Image Publisher SO of Virtual Machine"
+            }
+        },
+        {
+            "image-version-vm": {
+                "default": "latest",
+                "description": "(Required) Image Publisher SO of Virtual Machine"
+            }
+        },
+        {
+            "user-name-vm": {
+                "default": "azureuser",
+                "description": "(Required) User of Virtual Machine"
+            }
+        },
+        {
+            "user-password-vm": {
+                "default": "Password1234!",
+                "description": "(Required) Password of Virtual Machine"
+            }
+        },
+        {
+            "password_authentication-vm": {
+                "default": false,
+                "description": "(Required) Password Authentication of Virtual Machine"
+            }
+        },
+        {
+            "name-nic": {
+                "default": "edgedevicesim-nic",
+                "description": "(Required) Name of Network Interface"
+            }
+        },
+        {
+            "name-ipconfig-nic": {
+                "default": "testconfiguration1",
+                "description": "(Required) Ip Configuration of Network Interface"
+            }
+        },
+        {
+            "private-ip-allocation-nic": {
+                "default": "Dynamic",
+                "description": "(Required) Private Ip Address Allocation of Network Interface"
+            }
+        },
+        {
+            "name-nic-2": {
+                "default": "edgedevicesim2-nic",
+                "description": "(Required) Name of Network Interface"
+            }
+        },
+        {
+            "name-ipconfig-nic-2": {
+                "default": "testconfiguration2",
+                "description": "(Required) Ip Configuration of Network Interface"
+            }
+        },
+        {
+            "private-ip-allocation-nic-2": {
+                "default": "Dynamic",
+                "description": "(Required) Private Ip Address Allocation of Network Interface"
+            }
+        },
+        {
+            "name-agw": {
+                "default": "myAppGateway",
+                "description": "(Required) Name of Application Gateway"
+            }
+        },
+        {
+            "http2-agw": {
+                "default": "false",
+                "description": "(Required) Enabled Http2 of Application Gateway"
+            }
+        },
+        {
+            "sku-name-agw": {
+                "default": "WAF_v2",
+                "description": "(Required) Sku Name of Application Gateway"
+            }
+        },
+        {
+            "sku-tier-agw": {
+                "default": "WAF_v2",
+                "description": "(Required) Sku Tier of Application Gateway"
+            }
+        },
+        {
+            "capacity-agw-min": {
+                "default": "0",
+                "description": "Min and max capacity for auto scaling of Application Gateway"
+            }
+        },
+        {
+            "capacity-agw-max": {
+                "default": "10",
+                "description": "Max capacity for auto scaling of Application Gateway"
+            }
+        },
+        {
+            "ip-config-name-agw": {
+                "default": "my-gateway-ip-configuration",
+                "description": "(Required) IP Configuration of Application Gateway"
+            }
+        },
+        {
+            "frontend-port-name-agw": {
+                "default": "production-feport",
+                "description": "(Required) Frontend Port Name of Application Gateway"
+            }
+        },
+        {
+            "frontend-port-agw": {
+                "default": "80",
+                "description": "(Required) Frontend Port of Application Gateway"
+            }
+        },
+        {
+            "frontend-ip-config-name-agw": {
+                "default": "production-feip",
+                "description": "(Required) Frontend Ip Configuration Name of Application Gateway"
+            }
+        },
+        {
+            "backend-address-pool-name-agw": {
+                "default": "poolBE",
+                "description": "(Required) Backend Address Pool Name of Application Gateway"
+            }
+        },
+        {
+            "backend_http_settings-name-agw": {
+                "default": "production-be-htst",
+                "description": "(Required) Backend Http Settings Name of Application Gateway"
+            }
+        },
+        {
+            "backend_http_settings-cookie-agw": {
+                "default": "Disabled",
+                "description": "(Required) Backend Address Pool Name of Application Gateway"
+            }
+        },
+        {
+            "backend_http_settings-path-agw": {
+                "default": "/path1/",
+                "description": "(Required) Backend Address Pool Name of Application Gateway"
+            }
+        },
+        {
+            "backend_http_settings-port-agw": {
+                "default": "80",
+                "description": "(Required) Backend Address Pool Name of Application Gateway"
+            }
+        },
+        {
+            "backend_http_settings-protocol-agw": {
+                "default": "Http",
+                "description": "(Required) Backend Address Pool Name of Application Gateway"
+            }
+        },
+        {
+            "backend_http_settings-request_timeout-agw": {
+                "default": "60",
+                "description": "(Required) Backend Address Pool Name of Application Gateway"
+            }
+        },
+        {
+            "name-http-listener-agw": {
+                "default": "listenagw",
+                "description": "(Required) Http Listener Name of Application Gateway"
+            }
+        },
+        {
+            "protocol-http-listener-agw": {
+                "default": "Http",
+                "description": "(Required) Http Listener Protocol of Application Gateway"
+            }
+        },
+        {
+            "name-request-routing-rule-agw": {
+                "default": "reqroutingrule",
+                "description": "(Required) Request Routing Rule Name of Application Gateway"
+            }
+        },
+        {
+            "type-request-routing-rule-agw": {
+                "default": "Basic",
+                "description": "(Required) Request Routing Rule Type of Application Gateway"
+            }
+        },
+        {
+            "enabled-waf": {
+                "default": "true",
+                "description": "(Required) WAF Configuration of Application Gateway"
+            }
+        },
+        {
+            "firewall-mode-waf": {
+                "default": "Prevention",
+                "description": "(Required) Firewall Mode WAF of Application Gateway"
+            }
+        },
+        {
+            "rule-set-type-waf": {
+                "default": "OWASP",
+                "description": "(Required) Rule Set Type WAF of Application Gateway"
+            }
+        },
+        {
+            "rule-set-version-waf": {
+                "default": "3.0",
+                "description": "(Required) Rule Set Type WAF of Application Gateway"
+            }
+        },
+        {
+            "file-upload-limit-mb-waf": {
+                "default": "100",
+                "description": "(Required) Rule Set Type WAF of Application Gateway"
+            }
+        },
+        {
+            "max-request-body-size-kb-waf": {
+                "default": "128",
+                "description": "(Required) Rule Set Type WAF of Application Gateway"
+            }
+        }
+    ]
+}

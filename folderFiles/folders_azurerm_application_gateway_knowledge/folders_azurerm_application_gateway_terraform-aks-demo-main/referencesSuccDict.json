@@ -1,0 +1,67 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgateway": [],
+            "azurerm_kubernetes_cluster.aks": [],
+            "azurerm_network_security_group.nsg_backend": [
+              "azurerm_network_security_rule.allow_aks_to_appgw",
+              "azurerm_network_security_rule.allow_appgw_to_aks",
+              "azurerm_subnet_network_security_group_association.backend"
+            ],
+            "azurerm_network_security_group.nsg_db": [
+              "azurerm_network_security_rule.allow_aks_to_db",
+              "azurerm_subnet_network_security_group_association.db"
+            ],
+            "azurerm_network_security_rule.allow_aks_to_appgw": [],
+            "azurerm_network_security_rule.allow_aks_to_db": [],
+            "azurerm_network_security_rule.allow_appgw_to_aks": [],
+            "azurerm_postgresql_flexible_server.postgresql": [],
+            "azurerm_postgresql_flexible_server_firewall_rule.allow_internal": [],
+            "azurerm_private_dns_zone.postgresql": [],
+            "azurerm_private_dns_zone_virtual_network_link.vnetlink": [],
+            "azurerm_public_ip.appgw_pip": [
+              "azurerm_application_gateway.appgateway"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_application_gateway.appgateway",
+              "azurerm_network_security_group.nsg_backend",
+              "azurerm_network_security_group.nsg_db",
+              "azurerm_network_security_rule.allow_aks_to_appgw",
+              "azurerm_network_security_rule.allow_aks_to_db",
+              "azurerm_network_security_rule.allow_appgw_to_aks",
+              "azurerm_public_ip.appgw_pip",
+              "azurerm_subnet.backend",
+              "azurerm_subnet.db",
+              "azurerm_subnet.gateway",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.backend": [
+              "azurerm_subnet_network_security_group_association.backend"
+            ],
+            "azurerm_subnet.db": [
+              "azurerm_subnet_network_security_group_association.db"
+            ],
+            "azurerm_subnet.gateway": [
+              "azurerm_application_gateway.appgateway"
+            ],
+            "azurerm_subnet_network_security_group_association.backend": [],
+            "azurerm_subnet_network_security_group_association.db": [],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_subnet.backend",
+              "azurerm_subnet.db",
+              "azurerm_subnet.gateway"
+            ]
+          },
+          "text": "data.assemble.referencesSuccDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

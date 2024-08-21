@@ -1,0 +1,82 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "module.database_function_app.azurerm_linux_function_app.project_fa": [
+              "module.database_function_app.azurerm_linux_function_app.project_fa"
+            ],
+            "module.database_function_app.azurerm_mssql_database.project_sql_db": [
+              "module.database_function_app.azurerm_mssql_database.project_sql_db"
+            ],
+            "module.database_function_app.azurerm_mssql_firewall_rule.project_sql_fw_rule": [
+              "module.database_function_app.azurerm_mssql_firewall_rule.project_sql_fw_rule"
+            ],
+            "module.database_function_app.azurerm_mssql_server.project_sql_svr": [
+              "module.database_function_app.azurerm_mssql_server.project_sql_svr"
+            ],
+            "module.database_function_app.azurerm_mssql_server_transparent_data_encryption.project_sql_svr_encrypt": [
+              "module.database_function_app.azurerm_mssql_server_transparent_data_encryption.project_sql_svr_encrypt"
+            ],
+            "module.database_function_app.azurerm_mssql_virtual_network_rule.project_sql_vnet_rule": [
+              "module.database_function_app.azurerm_mssql_virtual_network_rule.project_sql_vnet_rule"
+            ],
+            "module.database_function_app.azurerm_service_plan.project_asp": [
+              "module.database_function_app.azurerm_service_plan.project_asp"
+            ],
+            "module.database_function_app.data.azurerm_client_config.resource_configs": [
+              "module.database_function_app.data.azurerm_client_config.resource_configs"
+            ],
+            "module.environment.azurerm_resource_group.project_rg": [
+              "module.environment.azurerm_resource_group.project_rg"
+            ],
+            "module.logs.azurerm_application_insights.project_app_insights": [
+              "module.logs.azurerm_application_insights.project_app_insights"
+            ],
+            "module.logs.azurerm_log_analytics_workspace.project_logs": [
+              "module.logs.azurerm_log_analytics_workspace.project_logs"
+            ],
+            "module.logs.azurerm_monitor_action_group.project_monitor_ag": [
+              "module.logs.azurerm_monitor_action_group.project_monitor_ag"
+            ],
+            "module.logs.azurerm_monitor_smart_detector_alert_rule.project_monitor_ar": [
+              "module.logs.azurerm_monitor_smart_detector_alert_rule.project_monitor_ar"
+            ],
+            "module.network.azurerm_application_gateway.project_agw": [
+              "module.network.azurerm_application_gateway.project_agw",
+              "module.network.azurerm_public_ip.project_pip",
+              "module.network.azurerm_subnet.project_snet"
+            ],
+            "module.network.azurerm_public_ip.project_pip": [
+              "module.network.azurerm_public_ip.project_pip"
+            ],
+            "module.network.azurerm_subnet.project_snet": [
+              "module.network.azurerm_subnet.project_snet"
+            ],
+            "module.network.azurerm_virtual_network.project_vnet": [
+              "module.network.azurerm_virtual_network.project_vnet"
+            ],
+            "module.storage.azurerm_storage_account.project_sa": [
+              "module.storage.azurerm_storage_account.project_sa"
+            ],
+            "module.storage.azurerm_storage_container.project_sc_hosts": [
+              "module.storage.azurerm_storage_container.project_sc_hosts"
+            ],
+            "module.storage.azurerm_storage_container.project_sc_secrets": [
+              "module.storage.azurerm_storage_container.project_sc_secrets"
+            ],
+            "random_string.storage_account_name_generator": [
+              "random_string.storage_account_name_generator"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

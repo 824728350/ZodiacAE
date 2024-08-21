@@ -1,0 +1,42 @@
+{
+    "TOPO####ConflictChildThenReference####azurerm_application_gateway.PLACEHOLDER == String####azurerm_public_ip.PLACEHOLDER == String####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String": [
+        false,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    ],
+    "TOPO####ConflictChildThenReference####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String": [
+        false,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    ],
+    "TOPO####ExclusiveThenReference####azurerm_application_gateway.PLACEHOLDER == String####azurerm_public_ip.PLACEHOLDER == String####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String": [
+        false,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    ],
+    "TOPO####ExclusiveThenReference####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String": [
+        false,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        false
+    ]
+}

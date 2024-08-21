@@ -1,0 +1,1105 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_resource_group.fme_flow",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "var.location"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "var.rg_name"
+                  ]
+                },
+                "tags": {
+                  "references": [
+                    "local.default_tags"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "module.application_gateway.azurerm_application_gateway.fme_flow",
+              "expressions": {
+                "backend_address_pool": [
+                  {
+                    "name": {
+                      "references": [
+                        "local.backend_address_pool_name"
+                      ]
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "name": {
+                      "references": [
+                        "local.http_setting_name"
+                      ]
+                    },
+                    "pick_host_name_from_backend_address": {
+                      "constant_value": false
+                    },
+                    "port": {
+                      "constant_value": 8080
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "request_timeout": {
+                      "constant_value": 86400
+                    }
+                  },
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "name": {
+                      "references": [
+                        "local.ws_setting_name"
+                      ]
+                    },
+                    "pick_host_name_from_backend_address": {
+                      "constant_value": true
+                    },
+                    "port": {
+                      "constant_value": 7078
+                    },
+                    "probe_name": {
+                      "constant_value": "websocketProbe"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "request_timeout": {
+                      "constant_value": 86400
+                    }
+                  }
+                ],
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "references": [
+                        "local.frontend_ip_configuration_name"
+                      ]
+                    },
+                    "private_ip_address_allocation": {
+                      "constant_value": "Dynamic"
+                    },
+                    "public_ip_address_id": {
+                      "references": [
+                        "module.network.pip_id",
+                        "module.network"
+                      ]
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "references": [
+                        "local.http_frontend_port_name"
+                      ]
+                    },
+                    "port": {
+                      "constant_value": 80
+                    }
+                  },
+                  {
+                    "name": {
+                      "references": [
+                        "local.ws_frontend_port_name"
+                      ]
+                    },
+                    "port": {
+                      "constant_value": 7078
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "my-gateway-ip-configuration"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "module.network.agw_snet_id",
+                        "module.network"
+                      ]
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "references": [
+                        "local.frontend_ip_configuration_name"
+                      ]
+                    },
+                    "frontend_port_name": {
+                      "references": [
+                        "local.http_frontend_port_name"
+                      ]
+                    },
+                    "name": {
+                      "references": [
+                        "local.http_listener_name"
+                      ]
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  },
+                  {
+                    "frontend_ip_configuration_name": {
+                      "references": [
+                        "local.frontend_ip_configuration_name"
+                      ]
+                    },
+                    "frontend_port_name": {
+                      "references": [
+                        "local.ws_frontend_port_name"
+                      ]
+                    },
+                    "name": {
+                      "references": [
+                        "local.ws_listener_name"
+                      ]
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.location",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "root.application_gateway.agw_name"
+                  ]
+                },
+                "probe": [
+                  {
+                    "interval": {
+                      "constant_value": 30
+                    },
+                    "match": [
+                      {
+                        "body": {
+                          "constant_value": ""
+                        },
+                        "status_code": {
+                          "constant_value": [
+                            "200-400"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "websocketProbe"
+                    },
+                    "path": {
+                      "constant_value": "/"
+                    },
+                    "pick_host_name_from_backend_http_settings": {
+                      "constant_value": true
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "timeout": {
+                      "constant_value": 30
+                    },
+                    "unhealthy_threshold": {
+                      "constant_value": 3
+                    }
+                  }
+                ],
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "references": [
+                        "local.backend_address_pool_name"
+                      ]
+                    },
+                    "backend_http_settings_name": {
+                      "references": [
+                        "local.http_setting_name"
+                      ]
+                    },
+                    "http_listener_name": {
+                      "references": [
+                        "local.http_listener_name"
+                      ]
+                    },
+                    "name": {
+                      "references": [
+                        "local.http_request_routing_rule_name"
+                      ]
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  },
+                  {
+                    "backend_address_pool_name": {
+                      "references": [
+                        "local.backend_address_pool_name"
+                      ]
+                    },
+                    "backend_http_settings_name": {
+                      "references": [
+                        "local.ws_setting_name"
+                      ]
+                    },
+                    "http_listener_name": {
+                      "references": [
+                        "local.ws_listener_name"
+                      ]
+                    },
+                    "name": {
+                      "references": [
+                        "local.ws_request_routing_rule_name"
+                      ]
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "constant_value": 1
+                    },
+                    "name": {
+                      "constant_value": "Standard_Medium"
+                    },
+                    "tier": {
+                      "constant_value": "Standard"
+                    }
+                  }
+                ],
+                "tags": {
+                  "references": [
+                    "local.default_tags"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "module.database.azurerm_postgresql_server.fme_flow",
+              "expressions": {
+                "administrator_login": {
+                  "references": [
+                    "root.database.db_admin_user"
+                  ]
+                },
+                "administrator_login_password": {
+                  "references": [
+                    "root.database.db_admin_pw"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.location",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "module.database.random_string.db_name.result",
+                    "module.database.random_string.db_name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "sku_name": {
+                  "constant_value": "GP_Gen5_2"
+                },
+                "ssl_enforcement_enabled": {
+                  "constant_value": true
+                },
+                "storage_mb": {
+                  "constant_value": 51200
+                },
+                "tags": {
+                  "references": [
+                    "local.default_tags"
+                  ]
+                },
+                "version": {
+                  "constant_value": "10"
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 1,
+              "type": "azurerm_postgresql_server"
+            },
+            {
+              "address": "module.database.azurerm_postgresql_virtual_network_rule.fme_flow",
+              "expressions": {
+                "ignore_missing_vnet_service_endpoint": {
+                  "constant_value": true
+                },
+                "name": {
+                  "constant_value": "postgresql-vnet-rule"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "server_name": {
+                  "references": [
+                    "module.database.azurerm_postgresql_server.fme_flow.name",
+                    "module.database.azurerm_postgresql_server.fme_flow"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "module.network.be_snet_id",
+                    "module.network"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_postgresql_virtual_network_rule"
+            },
+            {
+              "address": "module.database.random_string.db_name",
+              "expressions": {
+                "length": {
+                  "constant_value": 8
+                },
+                "special": {
+                  "constant_value": false
+                },
+                "upper": {
+                  "constant_value": false
+                }
+              },
+              "mode": "managed",
+              "name": "db_name",
+              "provider_config_key": "module.database:random",
+              "schema_version": 2,
+              "type": "random_string"
+            },
+            {
+              "address": "module.load_balancer.azurerm_lb.fme_flow",
+              "expressions": {
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "engineRegistrationFrontend"
+                    },
+                    "private_ip_address_allocation": {
+                      "constant_value": "Dynamic"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "module.network.be_snet_id",
+                        "module.network"
+                      ]
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.location",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "root.load_balancer.lb_name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "tags": {
+                  "references": [
+                    "local.default_tags"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_lb"
+            },
+            {
+              "address": "module.load_balancer.azurerm_lb_backend_address_pool.fme_flow",
+              "expressions": {
+                "loadbalancer_id": {
+                  "references": [
+                    "module.load_balancer.azurerm_lb.fme_flow.id",
+                    "module.load_balancer.azurerm_lb.fme_flow"
+                  ]
+                },
+                "name": {
+                  "constant_value": "engineRegistrationBackend"
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_lb_backend_address_pool"
+            },
+            {
+              "address": "module.load_balancer.azurerm_lb_rule.fme_flow",
+              "expressions": {
+                "backend_address_pool_ids": {
+                  "references": [
+                    "module.load_balancer.azurerm_lb_backend_address_pool.fme_flow.id",
+                    "module.load_balancer.azurerm_lb_backend_address_pool.fme_flow"
+                  ]
+                },
+                "backend_port": {
+                  "constant_value": 7070
+                },
+                "frontend_ip_configuration_name": {
+                  "constant_value": "engineRegistrationFrontend"
+                },
+                "frontend_port": {
+                  "constant_value": 7070
+                },
+                "idle_timeout_in_minutes": {
+                  "constant_value": 30
+                },
+                "loadbalancer_id": {
+                  "references": [
+                    "module.load_balancer.azurerm_lb.fme_flow.id",
+                    "module.load_balancer.azurerm_lb.fme_flow"
+                  ]
+                },
+                "name": {
+                  "constant_value": "roundRobinEngineRegistrationRule"
+                },
+                "protocol": {
+                  "constant_value": "Tcp"
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_lb_rule"
+            },
+            {
+              "address": "module.network.azurerm_public_ip.fme_flow",
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Dynamic"
+                },
+                "domain_name_label": {
+                  "references": [
+                    "root.network.domain_name_label"
+                  ]
+                },
+                "idle_timeout_in_minutes": {
+                  "constant_value": 30
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.location",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "root.network.pip_name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Basic"
+                },
+                "tags": {
+                  "references": [
+                    "local.default_tags"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "module.network.azurerm_subnet.fme_flow_agw",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.1.0/24"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "root.network.agw_snet_name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "module.network.azurerm_virtual_network.fme_flow.name",
+                    "module.network.azurerm_virtual_network.fme_flow"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow_agw",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "module.network.azurerm_subnet.fme_flow_be",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.0.0/24"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "root.network.be_snet_name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "service_endpoints": {
+                  "constant_value": [
+                    "Microsoft.Storage",
+                    "Microsoft.Sql"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "module.network.azurerm_virtual_network.fme_flow.name",
+                    "module.network.azurerm_virtual_network.fme_flow"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow_be",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "module.network.azurerm_virtual_network.fme_flow",
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.0.0.0/16"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.location",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "root.network.vnet_name"
+                  ]
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "tags": {
+                  "references": [
+                    "local.default_tags"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            },
+            {
+              "address": "module.storage.azurerm_storage_account.fme_flow",
+              "expressions": {
+                "account_kind": {
+                  "constant_value": "FileStorage"
+                },
+                "account_replication_type": {
+                  "constant_value": "LRS"
+                },
+                "account_tier": {
+                  "constant_value": "Premium"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.location",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "module.storage.random_string.st_name.result",
+                    "module.storage.random_string.st_name"
+                  ]
+                },
+                "network_rules": [
+                  {
+                    "bypass": {
+                      "constant_value": [
+                        "AzureServices"
+                      ]
+                    },
+                    "default_action": {
+                      "constant_value": "Deny"
+                    },
+                    "ip_rules": {
+                      "references": [
+                        "root.storage.build_agent_public_ip"
+                      ]
+                    },
+                    "virtual_network_subnet_ids": {
+                      "references": [
+                        "module.network.be_snet_id",
+                        "module.network"
+                      ]
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "tags": {
+                  "references": [
+                    "local.default_tags"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 4,
+              "type": "azurerm_storage_account"
+            },
+            {
+              "address": "module.storage.azurerm_storage_share.fme_flow",
+              "expressions": {
+                "name": {
+                  "constant_value": "fmeflowdata"
+                },
+                "quota": {
+                  "constant_value": 100
+                },
+                "storage_account_name": {
+                  "references": [
+                    "module.storage.azurerm_storage_account.fme_flow.name",
+                    "module.storage.azurerm_storage_account.fme_flow"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_storage_share"
+            },
+            {
+              "address": "module.storage.random_string.st_name",
+              "expressions": {
+                "length": {
+                  "constant_value": 8
+                },
+                "lower": {
+                  "constant_value": false
+                },
+                "special": {
+                  "constant_value": false
+                },
+                "upper": {
+                  "constant_value": false
+                }
+              },
+              "mode": "managed",
+              "name": "st_name",
+              "provider_config_key": "module.storage:random",
+              "schema_version": 2,
+              "type": "random_string"
+            },
+            {
+              "address": "module.vmss_core.azurerm_windows_virtual_machine_scale_set.fme_flow_core",
+              "expressions": {
+                "admin_password": {
+                  "references": [
+                    "root.vmss_core.vm_admin_pw"
+                  ]
+                },
+                "admin_username": {
+                  "references": [
+                    "root.vmss_core.vm_admin_user"
+                  ]
+                },
+                "extension": [
+                  {
+                    "name": {
+                      "constant_value": "core-script"
+                    },
+                    "protected_settings": {
+                      "references": [
+                        "module.database.fqdn",
+                        "module.database",
+                        "root.vmss_core.db_admin_pw",
+                        "root.vmss_core.db_admin_user",
+                        "module.network.fqdn",
+                        "module.network",
+                        "module.storage.name",
+                        "module.storage",
+                        "module.storage.primary_access_key",
+                        "module.storage"
+                      ]
+                    },
+                    "publisher": {
+                      "constant_value": "Microsoft.Compute"
+                    },
+                    "type": {
+                      "constant_value": "CustomScriptExtension"
+                    },
+                    "type_handler_version": {
+                      "constant_value": "1.8"
+                    }
+                  }
+                ],
+                "instances": {
+                  "references": [
+                    "root.vmss_core.instance_count_core"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.location",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "name": {
+                  "constant_value": "core"
+                },
+                "network_interface": [
+                  {
+                    "ip_configuration": [
+                      {
+                        "application_gateway_backend_address_pool_ids": {
+                          "references": [
+                            "module.application_gateway.backend_address_pool_ids",
+                            "module.application_gateway"
+                          ]
+                        },
+                        "load_balancer_backend_address_pool_ids": {
+                          "references": [
+                            "module.load_balancer.be_address_pool_id",
+                            "module.load_balancer"
+                          ]
+                        },
+                        "name": {
+                          "constant_value": "ipconfig"
+                        },
+                        "primary": {
+                          "constant_value": true
+                        },
+                        "subnet_id": {
+                          "references": [
+                            "module.network.be_snet_id",
+                            "module.network"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "nic-core"
+                    },
+                    "primary": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "os_disk": [
+                  {
+                    "caching": {
+                      "constant_value": "ReadWrite"
+                    },
+                    "storage_account_type": {
+                      "constant_value": "Premium_LRS"
+                    }
+                  }
+                ],
+                "plan": [
+                  {
+                    "name": {
+                      "constant_value": "fme-core-2024-0-2-1-windows-byol"
+                    },
+                    "product": {
+                      "constant_value": "fme-core"
+                    },
+                    "publisher": {
+                      "constant_value": "safesoftwareinc"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard_D2s_v3"
+                },
+                "source_image_reference": [
+                  {
+                    "offer": {
+                      "constant_value": "fme-core"
+                    },
+                    "publisher": {
+                      "constant_value": "safesoftwareinc"
+                    },
+                    "sku": {
+                      "constant_value": "fme-core-2024-0-2-1-windows-byol"
+                    },
+                    "version": {
+                      "constant_value": "latest"
+                    }
+                  }
+                ],
+                "tags": {
+                  "references": [
+                    "local.default_tags"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow_core",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_windows_virtual_machine_scale_set"
+            },
+            {
+              "address": "module.vmss_standard_engine.azurerm_windows_virtual_machine_scale_set.fme_flow_engine",
+              "expressions": {
+                "admin_password": {
+                  "references": [
+                    "root.vmss_standard_engine.vm_admin_pw"
+                  ]
+                },
+                "admin_username": {
+                  "references": [
+                    "root.vmss_standard_engine.vm_admin_user"
+                  ]
+                },
+                "extension": [
+                  {
+                    "name": {
+                      "constant_value": "engine-script"
+                    },
+                    "protected_settings": {
+                      "references": [
+                        "module.database.fqdn",
+                        "module.database",
+                        "module.load_balancer.private_ip_address",
+                        "module.load_balancer",
+                        "module.storage.name",
+                        "module.storage",
+                        "module.storage.primary_access_key",
+                        "module.storage",
+                        "local.engine_type"
+                      ]
+                    },
+                    "publisher": {
+                      "constant_value": "Microsoft.Compute"
+                    },
+                    "type": {
+                      "constant_value": "CustomScriptExtension"
+                    },
+                    "type_handler_version": {
+                      "constant_value": "1.8"
+                    }
+                  }
+                ],
+                "instances": {
+                  "references": [
+                    "root.vmss_standard_engine.instance_count_engine"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.location",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "name": {
+                  "references": [
+                    "root.vmss_standard_engine.vmss_name"
+                  ]
+                },
+                "network_interface": [
+                  {
+                    "ip_configuration": [
+                      {
+                        "name": {
+                          "constant_value": "ipconfig"
+                        },
+                        "primary": {
+                          "constant_value": true
+                        },
+                        "subnet_id": {
+                          "references": [
+                            "module.network.be_snet_id",
+                            "module.network"
+                          ]
+                        }
+                      }
+                    ],
+                    "name": {
+                      "constant_value": "nic-engine"
+                    },
+                    "primary": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "os_disk": [
+                  {
+                    "caching": {
+                      "constant_value": "ReadWrite"
+                    },
+                    "storage_account_type": {
+                      "constant_value": "Premium_LRS"
+                    }
+                  }
+                ],
+                "plan": [
+                  {
+                    "name": {
+                      "constant_value": "fme-engine-2024-0-2-1-windows-byol"
+                    },
+                    "product": {
+                      "constant_value": "fme-engine"
+                    },
+                    "publisher": {
+                      "constant_value": "safesoftwareinc"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.fme_flow.name",
+                    "azurerm_resource_group.fme_flow"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard_D2s_v3"
+                },
+                "source_image_reference": [
+                  {
+                    "offer": {
+                      "constant_value": "fme-engine"
+                    },
+                    "publisher": {
+                      "constant_value": "safesoftwareinc"
+                    },
+                    "sku": {
+                      "constant_value": "fme-engine-2024-0-2-1-windows-byol"
+                    },
+                    "version": {
+                      "constant_value": "latest"
+                    }
+                  }
+                ],
+                "tags": {
+                  "references": [
+                    "local.default_tags"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "fme_flow_engine",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_windows_virtual_machine_scale_set"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

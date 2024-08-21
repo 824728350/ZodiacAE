@@ -1,0 +1,97 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_application_gateway.network",
+              "azurerm_resource_group.rg",
+              "location",
+              "location",
+              "",
+              ""
+            ],
+            [
+              "azurerm_application_gateway.network",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_public_ip.gw_ip",
+              "azurerm_resource_group.rg",
+              "location",
+              "location",
+              "",
+              ""
+            ],
+            [
+              "azurerm_public_ip.gw_ip",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.aks",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.aks",
+              "azurerm_virtual_network.aks_vnet",
+              "virtual_network_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.gateway",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.gateway",
+              "azurerm_virtual_network.aks_vnet",
+              "virtual_network_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_virtual_network.aks_vnet",
+              "azurerm_resource_group.rg",
+              "location",
+              "location",
+              "",
+              ""
+            ],
+            [
+              "azurerm_virtual_network.aks_vnet",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ]
+          ],
+          "text": "data.assemble.inclusiveDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

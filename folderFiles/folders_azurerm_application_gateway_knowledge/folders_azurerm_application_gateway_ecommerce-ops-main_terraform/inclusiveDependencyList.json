@@ -1,0 +1,65 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "module.access_policy_aks_cluster.azurerm_key_vault_access_policy.access_policy",
+              "data.azurerm_client_config.current",
+              "tenant_id",
+              "tenant_id",
+              "",
+              ""
+            ],
+            [
+              "module.access_policy_current_user.azurerm_key_vault_access_policy.access_policy",
+              "data.azurerm_client_config.current",
+              "object_id",
+              "object_id",
+              "",
+              ""
+            ],
+            [
+              "module.access_policy_current_user.azurerm_key_vault_access_policy.access_policy",
+              "data.azurerm_client_config.current",
+              "tenant_id",
+              "tenant_id",
+              "",
+              ""
+            ],
+            [
+              "module.access_policy_identity.azurerm_key_vault_access_policy.access_policy",
+              "data.azurerm_client_config.current",
+              "tenant_id",
+              "tenant_id",
+              "",
+              ""
+            ],
+            [
+              "module.aks_cluster.local_file.kubeconfig",
+              "module.aks_cluster.azurerm_kubernetes_cluster.aks_cluster",
+              "content",
+              "kube_config_raw",
+              "",
+              ""
+            ],
+            [
+              "module.key_vault.azurerm_key_vault.key_vault",
+              "data.azurerm_client_config.current",
+              "tenant_id",
+              "tenant_id",
+              "",
+              ""
+            ]
+          ],
+          "text": "data.assemble.inclusiveDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

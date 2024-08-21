@@ -1,0 +1,160 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.web_ag": [
+              "azurerm_application_gateway.web_ag",
+              "azurerm_public_ip.web_ag_publicip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.agsubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_linux_virtual_machine_scale_set.web_vmss": [
+              "azurerm_linux_virtual_machine_scale_set.web_vmss"
+            ],
+            "azurerm_monitor_autoscale_setting.web_vmss_autoscale": [
+              "azurerm_monitor_autoscale_setting.web_vmss_autoscale"
+            ],
+            "azurerm_network_security_group.ag_subnet_nsg": [
+              "azurerm_network_security_group.ag_subnet_nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.app_subnet_nsg": [
+              "azurerm_network_security_group.app_subnet_nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.bastion_subnet_nsg": [
+              "azurerm_network_security_group.bastion_subnet_nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.db_subnet_nsg": [
+              "azurerm_network_security_group.db_subnet_nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.web_subnet_nsg": [
+              "azurerm_network_security_group.web_subnet_nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.web_vmss_nsg": [
+              "azurerm_network_security_group.web_vmss_nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_rule.ag_nsg_rule_inbound": [
+              "azurerm_network_security_group.ag_subnet_nsg",
+              "azurerm_network_security_rule.ag_nsg_rule_inbound",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_rule.app_nsg_rule_inbound": [
+              "azurerm_network_security_group.app_subnet_nsg",
+              "azurerm_network_security_rule.app_nsg_rule_inbound",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_rule.bastion_nsg_rule_inbound": [
+              "azurerm_network_security_group.bastion_subnet_nsg",
+              "azurerm_network_security_rule.bastion_nsg_rule_inbound",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_rule.db_nsg_rule_inbound": [
+              "azurerm_network_security_group.db_subnet_nsg",
+              "azurerm_network_security_rule.db_nsg_rule_inbound",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_rule.web_subnet_nsg_rule_inbound": [
+              "azurerm_network_security_group.web_subnet_nsg",
+              "azurerm_network_security_rule.web_subnet_nsg_rule_inbound",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_public_ip.web_ag_publicip": [
+              "azurerm_public_ip.web_ag_publicip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_storage_account.storage_account": [
+              "azurerm_resource_group.rg",
+              "azurerm_storage_account.storage_account"
+            ],
+            "azurerm_storage_blob.static_container_blob": [
+              "azurerm_storage_blob.static_container_blob"
+            ],
+            "azurerm_subnet.agsubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.agsubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.appsubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.appsubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.bastionsubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.bastionsubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.dbsubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.dbsubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.websubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.websubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.ag_subnet_nsg_associate": [
+              "azurerm_network_security_group.ag_subnet_nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.agsubnet",
+              "azurerm_subnet_network_security_group_association.ag_subnet_nsg_associate",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.app_subnet_nsg_association": [
+              "azurerm_network_security_group.app_subnet_nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.appsubnet",
+              "azurerm_subnet_network_security_group_association.app_subnet_nsg_association",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.bastion_subnet_nsg_association": [
+              "azurerm_network_security_group.bastion_subnet_nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.bastionsubnet",
+              "azurerm_subnet_network_security_group_association.bastion_subnet_nsg_association",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.db_subnet_nsg_association": [
+              "azurerm_network_security_group.db_subnet_nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.dbsubnet",
+              "azurerm_subnet_network_security_group_association.db_subnet_nsg_association",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.web_subnet_nsg_association": [
+              "azurerm_network_security_group.web_subnet_nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.websubnet",
+              "azurerm_subnet_network_security_group_association.web_subnet_nsg_association",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "random_string.myrandom": [
+              "random_string.myrandom"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

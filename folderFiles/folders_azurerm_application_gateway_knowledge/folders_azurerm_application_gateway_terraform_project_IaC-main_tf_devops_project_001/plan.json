@@ -1,0 +1,834 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "random_string.storage_account_name_generator",
+              "mode": "managed",
+              "name": "storage_account_name_generator",
+              "provider_name": "registry.terraform.io/hashicorp/random",
+              "schema_version": 2,
+              "sensitive_values": {},
+              "type": "random_string",
+              "values": {
+                "keepers": null,
+                "length": 24,
+                "lower": true,
+                "min_lower": 0,
+                "min_numeric": 0,
+                "min_special": 0,
+                "min_upper": 0,
+                "number": true,
+                "numeric": true,
+                "override_special": null,
+                "special": false,
+                "upper": false
+              }
+            },
+            {
+              "address": "module.database_function_app.azurerm_linux_function_app.project_fa",
+              "mode": "managed",
+              "name": "project_fa",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {
+                "app_settings": {},
+                "auth_settings": [],
+                "auth_settings_v2": [],
+                "backup": [],
+                "connection_string": [],
+                "custom_domain_verification_id": true,
+                "identity": [
+                  {}
+                ],
+                "outbound_ip_address_list": [],
+                "possible_outbound_ip_address_list": [],
+                "site_config": [
+                  {
+                    "app_service_logs": [],
+                    "application_insights_connection_string": true,
+                    "application_insights_key": true,
+                    "application_stack": [
+                      {
+                        "docker": []
+                      }
+                    ],
+                    "cors": [
+                      {
+                        "allowed_origins": [
+                          false
+                        ]
+                      }
+                    ],
+                    "default_documents": [],
+                    "ip_restriction": [],
+                    "scm_ip_restriction": []
+                  }
+                ],
+                "site_credential": true,
+                "sticky_settings": [],
+                "storage_account": [],
+                "storage_account_access_key": true,
+                "tags": {}
+              },
+              "type": "azurerm_linux_function_app",
+              "values": {
+                "app_settings": {
+                  "BUILD_FLAGS": "UseExpressBuild",
+                  "DB_CONNECTION_STRING": "DRIVER={ODBC Driver 17 for SQL Server};SERVER=tcp:sqlserver-devops-project-002.database.windows.net,1433;DATABASE=sqldb-devops-project-002;",
+                  "ENABLE_ORYX_BUILD": "true",
+                  "SCM_DO_BUILD_DURING_DEPLOYMENT": "1",
+                  "XDG_CACHE_HOME": "/tmp/.cache"
+                },
+                "auth_settings": [],
+                "auth_settings_v2": [],
+                "backup": [],
+                "builtin_logging_enabled": false,
+                "client_certificate_enabled": false,
+                "client_certificate_exclusion_paths": null,
+                "client_certificate_mode": "Required",
+                "connection_string": [],
+                "content_share_force_disabled": false,
+                "daily_memory_time_quota": 0,
+                "enabled": false,
+                "ftp_publish_basic_authentication_enabled": true,
+                "functions_extension_version": "~4",
+                "https_only": true,
+                "identity": [
+                  {
+                    "identity_ids": null,
+                    "type": "SystemAssigned"
+                  }
+                ],
+                "location": "eastus",
+                "name": "fn-devops-project-002",
+                "public_network_access_enabled": true,
+                "resource_group_name": "rg-devops-project-002",
+                "site_config": [
+                  {
+                    "api_definition_url": null,
+                    "api_management_api_id": null,
+                    "app_command_line": null,
+                    "app_service_logs": [],
+                    "application_insights_key": null,
+                    "application_stack": [
+                      {
+                        "docker": [],
+                        "dotnet_version": null,
+                        "java_version": null,
+                        "node_version": null,
+                        "powershell_core_version": null,
+                        "python_version": "3.8",
+                        "use_custom_runtime": null,
+                        "use_dotnet_isolated_runtime": false
+                      }
+                    ],
+                    "container_registry_managed_identity_client_id": null,
+                    "container_registry_use_managed_identity": false,
+                    "cors": [
+                      {
+                        "allowed_origins": [
+                          "https://portal.azure.com"
+                        ],
+                        "support_credentials": false
+                      }
+                    ],
+                    "ftps_state": "FtpsOnly",
+                    "health_check_path": null,
+                    "http2_enabled": false,
+                    "ip_restriction": [],
+                    "ip_restriction_default_action": "Allow",
+                    "load_balancing_mode": "LeastRequests",
+                    "managed_pipeline_mode": "Integrated",
+                    "minimum_tls_version": "1.2",
+                    "remote_debugging_enabled": false,
+                    "runtime_scale_monitoring_enabled": null,
+                    "scm_ip_restriction": [],
+                    "scm_ip_restriction_default_action": "Allow",
+                    "scm_minimum_tls_version": "1.2",
+                    "scm_use_main_ip_restriction": false,
+                    "use_32_bit_worker": false,
+                    "vnet_route_all_enabled": false,
+                    "websockets_enabled": false
+                  }
+                ],
+                "sticky_settings": [],
+                "storage_account": [],
+                "storage_key_vault_secret_id": null,
+                "storage_uses_managed_identity": false,
+                "timeouts": null,
+                "virtual_network_subnet_id": null,
+                "webdeploy_publish_basic_authentication_enabled": true
+              }
+            },
+            {
+              "address": "module.database_function_app.azurerm_mssql_database.project_sql_db",
+              "mode": "managed",
+              "name": "project_sql_db",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {
+                "identity": [],
+                "import": [],
+                "long_term_retention_policy": [],
+                "short_term_retention_policy": [],
+                "threat_detection_policy": []
+              },
+              "type": "azurerm_mssql_database",
+              "values": {
+                "create_mode": "Default",
+                "elastic_pool_id": null,
+                "geo_backup_enabled": true,
+                "identity": [],
+                "import": [],
+                "name": "sqldb-devops-project-002",
+                "recover_database_id": null,
+                "recovery_point_id": null,
+                "restore_dropped_database_id": null,
+                "restore_long_term_retention_backup_id": null,
+                "storage_account_type": "Local",
+                "tags": null,
+                "timeouts": null,
+                "transparent_data_encryption_enabled": true,
+                "transparent_data_encryption_key_automatic_rotation_enabled": false,
+                "transparent_data_encryption_key_vault_key_id": null
+              }
+            },
+            {
+              "address": "module.database_function_app.azurerm_mssql_firewall_rule.project_sql_fw_rule",
+              "mode": "managed",
+              "name": "project_sql_fw_rule",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_mssql_firewall_rule",
+              "values": {
+                "end_ip_address": "0.0.0.0",
+                "name": "AllowAll",
+                "start_ip_address": "0.0.0.0",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.database_function_app.azurerm_mssql_server.project_sql_svr",
+              "mode": "managed",
+              "name": "project_sql_svr",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "administrator_login_password": true,
+                "azuread_administrator": [
+                  {}
+                ],
+                "identity": [],
+                "restorable_dropped_database_ids": []
+              },
+              "type": "azurerm_mssql_server",
+              "values": {
+                "administrator_login": "rotreyuyuql",
+                "administrator_login_password": "@#sWi9ltH0tr6#epHowru-=s2uE@ql",
+                "azuread_administrator": [
+                  {
+                    "login_username": "fn-devops-project-002",
+                    "object_id": "62e5370a-2bf4-4734-8511-cc798825f062"
+                  }
+                ],
+                "connection_policy": "Default",
+                "identity": [],
+                "location": "eastus",
+                "minimum_tls_version": "1.2",
+                "name": "sqlserver-devops-project-002",
+                "outbound_network_restriction_enabled": false,
+                "public_network_access_enabled": true,
+                "resource_group_name": "rg-devops-project-002",
+                "tags": null,
+                "timeouts": null,
+                "transparent_data_encryption_key_vault_key_id": null,
+                "version": "12.0"
+              }
+            },
+            {
+              "address": "module.database_function_app.azurerm_mssql_server_transparent_data_encryption.project_sql_svr_encrypt",
+              "mode": "managed",
+              "name": "project_sql_svr_encrypt",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {},
+              "type": "azurerm_mssql_server_transparent_data_encryption",
+              "values": {
+                "auto_rotation_enabled": false,
+                "key_vault_key_id": null,
+                "managed_hsm_key_id": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.database_function_app.azurerm_mssql_virtual_network_rule.project_sql_vnet_rule",
+              "mode": "managed",
+              "name": "project_sql_vnet_rule",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_mssql_virtual_network_rule",
+              "values": {
+                "ignore_missing_vnet_service_endpoint": false,
+                "name": "VnetRule",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.database_function_app.azurerm_service_plan.project_asp",
+              "mode": "managed",
+              "name": "project_asp",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {},
+              "type": "azurerm_service_plan",
+              "values": {
+                "app_service_environment_id": null,
+                "location": "eastus",
+                "name": "asp-devops-project-002",
+                "os_type": "Linux",
+                "per_site_scaling_enabled": false,
+                "resource_group_name": "rg-devops-project-002",
+                "sku_name": "B1",
+                "tags": null,
+                "timeouts": null,
+                "zone_balancing_enabled": null
+              }
+            },
+            {
+              "address": "module.environment.azurerm_resource_group.project_rg",
+              "mode": "managed",
+              "name": "project_rg",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_resource_group",
+              "values": {
+                "location": "eastus",
+                "managed_by": null,
+                "name": "rg-devops-project-002",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.logs.azurerm_application_insights.project_app_insights",
+              "mode": "managed",
+              "name": "project_app_insights",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 2,
+              "sensitive_values": {
+                "connection_string": true,
+                "instrumentation_key": true
+              },
+              "type": "azurerm_application_insights",
+              "values": {
+                "application_type": "web",
+                "disable_ip_masking": false,
+                "force_customer_storage_for_profiler": false,
+                "internet_ingestion_enabled": true,
+                "internet_query_enabled": true,
+                "local_authentication_disabled": false,
+                "location": "eastus",
+                "name": "appinsights-devops-project-002",
+                "resource_group_name": "rg-devops-project-002",
+                "retention_in_days": 90,
+                "sampling_percentage": 0,
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.logs.azurerm_log_analytics_workspace.project_logs",
+              "mode": "managed",
+              "name": "project_logs",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 3,
+              "sensitive_values": {
+                "identity": [],
+                "primary_shared_key": true,
+                "secondary_shared_key": true
+              },
+              "type": "azurerm_log_analytics_workspace",
+              "values": {
+                "allow_resource_only_permissions": true,
+                "cmk_for_query_forced": null,
+                "daily_quota_gb": -1,
+                "data_collection_rule_id": null,
+                "identity": [],
+                "immediate_data_purge_on_30_days_enabled": null,
+                "internet_ingestion_enabled": true,
+                "internet_query_enabled": true,
+                "local_authentication_disabled": false,
+                "location": "eastus",
+                "name": "loganalytics-devops-project-002",
+                "reservation_capacity_in_gb_per_day": null,
+                "resource_group_name": "rg-devops-project-002",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.logs.azurerm_monitor_action_group.project_monitor_ag",
+              "mode": "managed",
+              "name": "project_monitor_ag",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {
+                "arm_role_receiver": [
+                  {},
+                  {}
+                ],
+                "automation_runbook_receiver": [],
+                "azure_app_push_receiver": [],
+                "azure_function_receiver": [],
+                "email_receiver": [],
+                "event_hub_receiver": [],
+                "itsm_receiver": [],
+                "logic_app_receiver": [],
+                "sms_receiver": [],
+                "voice_receiver": [],
+                "webhook_receiver": []
+              },
+              "type": "azurerm_monitor_action_group",
+              "values": {
+                "arm_role_receiver": [
+                  {
+                    "name": "Monitoring Contributor",
+                    "role_id": "749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+                    "use_common_alert_schema": true
+                  },
+                  {
+                    "name": "Monitoring Reader",
+                    "role_id": "43d0d8ad-25c7-4714-9337-8ba259a9fe05",
+                    "use_common_alert_schema": true
+                  }
+                ],
+                "automation_runbook_receiver": [],
+                "azure_app_push_receiver": [],
+                "azure_function_receiver": [],
+                "email_receiver": [],
+                "enabled": true,
+                "event_hub_receiver": [],
+                "itsm_receiver": [],
+                "location": "global",
+                "logic_app_receiver": [],
+                "name": "Application Insights Smart Detection",
+                "resource_group_name": "rg-devops-project-002",
+                "short_name": "SmartDetect",
+                "sms_receiver": [],
+                "tags": null,
+                "timeouts": null,
+                "voice_receiver": [],
+                "webhook_receiver": []
+              }
+            },
+            {
+              "address": "module.logs.azurerm_monitor_smart_detector_alert_rule.project_monitor_ar",
+              "mode": "managed",
+              "name": "project_monitor_ar",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {
+                "action_group": [
+                  {
+                    "ids": []
+                  }
+                ],
+                "scope_resource_ids": []
+              },
+              "type": "azurerm_monitor_smart_detector_alert_rule",
+              "values": {
+                "action_group": [
+                  {
+                    "email_subject": null,
+                    "webhook_payload": null
+                  }
+                ],
+                "description": "Failure Anomalies notifies you of an unusual rise in the rate of failed HTTP requests or dependency calls.",
+                "detector_type": "FailureAnomaliesDetector",
+                "enabled": true,
+                "frequency": "PT1M",
+                "name": "Failed HTTP requests",
+                "resource_group_name": "rg-devops-project-002",
+                "severity": "Sev3",
+                "tags": null,
+                "throttling_duration": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.network.azurerm_application_gateway.project_agw",
+              "mode": "managed",
+              "name": "project_agw",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [
+                  {}
+                ],
+                "backend_address_pool": [
+                  {
+                    "fqdns": [],
+                    "ip_addresses": []
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "authentication_certificate": [],
+                    "connection_draining": [],
+                    "trusted_root_certificate_names": []
+                  }
+                ],
+                "custom_error_configuration": [],
+                "frontend_ip_configuration": [
+                  {}
+                ],
+                "frontend_port": [
+                  {}
+                ],
+                "gateway_ip_configuration": [
+                  {}
+                ],
+                "global": [],
+                "http_listener": [
+                  {
+                    "custom_error_configuration": [],
+                    "host_names": []
+                  }
+                ],
+                "identity": [],
+                "private_endpoint_connection": [],
+                "private_link_configuration": [],
+                "probe": [],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                  {}
+                ],
+                "rewrite_rule_set": [],
+                "sku": [
+                  {}
+                ],
+                "ssl_certificate": [],
+                "ssl_policy": [],
+                "ssl_profile": [],
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": []
+              },
+              "type": "azurerm_application_gateway",
+              "values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [
+                  {
+                    "max_capacity": 2,
+                    "min_capacity": 0
+                  }
+                ],
+                "backend_address_pool": [
+                  {
+                    "fqdns": [],
+                    "ip_addresses": [],
+                    "name": "backendpool-devops-project-002"
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "affinity_cookie_name": "",
+                    "authentication_certificate": [],
+                    "connection_draining": [],
+                    "cookie_based_affinity": "Disabled",
+                    "host_name": "",
+                    "name": "backend-devops-project-002",
+                    "path": "",
+                    "pick_host_name_from_backend_address": false,
+                    "port": 80,
+                    "probe_name": "",
+                    "protocol": "Http",
+                    "request_timeout": 20,
+                    "trusted_root_certificate_names": []
+                  }
+                ],
+                "custom_error_configuration": [],
+                "enable_http2": true,
+                "fips_enabled": null,
+                "firewall_policy_id": null,
+                "force_firewall_policy_association": null,
+                "frontend_ip_configuration": [
+                  {
+                    "name": "appGwPublicFrontendIpIPv4",
+                    "private_ip_address_allocation": "Dynamic",
+                    "private_link_configuration_name": null,
+                    "subnet_id": null
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": "port_80",
+                    "port": 80
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": "appGatewayIpConfig"
+                  }
+                ],
+                "global": [],
+                "http_listener": [
+                  {
+                    "custom_error_configuration": [],
+                    "firewall_policy_id": "",
+                    "frontend_ip_configuration_name": "appGwPublicFrontendIpIPv4",
+                    "frontend_port_name": "port_80",
+                    "host_name": "",
+                    "host_names": [],
+                    "name": "listener-devops-project-002",
+                    "protocol": "Http",
+                    "require_sni": null,
+                    "ssl_certificate_name": "",
+                    "ssl_profile_name": ""
+                  }
+                ],
+                "identity": [],
+                "location": "eastus",
+                "name": "agw-devops-project-002",
+                "private_link_configuration": [],
+                "probe": [],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": "backendpool-devops-project-002",
+                    "backend_http_settings_name": "backend-devops-project-002",
+                    "http_listener_name": "listener-devops-project-002",
+                    "name": "routerule-devops-project-002",
+                    "priority": 10000,
+                    "redirect_configuration_name": "",
+                    "rewrite_rule_set_name": "",
+                    "rule_type": "Basic",
+                    "url_path_map_name": ""
+                  }
+                ],
+                "resource_group_name": "rg-devops-project-002",
+                "rewrite_rule_set": [],
+                "sku": [
+                  {
+                    "capacity": null,
+                    "name": "Standard_v2",
+                    "tier": "Standard_v2"
+                  }
+                ],
+                "ssl_certificate": [],
+                "ssl_profile": [],
+                "tags": null,
+                "timeouts": null,
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": [],
+                "zones": null
+              }
+            },
+            {
+              "address": "module.network.azurerm_public_ip.project_pip",
+              "mode": "managed",
+              "name": "project_pip",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_public_ip",
+              "values": {
+                "allocation_method": "Static",
+                "ddos_protection_mode": "VirtualNetworkInherited",
+                "ddos_protection_plan_id": null,
+                "domain_name_label": null,
+                "edge_zone": null,
+                "idle_timeout_in_minutes": 4,
+                "ip_tags": null,
+                "ip_version": "IPv4",
+                "location": "eastus",
+                "name": "pip-devops-project-002",
+                "public_ip_prefix_id": null,
+                "resource_group_name": "rg-devops-project-002",
+                "reverse_fqdn": null,
+                "sku": "Standard",
+                "sku_tier": "Regional",
+                "tags": null,
+                "timeouts": null,
+                "zones": null
+              }
+            },
+            {
+              "address": "module.network.azurerm_subnet.project_snet",
+              "mode": "managed",
+              "name": "project_snet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": [],
+                "service_endpoints": [
+                  false
+                ]
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.0.0.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "name": "snet-devops-project-002",
+                "resource_group_name": "rg-devops-project-002",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": [
+                  "Microsoft.Sql"
+                ],
+                "timeouts": null,
+                "virtual_network_name": "vnet-devops-project-002"
+              }
+            },
+            {
+              "address": "module.network.azurerm_virtual_network.project_vnet",
+              "mode": "managed",
+              "name": "project_vnet",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_space": [
+                  false
+                ],
+                "ddos_protection_plan": [],
+                "dns_servers": [],
+                "encryption": [],
+                "subnet": []
+              },
+              "type": "azurerm_virtual_network",
+              "values": {
+                "address_space": [
+                  "10.0.0.0/16"
+                ],
+                "bgp_community": null,
+                "ddos_protection_plan": [],
+                "edge_zone": null,
+                "encryption": [],
+                "flow_timeout_in_minutes": null,
+                "location": "eastus",
+                "name": "vnet-devops-project-002",
+                "resource_group_name": "rg-devops-project-002",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.storage.azurerm_storage_account.project_sa",
+              "mode": "managed",
+              "name": "project_sa",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 4,
+              "sensitive_values": {
+                "azure_files_authentication": [],
+                "blob_properties": [],
+                "custom_domain": [],
+                "customer_managed_key": [],
+                "identity": [],
+                "immutability_policy": [],
+                "network_rules": [],
+                "primary_access_key": true,
+                "primary_blob_connection_string": true,
+                "primary_connection_string": true,
+                "queue_properties": [],
+                "routing": [],
+                "sas_policy": [],
+                "secondary_access_key": true,
+                "secondary_blob_connection_string": true,
+                "secondary_connection_string": true,
+                "share_properties": [],
+                "static_website": []
+              },
+              "type": "azurerm_storage_account",
+              "values": {
+                "account_kind": "StorageV2",
+                "account_replication_type": "LRS",
+                "account_tier": "Standard",
+                "allow_nested_items_to_be_public": false,
+                "allowed_copy_scope": null,
+                "azure_files_authentication": [],
+                "cross_tenant_replication_enabled": true,
+                "custom_domain": [],
+                "customer_managed_key": [],
+                "default_to_oauth_authentication": false,
+                "dns_endpoint_type": "Standard",
+                "edge_zone": null,
+                "identity": [],
+                "immutability_policy": [],
+                "infrastructure_encryption_enabled": false,
+                "is_hns_enabled": false,
+                "local_user_enabled": true,
+                "location": "eastus",
+                "min_tls_version": "TLS1_2",
+                "nfsv3_enabled": false,
+                "public_network_access_enabled": true,
+                "queue_encryption_key_type": "Service",
+                "resource_group_name": "rg-devops-project-002",
+                "sas_policy": [],
+                "sftp_enabled": false,
+                "shared_access_key_enabled": true,
+                "static_website": [],
+                "table_encryption_key_type": "Service",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.storage.azurerm_storage_container.project_sc_hosts",
+              "mode": "managed",
+              "name": "project_sc_hosts",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {
+                "metadata": {}
+              },
+              "type": "azurerm_storage_container",
+              "values": {
+                "container_access_type": "private",
+                "encryption_scope_override_enabled": true,
+                "name": "azure-webjobs-hosts",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "module.storage.azurerm_storage_container.project_sc_secrets",
+              "mode": "managed",
+              "name": "project_sc_secrets",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {
+                "metadata": {}
+              },
+              "type": "azurerm_storage_container",
+              "values": {
+                "container_access_type": "private",
+                "encryption_scope_override_enabled": true,
+                "name": "azure-webjobs-secrets",
+                "timeouts": null
+              }
+            }
+          ],
+          "text": "data.assemble.plan",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

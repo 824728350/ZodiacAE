@@ -1,0 +1,164 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azuread_application.app": [
+              "azuread_application.app",
+              "data.azuread_client_config.current"
+            ],
+            "azuread_service_principal.app": [
+              "azuread_application.app",
+              "azuread_service_principal.app",
+              "data.azuread_client_config.current"
+            ],
+            "azuread_service_principal_password.app": [
+              "azuread_application.app",
+              "azuread_service_principal.app",
+              "azuread_service_principal_password.app",
+              "data.azuread_client_config.current"
+            ],
+            "azurerm_application_gateway.network": [
+              "azuread_application.app",
+              "azuread_service_principal.app",
+              "azuread_service_principal_password.app",
+              "azurerm_application_gateway.network",
+              "azurerm_container_group.container_group",
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.resource_group",
+              "azurerm_storage_account.aci_storage",
+              "azurerm_storage_share.container_share",
+              "azurerm_subnet.sn-aci",
+              "azurerm_subnet.sn-public",
+              "azurerm_virtual_network.virtual_network",
+              "data.azuread_client_config.current",
+              "data.azurerm_subscription.current"
+            ],
+            "azurerm_container_group.container_group": [
+              "azuread_application.app",
+              "azuread_service_principal.app",
+              "azuread_service_principal_password.app",
+              "azurerm_container_group.container_group",
+              "azurerm_resource_group.resource_group",
+              "azurerm_storage_account.aci_storage",
+              "azurerm_storage_share.container_share",
+              "azurerm_subnet.sn-aci",
+              "azurerm_virtual_network.virtual_network",
+              "data.azuread_client_config.current",
+              "data.azurerm_subscription.current"
+            ],
+            "azurerm_key_vault.kv": [
+              "azuread_application.app",
+              "azuread_service_principal.app",
+              "azurerm_key_vault.kv",
+              "azurerm_resource_group.resource_group",
+              "data.azuread_client_config.current",
+              "data.azurerm_client_config.current"
+            ],
+            "azurerm_network_profile.containergroup_profile": [
+              "azurerm_network_profile.containergroup_profile",
+              "azurerm_resource_group.resource_group",
+              "azurerm_subnet.sn-aci",
+              "azurerm_virtual_network.virtual_network"
+            ],
+            "azurerm_network_security_group.nsg-aci": [
+              "azurerm_network_security_group.nsg-aci",
+              "azurerm_resource_group.resource_group",
+              "azurerm_subnet.sn-aci",
+              "azurerm_subnet.sn-public",
+              "azurerm_virtual_network.virtual_network"
+            ],
+            "azurerm_network_security_group.nsg-public": [
+              "azurerm_network_security_group.nsg-public",
+              "azurerm_resource_group.resource_group",
+              "data.http.myip"
+            ],
+            "azurerm_public_ip.public_ip": [
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.resource_group"
+            ],
+            "azurerm_resource_group.resource_group": [
+              "azurerm_resource_group.resource_group"
+            ],
+            "azurerm_role_assignment.custom_role": [
+              "azuread_application.app",
+              "azuread_service_principal.app",
+              "azurerm_role_assignment.custom_role",
+              "azurerm_role_definition.custom_role",
+              "data.azuread_client_config.current",
+              "data.azurerm_subscription.current"
+            ],
+            "azurerm_role_assignment.storage": [
+              "azuread_application.app",
+              "azuread_service_principal.app",
+              "azurerm_role_assignment.storage",
+              "data.azuread_client_config.current",
+              "data.azurerm_subscription.current"
+            ],
+            "azurerm_role_definition.custom_role": [
+              "azurerm_role_definition.custom_role",
+              "data.azurerm_subscription.current"
+            ],
+            "azurerm_storage_account.aci_storage": [
+              "azurerm_resource_group.resource_group",
+              "azurerm_storage_account.aci_storage"
+            ],
+            "azurerm_storage_share.container_share": [
+              "azurerm_resource_group.resource_group",
+              "azurerm_storage_account.aci_storage",
+              "azurerm_storage_share.container_share"
+            ],
+            "azurerm_subnet.sn-aci": [
+              "azurerm_resource_group.resource_group",
+              "azurerm_subnet.sn-aci",
+              "azurerm_virtual_network.virtual_network"
+            ],
+            "azurerm_subnet.sn-public": [
+              "azurerm_resource_group.resource_group",
+              "azurerm_subnet.sn-public",
+              "azurerm_virtual_network.virtual_network"
+            ],
+            "azurerm_subnet_network_security_group_association.sn-nsg-aci": [
+              "azurerm_network_security_group.nsg-aci",
+              "azurerm_resource_group.resource_group",
+              "azurerm_subnet.sn-aci",
+              "azurerm_subnet.sn-public",
+              "azurerm_subnet_network_security_group_association.sn-nsg-aci",
+              "azurerm_virtual_network.virtual_network"
+            ],
+            "azurerm_subnet_network_security_group_association.sn-nsg-public": [
+              "azurerm_network_security_group.nsg-public",
+              "azurerm_resource_group.resource_group",
+              "azurerm_subnet.sn-public",
+              "azurerm_subnet_network_security_group_association.sn-nsg-public",
+              "azurerm_virtual_network.virtual_network",
+              "data.http.myip"
+            ],
+            "azurerm_virtual_network.virtual_network": [
+              "azurerm_resource_group.resource_group",
+              "azurerm_virtual_network.virtual_network"
+            ],
+            "data.azuread_client_config.current": [
+              "data.azuread_client_config.current"
+            ],
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ],
+            "data.azurerm_subscription.current": [
+              "data.azurerm_subscription.current"
+            ],
+            "data.http.myip": [
+              "data.http.myip"
+            ]
+          },
+          "text": "data.assemble.inclusiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

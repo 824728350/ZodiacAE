@@ -1,0 +1,63 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.repro_502": [
+              "azurerm_application_gateway.repro_502",
+              "azurerm_public_ip.agw",
+              "azurerm_resource_group.repro_502",
+              "azurerm_subnet.ingress",
+              "azurerm_virtual_network.repro_502"
+            ],
+            "azurerm_kubernetes_cluster.repro_502": [
+              "azurerm_kubernetes_cluster.repro_502"
+            ],
+            "azurerm_kubernetes_cluster_node_pool.user": [
+              "azurerm_kubernetes_cluster_node_pool.user"
+            ],
+            "azurerm_log_analytics_workspace.repro_502": [
+              "azurerm_log_analytics_workspace.repro_502"
+            ],
+            "azurerm_monitor_diagnostic_setting.repro_502": [
+              "azurerm_monitor_diagnostic_setting.repro_502"
+            ],
+            "azurerm_network_watcher.repro_502": [
+              "azurerm_network_watcher.repro_502"
+            ],
+            "azurerm_public_ip.agw": [
+              "azurerm_public_ip.agw",
+              "azurerm_resource_group.repro_502"
+            ],
+            "azurerm_resource_group.repro_502": [
+              "azurerm_resource_group.repro_502"
+            ],
+            "azurerm_role_assignment.aks_on_subnet": [
+              "azurerm_role_assignment.aks_on_subnet"
+            ],
+            "azurerm_subnet.aks": [
+              "azurerm_resource_group.repro_502",
+              "azurerm_subnet.aks",
+              "azurerm_virtual_network.repro_502"
+            ],
+            "azurerm_subnet.ingress": [
+              "azurerm_resource_group.repro_502",
+              "azurerm_subnet.ingress",
+              "azurerm_virtual_network.repro_502"
+            ],
+            "azurerm_virtual_network.repro_502": [
+              "azurerm_resource_group.repro_502",
+              "azurerm_virtual_network.repro_502"
+            ]
+          },
+          "text": "data.assemble.ancestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

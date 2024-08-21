@@ -1,0 +1,114 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.gw": [
+              "azurerm_application_gateway.gw",
+              "azurerm_public_ip.alb-public-ip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.gw_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_key_vault.kv": [
+              "azurerm_key_vault.kv"
+            ],
+            "azurerm_linux_virtual_machine.linux_vm": [
+              "azurerm_linux_virtual_machine.linux_vm",
+              "azurerm_network_interface.nic",
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.subnet_internal",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_network_interface.nic": [
+              "azurerm_network_interface.nic",
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.subnet_internal",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_network_security_group.gw_nsg": [
+              "azurerm_network_security_group.gw_nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.nsg": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_public_ip.alb-public-ip": [
+              "azurerm_public_ip.alb-public-ip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_public_ip.public_ip": [
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_role_assignment.kv_certificate_user": [
+              "azurerm_role_assignment.kv_certificate_user"
+            ],
+            "azurerm_role_assignment.kv_secrets_user": [
+              "azurerm_role_assignment.kv_secrets_user"
+            ],
+            "azurerm_ssh_public_key.sshkey": [
+              "azurerm_ssh_public_key.sshkey"
+            ],
+            "azurerm_subnet.bastionsubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.bastionsubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.gw_subnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.gw_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.subnet_internal": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.subnet_internal",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.nsg-assoc": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.subnet_internal",
+              "azurerm_subnet_network_security_group_association.nsg-assoc",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_user_assigned_identity.uai": [
+              "azurerm_user_assigned_identity.uai"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ],
+            "data.azurerm_subscription.training": [
+              "data.azurerm_subscription.training"
+            ],
+            "data.template_cloudinit_config.craftcms_config": [
+              "data.template_cloudinit_config.craftcms_config"
+            ],
+            "random_id.rnd": [
+              "random_id.rnd"
+            ],
+            "random_pet.pet-name": [
+              "random_pet.pet-name"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

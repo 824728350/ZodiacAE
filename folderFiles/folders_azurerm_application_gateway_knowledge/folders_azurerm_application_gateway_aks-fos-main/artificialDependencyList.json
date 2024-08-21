@@ -1,0 +1,37 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "time_sleep.wait_for_ingress",
+              "kubernetes_ingress_v1.ing"
+            ],
+            [
+              "data.kubernetes_ingress_v1.ing",
+              "time_sleep.wait_for_ingress"
+            ],
+            [
+              "module.aks.azapi_update_resource.aks_cluster_http_proxy_config_no_proxy",
+              "module.aks.azapi_update_resource.aks_cluster_post_create"
+            ],
+            [
+              "module.aks.azurerm_kubernetes_cluster_node_pool.node_pool_create_after_destroy",
+              "module.aks.azapi_update_resource.aks_cluster_post_create"
+            ],
+            [
+              "module.aks.azurerm_kubernetes_cluster_node_pool.node_pool_create_before_destroy",
+              "module.aks.azapi_update_resource.aks_cluster_post_create"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

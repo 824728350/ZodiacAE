@@ -1,0 +1,118 @@
+{
+    "data": [
+        {
+            "azuread_client_config": {
+                "current": {}
+            }
+        },
+        {
+            "azurerm_client_config": {
+                "current": {}
+            }
+        },
+        {
+            "azurerm_subscription": {
+                "current": {}
+            }
+        }
+    ],
+    "output": [
+        {
+            "ip": {
+                "value": "${azurerm_public_ip.public_ip.ip_address}"
+            }
+        },
+        {
+            "id": {
+                "value": "${azurerm_container_group.container_group.id}"
+            }
+        }
+    ],
+    "provider": [
+        {
+            "azurerm": {
+                "features": [
+                    {}
+                ]
+            }
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "resource_group": {
+                    "location": "West US 2",
+                    "name": "${var.app_name}-${var.app_environment}"
+                }
+            }
+        },
+        {
+            "azurerm_network_profile": {
+                "containergroup_profile": {
+                    "container_network_interface": [
+                        {
+                            "ip_configuration": [
+                                {
+                                    "name": "aciipconfig",
+                                    "subnet_id": "${azurerm_subnet.sn-aci.id}"
+                                }
+                            ],
+                            "name": "${var.app_name}-${var.app_environment}-nic"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.resource_group.location}",
+                    "name": "${var.app_name}-${var.app_environment}-profile",
+                    "resource_group_name": "${azurerm_resource_group.resource_group.name}"
+                }
+            }
+        },
+        {
+            "azurerm_container_group": {
+                "container_group": {
+                    "container": [
+                        {
+                            "cpu": "${var.container_cpu}",
+                            "environment_variables": {
+                                "AZURE_CLIENT_ID": "${azuread_service_principal.app.application_id}",
+                                "AZURE_CLIENT_SECRET": "${azuread_service_principal_password.app.value}",
+                                "AZURE_CONTAINER_GROUP_NAME": "${var.app_name}-${var.app_environment}",
+                                "AZURE_RESOURCE_GROUP_NAME": "${azurerm_resource_group.resource_group.name}",
+                                "AZURE_STORAGE_ACCOUNT_KEY": "${azurerm_storage_account.aci_storage.primary_access_key}",
+                                "AZURE_STORAGE_ACCOUNT_NAME": "${var.storage_account_name}",
+                                "AZURE_SUBSCRIPTION_ID": "${data.azurerm_subscription.current.subscription_id}",
+                                "AZURE_TENANT_ID": "${azuread_service_principal.app.application_tenant_id}",
+                                "ULIMIT_NO_FILE": 16384
+                            },
+                            "image": "${var.docker_image}",
+                            "memory": "${var.container_memory}",
+                            "name": "${var.app_name}-${var.app_environment}-container",
+                            "ports": [
+                                {
+                                    "port": 6789,
+                                    "protocol": "TCP"
+                                }
+                            ],
+                            "volume": [
+                                {
+                                    "mount_path": "/home/src",
+                                    "name": "${var.app_name}-fs",
+                                    "share_name": "${azurerm_storage_share.container_share.name}",
+                                    "storage_account_key": "${azurerm_storage_account.aci_storage.primary_access_key}",
+                                    "storage_account_name": "${azurerm_storage_account.aci_storage.name}"
+                                }
+                            ]
+                        }
+                    ],
+                    "ip_address_type": "Private",
+                    "location": "${azurerm_resource_group.resource_group.location}",
+                    "name": "${var.app_name}-${var.app_environment}",
+                    "os_type": "Linux",
+                    "resource_group_name": "${azurerm_resource_group.resource_group.name}",
+                    "subnet_ids": [
+                        "${azurerm_subnet.sn-aci.id}"
+                    ]
+                }
+            }
+        }
+    ]
+}

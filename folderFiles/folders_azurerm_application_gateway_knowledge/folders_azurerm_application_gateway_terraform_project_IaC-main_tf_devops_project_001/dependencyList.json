@@ -1,0 +1,33 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "module.network.azurerm_application_gateway.project_agw",
+              "module.network.azurerm_public_ip.project_pip",
+              "frontend_ip_configuration.0.public_ip_address_id",
+              "id",
+              "frontend_ip_configuration.0",
+              ""
+            ],
+            [
+              "module.network.azurerm_application_gateway.project_agw",
+              "module.network.azurerm_subnet.project_snet",
+              "gateway_ip_configuration.0.subnet_id",
+              "id",
+              "gateway_ip_configuration.0",
+              ""
+            ]
+          ],
+          "text": "data.assemble.dependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

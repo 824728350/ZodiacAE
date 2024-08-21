@@ -1,0 +1,42 @@
+{
+    "resource": [
+        {
+            "azurerm_linux_virtual_machine": {
+                "vm": {
+                    "admin_password": "${var.user-password-vm}",
+                    "admin_username": "${var.user-name-vm}",
+                    "boot_diagnostics": [
+                        {
+                            "storage_account_uri": "${azurerm_storage_account.sta.primary_blob_endpoint}"
+                        }
+                    ],
+                    "computer_name": "${var.name-vm}",
+                    "custom_data": "${filebase64(\"scripts/nginx.sh\")}",
+                    "disable_password_authentication": "${var.password_authentication-vm}",
+                    "location": "${var.location}",
+                    "name": "${var.name-vm}",
+                    "network_interface_ids": [
+                        "${azurerm_network_interface.nic.id}"
+                    ],
+                    "os_disk": [
+                        {
+                            "caching": "${var.caching-disk-vm}",
+                            "name": "${var.name-disk-vm}",
+                            "storage_account_type": "${var.sta-disk-vm}"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "size": "${var.sku-vm}",
+                    "source_image_reference": [
+                        {
+                            "offer": "${var.image-offer-vm}",
+                            "publisher": "${var.image-publisher-vm}",
+                            "sku": "${var.image-sku-vm}",
+                            "version": "${var.image-version-vm}"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

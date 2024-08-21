@@ -1,0 +1,1093 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azuread_application.app",
+              "mode": "managed",
+              "name": "app",
+              "provider_name": "registry.terraform.io/hashicorp/azuread",
+              "schema_version": 2,
+              "sensitive_values": {
+                "api": [],
+                "app_role": [],
+                "app_role_ids": {},
+                "feature_tags": [],
+                "oauth2_permission_scope_ids": {},
+                "optional_claims": [],
+                "owners": [
+                  false
+                ],
+                "password": [],
+                "public_client": [],
+                "required_resource_access": [],
+                "single_page_application": [],
+                "tags": [],
+                "web": []
+              },
+              "type": "azuread_application",
+              "values": {
+                "api": [],
+                "app_role": [],
+                "description": null,
+                "device_only_auth_enabled": null,
+                "display_name": "mage-data-prep-app",
+                "fallback_public_client_enabled": null,
+                "group_membership_claims": null,
+                "identifier_uris": null,
+                "logo_image": null,
+                "marketing_url": null,
+                "notes": null,
+                "oauth2_post_response_required": null,
+                "optional_claims": [],
+                "owners": [
+                  "62e5370a-2bf4-4734-8511-cc798825f062"
+                ],
+                "prevent_duplicate_names": false,
+                "privacy_statement_url": null,
+                "public_client": [],
+                "required_resource_access": [],
+                "service_management_reference": null,
+                "sign_in_audience": "AzureADMyOrg",
+                "single_page_application": [],
+                "support_url": null,
+                "terms_of_service_url": null,
+                "timeouts": null,
+                "web": []
+              }
+            },
+            {
+              "address": "azuread_service_principal.app",
+              "mode": "managed",
+              "name": "app",
+              "provider_name": "registry.terraform.io/hashicorp/azuread",
+              "schema_version": 0,
+              "sensitive_values": {
+                "app_role_ids": {},
+                "app_roles": [],
+                "feature_tags": [],
+                "features": [],
+                "oauth2_permission_scope_ids": {},
+                "oauth2_permission_scopes": [],
+                "owners": [
+                  false
+                ],
+                "redirect_uris": [],
+                "saml_single_sign_on": [],
+                "service_principal_names": [],
+                "tags": []
+              },
+              "type": "azuread_service_principal",
+              "values": {
+                "account_enabled": true,
+                "alternative_names": null,
+                "app_role_assignment_required": false,
+                "description": null,
+                "login_url": null,
+                "notes": null,
+                "notification_email_addresses": null,
+                "owners": [
+                  "62e5370a-2bf4-4734-8511-cc798825f062"
+                ],
+                "preferred_single_sign_on_mode": null,
+                "saml_single_sign_on": [],
+                "timeouts": null,
+                "use_existing": null
+              }
+            },
+            {
+              "address": "azuread_service_principal_password.app",
+              "mode": "managed",
+              "name": "app",
+              "provider_name": "registry.terraform.io/hashicorp/azuread",
+              "schema_version": 1,
+              "sensitive_values": {
+                "value": true
+              },
+              "type": "azuread_service_principal_password",
+              "values": {
+                "end_date_relative": null,
+                "rotate_when_changed": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_application_gateway.network",
+              "mode": "managed",
+              "name": "network",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [],
+                "backend_address_pool": [
+                  {
+                    "fqdns": [],
+                    "ip_addresses": []
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "authentication_certificate": [],
+                    "connection_draining": [],
+                    "trusted_root_certificate_names": []
+                  }
+                ],
+                "custom_error_configuration": [],
+                "frontend_ip_configuration": [
+                  {}
+                ],
+                "frontend_port": [
+                  {}
+                ],
+                "gateway_ip_configuration": [
+                  {}
+                ],
+                "global": [],
+                "http_listener": [
+                  {
+                    "custom_error_configuration": [],
+                    "host_names": []
+                  }
+                ],
+                "identity": [],
+                "private_endpoint_connection": [],
+                "private_link_configuration": [],
+                "probe": [],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                  {}
+                ],
+                "rewrite_rule_set": [],
+                "sku": [
+                  {}
+                ],
+                "ssl_certificate": [],
+                "ssl_policy": [],
+                "ssl_profile": [],
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": []
+              },
+              "type": "azurerm_application_gateway",
+              "values": {
+                "authentication_certificate": [],
+                "autoscale_configuration": [],
+                "backend_address_pool": [
+                  {
+                    "fqdns": [],
+                    "name": "mage-data-prep-production-backend-pool"
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "affinity_cookie_name": "",
+                    "authentication_certificate": [],
+                    "connection_draining": [],
+                    "cookie_based_affinity": "Disabled",
+                    "host_name": "",
+                    "name": "mage-data-prep-production-http-setting",
+                    "path": "",
+                    "pick_host_name_from_backend_address": false,
+                    "port": 6789,
+                    "probe_name": "",
+                    "protocol": "Http",
+                    "request_timeout": 60,
+                    "trusted_root_certificate_names": []
+                  }
+                ],
+                "custom_error_configuration": [],
+                "enable_http2": null,
+                "fips_enabled": null,
+                "firewall_policy_id": null,
+                "force_firewall_policy_association": null,
+                "frontend_ip_configuration": [
+                  {
+                    "name": "mage-data-prep-production-frontend-ip-config",
+                    "private_ip_address_allocation": "Dynamic",
+                    "private_link_configuration_name": null,
+                    "subnet_id": null
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": "mage-data-prep-production-frontend-port",
+                    "port": 80
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": "mage-data-prep-production-ip-configuration"
+                  }
+                ],
+                "global": [],
+                "http_listener": [
+                  {
+                    "custom_error_configuration": [],
+                    "firewall_policy_id": "",
+                    "frontend_ip_configuration_name": "mage-data-prep-production-frontend-ip-config",
+                    "frontend_port_name": "mage-data-prep-production-frontend-port",
+                    "host_name": "",
+                    "host_names": [],
+                    "name": "mage-data-prep-production-listener",
+                    "protocol": "Http",
+                    "require_sni": null,
+                    "ssl_certificate_name": "",
+                    "ssl_profile_name": ""
+                  }
+                ],
+                "identity": [],
+                "location": "westus2",
+                "name": "mage-data-prep-production-app-gateway",
+                "private_link_configuration": [],
+                "probe": [],
+                "redirect_configuration": [],
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": "mage-data-prep-production-backend-pool",
+                    "backend_http_settings_name": "mage-data-prep-production-http-setting",
+                    "http_listener_name": "mage-data-prep-production-listener",
+                    "name": "mage-data-prep-production-routing-rule",
+                    "priority": 10,
+                    "redirect_configuration_name": "",
+                    "rewrite_rule_set_name": "",
+                    "rule_type": "Basic",
+                    "url_path_map_name": ""
+                  }
+                ],
+                "resource_group_name": "mage-data-prep-production",
+                "rewrite_rule_set": [],
+                "sku": [
+                  {
+                    "capacity": 2,
+                    "name": "Standard_v2",
+                    "tier": "Standard_v2"
+                  }
+                ],
+                "ssl_certificate": [],
+                "ssl_profile": [],
+                "tags": null,
+                "timeouts": null,
+                "trusted_client_certificate": [],
+                "trusted_root_certificate": [],
+                "url_path_map": [],
+                "waf_configuration": [],
+                "zones": null
+              }
+            },
+            {
+              "address": "azurerm_container_group.container_group",
+              "mode": "managed",
+              "name": "container_group",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "container": [
+                  {
+                    "commands": [],
+                    "environment_variables": {},
+                    "gpu": [],
+                    "gpu_limit": [],
+                    "liveness_probe": [],
+                    "ports": [
+                      {}
+                    ],
+                    "readiness_probe": [],
+                    "secure_environment_variables": true,
+                    "security": [],
+                    "volume": [
+                      {
+                        "git_repo": [],
+                        "secret": true,
+                        "storage_account_key": true
+                      }
+                    ]
+                  }
+                ],
+                "diagnostics": [],
+                "dns_config": [],
+                "exposed_port": [],
+                "identity": [],
+                "image_registry_credential": [],
+                "init_container": [],
+                "subnet_ids": [],
+                "tags": {}
+              },
+              "type": "azurerm_container_group",
+              "values": {
+                "container": [
+                  {
+                    "cpu": 2,
+                    "cpu_limit": null,
+                    "gpu": [],
+                    "gpu_limit": [],
+                    "image": "mageai/mageai:latest",
+                    "liveness_probe": [],
+                    "memory": 2,
+                    "memory_limit": null,
+                    "name": "mage-data-prep-production-container",
+                    "ports": [
+                      {
+                        "port": 6789,
+                        "protocol": "TCP"
+                      }
+                    ],
+                    "readiness_probe": [],
+                    "secure_environment_variables": null,
+                    "security": [],
+                    "volume": [
+                      {
+                        "empty_dir": false,
+                        "git_repo": [],
+                        "mount_path": "/home/src",
+                        "name": "mage-data-prep-fs",
+                        "read_only": false,
+                        "secret": null,
+                        "share_name": "mage-data-prep-production-data",
+                        "storage_account_name": "magedataprepstorage"
+                      }
+                    ]
+                  }
+                ],
+                "diagnostics": [],
+                "dns_config": [],
+                "dns_name_label": null,
+                "dns_name_label_reuse_policy": "Unsecure",
+                "identity": [],
+                "image_registry_credential": [],
+                "init_container": [],
+                "ip_address_type": "Private",
+                "key_vault_key_id": null,
+                "key_vault_user_assigned_identity_id": null,
+                "location": "westus2",
+                "name": "mage-data-prep-production",
+                "os_type": "Linux",
+                "priority": null,
+                "resource_group_name": "mage-data-prep-production",
+                "restart_policy": "Always",
+                "sku": "Standard",
+                "tags": {
+                  "Environment": "production"
+                },
+                "timeouts": null,
+                "zones": null
+              }
+            },
+            {
+              "address": "azurerm_key_vault.kv",
+              "mode": "managed",
+              "name": "kv",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 2,
+              "sensitive_values": {
+                "access_policy": [
+                  {
+                    "certificate_permissions": [
+                      false,
+                      false
+                    ],
+                    "key_permissions": [
+                      false,
+                      false
+                    ],
+                    "secret_permissions": [
+                      false,
+                      false
+                    ]
+                  }
+                ],
+                "contact": [],
+                "network_acls": []
+              },
+              "type": "azurerm_key_vault",
+              "values": {
+                "access_policy": [
+                  {
+                    "application_id": null,
+                    "certificate_permissions": [
+                      "Get",
+                      "List"
+                    ],
+                    "key_permissions": [
+                      "Get",
+                      "List"
+                    ],
+                    "secret_permissions": [
+                      "Get",
+                      "List"
+                    ],
+                    "storage_permissions": null,
+                    "tenant_id": "e66e77b4-5724-44d7-8721-06df160450ce"
+                  }
+                ],
+                "enable_rbac_authorization": null,
+                "enabled_for_deployment": null,
+                "enabled_for_disk_encryption": true,
+                "enabled_for_template_deployment": null,
+                "location": "westus2",
+                "name": "magedataprepkeyvault",
+                "public_network_access_enabled": true,
+                "purge_protection_enabled": false,
+                "resource_group_name": "mage-data-prep-production",
+                "sku_name": "standard",
+                "soft_delete_retention_days": 7,
+                "tags": null,
+                "tenant_id": "e66e77b4-5724-44d7-8721-06df160450ce",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_network_profile.containergroup_profile",
+              "mode": "managed",
+              "name": "containergroup_profile",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "container_network_interface": [
+                  {
+                    "ip_configuration": [
+                      {}
+                    ]
+                  }
+                ],
+                "container_network_interface_ids": []
+              },
+              "type": "azurerm_network_profile",
+              "values": {
+                "container_network_interface": [
+                  {
+                    "ip_configuration": [
+                      {
+                        "name": "aciipconfig"
+                      }
+                    ],
+                    "name": "mage-data-prep-production-nic"
+                  }
+                ],
+                "location": "westus2",
+                "name": "mage-data-prep-production-profile",
+                "resource_group_name": "mage-data-prep-production",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_network_security_group.nsg-aci",
+              "mode": "managed",
+              "name": "nsg-aci",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "security_rule": [
+                  {
+                    "destination_address_prefixes": [
+                      false
+                    ],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_ranges": [
+                      false,
+                      false,
+                      false,
+                      false,
+                      false
+                    ],
+                    "source_address_prefixes": [
+                      false
+                    ],
+                    "source_application_security_group_ids": [],
+                    "source_port_ranges": []
+                  },
+                  {
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_ranges": [],
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_ranges": []
+                  },
+                  {
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_ranges": [],
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_ranges": []
+                  },
+                  {
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_ranges": [],
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_ranges": []
+                  }
+                ]
+              },
+              "type": "azurerm_network_security_group",
+              "values": {
+                "location": "westus2",
+                "name": "mage-data-prep-production-nsg-aci",
+                "resource_group_name": "mage-data-prep-production",
+                "security_rule": [
+                  {
+                    "access": "Allow",
+                    "description": "",
+                    "destination_address_prefix": "",
+                    "destination_address_prefixes": [
+                      "10.0.10.0/24"
+                    ],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_range": "",
+                    "destination_port_ranges": [
+                      "22",
+                      "443",
+                      "445",
+                      "6789",
+                      "8000"
+                    ],
+                    "direction": "Inbound",
+                    "name": "from-gateway-subnet",
+                    "priority": 100,
+                    "protocol": "Tcp",
+                    "source_address_prefix": "",
+                    "source_address_prefixes": [
+                      "10.0.20.0/24"
+                    ],
+                    "source_application_security_group_ids": [],
+                    "source_port_range": "*",
+                    "source_port_ranges": []
+                  },
+                  {
+                    "access": "Allow",
+                    "description": "",
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_range": "*",
+                    "destination_port_ranges": [],
+                    "direction": "Outbound",
+                    "name": "to-internet",
+                    "priority": 100,
+                    "protocol": "Tcp",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_range": "*",
+                    "source_port_ranges": []
+                  },
+                  {
+                    "access": "Deny",
+                    "description": "",
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_range": "*",
+                    "destination_port_ranges": [],
+                    "direction": "Inbound",
+                    "name": "DenyAllInBound-Override",
+                    "priority": 900,
+                    "protocol": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_range": "*",
+                    "source_port_ranges": []
+                  },
+                  {
+                    "access": "Deny",
+                    "description": "",
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_range": "*",
+                    "destination_port_ranges": [],
+                    "direction": "Outbound",
+                    "name": "DenyAllOutBound-Override",
+                    "priority": 900,
+                    "protocol": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_range": "*",
+                    "source_port_ranges": []
+                  }
+                ],
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_network_security_group.nsg-public",
+              "mode": "managed",
+              "name": "nsg-public",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "security_rule": [
+                  {
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_ranges": [
+                      false
+                    ],
+                    "source_address_prefixes": [
+                      false
+                    ],
+                    "source_application_security_group_ids": [],
+                    "source_port_ranges": []
+                  },
+                  {
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_ranges": [],
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_ranges": []
+                  },
+                  {
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_ranges": [],
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_ranges": []
+                  }
+                ]
+              },
+              "type": "azurerm_network_security_group",
+              "values": {
+                "location": "westus2",
+                "name": "mage-data-prep-production-nsg-public",
+                "resource_group_name": "mage-data-prep-production",
+                "security_rule": [
+                  {
+                    "access": "Allow",
+                    "description": "",
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_range": "",
+                    "destination_port_ranges": [
+                      "80"
+                    ],
+                    "direction": "Inbound",
+                    "name": "whitelist-inbound-ip",
+                    "priority": 100,
+                    "protocol": "Tcp",
+                    "source_address_prefix": "",
+                    "source_address_prefixes": [
+                      "128.42.61.9/32"
+                    ],
+                    "source_application_security_group_ids": [],
+                    "source_port_range": "*",
+                    "source_port_ranges": []
+                  },
+                  {
+                    "access": "Allow",
+                    "description": "",
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_range": "65200-65535",
+                    "destination_port_ranges": [],
+                    "direction": "Inbound",
+                    "name": "AllowInfraComms",
+                    "priority": 200,
+                    "protocol": "Tcp",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_range": "*",
+                    "source_port_ranges": []
+                  },
+                  {
+                    "access": "Deny",
+                    "description": "",
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "destination_application_security_group_ids": [],
+                    "destination_port_range": "*",
+                    "destination_port_ranges": [],
+                    "direction": "Inbound",
+                    "name": "DenyAllInBound-Override",
+                    "priority": 900,
+                    "protocol": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "source_application_security_group_ids": [],
+                    "source_port_range": "*",
+                    "source_port_ranges": []
+                  }
+                ],
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_public_ip.public_ip",
+              "mode": "managed",
+              "name": "public_ip",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_public_ip",
+              "values": {
+                "allocation_method": "Static",
+                "ddos_protection_mode": "VirtualNetworkInherited",
+                "ddos_protection_plan_id": null,
+                "domain_name_label": null,
+                "edge_zone": null,
+                "idle_timeout_in_minutes": 4,
+                "ip_tags": null,
+                "ip_version": "IPv4",
+                "location": "westus2",
+                "name": "mage-data-prep-production-public-ip",
+                "public_ip_prefix_id": null,
+                "resource_group_name": "mage-data-prep-production",
+                "reverse_fqdn": null,
+                "sku": "Standard",
+                "sku_tier": "Regional",
+                "tags": null,
+                "timeouts": null,
+                "zones": null
+              }
+            },
+            {
+              "address": "azurerm_resource_group.resource_group",
+              "mode": "managed",
+              "name": "resource_group",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_resource_group",
+              "values": {
+                "location": "westus2",
+                "managed_by": null,
+                "name": "mage-data-prep-production",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_role_assignment.custom_role",
+              "mode": "managed",
+              "name": "custom_role",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "scope": "/subscriptions/1b7414a3-b034-4f7b-9708-357f1ddecd7a",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_role_assignment.storage",
+              "mode": "managed",
+              "name": "storage",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_role_assignment",
+              "values": {
+                "condition": null,
+                "condition_version": null,
+                "delegated_managed_identity_resource_id": null,
+                "description": null,
+                "role_definition_name": "Storage Blob Data Reader",
+                "scope": "/subscriptions/1b7414a3-b034-4f7b-9708-357f1ddecd7a",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_role_definition.custom_role",
+              "mode": "managed",
+              "name": "custom_role",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 1,
+              "sensitive_values": {
+                "assignable_scopes": [
+                  false
+                ],
+                "permissions": [
+                  {
+                    "actions": [
+                      false,
+                      false,
+                      false
+                    ],
+                    "not_actions": []
+                  }
+                ]
+              },
+              "type": "azurerm_role_definition",
+              "values": {
+                "assignable_scopes": [
+                  "/subscriptions/1b7414a3-b034-4f7b-9708-357f1ddecd7a"
+                ],
+                "description": null,
+                "name": "mage-data-prep-custom-role",
+                "permissions": [
+                  {
+                    "actions": [
+                      "Microsoft.ContainerInstance/containerGroups/read",
+                      "Microsoft.ContainerInstance/containerGroups/write",
+                      "Microsoft.ContainerInstance/containerGroups/delete"
+                    ],
+                    "data_actions": null,
+                    "not_actions": [],
+                    "not_data_actions": null
+                  }
+                ],
+                "scope": "/subscriptions/1b7414a3-b034-4f7b-9708-357f1ddecd7a",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_storage_account.aci_storage",
+              "mode": "managed",
+              "name": "aci_storage",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 4,
+              "sensitive_values": {
+                "azure_files_authentication": [],
+                "blob_properties": [],
+                "custom_domain": [],
+                "customer_managed_key": [],
+                "identity": [],
+                "immutability_policy": [],
+                "network_rules": [],
+                "primary_access_key": true,
+                "primary_blob_connection_string": true,
+                "primary_connection_string": true,
+                "queue_properties": [],
+                "routing": [],
+                "sas_policy": [],
+                "secondary_access_key": true,
+                "secondary_blob_connection_string": true,
+                "secondary_connection_string": true,
+                "share_properties": [],
+                "static_website": []
+              },
+              "type": "azurerm_storage_account",
+              "values": {
+                "account_kind": "StorageV2",
+                "account_replication_type": "LRS",
+                "account_tier": "Standard",
+                "allow_nested_items_to_be_public": true,
+                "allowed_copy_scope": null,
+                "azure_files_authentication": [],
+                "cross_tenant_replication_enabled": true,
+                "custom_domain": [],
+                "customer_managed_key": [],
+                "default_to_oauth_authentication": false,
+                "dns_endpoint_type": "Standard",
+                "edge_zone": null,
+                "identity": [],
+                "immutability_policy": [],
+                "infrastructure_encryption_enabled": false,
+                "is_hns_enabled": false,
+                "local_user_enabled": true,
+                "location": "westus2",
+                "min_tls_version": "TLS1_2",
+                "name": "magedataprepstorage",
+                "nfsv3_enabled": false,
+                "public_network_access_enabled": true,
+                "queue_encryption_key_type": "Service",
+                "resource_group_name": "mage-data-prep-production",
+                "sas_policy": [],
+                "sftp_enabled": false,
+                "shared_access_key_enabled": true,
+                "static_website": [],
+                "table_encryption_key_type": "Service",
+                "tags": null,
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_storage_share.container_share",
+              "mode": "managed",
+              "name": "container_share",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 2,
+              "sensitive_values": {
+                "acl": [],
+                "metadata": {}
+              },
+              "type": "azurerm_storage_share",
+              "values": {
+                "acl": [],
+                "enabled_protocol": "SMB",
+                "name": "mage-data-prep-production-data",
+                "quota": 100,
+                "storage_account_name": "magedataprepstorage",
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_subnet.sn-aci",
+              "mode": "managed",
+              "name": "sn-aci",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": [
+                  {
+                    "service_delegation": [
+                      {
+                        "actions": [
+                          false
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "service_endpoints": [
+                  false,
+                  false
+                ]
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.0.10.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [
+                  {
+                    "name": "acidelegationservice",
+                    "service_delegation": [
+                      {
+                        "actions": [
+                          "Microsoft.Network/virtualNetworks/subnets/action"
+                        ],
+                        "name": "Microsoft.ContainerInstance/containerGroups"
+                      }
+                    ]
+                  }
+                ],
+                "name": "aci",
+                "resource_group_name": "mage-data-prep-production",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": [
+                  "Microsoft.KeyVault",
+                  "Microsoft.Storage"
+                ],
+                "timeouts": null,
+                "virtual_network_name": "mage-data-prep-production"
+              }
+            },
+            {
+              "address": "azurerm_subnet.sn-public",
+              "mode": "managed",
+              "name": "sn-public",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_prefixes": [
+                  false
+                ],
+                "delegation": []
+              },
+              "type": "azurerm_subnet",
+              "values": {
+                "address_prefixes": [
+                  "10.0.20.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "name": "public",
+                "resource_group_name": "mage-data-prep-production",
+                "service_endpoint_policy_ids": null,
+                "service_endpoints": null,
+                "timeouts": null,
+                "virtual_network_name": "mage-data-prep-production"
+              }
+            },
+            {
+              "address": "azurerm_subnet_network_security_group_association.sn-nsg-aci",
+              "mode": "managed",
+              "name": "sn-nsg-aci",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_subnet_network_security_group_association",
+              "values": {
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_subnet_network_security_group_association.sn-nsg-public",
+              "mode": "managed",
+              "name": "sn-nsg-public",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {},
+              "type": "azurerm_subnet_network_security_group_association",
+              "values": {
+                "timeouts": null
+              }
+            },
+            {
+              "address": "azurerm_virtual_network.virtual_network",
+              "mode": "managed",
+              "name": "virtual_network",
+              "provider_name": "registry.terraform.io/hashicorp/azurerm",
+              "schema_version": 0,
+              "sensitive_values": {
+                "address_space": [
+                  false
+                ],
+                "ddos_protection_plan": [],
+                "dns_servers": [
+                  false,
+                  false
+                ],
+                "encryption": [],
+                "subnet": [],
+                "tags": {}
+              },
+              "type": "azurerm_virtual_network",
+              "values": {
+                "address_space": [
+                  "10.0.0.0/16"
+                ],
+                "bgp_community": null,
+                "ddos_protection_plan": [],
+                "dns_servers": [
+                  "10.0.0.4",
+                  "10.0.0.5"
+                ],
+                "edge_zone": null,
+                "encryption": [],
+                "flow_timeout_in_minutes": null,
+                "location": "westus2",
+                "name": "mage-data-prep-production",
+                "resource_group_name": "mage-data-prep-production",
+                "tags": {
+                  "Environment": "production"
+                },
+                "timeouts": null
+              }
+            }
+          ],
+          "text": "data.assemble.plan",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ]
+          },
+          "text": "data.assemble.offspringDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

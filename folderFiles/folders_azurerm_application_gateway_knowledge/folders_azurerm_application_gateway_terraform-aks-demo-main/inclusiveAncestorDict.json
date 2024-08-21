@@ -1,0 +1,124 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgateway": [
+              "azurerm_application_gateway.appgateway",
+              "azurerm_public_ip.appgw_pip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.gateway",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_kubernetes_cluster.aks": [
+              "azurerm_kubernetes_cluster.aks",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.backend",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_network_security_group.nsg_backend": [
+              "azurerm_network_security_group.nsg_backend",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.nsg_db": [
+              "azurerm_network_security_group.nsg_db",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_rule.allow_aks_to_appgw": [
+              "azurerm_network_security_group.nsg_backend",
+              "azurerm_network_security_rule.allow_aks_to_appgw",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.gateway",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_network_security_rule.allow_aks_to_db": [
+              "azurerm_network_security_group.nsg_db",
+              "azurerm_network_security_rule.allow_aks_to_db",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.backend",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_network_security_rule.allow_appgw_to_aks": [
+              "azurerm_network_security_group.nsg_backend",
+              "azurerm_network_security_rule.allow_appgw_to_aks",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.gateway",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_postgresql_flexible_server.postgresql": [
+              "azurerm_postgresql_flexible_server.postgresql",
+              "azurerm_private_dns_zone.postgresql",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.db",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_postgresql_flexible_server_firewall_rule.allow_internal": [
+              "azurerm_postgresql_flexible_server.postgresql",
+              "azurerm_postgresql_flexible_server_firewall_rule.allow_internal",
+              "azurerm_private_dns_zone.postgresql",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.db",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_private_dns_zone.postgresql": [
+              "azurerm_private_dns_zone.postgresql",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_private_dns_zone_virtual_network_link.vnetlink": [
+              "azurerm_private_dns_zone.postgresql",
+              "azurerm_private_dns_zone_virtual_network_link.vnetlink",
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_public_ip.appgw_pip": [
+              "azurerm_public_ip.appgw_pip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_subnet.backend": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.backend",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.db": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.db",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.gateway": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.gateway",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.backend": [
+              "azurerm_network_security_group.nsg_backend",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.backend",
+              "azurerm_subnet_network_security_group_association.backend",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.db": [
+              "azurerm_network_security_group.nsg_db",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.db",
+              "azurerm_subnet_network_security_group_association.db",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet"
+            ]
+          },
+          "text": "data.assemble.inclusiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

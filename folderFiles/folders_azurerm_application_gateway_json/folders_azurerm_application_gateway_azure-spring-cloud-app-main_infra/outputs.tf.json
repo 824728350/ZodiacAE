@@ -1,0 +1,13 @@
+{
+    "output": [
+        {
+            "self": {
+                "description": "Runtime environment",
+                "value": {
+                    "last_update": "${timestamp()}",
+                    "workspace": "${terraform.workspace}"
+                }
+            }
+        }
+    ]
+}

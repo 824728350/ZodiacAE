@@ -1,0 +1,82 @@
+{
+    "resource": [
+        {
+            "azurerm_application_gateway": {
+                "app-gateway": {
+                    "backend_address_pool": [
+                        {
+                            "name": "BackEndAddressPool"
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "cookie_based_affinity": "Disabled",
+                            "name": "httpSetting",
+                            "path": "/",
+                            "port": 80,
+                            "protocol": "Http",
+                            "request_timeout": 1
+                        }
+                    ],
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "webAppPport",
+                            "public_ip_address_id": "${azurerm_public_ip.demo.id}"
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "webAppPport",
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "gateway-ip-config",
+                            "subnet_id": "${azurerm_subnet.demo-subnet-1.id}"
+                        }
+                    ],
+                    "http_listener": [
+                        {
+                            "frontend_ip_configuration_name": "webAppPport",
+                            "frontend_port_name": "webAppPport",
+                            "name": "httpListener",
+                            "protocol": "Http"
+                        }
+                    ],
+                    "location": "${var.location}",
+                    "name": "appgateway",
+                    "request_routing_rule": [
+                        {
+                            "backend_address_pool_name": "BackEndAddressPool",
+                            "backend_http_settings_name": "httpSetting",
+                            "http_listener_name": "httpListener",
+                            "name": "httpRoutingRule",
+                            "priority": 9,
+                            "rule_type": "Basic"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.demo.name}",
+                    "sku": [
+                        {
+                            "capacity": 2,
+                            "name": "Standard_v2",
+                            "tier": "Standard_v2"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "demo": {
+                    "allocation_method": "Static",
+                    "location": "${var.location}",
+                    "name": "demo-public-ip",
+                    "resource_group_name": "${azurerm_resource_group.demo.name}",
+                    "sku": "Standard"
+                }
+            }
+        }
+    ]
+}

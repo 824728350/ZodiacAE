@@ -1,0 +1,154 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_api_management.apim": [
+              "azurerm_api_management.apim",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.apim_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_application_gateway.app_gateway": [
+              "azurerm_application_gateway.app_gateway",
+              "azurerm_public_ip.app_gateway_public_ip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.agic_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_container_registry.acr": [
+              "azurerm_container_registry.acr",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_key_vault.key_vault": [
+              "azurerm_key_vault.key_vault",
+              "azurerm_resource_group.rg",
+              "data.azurerm_client_config.current"
+            ],
+            "azurerm_kubernetes_cluster.aks": [
+              "azurerm_kubernetes_cluster.aks",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.aks_subnet",
+              "azurerm_user_assigned_identity.aks_identity",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_mssql_firewall_rule.example": [
+              "azurerm_mssql_firewall_rule.example",
+              "azurerm_mssql_server.sql_server",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_mssql_server.sql_server": [
+              "azurerm_mssql_server.sql_server",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_network_security_group.nsg": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_public_ip.app_gateway_public_ip": [
+              "azurerm_public_ip.app_gateway_public_ip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_role_assignment.acr_pull": [
+              "azurerm_container_registry.acr",
+              "azurerm_resource_group.rg",
+              "azurerm_role_assignment.acr_pull",
+              "azurerm_user_assigned_identity.aks_identity"
+            ],
+            "azurerm_role_assignment.sql_access": [
+              "azurerm_mssql_server.sql_server",
+              "azurerm_resource_group.rg",
+              "azurerm_role_assignment.sql_access",
+              "azurerm_user_assigned_identity.aks_identity"
+            ],
+            "azurerm_subnet.acr_subnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.acr_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.agic_subnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.agic_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.aks_subnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.aks_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.apim_subnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.apim_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.sql_subnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.sql_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.acr_nsg": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.acr_subnet",
+              "azurerm_subnet_network_security_group_association.acr_nsg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.agic_nsg": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.agic_subnet",
+              "azurerm_subnet_network_security_group_association.agic_nsg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.aks_nsg": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.aks_subnet",
+              "azurerm_subnet_network_security_group_association.aks_nsg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.apim_nsg": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.apim_subnet",
+              "azurerm_subnet_network_security_group_association.apim_nsg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet_network_security_group_association.sql_nsg": [
+              "azurerm_network_security_group.nsg",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.sql_subnet",
+              "azurerm_subnet_network_security_group_association.sql_nsg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_user_assigned_identity.aks_identity": [
+              "azurerm_resource_group.rg",
+              "azurerm_user_assigned_identity.aks_identity"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet"
+            ],
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ],
+            "data.azurerm_mssql_database.sql_database": [
+              "azurerm_mssql_server.sql_server",
+              "azurerm_resource_group.rg",
+              "data.azurerm_mssql_database.sql_database"
+            ]
+          },
+          "text": "data.assemble.inclusiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "hub_rg": {
+                    "location": "East US",
+                    "name": "hubResourceGroup"
+                }
+            }
+        },
+        {
+            "azurerm_virtual_network": {
+                "hub_vnet": {
+                    "address_space": [
+                        "10.0.0.0/16"
+                    ],
+                    "location": "${azurerm_resource_group.hub_rg.location}",
+                    "name": "hubVNet",
+                    "resource_group_name": "${azurerm_resource_group.hub_rg.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "hub_subnet": {
+                    "address_prefixes": [
+                        "10.0.1.0/24"
+                    ],
+                    "name": "hubSubnet",
+                    "resource_group_name": "${azurerm_resource_group.hub_rg.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.hub_vnet.name}"
+                }
+            }
+        },
+        {
+            "azurerm_network_security_group": {
+                "hub_subnet_nsg": {
+                    "location": "${azurerm_resource_group.hub_rg.location}",
+                    "name": "hubSubnetNSG",
+                    "resource_group_name": "${azurerm_resource_group.hub_rg.name}",
+                    "security_rule": [
+                        {
+                            "access": "Allow",
+                            "description": null,
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": null,
+                            "destination_application_security_group_ids": null,
+                            "destination_port_range": "22",
+                            "destination_port_ranges": null,
+                            "direction": "Inbound",
+                            "name": "SSH",
+                            "priority": 100,
+                            "protocol": "Tcp",
+                            "source_address_prefix": "*",
+                            "source_address_prefixes": null,
+                            "source_application_security_group_ids": null,
+                            "source_port_range": "*",
+                            "source_port_ranges": null
+                        },
+                        {
+                            "access": "Allow",
+                            "description": null,
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": null,
+                            "destination_application_security_group_ids": null,
+                            "destination_port_range": "9202",
+                            "destination_port_ranges": null,
+                            "direction": "Inbound",
+                            "name": "AllowAll9202",
+                            "priority": 101,
+                            "protocol": "Tcp",
+                            "source_address_prefix": "*",
+                            "source_address_prefixes": null,
+                            "source_application_security_group_ids": null,
+                            "source_port_range": "*",
+                            "source_port_ranges": null
+                        },
+                        {
+                            "access": "Allow",
+                            "description": null,
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": null,
+                            "destination_application_security_group_ids": null,
+                            "destination_port_range": "80",
+                            "destination_port_ranges": null,
+                            "direction": "Inbound",
+                            "name": "AllowAll80",
+                            "priority": 102,
+                            "protocol": "Tcp",
+                            "source_address_prefix": "*",
+                            "source_address_prefixes": null,
+                            "source_application_security_group_ids": null,
+                            "source_port_range": "*",
+                            "source_port_ranges": null
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "azurerm_subnet_network_security_group_association": {
+                "hub_subnet_nsg_association": {
+                    "network_security_group_id": "${azurerm_network_security_group.hub_subnet_nsg.id}",
+                    "subnet_id": "${azurerm_subnet.hub_subnet.id}"
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "hub_vm_public_ip": {
+                    "allocation_method": "Dynamic",
+                    "location": "${azurerm_resource_group.hub_rg.location}",
+                    "name": "hubVMPublicIp",
+                    "resource_group_name": "${azurerm_resource_group.hub_rg.name}"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,147 @@
+{
+    "provider": [
+        {
+            "azurerm": {
+                "features": [
+                    {}
+                ]
+            }
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "app-rg": {
+                    "location": "SoutheastAsia",
+                    "name": "app-rg"
+                }
+            }
+        },
+        {
+            "azurerm_virtual_network": {
+                "app-rg": {
+                    "address_space": [
+                        "10.0.0.0/16"
+                    ],
+                    "location": "${azurerm_resource_group.app-rg.location}",
+                    "name": "appgw-vnet",
+                    "resource_group_name": "${azurerm_resource_group.app-rg.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "app-rg": {
+                    "address_prefixes": [
+                        "10.0.1.0/24"
+                    ],
+                    "name": "internal",
+                    "resource_group_name": "${azurerm_resource_group.app-rg.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.app-rg.name}"
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "app-rg": {
+                    "allocation_method": "Static",
+                    "location": "${azurerm_resource_group.app-rg.location}",
+                    "name": "app-rg-public-ip",
+                    "resource_group_name": "${azurerm_resource_group.app-rg.name}",
+                    "sku": "Standard"
+                }
+            }
+        },
+        {
+            "azurerm_application_gateway": {
+                "app-rg": {
+                    "backend_address_pool": [
+                        {
+                            "name": "app-rg-backend-pool"
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "cookie_based_affinity": "Disabled",
+                            "name": "app-rg-backend-http-settings",
+                            "port": 80,
+                            "protocol": "Http",
+                            "request_timeout": 20
+                        }
+                    ],
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "app-rg-frontend-ip",
+                            "public_ip_address_id": "${azurerm_public_ip.app-rg.id}"
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "app-rg-frontend-port",
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "app-rg-gateway-ip",
+                            "subnet_id": "${azurerm_subnet.app-rg.id}"
+                        }
+                    ],
+                    "http_listener": [
+                        {
+                            "frontend_ip_configuration_name": "app-rg-frontend-ip",
+                            "frontend_port_name": "app-rg-frontend-port",
+                            "name": "app-rg-http-listener",
+                            "protocol": "Http"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.app-rg.location}",
+                    "name": "app-rg-appgw",
+                    "request_routing_rule": [
+                        {
+                            "backend_address_pool_name": "app-rg-backend-pool",
+                            "backend_http_settings_name": "app-rg-backend-http-settings",
+                            "http_listener_name": "app-rg-http-listener",
+                            "name": "app-rg-routing-rule",
+                            "priority": 9,
+                            "rewrite_rule_set_name": "apprwrule",
+                            "rule_type": "Basic"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.app-rg.name}",
+                    "rewrite_rule_set": [
+                        {
+                            "name": "apprwrule",
+                            "rewrite_rule": [
+                                {
+                                    "condition": [
+                                        {
+                                            "negate": true,
+                                            "pattern": "/webhook",
+                                            "variable": "var_uri_path"
+                                        }
+                                    ],
+                                    "name": "rule01",
+                                    "rule_sequence": 100,
+                                    "url": [
+                                        {
+                                            "components": "path_only",
+                                            "path": "/invalid"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sku": [
+                        {
+                            "capacity": 1,
+                            "name": "Standard_v2",
+                            "tier": "Standard_v2"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

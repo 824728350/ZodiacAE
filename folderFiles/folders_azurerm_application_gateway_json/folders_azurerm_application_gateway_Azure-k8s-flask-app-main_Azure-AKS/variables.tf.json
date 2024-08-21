@@ -1,0 +1,109 @@
+{
+    "variable": [
+        {
+            "client_id": {
+                "default": "null"
+            }
+        },
+        {
+            "client_secret": {
+                "default": "null"
+            }
+        },
+        {
+            "ssh_public_key": {
+                "default": "null"
+            }
+        },
+        {
+            "environment": {
+                "default": "dev"
+            }
+        },
+        {
+            "location": {
+                "default": "northeurope"
+            }
+        },
+        {
+            "node_count": {
+                "default": 2
+            }
+        },
+        {
+            "dns_prefix": {
+                "default": "k8stest"
+            }
+        },
+        {
+            "cluster_name": {
+                "default": "k8stest"
+            }
+        },
+        {
+            "resource_group": {
+                "default": "kubernetes"
+            }
+        },
+        {
+            "virtual_network_name": {
+                "default": "aksVirtualNetwork",
+                "description": "Virtual network name"
+            }
+        },
+        {
+            "virtual_network_address_prefix": {
+                "default": "192.168.0.0/16",
+                "description": "VNET address prefix"
+            }
+        },
+        {
+            "aks_subnet_name": {
+                "default": "kubesubnet",
+                "description": "Subnet Name."
+            }
+        },
+        {
+            "aks_subnet_address_prefix": {
+                "default": "192.168.0.0/24",
+                "description": "Subnet address prefix."
+            }
+        },
+        {
+            "app_gateway_subnet_address_prefix": {
+                "default": "192.168.1.0/24",
+                "description": "Subnet server IP address."
+            }
+        },
+        {
+            "app_gateway_name": {
+                "default": "ApplicationGatewayDev",
+                "description": "Name of the Application Gateway"
+            }
+        },
+        {
+            "app_gateway_sku": {
+                "default": "Standard_Small",
+                "description": "Name of the Application Gateway SKU"
+            }
+        },
+        {
+            "aks_dns_service_ip": {
+                "default": "10.0.0.10",
+                "description": "DNS server IP address"
+            }
+        },
+        {
+            "aks_docker_bridge_cidr": {
+                "default": "172.17.0.1/16",
+                "description": "CIDR notation IP for Docker bridge."
+            }
+        },
+        {
+            "aks_service_cidr": {
+                "default": "10.0.0.0/16",
+                "description": "CIDR notation IP range from which to assign service cluster IPs"
+            }
+        }
+    ]
+}

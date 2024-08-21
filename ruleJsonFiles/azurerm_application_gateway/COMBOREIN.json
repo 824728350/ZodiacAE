@@ -1,0 +1,56 @@
+{
+    "COMBO####EnumComboUpThenCountChild####azurerm_public_ip.sku == Enum####azurerm_application_gateway.PLACEHOLDER == String####azurerm_public_ip.PLACEHOLDER == String": [
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_public_ip.sku == Standard####azurerm_application_gateway.PLACEHOLDER == String####azurerm_public_ip.PLACEHOLDER == String",
+            "If the value of azurerm_public_ip.sku is Standard, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_public_ip? Please answer with an integer",
+            null
+        ],
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_public_ip.sku == Basic####azurerm_application_gateway.PLACEHOLDER == String####azurerm_public_ip.PLACEHOLDER == String",
+            "If the value of azurerm_public_ip.sku is Basic, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_public_ip? Please answer with an integer",
+            null
+        ]
+    ],
+    "COMBO####EnumComboUpThenCountChild####azurerm_subnet.name == Enum####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String": [
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_subnet.name == WebServicesSubnet####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String",
+            "If the value of azurerm_subnet.name is WebServicesSubnet, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_subnet? Please answer with an integer",
+            null
+        ],
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_subnet.name == DefaultSubnet####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String",
+            "If the value of azurerm_subnet.name is DefaultSubnet, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_subnet? Please answer with an integer",
+            null
+        ],
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_subnet.name == RouteServerSubnet####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String",
+            "If the value of azurerm_subnet.name is RouteServerSubnet, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_subnet? Please answer with an integer",
+            null
+        ],
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_subnet.name == AzureFirewallSubnet####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String",
+            "If the value of azurerm_subnet.name is AzureFirewallSubnet, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_subnet? Please answer with an integer",
+            null
+        ],
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_subnet.name == AzureBastionSubnet####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String",
+            "If the value of azurerm_subnet.name is AzureBastionSubnet, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_subnet? Please answer with an integer",
+            null
+        ],
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_subnet.name == ApplicationGatewaySubnet####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String",
+            "If the value of azurerm_subnet.name is ApplicationGatewaySubnet, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_subnet? Please answer with an integer",
+            null
+        ],
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_subnet.name == AzureFirewallManagementSubnet####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String",
+            "If the value of azurerm_subnet.name is AzureFirewallManagementSubnet, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_subnet? Please answer with an integer",
+            null
+        ],
+        [
+            "COMBO####EnumComboUpThenAggChild####azurerm_subnet.name == GatewaySubnet####azurerm_application_gateway.PLACEHOLDER == String####azurerm_subnet.PLACEHOLDER == String",
+            "If the value of azurerm_subnet.name is GatewaySubnet, then what is the maximum amount of azurerm_application_gateway that could depend on azurerm_subnet? Please answer with an integer",
+            null
+        ]
+    ]
+}

@@ -1,0 +1,397 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.appGateway",
+              "depends_on": [
+                "azurerm_virtual_network.vnetk8s"
+              ],
+              "expressions": {
+                "backend_address_pool": [
+                  {
+                    "ip_addresses": {
+                      "references": [
+                        "azurerm_public_ip.staticIP.ip_address",
+                        "azurerm_public_ip.staticIP"
+                      ]
+                    },
+                    "name": {
+                      "constant_value": "BackendPool"
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "name": {
+                      "constant_value": "backendSetting1"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "request_timeout": {
+                      "constant_value": 20
+                    }
+                  }
+                ],
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "public_ip_address_id": {
+                      "references": [
+                        "azurerm_public_ip.staticIP2.id",
+                        "azurerm_public_ip.staticIP2"
+                      ]
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "constant_value": "port_80"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "appGatewayIpConfig"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "azurerm_subnet.gwSubnet.id",
+                        "azurerm_subnet.gwSubnet"
+                      ]
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appGwPublicFrontendIpIPv4"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "port_80"
+                    },
+                    "name": {
+                      "constant_value": "listener1"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.location",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                },
+                "name": {
+                  "constant_value": "appGateway"
+                },
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "BackendPool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "backendSetting1"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "listener1"
+                    },
+                    "name": {
+                      "constant_value": "rule1"
+                    },
+                    "priority": {
+                      "constant_value": 1
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.name",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "constant_value": 1
+                    },
+                    "name": {
+                      "constant_value": "Standard_v2"
+                    },
+                    "tier": {
+                      "constant_value": "Standard_v2"
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "appGateway",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "azurerm_kubernetes_cluster.k8s",
+              "depends_on": [
+                "azurerm_virtual_network.vnetk8s"
+              ],
+              "expressions": {
+                "default_node_pool": [
+                  {
+                    "name": {
+                      "constant_value": "agentpool"
+                    },
+                    "node_count": {
+                      "constant_value": 2
+                    },
+                    "vm_size": {
+                      "constant_value": "Standard_b2ms"
+                    }
+                  }
+                ],
+                "dns_prefix": {
+                  "constant_value": "k8s"
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.location",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                },
+                "name": {
+                  "constant_value": "k8s"
+                },
+                "network_profile": [
+                  {
+                    "dns_service_ip": {
+                      "constant_value": "10.0.3.10"
+                    },
+                    "load_balancer_sku": {
+                      "constant_value": "standard"
+                    },
+                    "network_plugin": {
+                      "constant_value": "azure"
+                    },
+                    "service_cidr": {
+                      "constant_value": "10.0.3.0/24"
+                    }
+                  }
+                ],
+                "oidc_issuer_enabled": {
+                  "constant_value": true
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.name",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                },
+                "sku_tier": {
+                  "constant_value": "Free"
+                },
+                "workload_identity_enabled": {
+                  "constant_value": true
+                }
+              },
+              "mode": "managed",
+              "name": "k8s",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_kubernetes_cluster"
+            },
+            {
+              "address": "azurerm_public_ip.staticIP",
+              "depends_on": [
+                "azurerm_kubernetes_cluster.k8s"
+              ],
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.location",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                },
+                "name": {
+                  "constant_value": "static_ip"
+                },
+                "resource_group_name": {
+                  "constant_value": "MC_rg-aleksandar-ilicic2_k8s_northeurope"
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                }
+              },
+              "mode": "managed",
+              "name": "staticIP",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_public_ip.staticIP2",
+              "depends_on": [
+                "azurerm_virtual_network.vnetk8s"
+              ],
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.location",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                },
+                "name": {
+                  "constant_value": "static_ip2"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.name",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                },
+                "zones": {
+                  "constant_value": [
+                    "1",
+                    "2",
+                    "3"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "staticIP2",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_resource_group.rg-aleksandar-ilicic",
+              "expressions": {
+                "location": {
+                  "constant_value": "northeurope"
+                },
+                "name": {
+                  "constant_value": "rg-aleksandar-ilicic2"
+                }
+              },
+              "mode": "managed",
+              "name": "rg-aleksandar-ilicic",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_subnet.gwSubnet",
+              "depends_on": [
+                "azurerm_virtual_network.vnetk8s"
+              ],
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.1.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "gwSubnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.name",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.vnetk8s.name",
+                    "azurerm_virtual_network.vnetk8s"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "gwSubnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_virtual_network.vnetk8s",
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.0.0.0/16"
+                  ]
+                },
+                "dns_servers": {
+                  "constant_value": [
+                    "10.0.0.4",
+                    "10.0.0.5"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.location",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                },
+                "name": {
+                  "constant_value": "vnetk8s"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg-aleksandar-ilicic.name",
+                    "azurerm_resource_group.rg-aleksandar-ilicic"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "vnetk8s",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

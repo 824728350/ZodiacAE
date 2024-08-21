@@ -1,0 +1,19 @@
+{
+    "variable": [
+        {
+            "location": {
+                "default": "westeurope"
+            }
+        },
+        {
+            "zones": {
+                "default": []
+            }
+        },
+        {
+            "ssh-source-address": {
+                "default": "*"
+            }
+        }
+    ]
+}

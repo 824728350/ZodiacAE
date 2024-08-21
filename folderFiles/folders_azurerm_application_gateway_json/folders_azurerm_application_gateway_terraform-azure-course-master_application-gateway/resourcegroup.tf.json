@@ -1,0 +1,23 @@
+{
+    "resource": [
+        {
+            "random_string": {
+                "random-name": {
+                    "length": 10,
+                    "lower": true,
+                    "numeric": true,
+                    "special": false,
+                    "upper": false
+                }
+            }
+        },
+        {
+            "azurerm_resource_group": {
+                "demo": {
+                    "location": "${var.location}",
+                    "name": "application-gateway-demo-${random_string.random-name.result}"
+                }
+            }
+        }
+    ]
+}

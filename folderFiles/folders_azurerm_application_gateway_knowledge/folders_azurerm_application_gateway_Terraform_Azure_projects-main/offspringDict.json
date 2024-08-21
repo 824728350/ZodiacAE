@@ -1,0 +1,94 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.network": [
+              "azurerm_application_gateway.network"
+            ],
+            "azurerm_key_vault.example": [
+              "azurerm_key_vault.example"
+            ],
+            "azurerm_key_vault_access_policy.appag_key_vault_access_policy": [
+              "azurerm_key_vault_access_policy.appag_key_vault_access_policy"
+            ],
+            "azurerm_key_vault_certificate.example": [
+              "azurerm_key_vault_certificate.example"
+            ],
+            "azurerm_network_interface.app_interface": [
+              "azurerm_network_interface.app_interface",
+              "azurerm_windows_virtual_machine.app_vm"
+            ],
+            "azurerm_public_ip.app_public_ip": [
+              "azurerm_network_interface.app_interface",
+              "azurerm_public_ip.app_public_ip",
+              "azurerm_windows_virtual_machine.app_vm"
+            ],
+            "azurerm_public_ip.example": [
+              "azurerm_application_gateway.network",
+              "azurerm_public_ip.example"
+            ],
+            "azurerm_resource_group.example": [
+              "azurerm_application_gateway.network",
+              "azurerm_network_interface.app_interface",
+              "azurerm_public_ip.app_public_ip",
+              "azurerm_public_ip.example",
+              "azurerm_resource_group.example",
+              "azurerm_subnet.backend",
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.example",
+              "azurerm_windows_virtual_machine.app_vm"
+            ],
+            "azurerm_role_assignment.assigned": [
+              "azurerm_role_assignment.assigned"
+            ],
+            "azurerm_role_assignment.example": [
+              "azurerm_role_assignment.example"
+            ],
+            "azurerm_role_assignment.kv_user_assigned": [
+              "azurerm_role_assignment.kv_user_assigned"
+            ],
+            "azurerm_subnet.backend": [
+              "azurerm_network_interface.app_interface",
+              "azurerm_subnet.backend",
+              "azurerm_windows_virtual_machine.app_vm"
+            ],
+            "azurerm_subnet.frontend": [
+              "azurerm_application_gateway.network",
+              "azurerm_subnet.frontend"
+            ],
+            "azurerm_user_assigned_identity.user_managed_identity": [
+              "azurerm_user_assigned_identity.user_managed_identity"
+            ],
+            "azurerm_virtual_network.example": [
+              "azurerm_application_gateway.network",
+              "azurerm_network_interface.app_interface",
+              "azurerm_subnet.backend",
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.example",
+              "azurerm_windows_virtual_machine.app_vm"
+            ],
+            "azurerm_windows_virtual_machine.app_vm": [
+              "azurerm_windows_virtual_machine.app_vm"
+            ],
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ],
+            "data.azurerm_client_config.example": [
+              "data.azurerm_client_config.example"
+            ],
+            "data.azurerm_subscription.primary": [
+              "data.azurerm_subscription.primary"
+            ]
+          },
+          "text": "data.assemble.offspringDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

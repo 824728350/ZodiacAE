@@ -1,0 +1,41 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_network_interface.app_interface",
+              "azurerm_public_ip.app_public_ip"
+            ],
+            [
+              "azurerm_network_interface.app_interface",
+              "azurerm_subnet.backend"
+            ],
+            [
+              "azurerm_network_interface.app_interface",
+              "azurerm_virtual_network.example"
+            ],
+            [
+              "azurerm_public_ip.app_public_ip",
+              "azurerm_resource_group.example"
+            ],
+            [
+              "azurerm_user_assigned_identity.user_managed_identity",
+              "azurerm_resource_group.example"
+            ],
+            [
+              "azurerm_windows_virtual_machine.app_vm",
+              "azurerm_network_interface.app_interface"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

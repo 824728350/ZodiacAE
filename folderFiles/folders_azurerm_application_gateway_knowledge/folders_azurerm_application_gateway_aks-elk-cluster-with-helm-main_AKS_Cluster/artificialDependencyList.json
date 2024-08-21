@@ -1,0 +1,33 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_role_assignment.aks_appgw_identity_assignment",
+              "azurerm_application_gateway.app_gw"
+            ],
+            [
+              "azurerm_role_assignment.aks_appgw_identity_assignment",
+              "azurerm_kubernetes_cluster.this"
+            ],
+            [
+              "azurerm_role_assignment.aks_identity_assignment",
+              "azurerm_application_gateway.app_gw"
+            ],
+            [
+              "azurerm_role_assignment.aks_identity_assignment",
+              "azurerm_kubernetes_cluster.this"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

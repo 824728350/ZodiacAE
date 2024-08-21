@@ -1,0 +1,413 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.network": [
+              "azurerm_application_gateway.network",
+              "azurerm_private_endpoint.example"
+            ],
+            "azurerm_private_endpoint.example": [
+              "azurerm_private_endpoint.example"
+            ],
+            "azurerm_public_ip.appgw": [
+              "azurerm_application_gateway.network",
+              "azurerm_private_endpoint.example",
+              "azurerm_public_ip.appgw"
+            ],
+            "azurerm_resource_group.example": [
+              "azurerm_application_gateway.network",
+              "azurerm_private_endpoint.example",
+              "azurerm_public_ip.appgw",
+              "azurerm_resource_group.example",
+              "azurerm_route_table.appgw",
+              "azurerm_route_table.azfw",
+              "azurerm_route_table.default",
+              "azurerm_subnet.appgw",
+              "azurerm_subnet.azfw",
+              "azurerm_subnet.bastion",
+              "azurerm_subnet.default",
+              "azurerm_subnet.default2",
+              "azurerm_subnet.pls",
+              "azurerm_subnet_route_table_association.appgw",
+              "azurerm_subnet_route_table_association.azfw",
+              "azurerm_subnet_route_table_association.default",
+              "azurerm_virtual_network.example",
+              "module.azfw.azurerm_firewall.example",
+              "module.azfw.azurerm_public_ip.example",
+              "module.bastion.azurerm_bastion_host.bastion",
+              "module.bastion.azurerm_network_security_group.bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-azurecloud-out",
+              "module.bastion.azurerm_network_security_rule.bastion-bastioncommunication-out",
+              "module.bastion.azurerm_network_security_rule.bastion-gsi-out",
+              "module.bastion.azurerm_network_security_rule.bastion-gwm",
+              "module.bastion.azurerm_network_security_rule.bastion-hc",
+              "module.bastion.azurerm_network_security_rule.bastion-https",
+              "module.bastion.azurerm_network_security_rule.bastion-lb",
+              "module.bastion.azurerm_network_security_rule.bastion-sshrdp-out",
+              "module.bastion.azurerm_public_ip.bastion",
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.vm_appgw.azurerm_linux_virtual_machine.linux",
+              "module.vm_appgw.azurerm_network_interface.nic",
+              "module.vm_appgw.azurerm_network_interface_security_group_association.example",
+              "module.vm_appgw.azurerm_network_security_group.nsg",
+              "module.vm_appgw.azurerm_network_security_rule.nsg-rule",
+              "module.vm_appgw.azurerm_public_ip.pip"
+            ],
+            "azurerm_resource_group.frontend": [
+              "azurerm_private_endpoint.example",
+              "azurerm_resource_group.frontend",
+              "azurerm_route_table.vm",
+              "azurerm_subnet.fe_azfw",
+              "azurerm_subnet.fe_bastion",
+              "azurerm_subnet.fe_vm",
+              "azurerm_subnet.pe",
+              "azurerm_subnet_route_table_association.fe_vm",
+              "azurerm_virtual_network.frontend",
+              "module.fe_azfw.azurerm_firewall.example",
+              "module.fe_bastion.azurerm_bastion_host.bastion",
+              "module.fe_bastion.azurerm_network_security_group.bastion",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-azurecloud-out",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-bastioncommunication-out",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-gsi-out",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-gwm",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-hc",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-https",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-lb",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-sshrdp-out",
+              "module.fe_bastion.azurerm_public_ip.bastion",
+              "module.fe_bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.webserver.azurerm_linux_virtual_machine.linux",
+              "module.webserver.azurerm_network_interface.nic",
+              "module.webserver.azurerm_network_interface_security_group_association.example",
+              "module.webserver.azurerm_network_security_group.nsg",
+              "module.webserver.azurerm_network_security_rule.nsg-rule",
+              "module.webserver.azurerm_public_ip.pip"
+            ],
+            "azurerm_route_table.appgw": [
+              "azurerm_route_table.appgw",
+              "azurerm_subnet_route_table_association.appgw"
+            ],
+            "azurerm_route_table.azfw": [
+              "azurerm_route_table.azfw",
+              "azurerm_subnet_route_table_association.azfw"
+            ],
+            "azurerm_route_table.default": [
+              "azurerm_route_table.default",
+              "azurerm_subnet_route_table_association.default"
+            ],
+            "azurerm_route_table.vm": [
+              "azurerm_route_table.vm",
+              "azurerm_subnet_route_table_association.fe_vm"
+            ],
+            "azurerm_subnet.appgw": [
+              "azurerm_application_gateway.network",
+              "azurerm_private_endpoint.example",
+              "azurerm_subnet.appgw",
+              "azurerm_subnet_route_table_association.appgw"
+            ],
+            "azurerm_subnet.azfw": [
+              "azurerm_subnet.azfw",
+              "azurerm_subnet_route_table_association.azfw",
+              "module.azfw.azurerm_firewall.example"
+            ],
+            "azurerm_subnet.bastion": [
+              "azurerm_subnet.bastion",
+              "module.bastion.azurerm_bastion_host.bastion",
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion"
+            ],
+            "azurerm_subnet.default": [
+              "azurerm_subnet.default",
+              "azurerm_subnet_route_table_association.default",
+              "module.vm_appgw.azurerm_linux_virtual_machine.linux",
+              "module.vm_appgw.azurerm_network_interface.nic",
+              "module.vm_appgw.azurerm_network_interface_security_group_association.example"
+            ],
+            "azurerm_subnet.default2": [
+              "azurerm_subnet.default2"
+            ],
+            "azurerm_subnet.fe_azfw": [
+              "azurerm_subnet.fe_azfw",
+              "module.fe_azfw.azurerm_firewall.example"
+            ],
+            "azurerm_subnet.fe_bastion": [
+              "azurerm_subnet.fe_bastion",
+              "module.fe_bastion.azurerm_bastion_host.bastion",
+              "module.fe_bastion.azurerm_subnet_network_security_group_association.hub-bastion"
+            ],
+            "azurerm_subnet.fe_vm": [
+              "azurerm_subnet.fe_vm",
+              "azurerm_subnet_route_table_association.fe_vm",
+              "module.webserver.azurerm_linux_virtual_machine.linux",
+              "module.webserver.azurerm_network_interface.nic",
+              "module.webserver.azurerm_network_interface_security_group_association.example"
+            ],
+            "azurerm_subnet.pe": [
+              "azurerm_private_endpoint.example",
+              "azurerm_subnet.pe"
+            ],
+            "azurerm_subnet.pls": [
+              "azurerm_application_gateway.network",
+              "azurerm_private_endpoint.example",
+              "azurerm_subnet.pls"
+            ],
+            "azurerm_subnet_route_table_association.appgw": [
+              "azurerm_subnet_route_table_association.appgw"
+            ],
+            "azurerm_subnet_route_table_association.azfw": [
+              "azurerm_subnet_route_table_association.azfw"
+            ],
+            "azurerm_subnet_route_table_association.default": [
+              "azurerm_subnet_route_table_association.default"
+            ],
+            "azurerm_subnet_route_table_association.fe_vm": [
+              "azurerm_subnet_route_table_association.fe_vm"
+            ],
+            "azurerm_virtual_network.example": [
+              "azurerm_application_gateway.network",
+              "azurerm_private_endpoint.example",
+              "azurerm_subnet.appgw",
+              "azurerm_subnet.azfw",
+              "azurerm_subnet.bastion",
+              "azurerm_subnet.default",
+              "azurerm_subnet.default2",
+              "azurerm_subnet.pls",
+              "azurerm_subnet_route_table_association.appgw",
+              "azurerm_subnet_route_table_association.azfw",
+              "azurerm_subnet_route_table_association.default",
+              "azurerm_virtual_network.example",
+              "module.azfw.azurerm_firewall.example",
+              "module.bastion.azurerm_bastion_host.bastion",
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.vm_appgw.azurerm_linux_virtual_machine.linux",
+              "module.vm_appgw.azurerm_network_interface.nic",
+              "module.vm_appgw.azurerm_network_interface_security_group_association.example"
+            ],
+            "azurerm_virtual_network.frontend": [
+              "azurerm_private_endpoint.example",
+              "azurerm_subnet.fe_azfw",
+              "azurerm_subnet.fe_bastion",
+              "azurerm_subnet.fe_vm",
+              "azurerm_subnet.pe",
+              "azurerm_subnet_route_table_association.fe_vm",
+              "azurerm_virtual_network.frontend",
+              "module.fe_azfw.azurerm_firewall.example",
+              "module.fe_bastion.azurerm_bastion_host.bastion",
+              "module.fe_bastion.azurerm_subnet_network_security_group_association.hub-bastion",
+              "module.webserver.azurerm_linux_virtual_machine.linux",
+              "module.webserver.azurerm_network_interface.nic",
+              "module.webserver.azurerm_network_interface_security_group_association.example"
+            ],
+            "data.azurerm_monitor_diagnostic_categories.appgw_diag_category": [
+              "data.azurerm_monitor_diagnostic_categories.appgw_diag_category"
+            ],
+            "data.azurerm_monitor_diagnostic_categories.azfw_diag_category": [
+              "data.azurerm_monitor_diagnostic_categories.azfw_diag_category"
+            ],
+            "module.afw_diag.azurerm_monitor_diagnostic_setting.diagnostic_logs": [
+              "module.afw_diag.azurerm_monitor_diagnostic_setting.diagnostic_logs"
+            ],
+            "module.appgw_diag.azurerm_monitor_diagnostic_setting.diagnostic_logs": [
+              "module.appgw_diag.azurerm_monitor_diagnostic_setting.diagnostic_logs"
+            ],
+            "module.azfw.azurerm_firewall.example": [
+              "module.azfw.azurerm_firewall.example"
+            ],
+            "module.azfw.azurerm_firewall_policy.example": [
+              "module.azfw.azurerm_firewall_policy.example"
+            ],
+            "module.azfw.azurerm_firewall_policy_rule_collection_group.example": [
+              "module.azfw.azurerm_firewall_policy_rule_collection_group.example"
+            ],
+            "module.azfw.azurerm_public_ip.example": [
+              "module.azfw.azurerm_firewall.example",
+              "module.azfw.azurerm_public_ip.example"
+            ],
+            "module.azfw_diag.azurerm_monitor_diagnostic_setting.diagnostic_logs": [
+              "module.azfw_diag.azurerm_monitor_diagnostic_setting.diagnostic_logs"
+            ],
+            "module.bastion.azurerm_bastion_host.bastion": [
+              "module.bastion.azurerm_bastion_host.bastion"
+            ],
+            "module.bastion.azurerm_network_security_group.bastion": [
+              "module.bastion.azurerm_network_security_group.bastion",
+              "module.bastion.azurerm_network_security_rule.bastion-azurecloud-out",
+              "module.bastion.azurerm_network_security_rule.bastion-bastioncommunication-out",
+              "module.bastion.azurerm_network_security_rule.bastion-gsi-out",
+              "module.bastion.azurerm_network_security_rule.bastion-gwm",
+              "module.bastion.azurerm_network_security_rule.bastion-hc",
+              "module.bastion.azurerm_network_security_rule.bastion-https",
+              "module.bastion.azurerm_network_security_rule.bastion-lb",
+              "module.bastion.azurerm_network_security_rule.bastion-sshrdp-out",
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion"
+            ],
+            "module.bastion.azurerm_network_security_rule.bastion-azurecloud-out": [
+              "module.bastion.azurerm_network_security_rule.bastion-azurecloud-out"
+            ],
+            "module.bastion.azurerm_network_security_rule.bastion-bastioncommunication-out": [
+              "module.bastion.azurerm_network_security_rule.bastion-bastioncommunication-out"
+            ],
+            "module.bastion.azurerm_network_security_rule.bastion-gsi-out": [
+              "module.bastion.azurerm_network_security_rule.bastion-gsi-out"
+            ],
+            "module.bastion.azurerm_network_security_rule.bastion-gwm": [
+              "module.bastion.azurerm_network_security_rule.bastion-gwm"
+            ],
+            "module.bastion.azurerm_network_security_rule.bastion-hc": [
+              "module.bastion.azurerm_network_security_rule.bastion-hc"
+            ],
+            "module.bastion.azurerm_network_security_rule.bastion-https": [
+              "module.bastion.azurerm_network_security_rule.bastion-https"
+            ],
+            "module.bastion.azurerm_network_security_rule.bastion-lb": [
+              "module.bastion.azurerm_network_security_rule.bastion-lb"
+            ],
+            "module.bastion.azurerm_network_security_rule.bastion-sshrdp-out": [
+              "module.bastion.azurerm_network_security_rule.bastion-sshrdp-out"
+            ],
+            "module.bastion.azurerm_public_ip.bastion": [
+              "module.bastion.azurerm_bastion_host.bastion",
+              "module.bastion.azurerm_public_ip.bastion"
+            ],
+            "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion": [
+              "module.bastion.azurerm_subnet_network_security_group_association.hub-bastion"
+            ],
+            "module.fe_azfw.azurerm_firewall.example": [
+              "module.fe_azfw.azurerm_firewall.example"
+            ],
+            "module.fe_azfw.azurerm_firewall_policy.example": [
+              "module.fe_azfw.azurerm_firewall_policy.example"
+            ],
+            "module.fe_azfw.azurerm_firewall_policy_rule_collection_group.example": [
+              "module.fe_azfw.azurerm_firewall_policy_rule_collection_group.example"
+            ],
+            "module.fe_azfw.azurerm_public_ip.example": [
+              "module.fe_azfw.azurerm_firewall.example",
+              "module.fe_azfw.azurerm_public_ip.example"
+            ],
+            "module.fe_bastion.azurerm_bastion_host.bastion": [
+              "module.fe_bastion.azurerm_bastion_host.bastion"
+            ],
+            "module.fe_bastion.azurerm_network_security_group.bastion": [
+              "module.fe_bastion.azurerm_network_security_group.bastion",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-azurecloud-out",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-bastioncommunication-out",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-gsi-out",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-gwm",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-hc",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-https",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-lb",
+              "module.fe_bastion.azurerm_network_security_rule.bastion-sshrdp-out",
+              "module.fe_bastion.azurerm_subnet_network_security_group_association.hub-bastion"
+            ],
+            "module.fe_bastion.azurerm_network_security_rule.bastion-azurecloud-out": [
+              "module.fe_bastion.azurerm_network_security_rule.bastion-azurecloud-out"
+            ],
+            "module.fe_bastion.azurerm_network_security_rule.bastion-bastioncommunication-out": [
+              "module.fe_bastion.azurerm_network_security_rule.bastion-bastioncommunication-out"
+            ],
+            "module.fe_bastion.azurerm_network_security_rule.bastion-gsi-out": [
+              "module.fe_bastion.azurerm_network_security_rule.bastion-gsi-out"
+            ],
+            "module.fe_bastion.azurerm_network_security_rule.bastion-gwm": [
+              "module.fe_bastion.azurerm_network_security_rule.bastion-gwm"
+            ],
+            "module.fe_bastion.azurerm_network_security_rule.bastion-hc": [
+              "module.fe_bastion.azurerm_network_security_rule.bastion-hc"
+            ],
+            "module.fe_bastion.azurerm_network_security_rule.bastion-https": [
+              "module.fe_bastion.azurerm_network_security_rule.bastion-https"
+            ],
+            "module.fe_bastion.azurerm_network_security_rule.bastion-lb": [
+              "module.fe_bastion.azurerm_network_security_rule.bastion-lb"
+            ],
+            "module.fe_bastion.azurerm_network_security_rule.bastion-sshrdp-out": [
+              "module.fe_bastion.azurerm_network_security_rule.bastion-sshrdp-out"
+            ],
+            "module.fe_bastion.azurerm_public_ip.bastion": [
+              "module.fe_bastion.azurerm_bastion_host.bastion",
+              "module.fe_bastion.azurerm_public_ip.bastion"
+            ],
+            "module.fe_bastion.azurerm_subnet_network_security_group_association.hub-bastion": [
+              "module.fe_bastion.azurerm_subnet_network_security_group_association.hub-bastion"
+            ],
+            "module.la.azurerm_log_analytics_solution.container": [
+              "module.la.azurerm_log_analytics_solution.container"
+            ],
+            "module.la.azurerm_log_analytics_solution.vms": [
+              "module.la.azurerm_log_analytics_solution.vms"
+            ],
+            "module.la.azurerm_log_analytics_workspace.log_analytics": [
+              "module.la.azurerm_log_analytics_workspace.log_analytics"
+            ],
+            "module.vm_appgw.azurerm_dev_test_global_vm_shutdown_schedule.autoshutdown": [
+              "module.vm_appgw.azurerm_dev_test_global_vm_shutdown_schedule.autoshutdown"
+            ],
+            "module.vm_appgw.azurerm_linux_virtual_machine.linux": [
+              "module.vm_appgw.azurerm_linux_virtual_machine.linux"
+            ],
+            "module.vm_appgw.azurerm_network_interface.nic": [
+              "module.vm_appgw.azurerm_linux_virtual_machine.linux",
+              "module.vm_appgw.azurerm_network_interface.nic",
+              "module.vm_appgw.azurerm_network_interface_security_group_association.example"
+            ],
+            "module.vm_appgw.azurerm_network_interface_security_group_association.example": [
+              "module.vm_appgw.azurerm_network_interface_security_group_association.example"
+            ],
+            "module.vm_appgw.azurerm_network_security_group.nsg": [
+              "module.vm_appgw.azurerm_network_interface_security_group_association.example",
+              "module.vm_appgw.azurerm_network_security_group.nsg",
+              "module.vm_appgw.azurerm_network_security_rule.nsg-rule"
+            ],
+            "module.vm_appgw.azurerm_network_security_rule.nsg-rule": [
+              "module.vm_appgw.azurerm_network_security_rule.nsg-rule"
+            ],
+            "module.vm_appgw.azurerm_public_ip.pip": [
+              "module.vm_appgw.azurerm_linux_virtual_machine.linux",
+              "module.vm_appgw.azurerm_network_interface.nic",
+              "module.vm_appgw.azurerm_network_interface_security_group_association.example",
+              "module.vm_appgw.azurerm_public_ip.pip"
+            ],
+            "module.webserver.azurerm_dev_test_global_vm_shutdown_schedule.autoshutdown": [
+              "module.webserver.azurerm_dev_test_global_vm_shutdown_schedule.autoshutdown"
+            ],
+            "module.webserver.azurerm_linux_virtual_machine.linux": [
+              "module.webserver.azurerm_linux_virtual_machine.linux"
+            ],
+            "module.webserver.azurerm_network_interface.nic": [
+              "module.webserver.azurerm_linux_virtual_machine.linux",
+              "module.webserver.azurerm_network_interface.nic",
+              "module.webserver.azurerm_network_interface_security_group_association.example"
+            ],
+            "module.webserver.azurerm_network_interface_security_group_association.example": [
+              "module.webserver.azurerm_network_interface_security_group_association.example"
+            ],
+            "module.webserver.azurerm_network_security_group.nsg": [
+              "module.webserver.azurerm_network_interface_security_group_association.example",
+              "module.webserver.azurerm_network_security_group.nsg",
+              "module.webserver.azurerm_network_security_rule.nsg-rule"
+            ],
+            "module.webserver.azurerm_network_security_rule.nsg-rule": [
+              "module.webserver.azurerm_network_security_rule.nsg-rule"
+            ],
+            "module.webserver.azurerm_public_ip.pip": [
+              "module.webserver.azurerm_linux_virtual_machine.linux",
+              "module.webserver.azurerm_network_interface.nic",
+              "module.webserver.azurerm_network_interface_security_group_association.example",
+              "module.webserver.azurerm_public_ip.pip"
+            ],
+            "random_string.uniqstr": [
+              "random_string.uniqstr"
+            ]
+          },
+          "text": "data.assemble.offspringDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

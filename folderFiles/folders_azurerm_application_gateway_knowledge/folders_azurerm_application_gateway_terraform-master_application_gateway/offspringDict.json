@@ -1,0 +1,114 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.network": [
+              "azurerm_application_gateway.network"
+            ],
+            "azurerm_linux_virtual_machine.vm1": [
+              "azurerm_linux_virtual_machine.vm1"
+            ],
+            "azurerm_linux_virtual_machine.vm2": [
+              "azurerm_linux_virtual_machine.vm2"
+            ],
+            "azurerm_network_interface.nic1": [
+              "azurerm_linux_virtual_machine.vm1",
+              "azurerm_network_interface.nic1",
+              "azurerm_network_interface_security_group_association.sg"
+            ],
+            "azurerm_network_interface.nic2": [
+              "azurerm_linux_virtual_machine.vm2",
+              "azurerm_network_interface.nic2",
+              "azurerm_network_interface_security_group_association.sg1"
+            ],
+            "azurerm_network_interface_security_group_association.sg": [
+              "azurerm_network_interface_security_group_association.sg"
+            ],
+            "azurerm_network_interface_security_group_association.sg1": [
+              "azurerm_network_interface_security_group_association.sg1"
+            ],
+            "azurerm_network_security_group.nsg1": [
+              "azurerm_network_interface_security_group_association.sg",
+              "azurerm_network_security_group.nsg1"
+            ],
+            "azurerm_network_security_group.nsg2": [
+              "azurerm_network_interface_security_group_association.sg1",
+              "azurerm_network_security_group.nsg2"
+            ],
+            "azurerm_public_ip.gatwayip": [
+              "azurerm_application_gateway.network",
+              "azurerm_public_ip.gatwayip"
+            ],
+            "azurerm_public_ip.vm1pubip": [
+              "azurerm_linux_virtual_machine.vm2",
+              "azurerm_network_interface.nic2",
+              "azurerm_network_interface_security_group_association.sg1",
+              "azurerm_public_ip.vm1pubip"
+            ],
+            "azurerm_public_ip.vmpubip": [
+              "azurerm_linux_virtual_machine.vm1",
+              "azurerm_network_interface.nic1",
+              "azurerm_network_interface_security_group_association.sg",
+              "azurerm_public_ip.vmpubip"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_application_gateway.network",
+              "azurerm_linux_virtual_machine.vm1",
+              "azurerm_linux_virtual_machine.vm2",
+              "azurerm_network_interface.nic1",
+              "azurerm_network_interface.nic2",
+              "azurerm_network_interface_security_group_association.sg",
+              "azurerm_network_interface_security_group_association.sg1",
+              "azurerm_network_security_group.nsg1",
+              "azurerm_network_security_group.nsg2",
+              "azurerm_public_ip.gatwayip",
+              "azurerm_public_ip.vm1pubip",
+              "azurerm_public_ip.vmpubip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.appsubnet",
+              "azurerm_subnet.subnetapp",
+              "azurerm_subnet.subnetvm",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.appsubnet": [
+              "azurerm_subnet.appsubnet"
+            ],
+            "azurerm_subnet.subnetapp": [
+              "azurerm_application_gateway.network",
+              "azurerm_subnet.subnetapp"
+            ],
+            "azurerm_subnet.subnetvm": [
+              "azurerm_linux_virtual_machine.vm1",
+              "azurerm_linux_virtual_machine.vm2",
+              "azurerm_network_interface.nic1",
+              "azurerm_network_interface.nic2",
+              "azurerm_network_interface_security_group_association.sg",
+              "azurerm_network_interface_security_group_association.sg1",
+              "azurerm_subnet.subnetvm"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_application_gateway.network",
+              "azurerm_linux_virtual_machine.vm1",
+              "azurerm_linux_virtual_machine.vm2",
+              "azurerm_network_interface.nic1",
+              "azurerm_network_interface.nic2",
+              "azurerm_network_interface_security_group_association.sg",
+              "azurerm_network_interface_security_group_association.sg1",
+              "azurerm_subnet.appsubnet",
+              "azurerm_subnet.subnetapp",
+              "azurerm_subnet.subnetvm",
+              "azurerm_virtual_network.vnet"
+            ]
+          },
+          "text": "data.assemble.offspringDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

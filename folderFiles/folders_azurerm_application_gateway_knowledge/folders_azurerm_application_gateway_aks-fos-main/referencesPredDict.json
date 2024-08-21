@@ -1,0 +1,57 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgw": [],
+            "azurerm_public_ip.pip": [],
+            "azurerm_resource_group.main": [],
+            "azurerm_subnet.appgw": [],
+            "azurerm_subnet.test": [],
+            "azurerm_virtual_network.test": [],
+            "data.kubernetes_ingress_v1.ing": [],
+            "kubernetes_ingress_v1.ing": [],
+            "kubernetes_namespace_v1.example": [],
+            "kubernetes_pod.aspnet_app": [],
+            "kubernetes_service.svc": [],
+            "module.aks.azapi_update_resource.aks_cluster_http_proxy_config_no_proxy": [],
+            "module.aks.azapi_update_resource.aks_cluster_post_create": [],
+            "module.aks.azurerm_kubernetes_cluster.main": [],
+            "module.aks.azurerm_kubernetes_cluster_node_pool.node_pool_create_after_destroy": [],
+            "module.aks.azurerm_kubernetes_cluster_node_pool.node_pool_create_before_destroy": [],
+            "module.aks.azurerm_log_analytics_solution.main": [],
+            "module.aks.azurerm_log_analytics_workspace.main": [],
+            "module.aks.azurerm_role_assignment.acr": [],
+            "module.aks.azurerm_role_assignment.application_gateway_byo_vnet_network_contributor": [],
+            "module.aks.azurerm_role_assignment.application_gateway_existing_vnet_network_contributor": [],
+            "module.aks.azurerm_role_assignment.application_gateway_resource_group_reader": [],
+            "module.aks.azurerm_role_assignment.existing_application_gateway_contributor": [],
+            "module.aks.azurerm_role_assignment.network_contributor": [],
+            "module.aks.azurerm_role_assignment.network_contributor_on_subnet": [],
+            "module.aks.data.azurerm_client_config.this": [],
+            "module.aks.data.azurerm_log_analytics_workspace.main": [],
+            "module.aks.data.azurerm_resource_group.aks_rg": [],
+            "module.aks.data.azurerm_resource_group.ingress_gw": [],
+            "module.aks.data.azurerm_resource_group.main": [],
+            "module.aks.data.azurerm_user_assigned_identity.cluster_identity": [],
+            "module.aks.data.azurerm_virtual_network.application_gateway_vnet": [],
+            "module.aks.null_resource.http_proxy_config_no_proxy_keeper": [],
+            "module.aks.null_resource.kubernetes_cluster_name_keeper": [],
+            "module.aks.null_resource.kubernetes_version_keeper": [],
+            "module.aks.null_resource.pool_name_keeper": [],
+            "module.aks.tls_private_key.ssh": [],
+            "random_id.name": [],
+            "random_id.prefix": [],
+            "time_sleep.wait_for_ingress": []
+          },
+          "text": "data.assemble.referencesPredDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

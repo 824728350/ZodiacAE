@@ -1,0 +1,41 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_application_gateway.network",
+              "azurerm_public_ip.example",
+              "frontend_ip_configuration.0.public_ip_address_id",
+              "id",
+              "frontend_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_application_gateway.network",
+              "azurerm_subnet.example",
+              "gateway_ip_configuration.0.subnet_id",
+              "id",
+              "gateway_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_subnet.example",
+              "azurerm_virtual_network.example",
+              "virtual_network_name",
+              "name",
+              "",
+              ""
+            ]
+          ],
+          "text": "data.assemble.dependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,696 @@
+{
+    "azurerm_active_directory_domain_service": {
+        "azuread_service_principal": 1,
+        "azurerm_resource_provider_registration": 1,
+        "azurerm_subnet_network_security_group_association": 1
+    },
+    "azurerm_active_directory_domain_service_replica_set": {
+        "azurerm_subnet_network_security_group_association": 1,
+        "azurerm_virtual_network_peering": 1
+    },
+    "azurerm_api_management_api_policy": {
+        "azurerm_api_management_api": 1,
+        "azurerm_api_management_backend": 1
+    },
+    "azurerm_api_management_identity_provider_aadb2c": {
+        "azuread_application_password": 1
+    },
+    "azurerm_app_configuration": {
+        "azurerm_key_vault_access_policy": 1
+    },
+    "azurerm_app_configuration_key": {
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_app_service": {
+        "azurerm_app_service_plan": 1,
+        "azurerm_resource_group": 1
+    },
+    "azurerm_app_service_certificate": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_app_service_custom_hostname_binding": {
+        "azurerm_app_service": 1,
+        "azurerm_dns_txt_record": 1,
+        "azurerm_function_app": 1,
+        "azurerm_windows_web_app": 1
+    },
+    "azurerm_app_service_hybrid_connection": {
+        "null_resource": 1
+    },
+    "azurerm_app_service_plan": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_app_service_source_control": {
+        "azurerm_windows_web_app": 1
+    },
+    "azurerm_application_gateway": {
+        "azurerm_public_ip": 1,
+        "azurerm_subnet": 1,
+        "azurerm_user_assigned_identity": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_application_insights": {
+        "azurerm_log_analytics_workspace": 1,
+        "azurerm_resource_group": 1
+    },
+    "azurerm_automation_dsc_nodeconfiguration": {
+        "azurerm_automation_dsc_configuration": 1
+    },
+    "azurerm_availability_set": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_bastion_host": {
+        "azurerm_firewall_network_rule_collection": 1,
+        "azurerm_public_ip": 1,
+        "azurerm_subnet_network_security_group_association": 3,
+        "azurerm_subnet_route_table_association": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_cdn_frontdoor_profile": {
+        "azurerm_private_link_service": 1
+    },
+    "azurerm_container_group": {
+        "azurerm_storage_account": 1,
+        "azurerm_storage_share": 1
+    },
+    "azurerm_cosmosdb_account": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_cosmosdb_cassandra_cluster": {
+        "azurerm_role_assignment": 2
+    },
+    "azurerm_data_factory_integration_runtime_self_hosted": {
+        "azurerm_role_assignment": 1,
+        "azurerm_virtual_machine_extension": 1
+    },
+    "azurerm_data_protection_backup_instance_blob_storage": {
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_data_share_dataset_blob_storage": {
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_data_share_dataset_data_lake_gen2": {
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_data_share_dataset_kusto_cluster": {
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_data_share_dataset_kusto_database": {
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_databricks_workspace": {
+        "azurerm_network_security_group": 1,
+        "azurerm_subnet": 1
+    },
+    "azurerm_databricks_workspace_customer_managed_key": {
+        "azurerm_key_vault_access_policy": 1
+    },
+    "azurerm_dedicated_hardware_security_module": {
+        "azurerm_virtual_network_gateway": 1
+    },
+    "azurerm_digital_twins_time_series_database_connection": {
+        "azurerm_kusto_database_principal_assignment": 1,
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_disk_encryption_set": {
+        "azurerm_key_vault_access_policy": 1
+    },
+    "azurerm_disk_pool_iscsi_target": {
+        "azurerm_disk_pool_managed_disk_attachment": 2
+    },
+    "azurerm_disk_pool_managed_disk_attachment": {
+        "azurerm_role_assignment": 3
+    },
+    "azurerm_federated_identity_credential": {
+        "azurerm_user_assigned_identity": 1
+    },
+    "azurerm_firewall": {
+        "azurerm_firewall_policy": 1,
+        "azurerm_public_ip": 1,
+        "azurerm_subnet": 1,
+        "azurerm_subnet_network_security_group_association": 3
+    },
+    "azurerm_firewall_policy_rule_collection_group": {
+        "azurerm_firewall_policy": 1
+    },
+    "azurerm_function_app": {
+        "azurerm_app_service_plan": 1,
+        "azurerm_cosmosdb_account": 1
+    },
+    "azurerm_hdinsight_spark_cluster": {
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_iot_security_device_group": {
+        "azurerm_iot_security_solution": 1
+    },
+    "azurerm_iothub_consumer_group": {
+        "azurerm_iothub_shared_access_policy": 1
+    },
+    "azurerm_key_vault": {
+        "azurerm_resource_group": 1,
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_key_vault_access_policy": {
+        "azurerm_databricks_workspace": 1,
+        "azurerm_key_vault": 1,
+        "azurerm_linux_virtual_machine": 1,
+        "data": 1,
+        "null_resource": 1
+    },
+    "azurerm_key_vault_certificate": {
+        "azurerm_key_vault_access_policy": 1,
+        "azurerm_role_assignment": 2
+    },
+    "azurerm_key_vault_key": {
+        "azurerm_key_vault": 2,
+        "azurerm_key_vault_access_policy": 1
+    },
+    "azurerm_key_vault_secret": {
+        "azurerm_key_vault": 1,
+        "azurerm_key_vault_access_policy": 1,
+        "azurerm_private_dns_a_record": 1,
+        "azurerm_role_assignment": 1,
+        "azurerm_storage_account": 4,
+        "random_password": 4
+    },
+    "azurerm_kubernetes_cluster": {
+        "azurerm_firewall_policy_rule_collection_group": 1,
+        "azurerm_machine_learning_workspace": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_role_assignment": 1,
+        "azurerm_subnet": 1,
+        "azurerm_subnet_route_table_association": 1,
+        "azurerm_virtual_network": 1,
+        "azurerm_virtual_network_dns_servers": 1,
+        "azurerm_virtual_network_peering": 1
+    },
+    "azurerm_kubernetes_cluster_node_pool": {
+        "azurerm_kubernetes_cluster": 1
+    },
+    "azurerm_kusto_eventgrid_data_connection": {
+        "azurerm_eventgrid_event_subscription": 1
+    },
+    "azurerm_lb": {
+        "azurerm_public_ip": 1
+    },
+    "azurerm_lb_backend_address_pool": {
+        "azurerm_availability_set": 1,
+        "azurerm_lb": 1
+    },
+    "azurerm_lb_backend_address_pool_address": {
+        "azurerm_container_group": 1,
+        "azurerm_lb_backend_address_pool": 1
+    },
+    "azurerm_lb_nat_rule": {
+        "azurerm_lb": 1
+    },
+    "azurerm_lb_probe": {
+        "azurerm_lb": 1
+    },
+    "azurerm_lb_rule": {
+        "azurerm_lb": 1,
+        "azurerm_lb_backend_address_pool": 1,
+        "azurerm_lb_probe": 1
+    },
+    "azurerm_linux_function_app": {
+        "azurerm_application_insights": 2,
+        "azurerm_cosmosdb_account": 1,
+        "azurerm_service_plan": 1,
+        "azurerm_storage_account": 1
+    },
+    "azurerm_linux_virtual_machine": {
+        "azurerm_firewall": 4,
+        "azurerm_firewall_policy_rule_collection_group": 4,
+        "azurerm_key_vault": 1,
+        "azurerm_log_analytics_workspace": 1,
+        "azurerm_marketplace_agreement": 1,
+        "azurerm_network_interface": 1,
+        "azurerm_network_interface_security_group_association": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_subnet_nat_gateway_association": 5,
+        "azurerm_virtual_network_peering": 4,
+        "null_resource": 1,
+        "time_sleep": 1,
+        "tls_private_key": 1
+    },
+    "azurerm_linux_virtual_machine_scale_set": {
+        "azurerm_lb": 1,
+        "azurerm_lb_rule": 1
+    },
+    "azurerm_local_network_gateway": {
+        "azurerm_public_ip": 1
+    },
+    "azurerm_log_analytics_workspace": {
+        "azurerm_resource_group": 2
+    },
+    "azurerm_machine_learning_workspace": {
+        "azurerm_key_vault_access_policy": 1,
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_managed_disk": {
+        "azurerm_key_vault_access_policy": 1,
+        "azurerm_resource_group": 4,
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_management_group": {
+        "azurerm_management_group": 1
+    },
+    "azurerm_management_lock": {
+        "azurerm_private_endpoint": 1
+    },
+    "azurerm_monitor_action_group": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_monitor_data_collection_rule": {
+        "azurerm_log_analytics_solution": 1,
+        "azurerm_log_analytics_workspace": 1
+    },
+    "azurerm_monitor_smart_detector_alert_rule": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_mssql_database": {
+        "azurerm_mssql_firewall_rule": 1,
+        "azurerm_mssql_server": 1
+    },
+    "azurerm_mssql_managed_instance": {
+        "azurerm_subnet_network_security_group_association": 1,
+        "azurerm_subnet_route_table_association": 1
+    },
+    "azurerm_mssql_server": {
+        "azurerm_resource_group": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_mysql_flexible_server": {
+        "azurerm_private_dns_zone_virtual_network_link": 1,
+        "azurerm_resource_group": 1
+    },
+    "azurerm_netapp_volume": {
+        "azurerm_netapp_volume": 1
+    },
+    "azurerm_network_connection_monitor": {
+        "azurerm_virtual_machine_extension": 1
+    },
+    "azurerm_network_interface": {
+        "azurerm_lb": 1,
+        "azurerm_network_security_group": 1,
+        "azurerm_public_ip": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_subnet": 1,
+        "azurerm_subnet_network_security_group_association": 1,
+        "azurerm_virtual_machine_extension": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_network_interface_application_security_group_association": {
+        "azurerm_linux_virtual_machine": 1
+    },
+    "azurerm_network_interface_nat_rule_association": {
+        "azurerm_network_interface": 1
+    },
+    "azurerm_network_interface_security_group_association": {
+        "azurerm_network_interface": 4,
+        "azurerm_network_security_group": 4,
+        "azurerm_network_security_rule": 1,
+        "azurerm_subnet_network_security_group_association": 1
+    },
+    "azurerm_network_packet_capture": {
+        "azurerm_virtual_machine_extension": 1
+    },
+    "azurerm_network_security_group": {
+        "azurerm_application_security_group": 1,
+        "azurerm_network_interface": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_subnet": 1,
+        "azurerm_virtual_machine": 2,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_network_security_rule": {
+        "azurerm_network_security_group": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_subnet": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_postgresql_flexible_server": {
+        "azurerm_private_dns_zone_virtual_network_link": 1
+    },
+    "azurerm_private_dns_a_record": {
+        "azurerm_lb": 1,
+        "azurerm_mssql_server": 1,
+        "azurerm_private_dns_zone": 1
+    },
+    "azurerm_private_dns_zone": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_private_dns_zone_virtual_network_link": {
+        "azurerm_private_dns_zone": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_private_endpoint": {
+        "azurerm_mssql_server": 1,
+        "azurerm_private_endpoint": 1,
+        "azurerm_subnet": 1
+    },
+    "azurerm_public_ip": {
+        "azurerm_kubernetes_cluster": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_resource_group": {
+        "azurerm_resource_group": 1,
+        "random_id": 3
+    },
+    "azurerm_resource_group_template_deployment": {
+        "azurerm_resource_group": 1,
+        "azurerm_resource_group_template_deployment": 1,
+        "azurerm_storage_account": 1,
+        "azurerm_storage_container": 1
+    },
+    "azurerm_role_assignment": {
+        "azurerm_application_gateway": 1,
+        "azurerm_kubernetes_cluster": 1,
+        "azurerm_role_definition": 1,
+        "azurerm_storage_account": 1,
+        "azurerm_user_assigned_identity": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_route": {
+        "azurerm_virtual_machine": 2
+    },
+    "azurerm_route_table": {
+        "azurerm_resource_group": 1,
+        "azurerm_subnet": 1,
+        "azurerm_virtual_machine": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_sentinel_data_connector_aws_s3": {
+        "azurerm_log_analytics_solution": 1
+    },
+    "azurerm_service_plan": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_site_recovery_fabric": {
+        "azurerm_site_recovery_fabric": 1
+    },
+    "azurerm_site_recovery_replicated_vm": {
+        "azurerm_site_recovery_network_mapping": 1,
+        "azurerm_site_recovery_protection_container_mapping": 1
+    },
+    "azurerm_sql_database": {
+        "azurerm_mssql_server": 1,
+        "azurerm_sql_server": 1
+    },
+    "azurerm_sql_failover_group": {
+        "azurerm_mssql_database": 1
+    },
+    "azurerm_sql_firewall_rule": {
+        "azurerm_resource_group": 1,
+        "azurerm_sql_server": 1
+    },
+    "azurerm_sql_managed_instance": {
+        "azurerm_subnet_network_security_group_association": 1,
+        "azurerm_subnet_route_table_association": 1
+    },
+    "azurerm_ssh_public_key": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_storage_account": {
+        "azurerm_resource_group": 1,
+        "data": 1,
+        "random_id": 1,
+        "random_uuid": 2
+    },
+    "azurerm_storage_account_network_rules": {
+        "azurerm_machine_learning_workspace": 1
+    },
+    "azurerm_storage_blob": {
+        "azurerm_resource_group": 1,
+        "azurerm_storage_account": 1,
+        "azurerm_storage_container": 1,
+        "azurerm_virtual_machine_extension": 1,
+        "null_resource": 1
+    },
+    "azurerm_storage_container": {
+        "azurerm_private_dns_a_record": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_storage_account": 1,
+        "azurerm_storage_account_network_rules": 1
+    },
+    "azurerm_storage_data_lake_gen2_filesystem": {
+        "azurerm_role_assignment": 1
+    },
+    "azurerm_storage_share": {
+        "azurerm_storage_account": 1
+    },
+    "azurerm_storage_share_file": {
+        "azurerm_storage_share_directory": 1
+    },
+    "azurerm_stream_analytics_job_schedule": {
+        "azurerm_stream_analytics_job": 1,
+        "azurerm_stream_analytics_output_blob": 1,
+        "azurerm_stream_analytics_stream_input_blob": 1
+    },
+    "azurerm_stream_analytics_stream_input_iothub": {
+        "azurerm_iothub_consumer_group": 1
+    },
+    "azurerm_subnet": {
+        "azurerm_resource_group": 1,
+        "azurerm_route_server": 2,
+        "azurerm_subnet": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_subnet_nat_gateway_association": {
+        "azurerm_nat_gateway": 1,
+        "azurerm_subnet": 1
+    },
+    "azurerm_subnet_network_security_group_association": {
+        "azurerm_network_interface": 1,
+        "azurerm_network_security_group": 1,
+        "azurerm_network_security_rule": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_subnet": 1,
+        "azurerm_virtual_network": 1
+    },
+    "azurerm_subnet_route_table_association": {
+        "azurerm_firewall": 1,
+        "azurerm_route_table": 1,
+        "azurerm_subnet": 1
+    },
+    "azurerm_synapse_linked_service": {
+        "azurerm_synapse_firewall_rule": 1
+    },
+    "azurerm_synapse_managed_private_endpoint": {
+        "azurerm_private_endpoint": 1,
+        "azurerm_synapse_firewall_rule": 1
+    },
+    "azurerm_synapse_role_assignment": {
+        "azurerm_synapse_firewall_rule": 1
+    },
+    "azurerm_synapse_workspace_aad_admin": {
+        "azurerm_synapse_workspace_key": 1
+    },
+    "azurerm_synapse_workspace_key": {
+        "azurerm_key_vault_access_policy": 2
+    },
+    "azurerm_user_assigned_identity": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_video_analyzer": {
+        "azurerm_role_assignment": 2,
+        "azurerm_user_assigned_identity": 1
+    },
+    "azurerm_virtual_desktop_application_group": {
+        "azurerm_virtual_desktop_host_pool": 1
+    },
+    "azurerm_virtual_hub_bgp_connection": {
+        "azurerm_virtual_hub_ip": 1
+    },
+    "azurerm_virtual_hub_connection": {
+        "azurerm_virtual_hub": 1
+    },
+    "azurerm_virtual_hub_route_table_route": {
+        "azurerm_virtual_hub": 1,
+        "azurerm_virtual_hub_connection": 1,
+        "azurerm_virtual_hub_route_table_route": 1
+    },
+    "azurerm_virtual_hub_security_partner_provider": {
+        "azurerm_vpn_gateway": 1
+    },
+    "azurerm_virtual_machine": {
+        "azurerm_marketplace_agreement": 1,
+        "azurerm_network_interface": 1,
+        "azurerm_network_interface_security_group_association": 1,
+        "azurerm_public_ip": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_virtual_machine": 2,
+        "random_password": 1
+    },
+    "azurerm_virtual_machine_data_disk_attachment": {
+        "azurerm_linux_virtual_machine": 2,
+        "azurerm_managed_disk": 4,
+        "azurerm_windows_virtual_machine": 1
+    },
+    "azurerm_virtual_machine_extension": {
+        "azurerm_firewall_network_rule_collection": 1,
+        "azurerm_linux_virtual_machine": 1,
+        "azurerm_monitor_data_collection_rule_association": 1,
+        "azurerm_nat_gateway": 1,
+        "azurerm_public_ip": 1,
+        "azurerm_storage_blob": 1,
+        "azurerm_subnet_route_table_association": 1,
+        "azurerm_virtual_machine": 1,
+        "azurerm_virtual_machine_data_disk_attachment": 1,
+        "azurerm_virtual_machine_extension": 1,
+        "azurerm_virtual_network_peering": 1,
+        "azurerm_windows_virtual_machine": 1
+    },
+    "azurerm_virtual_machine_packet_capture": {
+        "azurerm_virtual_machine_extension": 1
+    },
+    "azurerm_virtual_machine_scale_set_extension": {
+        "azurerm_storage_blob": 1
+    },
+    "azurerm_virtual_machine_scale_set_packet_capture": {
+        "azurerm_virtual_machine_scale_set_extension": 1
+    },
+    "azurerm_virtual_network": {
+        "azurerm_network_security_group": 1,
+        "azurerm_resource_group": 1
+    },
+    "azurerm_virtual_network_dns_servers": {
+        "time_sleep": 1
+    },
+    "azurerm_virtual_network_gateway": {
+        "azurerm_bastion_host": 1,
+        "azurerm_public_ip": 1,
+        "azurerm_subnet_network_security_group_association": 3,
+        "azurerm_subnet_route_table_association": 1
+    },
+    "azurerm_virtual_network_peering": {
+        "azurerm_application_gateway": 1,
+        "azurerm_route_server": 1,
+        "azurerm_subnet": 1,
+        "azurerm_virtual_network": 1,
+        "azurerm_virtual_network_gateway": 1
+    },
+    "azurerm_web_pubsub": {
+        "azurerm_resource_group": 1
+    },
+    "azurerm_web_pubsub_hub": {
+        "azurerm_web_pubsub": 1,
+        "data": 1
+    },
+    "azurerm_web_pubsub_network_acl": {
+        "azurerm_private_endpoint": 1
+    },
+    "azurerm_windows_function_app": {
+        "azurerm_service_plan": 1
+    },
+    "azurerm_windows_virtual_machine": {
+        "azurerm_availability_set": 1,
+        "azurerm_key_vault": 1,
+        "azurerm_key_vault_secret": 1,
+        "azurerm_log_analytics_workspace": 1,
+        "azurerm_network_interface": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_subnet": 1,
+        "azurerm_virtual_network": 1,
+        "azurerm_virtual_wan": 1,
+        "time_sleep": 1
+    },
+    "azurerm_windows_virtual_machine_scale_set": {
+        "azurerm_lb_backend_address_pool": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_subnet": 1
+    },
+    "azurerm_windows_web_app": {
+        "azurerm_resource_group": 1,
+        "azurerm_service_plan": 1
+    },
+    "azurerm_windows_web_app_slot": {
+        "azurerm_service_plan": 1
+    },
+    "data": {
+        "azurerm_firewall": 1,
+        "azurerm_firewall_policy": 1,
+        "azurerm_kubernetes_cluster": 1,
+        "azurerm_linux_virtual_machine": 1,
+        "azurerm_machine_learning_compute_cluster": 1,
+        "azurerm_private_endpoint": 1,
+        "azurerm_public_ip": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_virtual_machine": 1,
+        "azurerm_virtual_network": 1,
+        "azurerm_windows_virtual_machine": 1,
+        "null_resource": 1,
+        "random_password": 1,
+        "time_sleep": 1
+    },
+    "helm_release": {
+        "azurerm_federated_identity_credential": 1,
+        "azurerm_kubernetes_cluster": 1,
+        "helm_release": 1,
+        "kubernetes_namespace": 1,
+        "kubernetes_secret": 1
+    },
+    "kubernetes_cluster_role_binding": {
+        "helm_release": 1
+    },
+    "kubernetes_namespace": {
+        "null_resource": 1
+    },
+    "kubernetes_persistent_volume": {
+        "kubernetes_secret": 1
+    },
+    "kubernetes_secret": {
+        "azurerm_kubernetes_cluster": 1,
+        "azurerm_storage_account": 1
+    },
+    "local_file": {
+        "azurerm_kubernetes_cluster": 1,
+        "azurerm_linux_virtual_machine": 1,
+        "azurerm_network_interface": 1,
+        "azurerm_ssh_public_key": 1,
+        "data": 1,
+        "null_resource": 1,
+        "tls_private_key": 1
+    },
+    "module": {
+        "azurerm_resource_group": 1,
+        "module": 1
+    },
+    "null_resource": {
+        "azurerm_container_app": 1,
+        "azurerm_container_registry": 1,
+        "azurerm_kubernetes_cluster_node_pool": 1,
+        "azurerm_linux_function_app": 1,
+        "azurerm_linux_virtual_machine": 1,
+        "azurerm_log_analytics_solution": 1,
+        "azurerm_machine_learning_workspace": 1,
+        "azurerm_managed_disk": 1,
+        "azurerm_mssql_database": 1,
+        "azurerm_postgresql_flexible_server": 1,
+        "azurerm_public_ip": 1,
+        "azurerm_resource_group": 1,
+        "azurerm_sql_server": 1,
+        "azurerm_storage_container": 1,
+        "azurerm_virtual_machine": 1,
+        "azurerm_virtual_machine_data_disk_attachment": 1,
+        "azurerm_windows_function_app": 1,
+        "azurerm_windows_virtual_machine": 1,
+        "data": 1,
+        "kubernetes_namespace": 1,
+        "local_file": 1,
+        "null_resource": 1,
+        "time_sleep": 1
+    },
+    "random_id": {
+        "azurerm_resource_group": 1
+    },
+    "time_sleep": {
+        "azurerm_kubernetes_cluster": 1,
+        "azurerm_linux_virtual_machine": 1,
+        "azurerm_synapse_managed_private_endpoint": 1,
+        "azurerm_virtual_machine_extension": 2,
+        "kubernetes_ingress_v1": 1,
+        "null_resource": 1
+    }
+}

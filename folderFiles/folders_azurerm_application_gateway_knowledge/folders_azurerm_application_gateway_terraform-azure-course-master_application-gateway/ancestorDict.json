@@ -1,0 +1,55 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.app-gateway": [
+              "azurerm_application_gateway.app-gateway",
+              "azurerm_public_ip.demo",
+              "azurerm_resource_group.demo",
+              "azurerm_subnet.demo-subnet-1",
+              "azurerm_virtual_network.demo"
+            ],
+            "azurerm_linux_virtual_machine_scale_set.demo": [
+              "azurerm_linux_virtual_machine_scale_set.demo"
+            ],
+            "azurerm_network_security_group.demo-instance": [
+              "azurerm_network_security_group.demo-instance",
+              "azurerm_resource_group.demo"
+            ],
+            "azurerm_public_ip.demo": [
+              "azurerm_public_ip.demo",
+              "azurerm_resource_group.demo"
+            ],
+            "azurerm_resource_group.demo": [
+              "azurerm_resource_group.demo"
+            ],
+            "azurerm_subnet.demo-subnet-1": [
+              "azurerm_resource_group.demo",
+              "azurerm_subnet.demo-subnet-1",
+              "azurerm_virtual_network.demo"
+            ],
+            "azurerm_subnet.demo-subnet-2": [
+              "azurerm_resource_group.demo",
+              "azurerm_subnet.demo-subnet-2",
+              "azurerm_virtual_network.demo"
+            ],
+            "azurerm_virtual_network.demo": [
+              "azurerm_resource_group.demo",
+              "azurerm_virtual_network.demo"
+            ],
+            "random_string.random-name": [
+              "random_string.random-name"
+            ]
+          },
+          "text": "data.assemble.ancestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

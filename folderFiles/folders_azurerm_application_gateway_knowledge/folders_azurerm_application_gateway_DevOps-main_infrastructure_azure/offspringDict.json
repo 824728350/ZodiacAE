@@ -1,0 +1,155 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.app_gateway": [
+              "azurerm_application_gateway.app_gateway"
+            ],
+            "azurerm_dashboard_grafana.grafana": [
+              "azurerm_dashboard_grafana.grafana"
+            ],
+            "azurerm_key_vault.vault": [
+              "azurerm_key_vault.vault"
+            ],
+            "azurerm_key_vault_access_policy.cluster": [
+              "azurerm_key_vault_access_policy.cluster"
+            ],
+            "azurerm_key_vault_access_policy.policy": [
+              "azurerm_key_vault_access_policy.policy"
+            ],
+            "azurerm_key_vault_secret.bugservicedb_connectionstring": [
+              "azurerm_key_vault_secret.bugservicedb_connectionstring"
+            ],
+            "azurerm_key_vault_secret.userservicedb_connectionstring": [
+              "azurerm_key_vault_secret.userservicedb_connectionstring"
+            ],
+            "azurerm_kubernetes_cluster.cluster": [
+              "azurerm_kubernetes_cluster.cluster"
+            ],
+            "azurerm_log_analytics_workspace.workspace": [
+              "azurerm_log_analytics_workspace.workspace"
+            ],
+            "azurerm_monitor_alert_prometheus_rule_group.kubernetes_recording_rules_rule_group": [
+              "azurerm_monitor_alert_prometheus_rule_group.kubernetes_recording_rules_rule_group"
+            ],
+            "azurerm_monitor_alert_prometheus_rule_group.node_recording_rules_rule_group": [
+              "azurerm_monitor_alert_prometheus_rule_group.node_recording_rules_rule_group"
+            ],
+            "azurerm_monitor_data_collection_endpoint.collection_endpoint": [
+              "azurerm_monitor_data_collection_endpoint.collection_endpoint"
+            ],
+            "azurerm_monitor_data_collection_rule.ci_collection_rule": [
+              "azurerm_monitor_data_collection_rule.ci_collection_rule"
+            ],
+            "azurerm_monitor_data_collection_rule.collection_rule": [
+              "azurerm_monitor_data_collection_rule.collection_rule"
+            ],
+            "azurerm_monitor_data_collection_rule_association.ci_collection_rule_association": [
+              "azurerm_monitor_data_collection_rule_association.ci_collection_rule_association"
+            ],
+            "azurerm_monitor_data_collection_rule_association.collection_rule_association": [
+              "azurerm_monitor_data_collection_rule_association.collection_rule_association"
+            ],
+            "azurerm_monitor_workspace.workspace": [
+              "azurerm_monitor_workspace.workspace"
+            ],
+            "azurerm_public_ip.app_gateway": [
+              "azurerm_application_gateway.app_gateway",
+              "azurerm_public_ip.app_gateway"
+            ],
+            "azurerm_resource_group.group": [
+              "azurerm_application_gateway.app_gateway",
+              "azurerm_public_ip.app_gateway",
+              "azurerm_resource_group.group",
+              "azurerm_subnet.aks_subnet",
+              "azurerm_subnet.app_gateway",
+              "azurerm_virtual_network.network",
+              "module.userservicedb.azurerm_subnet.subnet"
+            ],
+            "azurerm_role_assignment.datareaderrole": [
+              "azurerm_role_assignment.datareaderrole"
+            ],
+            "azurerm_role_assignment.grafana_owner": [
+              "azurerm_role_assignment.grafana_owner"
+            ],
+            "azurerm_role_assignment.gv_vnet": [
+              "azurerm_role_assignment.gv_vnet"
+            ],
+            "azurerm_role_assignment.gw_contributor": [
+              "azurerm_role_assignment.gw_contributor"
+            ],
+            "azurerm_role_assignment.gw_reader": [
+              "azurerm_role_assignment.gw_reader"
+            ],
+            "azurerm_role_assignment.gw_subnet": [
+              "azurerm_role_assignment.gw_subnet"
+            ],
+            "azurerm_subnet.aks_subnet": [
+              "azurerm_subnet.aks_subnet"
+            ],
+            "azurerm_subnet.app_gateway": [
+              "azurerm_application_gateway.app_gateway",
+              "azurerm_subnet.app_gateway"
+            ],
+            "azurerm_virtual_network.network": [
+              "azurerm_application_gateway.app_gateway",
+              "azurerm_subnet.aks_subnet",
+              "azurerm_subnet.app_gateway",
+              "azurerm_virtual_network.network",
+              "module.userservicedb.azurerm_subnet.subnet"
+            ],
+            "data.azurerm_client_config.current": [
+              "data.azurerm_client_config.current"
+            ],
+            "helm_release.aks_secret_provider": [
+              "helm_release.aks_secret_provider"
+            ],
+            "module.bugservicedb.azurerm_postgresql_flexible_server.server": [
+              "module.bugservicedb.azurerm_postgresql_flexible_server.server"
+            ],
+            "module.bugservicedb.azurerm_postgresql_flexible_server_database.database": [
+              "module.bugservicedb.azurerm_postgresql_flexible_server_database.database"
+            ],
+            "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone": [
+              "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone"
+            ],
+            "module.bugservicedb.azurerm_private_dns_zone_virtual_network_link.network_link": [
+              "module.bugservicedb.azurerm_private_dns_zone_virtual_network_link.network_link"
+            ],
+            "module.bugservicedb.azurerm_subnet.subnet": [
+              "module.bugservicedb.azurerm_subnet.subnet"
+            ],
+            "module.bugservicedb.random_password.password": [
+              "module.bugservicedb.random_password.password"
+            ],
+            "module.userservicedb.azurerm_postgresql_flexible_server.server": [
+              "module.userservicedb.azurerm_postgresql_flexible_server.server"
+            ],
+            "module.userservicedb.azurerm_postgresql_flexible_server_database.database": [
+              "module.userservicedb.azurerm_postgresql_flexible_server_database.database"
+            ],
+            "module.userservicedb.azurerm_private_dns_zone.private_dns_zone": [
+              "module.userservicedb.azurerm_private_dns_zone.private_dns_zone"
+            ],
+            "module.userservicedb.azurerm_private_dns_zone_virtual_network_link.network_link": [
+              "module.userservicedb.azurerm_private_dns_zone_virtual_network_link.network_link"
+            ],
+            "module.userservicedb.azurerm_subnet.subnet": [
+              "module.userservicedb.azurerm_subnet.subnet"
+            ],
+            "module.userservicedb.random_password.password": [
+              "module.userservicedb.random_password.password"
+            ]
+          },
+          "text": "data.assemble.offspringDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

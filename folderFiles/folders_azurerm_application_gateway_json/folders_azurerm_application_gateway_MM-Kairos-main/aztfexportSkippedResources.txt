@@ -1,0 +1,3 @@
+Following resources are marked to be skipped:
+
+- /subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/azmmcorerg01/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/SOA/@

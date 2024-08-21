@@ -1,0 +1,332 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.app_gateway",
+              "expressions": {
+                "backend_address_pool": [
+                  {
+                    "name": {
+                      "constant_value": "sbox-backend-address-pool"
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "name": {
+                      "constant_value": "sbox-backend-http-settings"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "request_timeout": {
+                      "constant_value": 60
+                    }
+                  }
+                ],
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "sbox-frontend-ip-configuration"
+                    },
+                    "public_ip_address_id": {
+                      "references": [
+                        "azurerm_public_ip.public_ip.id",
+                        "azurerm_public_ip.public_ip"
+                      ]
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "constant_value": "sbox-frontend-port"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "sbox-gateway-ip-configuration"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "azurerm_subnet.aks_subnet.id",
+                        "azurerm_subnet.aks_subnet"
+                      ]
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "sbox-frontend-ip-configuration"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "sbox-frontend-port"
+                    },
+                    "name": {
+                      "constant_value": "sbox-http-listener"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.networking.location",
+                    "azurerm_resource_group.networking"
+                  ]
+                },
+                "name": {
+                  "constant_value": "sbox-app-gateway"
+                },
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "sbox-backend-address-pool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "sbox-backend-http-settings"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "sbox-http-listener"
+                    },
+                    "name": {
+                      "constant_value": "sbox-request-routing-rule"
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.networking.name",
+                    "azurerm_resource_group.networking"
+                  ]
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "constant_value": 2
+                    },
+                    "name": {
+                      "constant_value": "Standard_v2"
+                    },
+                    "tier": {
+                      "constant_value": "Standard_v2"
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "app_gateway",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "azurerm_container_registry.acr",
+              "expressions": {
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.networking.location",
+                    "azurerm_resource_group.networking"
+                  ]
+                },
+                "name": {
+                  "constant_value": "sboxacr"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.networking.name",
+                    "azurerm_resource_group.networking"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                }
+              },
+              "mode": "managed",
+              "name": "acr",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_container_registry"
+            },
+            {
+              "address": "azurerm_kubernetes_cluster.aks",
+              "expressions": {
+                "default_node_pool": [
+                  {
+                    "name": {
+                      "constant_value": "default"
+                    },
+                    "node_count": {
+                      "constant_value": 1
+                    },
+                    "vm_size": {
+                      "constant_value": "Standard_D2s_v3"
+                    }
+                  }
+                ],
+                "dns_prefix": {
+                  "constant_value": "sbox-aks"
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.networking.location",
+                    "azurerm_resource_group.networking"
+                  ]
+                },
+                "name": {
+                  "constant_value": "sbox-aks-cluster"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.networking.name",
+                    "azurerm_resource_group.networking"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_kubernetes_cluster"
+            },
+            {
+              "address": "azurerm_public_ip.public_ip",
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.networking.location",
+                    "azurerm_resource_group.networking"
+                  ]
+                },
+                "name": {
+                  "constant_value": "sbox-public-ip"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.networking.name",
+                    "azurerm_resource_group.networking"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "public_ip",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_resource_group.networking",
+              "expressions": {
+                "location": {
+                  "constant_value": "West Europe"
+                },
+                "name": {
+                  "constant_value": "sbox-rg"
+                }
+              },
+              "mode": "managed",
+              "name": "networking",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_subnet.aks_subnet",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.1.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "aks-subnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.networking.name",
+                    "azurerm_resource_group.networking"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.vnet.name",
+                    "azurerm_virtual_network.vnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks_subnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_virtual_network.vnet",
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.0.0.0/16"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.networking.location",
+                    "azurerm_resource_group.networking"
+                  ]
+                },
+                "name": {
+                  "constant_value": "sbox-vnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.networking.name",
+                    "azurerm_resource_group.networking"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "vnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

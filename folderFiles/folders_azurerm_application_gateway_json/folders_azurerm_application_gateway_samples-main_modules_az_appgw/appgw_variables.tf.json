@@ -1,0 +1,52 @@
+{
+    "variable": [
+        {
+            "location": {
+                "default": "eastus",
+                "description": "The supported Azure location where the resource deployed"
+            }
+        },
+        {
+            "resource_group_name": {
+                "default": "hxzmhold",
+                "description": "The name of the resource group to deploy resources into"
+            }
+        },
+        {
+            "resource_prefix": {
+                "default": "zodiac",
+                "description": "A suffix string to centrally mitigate resource name collisions."
+            }
+        },
+        {
+            "tags": {
+                "default": {},
+                "description": "A list of tags used for deployed services."
+            }
+        },
+        {
+            "frontend_port": {
+                "default": 8080,
+                "description": "Front End port number"
+            }
+        },
+        {
+            "vnet_ingress_address_space": {
+                "default": "10.254.0.0/16",
+                "description": "Virtual network address space for ingress"
+            }
+        },
+        {
+            "vnet_ingress_frontend_subnet": {
+                "default": "10.254.0.0/24",
+                "description": "Subnet address space for ingress frontend (AppGw)"
+            }
+        },
+        {
+            "vnet_ingress_backend_subnet": {
+                "default": "10.254.2.0/24",
+                "description": "Subnet address space for ingress backend (AKS nodepool)"
+            }
+        }
+    ]
+}

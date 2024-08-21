@@ -1,0 +1,35 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appGateway": [],
+            "azurerm_kubernetes_cluster.k8s": [],
+            "azurerm_public_ip.staticIP": [],
+            "azurerm_public_ip.staticIP2": [
+              "azurerm_application_gateway.appGateway"
+            ],
+            "azurerm_resource_group.rg-aleksandar-ilicic": [
+              "azurerm_application_gateway.appGateway",
+              "azurerm_public_ip.staticIP2",
+              "azurerm_subnet.gwSubnet",
+              "azurerm_virtual_network.vnetk8s"
+            ],
+            "azurerm_subnet.gwSubnet": [
+              "azurerm_application_gateway.appGateway"
+            ],
+            "azurerm_virtual_network.vnetk8s": [
+              "azurerm_subnet.gwSubnet"
+            ]
+          },
+          "text": "data.assemble.referencesSuccDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

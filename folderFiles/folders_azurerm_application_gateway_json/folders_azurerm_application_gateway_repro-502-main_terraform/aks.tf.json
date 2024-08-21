@@ -1,0 +1,56 @@
+{
+    "resource": [
+        {
+            "azurerm_kubernetes_cluster": {
+                "repro_502": {
+                    "default_node_pool": [
+                        {
+                            "name": "default",
+                            "node_count": 3,
+                            "only_critical_addons_enabled": true,
+                            "os_disk_type": "${var.vm_disk_type}",
+                            "temporary_name_for_rotation": "defaulttmp",
+                            "vm_size": "${var.vm_sku}",
+                            "vnet_subnet_id": "${azurerm_subnet.aks.id}"
+                        }
+                    ],
+                    "dns_prefix": "repro-502",
+                    "identity": [
+                        {
+                            "type": "SystemAssigned"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.repro_502.location}",
+                    "name": "aks-repro-502",
+                    "network_profile": [
+                        {
+                            "network_plugin": "${var.aks_network_plugin}",
+                            "network_plugin_mode": "${var.aks_network_plugin == \"azure\" ? \"overlay\" : None}"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.repro_502.name}"
+                }
+            }
+        },
+        {
+            "azurerm_kubernetes_cluster_node_pool": {
+                "user": {
+                    "kubernetes_cluster_id": "${azurerm_kubernetes_cluster.repro_502.id}",
+                    "name": "user",
+                    "node_count": 3,
+                    "os_disk_type": "${var.vm_disk_type}",
+                    "vm_size": "${var.vm_sku}"
+                }
+            }
+        },
+        {
+            "azurerm_role_assignment": {
+                "aks_on_subnet": {
+                    "principal_id": "${azurerm_kubernetes_cluster.repro_502.identity[0].principal_id}",
+                    "role_definition_name": "Network Contributor",
+                    "scope": "${azurerm_virtual_network.repro_502.id}"
+                }
+            }
+        }
+    ]
+}

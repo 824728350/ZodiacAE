@@ -1,0 +1,68 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgtw": [
+              "azurerm_application_gateway.appgtw",
+              "azurerm_container_app.main",
+              "azurerm_container_app_environment.main",
+              "azurerm_log_analytics_workspace.main",
+              "azurerm_public_ip.pip",
+              "azurerm_resource_group.main",
+              "azurerm_subnet.aca",
+              "azurerm_subnet.appgtw",
+              "azurerm_virtual_network.main"
+            ],
+            "azurerm_container_app.main": [
+              "azurerm_container_app.main",
+              "azurerm_container_app_environment.main",
+              "azurerm_log_analytics_workspace.main",
+              "azurerm_resource_group.main",
+              "azurerm_subnet.aca",
+              "azurerm_virtual_network.main"
+            ],
+            "azurerm_container_app_environment.main": [
+              "azurerm_container_app_environment.main",
+              "azurerm_log_analytics_workspace.main",
+              "azurerm_resource_group.main",
+              "azurerm_subnet.aca",
+              "azurerm_virtual_network.main"
+            ],
+            "azurerm_log_analytics_workspace.main": [
+              "azurerm_log_analytics_workspace.main",
+              "azurerm_resource_group.main"
+            ],
+            "azurerm_public_ip.pip": [
+              "azurerm_public_ip.pip",
+              "azurerm_resource_group.main"
+            ],
+            "azurerm_resource_group.main": [
+              "azurerm_resource_group.main"
+            ],
+            "azurerm_subnet.aca": [
+              "azurerm_resource_group.main",
+              "azurerm_subnet.aca",
+              "azurerm_virtual_network.main"
+            ],
+            "azurerm_subnet.appgtw": [
+              "azurerm_resource_group.main",
+              "azurerm_subnet.appgtw",
+              "azurerm_virtual_network.main"
+            ],
+            "azurerm_virtual_network.main": [
+              "azurerm_resource_group.main",
+              "azurerm_virtual_network.main"
+            ]
+          },
+          "text": "data.assemble.inclusiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

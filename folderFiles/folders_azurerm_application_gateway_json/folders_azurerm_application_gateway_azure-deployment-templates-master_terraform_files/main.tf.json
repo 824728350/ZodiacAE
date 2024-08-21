@@ -1,0 +1,53 @@
+{
+    "provider": [
+        {
+            "azurerm": {
+                "features": [
+                    {}
+                ]
+            }
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "aks_rg": {
+                    "location": "${var.location}",
+                    "name": "${var.aks_cluster_name}"
+                }
+            }
+        },
+        {
+            "azurerm_kubernetes_cluster": {
+                "aks_cluster": {
+                    "default_node_pool": [
+                        {
+                            "enable_auto_scaling": true,
+                            "max_count": 3,
+                            "min_count": 1,
+                            "name": "system",
+                            "type": "VirtualMachineScaleSets",
+                            "vm_size": "Standard_DS2_v2"
+                        }
+                    ],
+                    "dns_prefix": "${var.aks_cluster_name}",
+                    "identity": [
+                        {
+                            "type": "SystemAssigned"
+                        }
+                    ],
+                    "kubernetes_version": "${var.kubernetes_version}",
+                    "location": "${var.location}",
+                    "name": "${var.aks_cluster_name}",
+                    "network_profile": [
+                        {
+                            "load_balancer_sku": "standard",
+                            "network_plugin": "kubenet"
+                        }
+                    ],
+                    "resource_group_name": "${var.resource_group_name}"
+                }
+            }
+        }
+    ]
+}

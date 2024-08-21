@@ -1,0 +1,37 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.gw": [
+              "azurerm_application_gateway.gw",
+              "azurerm_public_ip.ingress",
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_public_ip.ingress": [
+              "azurerm_public_ip.ingress"
+            ],
+            "azurerm_subnet.backend": [
+              "azurerm_subnet.backend",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.frontend": [
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_virtual_network.vnet"
+            ]
+          },
+          "text": "data.assemble.inclusiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

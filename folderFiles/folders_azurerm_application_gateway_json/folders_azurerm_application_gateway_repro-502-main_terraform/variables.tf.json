@@ -1,0 +1,22 @@
+{
+    "variable": [
+        {
+            "vm_sku": {
+                "default": "Standard_D4s_v5",
+                "description": "sku for aks cluster vm's"
+            }
+        },
+        {
+            "vm_disk_type": {
+                "default": "Managed",
+                "description": "disk type for aks cluster vm's (Managed/Ephemeral)"
+            }
+        },
+        {
+            "aks_network_plugin": {
+                "default": "azure",
+                "description": "AKS network plugin (kubenet/azure)"
+            }
+        }
+    ]
+}

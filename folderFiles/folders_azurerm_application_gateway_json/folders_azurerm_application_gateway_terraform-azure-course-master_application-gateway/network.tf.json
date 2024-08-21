@@ -1,0 +1,87 @@
+{
+    "resource": [
+        {
+            "azurerm_virtual_network": {
+                "demo": {
+                    "address_space": [
+                        "10.0.0.0/16"
+                    ],
+                    "location": "${var.location}",
+                    "name": "demo-network",
+                    "resource_group_name": "${azurerm_resource_group.demo.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "demo-subnet-1": {
+                    "address_prefixes": [
+                        "10.0.0.0/24"
+                    ],
+                    "name": "demo-subnet-1",
+                    "resource_group_name": "${azurerm_resource_group.demo.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.demo.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "demo-subnet-2": {
+                    "address_prefixes": [
+                        "10.0.2.0/24"
+                    ],
+                    "name": "demo-subnet-2",
+                    "resource_group_name": "${azurerm_resource_group.demo.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.demo.name}"
+                }
+            }
+        },
+        {
+            "azurerm_network_security_group": {
+                "demo-instance": {
+                    "location": "${var.location}",
+                    "name": "demo-instance-nsg",
+                    "resource_group_name": "${azurerm_resource_group.demo.name}",
+                    "security_rule": [
+                        {
+                            "access": "Allow",
+                            "description": null,
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": null,
+                            "destination_application_security_group_ids": null,
+                            "destination_port_range": "80",
+                            "destination_port_ranges": null,
+                            "direction": "Inbound",
+                            "name": "HTTP",
+                            "priority": 1001,
+                            "protocol": "Tcp",
+                            "source_address_prefix": "*",
+                            "source_address_prefixes": null,
+                            "source_application_security_group_ids": null,
+                            "source_port_range": "*",
+                            "source_port_ranges": null
+                        },
+                        {
+                            "access": "Allow",
+                            "description": null,
+                            "destination_address_prefix": "*",
+                            "destination_address_prefixes": null,
+                            "destination_application_security_group_ids": null,
+                            "destination_port_range": "22",
+                            "destination_port_ranges": null,
+                            "direction": "Inbound",
+                            "name": "SSH",
+                            "priority": 1002,
+                            "protocol": "Tcp",
+                            "source_address_prefix": "${var.ssh-source-address}",
+                            "source_address_prefixes": null,
+                            "source_application_security_group_ids": null,
+                            "source_port_range": "*",
+                            "source_port_ranges": null
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

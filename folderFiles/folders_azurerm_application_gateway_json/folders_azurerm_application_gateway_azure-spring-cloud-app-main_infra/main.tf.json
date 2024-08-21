@@ -1,0 +1,223 @@
+{
+    "locals": [
+        {
+            "backend_address_pool_name": "${azurerm_virtual_network.this.name}-beap",
+            "frontend_ip_configuration_name": "${azurerm_virtual_network.this.name}-feip",
+            "frontend_port_name": "${azurerm_virtual_network.this.name}-feport",
+            "http_setting_name": "${azurerm_virtual_network.this.name}-be-htst",
+            "listener_name": "${azurerm_virtual_network.this.name}-httplstn",
+            "redirect_configuration_name": "${azurerm_virtual_network.this.name}-rdrcfg",
+            "request_routing_rule_name": "${azurerm_virtual_network.this.name}-rqrt"
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "this": {
+                    "location": "${var.location}",
+                    "name": "rg-${local.name}"
+                }
+            }
+        },
+        {
+            "azurerm_virtual_network": {
+                "this": {
+                    "address_space": [
+                        "10.1.0.0/16"
+                    ],
+                    "location": "${var.location}",
+                    "name": "${local.name}",
+                    "resource_group_name": "${azurerm_resource_group.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "subnet_keyvault": {
+                    "address_prefixes": [
+                        "10.1.1.0/24"
+                    ],
+                    "name": "snet_endpoint",
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "database": {
+                    "address_prefixes": [
+                        "10.1.2.0/24"
+                    ],
+                    "delegation": [
+                        {
+                            "name": "Microsoft.DBforPostgreSQL/serversv2",
+                            "service_delegation": [
+                                {
+                                    "actions": [
+                                        "Microsoft.Network/virtualNetworks/subnets/action",
+                                        "Microsoft.Network/virtualNetworks/subnets/join/action"
+                                    ],
+                                    "name": "Microsoft.DBforPostgreSQL/serversv2"
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "snet_database_name",
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "springapps": {
+                    "address_prefixes": [
+                        "10.1.3.0/24"
+                    ],
+                    "name": "snet_springapp",
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "waf": {
+                    "address_prefixes": [
+                        "10.1.4.0/24"
+                    ],
+                    "name": "snet_waf",
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_application_gateway": {
+                "this": {
+                    "backend_address_pool": [
+                        {
+                            "fqdns": [
+                                "${azurerm_spring_cloud_app.this.fqdn}"
+                            ],
+                            "name": "${local.name}"
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "cookie_based_affinity": "Disabled",
+                            "name": "${local.name}",
+                            "port": 80,
+                            "protocol": "Http",
+                            "request_timeout": 60
+                        }
+                    ],
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "fe-config",
+                            "public_ip_address_id": "${azurerm_public_ip.public_ip.id}"
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "fe-port",
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "${local.name}-gateway-ip-configuration",
+                            "subnet_id": "${azurerm_subnet.waf.id}"
+                        }
+                    ],
+                    "http_listener": [
+                        {
+                            "frontend_ip_configuration_name": "fe-config",
+                            "frontend_port_name": "fe-port",
+                            "name": "be-listener",
+                            "protocol": "Http"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.this.location}",
+                    "name": "appgateway",
+                    "request_routing_rule": [
+                        {
+                            "backend_address_pool_name": "springapp_ap",
+                            "backend_http_settings_name": "demo-bhs",
+                            "http_listener_name": "be-listener",
+                            "name": "demo-rqrt",
+                            "rule_type": "Basic"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "sku": [
+                        {
+                            "capacity": 2,
+                            "name": "Standard_Small",
+                            "tier": "Standard"
+                        }
+                    ],
+                    "waf_configuration": [
+                        {
+                            "disabled_rule_group": [
+                                {
+                                    "rule_group_name": "REQUEST-941-APPLICATION-ATTACK-XSS"
+                                }
+                            ],
+                            "enabled": false,
+                            "firewall_mode": "Prevention",
+                            "rule_set_type": "OWASP",
+                            "rule_set_version": "3.1"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "azurerm_spring_cloud_service": {
+                "this": {
+                    "location": "${var.location}",
+                    "name": "${local.name}-svc",
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "zone_redundant": true
+                }
+            }
+        },
+        {
+            "azurerm_spring_cloud_app": {
+                "this": {
+                    "name": "${local.name}-app",
+                    "resource_group_name": "${azurerm_resource_group.this.name}",
+                    "service_name": "${azurerm_spring_cloud_service.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_private_dns_zone": {
+                "private_dns_zone": {
+                    "name": "private.foo",
+                    "resource_group_name": "${azurerm_resource_group.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "public_ip": {
+                    "allocation_method": "Dynamic",
+                    "location": "${azurerm_resource_group.this.location}",
+                    "name": "pip-ag",
+                    "resource_group_name": "${azurerm_resource_group.this.name}"
+                }
+            }
+        },
+        {
+            "azurerm_dns_zone": {
+                "dns_zone": {
+                    "name": "publicdns.com",
+                    "resource_group_name": "${azurerm_resource_group.this.name}"
+                }
+            }
+        }
+    ]
+}

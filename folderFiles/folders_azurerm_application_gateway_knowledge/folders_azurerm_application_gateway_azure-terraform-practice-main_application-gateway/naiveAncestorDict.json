@@ -1,0 +1,64 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgateway": [
+              "azurerm_application_gateway.appgateway",
+              "azurerm_public_ip.gatewayip",
+              "azurerm_subnet.appsubnet"
+            ],
+            "azurerm_network_interface.interface": [
+              "azurerm_network_interface.interface",
+              "azurerm_subnet.subnetA"
+            ],
+            "azurerm_network_security_group.appnsg": [
+              "azurerm_network_security_group.appnsg"
+            ],
+            "azurerm_public_ip.gatewayip": [
+              "azurerm_public_ip.gatewayip"
+            ],
+            "azurerm_resource_group.appgrp": [
+              "azurerm_resource_group.appgrp"
+            ],
+            "azurerm_storage_account.vmstore4577687": [
+              "azurerm_storage_account.vmstore4577687"
+            ],
+            "azurerm_storage_blob.IISConfig": [
+              "azurerm_storage_blob.IISConfig"
+            ],
+            "azurerm_storage_container.data": [
+              "azurerm_storage_container.data"
+            ],
+            "azurerm_subnet.appsubnet": [
+              "azurerm_subnet.appsubnet"
+            ],
+            "azurerm_subnet.subnetA": [
+              "azurerm_subnet.subnetA"
+            ],
+            "azurerm_subnet_network_security_group_association.appnsg-link": [
+              "azurerm_network_security_group.appnsg",
+              "azurerm_subnet.subnetA",
+              "azurerm_subnet_network_security_group_association.appnsg-link"
+            ],
+            "azurerm_virtual_machine_extension.vmextension": [
+              "azurerm_virtual_machine_extension.vmextension"
+            ],
+            "azurerm_virtual_network.appnetwork": [
+              "azurerm_virtual_network.appnetwork"
+            ],
+            "azurerm_windows_virtual_machine.vm": [
+              "azurerm_windows_virtual_machine.vm"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

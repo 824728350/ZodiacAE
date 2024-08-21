@@ -1,0 +1,57 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_application_gateway.appgateway",
+              "azurerm_public_ip.gatewayip",
+              "frontend_ip_configuration.0.public_ip_address_id",
+              "id",
+              "frontend_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_application_gateway.appgateway",
+              "azurerm_subnet.appsubnet",
+              "gateway_ip_configuration.0.subnet_id",
+              "id",
+              "gateway_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_network_interface.interface",
+              "azurerm_subnet.subnetA",
+              "ip_configuration.0.subnet_id",
+              "id",
+              "ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_subnet_network_security_group_association.appnsg-link",
+              "azurerm_network_security_group.appnsg",
+              "network_security_group_id",
+              "id",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet_network_security_group_association.appnsg-link",
+              "azurerm_subnet.subnetA",
+              "subnet_id",
+              "id",
+              "",
+              ""
+            ]
+          ],
+          "text": "data.assemble.dependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

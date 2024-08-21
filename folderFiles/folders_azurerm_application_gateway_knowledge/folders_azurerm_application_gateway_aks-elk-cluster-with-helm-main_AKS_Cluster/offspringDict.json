@@ -1,0 +1,64 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.app_gw": [
+              "azurerm_application_gateway.app_gw"
+            ],
+            "azurerm_kubernetes_cluster.this": [
+              "azurerm_kubernetes_cluster.this"
+            ],
+            "azurerm_public_ip.this": [
+              "azurerm_application_gateway.app_gw",
+              "azurerm_public_ip.this"
+            ],
+            "azurerm_resource_group.this": [
+              "azurerm_application_gateway.app_gw",
+              "azurerm_public_ip.this",
+              "azurerm_resource_group.this",
+              "azurerm_subnet.aks_node",
+              "azurerm_subnet.aks_pod",
+              "azurerm_subnet.backend",
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.this"
+            ],
+            "azurerm_role_assignment.aks_appgw_identity_assignment": [
+              "azurerm_role_assignment.aks_appgw_identity_assignment"
+            ],
+            "azurerm_role_assignment.aks_identity_assignment": [
+              "azurerm_role_assignment.aks_identity_assignment"
+            ],
+            "azurerm_subnet.aks_node": [
+              "azurerm_subnet.aks_node"
+            ],
+            "azurerm_subnet.aks_pod": [
+              "azurerm_subnet.aks_pod"
+            ],
+            "azurerm_subnet.backend": [
+              "azurerm_subnet.backend"
+            ],
+            "azurerm_subnet.frontend": [
+              "azurerm_application_gateway.app_gw",
+              "azurerm_subnet.frontend"
+            ],
+            "azurerm_virtual_network.this": [
+              "azurerm_application_gateway.app_gw",
+              "azurerm_subnet.aks_node",
+              "azurerm_subnet.aks_pod",
+              "azurerm_subnet.backend",
+              "azurerm_subnet.frontend",
+              "azurerm_virtual_network.this"
+            ]
+          },
+          "text": "data.assemble.offspringDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

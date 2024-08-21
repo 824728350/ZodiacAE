@@ -1,0 +1,174 @@
+{
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "rg-aleksandar-ilicic": {
+                    "location": "northeurope",
+                    "name": "rg-aleksandar-ilicic2"
+                }
+            }
+        },
+        {
+            "azurerm_virtual_network": {
+                "vnetk8s": {
+                    "address_space": [
+                        "10.0.0.0/16"
+                    ],
+                    "dns_servers": [
+                        "10.0.0.4",
+                        "10.0.0.5"
+                    ],
+                    "location": "${azurerm_resource_group.rg-aleksandar-ilicic.location}",
+                    "name": "vnetk8s",
+                    "resource_group_name": "${azurerm_resource_group.rg-aleksandar-ilicic.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "gwSubnet": {
+                    "address_prefixes": [
+                        "10.0.1.0/24"
+                    ],
+                    "depends_on": [],
+                    "name": "gwSubnet",
+                    "resource_group_name": "${azurerm_resource_group.rg-aleksandar-ilicic.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.vnetk8s.name}"
+                }
+            }
+        },
+        {
+            "azurerm_kubernetes_cluster": {
+                "k8s": {
+                    "default_node_pool": [
+                        {
+                            "name": "agentpool",
+                            "node_count": 2,
+                            "vm_size": "Standard_b2ms"
+                        }
+                    ],
+                    "depends_on": [],
+                    "dns_prefix": "k8s",
+                    "identity": [
+                        {
+                            "type": "SystemAssigned"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.rg-aleksandar-ilicic.location}",
+                    "name": "k8s",
+                    "network_profile": [
+                        {
+                            "dns_service_ip": "10.0.3.10",
+                            "load_balancer_sku": "standard",
+                            "network_plugin": "azure",
+                            "service_cidr": "10.0.3.0/24"
+                        }
+                    ],
+                    "oidc_issuer_enabled": true,
+                    "resource_group_name": "${azurerm_resource_group.rg-aleksandar-ilicic.name}",
+                    "sku_tier": "Free",
+                    "workload_identity_enabled": true
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "staticIP": {
+                    "allocation_method": "Static",
+                    "depends_on": [],
+                    "location": "${azurerm_resource_group.rg-aleksandar-ilicic.location}",
+                    "name": "static_ip",
+                    "resource_group_name": "MC_rg-aleksandar-ilicic2_k8s_northeurope",
+                    "sku": "Standard"
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "staticIP2": {
+                    "allocation_method": "Static",
+                    "depends_on": [],
+                    "location": "${azurerm_resource_group.rg-aleksandar-ilicic.location}",
+                    "name": "static_ip2",
+                    "resource_group_name": "${azurerm_resource_group.rg-aleksandar-ilicic.name}",
+                    "sku": "Standard",
+                    "zones": [
+                        "1",
+                        "2",
+                        "3"
+                    ]
+                }
+            }
+        },
+        {
+            "azurerm_application_gateway": {
+                "appGateway": {
+                    "backend_address_pool": [
+                        {
+                            "ip_addresses": [
+                                "${azurerm_public_ip.staticIP.ip_address}"
+                            ],
+                            "name": "BackendPool"
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "cookie_based_affinity": "Disabled",
+                            "name": "backendSetting1",
+                            "port": 80,
+                            "protocol": "Http",
+                            "request_timeout": 20
+                        }
+                    ],
+                    "depends_on": [],
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "appGwPublicFrontendIpIPv4",
+                            "public_ip_address_id": "${azurerm_public_ip.staticIP2.id}"
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "port_80",
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "appGatewayIpConfig",
+                            "subnet_id": "${azurerm_subnet.gwSubnet.id}"
+                        }
+                    ],
+                    "http_listener": [
+                        {
+                            "frontend_ip_configuration_name": "appGwPublicFrontendIpIPv4",
+                            "frontend_port_name": "port_80",
+                            "name": "listener1",
+                            "protocol": "Http"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.rg-aleksandar-ilicic.location}",
+                    "name": "appGateway",
+                    "request_routing_rule": [
+                        {
+                            "backend_address_pool_name": "BackendPool",
+                            "backend_http_settings_name": "backendSetting1",
+                            "http_listener_name": "listener1",
+                            "name": "rule1",
+                            "priority": 1,
+                            "rule_type": "Basic"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.rg-aleksandar-ilicic.name}",
+                    "sku": [
+                        {
+                            "capacity": 1,
+                            "name": "Standard_v2",
+                            "tier": "Standard_v2"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "variable": [
+        {
+            "rg_location": {
+                "default": "eastus",
+                "description": "Location for resource group"
+            }
+        },
+        {
+            "rg_name": {
+                "default": "lemoncode",
+                "description": "Name for resource group"
+            }
+        },
+        {
+            "company": {
+                "default": "Lemoncode",
+                "description": "Company name"
+            }
+        },
+        {
+            "project": {
+                "default": "sandwich",
+                "description": "Company name"
+            }
+        },
+        {
+            "billing_code": {
+                "default": "BF-0000222",
+                "description": "Company name"
+            }
+        },
+        {
+            "vnet_address_space": {
+                "default": "10.0.0.0/16",
+                "description": "VNet CIDR Block"
+            }
+        },
+        {
+            "subnet_address_frontend": {
+                "default": "10.0.1.0/24",
+                "description": "VNet CIDR Block"
+            }
+        },
+        {
+            "subnet_address_backend": {
+                "default": "10.0.2.0/24",
+                "description": "VNet CIDR Block"
+            }
+        },
+        {
+            "vm_size": {
+                "default": "Standard_DS1_v2",
+                "description": "Size of VM"
+            }
+        }
+    ]
+}

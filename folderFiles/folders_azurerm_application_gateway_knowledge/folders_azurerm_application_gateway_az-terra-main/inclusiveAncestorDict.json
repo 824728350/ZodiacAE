@@ -1,0 +1,48 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.app_gateway": [
+              "azurerm_application_gateway.app_gateway",
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.networking",
+              "azurerm_subnet.aks_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_container_registry.acr": [
+              "azurerm_container_registry.acr",
+              "azurerm_resource_group.networking"
+            ],
+            "azurerm_kubernetes_cluster.aks": [
+              "azurerm_kubernetes_cluster.aks",
+              "azurerm_resource_group.networking"
+            ],
+            "azurerm_public_ip.public_ip": [
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.networking"
+            ],
+            "azurerm_resource_group.networking": [
+              "azurerm_resource_group.networking"
+            ],
+            "azurerm_subnet.aks_subnet": [
+              "azurerm_resource_group.networking",
+              "azurerm_subnet.aks_subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_resource_group.networking",
+              "azurerm_virtual_network.vnet"
+            ]
+          },
+          "text": "data.assemble.inclusiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

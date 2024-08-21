@@ -1,0 +1,7 @@
+{
+  "errors": [
+    {
+      "message": "stat ../folderFiles/folders_azurerm_application_gateway_knowledge/folders_azurerm_application_gateway_azure-deployment-templates-master_terraform_files/handled.rego: no such file or directory"
+    }
+  ]
+}

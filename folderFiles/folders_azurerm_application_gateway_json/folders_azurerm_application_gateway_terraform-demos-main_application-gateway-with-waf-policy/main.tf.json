@@ -1,0 +1,50 @@
+{
+    "output": [
+        {
+            "temp": {
+                "value": "${azurerm_virtual_network.example}"
+            }
+        }
+    ],
+    "resource": [
+        {
+            "random_pet": {
+                "name": {}
+            }
+        },
+        {
+            "azurerm_resource_group": {
+                "example": {
+                    "location": "${local.region}",
+                    "name": "rg-app-${local.name}-001"
+                }
+            }
+        },
+        {
+            "azurerm_virtual_network": {
+                "example": {
+                    "address_space": [
+                        "10.0.0.0/24"
+                    ],
+                    "location": "${local.region}",
+                    "name": "vnet-${local.name}-001",
+                    "resource_group_name": "${azurerm_resource_group.example.name}",
+                    "subnet": [
+                        {
+                            "address_prefix": "10.0.0.0/26",
+                            "id": null,
+                            "name": "snet-workload",
+                            "security_group": null
+                        },
+                        {
+                            "address_prefix": "10.0.0.64/26",
+                            "id": null,
+                            "name": "snet-agw",
+                            "security_group": null
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

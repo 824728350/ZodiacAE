@@ -1,0 +1,64 @@
+{
+    "resource": [
+        {
+            "azurerm_service_plan": {
+                "res-13": {
+                    "depends_on": [],
+                    "location": "northeurope",
+                    "name": "AZMMASP01",
+                    "os_type": "Windows",
+                    "resource_group_name": "AZMMCoreRG01",
+                    "sku_name": "S1"
+                }
+            }
+        },
+        {
+            "azurerm_service_plan": {
+                "webappsp2": {
+                    "depends_on": [],
+                    "location": "northeurope",
+                    "name": "AZMMASP02",
+                    "os_type": "Windows",
+                    "resource_group_name": "AZMMCoreRG01",
+                    "sku_name": "P0v3"
+                }
+            }
+        },
+        {
+            "azurerm_service_plan": {
+                "webappsp3": {
+                    "depends_on": [],
+                    "location": "northeurope",
+                    "name": "AZMMASP03",
+                    "os_type": "Windows",
+                    "resource_group_name": "AZMMCoreRG01",
+                    "sku_name": "S1"
+                }
+            }
+        },
+        {
+            "azurerm_service_plan": {
+                "webappsp4": {
+                    "depends_on": [],
+                    "location": "northeurope",
+                    "name": "AZMMASP04",
+                    "os_type": "Windows",
+                    "resource_group_name": "AZMMCoreRG01",
+                    "sku_name": "P0v3"
+                }
+            }
+        },
+        {
+            "azurerm_service_plan": {
+                "webappsp5": {
+                    "depends_on": [],
+                    "location": "northeurope",
+                    "name": "AZMMASP05",
+                    "os_type": "Windows",
+                    "resource_group_name": "AZMMCoreRG01",
+                    "sku_name": "S1"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.gw": [],
+            "azurerm_public_ip.ingress": [
+              "azurerm_application_gateway.gw"
+            ],
+            "azurerm_subnet.backend": [],
+            "azurerm_subnet.frontend": [
+              "azurerm_application_gateway.gw"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_subnet.backend",
+              "azurerm_subnet.frontend"
+            ]
+          },
+          "text": "data.assemble.referencesSuccDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}
