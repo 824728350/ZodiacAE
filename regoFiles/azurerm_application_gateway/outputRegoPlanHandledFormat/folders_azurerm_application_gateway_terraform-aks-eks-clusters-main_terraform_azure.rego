@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "helm": {
                 "expressions": {
@@ -1807,6 +1808,38 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
+                "oidc_issuer_url"
+            ],
+            "resource": "azurerm_kubernetes_cluster.aks"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.vnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "resources",
+                0,
+                "name"
+            ],
+            "resource": "data.azurerm_resources.vnet"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_application_gateway.appgw"
+        },
+        {
+            "attribute": [
                 "kube_config",
                 0,
                 "host"
@@ -1815,9 +1848,21 @@ mock_config := {
         },
         {
             "attribute": [
+                "ip_address"
+            ],
+            "resource": "azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
                 "id"
             ],
-            "resource": "azurerm_virtual_network.vnet"
+            "resource": "azurerm_subnet.appgwsubnet"
         },
         {
             "attribute": [
@@ -1828,85 +1873,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "principal_id"
-            ],
-            "resource": "azurerm_user_assigned_identity.testIdentity"
-        },
-        {
-            "attribute": [
-                "oidc_issuer_url"
-            ],
-            "resource": "azurerm_kubernetes_cluster.aks"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_application_gateway.appgw"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_role_assignment.aks_appgw_role"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.vnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.appgwsubnet"
-        },
-        {
-            "attribute": [
-                "node_resource_group"
-            ],
-            "resource": "azurerm_kubernetes_cluster.aks"
-        },
-        {
-            "attribute": [
                 "id"
             ],
             "resource": "azurerm_user_assigned_identity.testIdentity"
-        },
-        {
-            "attribute": [
-                "resources",
-                0,
-                "id"
-            ],
-            "resource": "data.azurerm_resources.vnet"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "resources",
-                0,
-                "name"
-            ],
-            "resource": "data.azurerm_resources.vnet"
         },
         {
             "attribute": [
@@ -1916,21 +1885,53 @@ mock_config := {
         },
         {
             "attribute": [
-                "ip_address"
+                "location"
             ],
-            "resource": "azurerm_public_ip.pip"
+            "resource": "azurerm_resource_group.rg"
         },
         {
             "attribute": [
-                "id"
+                "principal_id"
             ],
-            "resource": "azurerm_public_ip.pip"
+            "resource": "azurerm_user_assigned_identity.testIdentity"
         },
         {
             "attribute": [
                 "id"
             ],
             "resource": "azurerm_application_gateway.appgw"
+        },
+        {
+            "attribute": [
+                "node_resource_group"
+            ],
+            "resource": "azurerm_kubernetes_cluster.aks"
+        },
+        {
+            "attribute": [
+                "resources",
+                0,
+                "id"
+            ],
+            "resource": "data.azurerm_resources.vnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_role_assignment.aks_appgw_role"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_virtual_network.vnet"
         }
     ],
     "resource_changes": [
@@ -3134,7 +3135,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:15:50Z",
+    "timestamp": "2024-08-23T00:11:36Z",
     "variables": {
         "host-name": {
             "value": "app.vigregus.com"

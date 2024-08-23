@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -1071,30 +1072,6 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_network_security_group.demo-instance"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.demo-subnet-2"
-        },
-        {
-            "attribute": [
-                "backend_address_pool"
-            ],
-            "resource": "azurerm_application_gateway.app-gateway"
-        },
-        {
-            "attribute": [
-                "result"
-            ],
-            "resource": "random_string.random-name"
-        },
-        {
-            "attribute": [
                 "name"
             ],
             "resource": "azurerm_resource_group.demo"
@@ -1116,6 +1093,30 @@ mock_config := {
                 "id"
             ],
             "resource": "azurerm_public_ip.demo"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.demo-instance"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.demo-subnet-2"
+        },
+        {
+            "attribute": [
+                "backend_address_pool"
+            ],
+            "resource": "azurerm_application_gateway.app-gateway"
+        },
+        {
+            "attribute": [
+                "result"
+            ],
+            "resource": "random_string.random-name"
         }
     ],
     "resource_changes": [
@@ -1920,7 +1921,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:16:29Z",
+    "timestamp": "2024-08-23T00:12:43Z",
     "variables": {
         "location": {
             "value": "westeurope"

@@ -145,7 +145,8 @@
             "client-app",
             "mage-data-prep-app",
             "sp-terraform-foundation",
-            "EK-Discord-Jester"
+            "EK-Discord-Jester",
+            "AKS_Deployment_SPN"
         ],
         "fallback_public_client_enabled": [
             "null"
@@ -286,6 +287,11 @@
             "null"
         ]
     },
+    "azuread_client_config": {
+        "timeouts": [
+            "null"
+        ]
+    },
     "azuread_directory_role": {
         "display_name": [
             "Directory readers",
@@ -321,14 +327,16 @@
             "aks-chaosstudio-administrators",
             "AVD Admins",
             "AVD Users",
-            "AZURE-DG"
+            "AZURE-DG",
+            "AKS_Admins"
         ],
         "mail_enabled": [
             "null"
         ],
         "owners": [
             "930489ba-5810-4e57-aedd-3ebeb7cffe6a",
-            "62e5370a-2bf4-4734-8511-cc798825f062"
+            "62e5370a-2bf4-4734-8511-cc798825f062",
+            "49b998a7-aa04-4db3-aaa7-426d9e2bfa92"
         ],
         "prevent_duplicate_names": [
             "false"
@@ -366,7 +374,8 @@
         ],
         "app_role_assignment_required": [
             "false",
-            "null"
+            "null",
+            "true"
         ],
         "application_id": [
             "00000003-0000-0000-c000-000000000000",
@@ -2059,7 +2068,9 @@
             "DeliveryPipelineAppService",
             "zodiac-appservice",
             "EastWebApp-se3xhold",
-            "WestWebApp-se3xhold"
+            "WestWebApp-se3xhold",
+            "EastWebApp-tdgthold",
+            "WestWebApp-tdgthold"
         ],
         "resource_group_name": [
             "slotDemoResourceGroup",
@@ -2095,7 +2106,9 @@
             "DeliveryPipeline",
             "zodiac-resources",
             "east_rg-se3xhold",
-            "west_rg-se3xhold"
+            "west_rg-se3xhold",
+            "east_rg-tdgthold",
+            "west_rg-tdgthold"
         ],
         "site_config.acr_use_managed_identity_credentials": [
             "false",
@@ -2620,7 +2633,9 @@
             "0boshold-app",
             "zodiac-asp",
             "EastServicePlan-se3xhold",
-            "WestServicePlan-se3xhold"
+            "WestServicePlan-se3xhold",
+            "EastServicePlan-tdgthold",
+            "WestServicePlan-tdgthold"
         ],
         "per_site_scaling": [
             "null"
@@ -2701,7 +2716,9 @@
             "0boshold-rg",
             "zodiac-resources",
             "east_rg-se3xhold",
-            "west_rg-se3xhold"
+            "west_rg-se3xhold",
+            "east_rg-tdgthold",
+            "west_rg-tdgthold"
         ],
         "sku.capacity": [
             "3"
@@ -2983,7 +3000,10 @@
             "pp-matchmakersoftware.azurewebsites.net",
             "rs-matchmakersoftware.azurewebsites.net",
             "se-matchmakersoftware.azurewebsites.net",
-            "smile-online-matchmakersoftware.azurewebsites.net"
+            "smile-online-matchmakersoftware.azurewebsites.net",
+            "vm-01-imagens",
+            "vm-02-videos",
+            "vm-03-default"
         ],
         "backend_address_pool.ip_addresses": [
             "10.10.1.250",
@@ -3063,7 +3083,13 @@
             "pool-app-service",
             "BackendPool",
             "backend-pool",
-            "AppService"
+            "AppService",
+            "appgwtest-beap",
+            "k8s-vnet-beap",
+            "AKS_VNet-beap",
+            "backend-pool-imagens",
+            "backend-pool-videos",
+            "backend-pool-default"
         ],
         "backend_http_settings.affinity_cookie_name": [
             "",
@@ -3155,7 +3181,12 @@
             "be-htst",
             "backendsetting-001",
             "backendSetting1",
-            "http"
+            "http",
+            "appgwtest-be-htst",
+            "k8s-vnet-be-htst",
+            "AKS_VNet-be-htst",
+            "appgw-http-settings",
+            "HTTP-Default"
         ],
         "backend_http_settings.path": [
             "",
@@ -3283,14 +3314,21 @@
             "frontendipconfig-private",
             "appgw-public-frontend-ip",
             "frontend-ip-config",
-            "frontend"
+            "frontend",
+            "appgwtest-feip",
+            "public-ip-configuration",
+            "AKS_VNet-feip",
+            "private-ip-configuration",
+            "appgw-front-end-ip",
+            "FE-Public-IP"
         ],
         "frontend_ip_configuration.private_ip_address": [
             "10.254.0.4",
             "172.16.4.4",
             "10.0.1.10",
             "10.0.3.10",
-            "10.0.0.68"
+            "10.0.0.68",
+            "172.0.34.9"
         ],
         "frontend_ip_configuration.private_ip_address_allocation": [
             "Dynamic",
@@ -3366,7 +3404,11 @@
             "feport",
             "port1",
             "appgw-frontend-port",
-            "Http"
+            "Http",
+            "appgwtest-feport",
+            "k8s-vnet-feport",
+            "AKS_VNet-feport",
+            "FE-PORT-HTTP"
         ],
         "frontend_port.port": [
             "80",
@@ -3406,7 +3448,8 @@
             "gw-ip-config",
             "gatewayipconfig",
             "appgw-ip-config",
-            "subnet"
+            "subnet",
+            "myIPConfig"
         ],
         "gateway_ip_configuration.subnet_id": [
             "/subscriptions/2bd29ed6-34a6-42d7-8235-293e8ee67447/resourceGroups/AZMMCoreRG01/providers/Microsoft.Network/virtualNetworks/AZMMVNET01/subnets/AGWSNET01"
@@ -3471,7 +3514,13 @@
             "frontendipconfig-public",
             "appgw-public-frontend-Ip",
             "frontend-ip-config",
-            "frontend"
+            "frontend",
+            "appgwtest-feip",
+            "public-ip-configuration",
+            "AKS_VNet-feip",
+            "private-ip-configuration",
+            "appgw-front-end-ip",
+            "FE-Public-IP"
         ],
         "http_listener.frontend_port_name": [
             "fp-http",
@@ -3529,7 +3578,11 @@
             "zodiac-sn-appgw-front-http-port",
             "feport",
             "port1",
-            "appgw-frontend-port"
+            "appgw-frontend-port",
+            "appgwtest-feport",
+            "k8s-vnet-feport",
+            "AKS_VNet-feport",
+            "FE-PORT-HTTP"
         ],
         "http_listener.host_name": [
             "",
@@ -3626,7 +3679,12 @@
             "httplstn",
             "listener-001",
             "listener1",
-            "http"
+            "http",
+            "appgwtest-httplstn",
+            "k8s-vnet-httplstn",
+            "AKS_VNet-httplstn",
+            "appgw-listener",
+            "LT-HTTP"
         ],
         "http_listener.protocol": [
             "Http",
@@ -3722,7 +3780,17 @@
             "sample-application-gateway",
             "appGateway",
             "app-gateway-eastus-se3xhold",
-            "app-gateway-westus-se3xhold"
+            "app-gateway-westus-se3xhold",
+            "appgw-0",
+            "AKS_AppGW",
+            "appgw-1",
+            "appgw-2",
+            "appgw-3",
+            "appgw-4",
+            "gordion-appgw",
+            "appgw-westeurope-01",
+            "app-gateway-eastus-tdgthold",
+            "app-gateway-westus-tdgthold"
         ],
         "private_link_configuration.ip_configuration.name": [
             "my-private-link-config-ip-config",
@@ -3916,7 +3984,10 @@
             "pool-app-service",
             "BackendPool",
             "backend-pool",
-            "AppService"
+            "AppService",
+            "appgwtest-beap",
+            "k8s-vnet-beap",
+            "AKS_VNet-beap"
         ],
         "request_routing_rule.backend_http_settings_name": [
             "bh-spoke-a",
@@ -3987,7 +4058,11 @@
             "be-htst",
             "backendsetting-001",
             "backendSetting1",
-            "http"
+            "http",
+            "appgwtest-be-htst",
+            "k8s-vnet-be-htst",
+            "AKS_VNet-be-htst",
+            "appgw-http-settings"
         ],
         "request_routing_rule.http_listener_name": [
             "ls-spoke-a",
@@ -4061,7 +4136,12 @@
             "httplstn",
             "listener-001",
             "listener1",
-            "http"
+            "http",
+            "appgwtest-httplstn",
+            "k8s-vnet-httplstn",
+            "AKS_VNet-httplstn",
+            "appgw-listener",
+            "LT-HTTP"
         ],
         "request_routing_rule.name": [
             "rrr-spoke-a",
@@ -4139,7 +4219,12 @@
             "rule-001",
             "appgw-rule1",
             "routing-rule",
-            "http"
+            "http",
+            "appgwtest-rqrt",
+            "k8s-vnet-rqrt",
+            "AKS_VNet-rqrt",
+            "appgw-rule",
+            "Rule-Http"
         ],
         "request_routing_rule.priority": [
             "100",
@@ -4185,7 +4270,8 @@
             "my-url-path-map",
             "my-url-path-map-vm",
             "RoutingPath",
-            "hr-dev-vnet-upm-app1-app2"
+            "hr-dev-vnet-upm-app1-app2",
+            "path_map"
         ],
         "resource_group_name": [
             "euw-tst-lab-spoke-a-01",
@@ -4250,7 +4336,22 @@
             "rg-aleksandar-ilicic2",
             "Zen_Core",
             "east_rg-se3xhold",
-            "west_rg-se3xhold"
+            "west_rg-se3xhold",
+            "7wvahold",
+            "appgwtest",
+            "aks-rg-0",
+            "AKS_Deployment_RG",
+            "appgw-rg-0",
+            "appgw-rg-1",
+            "appgw-rg-2",
+            "appgw-rg-3",
+            "appgw-rg-4",
+            "gordion-rg",
+            "td5xhold",
+            "RG-APP-GATEWAY",
+            "agw-kv-0",
+            "east_rg-tdgthold",
+            "west_rg-tdgthold"
         ],
         "rewrite_rule_set.name": [
             "add-x-forwarded-for-to-url",
@@ -4328,14 +4429,16 @@
             "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"
         ],
         "ssl_certificate.key_vault_secret_id": [
-            ""
+            "",
+            "https://agw-kv-0.vault.azure.net/secrets/test-cert"
         ],
         "ssl_certificate.name": [
             "generated-cert",
             "example-ssl-cert",
             "my-cert-1",
             "keyvault-my-cert-1",
-            "MMWildcard2024"
+            "MMWildcard2024",
+            "ssl-cert"
         ],
         "ssl_certificate.password": [
             "",
@@ -4410,10 +4513,12 @@
         ],
         "tags.owner": [
             "5oa7hold",
-            "gsqnhold"
+            "gsqnhold",
+            "rt0ghold"
         ],
         "tags.source": [
-            "terraform"
+            "terraform",
+            "Dev/GitHub/AppGW"
         ],
         "timeouts": [
             "null"
@@ -4431,12 +4536,14 @@
             "vnet-example-beap-webapps1",
             "vnet-example-beap-vm",
             "videos-pool",
-            "null"
+            "null",
+            "backend-pool-default"
         ],
         "url_path_map.default_backend_http_settings_name": [
             "vnet-example-be-htst",
             "HTTPSetting",
-            "null"
+            "null",
+            "HTTP-Default"
         ],
         "url_path_map.default_redirect_configuration_name": [
             "null",
@@ -4450,7 +4557,8 @@
             "my-url-path-map",
             "my-url-path-map-vm",
             "RoutingPath",
-            "hr-dev-vnet-upm-app1-app2"
+            "hr-dev-vnet-upm-app1-app2",
+            "path_map"
         ],
         "url_path_map.path_rule.backend_address_pool_name": [
             "vnet-example-beap-webapps2",
@@ -4458,13 +4566,16 @@
             "images-pool",
             "videos-pool",
             "hr-dev-vnet-beap-app1",
-            "hr-dev-vnet-beap-app2"
+            "hr-dev-vnet-beap-app2",
+            "backend-pool-imagens",
+            "backend-pool-videos"
         ],
         "url_path_map.path_rule.backend_http_settings_name": [
             "vnet-example-be-htst-2",
             "HTTPSetting",
             "hr-dev-vnet-be-htst-app1",
-            "hr-dev-vnet-be-htst-app2"
+            "hr-dev-vnet-be-htst-app2",
+            "HTTP-Default"
         ],
         "url_path_map.path_rule.firewall_policy_id": [
             "null"
@@ -4474,14 +4585,17 @@
             "imagesRoutingRule",
             "videosRoutingRule",
             "app1-rule",
-            "app2-rule"
+            "app2-rule",
+            "imagens-path",
+            "videos-path"
         ],
         "url_path_map.path_rule.paths": [
             "/staging/*",
             "/images/*",
             "/videos/*",
             "/app1/*",
-            "/app2/*"
+            "/app2/*",
+            "/imagens/*"
         ],
         "url_path_map.path_rule.redirect_configuration_name": [
             "null"
@@ -8034,7 +8148,8 @@
             "kafka-ui-container-app",
             "zookeeper-container-app",
             "ca-ds0ehold-g9o2hold-eastus",
-            "ca-tpamhold-dnkzhold-eastus"
+            "ca-tpamhold-dnkzhold-eastus",
+            "backend1"
         ],
         "registry.password_secret_name": [
             "null"
@@ -8048,7 +8163,8 @@
             "dev-kafka-demo-RG",
             "rg-ds0ehold-g9o2hold-eastus",
             "rg-tpamhold-dnkzhold-eastus",
-            "acaappgtw-rg"
+            "acaappgtw-rg",
+            "appgwtest"
         ],
         "revision_mode": [
             "Single"
@@ -8063,6 +8179,9 @@
         "tags.environment": [
             "g9o2hold",
             "dnkzhold"
+        ],
+        "tags.source": [
+            "Dev/GitHub/AppGW"
         ],
         "template.container.args": [
             "null"
@@ -8120,7 +8239,8 @@
             "item",
             "team",
             "record",
-            "redis"
+            "redis",
+            "myapp"
         ],
         "template.max_replicas": [
             "5",
@@ -8161,6 +8281,9 @@
             "uksouth",
             "eastus"
         ],
+        "log_analytics_workspace_id": [
+            "null"
+        ],
         "mutual_tls_enabled": [
             "false"
         ],
@@ -8172,7 +8295,8 @@
             "kafka-container-app-env",
             "cae-ds0ehold-g9o2hold-eastus",
             "cae-tpamhold-dnkzhold-eastus",
-            "acaappgtw-env"
+            "acaappgtw-env",
+            "myContainerAppEnv"
         ],
         "resource_group_name": [
             "example-resources",
@@ -8180,7 +8304,8 @@
             "dev-kafka-demo-RG",
             "rg-ds0ehold-g9o2hold-eastus",
             "rg-tpamhold-dnkzhold-eastus",
-            "acaappgtw-rg"
+            "acaappgtw-rg",
+            "appgwtest"
         ],
         "tags": [
             "null"
@@ -8188,6 +8313,9 @@
         "tags.environment": [
             "g9o2hold",
             "dnkzhold"
+        ],
+        "tags.source": [
+            "Dev/GitHub/AppGW"
         ],
         "timeouts": [
             "null"
@@ -17563,7 +17691,9 @@
             "bugtracker-ms02",
             "AZMMKV01",
             "zodiacKeyVault",
-            "zenpayzpkeyvault"
+            "zenpayzpkeyvault",
+            "AKS-Key-Vault-ykal",
+            "agw-kv-0"
         ],
         "network_acls.bypass": [
             "AzureServices",
@@ -17709,7 +17839,9 @@
             "zodiac-rg",
             "colin-rg",
             "my-resource-group",
-            "Zen_Core"
+            "Zen_Core",
+            "AKS_Deployment_RG",
+            "agw-kv-0"
         ],
         "sku_name": [
             "standard",
@@ -17810,7 +17942,8 @@
             "1d536e8d-9194-42b7-bf68-3bd969b5e0aa",
             "76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61",
             "e66e77b4-5724-44d7-8721-06df160450ce",
-            "3a243d17-3d9f-43e2-96a9-222d4b6fada1"
+            "3a243d17-3d9f-43e2-96a9-222d4b6fada1",
+            "16b3c013-d300-468d-ac64-7eda0820b6d3"
         ],
         "timeouts": [
             "null"
@@ -17929,11 +18062,13 @@
     "azurerm_key_vault_certificate": {
         "certificate.contents": [
             "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",
-            "MIIKEQIBAzCCCdcGCSqGSIb3DQEHAaCCCcgEggnEMIIJwDCCBHcGCSqGSIb3DQEHBqCCBGgwggRkAgEAMIIEXQYJKoZIhvcNAQcBMBwGCiqGSIb3DQEMAQYwDgQIzK0b1CG9JT8CAggAgIIEMMuBEpxEt2RWdvH+xxgLIPeMTtTtJQeXAjxZF63fFNMWCBASFUEqdBhG38VtotXrXHFXc6lkItj8MukZcHZWqZs0pgePIxSXxlX1p+N1A2C2dP0OjX+sRde7skie8jApgkr3q06REYuvTwZR/fQT21io/FaMKjr149EXbR+iaA98WM3bXETO5xk2QouPY6gW+9RPgOevEQa7tnGiucTLZXdhCV95+1OWZD+7uaj7j2SJtmXJ6xEUMYNq425CUacPX4383lTB3HhS31ak0WuuZNMH+2FK3Cp+SYJSCu5s/vfRgIlKl6ToIcT+i5kUTQCfVnZ4lFvd5Hg9zp7ZWxmpwQgtJDWnr99quNa9Ifhdf0pRAlZHYFrJJBJfnKyrMhO3TXif3tNPDO4qsXgwTBEfGWHDCRRPwWq/yflT8ezPAL4WCPHDpV0qZzCQe3OudGwja2jl6nCD1ZsXgI/TFxKdLp90pKWw4xPCVK0OFZueXvux4/+P1Ggws9CyRHh2v6XJ0vLhKK9afGHc40rla+lBzM24gmS9d1oRWVtrElGALVbOSGXWnLAkcZMhQQA59EA6CBi7WoOnh/jO+louhdgXQdZ8mNfD3DPSJ5hiEMzX+1OH6WwTGwqt5Uebyh2w065hxpjQTUmlVp2lZn/7Gb/laBionMJyAHXaQ6QDYrZLD4BS1c66PIZ1zrLwAEI2C+JCnjIhmXYGs2qK7WxPaixGkq9mRcMPZH/P+opoi66ChwDgN1Ah7IyKHpJwCtQUDwz84ibkY0nm5qFZm1x4NuBeADOQ6WO0HQqSwYkbtJ/NkODRTMxrSmDEC8Dvu5oJypxqi4NwkFfyBr3cZVrPLcRqwl0Nmp4KkO96Nmq3dttAXIFiaip8b0cmcr10v+cRxfcdgPezJ2u8SaCIVxjDoiG7xblaGDDPnrG/z7Q7EtdF4WE3AASRjsze19glvytYwnArFG2BlP8MlQTDQKain5jvjuJ5PW+o0b3Ul8LSSQmqo+AH0HBzxzjvZyebzytfXRoLf28uXlJ1fxmCyjTa5acUg86r2ypyVWnSSXI1uNIqLaJ76S/w2YMrCqmxB7rGhkoXpriwXWkTCutUQxIpQwAMS7In5JdNZTYnQmWcO3AgX6T1uVvPXlM6B5yuMv7zhoiv3IwNojqwpg7Jj7OsqwOnKs68uefFbbbDwExyogt8OFmEg3tQV0qFWWzpKqBnBvFOUAj+OODyjU4UwJ//KSsRR5+rRz0UIAeDaU2c5FvFPJgfVjvciusDDMW/xHAbFCHlObj+5oiKR5UR4okKJwUL7fW/H6ke/NmzoLpTfr0k838iKv+Dw+oYUUKi7DyjR5qsurUVv4Xen+3QDhcOfKK8HASEBN31QDCp8H3O8uOm0VaVBgxAI6fOUljrJxDc+vE5UopxeyoGPgf3Q+8NxPEfnXYwggVBBgkqhkiG9w0BBwGgggUyBIIFLjCCBSowggUmBgsqhkiG9w0BDAoBAqCCBO4wggTqMBwGCiqGSIb3DQEMAQMwDgQIqxDrzIEqbgACAggABIIEyLocUxa14qB//cHblkERhfw1PRqxIcRCj0A9ljuobarMf0hau+S+XIYuu+X67vUF4On79AGwCFyP4l6nN3vRtb289HKojzyxx201a0NGd4FWMSDL/Oo/CMDDgzs88xA+w3V2cCw+5axmARzEeSk9xkOcEJb7XH+Jn53nTYzsSLpo+61bAP/DwRIjypU30gpILhVuWGFU1BETns0AkLkDCVRovBub6vfaQcl7GYHxHWXXqBTXXTAKwVL1D1rG+hVFsZ84TumgbND+e7/5yKHhTK7W1wkRacRhH/AgEFluLU5eakwyLRQFDijbUpcIFJdv9iDXQXMODOcoRrCCNZJ38E0U4kWWN6YdmeTwvzXDG0ACM42R8zAdJ4WXjw6UYi87dVwMgDIttRzflQ/FUc4bF1/EjtJZ5rEOSWfpP415uMaUZJHz/lsGJPiGwGjeq1ZDdvi3cveP0v7XYt8aWmcm9cQ1qGSnS7H6FH8kAp3/+pfMuF6fTdg2Yx7KwiUx5SCrExXsXNVjhCNeVk8JbhXTFqxaC6jQgmqh1He3XTOWyz7sBoh6+gjXwmEXG9apU9sjblK/Iu/FLWhIx+bx6w2Yo03SdvBoTh4KtIYI2VrfhHVN+hHhkhRIlw3QOjWps5z/zfjOmBC+dABn3BKTnw1HyZQwfh3P+Z4B3rYVNdCqkn+euldC4JL+MNPpsRZ3SiB9Rx3l5zSMR84BrT6sCf8JVGyQuDkPB1Effnfk0SPlBYLNppix18qWN8nvTcWTLjEheqjbfDGLYDiOljp2PG3vyKZNLjC+mLzBMmS/QL+NZ06R8dVoKwQ30p5NimXb0wdA3+939uKThhlevJ+m6b3PsmmArxvBM4KB8Tfpn5YSYEpBtfetrupdTb7/juuUe3kBCAK3L6LTefD/7eaN2xA+cpA/iIedBjMTuJspTfSA8M4JipqSuQ79W0PI7Vg/mUdGDoOXIm59GormV2VNqNOserMOf55c423Dir5RFu6Ahl18CBLASUKS2DpRn7uA+ux9PirsCuRvkd/DEZWd0kSWp8biPao/llkIVYQ3D6UvxpWrZ5Wcr99jWw3QAI5APEuZJ2qK8Z/GS3JN8Jg+syohx+QnsYrI6X+SQ6vI2PqroVuwQ3EPDlOSfKcv5LO1f/N7Am2uNTkqPPH3KK9v7t3xhC5RsxTaOSWMbwdITbM+8UWRSqfO7hEESorK7AaVqRE9yRyRGn+T3QEf7DZOaBBjidosqpX7ozKEjggt5nXGPXo8ujDyn9sun+KDee2NDyValdSp8JLC/lBG9booQN09qiXDxYEh+3GZPflmOX1ikeCulIbGDZthK2BzqR053FiqM3RX+tK2xZwcpRjTggzhinNexFp4B+7mkPrkRGlpJKq/J2I5YGpRPxSMXNHCK/BebvN6ye2A8xDfrtTrLv/zlSbdZjYYFdLskHsZl8AIzzQgUqESrcSSThInpEyKHwvLmThVpgozoEa5dJBWam05b86YMbXa//P91osQNuwXpTll8JECX0FymJ6RRwHa8wkkd+CGkrV9ZMOuwym7NUXviet0+OmFRwMX2FTB/Ui51xxO7WWiowcl+Oz3myDVPHo9iIWTahCQnnyGd6uiXZNfmfRz5HdndyVbxjElMCMGCSqGSIb3DQEJFTEWBBQxvLCQAZjMEPiHAOwP6M6qR+DrYDAxMCEwCQYFKw4DAhoFAAQUqu7KLWy3BZLN2CwxysOB/YosrvAECL4jqjAnXUbpAgIIAA=="
+            "MIIKEQIBAzCCCdcGCSqGSIb3DQEHAaCCCcgEggnEMIIJwDCCBHcGCSqGSIb3DQEHBqCCBGgwggRkAgEAMIIEXQYJKoZIhvcNAQcBMBwGCiqGSIb3DQEMAQYwDgQIzK0b1CG9JT8CAggAgIIEMMuBEpxEt2RWdvH+xxgLIPeMTtTtJQeXAjxZF63fFNMWCBASFUEqdBhG38VtotXrXHFXc6lkItj8MukZcHZWqZs0pgePIxSXxlX1p+N1A2C2dP0OjX+sRde7skie8jApgkr3q06REYuvTwZR/fQT21io/FaMKjr149EXbR+iaA98WM3bXETO5xk2QouPY6gW+9RPgOevEQa7tnGiucTLZXdhCV95+1OWZD+7uaj7j2SJtmXJ6xEUMYNq425CUacPX4383lTB3HhS31ak0WuuZNMH+2FK3Cp+SYJSCu5s/vfRgIlKl6ToIcT+i5kUTQCfVnZ4lFvd5Hg9zp7ZWxmpwQgtJDWnr99quNa9Ifhdf0pRAlZHYFrJJBJfnKyrMhO3TXif3tNPDO4qsXgwTBEfGWHDCRRPwWq/yflT8ezPAL4WCPHDpV0qZzCQe3OudGwja2jl6nCD1ZsXgI/TFxKdLp90pKWw4xPCVK0OFZueXvux4/+P1Ggws9CyRHh2v6XJ0vLhKK9afGHc40rla+lBzM24gmS9d1oRWVtrElGALVbOSGXWnLAkcZMhQQA59EA6CBi7WoOnh/jO+louhdgXQdZ8mNfD3DPSJ5hiEMzX+1OH6WwTGwqt5Uebyh2w065hxpjQTUmlVp2lZn/7Gb/laBionMJyAHXaQ6QDYrZLD4BS1c66PIZ1zrLwAEI2C+JCnjIhmXYGs2qK7WxPaixGkq9mRcMPZH/P+opoi66ChwDgN1Ah7IyKHpJwCtQUDwz84ibkY0nm5qFZm1x4NuBeADOQ6WO0HQqSwYkbtJ/NkODRTMxrSmDEC8Dvu5oJypxqi4NwkFfyBr3cZVrPLcRqwl0Nmp4KkO96Nmq3dttAXIFiaip8b0cmcr10v+cRxfcdgPezJ2u8SaCIVxjDoiG7xblaGDDPnrG/z7Q7EtdF4WE3AASRjsze19glvytYwnArFG2BlP8MlQTDQKain5jvjuJ5PW+o0b3Ul8LSSQmqo+AH0HBzxzjvZyebzytfXRoLf28uXlJ1fxmCyjTa5acUg86r2ypyVWnSSXI1uNIqLaJ76S/w2YMrCqmxB7rGhkoXpriwXWkTCutUQxIpQwAMS7In5JdNZTYnQmWcO3AgX6T1uVvPXlM6B5yuMv7zhoiv3IwNojqwpg7Jj7OsqwOnKs68uefFbbbDwExyogt8OFmEg3tQV0qFWWzpKqBnBvFOUAj+OODyjU4UwJ//KSsRR5+rRz0UIAeDaU2c5FvFPJgfVjvciusDDMW/xHAbFCHlObj+5oiKR5UR4okKJwUL7fW/H6ke/NmzoLpTfr0k838iKv+Dw+oYUUKi7DyjR5qsurUVv4Xen+3QDhcOfKK8HASEBN31QDCp8H3O8uOm0VaVBgxAI6fOUljrJxDc+vE5UopxeyoGPgf3Q+8NxPEfnXYwggVBBgkqhkiG9w0BBwGgggUyBIIFLjCCBSowggUmBgsqhkiG9w0BDAoBAqCCBO4wggTqMBwGCiqGSIb3DQEMAQMwDgQIqxDrzIEqbgACAggABIIEyLocUxa14qB//cHblkERhfw1PRqxIcRCj0A9ljuobarMf0hau+S+XIYuu+X67vUF4On79AGwCFyP4l6nN3vRtb289HKojzyxx201a0NGd4FWMSDL/Oo/CMDDgzs88xA+w3V2cCw+5axmARzEeSk9xkOcEJb7XH+Jn53nTYzsSLpo+61bAP/DwRIjypU30gpILhVuWGFU1BETns0AkLkDCVRovBub6vfaQcl7GYHxHWXXqBTXXTAKwVL1D1rG+hVFsZ84TumgbND+e7/5yKHhTK7W1wkRacRhH/AgEFluLU5eakwyLRQFDijbUpcIFJdv9iDXQXMODOcoRrCCNZJ38E0U4kWWN6YdmeTwvzXDG0ACM42R8zAdJ4WXjw6UYi87dVwMgDIttRzflQ/FUc4bF1/EjtJZ5rEOSWfpP415uMaUZJHz/lsGJPiGwGjeq1ZDdvi3cveP0v7XYt8aWmcm9cQ1qGSnS7H6FH8kAp3/+pfMuF6fTdg2Yx7KwiUx5SCrExXsXNVjhCNeVk8JbhXTFqxaC6jQgmqh1He3XTOWyz7sBoh6+gjXwmEXG9apU9sjblK/Iu/FLWhIx+bx6w2Yo03SdvBoTh4KtIYI2VrfhHVN+hHhkhRIlw3QOjWps5z/zfjOmBC+dABn3BKTnw1HyZQwfh3P+Z4B3rYVNdCqkn+euldC4JL+MNPpsRZ3SiB9Rx3l5zSMR84BrT6sCf8JVGyQuDkPB1Effnfk0SPlBYLNppix18qWN8nvTcWTLjEheqjbfDGLYDiOljp2PG3vyKZNLjC+mLzBMmS/QL+NZ06R8dVoKwQ30p5NimXb0wdA3+939uKThhlevJ+m6b3PsmmArxvBM4KB8Tfpn5YSYEpBtfetrupdTb7/juuUe3kBCAK3L6LTefD/7eaN2xA+cpA/iIedBjMTuJspTfSA8M4JipqSuQ79W0PI7Vg/mUdGDoOXIm59GormV2VNqNOserMOf55c423Dir5RFu6Ahl18CBLASUKS2DpRn7uA+ux9PirsCuRvkd/DEZWd0kSWp8biPao/llkIVYQ3D6UvxpWrZ5Wcr99jWw3QAI5APEuZJ2qK8Z/GS3JN8Jg+syohx+QnsYrI6X+SQ6vI2PqroVuwQ3EPDlOSfKcv5LO1f/N7Am2uNTkqPPH3KK9v7t3xhC5RsxTaOSWMbwdITbM+8UWRSqfO7hEESorK7AaVqRE9yRyRGn+T3QEf7DZOaBBjidosqpX7ozKEjggt5nXGPXo8ujDyn9sun+KDee2NDyValdSp8JLC/lBG9booQN09qiXDxYEh+3GZPflmOX1ikeCulIbGDZthK2BzqR053FiqM3RX+tK2xZwcpRjTggzhinNexFp4B+7mkPrkRGlpJKq/J2I5YGpRPxSMXNHCK/BebvN6ye2A8xDfrtTrLv/zlSbdZjYYFdLskHsZl8AIzzQgUqESrcSSThInpEyKHwvLmThVpgozoEa5dJBWam05b86YMbXa//P91osQNuwXpTll8JECX0FymJ6RRwHa8wkkd+CGkrV9ZMOuwym7NUXviet0+OmFRwMX2FTB/Ui51xxO7WWiowcl+Oz3myDVPHo9iIWTahCQnnyGd6uiXZNfmfRz5HdndyVbxjElMCMGCSqGSIb3DQEJFTEWBBQxvLCQAZjMEPiHAOwP6M6qR+DrYDAxMCEwCQYFKw4DAhoFAAQUqu7KLWy3BZLN2CwxysOB/YosrvAECL4jqjAnXUbpAgIIAA==",
+            "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"
         ],
         "certificate.password": [
             "terraform",
-            "bukhari"
+            "bukhari",
+            "test"
         ],
         "certificate_policy.issuer_parameters.name": [
             "Self",
@@ -18011,7 +18146,8 @@
             "zodiac-cert",
             "gen-cert",
             "my-cert-1",
-            "AZMMKV01-MMWildcardKV2024"
+            "AZMMKV01-MMWildcardKV2024",
+            "test-cert"
         ],
         "tags": [
             "null"
@@ -18615,7 +18751,8 @@
             "1.24",
             "1.23.12",
             "1.26",
-            "1.27.7"
+            "1.27.7",
+            "1.29"
         ],
         "default_node_pool.os_disk_size_gb": [
             "60",
@@ -18821,7 +18958,10 @@
             "poc-aks",
             "zodiac-aks",
             "my-aks-cluster-dns-prefix",
-            "k8s"
+            "k8s",
+            "agic-test",
+            "test-aks-clusterdns",
+            "gordion"
         ],
         "dns_prefix_private_cluster": [
             "null",
@@ -19025,7 +19165,14 @@
             "bugtracker-ms02",
             "aks-cluster1",
             "my-aks-cluster",
-            "k8s"
+            "k8s",
+            "aks-0",
+            "test-aks-clusteraks",
+            "aks-1",
+            "aks-2",
+            "aks-3",
+            "aks-4",
+            "gordion-aks-cluster"
         ],
         "network_profile.dns_service_ip": [
             "10.2.0.10",
@@ -19043,7 +19190,8 @@
             "10.0.1.10",
             "10.0.4.10",
             "10.201.0.10",
-            "10.0.3.10"
+            "10.0.3.10",
+            "10.240.0.53"
         ],
         "network_profile.docker_bridge_cidr": [
             "172.17.0.1/16",
@@ -19099,7 +19247,8 @@
             "10.0.64.0/19",
             "10.0.1.0/24",
             "10.0.4.0/24",
-            "10.201.0.0/16"
+            "10.201.0.0/16",
+            "10.240.0.0/12"
         ],
         "node_os_channel_upgrade": [
             "null",
@@ -19125,7 +19274,8 @@
             "nodeaks",
             "rg-rg-aks-deployment-dev-eastus",
             "simphera-infra-aks-node-pools",
-            "aks-sa-rg-aks-sa-cluster-nodes"
+            "aks-sa-rg-aks-sa-cluster-nodes",
+            "test-aks-cluster-node-rg"
         ],
         "oidc_issuer_enabled": [
             "null",
@@ -19245,7 +19395,15 @@
             "poc-appgw-aks-rg",
             "zodiac-rg",
             "sample-resources",
-            "rg-aleksandar-ilicic2"
+            "rg-aleksandar-ilicic2",
+            "aks-rg-0",
+            "AKS_Deployment_RG",
+            "aks-rg-1",
+            "aks-rg-2",
+            "aks-rg-3",
+            "aks-rg-4",
+            "gordion-rg",
+            "agw-kv-0"
         ],
         "role_based_access_control_enabled": [
             "true"
@@ -19324,7 +19482,8 @@
             "DEV",
             "Dev",
             "dev",
-            "aks--elk-Setup"
+            "aks--elk-Setup",
+            "Development -"
         ],
         "tags.ManagedWith": [
             "terraform"
@@ -20536,7 +20695,8 @@
         ],
         "tags.owner": [
             "5oa7hold",
-            "gsqnhold"
+            "gsqnhold",
+            "rt0ghold"
         ],
         "tags.owners": [
             "cloudops"
@@ -23834,7 +23994,8 @@
             "zodiac-resources",
             "waflab-resources",
             "ukcfhold",
-            "colin-rg"
+            "colin-rg",
+            "7wvahold"
         ],
         "secure_boot_enabled": [
             "null"
@@ -25758,7 +25919,8 @@
             "southcentralus",
             "uksouth",
             "westeurope",
-            "northeurope"
+            "northeurope",
+            "westus2"
         ],
         "plan.product": [
             "OMSGallery/ContainerInsights",
@@ -25794,7 +25956,8 @@
             "DetectionWorkshop",
             "rg_loganalytics",
             "nqifhold",
-            "zodiac-resources"
+            "zodiac-resources",
+            "AKS_Deployment_RG"
         ],
         "solution_name": [
             "ContainerInsights",
@@ -25824,7 +25987,8 @@
             "loganalytics",
             "0i0nhold-LogAnalyticsWorkspace",
             "zodiac-law",
-            "zodiac-laworkspace"
+            "zodiac-laworkspace",
+            "aks-loganalytics-ykal"
         ]
     },
     "azurerm_log_analytics_storage_insights": {
@@ -25889,7 +26053,8 @@
             "australiaeast",
             "westus",
             "francecentral",
-            "southafricanorth"
+            "southafricanorth",
+            "westus2"
         ],
         "name": [
             "loganalytics1",
@@ -25950,7 +26115,8 @@
             "loganalytics-devops-project-002",
             "acaappgtw-logs",
             "la-repro-502",
-            "bugtracker-ms02-logs"
+            "bugtracker-ms02-logs",
+            "aks-loganalytics-ykal"
         ],
         "reservation_capacity_in_gb_per_day": [
             "null"
@@ -26025,7 +26191,8 @@
             "acaappgtw-rg",
             "repro-502",
             "bugtracker-ms02",
-            "my-resource-group"
+            "my-resource-group",
+            "AKS_Deployment_RG"
         ],
         "retention_in_days": [
             "30",
@@ -31396,7 +31563,8 @@
             "eastasia",
             "centralus",
             "eastus2",
-            "australiaeast"
+            "australiaeast",
+            "westus2"
         ],
         "name": [
             "euw-tst-lab-hub-01-ngw-01",
@@ -31421,7 +31589,8 @@
             "ng-xu5chold-cqkthold-01",
             "tgj1hold",
             "stu6hold",
-            "h6vwhold"
+            "h6vwhold",
+            "aks_natgw"
         ],
         "resource_group_name": [
             "euw-tst-lab-hub-01",
@@ -31453,7 +31622,8 @@
             "6nkvhold",
             "zr84hold",
             "wwtnhold",
-            "0cg8hold"
+            "0cg8hold",
+            "AKS_Deployment_RG"
         ],
         "sku_name": [
             "Standard"
@@ -34623,7 +34793,8 @@
             "dojolab-defaultname",
             "poc-appgw-aks-rg",
             "colin-rg",
-            "Zen_Core"
+            "Zen_Core",
+            "7wvahold"
         ],
         "tags": [
             "null"
@@ -36831,7 +37002,8 @@
             "poc-appgw-aks-rg",
             "colin-rg",
             "my-resource-group",
-            "Zen_Core"
+            "Zen_Core",
+            "7wvahold"
         ],
         "security_rule.access": [
             "Allow",
@@ -40526,7 +40698,8 @@
             "obl3hold",
             "psql",
             "psqladminun",
-            "lgayhold"
+            "lgayhold",
+            "wnh1hold"
         ],
         "administrator_login_password": [
             "oit1slAac^OcHir1:)@",
@@ -40542,7 +40715,8 @@
             "e7jwhold",
             "Br@inb0ard",
             "ea9fhold",
-            "q032hold"
+            "q032hold",
+            "wrmyhold"
         ],
         "auto_grow_enabled": [
             "false",
@@ -40665,7 +40839,8 @@
         ],
         "tags.owner": [
             "5oa7hold",
-            "gsqnhold"
+            "gsqnhold",
+            "rt0ghold"
         ],
         "timeouts": [
             "null"
@@ -40758,7 +40933,9 @@
             "ogmwhold4e51holdsa",
             "applb",
             "c97nhold-synapse",
-            "azmmsql01"
+            "azmmsql01",
+            "@",
+            "*"
         ],
         "records": [
             "10.0.4.1",
@@ -40796,7 +40973,8 @@
             "1ohmhold-analysis-environment-rg",
             "ogmwhold-analysis-environment-rg",
             "c97nhold-rg",
-            "azmmcorerg01"
+            "azmmcorerg01",
+            "appgwtest"
         ],
         "tags": [
             "null"
@@ -41288,7 +41466,8 @@
             "example-rg",
             "rg-orbit-aks2-demo",
             "bugtracker-ms02",
-            "AZMMCoreRG01"
+            "AZMMCoreRG01",
+            "appgwtest"
         ],
         "tags": [
             "null"
@@ -41353,7 +41532,8 @@
             "Demo"
         ],
         "tags.source": [
-            "https://github.com/t-young31/azure-redcap-prototype"
+            "https://github.com/t-young31/azure-redcap-prototype",
+            "Dev/GitHub/AppGW"
         ],
         "tags.technical_contact": [
             "andyxuan2010@gmail.com"
@@ -41478,7 +41658,8 @@
             "vnet-spoke1-link",
             "bugservicedb-ms02VnetZone.com",
             "userservicedb-ms02VnetZone.com",
-            "mp2zoxnjsbkyw"
+            "mp2zoxnjsbkyw",
+            "my-custom-vnet-pdns-link"
         ],
         "private_dns_zone_name": [
             "mydomain.com",
@@ -41603,7 +41784,8 @@
             "example-rg",
             "rg-orbit-aks2-demo",
             "bugtracker-ms02",
-            "AZMMCoreRG01"
+            "AZMMCoreRG01",
+            "appgwtest"
         ],
         "tags": [
             "null"
@@ -42301,7 +42483,9 @@
             "firewall-mgmt",
             "fmeflow",
             "ipeastusse3xhold",
-            "ipwestusse3xhold"
+            "ipwestusse3xhold",
+            "ipeastustdgthold",
+            "ipwestustdgthold"
         ],
         "edge_zone": [
             "null"
@@ -43298,7 +43482,14 @@
             "static_ip2",
             "lb-pip",
             "ip-eastus-se3xhold",
-            "ip-westus-se3xhold"
+            "ip-westus-se3xhold",
+            "ag-pip-0",
+            "AppGW_PIP",
+            "aks_natgw_pip",
+            "gordion-appgw-public-ip",
+            "pip-westeurope-app-gw",
+            "ip-eastus-tdgthold",
+            "ip-westus-tdgthold"
         ],
         "public_ip_prefix_id": [
             "null"
@@ -43994,7 +44185,17 @@
             "rg-aleksandar-ilicic2",
             "Zen_Core",
             "east_rg-se3xhold",
-            "west_rg-se3xhold"
+            "west_rg-se3xhold",
+            "7wvahold",
+            "appgwtest",
+            "aks-rg-0",
+            "AKS_Deployment_RG",
+            "gordion-rg",
+            "td5xhold",
+            "RG-APP-GATEWAY",
+            "agw-kv-0",
+            "east_rg-tdgthold",
+            "west_rg-tdgthold"
         ],
         "reverse_fqdn": [
             "null"
@@ -44380,7 +44581,8 @@
             "90bnhold",
             "ericsantos",
             "2cdrhold",
-            "gsqnhold"
+            "gsqnhold",
+            "rt0ghold"
         ],
         "tags.ownername": [
             "Sathis Boresamy"
@@ -44426,7 +44628,8 @@
         ],
         "tags.source": [
             "terraform",
-            "Terraform-CLI"
+            "Terraform-CLI",
+            "Dev/GitHub/AppGW"
         ],
         "tags.subject": [
             "BST"
@@ -46679,7 +46882,27 @@
             "Zen_Core",
             "east_rg-se3xhold",
             "traffic_manager_rg-se3xhold",
-            "west_rg-se3xhold"
+            "west_rg-se3xhold",
+            "7wvahold",
+            "appgwtest",
+            "aks-rg-0",
+            "AKS_Deployment_RG",
+            "test-aks-cluster-node-rg",
+            "appgw-rg-0",
+            "appgw-rg-1",
+            "appgw-rg-2",
+            "appgw-rg-3",
+            "appgw-rg-4",
+            "aks-rg-1",
+            "aks-rg-2",
+            "aks-rg-3",
+            "aks-rg-4",
+            "gordion-rg",
+            "RG-APP-GATEWAY",
+            "agw-kv-0",
+            "east_rg-tdgthold",
+            "traffic_manager_rg-tdgthold",
+            "west_rg-tdgthold"
         ],
         "tags": [
             "null"
@@ -47462,7 +47685,8 @@
             "2cdrhold",
             "Ananay",
             "cchambi",
-            "gsqnhold"
+            "gsqnhold",
+            "rt0ghold"
         ],
         "tags.owner_email": [
             "amit.894@gmail.com",
@@ -47573,7 +47797,8 @@
             "aka.ms/oss-labs",
             "citadel1",
             "https://github.com/t-young31/azure-redcap-prototype",
-            "Terraform-CLI"
+            "Terraform-CLI",
+            "Dev/GitHub/AppGW"
         ],
         "tags.stacklet:app": [
             "Azure Relay"
@@ -47963,7 +48188,8 @@
             "3667af54-f188-4b48-bc72-e3fa216e0bec",
             "3b65214f-0ba4-4cc5-b1f4-a288f07c87c9",
             "da87832d-5b32-4014-be78-8f98e3e21fef",
-            "2vs4hold"
+            "2vs4hold",
+            "49b998a7-aa04-4db3-aaa7-426d9e2bfa92"
         ],
         "role_definition_name": [
             "Network Contributor",
@@ -48018,7 +48244,9 @@
             "/subscriptions/o6bvhold/resourceGroups/main",
             "/subscriptions/6jvjhold/resourceGroups/main",
             "/subscriptions/914e2b05-35a2-48e8-9034-fc78b58485b1/resourceGroups/centralus-jennasrunbookstf/providers/Microsoft.Storage/storageAccounts/jennasrunbookstfstate",
-            "/subscriptions/1b7414a3-b034-4f7b-9708-357f1ddecd7a"
+            "/subscriptions/1b7414a3-b034-4f7b-9708-357f1ddecd7a",
+            "/subscriptions/b38e5d20-9ac1-43eb-8531-c1d425068111/resourceGroups/AKS_Deployment_RG/providers/Microsoft.KeyVault/vaults/AKS-Key-Vault-ykal",
+            "/subscriptions/b38e5d20-9ac1-43eb-8531-c1d425068111"
         ],
         "skip_service_principal_aad_check": [
             "true",
@@ -53818,7 +54046,8 @@
             "MarcusVMendes",
             "aswathi shiju",
             "cchambi",
-            "gsqnhold"
+            "gsqnhold",
+            "rt0ghold"
         ],
         "tags.owner_email": [
             "John.Smith@acme.com"
@@ -57203,7 +57432,10 @@
             "10.191.3.0/24",
             "10.191.1.0/24",
             "10.191.2.0/24",
-            "10.1.100.0/27"
+            "10.1.100.0/27",
+            "172.0.34.0/24",
+            "172.0.32.0/24",
+            "172.0.48.0/20"
         ],
         "default_outbound_access_enabled": [
             "true"
@@ -58384,7 +58616,17 @@
             "zodiac-sn-aks",
             "zodiac-sn-appgw",
             "appgw-subnet",
-            "gwSubnet"
+            "gwSubnet",
+            "ACASubnet",
+            "AppGWSubnet",
+            "ingress-appgateway-subnet",
+            "node-subnet",
+            "pod-subnet",
+            "AKS_Subnet",
+            "AppGW_Subnet",
+            "aks-sn",
+            "default-sn",
+            "snet-app-gw"
         ],
         "private_endpoint_network_policies_enabled": [
             "true",
@@ -59361,7 +59603,21 @@
             "rg-aleksandar-ilicic2",
             "Zen_Core",
             "east_rg-se3xhold",
-            "west_rg-se3xhold"
+            "west_rg-se3xhold",
+            "7wvahold",
+            "appgwtest",
+            "aks-rg-0",
+            "AKS_Deployment_RG",
+            "aks-rg-1",
+            "aks-rg-2",
+            "aks-rg-3",
+            "aks-rg-4",
+            "gordion-rg",
+            "td5xhold",
+            "RG-APP-GATEWAY",
+            "agw-kv-0",
+            "east_rg-tdgthold",
+            "west_rg-tdgthold"
         ],
         "service_endpoint_policy_ids": [
             "null"
@@ -60286,7 +60542,14 @@
             "sample-network",
             "vnetk8s",
             "vnet-eastus-se3xhold",
-            "vnet-westus-se3xhold"
+            "vnet-westus-se3xhold",
+            "appGW-VNET",
+            "k8s-vnet",
+            "AKS_VNet",
+            "gordion-vnet",
+            "vnet-westeurope-app-gw",
+            "vnet-eastus-tdgthold",
+            "vnet-westus-tdgthold"
         ]
     },
     "azurerm_subnet_nat_gateway_association": {
@@ -61177,7 +61440,8 @@
             "lab06d-tfm-dog",
             "tmprofiletm01",
             "zodiac-resources",
-            "traffic-profile1937-se3xhold"
+            "traffic-profile1937-se3xhold",
+            "traffic-profile1937-tdgthold"
         ],
         "dns_config.ttl": [
             "30",
@@ -61234,7 +61498,8 @@
             "tm-profile-tm01",
             "zodiac-tmprofile",
             "zodiac-trafficmanager",
-            "traffic-profile1937-se3xhold"
+            "traffic-profile1937-se3xhold",
+            "traffic-profile1937-tdgthold"
         ],
         "resource_group_name": [
             "euw-tst-lab-traffic-manager-01",
@@ -61253,7 +61518,8 @@
             "AZ104-r4hthold",
             "AZ104-8tslhold",
             "zodiac-resources",
-            "traffic_manager_rg-se3xhold"
+            "traffic_manager_rg-se3xhold",
+            "traffic_manager_rg-tdgthold"
         ],
         "tags": [
             "null"
@@ -61357,7 +61623,13 @@
             "hr-dev-appgw-umid",
             "myUserAssignedIdentity_Ecommerce",
             "AppGWManagedID",
-            "zodiac-identity"
+            "zodiac-identity",
+            "ingressapplicationgateway-aks-0",
+            "ingressapplicationgateway-aks-1",
+            "ingressapplicationgateway-aks-2",
+            "ingressapplicationgateway-aks-3",
+            "ingressapplicationgateway-aks-4",
+            "agic-identity"
         ],
         "resource_group_name": [
             "andre-vm-test-resources",
@@ -61405,7 +61677,8 @@
             "ApiK8sResourceGroup",
             "AZMMCoreRG01",
             "zodiac-rg",
-            "colin-rg"
+            "colin-rg",
+            "agw-kv-0"
         ],
         "tags": [
             "null"
@@ -65710,7 +65983,14 @@
             "sample-network",
             "vnetk8s",
             "vnet-eastus-se3xhold",
-            "vnet-westus-se3xhold"
+            "vnet-westus-se3xhold",
+            "appGW-VNET",
+            "k8s-vnet",
+            "AKS_VNet",
+            "gordion-vnet",
+            "vnet-westeurope-app-gw",
+            "vnet-eastus-tdgthold",
+            "vnet-westus-tdgthold"
         ],
         "resource_group_name": [
             "my_rg",
@@ -66723,7 +67003,21 @@
             "rg-aleksandar-ilicic2",
             "Zen_Core",
             "east_rg-se3xhold",
-            "west_rg-se3xhold"
+            "west_rg-se3xhold",
+            "7wvahold",
+            "appgwtest",
+            "aks-rg-0",
+            "AKS_Deployment_RG",
+            "aks-rg-1",
+            "aks-rg-2",
+            "aks-rg-3",
+            "aks-rg-4",
+            "gordion-rg",
+            "td5xhold",
+            "RG-APP-GATEWAY",
+            "agw-kv-0",
+            "east_rg-tdgthold",
+            "west_rg-tdgthold"
         ],
         "subnet.address_prefix": [
             "10.0.1.0/24",
@@ -67433,7 +67727,8 @@
             "2cdrhold",
             "cchambi",
             "tplisson",
-            "gsqnhold"
+            "gsqnhold",
+            "rt0ghold"
         ],
         "tags.owner_group": [
             "TBD"
@@ -67510,7 +67805,8 @@
         "tags.source": [
             "terraform",
             "https://github.com/t-young31/azure-redcap-prototype",
-            "Terraform-CLI"
+            "Terraform-CLI",
+            "Dev/GitHub/AppGW"
         ],
         "tags.subject": [
             "BST"
@@ -70820,14 +71116,16 @@
             "miv9hold",
             "Azure@123",
             "P@ssw0rd1234!",
-            "eb15hold"
+            "eb15hold",
+            "j0d5hold"
         ],
         "admin_username": [
             "adminuser",
             "tfadmin",
             "jycehold",
             "azureuser",
-            "zfy9hold"
+            "zfy9hold",
+            "88tbhold"
         ],
         "capacity_reservation_group_id": [
             "null"
@@ -71151,7 +71449,8 @@
         ],
         "tags.owner": [
             "5oa7hold",
-            "gsqnhold"
+            "gsqnhold",
+            "rt0ghold"
         ],
         "timeouts": [
             "null"

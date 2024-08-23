@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "module.aks_cluster:local": {
                 "full_name": "registry.terraform.io/hashicorp/local",
@@ -1717,11 +1718,11 @@ mock_config := {
                                 "description": "The location/region where the identity should be created."
                             },
                             "name": {
-                                "default": "nuqbhold",
+                                "default": "upt1hold",
                                 "description": "The name of the user-assigned identity."
                             },
                             "resource_group_name": {
-                                "default": "zhqghold",
+                                "default": "s7kehold",
                                 "description": "The name of the resource group."
                             }
                         }
@@ -6104,15 +6105,51 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "location"
+                "principal_id"
+            ],
+            "resource": "module.identity.azurerm_user_assigned_identity.identity"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.virtual_network_aks.azurerm_virtual_network.vn"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.virtual_network_aks.azurerm_virtual_network.vn"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.AzureBastionSubnet.azurerm_subnet.subnet"
+        },
+        {
+            "attribute": [
+                "name"
             ],
             "resource": "module.resource_group.azurerm_resource_group.rg"
         },
         {
             "attribute": [
+                "object_id"
+            ],
+            "resource": "data.azurerm_client_config.current"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.appgw_subnet.azurerm_subnet.subnet"
+        },
+        {
+            "attribute": [
                 "id"
             ],
-            "resource": "module.ip_appgw.azurerm_public_ip.publicIp"
+            "resource": "module.identity.azurerm_user_assigned_identity.identity"
         },
         {
             "attribute": [
@@ -6122,21 +6159,27 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
+                "id"
             ],
-            "resource": "module.aks_subnet.azurerm_subnet.subnet"
+            "resource": "module.key_vault.azurerm_key_vault.key_vault"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "module.virtual_network_appigw.azurerm_virtual_network.vn"
+            "resource": "module.application_gateway.azurerm_application_gateway.appgw"
         },
         {
             "attribute": [
-                "name"
+                "kube_config_raw"
             ],
-            "resource": "module.appgw_subnet.azurerm_subnet.subnet"
+            "resource": "module.aks_cluster.azurerm_kubernetes_cluster.aks_cluster"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.AzureBastionSubnet.azurerm_subnet.subnet"
         },
         {
             "attribute": [
@@ -6150,27 +6193,45 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
-            ],
-            "resource": "module.resource_group.azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.AzureBastionSubnet.azurerm_subnet.subnet"
-        },
-        {
-            "attribute": [
                 "tenant_id"
             ],
             "resource": "data.azurerm_client_config.current"
         },
         {
             "attribute": [
-                "kube_config_raw"
+                "client_id"
+            ],
+            "resource": "module.identity.azurerm_user_assigned_identity.identity"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.virtual_network_appigw.azurerm_virtual_network.vn"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.aks_subnet.azurerm_subnet.subnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.container_registry.azurerm_container_registry.cr"
+        },
+        {
+            "attribute": [
+                "name"
             ],
             "resource": "module.aks_cluster.azurerm_kubernetes_cluster.aks_cluster"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.virtual_network_appigw.azurerm_virtual_network.vn"
         },
         {
             "attribute": [
@@ -6182,25 +6243,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "module.AzureBastionSubnet.azurerm_subnet.subnet"
+            "resource": "module.ip_appgw.azurerm_public_ip.publicIp"
         },
         {
             "attribute": [
                 "name"
             ],
-            "resource": "module.aks_cluster.azurerm_kubernetes_cluster.aks_cluster"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
             "resource": "module.application_gateway.azurerm_application_gateway.appgw"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.identity.azurerm_user_assigned_identity.identity"
         },
         {
             "attribute": [
@@ -6214,61 +6263,13 @@ mock_config := {
             "attribute": [
                 "name"
             ],
-            "resource": "module.virtual_network_appigw.azurerm_virtual_network.vn"
-        },
-        {
-            "attribute": [
-                "client_id"
-            ],
-            "resource": "module.identity.azurerm_user_assigned_identity.identity"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.virtual_network_aks.azurerm_virtual_network.vn"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.key_vault.azurerm_key_vault.key_vault"
-        },
-        {
-            "attribute": [
-                "principal_id"
-            ],
-            "resource": "module.identity.azurerm_user_assigned_identity.identity"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.virtual_network_aks.azurerm_virtual_network.vn"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.container_registry.azurerm_container_registry.cr"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.application_gateway.azurerm_application_gateway.appgw"
-        },
-        {
-            "attribute": [
-                "object_id"
-            ],
-            "resource": "data.azurerm_client_config.current"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
             "resource": "module.aks_subnet.azurerm_subnet.subnet"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.resource_group.azurerm_resource_group.rg"
         }
     ],
     "resource_changes": [
@@ -7849,7 +7850,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:02:56Z",
+    "timestamp": "2024-08-22T23:59:16Z",
     "variables": {
         "prefix_name": {
             "value": "zodiac"

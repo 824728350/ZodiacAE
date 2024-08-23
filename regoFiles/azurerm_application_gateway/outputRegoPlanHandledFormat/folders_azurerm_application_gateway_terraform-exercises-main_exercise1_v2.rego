@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -1648,9 +1649,9 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "id"
+                "name"
             ],
-            "resource": "azurerm_mssql_server.example"
+            "resource": "azurerm_resource_group.example"
         },
         {
             "attribute": [
@@ -1660,15 +1661,21 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
+                "id"
             ],
-            "resource": "azurerm_resource_group.example"
+            "resource": "azurerm_subnet.endpoints"
         },
         {
             "attribute": [
-                "location"
+                "id"
             ],
-            "resource": "azurerm_resource_group.example"
+            "resource": "azurerm_network_interface.example"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.gateway"
         },
         {
             "attribute": [
@@ -1680,31 +1687,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.vm"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.example"
+            "resource": "azurerm_key_vault.example"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_network_security_group.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.gateway"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_network_interface.example"
+            "resource": "azurerm_mssql_server.example"
         },
         {
             "attribute": [
@@ -1722,19 +1711,31 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.endpoints"
+            "resource": "azurerm_network_security_group.example"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_key_vault.example"
+            "resource": "azurerm_subnet.vm"
         },
         {
             "attribute": [
                 "private_ip_address"
             ],
             "resource": "azurerm_linux_virtual_machine.example"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.example"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.example"
         }
     ],
     "resource_changes": [
@@ -2946,5 +2947,5 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:12:44Z"
+    "timestamp": "2024-08-23T00:09:03Z"
 }

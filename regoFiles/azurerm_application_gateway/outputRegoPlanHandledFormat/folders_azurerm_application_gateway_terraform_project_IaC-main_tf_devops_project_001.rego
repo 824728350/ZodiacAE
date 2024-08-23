@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -3783,32 +3784,26 @@ mock_config := {
     },
     "relevant_attributes": [
         {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.database_function_app.azurerm_service_plan.project_asp"
+        },
+        {
             "attribute": [],
             "resource": "module.network.azurerm_subnet.project_snet"
         },
         {
             "attribute": [
-                "connection_string"
+                "id"
+            ],
+            "resource": "module.logs.azurerm_log_analytics_workspace.project_logs"
+        },
+        {
+            "attribute": [
+                "id"
             ],
             "resource": "module.logs.azurerm_application_insights.project_app_insights"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.logs.azurerm_monitor_action_group.project_monitor_ag"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.database_function_app.azurerm_mssql_server.project_sql_svr"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.database_function_app.azurerm_service_plan.project_asp"
         },
         {
             "attribute": [
@@ -3830,6 +3825,12 @@ mock_config := {
         },
         {
             "attribute": [
+                "connection_string"
+            ],
+            "resource": "module.logs.azurerm_application_insights.project_app_insights"
+        },
+        {
+            "attribute": [
                 "primary_access_key"
             ],
             "resource": "module.storage.azurerm_storage_account.project_sa"
@@ -3842,12 +3843,6 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "module.logs.azurerm_log_analytics_workspace.project_logs"
-        },
-        {
-            "attribute": [
                 "object_id"
             ],
             "resource": "module.database_function_app.data.azurerm_client_config.resource_configs"
@@ -3856,7 +3851,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "module.logs.azurerm_application_insights.project_app_insights"
+            "resource": "module.database_function_app.azurerm_mssql_server.project_sql_svr"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.logs.azurerm_monitor_action_group.project_monitor_ag"
         }
     ],
     "resource_changes": [
@@ -5212,5 +5213,5 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:48:35Z"
+    "timestamp": "2024-08-22T23:44:30Z"
 }

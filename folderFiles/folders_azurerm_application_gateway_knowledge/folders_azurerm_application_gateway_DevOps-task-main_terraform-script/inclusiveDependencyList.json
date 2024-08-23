@@ -6,22 +6,6 @@
           "value": [
             [
               "azurerm_application_gateway.main",
-              "azurerm_linux_web_app.api1",
-              "backend_address_pool.0.fqdns",
-              "default_hostname",
-              "backend_address_pool.0",
-              ""
-            ],
-            [
-              "azurerm_application_gateway.main",
-              "azurerm_linux_web_app.api2",
-              "backend_address_pool.0.fqdns",
-              "default_hostname",
-              "backend_address_pool.0",
-              ""
-            ],
-            [
-              "azurerm_application_gateway.main",
               "azurerm_public_ip.pip",
               "frontend_ip_configuration.0.public_ip_address_id",
               "id",

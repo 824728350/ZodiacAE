@@ -1,0 +1,21 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_private_dns_zone.dnszone",
+              "azurerm_container_app.my_app"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

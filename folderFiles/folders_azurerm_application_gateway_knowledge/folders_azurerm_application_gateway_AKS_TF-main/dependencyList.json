@@ -1,0 +1,57 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "module.AppGateway.azurerm_application_gateway.network",
+              "module.AppGateway.azurerm_public_ip.AppGW_PIP",
+              "frontend_ip_configuration.0.public_ip_address_id",
+              "id",
+              "frontend_ip_configuration.0",
+              ""
+            ],
+            [
+              "module.AppGateway.azurerm_application_gateway.network",
+              "module.AppGateway.azurerm_subnet.AppGW_Subnet",
+              "gateway_ip_configuration.0.subnet_id",
+              "id",
+              "gateway_ip_configuration.0",
+              ""
+            ],
+            [
+              "module.AppGateway.azurerm_subnet_nat_gateway_association.example",
+              "module.AppGateway.azurerm_subnet.AKS_Subnet",
+              "subnet_id",
+              "id",
+              "",
+              ""
+            ],
+            [
+              "module.NATGateway.azurerm_nat_gateway_public_ip_association.nat_pip_assoc",
+              "module.NATGateway.azurerm_nat_gateway.nat",
+              "nat_gateway_id",
+              "id",
+              "",
+              ""
+            ],
+            [
+              "module.NATGateway.azurerm_nat_gateway_public_ip_association.nat_pip_assoc",
+              "module.NATGateway.azurerm_public_ip.nat_pip",
+              "public_ip_address_id",
+              "id",
+              "",
+              ""
+            ]
+          ],
+          "text": "data.assemble.dependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

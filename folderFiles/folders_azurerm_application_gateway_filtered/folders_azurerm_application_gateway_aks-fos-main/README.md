@@ -1,1 +1,0 @@
-# alpine-k8s

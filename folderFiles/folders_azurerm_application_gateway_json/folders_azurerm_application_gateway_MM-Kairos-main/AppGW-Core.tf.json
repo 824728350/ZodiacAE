@@ -15,69 +15,36 @@
                 "res-4": {
                     "backend_address_pool": [
                         {
-                            "fqdns": [
-                                "applehealth-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "applehealth-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "dt-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "dt-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "lta-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "lta-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "ir-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "ir-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "rs-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "rs-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "se-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "se-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "smile-online-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "smile-online-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "create-online-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "create-online-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "br-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "br-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "pp-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "pp-backendpool"
                         },
                         {
-                            "fqdns": [
-                                "pioneer-online-matchmakersoftware.azurewebsites.net"
-                            ],
                             "name": "pioneer-online-backendpool"
                         }
                     ],

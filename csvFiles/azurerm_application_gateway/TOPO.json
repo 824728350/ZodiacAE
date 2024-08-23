@@ -25,6 +25,18 @@
     ],
     [
         "TOPO",
+        "ReferenceThenAssociate",
+        "azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String",
+        "azurerm_public_ip.id == String",
+        "azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String",
+        "azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String",
+        "azurerm_public_ip.id == String",
+        "azurerm_subnet.id == String",
+        "",
+        ""
+    ],
+    [
+        "TOPO",
         "ReferenceThenExclusive",
         "azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String",
         "azurerm_public_ip.id == String",
@@ -44,18 +56,6 @@
         "azurerm_public_ip.PLACEHOLDER == String",
         "",
         "",
-        "",
-        ""
-    ],
-    [
-        "TOPO",
-        "ReferenceThenAssociate",
-        "azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String",
-        "azurerm_public_ip.id == String",
-        "azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String",
-        "azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String",
-        "azurerm_public_ip.id == String",
-        "azurerm_subnet.id == String",
         "",
         ""
     ],

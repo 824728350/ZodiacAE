@@ -5,60 +5,56 @@ import future.keywords.in
 resourceTypeLabel := "azurerm_application_gateway"
 repoViewTop := {
     "azurerm_application_gateway": {
+        "autoscale_configuration.max_capacity": [],
+        "autoscale_configuration.min_capacity": [],
+        "backend_address_pool.ip_addresses": [],
         "backend_http_settings.cookie_based_affinity": [
             "Disabled",
             "Enabled"
         ],
+        "backend_http_settings.path": [],
         "backend_http_settings.protocol": [
-            "Http",
             "Https"
         ],
+        "backend_http_settings.request_timeout": [],
         "frontend_ip_configuration.private_ip_address_allocation": [
             "Dynamic",
             "Static"
         ],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
+        "frontend_port.port": [],
         "http_listener.protocol": [
-            "Http",
             "Https"
         ],
         "location": [
             "westeurope",
             "centralus",
-            "westus",
             "uaenorth",
             "westus2",
             "uksouth",
-            "eastus",
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
+        "probe.interval": [],
         "probe.match.body": [
             "Welcome",
             "App1",
             "App2"
         ],
         "probe.match.status_code": [
-            "200",
-            "399",
             "200-400",
             "200-399"
         ],
+        "probe.path": [],
         "probe.protocol": [
-            "Http",
             "Https"
         ],
+        "probe.timeout": [],
         "redirect_configuration.include_path": [
             true,
             false
@@ -66,6 +62,10 @@ repoViewTop := {
         "redirect_configuration.include_query_string": [
             true,
             false
+        ],
+        "redirect_configuration.target_url": [],
+        "request_routing_rule.priority": [
+            null
         ],
         "request_routing_rule.rule_type": [
             "Basic",
@@ -79,6 +79,7 @@ repoViewTop := {
             false,
             true
         ],
+        "rewrite_rule_set.rewrite_rule.condition.pattern": [],
         "rewrite_rule_set.rewrite_rule.condition.variable": [
             "http_req_X-Forwarded-For",
             "var_uri_path"
@@ -93,6 +94,7 @@ repoViewTop := {
         "rewrite_rule_set.rewrite_rule.url.query_string": [
             null
         ],
+        "sku.capacity": [],
         "sku.name": [
             "Standard_v2",
             "Standard_Small",
@@ -101,28 +103,23 @@ repoViewTop := {
         ],
         "sku.tier": [
             "Standard_v2",
-            "Standard",
             "WAF_v2"
         ],
+        "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
+        "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
             true,
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -558,7 +555,6 @@ repoViewTop := {
         ],
         "ip_configuration.private_ip_address_allocation": [
             "Dynamic",
-            "dynamic",
             "Static"
         ],
         "ip_configuration.private_ip_address_version": [
@@ -1501,6 +1497,8 @@ inclusiveDependencyList := [[address1, address2, idAttr1, idAttr2, idAttrSlice1,
     idAttrListSlice1 := array.slice(attr1, 0, count(attr1)-1)
     idAttrSlice1 := concat(".", idAttrListSlice1)
     idAttr2 := trim_prefix(value1, idAddr2)
+    not contains(idAttr1, "fqdn")
+    not contains(idAttr2, "fqdn")
     #any([idAttr2 == "name", idAttr2 == "id"])
     #any([contains(idAttr1, "_name"), contains(idAttr1, "_id")])
     idAttrList2 := split(idAttr2, ".")
@@ -1614,7 +1612,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "http": {
                 "full_name": "registry.terraform.io/hashicorp/http",
@@ -2131,10 +2130,10 @@ mock_config := {
                         },
                         "security_rule": {
                             "references": [
-                                "azurerm_subnet.sn-public.address_prefixes",
-                                "azurerm_subnet.sn-public",
                                 "azurerm_subnet.sn-aci.address_prefixes",
-                                "azurerm_subnet.sn-aci"
+                                "azurerm_subnet.sn-aci",
+                                "azurerm_subnet.sn-public.address_prefixes",
+                                "azurerm_subnet.sn-public"
                             ]
                         }
                     },
@@ -3828,13 +3827,13 @@ mock_config := {
                                 "Access-Control-Allow-Methods": "GET",
                                 "Access-Control-Allow-Origin": "*",
                                 "Alt-Svc": "h3=\":443\"; ma=86400",
-                                "Cf-Ray": "8b458248e99fe5bd-DFW",
+                                "Cf-Ray": "8b76f55a7e5c0c0f-DFW",
                                 "Connection": "keep-alive",
                                 "Content-Length": "12",
                                 "Content-Type": "text/plain",
-                                "Date": "Sat, 17 Aug 2024 00:22:17 GMT",
+                                "Date": "Fri, 23 Aug 2024 00:24:13 GMT",
                                 "Server": "cloudflare",
-                                "Set-Cookie": "__cf_bm=abhxoWwjWq8xd39tFTl21x7d.ZR6PgaegobpD4OUtYc-1723854137-1.0.1.1-TYoXMCXCuYledNdMNgwOe.Y8ilRlzM2Rs82SSLo2_wa3HhUoXQM0oxalLIf1hlX9vUruNuf4Rj7tHyR6JyKCyQ; path=/; expires=Sat, 17-Aug-24 00:52:17 GMT; domain=.icanhazip.com; HttpOnly",
+                                "Set-Cookie": "__cf_bm=gd8KoqZq1LQJhORfYORysidacUIAVgMpQFjzege3ae0-1724372653-1.0.1.1-ezxGh.PLdWmCWyNOKug50N6gyHcZDKNBNhfiVbgY5h7zb9.6E69HIjM8FHpP6W6SdB9RwwXWKH9p7h1aQ60mjg; path=/; expires=Fri, 23-Aug-24 00:54:13 GMT; domain=.icanhazip.com; HttpOnly",
                                 "Vary": "Accept-Encoding"
                             },
                             "retry": null,
@@ -3849,9 +3848,51 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "application_id"
+                "id"
             ],
-            "resource": "azuread_application.app"
+            "resource": "azuread_service_principal.app"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.sn-public"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_storage_account.aci_storage"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_storage_share.container_share"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.public_ip"
+        },
+        {
+            "attribute": [
+                "address_prefixes"
+            ],
+            "resource": "azurerm_subnet.sn-public"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "data.azurerm_subscription.current"
+        },
+        {
+            "attribute": [
+                "primary_access_key"
+            ],
+            "resource": "azurerm_storage_account.aci_storage"
         },
         {
             "attribute": [
@@ -3863,7 +3904,7 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "data.azurerm_subscription.current"
+            "resource": "azurerm_subnet.sn-aci"
         },
         {
             "attribute": [
@@ -3873,33 +3914,39 @@ mock_config := {
         },
         {
             "attribute": [
-                "application_id"
-            ],
-            "resource": "azuread_service_principal.app"
-        },
-        {
-            "attribute": [
                 "subscription_id"
             ],
             "resource": "data.azurerm_subscription.current"
         },
         {
             "attribute": [
-                "ip_address"
+                "name"
             ],
-            "resource": "azurerm_public_ip.public_ip"
+            "resource": "azurerm_resource_group.resource_group"
         },
         {
             "attribute": [
                 "id"
+            ],
+            "resource": "azurerm_container_group.container_group"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.nsg-aci"
+        },
+        {
+            "attribute": [
+                "application_id"
             ],
             "resource": "azuread_service_principal.app"
         },
         {
             "attribute": [
-                "id"
+                "name"
             ],
-            "resource": "azurerm_subnet.sn-aci"
+            "resource": "azurerm_virtual_network.virtual_network"
         },
         {
             "attribute": [
@@ -3909,15 +3956,27 @@ mock_config := {
         },
         {
             "attribute": [
-                "response_body"
+                "application_tenant_id"
             ],
-            "resource": "data.http.myip"
+            "resource": "azuread_service_principal.app"
         },
         {
             "attribute": [
-                "address_prefixes"
+                "ip_address"
             ],
-            "resource": "azurerm_subnet.sn-public"
+            "resource": "azurerm_public_ip.public_ip"
+        },
+        {
+            "attribute": [
+                "application_id"
+            ],
+            "resource": "azuread_application.app"
+        },
+        {
+            "attribute": [
+                "object_id"
+            ],
+            "resource": "data.azuread_client_config.current"
         },
         {
             "attribute": [
@@ -3933,9 +3992,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
+                "response_body"
             ],
-            "resource": "azurerm_subnet.sn-public"
+            "resource": "data.http.myip"
         },
         {
             "attribute": [
@@ -3945,67 +4004,7 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_network_security_group.nsg-aci"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_storage_share.container_share"
-        },
-        {
-            "attribute": [
                 "ip_address"
-            ],
-            "resource": "azurerm_container_group.container_group"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_storage_account.aci_storage"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.public_ip"
-        },
-        {
-            "attribute": [
-                "object_id"
-            ],
-            "resource": "data.azuread_client_config.current"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_resource_group.resource_group"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.virtual_network"
-        },
-        {
-            "attribute": [
-                "primary_access_key"
-            ],
-            "resource": "azurerm_storage_account.aci_storage"
-        },
-        {
-            "attribute": [
-                "application_tenant_id"
-            ],
-            "resource": "azuread_service_principal.app"
-        },
-        {
-            "attribute": [
-                "id"
             ],
             "resource": "azurerm_container_group.container_group"
         }
@@ -5710,7 +5709,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:10:09Z",
+    "timestamp": "2024-08-23T00:06:22Z",
     "variables": {
         "app_environment": {
             "value": "production"

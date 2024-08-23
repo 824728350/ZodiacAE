@@ -1,8 +1,0 @@
-
-provider "azurerm" {
- features {}
-}
-
-
-
-

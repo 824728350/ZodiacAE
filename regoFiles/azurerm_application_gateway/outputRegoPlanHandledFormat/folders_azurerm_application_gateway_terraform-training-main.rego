@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -2016,24 +2017,6 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "rendered"
-            ],
-            "resource": "data.template_cloudinit_config.craftcms_config"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.alb-public-ip"
-        },
-        {
-            "attribute": [
-                "ip_address"
-            ],
-            "resource": "azurerm_public_ip.public_ip"
-        },
-        {
-            "attribute": [
                 "id"
             ],
             "resource": "azurerm_public_ip.public_ip"
@@ -2042,19 +2025,7 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_user_assigned_identity.uai"
-        },
-        {
-            "attribute": [
-                "public_key"
-            ],
-            "resource": "azurerm_ssh_public_key.sshkey"
+            "resource": "azurerm_network_interface.nic"
         },
         {
             "attribute": [
@@ -2070,33 +2041,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.gw_subnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "random_pet.pet-name"
-        },
-        {
-            "attribute": [
                 "tenant_id"
             ],
             "resource": "data.azurerm_client_config.current"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.vnet"
         },
         {
             "attribute": [
@@ -2108,19 +2055,25 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "hex"
-            ],
-            "resource": "random_id.rnd"
-        },
-        {
-            "attribute": [
-                "principal_id"
-            ],
             "resource": "azurerm_user_assigned_identity.uai"
+        },
+        {
+            "attribute": [
+                "public_key"
+            ],
+            "resource": "azurerm_ssh_public_key.sshkey"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.gw_subnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.alb-public-ip"
         },
         {
             "attribute": [
@@ -2130,15 +2083,63 @@ mock_config := {
         },
         {
             "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "principal_id"
+            ],
+            "resource": "azurerm_user_assigned_identity.uai"
+        },
+        {
+            "attribute": [
                 "name"
             ],
             "resource": "azurerm_resource_group.rg"
         },
         {
             "attribute": [
+                "hex"
+            ],
+            "resource": "random_id.rnd"
+        },
+        {
+            "attribute": [
+                "rendered"
+            ],
+            "resource": "data.template_cloudinit_config.craftcms_config"
+        },
+        {
+            "attribute": [
                 "ip_address"
             ],
             "resource": "azurerm_public_ip.alb-public-ip"
+        },
+        {
+            "attribute": [
+                "ip_address"
+            ],
+            "resource": "azurerm_public_ip.public_ip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "random_pet.pet-name"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.vnet"
         }
     ],
     "resource_changes": [
@@ -3400,7 +3401,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:06:34Z",
+    "timestamp": "2024-08-23T00:03:07Z",
     "variables": {
         "bastion_subnet": {
             "value": [

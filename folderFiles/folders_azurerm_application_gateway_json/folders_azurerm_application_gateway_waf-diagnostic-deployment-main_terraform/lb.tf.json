@@ -51,9 +51,6 @@
                 "this": {
                     "backend_address_pool": [
                         {
-                            "fqdns": [
-                                "app-prod-we-webdemo.azurewebsites.net"
-                            ],
                             "name": "${local.backend_address_pool_name}"
                         }
                     ],
@@ -111,8 +108,8 @@
                     "sku": [
                         {
                             "capacity": 2,
-                            "name": "Standard_v2",
-                            "tier": "Standard_v2"
+                            "name": "WAF_v2",
+                            "tier": "WAF_v2"
                         }
                     ]
                 }

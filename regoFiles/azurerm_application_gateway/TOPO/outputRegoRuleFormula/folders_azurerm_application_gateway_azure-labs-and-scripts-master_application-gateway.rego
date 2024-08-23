@@ -5,60 +5,56 @@ import future.keywords.in
 resourceTypeLabel := "azurerm_application_gateway"
 repoViewTop := {
     "azurerm_application_gateway": {
+        "autoscale_configuration.max_capacity": [],
+        "autoscale_configuration.min_capacity": [],
+        "backend_address_pool.ip_addresses": [],
         "backend_http_settings.cookie_based_affinity": [
             "Disabled",
             "Enabled"
         ],
+        "backend_http_settings.path": [],
         "backend_http_settings.protocol": [
-            "Http",
             "Https"
         ],
+        "backend_http_settings.request_timeout": [],
         "frontend_ip_configuration.private_ip_address_allocation": [
             "Dynamic",
             "Static"
         ],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
+        "frontend_port.port": [],
         "http_listener.protocol": [
-            "Http",
             "Https"
         ],
         "location": [
             "westeurope",
             "centralus",
-            "westus",
             "uaenorth",
             "westus2",
             "uksouth",
-            "eastus",
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
+        "probe.interval": [],
         "probe.match.body": [
             "Welcome",
             "App1",
             "App2"
         ],
         "probe.match.status_code": [
-            "200",
-            "399",
             "200-400",
             "200-399"
         ],
+        "probe.path": [],
         "probe.protocol": [
-            "Http",
             "Https"
         ],
+        "probe.timeout": [],
         "redirect_configuration.include_path": [
             true,
             false
@@ -66,6 +62,10 @@ repoViewTop := {
         "redirect_configuration.include_query_string": [
             true,
             false
+        ],
+        "redirect_configuration.target_url": [],
+        "request_routing_rule.priority": [
+            null
         ],
         "request_routing_rule.rule_type": [
             "Basic",
@@ -79,6 +79,7 @@ repoViewTop := {
             false,
             true
         ],
+        "rewrite_rule_set.rewrite_rule.condition.pattern": [],
         "rewrite_rule_set.rewrite_rule.condition.variable": [
             "http_req_X-Forwarded-For",
             "var_uri_path"
@@ -93,6 +94,7 @@ repoViewTop := {
         "rewrite_rule_set.rewrite_rule.url.query_string": [
             null
         ],
+        "sku.capacity": [],
         "sku.name": [
             "Standard_v2",
             "Standard_Small",
@@ -101,28 +103,23 @@ repoViewTop := {
         ],
         "sku.tier": [
             "Standard_v2",
-            "Standard",
             "WAF_v2"
         ],
+        "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
+        "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
             true,
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -1413,7 +1410,6 @@ repoViewTop := {
         ]
     }
 }
-
 globalAncestorDict := {
     "azurerm_application_gateway": [
         "azurerm_subnet",
@@ -1843,60 +1839,56 @@ resourceDict[address] := [address_config, address_plan] {
 ancestorList := ["azurerm_application_gateway","azurerm_resource_group","azurerm_subnet","azurerm_virtual_network","azurerm_public_ip"]
 resourceView := {
     "azurerm_application_gateway": {
+        "autoscale_configuration.max_capacity": [],
+        "autoscale_configuration.min_capacity": [],
+        "backend_address_pool.ip_addresses": [],
         "backend_http_settings.cookie_based_affinity": [
             "Disabled",
             "Enabled"
         ],
+        "backend_http_settings.path": [],
         "backend_http_settings.protocol": [
-            "Http",
             "Https"
         ],
+        "backend_http_settings.request_timeout": [],
         "frontend_ip_configuration.private_ip_address_allocation": [
             "Dynamic",
             "Static"
         ],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
+        "frontend_port.port": [],
         "http_listener.protocol": [
-            "Http",
             "Https"
         ],
         "location": [
             "westeurope",
             "centralus",
-            "westus",
             "uaenorth",
             "westus2",
             "uksouth",
-            "eastus",
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
+        "probe.interval": [],
         "probe.match.body": [
             "Welcome",
             "App1",
             "App2"
         ],
         "probe.match.status_code": [
-            "200",
-            "399",
             "200-400",
             "200-399"
         ],
+        "probe.path": [],
         "probe.protocol": [
-            "Http",
             "Https"
         ],
+        "probe.timeout": [],
         "redirect_configuration.include_path": [
             true,
             false
@@ -1904,6 +1896,10 @@ resourceView := {
         "redirect_configuration.include_query_string": [
             true,
             false
+        ],
+        "redirect_configuration.target_url": [],
+        "request_routing_rule.priority": [
+            null
         ],
         "request_routing_rule.rule_type": [
             "Basic",
@@ -1917,6 +1913,7 @@ resourceView := {
             false,
             true
         ],
+        "rewrite_rule_set.rewrite_rule.condition.pattern": [],
         "rewrite_rule_set.rewrite_rule.condition.variable": [
             "http_req_X-Forwarded-For",
             "var_uri_path"
@@ -1931,6 +1928,7 @@ resourceView := {
         "rewrite_rule_set.rewrite_rule.url.query_string": [
             null
         ],
+        "sku.capacity": [],
         "sku.name": [
             "Standard_v2",
             "Standard_Small",
@@ -1939,28 +1937,23 @@ resourceView := {
         ],
         "sku.tier": [
             "Standard_v2",
-            "Standard",
             "WAF_v2"
         ],
+        "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
+        "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
             true,
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3251,7 +3244,6 @@ resourceView := {
         ]
     }
 }
-
 resourceDependencyView := {
     "azurerm_application_gateway": [
         [
@@ -4701,7 +4693,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -6617,7 +6610,29 @@ mock_config := {
             "attribute": [
                 "id"
             ],
+            "resource": "azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.backend"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
             "resource": "azurerm_network_security_group.backend_nsg"
+        },
+        {
+            "attribute": [],
+            "resource": "azurerm_network_interface.nic"
         },
         {
             "attribute": [
@@ -6627,21 +6642,13 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
+                "rendered"
             ],
-            "resource": "azurerm_subnet.frontend"
+            "resource": "data.template_file.test-cloud-init"
         },
         {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "backend_address_pool"
-            ],
-            "resource": "azurerm_application_gateway.appgw"
+            "attribute": [],
+            "resource": "azurerm_network_interface.nic-failback"
         },
         {
             "attribute": [
@@ -6650,18 +6657,8 @@ mock_config := {
             "resource": "azurerm_public_ip.pip"
         },
         {
-            "attribute": [],
-            "resource": "azurerm_network_interface.nic"
-        },
-        {
             "attribute": [
                 "name"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "location"
             ],
             "resource": "azurerm_resource_group.rg"
         },
@@ -6675,17 +6672,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.backend"
-        },
-        {
-            "attribute": [],
-            "resource": "azurerm_network_interface.nic-failback"
+            "resource": "azurerm_subnet.frontend"
         },
         {
             "attribute": [
-                "rendered"
+                "backend_address_pool"
             ],
-            "resource": "data.template_file.test-cloud-init"
+            "resource": "azurerm_application_gateway.appgw"
         }
     ],
     "resource_changes": [
@@ -8179,7 +8172,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:19:18Z",
+    "timestamp": "2024-08-23T00:16:01Z",
     "variables": {
         "backend_address_pool_name": {
             "value": "backend-address-pool"

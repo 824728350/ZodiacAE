@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -965,12 +966,6 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.example"
-        },
-        {
-            "attribute": [
                 "name"
             ],
             "resource": "azurerm_virtual_network.example"
@@ -998,6 +993,12 @@ mock_config := {
         {
             "attribute": [
                 "name"
+            ],
+            "resource": "azurerm_resource_group.example"
+        },
+        {
+            "attribute": [
+                "location"
             ],
             "resource": "azurerm_resource_group.example"
         }
@@ -1881,5 +1882,5 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:21:30Z"
+    "timestamp": "2024-08-23T00:18:36Z"
 }

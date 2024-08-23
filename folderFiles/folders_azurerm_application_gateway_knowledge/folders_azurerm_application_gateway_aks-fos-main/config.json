@@ -711,6 +711,11 @@
                     "root.aks.azure_policy_enabled"
                   ]
                 },
+                "cost_analysis_enabled": {
+                  "references": [
+                    "var.cost_analysis_enabled"
+                  ]
+                },
                 "disk_encryption_set_id": {
                   "references": [
                     "var.disk_encryption_set_id"

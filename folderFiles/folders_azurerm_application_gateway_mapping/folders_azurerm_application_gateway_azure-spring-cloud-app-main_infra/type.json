@@ -196,9 +196,6 @@
             {
                 "backend_address_pool": [
                     {
-                        "fqdns": [
-                            "${azurerm_spring_cloud_app.this.fqdn}"
-                        ],
                         "name": "${local.name}"
                     }
                 ],

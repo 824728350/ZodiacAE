@@ -1,0 +1,69 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.network": [
+              "azurerm_application_gateway.network"
+            ],
+            "azurerm_key_vault.example": [
+              "azurerm_key_vault.example"
+            ],
+            "azurerm_key_vault_certificate.upload-cert": [
+              "azurerm_key_vault_certificate.upload-cert"
+            ],
+            "azurerm_kubernetes_cluster.k8s": [
+              "azurerm_kubernetes_cluster.k8s"
+            ],
+            "azurerm_public_ip.ag-pip": [
+              "azurerm_public_ip.ag-pip"
+            ],
+            "azurerm_resource_group.k8s-rg": [
+              "azurerm_resource_group.k8s-rg"
+            ],
+            "azurerm_role_assignment.agic_operator_role_assignment": [
+              "azurerm_role_assignment.agic_operator_role_assignment"
+            ],
+            "azurerm_role_assignment.agw_keyvault_admin": [
+              "azurerm_role_assignment.agw_keyvault_admin"
+            ],
+            "azurerm_role_assignment.assign_contributor_agic": [
+              "azurerm_role_assignment.assign_contributor_agic"
+            ],
+            "azurerm_role_assignment.assign_reader_appgw_rg": [
+              "azurerm_role_assignment.assign_reader_appgw_rg"
+            ],
+            "azurerm_subnet.ingress-appgateway-subnet": [
+              "azurerm_subnet.ingress-appgateway-subnet"
+            ],
+            "azurerm_subnet.node-subnet": [
+              "azurerm_subnet.node-subnet"
+            ],
+            "azurerm_subnet.pod-subnet": [
+              "azurerm_subnet.pod-subnet"
+            ],
+            "azurerm_user_assigned_identity.agic_identity": [
+              "azurerm_user_assigned_identity.agic_identity"
+            ],
+            "azurerm_virtual_network.k8s-vnet": [
+              "azurerm_virtual_network.k8s-vnet"
+            ],
+            "data.azurerm_resource_group.mc_rg": [
+              "azurerm_resource_group.k8s-rg",
+              "data.azurerm_resource_group.mc_rg"
+            ],
+            "data.azurerm_user_assigned_identity.auto_created_agic_mi": [
+              "data.azurerm_user_assigned_identity.auto_created_agic_mi"
+            ]
+          },
+          "text": "data.assemble.ancestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

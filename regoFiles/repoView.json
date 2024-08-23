@@ -17,10 +17,6 @@
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -33,12 +29,10 @@
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -109,8 +103,7 @@
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -118,16 +111,10 @@
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [

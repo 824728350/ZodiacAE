@@ -145,7 +145,7 @@
                         "url_path_map_name": ""
                     }
                 ],
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "rewrite_rule_set": [],
                 "sku": [
                     {
@@ -311,7 +311,7 @@
                 "provision_vm_agent": true,
                 "proximity_placement_group_id": null,
                 "reboot_setting": null,
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "secret": [],
                 "secure_boot_enabled": null,
                 "size": "Standard_DS1_v2",
@@ -440,7 +440,7 @@
                 "provision_vm_agent": true,
                 "proximity_placement_group_id": null,
                 "reboot_setting": null,
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "secret": [],
                 "secure_boot_enabled": null,
                 "size": "Standard_DS1_v2",
@@ -521,7 +521,7 @@
                 ],
                 "location": "eastus",
                 "name": "example-nic-vm1",
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "tags": null,
                 "timeouts": null
             }
@@ -570,7 +570,7 @@
                 ],
                 "location": "eastus",
                 "name": "example-nic-vm2",
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "tags": null,
                 "timeouts": null
             }
@@ -648,7 +648,7 @@
             "values": {
                 "location": "eastus",
                 "name": "nsg2",
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "security_rule": [
                     {
                         "access": "Allow",
@@ -722,7 +722,7 @@
             "values": {
                 "location": "eastus",
                 "name": "nsg3",
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "security_rule": [
                     {
                         "access": "Allow",
@@ -794,7 +794,7 @@
                 "location": "eastus",
                 "name": "gatway-pip",
                 "public_ip_prefix_id": null,
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "reverse_fqdn": null,
                 "sku": "Standard",
                 "sku_tier": "Regional",
@@ -832,7 +832,7 @@
                 "location": "eastus",
                 "name": "vm1pip",
                 "public_ip_prefix_id": null,
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "reverse_fqdn": null,
                 "sku": "Standard",
                 "sku_tier": "Regional",
@@ -870,7 +870,7 @@
                 "location": "eastus",
                 "name": "vmpip",
                 "public_ip_prefix_id": null,
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "reverse_fqdn": null,
                 "sku": "Standard",
                 "sku_tier": "Regional",
@@ -899,7 +899,7 @@
             "values": {
                 "location": "eastus",
                 "managed_by": null,
-                "name": "ukcfhold",
+                "name": "7wvahold",
                 "tags": null,
                 "timeouts": null
             }
@@ -930,7 +930,7 @@
                 "default_outbound_access_enabled": true,
                 "delegation": [],
                 "name": "subnetforlb",
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "service_endpoint_policy_ids": null,
                 "service_endpoints": null,
                 "timeouts": null,
@@ -967,7 +967,7 @@
                 "default_outbound_access_enabled": true,
                 "delegation": [],
                 "name": "subnetforapp",
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "service_endpoint_policy_ids": null,
                 "service_endpoints": null,
                 "timeouts": null,
@@ -1004,7 +1004,7 @@
                 "default_outbound_access_enabled": true,
                 "delegation": [],
                 "name": "subnetforvm",
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "service_endpoint_policy_ids": null,
                 "service_endpoints": null,
                 "timeouts": null,
@@ -1048,7 +1048,7 @@
                 "flow_timeout_in_minutes": null,
                 "location": "eastus",
                 "name": "vnet_application_gateway",
-                "resource_group_name": "ukcfhold",
+                "resource_group_name": "7wvahold",
                 "tags": null,
                 "timeouts": null
             }

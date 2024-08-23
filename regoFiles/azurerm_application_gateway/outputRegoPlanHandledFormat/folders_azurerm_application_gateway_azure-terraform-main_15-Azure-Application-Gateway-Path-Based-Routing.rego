@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -4494,39 +4495,15 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "location"
+                "name"
             ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.bastionsubnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.agsubnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_network_security_group.ag_subnet_nsg"
+            "resource": "azurerm_virtual_network.vnet"
         },
         {
             "attribute": [
                 "name"
             ],
-            "resource": "azurerm_network_security_group.bastion_subnet_nsg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_network_security_group.app_subnet_nsg"
+            "resource": "azurerm_subnet.websubnet"
         },
         {
             "attribute": [
@@ -4536,7 +4513,121 @@ mock_config := {
         },
         {
             "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_subnet.dbsubnet"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_network_security_group.db_subnet_nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.app1_web_vmss_nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_virtual_network.vnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "random_string.myrandom"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_network_security_group.app_subnet_nsg"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_network_security_group.web_subnet_nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.dbsubnet"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_network_security_group.ag_subnet_nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.app_subnet_nsg"
+        },
+        {
+            "attribute": [
                 "ip_address"
+            ],
+            "resource": "azurerm_public_ip.web_ag_publicip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.bastion_subnet_nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_application_gateway.web_ag"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_subnet.agsubnet"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_subnet.appsubnet"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_subnet.bastionsubnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.appsubnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.websubnet"
+        },
+        {
+            "attribute": [
+                "id"
             ],
             "resource": "azurerm_public_ip.web_ag_publicip"
         },
@@ -4550,47 +4641,11 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_network_security_group.app2_web_vmss_nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_virtual_network.vnet"
+            "resource": "azurerm_linux_virtual_machine_scale_set.app1_web_vmss"
         },
         {
             "attribute": [
                 "name"
-            ],
-            "resource": "azurerm_subnet.websubnet"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_subnet.bastionsubnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.appsubnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_network_security_group.app1_web_vmss_nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.websubnet"
-        },
-        {
-            "attribute": [
-                "id"
             ],
             "resource": "azurerm_network_security_group.bastion_subnet_nsg"
         },
@@ -4598,19 +4653,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_network_security_group.app_subnet_nsg"
+            "resource": "azurerm_subnet.bastionsubnet"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_application_gateway.web_ag"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_subnet.dbsubnet"
+            "resource": "azurerm_subnet.agsubnet"
         },
         {
             "attribute": [
@@ -4620,27 +4669,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_network_security_group.ag_subnet_nsg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_network_security_group.db_subnet_nsg"
-        },
-        {
-            "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.dbsubnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "random_string.myrandom"
+            "resource": "azurerm_network_security_group.app2_web_vmss_nsg"
         },
         {
             "attribute": [
@@ -4650,45 +4681,15 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.vnet"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_subnet.appsubnet"
-        },
-        {
-            "attribute": [
                 "id"
             ],
-            "resource": "azurerm_linux_virtual_machine_scale_set.app1_web_vmss"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_subnet.agsubnet"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_network_security_group.web_subnet_nsg"
+            "resource": "azurerm_network_security_group.ag_subnet_nsg"
         },
         {
             "attribute": [
                 "id"
             ],
             "resource": "azurerm_network_security_group.web_subnet_nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.web_ag_publicip"
         }
     ],
     "resource_changes": [
@@ -7630,7 +7631,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:16:32Z",
+    "timestamp": "2024-08-23T00:12:50Z",
     "variables": {
         "ag_subnet_address": {
             "value": [

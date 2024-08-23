@@ -6,14 +6,8 @@
           "value": {
             "azurerm_application_gateway.main": [
               "azurerm_application_gateway.main",
-              "azurerm_application_insights.application_insights",
-              "azurerm_linux_web_app.api1",
-              "azurerm_linux_web_app.api2",
               "azurerm_public_ip.pip",
               "azurerm_resource_group.application-rg",
-              "azurerm_resource_group.shared-rg",
-              "azurerm_service_plan.webplan1",
-              "azurerm_service_plan.webplan2",
               "azurerm_subnet.gateway-subnet",
               "azurerm_virtual_network.gateway-vnet"
             ],

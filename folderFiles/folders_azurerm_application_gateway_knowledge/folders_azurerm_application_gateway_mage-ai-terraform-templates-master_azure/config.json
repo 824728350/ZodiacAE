@@ -494,10 +494,10 @@
                 },
                 "security_rule": {
                   "references": [
-                    "azurerm_subnet.sn-public.address_prefixes",
-                    "azurerm_subnet.sn-public",
                     "azurerm_subnet.sn-aci.address_prefixes",
-                    "azurerm_subnet.sn-aci"
+                    "azurerm_subnet.sn-aci",
+                    "azurerm_subnet.sn-public.address_prefixes",
+                    "azurerm_subnet.sn-public"
                   ]
                 }
               },

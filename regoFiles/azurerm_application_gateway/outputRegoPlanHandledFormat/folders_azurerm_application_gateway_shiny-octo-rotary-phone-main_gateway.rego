@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -1342,17 +1343,13 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "result"
+                "id"
             ],
-            "resource": "random_password.password"
-        },
-        {
-            "attribute": [],
-            "resource": "azurerm_network_interface.nic"
+            "resource": "azurerm_public_ip.pip"
         },
         {
             "attribute": [
-                "id"
+                "ip_address"
             ],
             "resource": "azurerm_public_ip.pip"
         },
@@ -1364,33 +1361,19 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.vnet"
-        },
-        {
-            "attribute": [
                 "id"
             ],
             "resource": "azurerm_subnet.backend"
         },
         {
-            "attribute": [
-                "backend_address_pool"
-            ],
-            "resource": "azurerm_application_gateway.main"
+            "attribute": [],
+            "resource": "azurerm_network_interface.nic"
         },
         {
             "attribute": [
-                "ip_address"
+                "result"
             ],
-            "resource": "azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_resource_group.rg"
+            "resource": "random_password.password"
         },
         {
             "attribute": [],
@@ -1401,6 +1384,24 @@ mock_config := {
                 "id"
             ],
             "resource": "azurerm_subnet.frontend"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.vnet"
+        },
+        {
+            "attribute": [
+                "backend_address_pool"
+            ],
+            "resource": "azurerm_application_gateway.main"
         }
     ],
     "resource_changes": [
@@ -2471,7 +2472,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:10:04Z",
+    "timestamp": "2024-08-23T00:06:03Z",
     "variables": {
         "backend_address_pool_name": {
             "value": "kaiBackendPool"

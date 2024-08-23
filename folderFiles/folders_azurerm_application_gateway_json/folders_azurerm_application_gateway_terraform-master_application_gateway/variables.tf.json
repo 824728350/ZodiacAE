@@ -2,7 +2,7 @@
     "variable": [
         {
             "resource_group_name": {
-                "default": "ukcfhold",
+                "default": "7wvahold",
                 "description": "resouce group name"
             }
         },

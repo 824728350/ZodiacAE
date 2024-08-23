@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -1608,43 +1609,13 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_private_dns_zone.postgresql"
-        },
-        {
-            "attribute": [
                 "id"
             ],
             "resource": "azurerm_subnet.backend"
         },
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.gateway"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_network_security_group.nsg_db"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_postgresql_flexible_server.postgresql"
-        },
-        {
-            "attribute": [
-                "id"
+                "name"
             ],
             "resource": "azurerm_virtual_network.vnet"
         },
@@ -1653,30 +1624,6 @@ mock_config := {
                 "id"
             ],
             "resource": "azurerm_network_security_group.nsg_backend"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_network_security_group.nsg_db"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_private_dns_zone.postgresql"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.vnet"
         },
         {
             "attribute": [
@@ -1693,6 +1640,30 @@ mock_config := {
         },
         {
             "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_network_security_group.nsg_db"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_network_security_group.nsg_backend"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.gateway"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.nsg_db"
+        },
+        {
+            "attribute": [
                 "address_prefixes",
                 0
             ],
@@ -1700,9 +1671,39 @@ mock_config := {
         },
         {
             "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_private_dns_zone.postgresql"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_postgresql_flexible_server.postgresql"
+        },
+        {
+            "attribute": [
                 "name"
             ],
-            "resource": "azurerm_network_security_group.nsg_backend"
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_private_dns_zone.postgresql"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_virtual_network.vnet"
         },
         {
             "attribute": [
@@ -2880,5 +2881,5 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:04:06Z"
+    "timestamp": "2024-08-23T00:00:16Z"
 }

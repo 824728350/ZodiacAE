@@ -22,10 +22,6 @@ repoViewTop := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -38,12 +34,10 @@ repoViewTop := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -114,8 +108,7 @@ repoViewTop := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -123,16 +116,10 @@ repoViewTop := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3362,10 +3349,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -3378,12 +3361,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -3454,8 +3435,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -3463,16 +3443,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -7664,7 +7638,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -8078,6 +8056,7 @@ AttrAbsenceThenExistenceList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenExistence][1]["values"], [pathThenExistence, valueThenExistence])
@@ -8102,6 +8081,7 @@ AttrAbsenceThenExistenceList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     pathIfAbsence != pathThenExistence
@@ -8138,6 +8118,7 @@ AttrAbsenceThenConstantList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenConstant][1]["values"], [pathThenConstant, valueThenConstant])
@@ -8197,6 +8178,7 @@ AttrAbsenceThenEqualList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenEqual1][1]["values"], [pathThenEqual1, valueThenEqual1])
@@ -8268,6 +8250,7 @@ AttrAbsenceThenUnequalList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenUnequal1][1]["values"], [pathThenUnequal1, valueThenUnequal1])
@@ -8337,6 +8320,7 @@ AttrAbsenceThenCIDRIncludeList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenCIDRInclude1][1]["values"], [pathThenCIDRInclude1, valueThenCIDRInclude1])
@@ -8402,6 +8386,7 @@ AttrAbsenceThenCIDRExcludeList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenCIDRExclude1][1]["values"], [pathThenCIDRExclude1, valueThenCIDRExclude1])
@@ -8463,6 +8448,7 @@ AttrExistenceThenExistenceList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenExistence][1]["values"], [pathThenExistence, valueThenExistence])
@@ -8487,6 +8473,7 @@ AttrExistenceThenExistenceList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     pathIfExistence != pathThenExistence
@@ -8521,6 +8508,7 @@ AttrExistenceThenConstantList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenConstant][1]["values"], [pathThenConstant, valueThenConstant])
@@ -8578,6 +8566,7 @@ AttrExistenceThenEqualList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenEqual1][1]["values"], [pathThenEqual1, valueThenEqual1])
@@ -8647,6 +8636,7 @@ AttrExistenceThenUnequalList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenUnequal1][1]["values"], [pathThenUnequal1, valueThenUnequal1])
@@ -8714,6 +8704,7 @@ AttrExistenceThenCIDRIncludeList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenCIDRInclude1][1]["values"], [pathThenCIDRInclude1, valueThenCIDRInclude1])
@@ -8777,6 +8768,7 @@ AttrExistenceThenCIDRExcludeList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenCIDRExclude1][1]["values"], [pathThenCIDRExclude1, valueThenCIDRExclude1])
@@ -9768,7 +9760,8 @@ mock_config := {
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
                 "module_address": "module.sampleapp",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "module.sampleapp:random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -10124,7 +10117,7 @@ mock_config := {
                                             "description": "The location/region where the Application Gateway is created."
                                         },
                                         "name": {
-                                            "default": "hp4vhold",
+                                            "default": "6rr1hold",
                                             "description": "The name of the Application Gateway."
                                         },
                                         "probes": {
@@ -10136,7 +10129,7 @@ mock_config := {
                                             "description": "List of objects that represent the configuration of each backend request routing rule."
                                         },
                                         "resource_group_name": {
-                                            "default": "qek5hold",
+                                            "default": "b3zthold",
                                             "description": "The name of the resource group in which to create the Application Gateway."
                                         },
                                         "sku": {
@@ -10148,7 +10141,7 @@ mock_config := {
                                             "description": "List of objects that represent the configuration of each ssl certificate."
                                         },
                                         "subnet_id": {
-                                            "default": "cgzehold",
+                                            "default": "ucixhold",
                                             "description": "The ID of the Subnet which the Application Gateway should be connected to."
                                         },
                                         "tags": {
@@ -10277,7 +10270,7 @@ mock_config := {
                                             "description": "The location to deploy to."
                                         },
                                         "log_analytics_workspace_name": {
-                                            "default": "p013hold",
+                                            "default": "42o1hold",
                                             "description": "The log analytics name to deploy."
                                         },
                                         "log_analytics_workspace_retention_in_days": {
@@ -10289,7 +10282,7 @@ mock_config := {
                                             "description": "The log analytics sku."
                                         },
                                         "resource_group_name": {
-                                            "default": "9tphhold",
+                                            "default": "7vujhold",
                                             "description": "The resource group name to deploy to."
                                         }
                                     }
@@ -10493,11 +10486,11 @@ mock_config := {
                                             "description": "List of objects that represent the container app environment values."
                                         },
                                         "container_app_image": {
-                                            "default": "ie8bhold",
+                                            "default": "x61thold",
                                             "description": "The managed app image url to deploy."
                                         },
                                         "container_app_managed_environment_id": {
-                                            "default": "a3zehold",
+                                            "default": "ha1yhold",
                                             "description": "The managed app environment id to connect."
                                         },
                                         "container_app_managed_environment_static_ip_address": {
@@ -10505,11 +10498,11 @@ mock_config := {
                                             "description": "The managed app environment satic ip address."
                                         },
                                         "container_app_managed_environment_zone_name": {
-                                            "default": "1wsnhold",
+                                            "default": "d016hold",
                                             "description": "The managed app environment dns zone name."
                                         },
                                         "container_app_name": {
-                                            "default": "q3srhold",
+                                            "default": "8tgchold",
                                             "description": "The managed app name to deploy."
                                         },
                                         "container_app_port": {
@@ -10517,7 +10510,7 @@ mock_config := {
                                             "description": "The managed app port."
                                         },
                                         "resource_group_name": {
-                                            "default": "x0xhhold",
+                                            "default": "87kxhold",
                                             "description": "The resource group name to deploy to."
                                         }
                                     }
@@ -10721,11 +10714,11 @@ mock_config := {
                                             "description": "List of objects that represent the container app environment values."
                                         },
                                         "container_app_image": {
-                                            "default": "ie8bhold",
+                                            "default": "x61thold",
                                             "description": "The managed app image url to deploy."
                                         },
                                         "container_app_managed_environment_id": {
-                                            "default": "a3zehold",
+                                            "default": "ha1yhold",
                                             "description": "The managed app environment id to connect."
                                         },
                                         "container_app_managed_environment_static_ip_address": {
@@ -10733,11 +10726,11 @@ mock_config := {
                                             "description": "The managed app environment satic ip address."
                                         },
                                         "container_app_managed_environment_zone_name": {
-                                            "default": "1wsnhold",
+                                            "default": "d016hold",
                                             "description": "The managed app environment dns zone name."
                                         },
                                         "container_app_name": {
-                                            "default": "q3srhold",
+                                            "default": "8tgchold",
                                             "description": "The managed app name to deploy."
                                         },
                                         "container_app_port": {
@@ -10745,7 +10738,7 @@ mock_config := {
                                             "description": "The managed app port."
                                         },
                                         "resource_group_name": {
-                                            "default": "x0xhhold",
+                                            "default": "87kxhold",
                                             "description": "The resource group name to deploy to."
                                         }
                                     }
@@ -10950,27 +10943,27 @@ mock_config := {
                                             "description": "The location to deploy to."
                                         },
                                         "log_analytics_workspace_id": {
-                                            "default": "owwnhold",
+                                            "default": "6jlmhold",
                                             "description": "The log analytics workspace id to connect."
                                         },
                                         "managed_environments_name": {
-                                            "default": "c93ihold",
+                                            "default": "0sdqhold",
                                             "description": "The managed environment name to deploy."
                                         },
                                         "resource_group_id": {
-                                            "default": "apcehold",
+                                            "default": "ceizhold",
                                             "description": "The resource group id to deploy to."
                                         },
                                         "resource_group_name": {
-                                            "default": "aq5chold",
+                                            "default": "3y7ahold",
                                             "description": "The resource group name to deploy to."
                                         },
                                         "subnet_id": {
-                                            "default": "nqazhold",
+                                            "default": "sz7whold",
                                             "description": "The subnet id to connect."
                                         },
                                         "vnet_id": {
-                                            "default": "hkw2hold",
+                                            "default": "vtoihold",
                                             "description": "The vnet id to connect."
                                         }
                                     }
@@ -11087,7 +11080,7 @@ mock_config := {
                                             "description": "The public ip sku."
                                         },
                                         "resource_group_name": {
-                                            "default": "34i1hold",
+                                            "default": "tsh2hold",
                                             "description": "The resource group name to deploy to."
                                         }
                                     }
@@ -11170,7 +11163,7 @@ mock_config := {
                                             "description": "The location to deploy to."
                                         },
                                         "resource_group_name": {
-                                            "default": "l03shold",
+                                            "default": "t2gjhold",
                                             "description": "The resource group name to deploy to."
                                         }
                                     }
@@ -11246,7 +11239,7 @@ mock_config := {
                                     ],
                                     "variables": {
                                         "resource_group_name": {
-                                            "default": "0nnthold",
+                                            "default": "vctohold",
                                             "description": "The resource group name to deploy to."
                                         },
                                         "subnet_address_prefixes": {
@@ -11254,11 +11247,11 @@ mock_config := {
                                             "description": "List of all virtual network addresses"
                                         },
                                         "subnet_name": {
-                                            "default": "m7euhold",
+                                            "default": "nrdfhold",
                                             "description": "The resource group name to deploy to."
                                         },
                                         "subnet_virtual_network_name": {
-                                            "default": "muydhold",
+                                            "default": "awowhold",
                                             "description": "The virtual network name to deploy to."
                                         }
                                     }
@@ -11337,7 +11330,7 @@ mock_config := {
                                     ],
                                     "variables": {
                                         "resource_group_name": {
-                                            "default": "0nnthold",
+                                            "default": "vctohold",
                                             "description": "The resource group name to deploy to."
                                         },
                                         "subnet_address_prefixes": {
@@ -11345,11 +11338,11 @@ mock_config := {
                                             "description": "List of all virtual network addresses"
                                         },
                                         "subnet_name": {
-                                            "default": "m7euhold",
+                                            "default": "nrdfhold",
                                             "description": "The resource group name to deploy to."
                                         },
                                         "subnet_virtual_network_name": {
-                                            "default": "muydhold",
+                                            "default": "awowhold",
                                             "description": "The virtual network name to deploy to."
                                         }
                                     }
@@ -11463,7 +11456,7 @@ mock_config := {
                                             "description": "The location to deploy to."
                                         },
                                         "resource_group_name": {
-                                            "default": "8urvhold",
+                                            "default": "phxahold",
                                             "description": "The resource group name to deploy to."
                                         },
                                         "virtual_network_address_space": {
@@ -11471,7 +11464,7 @@ mock_config := {
                                             "description": "List of all virtual network addresses"
                                         },
                                         "virtual_network_name": {
-                                            "default": "tj3uhold",
+                                            "default": "5r22hold",
                                             "description": "The resource group name to deploy to."
                                         }
                                     }
@@ -11529,7 +11522,7 @@ mock_config := {
                                 "description": "The location to deploy to."
                             },
                             "resource_group_name": {
-                                "default": "y0rehold",
+                                "default": "8fs4hold",
                                 "description": "The resource group name to deploy to."
                             },
                             "subscription_id": {
@@ -11628,6 +11621,37 @@ mock_config := {
                             ]
                         },
                         {
+                            "address": "module.sampleapp.module.subnet_applicationgateway",
+                            "resources": [
+                                {
+                                    "address": "module.sampleapp.module.subnet_applicationgateway.azurerm_subnet.subnet",
+                                    "mode": "managed",
+                                    "name": "subnet",
+                                    "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                                    "schema_version": 0,
+                                    "sensitive_values": {
+                                        "address_prefixes": [
+                                            false
+                                        ],
+                                        "delegation": []
+                                    },
+                                    "type": "azurerm_subnet",
+                                    "values": {
+                                        "address_prefixes": [
+                                            "10.0.8.0/24"
+                                        ],
+                                        "default_outbound_access_enabled": true,
+                                        "delegation": [],
+                                        "name": "applicationgateway",
+                                        "resource_group_name": "appl-test-containerapp-westeurope",
+                                        "service_endpoint_policy_ids": null,
+                                        "service_endpoints": null,
+                                        "timeouts": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
                             "address": "module.sampleapp.module.public_ip_application_gateway",
                             "resources": [
                                 {
@@ -11660,37 +11684,6 @@ mock_config := {
                                         },
                                         "timeouts": null,
                                         "zones": null
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "address": "module.sampleapp.module.subnet_applicationgateway",
-                            "resources": [
-                                {
-                                    "address": "module.sampleapp.module.subnet_applicationgateway.azurerm_subnet.subnet",
-                                    "mode": "managed",
-                                    "name": "subnet",
-                                    "provider_name": "registry.terraform.io/hashicorp/azurerm",
-                                    "schema_version": 0,
-                                    "sensitive_values": {
-                                        "address_prefixes": [
-                                            false
-                                        ],
-                                        "delegation": []
-                                    },
-                                    "type": "azurerm_subnet",
-                                    "values": {
-                                        "address_prefixes": [
-                                            "10.0.8.0/24"
-                                        ],
-                                        "default_outbound_access_enabled": true,
-                                        "delegation": [],
-                                        "name": "applicationgateway",
-                                        "resource_group_name": "appl-test-containerapp-westeurope",
-                                        "service_endpoint_policy_ids": null,
-                                        "service_endpoints": null,
-                                        "timeouts": null
                                     }
                                 }
                             ]
@@ -12460,33 +12453,15 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "http_listener"
+                "ip_address"
             ],
-            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
+            "resource": "module.sampleapp.module.public_ip_application_gateway.azurerm_public_ip.public_ip"
         },
         {
             "attribute": [
-                "name"
+                "workspace_id"
             ],
-            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.sampleapp.module.managed_app_allure_docker_service.azurerm_container_app.app"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.sampleapp.module.managed_app_allure_docker_ui_service.azurerm_container_app.app"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
+            "resource": "module.sampleapp.module.log_analytics_workspace.azurerm_log_analytics_workspace.log_analytics_workspace"
         },
         {
             "attribute": [
@@ -12502,13 +12477,121 @@ mock_config := {
         },
         {
             "attribute": [
+                "tags"
+            ],
+            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
+        },
+        {
+            "attribute": [
+                "resource_group_name"
+            ],
+            "resource": "module.sampleapp.module.virtual_network.azurerm_virtual_network.virtual_network"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.sampleapp.module.public_ip_application_gateway.azurerm_public_ip.public_ip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.sampleapp.module.managed_app_allure_docker_ui_service.azurerm_container_app.app"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.sampleapp.module.virtual_network.azurerm_virtual_network.virtual_network"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.sampleapp.module.managed_app_allure_docker_ui_service.azurerm_container_app.app"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.sampleapp.module.virtual_network.azurerm_virtual_network.virtual_network"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.sampleapp.module.subnet_containerapps.azurerm_subnet.subnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
+        },
+        {
+            "attribute": [
                 "ssl_certificate"
             ],
             "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
         },
         {
             "attribute": [
+                "name"
+            ],
+            "resource": "module.sampleapp.module.managed_environment.azurerm_private_dns_zone.private_dns_zone"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.sampleapp.module.managed_app_allure_docker_service.azurerm_container_app.app"
+        },
+        {
+            "attribute": [
                 "id"
+            ],
+            "resource": "module.sampleapp.module.subnet_applicationgateway.azurerm_subnet.subnet"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
+        },
+        {
+            "attribute": [
+                "result"
+            ],
+            "resource": "module.sampleapp.random_string.deployment_string"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.sampleapp.module.resource_group.azurerm_resource_group.resource_group"
+        },
+        {
+            "attribute": [
+                "resource_group_name"
+            ],
+            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
+        },
+        {
+            "attribute": [
+                "static_ip_address"
+            ],
+            "resource": "module.sampleapp.module.managed_environment.azurerm_container_app_environment.container_app_environment"
+        },
+        {
+            "attribute": [
+                "http_listener"
+            ],
+            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
+        },
+        {
+            "attribute": [
+                "backend_http_settings"
             ],
             "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
         },
@@ -12526,96 +12609,6 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "module.sampleapp.module.public_ip_application_gateway.azurerm_public_ip.public_ip"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.sampleapp.module.resource_group.azurerm_resource_group.resource_group"
-        },
-        {
-            "attribute": [
-                "workspace_id"
-            ],
-            "resource": "module.sampleapp.module.log_analytics_workspace.azurerm_log_analytics_workspace.log_analytics_workspace"
-        },
-        {
-            "attribute": [
-                "backend_http_settings"
-            ],
-            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
-        },
-        {
-            "attribute": [
-                "ip_address"
-            ],
-            "resource": "module.sampleapp.module.public_ip_application_gateway.azurerm_public_ip.public_ip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.sampleapp.module.subnet_applicationgateway.azurerm_subnet.subnet"
-        },
-        {
-            "attribute": [
-                "static_ip_address"
-            ],
-            "resource": "module.sampleapp.module.managed_environment.azurerm_container_app_environment.container_app_environment"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.sampleapp.module.virtual_network.azurerm_virtual_network.virtual_network"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.sampleapp.module.virtual_network.azurerm_virtual_network.virtual_network"
-        },
-        {
-            "attribute": [
-                "resource_group_name"
-            ],
-            "resource": "module.sampleapp.module.virtual_network.azurerm_virtual_network.virtual_network"
-        },
-        {
-            "attribute": [
-                "backend_address_pool"
-            ],
-            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
-        },
-        {
-            "attribute": [
-                "tags"
-            ],
-            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
-        },
-        {
-            "attribute": [
-                "resource_group_name"
-            ],
-            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
-        },
-        {
-            "attribute": [
-                "result"
-            ],
-            "resource": "module.sampleapp.random_string.deployment_string"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.sampleapp.module.subnet_containerapps.azurerm_subnet.subnet"
-        },
-        {
-            "attribute": [
                 "primary_shared_key"
             ],
             "resource": "module.sampleapp.module.log_analytics_workspace.azurerm_log_analytics_workspace.log_analytics_workspace"
@@ -12628,21 +12621,21 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
-            ],
-            "resource": "module.sampleapp.module.managed_environment.azurerm_private_dns_zone.private_dns_zone"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.sampleapp.module.managed_app_allure_docker_ui_service.azurerm_container_app.app"
-        },
-        {
-            "attribute": [
                 "id"
             ],
             "resource": "module.sampleapp.module.managed_app_allure_docker_service.azurerm_container_app.app"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
+        },
+        {
+            "attribute": [
+                "backend_address_pool"
+            ],
+            "resource": "module.sampleapp.module.application_gateway.azurerm_application_gateway.appgw"
         }
     ],
     "resource_changes": [
@@ -13903,7 +13896,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:47:45Z",
+    "timestamp": "2024-08-22T23:43:39Z",
     "variables": {
         "common_tags": {
             "value": {

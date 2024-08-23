@@ -22,10 +22,6 @@ repoViewTop := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -38,12 +34,10 @@ repoViewTop := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -114,8 +108,7 @@ repoViewTop := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -123,16 +116,10 @@ repoViewTop := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3362,10 +3349,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -3378,12 +3361,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -3454,8 +3435,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -3463,16 +3443,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -8014,7 +7988,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -9061,6 +9039,7 @@ ComboReferenceThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9108,6 +9087,7 @@ ComboReferenceThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9155,6 +9135,7 @@ ComboReferenceThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9202,6 +9183,7 @@ ComboReferenceThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9538,6 +9520,7 @@ ComboNegationThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9583,6 +9566,7 @@ ComboNegationThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10705,6 +10689,7 @@ ComboIntraThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10759,6 +10744,7 @@ ComboIntraThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10813,6 +10799,7 @@ ComboIntraThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10867,6 +10854,7 @@ ComboIntraThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -12718,10 +12706,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -12734,12 +12718,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -12810,8 +12792,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -12819,16 +12800,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -15760,7 +15735,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -17096,7 +17075,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -29967,63 +29947,9 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "id"
+                "result"
             ],
-            "resource": "module.azfw.azurerm_public_ip.example"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "module.vm_appgw[0].azurerm_linux_virtual_machine.linux"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.webserver.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "ip_configuration"
-            ],
-            "resource": "module.vm_appgw.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw.azurerm_linux_virtual_machine.linux"
-        },
-        {
-            "attribute": [
-                "logs"
-            ],
-            "resource": "data.azurerm_monitor_diagnostic_categories.appgw_diag_category"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.example"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.vm_appgw[1].azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_route_table.vm"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.bastion.azurerm_network_security_group.bastion"
+            "resource": "random_string.uniqstr"
         },
         {
             "attribute": [
@@ -30033,7 +29959,43 @@ mock_config := {
         },
         {
             "attribute": [
-                "ip_configuration"
+                "id"
+            ],
+            "resource": "azurerm_application_gateway.network"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.fe_azfw"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.fe_bastion.azurerm_network_security_group.bastion"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.fe_azfw.azurerm_firewall.example"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.frontend"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.webserver.azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "id"
             ],
             "resource": "module.vm_appgw[0].azurerm_network_interface.nic"
         },
@@ -30043,13 +30005,19 @@ mock_config := {
                 0,
                 "name"
             ],
-            "resource": "module.vm_appgw[0].azurerm_network_interface.nic"
+            "resource": "module.vm_appgw.azurerm_network_interface.nic"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.bastion"
+            "resource": "azurerm_route_table.vm"
+        },
+        {
+            "attribute": [
+                "resource_group_name"
+            ],
+            "resource": "module.la.azurerm_log_analytics_workspace.log_analytics"
         },
         {
             "attribute": [
@@ -30061,13 +30029,309 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "module.fe_azfw.azurerm_public_ip.example"
+            "resource": "module.vm_appgw[1].azurerm_network_security_group.nsg"
         },
         {
             "attribute": [
                 "id"
             ],
+            "resource": "module.bastion.azurerm_public_ip.bastion"
+        },
+        {
+            "attribute": [
+                "ip_configuration",
+                0,
+                "name"
+            ],
+            "resource": "module.vm_appgw[1].azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "ip_configuration",
+                0,
+                "name"
+            ],
+            "resource": "module.vm_appgw[0].azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "private_ip_address"
+            ],
+            "resource": "module.webserver.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.example"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
             "resource": "module.vm_appgw[1].azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.fe_azfw.azurerm_firewall_policy.example"
+        },
+        {
+            "attribute": [
+                "logs"
+            ],
+            "resource": "data.azurerm_monitor_diagnostic_categories.azfw_diag_category"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.fe_bastion"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.vm_appgw[1].azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.pls"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.azfw.azurerm_firewall.example"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.appgw"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.appgw"
+        },
+        {
+            "attribute": [
+                "ip_configuration"
+            ],
+            "resource": "module.vm_appgw[1].azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "ip_configuration"
+            ],
+            "resource": "module.vm_appgw[0].azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "ip_configuration",
+                0,
+                "private_ip_address"
+            ],
+            "resource": "module.fe_azfw.azurerm_firewall.example"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.fe_bastion.azurerm_network_security_group.bastion"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.vm_appgw[0].azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.azfw.azurerm_public_ip.example"
+        },
+        {
+            "attribute": [
+                "ip_configuration"
+            ],
+            "resource": "module.vm_appgw.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.vm_appgw.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.fe_bastion.azurerm_public_ip.bastion"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.vm_appgw[1].azurerm_linux_virtual_machine.linux"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.vm_appgw[0].azurerm_linux_virtual_machine.linux"
+        },
+        {
+            "attribute": [
+                "logs"
+            ],
+            "resource": "data.azurerm_monitor_diagnostic_categories.appgw_diag_category"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.fe_azfw.azurerm_firewall.example"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.azfw.azurerm_firewall.example"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.bastion.azurerm_network_security_group.bastion"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.la.azurerm_log_analytics_workspace.log_analytics"
+        },
+        {
+            "attribute": [
+                "private_ip_address"
+            ],
+            "resource": "module.vm_appgw[0].azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "ip_configuration",
+                0,
+                "private_ip_address"
+            ],
+            "resource": "module.azfw.azurerm_firewall.example"
+        },
+        {
+            "attribute": [],
+            "resource": "azurerm_resource_group.frontend"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.vm_appgw.azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.fe_vm"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.la.azurerm_log_analytics_workspace.log_analytics"
+        },
+        {
+            "attribute": [
+                "ip_configuration"
+            ],
+            "resource": "module.webserver.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.vm_appgw[0].azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.webserver.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "ip_address"
+            ],
+            "resource": "module.azfw.azurerm_public_ip.example"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.webserver.azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.default"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.frontend"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.bastion.azurerm_network_security_group.bastion"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.vm_appgw.azurerm_linux_virtual_machine.linux"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.vm_appgw[1].azurerm_linux_virtual_machine.linux"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.vm_appgw[0].azurerm_linux_virtual_machine.linux"
+        },
+        {
+            "attribute": [
+                "ip_configuration",
+                0,
+                "name"
+            ],
+            "resource": "module.webserver.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.vm_appgw[0].azurerm_network_security_group.nsg"
         },
         {
             "attribute": [
@@ -30077,11 +30341,57 @@ mock_config := {
         },
         {
             "attribute": [
-                "ip_configuration",
-                0,
-                "name"
+                "id"
+            ],
+            "resource": "module.azfw.azurerm_firewall_policy.example"
+        },
+        {
+            "attribute": [
+                "workspace_id"
+            ],
+            "resource": "module.la.azurerm_log_analytics_workspace.log_analytics"
+        },
+        {
+            "attribute": [
+                "private_ip_address"
             ],
             "resource": "module.vm_appgw.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.bastion"
+        },
+        {
+            "attribute": [
+                "ip_address"
+            ],
+            "resource": "module.fe_azfw.azurerm_public_ip.example"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.pe"
+        },
+        {
+            "attribute": [
+                "private_ip_address"
+            ],
+            "resource": "module.vm_appgw[1].azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.fe_azfw.azurerm_public_ip.example"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.vm_appgw[1].azurerm_network_interface.nic"
         },
         {
             "attribute": [
@@ -30099,177 +30409,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "module.fe_bastion.azurerm_network_security_group.bastion"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw[0].azurerm_linux_virtual_machine.linux"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw[1].azurerm_linux_virtual_machine.linux"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.vm_appgw[0].azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.bastion.azurerm_network_security_group.bastion"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw[1].azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.appgw"
-        },
-        {
-            "attribute": [
-                "workspace_id"
-            ],
-            "resource": "module.la.azurerm_log_analytics_workspace.log_analytics"
-        },
-        {
-            "attribute": [
-                "result"
-            ],
-            "resource": "random_string.uniqstr"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.fe_azfw.azurerm_firewall_policy.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
             "resource": "module.webserver.azurerm_linux_virtual_machine.linux"
         },
         {
             "attribute": [
                 "name"
             ],
-            "resource": "module.webserver.azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.fe_bastion.azurerm_network_security_group.bastion"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.la.azurerm_log_analytics_workspace.log_analytics"
-        },
-        {
-            "attribute": [
-                "ip_configuration",
-                0,
-                "name"
-            ],
-            "resource": "module.vm_appgw[1].azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "ip_configuration"
-            ],
-            "resource": "module.vm_appgw[1].azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.azfw.azurerm_firewall.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.fe_azfw"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.azfw.azurerm_firewall_policy.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.pe"
-        },
-        {
-            "attribute": [
-                "private_ip_address"
-            ],
-            "resource": "module.webserver.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
             "resource": "azurerm_resource_group.frontend"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_application_gateway.network"
-        },
-        {
-            "attribute": [
-                "logs"
-            ],
-            "resource": "data.azurerm_monitor_diagnostic_categories.azfw_diag_category"
-        },
-        {
-            "attribute": [
-                "private_ip_address"
-            ],
-            "resource": "module.vm_appgw[1].azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "module.la.azurerm_log_analytics_workspace.log_analytics"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw[0].azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "module.vm_appgw[1].azurerm_linux_virtual_machine.linux"
         },
         {
             "attribute": [
@@ -30279,175 +30425,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "ip_configuration",
-                0,
-                "name"
+                "location"
             ],
-            "resource": "module.webserver.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.fe_azfw.azurerm_firewall.example"
-        },
-        {
-            "attribute": [
-                "ip_configuration",
-                0,
-                "private_ip_address"
-            ],
-            "resource": "module.fe_azfw.azurerm_firewall.example"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_resource_group.frontend"
-        },
-        {
-            "attribute": [
-                "resource_group_name"
-            ],
-            "resource": "module.la.azurerm_log_analytics_workspace.log_analytics"
-        },
-        {
-            "attribute": [
-                "ip_configuration"
-            ],
-            "resource": "module.webserver.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw[0].azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.pls"
-        },
-        {
-            "attribute": [
-                "private_ip_address"
-            ],
-            "resource": "module.vm_appgw[0].azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "ip_configuration",
-                0,
-                "private_ip_address"
-            ],
-            "resource": "module.azfw.azurerm_firewall.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.default"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.webserver.azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw[0].azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "ip_address"
-            ],
-            "resource": "module.azfw.azurerm_public_ip.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.fe_bastion"
-        },
-        {
-            "attribute": [],
-            "resource": "azurerm_resource_group.frontend"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw.azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.fe_bastion.azurerm_public_ip.bastion"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.appgw"
-        },
-        {
-            "attribute": [
-                "private_ip_address"
-            ],
-            "resource": "module.vm_appgw.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.bastion.azurerm_public_ip.bastion"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.frontend"
-        },
-        {
-            "attribute": [
-                "ip_address"
-            ],
-            "resource": "module.fe_azfw.azurerm_public_ip.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.fe_vm"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.azfw.azurerm_firewall.example"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.vm_appgw[1].azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.fe_azfw.azurerm_firewall.example"
+            "resource": "azurerm_resource_group.example"
         }
     ],
     "resource_changes": [
@@ -35403,7 +35383,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:01:05Z",
+    "timestamp": "2024-08-22T23:57:05Z",
     "variables": {
         "backend_base_cidr_block": {
             "value": "172.16.0.0/16"

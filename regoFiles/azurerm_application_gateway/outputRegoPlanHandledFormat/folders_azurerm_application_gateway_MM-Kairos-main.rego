@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -9208,13 +9209,25 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-rs2"
+            "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-pioneer-online2"
         },
         {
             "attribute": [
                 "id"
             ],
             "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-create-online2"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_key_vault.res-1"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-smile-online2"
         },
         {
             "attribute": [
@@ -9238,12 +9251,6 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-ir2"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
             "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-br2"
         },
         {
@@ -9256,19 +9263,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-smile-online2"
+            "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-ir2"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-pioneer-online2"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_key_vault.res-1"
+            "resource": "azurerm_app_service_custom_hostname_binding.azmmclientrg-custombinding-webapp-rs2"
         }
     ],
     "resource_changes": [
@@ -16138,5 +16139,5 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:23:59Z"
+    "timestamp": "2024-08-23T00:20:44Z"
 }

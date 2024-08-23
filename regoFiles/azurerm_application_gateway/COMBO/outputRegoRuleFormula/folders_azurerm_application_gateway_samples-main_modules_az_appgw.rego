@@ -22,10 +22,6 @@ repoViewTop := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -38,12 +34,10 @@ repoViewTop := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -114,8 +108,7 @@ repoViewTop := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -123,16 +116,10 @@ repoViewTop := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3362,10 +3349,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -3378,12 +3361,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -3454,8 +3435,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -3463,16 +3443,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -8014,7 +7988,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -9061,6 +9039,7 @@ ComboReferenceThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9108,6 +9087,7 @@ ComboReferenceThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9155,6 +9135,7 @@ ComboReferenceThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9202,6 +9183,7 @@ ComboReferenceThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9538,6 +9520,7 @@ ComboNegationThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9583,6 +9566,7 @@ ComboNegationThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10705,6 +10689,7 @@ ComboIntraThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10759,6 +10744,7 @@ ComboIntraThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10813,6 +10799,7 @@ ComboIntraThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10867,6 +10854,7 @@ ComboIntraThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -12718,10 +12706,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -12734,12 +12718,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -12810,8 +12792,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -12819,16 +12800,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -15760,7 +15735,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -17102,7 +17081,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "google": {
                 "expressions": {
@@ -17466,7 +17446,7 @@ mock_config := {
                     "description": "The supported Azure location where the resource deployed"
                 },
                 "resource_group_name": {
-                    "default": "hxzmhold",
+                    "default": "td5xhold",
                     "description": "The name of the resource group to deploy resources into"
                 },
                 "resource_prefix": {
@@ -17713,7 +17693,7 @@ mock_config := {
                                 "url_path_map_name": ""
                             }
                         ],
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "rewrite_rule_set": [],
                         "sku": [
                             {
@@ -17753,7 +17733,7 @@ mock_config := {
                         "location": "eastus",
                         "name": "zodiac-pip",
                         "public_ip_prefix_id": null,
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "reverse_fqdn": null,
                         "sku": "Standard",
                         "sku_tier": "Regional",
@@ -17782,7 +17762,7 @@ mock_config := {
                         "default_outbound_access_enabled": true,
                         "delegation": [],
                         "name": "backend",
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "service_endpoint_policy_ids": null,
                         "service_endpoints": null,
                         "timeouts": null,
@@ -17809,7 +17789,7 @@ mock_config := {
                         "default_outbound_access_enabled": true,
                         "delegation": [],
                         "name": "frontend",
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "service_endpoint_policy_ids": null,
                         "service_endpoints": null,
                         "timeouts": null,
@@ -17843,7 +17823,7 @@ mock_config := {
                         "flow_timeout_in_minutes": null,
                         "location": "eastus",
                         "name": "zodiac-net",
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "tags": null,
                         "timeouts": null
                     }
@@ -17875,29 +17855,17 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_public_ip.ingress"
-        },
-        {
-            "attribute": [
-                "ip_address"
-            ],
-            "resource": "azurerm_public_ip.ingress"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
             "resource": "azurerm_subnet.backend"
         },
         {
             "attribute": [
-                "name"
+                "id"
             ],
             "resource": "azurerm_application_gateway.gw"
         },
         {
             "attribute": [
-                "id"
+                "name"
             ],
             "resource": "azurerm_application_gateway.gw"
         },
@@ -17918,6 +17886,18 @@ mock_config := {
                 "id"
             ],
             "resource": "azurerm_subnet.frontend"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.ingress"
+        },
+        {
+            "attribute": [
+                "ip_address"
+            ],
+            "resource": "azurerm_public_ip.ingress"
         }
     ],
     "resource_changes": [
@@ -18013,7 +17993,7 @@ mock_config := {
                             "url_path_map_name": ""
                         }
                     ],
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "rewrite_rule_set": [],
                     "sku": [
                         {
@@ -18191,7 +18171,7 @@ mock_config := {
                     "location": "eastus",
                     "name": "zodiac-pip",
                     "public_ip_prefix_id": null,
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "reverse_fqdn": null,
                     "sku": "Standard",
                     "sku_tier": "Regional",
@@ -18226,7 +18206,7 @@ mock_config := {
                     "default_outbound_access_enabled": true,
                     "delegation": [],
                     "name": "backend",
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "service_endpoint_policy_ids": null,
                     "service_endpoints": null,
                     "timeouts": null,
@@ -18271,7 +18251,7 @@ mock_config := {
                     "default_outbound_access_enabled": true,
                     "delegation": [],
                     "name": "frontend",
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "service_endpoint_policy_ids": null,
                     "service_endpoints": null,
                     "timeouts": null,
@@ -18320,7 +18300,7 @@ mock_config := {
                     "flow_timeout_in_minutes": null,
                     "location": "eastus",
                     "name": "zodiac-net",
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "tags": null,
                     "timeouts": null
                 },
@@ -18354,7 +18334,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:04:05Z",
+    "timestamp": "2024-08-23T00:00:22Z",
     "variables": {
         "frontend_port": {
             "value": 8080
@@ -18363,7 +18343,7 @@ mock_config := {
             "value": "eastus"
         },
         "resource_group_name": {
-            "value": "hxzmhold"
+            "value": "td5xhold"
         },
         "resource_prefix": {
             "value": "zodiac"

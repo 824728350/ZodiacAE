@@ -597,7 +597,7 @@
                 ],
                 "azure_policy_enabled": true,
                 "confidential_computing": [],
-                "cost_analysis_enabled": null,
+                "cost_analysis_enabled": false,
                 "custom_ca_trust_certificates_base64": null,
                 "default_node_pool": [
                   {

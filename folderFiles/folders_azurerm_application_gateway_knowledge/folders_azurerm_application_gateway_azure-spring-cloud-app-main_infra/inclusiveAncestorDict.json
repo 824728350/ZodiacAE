@@ -8,8 +8,6 @@
               "azurerm_application_gateway.this",
               "azurerm_public_ip.public_ip",
               "azurerm_resource_group.this",
-              "azurerm_spring_cloud_app.this",
-              "azurerm_spring_cloud_service.this",
               "azurerm_subnet.waf",
               "azurerm_virtual_network.this"
             ],

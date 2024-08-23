@@ -1,0 +1,89 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_application_gateway.appgw",
+              "azurerm_public_ip.appgw_public_ip",
+              "frontend_ip_configuration.0.public_ip_address_id",
+              "id",
+              "frontend_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_application_gateway.appgw",
+              "azurerm_subnet.default_sn",
+              "gateway_ip_configuration.0.subnet_id",
+              "id",
+              "gateway_ip_configuration.0",
+              ""
+            ],
+            [
+              "azurerm_application_gateway.appgw",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_public_ip.appgw_public_ip",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.aks_sn",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.aks_sn",
+              "azurerm_virtual_network.vnet",
+              "virtual_network_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.default_sn",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_subnet.default_sn",
+              "azurerm_virtual_network.vnet",
+              "virtual_network_name",
+              "name",
+              "",
+              ""
+            ],
+            [
+              "azurerm_virtual_network.vnet",
+              "azurerm_resource_group.rg",
+              "resource_group_name",
+              "name",
+              "",
+              ""
+            ]
+          ],
+          "text": "data.assemble.dependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

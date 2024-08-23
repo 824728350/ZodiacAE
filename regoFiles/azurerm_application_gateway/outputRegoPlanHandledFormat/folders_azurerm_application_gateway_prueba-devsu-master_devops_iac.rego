@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -2069,9 +2070,15 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "name"
+                "location"
             ],
             "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.app_gateway_public_ip"
         },
         {
             "attribute": [
@@ -2083,13 +2090,31 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_network_security_group.nsg"
+            "resource": "azurerm_container_registry.acr"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.agic_subnet"
+            "resource": "azurerm_subnet.aks_subnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_mssql_server.sql_server"
+        },
+        {
+            "attribute": [
+                "principal_id"
+            ],
+            "resource": "azurerm_user_assigned_identity.aks_identity"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.nsg"
         },
         {
             "attribute": [
@@ -2105,7 +2130,7 @@ mock_config := {
         },
         {
             "attribute": [
-                "location"
+                "name"
             ],
             "resource": "azurerm_resource_group.rg"
         },
@@ -2117,36 +2142,6 @@ mock_config := {
         },
         {
             "attribute": [
-                "principal_id"
-            ],
-            "resource": "azurerm_user_assigned_identity.aks_identity"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_container_registry.acr"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.app_gateway_public_ip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.sql_subnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_mssql_server.sql_server"
-        },
-        {
-            "attribute": [
                 "id"
             ],
             "resource": "azurerm_subnet.apim_subnet"
@@ -2155,7 +2150,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.aks_subnet"
+            "resource": "azurerm_subnet.agic_subnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.sql_subnet"
         }
     ],
     "resource_changes": [
@@ -3765,5 +3766,5 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:55:16Z"
+    "timestamp": "2024-08-22T23:51:53Z"
 }

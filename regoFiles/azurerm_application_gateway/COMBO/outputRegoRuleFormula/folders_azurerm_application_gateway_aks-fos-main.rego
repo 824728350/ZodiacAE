@@ -22,10 +22,6 @@ repoViewTop := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -38,12 +34,10 @@ repoViewTop := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -114,8 +108,7 @@ repoViewTop := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -123,16 +116,10 @@ repoViewTop := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3362,10 +3349,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -3378,12 +3361,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -3454,8 +3435,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -3463,16 +3443,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -8014,7 +7988,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -9061,6 +9039,7 @@ ComboReferenceThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9108,6 +9087,7 @@ ComboReferenceThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9155,6 +9135,7 @@ ComboReferenceThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9202,6 +9183,7 @@ ComboReferenceThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9538,6 +9520,7 @@ ComboNegationThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9583,6 +9566,7 @@ ComboNegationThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10705,6 +10689,7 @@ ComboIntraThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10759,6 +10744,7 @@ ComboIntraThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10813,6 +10799,7 @@ ComboIntraThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10867,6 +10854,7 @@ ComboIntraThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -12718,10 +12706,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -12734,12 +12718,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -12810,8 +12792,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -12819,16 +12800,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -15760,7 +15735,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -17378,7 +17357,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "kubernetes": {
                 "expressions": {
@@ -18096,6 +18076,11 @@ mock_config := {
                                     "azure_policy_enabled": {
                                         "references": [
                                             "var.azure_policy_enabled"
+                                        ]
+                                    },
+                                    "cost_analysis_enabled": {
+                                        "references": [
+                                            "var.cost_analysis_enabled"
                                         ]
                                     },
                                     "disk_encryption_set_id": {
@@ -19620,6 +19605,10 @@ mock_config := {
                                 "default": null,
                                 "description": "(Optional) Enable Confidential Computing."
                             },
+                            "cost_analysis_enabled": {
+                                "default": false,
+                                "description": "(Optional) Enable Cost Analysis."
+                            },
                             "create_role_assignment_network_contributor": {
                                 "default": false,
                                 "description": "(Deprecated) Create a role assignment for the AKS Service Principal to be a Network Contributor on the subnets used for the AKS Cluster"
@@ -20785,6 +20774,11 @@ mock_config := {
                         "azure_policy_enabled": {
                             "references": [
                                 "root.aks.azure_policy_enabled"
+                            ]
+                        },
+                        "cost_analysis_enabled": {
+                            "references": [
+                                "var.cost_analysis_enabled"
                             ]
                         },
                         "disk_encryption_set_id": {
@@ -22279,7 +22273,7 @@ mock_config := {
                                 ],
                                 "azure_policy_enabled": true,
                                 "confidential_computing": [],
-                                "cost_analysis_enabled": null,
+                                "cost_analysis_enabled": false,
                                 "custom_ca_trust_certificates_base64": null,
                                 "default_node_pool": [
                                     {
@@ -23133,7 +23127,7 @@ mock_config := {
                         ],
                         "azure_policy_enabled": true,
                         "confidential_computing": [],
-                        "cost_analysis_enabled": null,
+                        "cost_analysis_enabled": false,
                         "custom_ca_trust_certificates_base64": null,
                         "default_node_pool": [
                             {
@@ -23396,11 +23390,50 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "metadata",
-                0,
-                "name"
+                "id"
             ],
-            "resource": "kubernetes_namespace_v1.example"
+            "resource": "module.aks.azurerm_log_analytics_workspace.main[0]"
+        },
+        {
+            "attribute": [
+                "kube_config",
+                0,
+                "host"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "kube_config",
+                0,
+                "client_certificate"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "hex"
+            ],
+            "resource": "random_id.name"
+        },
+        {
+            "attribute": [
+                "portal_fqdn"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "kubelet_identity"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "ingress_application_gateway",
+                0
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
         },
         {
             "attribute": [
@@ -23411,6 +23444,68 @@ mock_config := {
         {
             "attribute": [
                 "name"
+            ],
+            "resource": "module.aks.azurerm_log_analytics_workspace.main[0]"
+        },
+        {
+            "attribute": [
+                "hex"
+            ],
+            "resource": "random_id.prefix"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.test[0]"
+        },
+        {
+            "attribute": [
+                "metadata",
+                0,
+                "name"
+            ],
+            "resource": "kubernetes_namespace_v1.example"
+        },
+        {
+            "attribute": [
+                "resource_group_name"
+            ],
+            "resource": "module.aks.azurerm_log_analytics_workspace.main[0]"
+        },
+        {
+            "attribute": [
+                "kube_admin_config",
+                0,
+                "username"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "kube_config",
+                0,
+                "username"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "kube_admin_config",
+                0,
+                "client_key"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "private_fqdn"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "node_resource_group"
             ],
             "resource": "module.aks.azurerm_kubernetes_cluster.main"
         },
@@ -23424,64 +23519,32 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_application_gateway.appgw[0]"
-        },
-        {
-            "attribute": [
-                "kube_config_raw"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.test[0]"
+            "resource": "azurerm_subnet.test[0]"
         },
         {
             "attribute": [
                 "location"
             ],
-            "resource": "module.aks.data.azurerm_resource_group.main"
+            "resource": "module.aks.azurerm_log_analytics_workspace.main[0]"
         },
         {
             "attribute": [
-                "portal_fqdn"
+                "id"
+            ],
+            "resource": "module.aks.data.azurerm_resource_group.aks_rg[0]"
+        },
+        {
+            "attribute": [
+                "oidc_issuer_url"
             ],
             "resource": "module.aks.azurerm_kubernetes_cluster.main"
         },
         {
             "attribute": [
-                "kube_admin_config_raw"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "oms_agent",
+                "identity",
                 0
             ],
             "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "node_resource_group"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "kube_config",
-                0,
-                "client_certificate"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.aks.azurerm_log_analytics_workspace.main[0]"
         },
         {
             "attribute": [
@@ -23495,15 +23558,59 @@ mock_config := {
         },
         {
             "attribute": [
-                "kube_admin_config",
-                0,
-                "client_key"
+                "kube_config_raw"
             ],
             "resource": "module.aks.azurerm_kubernetes_cluster.main"
         },
         {
             "attribute": [
-                "kube_config",
+                "web_app_routing",
+                0,
+                "web_app_routing_identity"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "aci_connector_linux",
+                0
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "http_application_routing_zone_name"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.aks.data.azurerm_resource_group.main"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.aks.data.azurerm_resource_group.ingress_gw[0]"
+        },
+        {
+            "attribute": [
+                "oms_agent",
+                0
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "kube_admin_config",
                 0,
                 "host"
             ],
@@ -23511,39 +23618,7 @@ mock_config := {
         },
         {
             "attribute": [
-                "kube_admin_config",
-                0,
-                "host"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "ingress_application_gateway",
-                0
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "kube_config",
-                0,
-                "client_key"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "identity",
-                0
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "kube_admin_config",
-                0,
-                "client_certificate"
+                "name"
             ],
             "resource": "module.aks.azurerm_kubernetes_cluster.main"
         },
@@ -23552,12 +23627,6 @@ mock_config := {
                 "kube_config",
                 0,
                 "cluster_ca_certificate"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "network_profile"
             ],
             "resource": "module.aks.azurerm_kubernetes_cluster.main"
         },
@@ -23575,131 +23644,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "location"
-            ],
-            "resource": "module.aks.azurerm_log_analytics_workspace.main[0]"
-        },
-        {
-            "attribute": [
-                "key_vault_secrets_provider",
-                0
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "kube_config",
-                0,
-                "username"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "http_application_routing_zone_name"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "web_app_routing",
-                0,
-                "web_app_routing_identity"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "hex"
-            ],
-            "resource": "random_id.name"
-        },
-        {
-            "attribute": [
                 "name"
             ],
             "resource": "module.aks.data.azurerm_resource_group.main"
-        },
-        {
-            "attribute": [
-                "public_key_openssh"
-            ],
-            "resource": "module.aks.tls_private_key.ssh[0]"
-        },
-        {
-            "attribute": [
-                "private_fqdn"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "aci_connector_linux",
-                0
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "azure_policy_enabled"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.aks.azurerm_log_analytics_workspace.main[0]"
-        },
-        {
-            "attribute": [
-                "hex"
-            ],
-            "resource": "random_id.prefix"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.aks.data.azurerm_resource_group.ingress_gw[0]"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.aks.data.azurerm_resource_group.aks_rg[0]"
-        },
-        {
-            "attribute": [
-                "kubelet_identity"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "oidc_issuer_url"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "kube_admin_config",
-                0,
-                "cluster_ca_certificate"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "resource_group_name"
-            ],
-            "resource": "module.aks.azurerm_log_analytics_workspace.main[0]"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
         },
         {
             "attribute": [
@@ -23709,17 +23656,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "kube_admin_config",
+                "kube_config",
                 0,
-                "password"
-            ],
-            "resource": "module.aks.azurerm_kubernetes_cluster.main"
-        },
-        {
-            "attribute": [
-                "kube_admin_config",
-                0,
-                "username"
+                "client_key"
             ],
             "resource": "module.aks.azurerm_kubernetes_cluster.main"
         },
@@ -23728,6 +23667,12 @@ mock_config := {
                 "kube_config",
                 0,
                 "password"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "kube_admin_config_raw"
             ],
             "resource": "module.aks.azurerm_kubernetes_cluster.main"
         },
@@ -23739,9 +23684,58 @@ mock_config := {
         },
         {
             "attribute": [
+                "public_key_openssh"
+            ],
+            "resource": "module.aks.tls_private_key.ssh[0]"
+        },
+        {
+            "attribute": [
+                "kube_admin_config",
+                0,
+                "password"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "azure_policy_enabled"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "key_vault_secrets_provider",
+                0
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.test[0]"
+            "resource": "azurerm_application_gateway.appgw[0]"
+        },
+        {
+            "attribute": [
+                "network_profile"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "kube_admin_config",
+                0,
+                "client_certificate"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
+        },
+        {
+            "attribute": [
+                "kube_admin_config",
+                0,
+                "cluster_ca_certificate"
+            ],
+            "resource": "module.aks.azurerm_kubernetes_cluster.main"
         }
     ],
     "resource_changes": [
@@ -24632,7 +24626,7 @@ mock_config := {
                     ],
                     "azure_policy_enabled": true,
                     "confidential_computing": [],
-                    "cost_analysis_enabled": null,
+                    "cost_analysis_enabled": false,
                     "custom_ca_trust_certificates_base64": null,
                     "default_node_pool": [
                         {
@@ -25089,7 +25083,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:46:35Z",
+    "timestamp": "2024-08-22T23:42:35Z",
     "variables": {
         "bring_your_own_vnet": {
             "value": true

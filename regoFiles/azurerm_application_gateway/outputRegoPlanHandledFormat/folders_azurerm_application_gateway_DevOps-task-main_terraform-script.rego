@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -1287,54 +1288,6 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.application-rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.gateway-subnet"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_resource_group.shared-rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_mssql_server.server"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.shared-rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_service_plan.webplan2"
-        },
-        {
-            "attribute": [
-                "connection_string"
-            ],
-            "resource": "azurerm_application_insights.application_insights"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_service_plan.webplan1"
-        },
-        {
-            "attribute": [
                 "id"
             ],
             "resource": "azurerm_public_ip.pip"
@@ -1347,9 +1300,21 @@ mock_config := {
         },
         {
             "attribute": [
-                "default_hostname"
+                "location"
             ],
-            "resource": "azurerm_linux_web_app.api2"
+            "resource": "azurerm_resource_group.application-rg"
+        },
+        {
+            "attribute": [
+                "connection_string"
+            ],
+            "resource": "azurerm_application_insights.application_insights"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_resource_group.shared-rg"
         },
         {
             "attribute": [
@@ -1365,9 +1330,45 @@ mock_config := {
         },
         {
             "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_mssql_server.server"
+        },
+        {
+            "attribute": [
                 "instrumentation_key"
             ],
             "resource": "azurerm_application_insights.application_insights"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_service_plan.webplan1"
+        },
+        {
+            "attribute": [
+                "default_hostname"
+            ],
+            "resource": "azurerm_linux_web_app.api2"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.shared-rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_service_plan.webplan2"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.gateway-subnet"
         }
     ],
     "resource_changes": [
@@ -2347,7 +2348,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:47:00Z",
+    "timestamp": "2024-08-22T23:42:43Z",
     "variables": {
         "OS_TYPE": {
             "value": "Linux"

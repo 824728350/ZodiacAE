@@ -22,10 +22,6 @@ repoViewTop := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -38,12 +34,10 @@ repoViewTop := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -114,8 +108,7 @@ repoViewTop := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -123,16 +116,10 @@ repoViewTop := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3362,10 +3349,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -3378,12 +3361,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -3454,8 +3435,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -3463,16 +3443,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -7664,7 +7638,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -8078,6 +8056,7 @@ AttrAbsenceThenExistenceList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenExistence][1]["values"], [pathThenExistence, valueThenExistence])
@@ -8102,6 +8081,7 @@ AttrAbsenceThenExistenceList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     pathIfAbsence != pathThenExistence
@@ -8138,6 +8118,7 @@ AttrAbsenceThenConstantList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenConstant][1]["values"], [pathThenConstant, valueThenConstant])
@@ -8197,6 +8178,7 @@ AttrAbsenceThenEqualList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenEqual1][1]["values"], [pathThenEqual1, valueThenEqual1])
@@ -8268,6 +8250,7 @@ AttrAbsenceThenUnequalList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenUnequal1][1]["values"], [pathThenUnequal1, valueThenUnequal1])
@@ -8337,6 +8320,7 @@ AttrAbsenceThenCIDRIncludeList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenCIDRInclude1][1]["values"], [pathThenCIDRInclude1, valueThenCIDRInclude1])
@@ -8402,6 +8386,7 @@ AttrAbsenceThenCIDRExcludeList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenCIDRExclude1][1]["values"], [pathThenCIDRExclude1, valueThenCIDRExclude1])
@@ -8463,6 +8448,7 @@ AttrExistenceThenExistenceList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenExistence][1]["values"], [pathThenExistence, valueThenExistence])
@@ -8487,6 +8473,7 @@ AttrExistenceThenExistenceList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     pathIfExistence != pathThenExistence
@@ -8521,6 +8508,7 @@ AttrExistenceThenConstantList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenConstant][1]["values"], [pathThenConstant, valueThenConstant])
@@ -8578,6 +8566,7 @@ AttrExistenceThenEqualList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenEqual1][1]["values"], [pathThenEqual1, valueThenEqual1])
@@ -8647,6 +8636,7 @@ AttrExistenceThenUnequalList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenUnequal1][1]["values"], [pathThenUnequal1, valueThenUnequal1])
@@ -8714,6 +8704,7 @@ AttrExistenceThenCIDRIncludeList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenCIDRInclude1][1]["values"], [pathThenCIDRInclude1, valueThenCIDRInclude1])
@@ -8777,6 +8768,7 @@ AttrExistenceThenCIDRExcludeList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenCIDRExclude1][1]["values"], [pathThenCIDRExclude1, valueThenCIDRExclude1])
@@ -9767,7 +9759,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -10001,7 +9994,7 @@ mock_config := {
                         ],
                         "variables": {
                             "app_service_fqdn": {
-                                "default": "9f43hold",
+                                "default": "o5n9hold",
                                 "description": "FQDN of the App Service to be used in the Application Gateway configuration"
                             },
                             "location": {
@@ -10009,7 +10002,7 @@ mock_config := {
                                 "description": "Location for the Application Gateway"
                             },
                             "name": {
-                                "default": "t08ghold",
+                                "default": "5f20hold",
                                 "description": "Name for the Application Gateway"
                             },
                             "public_ip_id": {
@@ -10017,11 +10010,11 @@ mock_config := {
                                 "description": "ID of the Public IP for the Application Gateway"
                             },
                             "rg_name": {
-                                "default": "m1lhhold",
+                                "default": "5qnihold",
                                 "description": "Name for the Resource Group"
                             },
                             "vnet_subnet_id": {
-                                "default": "a534hold",
+                                "default": "ervphold",
                                 "description": "ID of the VNet Subnet for the Application Gateway"
                             }
                         }
@@ -10197,7 +10190,7 @@ mock_config := {
                         ],
                         "variables": {
                             "domain_name": {
-                                "default": "zchjhold",
+                                "default": "yvdbhold",
                                 "description": "Domaine Name for the public IP"
                             },
                             "location": {
@@ -10209,11 +10202,11 @@ mock_config := {
                                 "description": "Name for the public IP"
                             },
                             "rg_name": {
-                                "default": "4j6qhold",
+                                "default": "d12xhold",
                                 "description": "Name for the resource group"
                             },
                             "vnet_name": {
-                                "default": "03urhold",
+                                "default": "b42jhold",
                                 "description": "Name for the virtual network"
                             }
                         }
@@ -10389,15 +10382,15 @@ mock_config := {
                         ],
                         "variables": {
                             "app_service_name": {
-                                "default": "r8wqhold",
+                                "default": "fky6hold",
                                 "description": "Name for the App Service"
                             },
                             "app_service_plan_name": {
-                                "default": "v75fhold",
+                                "default": "5kcrhold",
                                 "description": "Name for the App Service Plan"
                             },
                             "branch": {
-                                "default": "i4uqhold",
+                                "default": "vr0mhold",
                                 "description": "Branch of the Git repository"
                             },
                             "location": {
@@ -10405,11 +10398,11 @@ mock_config := {
                                 "description": "Location for the resource group"
                             },
                             "repo_url": {
-                                "default": "he5whold",
+                                "default": "aobkhold",
                                 "description": "URL of the Git repository"
                             },
                             "rg_name": {
-                                "default": "1854hold",
+                                "default": "k33lhold",
                                 "description": "Name for the resource group"
                             }
                         }
@@ -10639,7 +10632,7 @@ mock_config := {
                                 "description": "Interval in seconds for monitoring"
                             },
                             "monitor_path": {
-                                "default": "rhwxhold",
+                                "default": "387khold",
                                 "description": "Path used for monitoring"
                             },
                             "monitor_port": {
@@ -10647,7 +10640,7 @@ mock_config := {
                                 "description": "Port used for monitoring"
                             },
                             "monitor_protocol": {
-                                "default": "an5rhold",
+                                "default": "q3wlhold",
                                 "description": "Protocol used for monitoring"
                             },
                             "monitor_timeout": {
@@ -10655,23 +10648,23 @@ mock_config := {
                                 "description": "Timeout in seconds for monitoring"
                             },
                             "name": {
-                                "default": "6r0zhold",
+                                "default": "k0pshold",
                                 "description": "Relative name for DNS configuration"
                             },
                             "primary_target_resource_id": {
-                                "default": "as1mhold",
+                                "default": "0j2uhold",
                                 "description": "ID of the primary target resource (e.g., App Service)"
                             },
                             "profile_name": {
-                                "default": "y027hold",
+                                "default": "tuv4hold",
                                 "description": "Name of the Traffic Manager profile"
                             },
                             "rg_name": {
-                                "default": "p9e6hold",
+                                "default": "kmaohold",
                                 "description": "Name of the resource group"
                             },
                             "secondary_target_resource_id": {
-                                "default": "ug14hold",
+                                "default": "7ca2hold",
                                 "description": "ID of the secondary target resource (e.g., App Service)"
                             },
                             "ttl": {
@@ -10911,7 +10904,7 @@ mock_config := {
                         ],
                         "variables": {
                             "app_service_fqdn": {
-                                "default": "9f43hold",
+                                "default": "o5n9hold",
                                 "description": "FQDN of the App Service to be used in the Application Gateway configuration"
                             },
                             "location": {
@@ -10919,7 +10912,7 @@ mock_config := {
                                 "description": "Location for the Application Gateway"
                             },
                             "name": {
-                                "default": "t08ghold",
+                                "default": "5f20hold",
                                 "description": "Name for the Application Gateway"
                             },
                             "public_ip_id": {
@@ -10927,11 +10920,11 @@ mock_config := {
                                 "description": "ID of the Public IP for the Application Gateway"
                             },
                             "rg_name": {
-                                "default": "m1lhhold",
+                                "default": "5qnihold",
                                 "description": "Name for the Resource Group"
                             },
                             "vnet_subnet_id": {
-                                "default": "a534hold",
+                                "default": "ervphold",
                                 "description": "ID of the VNet Subnet for the Application Gateway"
                             }
                         }
@@ -11107,7 +11100,7 @@ mock_config := {
                         ],
                         "variables": {
                             "domain_name": {
-                                "default": "zchjhold",
+                                "default": "yvdbhold",
                                 "description": "Domaine Name for the public IP"
                             },
                             "location": {
@@ -11119,11 +11112,11 @@ mock_config := {
                                 "description": "Name for the public IP"
                             },
                             "rg_name": {
-                                "default": "4j6qhold",
+                                "default": "d12xhold",
                                 "description": "Name for the resource group"
                             },
                             "vnet_name": {
-                                "default": "03urhold",
+                                "default": "b42jhold",
                                 "description": "Name for the virtual network"
                             }
                         }
@@ -11299,15 +11292,15 @@ mock_config := {
                         ],
                         "variables": {
                             "app_service_name": {
-                                "default": "r8wqhold",
+                                "default": "fky6hold",
                                 "description": "Name for the App Service"
                             },
                             "app_service_plan_name": {
-                                "default": "v75fhold",
+                                "default": "5kcrhold",
                                 "description": "Name for the App Service Plan"
                             },
                             "branch": {
-                                "default": "i4uqhold",
+                                "default": "vr0mhold",
                                 "description": "Branch of the Git repository"
                             },
                             "location": {
@@ -11315,11 +11308,11 @@ mock_config := {
                                 "description": "Location for the resource group"
                             },
                             "repo_url": {
-                                "default": "he5whold",
+                                "default": "aobkhold",
                                 "description": "URL of the Git repository"
                             },
                             "rg_name": {
-                                "default": "1854hold",
+                                "default": "k33lhold",
                                 "description": "Name for the resource group"
                             }
                         }
@@ -11329,7 +11322,7 @@ mock_config := {
             },
             "variables": {
                 "environment": {
-                    "default": "se3xhold",
+                    "default": "tdgthold",
                     "description": "Environment"
                 }
             }
@@ -11480,7 +11473,7 @@ mock_config := {
                                 ],
                                 "identity": [],
                                 "location": "eastus",
-                                "name": "app-gateway-eastus-se3xhold",
+                                "name": "app-gateway-eastus-tdgthold",
                                 "private_link_configuration": [],
                                 "probe": [
                                     {
@@ -11510,7 +11503,7 @@ mock_config := {
                                         "url_path_map_name": ""
                                     }
                                 ],
-                                "resource_group_name": "east_rg-se3xhold",
+                                "resource_group_name": "east_rg-tdgthold",
                                 "rewrite_rule_set": [],
                                 "sku": [
                                     {
@@ -11559,15 +11552,15 @@ mock_config := {
                                 "allocation_method": "Static",
                                 "ddos_protection_mode": "VirtualNetworkInherited",
                                 "ddos_protection_plan_id": null,
-                                "domain_name_label": "ipeastusse3xhold",
+                                "domain_name_label": "ipeastustdgthold",
                                 "edge_zone": null,
                                 "idle_timeout_in_minutes": 4,
                                 "ip_tags": null,
                                 "ip_version": "IPv4",
                                 "location": "eastus",
-                                "name": "ip-eastus-se3xhold",
+                                "name": "ip-eastus-tdgthold",
                                 "public_ip_prefix_id": null,
-                                "resource_group_name": "east_rg-se3xhold",
+                                "resource_group_name": "east_rg-tdgthold",
                                 "reverse_fqdn": null,
                                 "sku": "Standard",
                                 "sku_tier": "Regional",
@@ -11587,7 +11580,7 @@ mock_config := {
                             "values": {
                                 "location": "eastus",
                                 "managed_by": null,
-                                "name": "east_rg-se3xhold",
+                                "name": "east_rg-tdgthold",
                                 "tags": null,
                                 "timeouts": null
                             }
@@ -11612,11 +11605,11 @@ mock_config := {
                                 "default_outbound_access_enabled": true,
                                 "delegation": [],
                                 "name": "default",
-                                "resource_group_name": "east_rg-se3xhold",
+                                "resource_group_name": "east_rg-tdgthold",
                                 "service_endpoint_policy_ids": null,
                                 "service_endpoints": null,
                                 "timeouts": null,
-                                "virtual_network_name": "vnet-eastus-se3xhold"
+                                "virtual_network_name": "vnet-eastus-tdgthold"
                             }
                         },
                         {
@@ -11645,8 +11638,8 @@ mock_config := {
                                 "encryption": [],
                                 "flow_timeout_in_minutes": null,
                                 "location": "eastus",
-                                "name": "vnet-eastus-se3xhold",
-                                "resource_group_name": "east_rg-se3xhold",
+                                "name": "vnet-eastus-tdgthold",
+                                "resource_group_name": "east_rg-tdgthold",
                                 "tags": null,
                                 "timeouts": null
                             }
@@ -11693,8 +11686,8 @@ mock_config := {
                                 "https_only": false,
                                 "identity": [],
                                 "location": "eastus",
-                                "name": "EastWebApp-se3xhold",
-                                "resource_group_name": "east_rg-se3xhold",
+                                "name": "EastWebApp-tdgthold",
+                                "resource_group_name": "east_rg-tdgthold",
                                 "site_config": [
                                     {
                                         "acr_use_managed_identity_credentials": false,
@@ -11745,10 +11738,10 @@ mock_config := {
                                 "is_xenon": null,
                                 "kind": "Windows",
                                 "location": "eastus",
-                                "name": "EastServicePlan-se3xhold",
+                                "name": "EastServicePlan-tdgthold",
                                 "per_site_scaling": null,
                                 "reserved": null,
-                                "resource_group_name": "east_rg-se3xhold",
+                                "resource_group_name": "east_rg-tdgthold",
                                 "sku": [
                                     {
                                         "size": "S1",
@@ -11771,7 +11764,7 @@ mock_config := {
                             "values": {
                                 "location": "eastus",
                                 "managed_by": null,
-                                "name": "east_rg-se3xhold",
+                                "name": "east_rg-tdgthold",
                                 "tags": null,
                                 "timeouts": null
                             }
@@ -11792,7 +11785,7 @@ mock_config := {
                             "values": {
                                 "location": "centralus",
                                 "managed_by": null,
-                                "name": "traffic_manager_rg-se3xhold",
+                                "name": "traffic_manager_rg-tdgthold",
                                 "tags": null,
                                 "timeouts": null
                             }
@@ -11863,7 +11856,7 @@ mock_config := {
                             "values": {
                                 "dns_config": [
                                     {
-                                        "relative_name": "traffic-profile1937-se3xhold",
+                                        "relative_name": "traffic-profile1937-tdgthold",
                                         "ttl": 100
                                     }
                                 ],
@@ -11880,8 +11873,8 @@ mock_config := {
                                         "tolerated_number_of_failures": 2
                                     }
                                 ],
-                                "name": "traffic-profile1937-se3xhold",
-                                "resource_group_name": "traffic_manager_rg-se3xhold",
+                                "name": "traffic-profile1937-tdgthold",
+                                "resource_group_name": "traffic_manager_rg-tdgthold",
                                 "tags": null,
                                 "timeouts": null,
                                 "traffic_routing_method": "Priority",
@@ -12030,7 +12023,7 @@ mock_config := {
                                 ],
                                 "identity": [],
                                 "location": "westeurope",
-                                "name": "app-gateway-westus-se3xhold",
+                                "name": "app-gateway-westus-tdgthold",
                                 "private_link_configuration": [],
                                 "probe": [
                                     {
@@ -12060,7 +12053,7 @@ mock_config := {
                                         "url_path_map_name": ""
                                     }
                                 ],
-                                "resource_group_name": "west_rg-se3xhold",
+                                "resource_group_name": "west_rg-tdgthold",
                                 "rewrite_rule_set": [],
                                 "sku": [
                                     {
@@ -12109,15 +12102,15 @@ mock_config := {
                                 "allocation_method": "Static",
                                 "ddos_protection_mode": "VirtualNetworkInherited",
                                 "ddos_protection_plan_id": null,
-                                "domain_name_label": "ipwestusse3xhold",
+                                "domain_name_label": "ipwestustdgthold",
                                 "edge_zone": null,
                                 "idle_timeout_in_minutes": 4,
                                 "ip_tags": null,
                                 "ip_version": "IPv4",
                                 "location": "westeurope",
-                                "name": "ip-westus-se3xhold",
+                                "name": "ip-westus-tdgthold",
                                 "public_ip_prefix_id": null,
-                                "resource_group_name": "west_rg-se3xhold",
+                                "resource_group_name": "west_rg-tdgthold",
                                 "reverse_fqdn": null,
                                 "sku": "Standard",
                                 "sku_tier": "Regional",
@@ -12137,7 +12130,7 @@ mock_config := {
                             "values": {
                                 "location": "westeurope",
                                 "managed_by": null,
-                                "name": "west_rg-se3xhold",
+                                "name": "west_rg-tdgthold",
                                 "tags": null,
                                 "timeouts": null
                             }
@@ -12162,11 +12155,11 @@ mock_config := {
                                 "default_outbound_access_enabled": true,
                                 "delegation": [],
                                 "name": "default",
-                                "resource_group_name": "west_rg-se3xhold",
+                                "resource_group_name": "west_rg-tdgthold",
                                 "service_endpoint_policy_ids": null,
                                 "service_endpoints": null,
                                 "timeouts": null,
-                                "virtual_network_name": "vnet-westus-se3xhold"
+                                "virtual_network_name": "vnet-westus-tdgthold"
                             }
                         },
                         {
@@ -12195,8 +12188,8 @@ mock_config := {
                                 "encryption": [],
                                 "flow_timeout_in_minutes": null,
                                 "location": "westeurope",
-                                "name": "vnet-westus-se3xhold",
-                                "resource_group_name": "west_rg-se3xhold",
+                                "name": "vnet-westus-tdgthold",
+                                "resource_group_name": "west_rg-tdgthold",
                                 "tags": null,
                                 "timeouts": null
                             }
@@ -12243,8 +12236,8 @@ mock_config := {
                                 "https_only": false,
                                 "identity": [],
                                 "location": "westeurope",
-                                "name": "WestWebApp-se3xhold",
-                                "resource_group_name": "west_rg-se3xhold",
+                                "name": "WestWebApp-tdgthold",
+                                "resource_group_name": "west_rg-tdgthold",
                                 "site_config": [
                                     {
                                         "acr_use_managed_identity_credentials": false,
@@ -12295,10 +12288,10 @@ mock_config := {
                                 "is_xenon": null,
                                 "kind": "Windows",
                                 "location": "westeurope",
-                                "name": "WestServicePlan-se3xhold",
+                                "name": "WestServicePlan-tdgthold",
                                 "per_site_scaling": null,
                                 "reserved": null,
-                                "resource_group_name": "west_rg-se3xhold",
+                                "resource_group_name": "west_rg-tdgthold",
                                 "sku": [
                                     {
                                         "size": "S1",
@@ -12321,7 +12314,7 @@ mock_config := {
                             "values": {
                                 "location": "westeurope",
                                 "managed_by": null,
-                                "name": "west_rg-se3xhold",
+                                "name": "west_rg-tdgthold",
                                 "tags": null,
                                 "timeouts": null
                             }
@@ -12334,9 +12327,15 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
+                "name"
+            ],
+            "resource": "module.east_webapp.azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
                 "location"
             ],
-            "resource": "module.west_webapp.azurerm_resource_group.rg"
+            "resource": "module.east_network.azurerm_resource_group.rg"
         },
         {
             "attribute": [
@@ -12346,9 +12345,99 @@ mock_config := {
         },
         {
             "attribute": [
+                "id"
+            ],
+            "resource": "module.east_network.azurerm_public_ip.ip"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.west_webapp.azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
                 "name"
             ],
             "resource": "module.east_network.azurerm_virtual_network.vnet"
+        },
+        {
+            "attribute": [
+                "default_site_hostname"
+            ],
+            "resource": "module.east_webapp.azurerm_app_service.webapp"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.east_webapp.azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.west_webapp.azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.west_webapp.azurerm_app_service_plan.app_service_plan"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.east_webapp.azurerm_app_service_plan.app_service_plan"
+        },
+        {
+            "attribute": [
+                "default_site_hostname"
+            ],
+            "resource": "module.west_webapp.azurerm_app_service.webapp"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.east_network.azurerm_subnet.subnet"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.west_network.azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.west_network.azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.east_network.azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.west_network.azurerm_virtual_network.vnet"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.traffic_manager.azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.west_network.azurerm_subnet.subnet"
         },
         {
             "attribute": [
@@ -12364,105 +12453,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
-            ],
-            "resource": "module.west_webapp.azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.east_network.azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "module.east_webapp.azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.east_network.azurerm_public_ip.ip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.east_network.azurerm_subnet.subnet"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.traffic_manager.azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.east_webapp.azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.west_network.azurerm_virtual_network.vnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.east_webapp.azurerm_app_service_plan.app_service_plan"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.west_network.azurerm_subnet.subnet"
-        },
-        {
-            "attribute": [
                 "id"
             ],
             "resource": "module.east_webapp.azurerm_app_service.webapp"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "module.east_network.azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "module.west_network.azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.west_webapp.azurerm_app_service_plan.app_service_plan"
-        },
-        {
-            "attribute": [
-                "default_site_hostname"
-            ],
-            "resource": "module.west_webapp.azurerm_app_service.webapp"
-        },
-        {
-            "attribute": [
-                "default_site_hostname"
-            ],
-            "resource": "module.east_webapp.azurerm_app_service.webapp"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.west_network.azurerm_resource_group.rg"
         }
     ],
     "resource_changes": [
@@ -12540,7 +12533,7 @@ mock_config := {
                     ],
                     "identity": [],
                     "location": "eastus",
-                    "name": "app-gateway-eastus-se3xhold",
+                    "name": "app-gateway-eastus-tdgthold",
                     "private_link_configuration": [],
                     "probe": [
                         {
@@ -12570,7 +12563,7 @@ mock_config := {
                             "url_path_map_name": ""
                         }
                     ],
-                    "resource_group_name": "east_rg-se3xhold",
+                    "resource_group_name": "east_rg-tdgthold",
                     "rewrite_rule_set": [],
                     "sku": [
                         {
@@ -12773,15 +12766,15 @@ mock_config := {
                     "allocation_method": "Static",
                     "ddos_protection_mode": "VirtualNetworkInherited",
                     "ddos_protection_plan_id": null,
-                    "domain_name_label": "ipeastusse3xhold",
+                    "domain_name_label": "ipeastustdgthold",
                     "edge_zone": null,
                     "idle_timeout_in_minutes": 4,
                     "ip_tags": null,
                     "ip_version": "IPv4",
                     "location": "eastus",
-                    "name": "ip-eastus-se3xhold",
+                    "name": "ip-eastus-tdgthold",
                     "public_ip_prefix_id": null,
-                    "resource_group_name": "east_rg-se3xhold",
+                    "resource_group_name": "east_rg-tdgthold",
                     "reverse_fqdn": null,
                     "sku": "Standard",
                     "sku_tier": "Regional",
@@ -12813,7 +12806,7 @@ mock_config := {
                 "after": {
                     "location": "eastus",
                     "managed_by": null,
-                    "name": "east_rg-se3xhold",
+                    "name": "east_rg-tdgthold",
                     "tags": null,
                     "timeouts": null
                 },
@@ -12843,11 +12836,11 @@ mock_config := {
                     "default_outbound_access_enabled": true,
                     "delegation": [],
                     "name": "default",
-                    "resource_group_name": "east_rg-se3xhold",
+                    "resource_group_name": "east_rg-tdgthold",
                     "service_endpoint_policy_ids": null,
                     "service_endpoints": null,
                     "timeouts": null,
-                    "virtual_network_name": "vnet-eastus-se3xhold"
+                    "virtual_network_name": "vnet-eastus-tdgthold"
                 },
                 "after_sensitive": {
                     "address_prefixes": [
@@ -12892,8 +12885,8 @@ mock_config := {
                     "encryption": [],
                     "flow_timeout_in_minutes": null,
                     "location": "eastus",
-                    "name": "vnet-eastus-se3xhold",
-                    "resource_group_name": "east_rg-se3xhold",
+                    "name": "vnet-eastus-tdgthold",
+                    "resource_group_name": "east_rg-tdgthold",
                     "tags": null,
                     "timeouts": null
                 },
@@ -12940,8 +12933,8 @@ mock_config := {
                     "https_only": false,
                     "identity": [],
                     "location": "eastus",
-                    "name": "EastWebApp-se3xhold",
-                    "resource_group_name": "east_rg-se3xhold",
+                    "name": "EastWebApp-tdgthold",
+                    "resource_group_name": "east_rg-tdgthold",
                     "site_config": [
                         {
                             "acr_use_managed_identity_credentials": false,
@@ -13059,10 +13052,10 @@ mock_config := {
                     "is_xenon": null,
                     "kind": "Windows",
                     "location": "eastus",
-                    "name": "EastServicePlan-se3xhold",
+                    "name": "EastServicePlan-tdgthold",
                     "per_site_scaling": null,
                     "reserved": null,
-                    "resource_group_name": "east_rg-se3xhold",
+                    "resource_group_name": "east_rg-tdgthold",
                     "sku": [
                         {
                             "size": "S1",
@@ -13106,7 +13099,7 @@ mock_config := {
                 "after": {
                     "location": "eastus",
                     "managed_by": null,
-                    "name": "east_rg-se3xhold",
+                    "name": "east_rg-tdgthold",
                     "tags": null,
                     "timeouts": null
                 },
@@ -13132,7 +13125,7 @@ mock_config := {
                 "after": {
                     "location": "centralus",
                     "managed_by": null,
-                    "name": "traffic_manager_rg-se3xhold",
+                    "name": "traffic_manager_rg-tdgthold",
                     "tags": null,
                     "timeouts": null
                 },
@@ -13232,7 +13225,7 @@ mock_config := {
                 "after": {
                     "dns_config": [
                         {
-                            "relative_name": "traffic-profile1937-se3xhold",
+                            "relative_name": "traffic-profile1937-tdgthold",
                             "ttl": 100
                         }
                     ],
@@ -13249,8 +13242,8 @@ mock_config := {
                             "tolerated_number_of_failures": 2
                         }
                     ],
-                    "name": "traffic-profile1937-se3xhold",
-                    "resource_group_name": "traffic_manager_rg-se3xhold",
+                    "name": "traffic-profile1937-tdgthold",
+                    "resource_group_name": "traffic_manager_rg-tdgthold",
                     "tags": null,
                     "timeouts": null,
                     "traffic_routing_method": "Priority",
@@ -13362,7 +13355,7 @@ mock_config := {
                     ],
                     "identity": [],
                     "location": "westeurope",
-                    "name": "app-gateway-westus-se3xhold",
+                    "name": "app-gateway-westus-tdgthold",
                     "private_link_configuration": [],
                     "probe": [
                         {
@@ -13392,7 +13385,7 @@ mock_config := {
                             "url_path_map_name": ""
                         }
                     ],
-                    "resource_group_name": "west_rg-se3xhold",
+                    "resource_group_name": "west_rg-tdgthold",
                     "rewrite_rule_set": [],
                     "sku": [
                         {
@@ -13595,15 +13588,15 @@ mock_config := {
                     "allocation_method": "Static",
                     "ddos_protection_mode": "VirtualNetworkInherited",
                     "ddos_protection_plan_id": null,
-                    "domain_name_label": "ipwestusse3xhold",
+                    "domain_name_label": "ipwestustdgthold",
                     "edge_zone": null,
                     "idle_timeout_in_minutes": 4,
                     "ip_tags": null,
                     "ip_version": "IPv4",
                     "location": "westeurope",
-                    "name": "ip-westus-se3xhold",
+                    "name": "ip-westus-tdgthold",
                     "public_ip_prefix_id": null,
-                    "resource_group_name": "west_rg-se3xhold",
+                    "resource_group_name": "west_rg-tdgthold",
                     "reverse_fqdn": null,
                     "sku": "Standard",
                     "sku_tier": "Regional",
@@ -13635,7 +13628,7 @@ mock_config := {
                 "after": {
                     "location": "westeurope",
                     "managed_by": null,
-                    "name": "west_rg-se3xhold",
+                    "name": "west_rg-tdgthold",
                     "tags": null,
                     "timeouts": null
                 },
@@ -13665,11 +13658,11 @@ mock_config := {
                     "default_outbound_access_enabled": true,
                     "delegation": [],
                     "name": "default",
-                    "resource_group_name": "west_rg-se3xhold",
+                    "resource_group_name": "west_rg-tdgthold",
                     "service_endpoint_policy_ids": null,
                     "service_endpoints": null,
                     "timeouts": null,
-                    "virtual_network_name": "vnet-westus-se3xhold"
+                    "virtual_network_name": "vnet-westus-tdgthold"
                 },
                 "after_sensitive": {
                     "address_prefixes": [
@@ -13714,8 +13707,8 @@ mock_config := {
                     "encryption": [],
                     "flow_timeout_in_minutes": null,
                     "location": "westeurope",
-                    "name": "vnet-westus-se3xhold",
-                    "resource_group_name": "west_rg-se3xhold",
+                    "name": "vnet-westus-tdgthold",
+                    "resource_group_name": "west_rg-tdgthold",
                     "tags": null,
                     "timeouts": null
                 },
@@ -13762,8 +13755,8 @@ mock_config := {
                     "https_only": false,
                     "identity": [],
                     "location": "westeurope",
-                    "name": "WestWebApp-se3xhold",
-                    "resource_group_name": "west_rg-se3xhold",
+                    "name": "WestWebApp-tdgthold",
+                    "resource_group_name": "west_rg-tdgthold",
                     "site_config": [
                         {
                             "acr_use_managed_identity_credentials": false,
@@ -13881,10 +13874,10 @@ mock_config := {
                     "is_xenon": null,
                     "kind": "Windows",
                     "location": "westeurope",
-                    "name": "WestServicePlan-se3xhold",
+                    "name": "WestServicePlan-tdgthold",
                     "per_site_scaling": null,
                     "reserved": null,
-                    "resource_group_name": "west_rg-se3xhold",
+                    "resource_group_name": "west_rg-tdgthold",
                     "sku": [
                         {
                             "size": "S1",
@@ -13928,7 +13921,7 @@ mock_config := {
                 "after": {
                     "location": "westeurope",
                     "managed_by": null,
-                    "name": "west_rg-se3xhold",
+                    "name": "west_rg-tdgthold",
                     "tags": null,
                     "timeouts": null
                 },
@@ -13947,10 +13940,10 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:21:09Z",
+    "timestamp": "2024-08-23T00:18:04Z",
     "variables": {
         "environment": {
-            "value": "se3xhold"
+            "value": "tdgthold"
         }
     }
 }

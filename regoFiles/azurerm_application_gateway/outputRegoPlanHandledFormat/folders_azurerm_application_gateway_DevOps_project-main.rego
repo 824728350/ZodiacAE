@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -908,7 +909,7 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "name"
+                "location"
             ],
             "resource": "azurerm_resource_group.rg-aleksandar-ilicic"
         },
@@ -938,7 +939,7 @@ mock_config := {
         },
         {
             "attribute": [
-                "location"
+                "name"
             ],
             "resource": "azurerm_resource_group.rg-aleksandar-ilicic"
         }
@@ -1669,5 +1670,5 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:21:14Z"
+    "timestamp": "2024-08-23T00:18:18Z"
 }

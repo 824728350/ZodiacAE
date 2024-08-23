@@ -13,20 +13,20 @@
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.custom_error_configuration == Absence",
-            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.custom_error_configuration is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.custom_error_configuration == Absence",
+            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.custom_error_configuration is null or empty",
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.custom_error_configuration == Absence",
-            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.custom_error_configuration is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.custom_error_configuration == Absence",
+            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.custom_error_configuration is null or empty",
             null
         ]
     ],
     "AbsenceComboDown####azurerm_application_gateway.global == Absence": [
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.global == Absence",
-            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.global is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.global == Absence",
+            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.global is null or empty",
             null
         ],
         [
@@ -35,12 +35,17 @@
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.global == Absence",
-            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.global is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.global == Absence",
+            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.global is null or empty",
             null
         ]
     ],
     "AbsenceComboDown####azurerm_application_gateway.private_link_configuration == Absence": [
+        [
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.private_link_configuration == Absence",
+            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.private_link_configuration is null or empty",
+            null
+        ],
         [
             "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.private_link_configuration == Absence",
             "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.private_link_configuration is null or empty",
@@ -49,11 +54,6 @@
         [
             "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.private_link_configuration == Absence",
             "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.private_link_configuration is null or empty",
-            null
-        ],
-        [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.private_link_configuration == Absence",
-            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.private_link_configuration is null or empty",
             null
         ]
     ],
@@ -66,6 +66,21 @@
     ],
     "AbsenceComboDown####azurerm_application_gateway.redirect_configuration == Absence": [
         [
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.redirect_configuration == Absence",
+            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.redirect_configuration is null or empty",
+            null
+        ],
+        [
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.redirect_configuration == Absence",
+            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.redirect_configuration is null or empty",
+            null
+        ],
+        [
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.redirect_configuration == Absence",
+            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.redirect_configuration is null or empty",
+            null
+        ],
+        [
             "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.redirect_configuration == Absence",
             "If azurerm_application_gateway.a.private_link_configuration.0.ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.redirect_configuration is null or empty",
             null
@@ -73,13 +88,13 @@
     ],
     "AbsenceComboDown####azurerm_application_gateway.rewrite_rule_set == Absence": [
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.rewrite_rule_set == Absence",
-            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.rewrite_rule_set is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.rewrite_rule_set == Absence",
+            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.rewrite_rule_set is null or empty",
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.rewrite_rule_set == Absence",
-            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.rewrite_rule_set is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.rewrite_rule_set == Absence",
+            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.rewrite_rule_set is null or empty",
             null
         ],
         [
@@ -95,13 +110,13 @@
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.ssl_profile == Absence",
-            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.ssl_profile is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.ssl_profile == Absence",
+            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.ssl_profile is null or empty",
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.ssl_profile == Absence",
-            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.ssl_profile is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.ssl_profile == Absence",
+            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.ssl_profile is null or empty",
             null
         ]
     ],
@@ -112,37 +127,13 @@
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.timeouts == Absence",
-            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.timeouts is null or empty",
-            null
-        ],
-        [
             "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.timeouts == Absence",
             "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.timeouts is null or empty",
             null
-        ]
-    ],
-    "AbsenceComboDown####azurerm_application_gateway.url_path_map == Absence": [
-        [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.url_path_map == Absence",
-            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.url_path_map is null or empty",
-            null
-        ]
-    ],
-    "AbsenceComboDown####azurerm_application_gateway.waf_configuration == Absence": [
-        [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.waf_configuration == Absence",
-            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.waf_configuration is null or empty",
-            null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.waf_configuration == Absence",
-            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.waf_configuration is null or empty",
-            null
-        ],
-        [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.waf_configuration == Absence",
-            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.waf_configuration is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.timeouts == Absence",
+            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.timeouts is null or empty",
             null
         ]
     ],
@@ -153,18 +144,13 @@
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.zones == Absence",
-            "If azurerm_application_gateway.a.private_link_configuration.0.ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.zones is null or empty",
+            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.zones == Absence",
+            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.zones is null or empty",
             null
         ],
         [
             "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.zones == Absence",
             "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.zones is null or empty",
-            null
-        ],
-        [
-            "COMBO####ReferenceThenAbsenceComboDown####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.zones == Absence",
-            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.zones is null or empty",
             null
         ]
     ],
@@ -189,6 +175,13 @@
             null
         ]
     ],
+    "AbsenceComboUp####azurerm_public_ip.zones == Absence": [
+        [
+            "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_public_ip.zones == Absence",
+            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_public_ip.b.zones is null or empty",
+            null
+        ]
+    ],
     "AbsenceComboUp####azurerm_resource_group.timeouts == Absence": [
         [
             "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_resource_group.timeouts == Absence",
@@ -198,25 +191,25 @@
     ],
     "AbsenceComboUp####azurerm_subnet.delegation == Absence": [
         [
-            "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.delegation == Absence",
-            "If azurerm_application_gateway.a.private_link_configuration.0.ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_subnet.b.delegation is null or empty",
+            "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.delegation == Absence",
+            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_subnet.b.delegation is null or empty",
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.delegation == Absence",
-            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_subnet.b.delegation is null or empty",
+            "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.delegation == Absence",
+            "If azurerm_application_gateway.a.private_link_configuration.0.ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_subnet.b.delegation is null or empty",
             null
         ]
     ],
     "AbsenceComboUp####azurerm_subnet.service_endpoints == Absence": [
         [
-            "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.service_endpoints == Absence",
-            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_subnet.b.service_endpoints is null or empty",
+            "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.service_endpoints == Absence",
+            "If azurerm_application_gateway.a.private_link_configuration.0.ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_subnet.b.service_endpoints is null or empty",
             null
         ],
         [
-            "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.service_endpoints == Absence",
-            "If azurerm_application_gateway.a.private_link_configuration.0.ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_subnet.b.service_endpoints is null or empty",
+            "COMBO####ReferenceThenAbsenceComboUp####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_subnet.service_endpoints == Absence",
+            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_subnet.b.service_endpoints is null or empty",
             null
         ]
     ],
@@ -300,18 +293,6 @@
             null
         ]
     ],
-    "ExistenceComboDown####azurerm_application_gateway.ssl_policy == Existence": [
-        [
-            "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.resource_group_name == String####azurerm_resource_group.name == String####azurerm_application_gateway.ssl_policy == Existence",
-            "If azurerm_application_gateway.a.resource_group_name depends on azurerm_resource_group.b.name, Then azurerm_application_gateway.a.ssl_policy is not null nor empty",
-            null
-        ],
-        [
-            "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.frontend_ip_configuration.0.public_ip_address_id == String####azurerm_public_ip.id == String####azurerm_application_gateway.ssl_policy == Existence",
-            "If azurerm_application_gateway.a.frontend_ip_configuration.0.public_ip_address_id depends on azurerm_public_ip.b.id, Then azurerm_application_gateway.a.ssl_policy is not null nor empty",
-            null
-        ]
-    ],
     "ExistenceComboDown####azurerm_application_gateway.url_path_map == Existence": [
         [
             "COMBO####ReferenceThenExistenceComboDown####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.url_path_map == Existence",
@@ -342,13 +323,13 @@
     ],
     "UnequalCombo####azurerm_application_gateway.name == String####azurerm_subnet.name == String": [
         [
-            "COMBO####ReferenceThenUnequalCombo####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.name == String####azurerm_subnet.name == String",
-            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.name != azurerm_subnet.b.name",
+            "COMBO####ReferenceThenUnequalCombo####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.name == String####azurerm_subnet.name == String",
+            "If azurerm_application_gateway.a.private_link_configuration.0.ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.name != azurerm_subnet.b.name",
             null
         ],
         [
-            "COMBO####ReferenceThenUnequalCombo####azurerm_application_gateway.private_link_configuration.0.ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.name == String####azurerm_subnet.name == String",
-            "If azurerm_application_gateway.a.private_link_configuration.0.ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.name != azurerm_subnet.b.name",
+            "COMBO####ReferenceThenUnequalCombo####azurerm_application_gateway.gateway_ip_configuration.0.subnet_id == String####azurerm_subnet.id == String####azurerm_application_gateway.name == String####azurerm_subnet.name == String",
+            "If azurerm_application_gateway.a.gateway_ip_configuration.0.subnet_id depends on azurerm_subnet.b.id, Then azurerm_application_gateway.a.name != azurerm_subnet.b.name",
             null
         ]
     ],

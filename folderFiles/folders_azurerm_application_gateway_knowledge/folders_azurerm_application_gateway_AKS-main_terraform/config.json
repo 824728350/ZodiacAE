@@ -1,0 +1,365 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            {
+              "address": "azurerm_application_gateway.appgw",
+              "expressions": {
+                "backend_address_pool": [
+                  {
+                    "name": {
+                      "constant_value": "appgw-backend-pool"
+                    }
+                  }
+                ],
+                "backend_http_settings": [
+                  {
+                    "cookie_based_affinity": {
+                      "constant_value": "Disabled"
+                    },
+                    "name": {
+                      "constant_value": "appgw-http-settings"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    },
+                    "request_timeout": {
+                      "constant_value": 60
+                    }
+                  }
+                ],
+                "frontend_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "appgw-front-end-ip"
+                    },
+                    "public_ip_address_id": {
+                      "references": [
+                        "azurerm_public_ip.appgw_public_ip.id",
+                        "azurerm_public_ip.appgw_public_ip"
+                      ]
+                    }
+                  }
+                ],
+                "frontend_port": [
+                  {
+                    "name": {
+                      "constant_value": "http"
+                    },
+                    "port": {
+                      "constant_value": 80
+                    }
+                  }
+                ],
+                "gateway_ip_configuration": [
+                  {
+                    "name": {
+                      "constant_value": "appgw-ip-configuration"
+                    },
+                    "subnet_id": {
+                      "references": [
+                        "azurerm_subnet.default_sn.id",
+                        "azurerm_subnet.default_sn"
+                      ]
+                    }
+                  }
+                ],
+                "http_listener": [
+                  {
+                    "frontend_ip_configuration_name": {
+                      "constant_value": "appgw-front-end-ip"
+                    },
+                    "frontend_port_name": {
+                      "constant_value": "http"
+                    },
+                    "name": {
+                      "constant_value": "appgw-listener"
+                    },
+                    "protocol": {
+                      "constant_value": "Http"
+                    }
+                  }
+                ],
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "gordion-appgw"
+                },
+                "request_routing_rule": [
+                  {
+                    "backend_address_pool_name": {
+                      "constant_value": "appgw-backend-pool"
+                    },
+                    "backend_http_settings_name": {
+                      "constant_value": "appgw-http-settings"
+                    },
+                    "http_listener_name": {
+                      "constant_value": "appgw-listener"
+                    },
+                    "name": {
+                      "constant_value": "appgw-rule"
+                    },
+                    "priority": {
+                      "constant_value": 100
+                    },
+                    "rule_type": {
+                      "constant_value": "Basic"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "sku": [
+                  {
+                    "capacity": {
+                      "constant_value": 2
+                    },
+                    "name": {
+                      "constant_value": "Standard_v2"
+                    },
+                    "tier": {
+                      "constant_value": "Standard_v2"
+                    }
+                  }
+                ]
+              },
+              "mode": "managed",
+              "name": "appgw",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_application_gateway"
+            },
+            {
+              "address": "azurerm_kubernetes_cluster.aks",
+              "expressions": {
+                "default_node_pool": [
+                  {
+                    "name": {
+                      "constant_value": "default"
+                    },
+                    "node_count": {
+                      "constant_value": 2
+                    },
+                    "vm_size": {
+                      "constant_value": "Standard_DS2_v2"
+                    },
+                    "vnet_subnet_id": {
+                      "references": [
+                        "azurerm_subnet.aks_sn.id",
+                        "azurerm_subnet.aks_sn"
+                      ]
+                    }
+                  }
+                ],
+                "dns_prefix": {
+                  "constant_value": "gordion"
+                },
+                "identity": [
+                  {
+                    "type": {
+                      "constant_value": "SystemAssigned"
+                    }
+                  }
+                ],
+                "kubernetes_version": {
+                  "constant_value": "1.28.3"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "gordion-aks-cluster"
+                },
+                "network_profile": [
+                  {
+                    "dns_service_ip": {
+                      "constant_value": "10.0.4.10"
+                    },
+                    "load_balancer_sku": {
+                      "constant_value": "standard"
+                    },
+                    "network_plugin": {
+                      "constant_value": "azure"
+                    },
+                    "service_cidr": {
+                      "constant_value": "10.0.4.0/24"
+                    }
+                  }
+                ],
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks",
+              "provider_config_key": "azurerm",
+              "schema_version": 2,
+              "type": "azurerm_kubernetes_cluster"
+            },
+            {
+              "address": "azurerm_public_ip.appgw_public_ip",
+              "expressions": {
+                "allocation_method": {
+                  "constant_value": "Static"
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "gordion-appgw-public-ip"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "sku": {
+                  "constant_value": "Standard"
+                }
+              },
+              "mode": "managed",
+              "name": "appgw_public_ip",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_public_ip"
+            },
+            {
+              "address": "azurerm_resource_group.rg",
+              "expressions": {
+                "location": {
+                  "constant_value": "North Europe"
+                },
+                "name": {
+                  "constant_value": "gordion-rg"
+                }
+              },
+              "mode": "managed",
+              "name": "rg",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_resource_group"
+            },
+            {
+              "address": "azurerm_subnet.aks_sn",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.3.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "aks-sn"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.vnet.name",
+                    "azurerm_virtual_network.vnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "aks_sn",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_subnet.default_sn",
+              "expressions": {
+                "address_prefixes": {
+                  "constant_value": [
+                    "10.0.2.0/24"
+                  ]
+                },
+                "name": {
+                  "constant_value": "default-sn"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "virtual_network_name": {
+                  "references": [
+                    "azurerm_virtual_network.vnet.name",
+                    "azurerm_virtual_network.vnet"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "default_sn",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_subnet"
+            },
+            {
+              "address": "azurerm_virtual_network.vnet",
+              "expressions": {
+                "address_space": {
+                  "constant_value": [
+                    "10.0.0.0/16"
+                  ]
+                },
+                "location": {
+                  "references": [
+                    "azurerm_resource_group.rg.location",
+                    "azurerm_resource_group.rg"
+                  ]
+                },
+                "name": {
+                  "constant_value": "gordion-vnet"
+                },
+                "resource_group_name": {
+                  "references": [
+                    "azurerm_resource_group.rg.name",
+                    "azurerm_resource_group.rg"
+                  ]
+                }
+              },
+              "mode": "managed",
+              "name": "vnet",
+              "provider_config_key": "azurerm",
+              "schema_version": 0,
+              "type": "azurerm_virtual_network"
+            }
+          ],
+          "text": "data.assemble.config",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

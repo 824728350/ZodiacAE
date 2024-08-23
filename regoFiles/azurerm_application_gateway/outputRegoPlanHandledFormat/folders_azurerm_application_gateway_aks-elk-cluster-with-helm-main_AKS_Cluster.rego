@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -1332,37 +1333,9 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.this"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.this"
-        },
-        {
-            "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.aks_pod"
-        },
-        {
-            "attribute": [
-                "ingress_application_gateway",
-                0,
-                "ingress_application_gateway_identity",
-                0,
-                "object_id"
-            ],
-            "resource": "azurerm_kubernetes_cluster.this"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_resource_group.this"
+            "resource": "azurerm_application_gateway.app_gw"
         },
         {
             "attribute": [
@@ -1380,18 +1353,6 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.this"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.aks_node"
-        },
-        {
-            "attribute": [
                 "identity",
                 0,
                 "principal_id"
@@ -1402,15 +1363,47 @@ mock_config := {
             "attribute": [
                 "kube_config",
                 0,
-                "client_certificate"
+                "username"
             ],
             "resource": "azurerm_kubernetes_cluster.this"
         },
         {
             "attribute": [
-                "kube_config",
+                "location"
+            ],
+            "resource": "azurerm_resource_group.this"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.aks_node"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.this"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.aks_pod"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_resource_group.this"
+        },
+        {
+            "attribute": [
+                "ingress_application_gateway",
                 0,
-                "cluster_ca_certificate"
+                "ingress_application_gateway_identity",
+                0,
+                "object_id"
             ],
             "resource": "azurerm_kubernetes_cluster.this"
         },
@@ -1424,21 +1417,29 @@ mock_config := {
         },
         {
             "attribute": [
+                "kube_config",
+                0,
+                "cluster_ca_certificate"
+            ],
+            "resource": "azurerm_kubernetes_cluster.this"
+        },
+        {
+            "attribute": [
                 "name"
             ],
             "resource": "azurerm_resource_group.this"
         },
         {
             "attribute": [
-                "id"
+                "name"
             ],
-            "resource": "azurerm_application_gateway.app_gw"
+            "resource": "azurerm_virtual_network.this"
         },
         {
             "attribute": [
                 "kube_config",
                 0,
-                "username"
+                "client_key"
             ],
             "resource": "azurerm_kubernetes_cluster.this"
         },
@@ -1446,7 +1447,7 @@ mock_config := {
             "attribute": [
                 "kube_config",
                 0,
-                "client_key"
+                "client_certificate"
             ],
             "resource": "azurerm_kubernetes_cluster.this"
         }
@@ -2364,7 +2365,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:19:59Z",
+    "timestamp": "2024-08-23T00:16:44Z",
     "variables": {
         "location": {
             "value": "West Europe"

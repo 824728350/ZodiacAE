@@ -1,0 +1,158 @@
+{
+    "locals": [
+        {
+            "backend_address_pool_name": "${azurerm_virtual_network.vnet.name}-beap",
+            "frontend_ip_configuration_name": "${azurerm_virtual_network.vnet.name}-feip",
+            "frontend_port_name": "${azurerm_virtual_network.vnet.name}-feport",
+            "http_setting_name": "${azurerm_virtual_network.vnet.name}-be-htst",
+            "listener_name": "${azurerm_virtual_network.vnet.name}-httplstn",
+            "redirect_configuration_name": "${azurerm_virtual_network.vnet.name}-rdrcfg",
+            "request_routing_rule_name": "${azurerm_virtual_network.vnet.name}-rqrt"
+        }
+    ],
+    "provider": [
+        {
+            "azurerm": {
+                "features": [
+                    {}
+                ]
+            }
+        }
+    ],
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "rg": {
+                    "location": "eastus2",
+                    "name": "example-rg"
+                }
+            }
+        },
+        {
+            "azurerm_virtual_network": {
+                "vnet": {
+                    "address_space": [
+                        "10.1.0.0/16"
+                    ],
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "example-vnet",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "snet": {
+                    "address_prefixes": [
+                        "10.1.0.0/24"
+                    ],
+                    "name": "appgw-snet",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "pip": {
+                    "allocation_method": "Static",
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "example-pip",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "sku": "Standard"
+                }
+            }
+        },
+        {
+            "azurerm_application_gateway": {
+                "appgw": {
+                    "autoscale_configuration": [
+                        {
+                            "max_capacity": 5,
+                            "min_capacity": 2
+                        }
+                    ],
+                    "backend_address_pool": [
+                        {
+                            "name": "${local.backend_address_pool_name}"
+                        }
+                    ],
+                    "backend_http_settings": [
+                        {
+                            "cookie_based_affinity": "Disabled",
+                            "name": "${local.http_setting_name}",
+                            "path": "/path1/",
+                            "port": 80,
+                            "protocol": "Http",
+                            "request_timeout": 60
+                        }
+                    ],
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "${local.frontend_ip_configuration_name}",
+                            "public_ip_address_id": "${azurerm_public_ip.pip.id}"
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "${local.frontend_port_name}",
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "my-gateway-ip-configuration",
+                            "subnet_id": "${azurerm_subnet.snet.id}"
+                        }
+                    ],
+                    "http_listener": [
+                        {
+                            "frontend_ip_configuration_name": "${local.frontend_ip_configuration_name}",
+                            "frontend_port_name": "${local.frontend_port_name}",
+                            "name": "${local.listener_name}",
+                            "protocol": "Http"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "example-appgw",
+                    "request_routing_rule": [
+                        {
+                            "backend_address_pool_name": "${local.backend_address_pool_name}",
+                            "backend_http_settings_name": "${local.http_setting_name}",
+                            "http_listener_name": "${local.listener_name}",
+                            "name": "${local.request_routing_rule_name}",
+                            "rule_type": "Basic"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "sku": [
+                        {
+                            "name": "WAF_v2",
+                            "tier": "WAF_v2"
+                        }
+                    ],
+                    "waf_configuration": [
+                        {
+                            "enabled": true,
+                            "firewall_mode": "Detection",
+                            "rule_set_type": "OWASP",
+                            "rule_set_version": "3.1"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "terraform": [
+        {
+            "required_providers": [
+                {
+                    "azurerm": {
+                        "source": "hashicorp/azurerm",
+                        "version": "=3.116.0"
+                    }
+                }
+            ]
+        }
+    ]
+}

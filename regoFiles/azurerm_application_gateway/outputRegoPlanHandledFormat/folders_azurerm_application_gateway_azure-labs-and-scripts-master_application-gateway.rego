@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -1947,7 +1948,29 @@ mock_config := {
             "attribute": [
                 "id"
             ],
+            "resource": "azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.backend"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
             "resource": "azurerm_network_security_group.backend_nsg"
+        },
+        {
+            "attribute": [],
+            "resource": "azurerm_network_interface.nic"
         },
         {
             "attribute": [
@@ -1957,21 +1980,13 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
+                "rendered"
             ],
-            "resource": "azurerm_subnet.frontend"
+            "resource": "data.template_file.test-cloud-init"
         },
         {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "backend_address_pool"
-            ],
-            "resource": "azurerm_application_gateway.appgw"
+            "attribute": [],
+            "resource": "azurerm_network_interface.nic-failback"
         },
         {
             "attribute": [
@@ -1980,18 +1995,8 @@ mock_config := {
             "resource": "azurerm_public_ip.pip"
         },
         {
-            "attribute": [],
-            "resource": "azurerm_network_interface.nic"
-        },
-        {
             "attribute": [
                 "name"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "location"
             ],
             "resource": "azurerm_resource_group.rg"
         },
@@ -2005,17 +2010,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.backend"
-        },
-        {
-            "attribute": [],
-            "resource": "azurerm_network_interface.nic-failback"
+            "resource": "azurerm_subnet.frontend"
         },
         {
             "attribute": [
-                "rendered"
+                "backend_address_pool"
             ],
-            "resource": "data.template_file.test-cloud-init"
+            "resource": "azurerm_application_gateway.appgw"
         }
     ],
     "resource_changes": [
@@ -3509,7 +3510,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:19:18Z",
+    "timestamp": "2024-08-23T00:16:01Z",
     "variables": {
         "backend_address_pool_name": {
             "value": "backend-address-pool"

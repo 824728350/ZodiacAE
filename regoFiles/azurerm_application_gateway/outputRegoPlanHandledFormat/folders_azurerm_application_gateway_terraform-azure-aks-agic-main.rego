@@ -85,7 +85,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -379,11 +380,11 @@ mock_config := {
                                 "description": "The minimum supported TLS version for the storage account."
                             },
                             "resource_group_name": {
-                                "default": "svxfhold",
+                                "default": "1weihold",
                                 "description": "Name of the Resource Group to use."
                             },
                             "storage_account_name": {
-                                "default": "guz8hold",
+                                "default": "yz9qhold",
                                 "description": "Name of the Storage Account, either a new or an existing one (depending on the value of `create_storage_account`).\n\nThe name you choose must be unique across Azure. The name also must be between 3 and 24 characters in length, and may include only numbers and lowercase letters.\n"
                             },
                             "storage_share_access_tier": {
@@ -391,7 +392,7 @@ mock_config := {
                                 "description": "Access tier for the File Share."
                             },
                             "storage_share_name": {
-                                "default": "nyexhold",
+                                "default": "nxphhold",
                                 "description": "Name of a storage File Share to be created that will hold `files` used for bootstrapping.\nFor rules defining a valid name see [Microsoft documentation](https://docs.microsoft.com/en-us/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata#share-names).\n"
                             },
                             "storage_share_quota": {
@@ -996,7 +997,7 @@ mock_config := {
                                 "description": "Specifies the retention period in days. Possible values are 0, 30, 60, 90, 120, 180, 270, 365, 550 or 730. Defaults to 90. A special value 0 disables creation of Application Insights altogether."
                             },
                             "name": {
-                                "default": "fprohold",
+                                "default": "69rfhold",
                                 "description": "VM-Series instance name."
                             },
                             "name_application_insights": {
@@ -1008,11 +1009,11 @@ mock_config := {
                                 "description": "Optional name of the OS disk to create for the virtual machine. If empty, the name is auto-generated."
                             },
                             "password": {
-                                "default": "hviohold",
+                                "default": "qm45hold",
                                 "description": "Initial administrative password to use for VM-Series. Mind the [Azure-imposed restrictions](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/faq#what-are-the-password-requirements-when-creating-a-vm)."
                             },
                             "resource_group_name": {
-                                "default": "pd48hold",
+                                "default": "yc3xhold",
                                 "description": "Name of the existing resource group where to place the resources created."
                             },
                             "tags": {
@@ -1020,7 +1021,7 @@ mock_config := {
                                 "description": "A map of tags to be associated with the resources created."
                             },
                             "username": {
-                                "default": "yls0hold",
+                                "default": "8qushold",
                                 "description": "Initial administrative username to use for VM-Series. Mind the [Azure-imposed restrictions](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/faq#what-are-the-username-requirements-when-creating-a-vm)."
                             },
                             "vm_size": {
@@ -5039,21 +5040,19 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "name"
+                "ingress_application_gateway",
+                0,
+                "ingress_application_gateway_identity",
+                0,
+                "object_id"
             ],
-            "resource": "azurerm_virtual_network.spoke"
+            "resource": "azurerm_kubernetes_cluster.k8s"
         },
         {
             "attribute": [
-                "id"
+                "ip_address"
             ],
-            "resource": "azurerm_network_security_group.nsg-public"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.bootstrap.azurerm_storage_share.this"
+            "resource": "azurerm_public_ip.app-gw-pip01"
         },
         {
             "attribute": [
@@ -5063,85 +5062,15 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.fw-mgmt"
-        },
-        {
-            "attribute": [
-                "id"
+                "name"
             ],
             "resource": "azurerm_network_security_group.nsg-mgmt"
         },
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_application_gateway.application-gateway"
-        },
-        {
-            "attribute": [
                 "name"
             ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.snet-aks"
-        },
-        {
-            "attribute": [
-                "ip_configuration",
-                0,
-                "private_ip_address"
-            ],
-            "resource": "module.paloalto_vmseries.azurerm_network_interface.this[0]"
-        },
-        {
-            "attribute": [
-                "result"
-            ],
-            "resource": "random_integer.id"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.app-gw-pip01"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.bootstrap.azurerm_storage_share.this"
-        },
-        {
-            "attribute": [],
-            "resource": "module.bootstrap.random_id.this"
-        },
-        {
-            "attribute": [
-                "ip_address"
-            ],
-            "resource": "azurerm_public_ip.app-gw-pip01"
-        },
-        {
-            "attribute": [],
-            "resource": "module.bootstrap.data.azurerm_storage_account.this[0]"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.hub"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_virtual_network.hub"
+            "resource": "azurerm_virtual_network.spoke"
         },
         {
             "attribute": [
@@ -5153,7 +5082,21 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_resource_group.rg"
+            "resource": "azurerm_network_security_group.nsg-mgmt"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.nsg-public"
+        },
+        {
+            "attribute": [
+                "ip_configuration",
+                0,
+                "private_ip_address"
+            ],
+            "resource": "module.paloalto_vmseries.azurerm_network_interface.this[0]"
         },
         {
             "attribute": [
@@ -5165,31 +5108,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
+                "result"
             ],
-            "resource": "azurerm_public_ip.fw-public"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.snet-firewall-trust"
-        },
-        {
-            "attribute": [],
-            "resource": "module.paloalto_vmseries.azurerm_network_interface.this"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.paloalto_vmseries.azurerm_network_interface.this[0]"
+            "resource": "random_integer.id"
         },
         {
             "attribute": [
@@ -5205,22 +5126,14 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
+                "name"
             ],
             "resource": "azurerm_route_table.appgw-rt"
         },
         {
             "attribute": [
-                "id"
+                "name"
             ],
-            "resource": "azurerm_subnet.snet-appgw"
-        },
-        {
-            "attribute": [],
-            "resource": "module.paloalto_vmseries.azurerm_public_ip.this"
-        },
-        {
-            "attribute": [],
             "resource": "module.bootstrap.azurerm_storage_share.this"
         },
         {
@@ -5235,13 +5148,25 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
+                "location"
             ],
-            "resource": "azurerm_network_security_group.nsg-mgmt"
+            "resource": "azurerm_resource_group.rg"
         },
         {
             "attribute": [
-                "name"
+                "id"
+            ],
+            "resource": "azurerm_application_gateway.application-gateway"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_virtual_network.hub"
+        },
+        {
+            "attribute": [
+                "id"
             ],
             "resource": "azurerm_route_table.appgw-rt"
         },
@@ -5255,17 +5180,93 @@ mock_config := {
             "attribute": [
                 "id"
             ],
+            "resource": "azurerm_subnet.snet-aks"
+        },
+        {
+            "attribute": [],
+            "resource": "module.bootstrap.data.azurerm_storage_account.this[0]"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.hub"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.paloalto_vmseries.azurerm_network_interface.this[0]"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.fw-public"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
             "resource": "azurerm_route_table.aks-rt"
         },
         {
             "attribute": [
-                "ingress_application_gateway",
-                0,
-                "ingress_application_gateway_identity",
-                0,
-                "object_id"
+                "id"
             ],
-            "resource": "azurerm_kubernetes_cluster.k8s"
+            "resource": "module.bootstrap.azurerm_storage_share.this"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.snet-firewall-trust"
+        },
+        {
+            "attribute": [],
+            "resource": "module.bootstrap.random_id.this"
+        },
+        {
+            "attribute": [],
+            "resource": "module.paloalto_vmseries.azurerm_network_interface.this"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.fw-mgmt"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.snet-appgw"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.app-gw-pip01"
+        },
+        {
+            "attribute": [],
+            "resource": "module.paloalto_vmseries.azurerm_public_ip.this"
+        },
+        {
+            "attribute": [],
+            "resource": "module.bootstrap.azurerm_storage_share.this"
         }
     ],
     "resource_changes": [
@@ -7650,7 +7651,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:44:44Z",
+    "timestamp": "2024-08-22T23:40:30Z",
     "variables": {
         "aks_agent_count": {
             "value": 4

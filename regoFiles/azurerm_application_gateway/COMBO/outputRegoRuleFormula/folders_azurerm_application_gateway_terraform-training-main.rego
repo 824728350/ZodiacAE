@@ -22,10 +22,6 @@ repoViewTop := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -38,12 +34,10 @@ repoViewTop := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -114,8 +108,7 @@ repoViewTop := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -123,16 +116,10 @@ repoViewTop := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3362,10 +3349,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -3378,12 +3361,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -3454,8 +3435,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -3463,16 +3443,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -8014,7 +7988,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -9061,6 +9039,7 @@ ComboReferenceThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9108,6 +9087,7 @@ ComboReferenceThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9155,6 +9135,7 @@ ComboReferenceThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9202,6 +9183,7 @@ ComboReferenceThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9538,6 +9520,7 @@ ComboNegationThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9583,6 +9566,7 @@ ComboNegationThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10705,6 +10689,7 @@ ComboIntraThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10759,6 +10744,7 @@ ComboIntraThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10813,6 +10799,7 @@ ComboIntraThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10867,6 +10854,7 @@ ComboIntraThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -12718,10 +12706,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -12734,12 +12718,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -12810,8 +12792,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -12819,16 +12800,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -15760,7 +15735,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -17078,7 +17057,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -19063,24 +19043,6 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "rendered"
-            ],
-            "resource": "data.template_cloudinit_config.craftcms_config"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.alb-public-ip"
-        },
-        {
-            "attribute": [
-                "ip_address"
-            ],
-            "resource": "azurerm_public_ip.public_ip"
-        },
-        {
-            "attribute": [
                 "id"
             ],
             "resource": "azurerm_public_ip.public_ip"
@@ -19089,19 +19051,7 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_user_assigned_identity.uai"
-        },
-        {
-            "attribute": [
-                "public_key"
-            ],
-            "resource": "azurerm_ssh_public_key.sshkey"
+            "resource": "azurerm_network_interface.nic"
         },
         {
             "attribute": [
@@ -19117,33 +19067,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.gw_subnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "random_pet.pet-name"
-        },
-        {
-            "attribute": [
                 "tenant_id"
             ],
             "resource": "data.azurerm_client_config.current"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.vnet"
         },
         {
             "attribute": [
@@ -19155,19 +19081,25 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "hex"
-            ],
-            "resource": "random_id.rnd"
-        },
-        {
-            "attribute": [
-                "principal_id"
-            ],
             "resource": "azurerm_user_assigned_identity.uai"
+        },
+        {
+            "attribute": [
+                "public_key"
+            ],
+            "resource": "azurerm_ssh_public_key.sshkey"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.gw_subnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.alb-public-ip"
         },
         {
             "attribute": [
@@ -19177,15 +19109,63 @@ mock_config := {
         },
         {
             "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "principal_id"
+            ],
+            "resource": "azurerm_user_assigned_identity.uai"
+        },
+        {
+            "attribute": [
                 "name"
             ],
             "resource": "azurerm_resource_group.rg"
         },
         {
             "attribute": [
+                "hex"
+            ],
+            "resource": "random_id.rnd"
+        },
+        {
+            "attribute": [
+                "rendered"
+            ],
+            "resource": "data.template_cloudinit_config.craftcms_config"
+        },
+        {
+            "attribute": [
                 "ip_address"
             ],
             "resource": "azurerm_public_ip.alb-public-ip"
+        },
+        {
+            "attribute": [
+                "ip_address"
+            ],
+            "resource": "azurerm_public_ip.public_ip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "random_pet.pet-name"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.vnet"
         }
     ],
     "resource_changes": [
@@ -20447,7 +20427,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:06:34Z",
+    "timestamp": "2024-08-23T00:03:07Z",
     "variables": {
         "bastion_subnet": {
             "value": [

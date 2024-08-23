@@ -1,0 +1,140 @@
+{
+    "resource": [
+        {
+            "azurerm_resource_group": {
+                "rg": {
+                    "location": "${var.rg_location}",
+                    "name": "${var.rg_name}"
+                }
+            }
+        },
+        {
+            "azurerm_virtual_network": {
+                "vnet": {
+                    "address_space": "${var.vnet_address_space}",
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${var.vnet_name}",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}"
+                }
+            }
+        },
+        {
+            "azurerm_subnet": {
+                "subnet": {
+                    "address_prefixes": "${var.subnet_appgw_address_space}",
+                    "name": "${var.subnet_name}",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "virtual_network_name": "${azurerm_virtual_network.vnet.name}"
+                }
+            }
+        },
+        {
+            "azurerm_public_ip": {
+                "pip": {
+                    "allocation_method": "${var.pip_appgw_allocation_method}",
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${var.pip_appgw_name}",
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "sku": "${var.pip_sku}"
+                }
+            }
+        },
+        {
+            "azurerm_application_gateway": {
+                "appgw": {
+                    "backend_http_settings": [
+                        {
+                            "cookie_based_affinity": "${var.appgw_backend_http_settings.cookie_based_affinity}",
+                            "name": "${var.appgw_backend_http_settings.name}",
+                            "port": "${var.appgw_backend_http_settings.port}",
+                            "protocol": "${var.appgw_backend_http_settings.protocol}"
+                        }
+                    ],
+                    "dynamic": [
+                        {
+                            "backend_address_pool": {
+                                "content": [
+                                    {
+                                        "fqdns": "${backend_address_pool.value[\"backend_address_pool_fqdns\"]}",
+                                        "name": "${backend_address_pool.value[\"backend_address_pool_name\"]}"
+                                    }
+                                ],
+                                "for_each": "${local.agw_backend_address_pools}"
+                            }
+                        }
+                    ],
+                    "frontend_ip_configuration": [
+                        {
+                            "name": "${var.appgw_frontend_ip_configuration}",
+                            "public_ip_address_id": "${azurerm_public_ip.pip.id}"
+                        }
+                    ],
+                    "frontend_port": [
+                        {
+                            "name": "${var.appgw_frontend_port}",
+                            "port": 80
+                        }
+                    ],
+                    "gateway_ip_configuration": [
+                        {
+                            "name": "${var.appgw_gateway_ip_configuration}",
+                            "subnet_id": "${azurerm_subnet.subnet.id}"
+                        }
+                    ],
+                    "http_listener": [
+                        {
+                            "frontend_ip_configuration_name": "${var.appgw_listener.frontend_ip_configuration_name}",
+                            "frontend_port_name": "${var.appgw_listener.frontend_port_name}",
+                            "name": "${var.appgw_listener.name}",
+                            "protocol": "${var.appgw_listener.protocol}"
+                        }
+                    ],
+                    "location": "${azurerm_resource_group.rg.location}",
+                    "name": "${var.appgw_name}",
+                    "request_routing_rule": [
+                        {
+                            "http_listener_name": "${var.app_gw_request_routing_rule.http_listener_name}",
+                            "name": "${var.app_gw_request_routing_rule.name}",
+                            "priority": "${var.app_gw_request_routing_rule.priority}",
+                            "rule_type": "${var.app_gw_request_routing_rule.rule_type}",
+                            "url_path_map_name": "${var.app_gw_request_routing_rule.url_path_map_name}"
+                        }
+                    ],
+                    "resource_group_name": "${azurerm_resource_group.rg.name}",
+                    "sku": [
+                        {
+                            "capacity": 1,
+                            "name": "${var.appgw_sku}",
+                            "tier": "${var.appgw_tier}"
+                        }
+                    ],
+                    "url_path_map": [
+                        {
+                            "default_backend_address_pool_name": "backend-pool-default",
+                            "default_backend_http_settings_name": "HTTP-Default",
+                            "name": "path_map",
+                            "path_rule": [
+                                {
+                                    "backend_address_pool_name": "backend-pool-imagens",
+                                    "backend_http_settings_name": "HTTP-Default",
+                                    "name": "imagens-path",
+                                    "paths": [
+                                        "/imagens/*"
+                                    ]
+                                },
+                                {
+                                    "backend_address_pool_name": "backend-pool-videos",
+                                    "backend_http_settings_name": "HTTP-Default",
+                                    "name": "videos-path",
+                                    "paths": [
+                                        "/videos/*"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

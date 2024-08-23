@@ -8,7 +8,7 @@
         },
         {
             "resource_group_name": {
-                "default": "hxzmhold",
+                "default": "td5xhold",
                 "description": "The name of the resource group to deploy resources into"
             }
         },

@@ -1,0 +1,61 @@
+{
+    "variable": [
+        {
+            "rg_name": {}
+        },
+        {
+            "rg_location": {}
+        },
+        {
+            "vnet_name": {}
+        },
+        {
+            "vnet_address_space": {}
+        },
+        {
+            "subnet_name": {}
+        },
+        {
+            "subnet_appgw_address_space": {}
+        },
+        {
+            "pip_appgw_name": {}
+        },
+        {
+            "pip_appgw_allocation_method": {}
+        },
+        {
+            "pip_sku": {}
+        },
+        {
+            "appgw_name": {}
+        },
+        {
+            "appgw_sku": {}
+        },
+        {
+            "appgw_tier": {}
+        },
+        {
+            "appgw_capacity": {}
+        },
+        {
+            "appgw_gateway_ip_configuration": {}
+        },
+        {
+            "appgw_frontend_port": {}
+        },
+        {
+            "appgw_frontend_ip_configuration": {}
+        },
+        {
+            "appgw_backend_http_settings": {}
+        },
+        {
+            "appgw_listener": {}
+        },
+        {
+            "app_gw_request_routing_rule": {}
+        }
+    ]
+}

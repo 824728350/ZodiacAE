@@ -65,7 +65,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -1082,6 +1083,18 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.main"
+        },
+        {
+            "attribute": [
+                "static_ip_address"
+            ],
+            "resource": "azurerm_container_app_environment.main"
+        },
+        {
+            "attribute": [
                 "id"
             ],
             "resource": "azurerm_log_analytics_workspace.main"
@@ -1100,9 +1113,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "static_ip_address"
+                "id"
             ],
-            "resource": "azurerm_container_app_environment.main"
+            "resource": "azurerm_public_ip.pip"
         },
         {
             "attribute": [
@@ -1114,31 +1127,19 @@ mock_config := {
             "attribute": [
                 "name"
             ],
-            "resource": "azurerm_virtual_network.main"
+            "resource": "azurerm_resource_group.main"
         },
         {
             "attribute": [
                 "name"
             ],
-            "resource": "azurerm_resource_group.main"
+            "resource": "azurerm_virtual_network.main"
         },
         {
             "attribute": [
                 "id"
             ],
             "resource": "azurerm_subnet.aca"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.main"
         }
     ],
     "resource_changes": [
@@ -1880,7 +1881,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:20:42Z",
+    "timestamp": "2024-08-23T00:17:43Z",
     "variables": {
         "cidr": {
             "value": "10.0.0.0/16"

@@ -1,0 +1,63 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azurerm_application_gateway.appgw": [
+              "azurerm_application_gateway.appgw",
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_container_app.my_app": [
+              "azurerm_container_app.my_app"
+            ],
+            "azurerm_container_app_environment.aca_env": [
+              "azurerm_container_app_environment.aca_env"
+            ],
+            "azurerm_private_dns_a_record.example_at": [
+              "azurerm_private_dns_a_record.example_at"
+            ],
+            "azurerm_private_dns_a_record.example_star": [
+              "azurerm_private_dns_a_record.example_star"
+            ],
+            "azurerm_private_dns_zone.dnszone": [
+              "azurerm_private_dns_zone.dnszone"
+            ],
+            "azurerm_private_dns_zone_virtual_network_link.example": [
+              "azurerm_private_dns_zone_virtual_network_link.example"
+            ],
+            "azurerm_public_ip.public_ip": [
+              "azurerm_public_ip.public_ip",
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_resource_group.rg": [
+              "azurerm_resource_group.rg"
+            ],
+            "azurerm_subnet.acasubnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.acasubnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_subnet.subnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_subnet.subnet",
+              "azurerm_virtual_network.vnet"
+            ],
+            "azurerm_virtual_network.vnet": [
+              "azurerm_resource_group.rg",
+              "azurerm_virtual_network.vnet"
+            ]
+          },
+          "text": "data.assemble.naiveAncestorDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

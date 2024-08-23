@@ -35,7 +35,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -2154,45 +2155,9 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "backend_address_pool"
-            ],
-            "resource": "azurerm_application_gateway.agw"
-        },
-        {
-            "attribute": [
                 "name"
             ],
             "resource": "azurerm_resource_group.rg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.subnet2"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.publicip"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_storage_account.sta"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_network_interface.nic_2"
-        },
-        {
-            "attribute": [
-                "primary_blob_endpoint"
-            ],
-            "resource": "azurerm_storage_account.sta"
         },
         {
             "attribute": [
@@ -2204,7 +2169,37 @@ mock_config := {
             "attribute": [
                 "id"
             ],
+            "resource": "azurerm_public_ip.publicip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
             "resource": "azurerm_public_ip.publicip_2"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.publicip_agw"
+        },
+        {
+            "attribute": [
+                "backend_address_pool"
+            ],
+            "resource": "azurerm_application_gateway.agw"
+        },
+        {
+            "attribute": [
+                "primary_blob_endpoint"
+            ],
+            "resource": "azurerm_storage_account.sta"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.subnet2"
         },
         {
             "attribute": [
@@ -2216,13 +2211,19 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_public_ip.publicip_agw"
+            "resource": "azurerm_network_interface.nic_2"
         },
         {
             "attribute": [
                 "id"
             ],
             "resource": "azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_storage_account.sta"
         }
     ],
     "resource_changes": [
@@ -3462,7 +3463,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:54:12Z",
+    "timestamp": "2024-08-22T23:50:40Z",
     "variables": {
         "access-type-sta-container": {
             "value": "private"

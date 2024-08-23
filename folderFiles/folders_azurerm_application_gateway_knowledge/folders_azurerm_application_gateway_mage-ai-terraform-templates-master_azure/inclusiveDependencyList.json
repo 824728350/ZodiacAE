@@ -254,7 +254,7 @@
             ],
             [
               "azurerm_network_security_group.nsg-aci",
-              "azurerm_subnet.sn-public",
+              "azurerm_subnet.sn-aci",
               "security_rule",
               "address_prefixes",
               "",
@@ -262,7 +262,7 @@
             ],
             [
               "azurerm_network_security_group.nsg-aci",
-              "azurerm_subnet.sn-aci",
+              "azurerm_subnet.sn-public",
               "security_rule",
               "address_prefixes",
               "",

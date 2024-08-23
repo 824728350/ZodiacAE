@@ -55,7 +55,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "google": {
                 "expressions": {
@@ -293,7 +294,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:51:28Z",
+    "timestamp": "2024-08-22T23:47:41Z",
     "variables": {
         "application_gateway_list": {
             "value": []

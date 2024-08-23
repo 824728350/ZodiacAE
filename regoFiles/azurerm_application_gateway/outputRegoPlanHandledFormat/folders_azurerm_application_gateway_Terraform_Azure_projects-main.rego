@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -1823,43 +1824,7 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "tenant_id"
-            ],
-            "resource": "data.azurerm_client_config.current"
-        },
-        {
-            "attribute": [
-                "object_id"
-            ],
-            "resource": "data.azurerm_client_config.example"
-        },
-        {
-            "attribute": [
-                "object_id"
-            ],
-            "resource": "data.azurerm_client_config.current"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_key_vault.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.frontend"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.example"
-        },
-        {
-            "attribute": [
-                "location"
+                "name"
             ],
             "resource": "azurerm_resource_group.example"
         },
@@ -1873,7 +1838,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.backend"
+            "resource": "azurerm_user_assigned_identity.user_managed_identity"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.app_public_ip"
         },
         {
             "attribute": [
@@ -1885,13 +1856,13 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_network_interface.app_interface"
+            "resource": "azurerm_subnet.frontend"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "data.azurerm_subscription.primary"
+            "resource": "azurerm_key_vault.example"
         },
         {
             "attribute": [
@@ -1907,7 +1878,13 @@ mock_config := {
         },
         {
             "attribute": [
-                "name"
+                "id"
+            ],
+            "resource": "data.azurerm_subscription.primary"
+        },
+        {
+            "attribute": [
+                "location"
             ],
             "resource": "azurerm_resource_group.example"
         },
@@ -1915,13 +1892,37 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_public_ip.app_public_ip"
+            "resource": "azurerm_subnet.backend"
+        },
+        {
+            "attribute": [
+                "tenant_id"
+            ],
+            "resource": "data.azurerm_client_config.current"
+        },
+        {
+            "attribute": [
+                "object_id"
+            ],
+            "resource": "data.azurerm_client_config.current"
+        },
+        {
+            "attribute": [
+                "object_id"
+            ],
+            "resource": "data.azurerm_client_config.example"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_user_assigned_identity.user_managed_identity"
+            "resource": "azurerm_network_interface.app_interface"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.example"
         }
     ],
     "resource_changes": [
@@ -3254,5 +3255,5 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:14:28Z"
+    "timestamp": "2024-08-23T00:10:12Z"
 }

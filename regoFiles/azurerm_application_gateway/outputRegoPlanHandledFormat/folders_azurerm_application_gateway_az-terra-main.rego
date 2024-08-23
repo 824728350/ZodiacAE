@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -955,15 +956,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
+                "ip_address"
             ],
-            "resource": "azurerm_container_registry.acr"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_kubernetes_cluster.aks"
+            "resource": "azurerm_public_ip.public_ip"
         },
         {
             "attribute": [
@@ -973,9 +968,15 @@ mock_config := {
         },
         {
             "attribute": [
-                "ip_address"
+                "id"
             ],
-            "resource": "azurerm_public_ip.public_ip"
+            "resource": "azurerm_container_registry.acr"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_kubernetes_cluster.aks"
         },
         {
             "attribute": [
@@ -1663,7 +1664,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:00:21Z",
+    "timestamp": "2024-08-22T23:56:37Z",
     "variables": {
         "regions": {
             "value": [

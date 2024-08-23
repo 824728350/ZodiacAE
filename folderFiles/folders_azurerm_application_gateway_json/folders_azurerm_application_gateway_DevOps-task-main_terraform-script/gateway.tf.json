@@ -5,10 +5,6 @@
                 "main": {
                     "backend_address_pool": [
                         {
-                            "fqdns": [
-                                "${azurerm_linux_web_app.api1.default_hostname}",
-                                "${azurerm_linux_web_app.api2.default_hostname}"
-                            ],
                             "name": "api-backend-pool"
                         }
                     ],

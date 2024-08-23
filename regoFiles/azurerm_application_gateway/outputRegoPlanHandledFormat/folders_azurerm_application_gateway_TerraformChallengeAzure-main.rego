@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "template": {
                 "full_name": "registry.terraform.io/hashicorp/template",
@@ -1474,34 +1475,6 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.frontend"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.agwIP"
-        },
-        {
-            "attribute": [
-                "private_ip_address"
-            ],
-            "resource": "azurerm_network_interface.nic[1]"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.vNet"
-        },
-        {
-            "attribute": [],
-            "resource": "azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
                 "rendered"
             ],
             "resource": "data.template_file.linux-vm-cloud-init"
@@ -1522,6 +1495,18 @@ mock_config := {
             "attribute": [
                 "id"
             ],
+            "resource": "azurerm_public_ip.natPubIP"
+        },
+        {
+            "attribute": [
+                "private_ip_address"
+            ],
+            "resource": "azurerm_network_interface.nic[1]"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
             "resource": "azurerm_application_gateway.network"
         },
         {
@@ -1531,16 +1516,32 @@ mock_config := {
             "resource": "azurerm_subnet.mySubnet"
         },
         {
+            "attribute": [],
+            "resource": "azurerm_network_interface.nic"
+        },
+        {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_public_ip.natPubIP"
+            "resource": "azurerm_public_ip.agwIP"
         },
         {
             "attribute": [
                 "private_ip_address"
             ],
             "resource": "azurerm_network_interface.nic[0]"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_virtual_network.vNet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.frontend"
         }
     ],
     "resource_changes": [
@@ -2664,7 +2665,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:06:21Z",
+    "timestamp": "2024-08-23T00:02:42Z",
     "variables": {
         "myIteration": {
             "value": 2

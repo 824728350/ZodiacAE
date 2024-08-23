@@ -1,0 +1,21 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "data.azurerm_resource_group.mc_rg",
+              "azurerm_resource_group.k8s-rg"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

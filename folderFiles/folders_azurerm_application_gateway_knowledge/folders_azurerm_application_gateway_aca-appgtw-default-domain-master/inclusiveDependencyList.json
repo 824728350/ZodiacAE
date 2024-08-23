@@ -14,14 +14,6 @@
             ],
             [
               "azurerm_application_gateway.appgtw",
-              "azurerm_container_app.main",
-              "backend_http_settings.0.host_name",
-              "latest_revision_fqdn",
-              "backend_http_settings.0",
-              ""
-            ],
-            [
-              "azurerm_application_gateway.appgtw",
               "azurerm_public_ip.pip",
               "frontend_ip_configuration.0.public_ip_address_id",
               "id",
@@ -42,14 +34,6 @@
               "location",
               "location",
               "",
-              ""
-            ],
-            [
-              "azurerm_application_gateway.appgtw",
-              "azurerm_container_app.main",
-              "probe.0.host",
-              "latest_revision_fqdn",
-              "probe.0",
               ""
             ],
             [

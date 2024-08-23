@@ -43,7 +43,6 @@
             "ReferenceThenAbsenceComboDown #### azurerm_application_gateway resource_group_name String #### azurerm_resource_group name String #### azurerm_application_gateway waf_configuration Absence": 1,
             "ReferenceThenAbsenceComboDown #### azurerm_application_gateway resource_group_name String #### azurerm_resource_group name String #### azurerm_application_gateway zones Absence": 1,
             "ReferenceThenAbsenceComboUp #### azurerm_application_gateway frontend_ip_configuration.0.public_ip_address_id String #### azurerm_public_ip id String #### azurerm_public_ip edge_zone Absence": 1,
-            "ReferenceThenAbsenceComboUp #### azurerm_application_gateway frontend_ip_configuration.0.public_ip_address_id String #### azurerm_public_ip id String #### azurerm_public_ip reverse_fqdn Absence": 1,
             "ReferenceThenAbsenceComboUp #### azurerm_application_gateway frontend_ip_configuration.0.public_ip_address_id String #### azurerm_public_ip id String #### azurerm_public_ip timeouts Absence": 1,
             "ReferenceThenAbsenceComboUp #### azurerm_application_gateway gateway_ip_configuration.0.subnet_id String #### azurerm_subnet id String #### azurerm_subnet delegation Absence": 1,
             "ReferenceThenAbsenceComboUp #### azurerm_application_gateway gateway_ip_configuration.0.subnet_id String #### azurerm_subnet id String #### azurerm_subnet service_endpoints Absence": 1,

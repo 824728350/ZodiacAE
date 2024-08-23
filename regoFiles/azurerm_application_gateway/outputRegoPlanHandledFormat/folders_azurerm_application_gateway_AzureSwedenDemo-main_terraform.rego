@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -2317,25 +2318,21 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "name"
+                "result"
             ],
-            "resource": "azurerm_resource_group.rg"
+            "resource": "random_password.password"
         },
         {
             "attribute": [
-                "name"
+                "result"
             ],
-            "resource": "azurerm_virtual_network.vnet"
-        },
-        {
-            "attribute": [],
-            "resource": "azurerm_windows_virtual_machine.vm"
+            "resource": "random_string.key_vault_name"
         },
         {
             "attribute": [
-                "backend_address_pool"
+                "id"
             ],
-            "resource": "azurerm_application_gateway.main"
+            "resource": "azurerm_user_assigned_identity.base"
         },
         {
             "attribute": [
@@ -2351,9 +2348,9 @@ mock_config := {
         },
         {
             "attribute": [
-                "result"
+                "name"
             ],
-            "resource": "random_string.key_vault_name"
+            "resource": "azurerm_virtual_network.vnet"
         },
         {
             "attribute": [
@@ -2363,49 +2360,15 @@ mock_config := {
         },
         {
             "attribute": [
-                "result"
+                "backend_address_pool"
             ],
-            "resource": "random_password.password"
-        },
-        {
-            "attribute": [],
-            "resource": "azurerm_network_interface.nic"
+            "resource": "azurerm_application_gateway.main"
         },
         {
             "attribute": [
-                "name"
+                "primary_access_key"
             ],
             "resource": "azurerm_storage_account.storageaccount"
-        },
-        {
-            "attribute": [
-                "ip_address"
-            ],
-            "resource": "azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.frontend"
-        },
-        {
-            "attribute": [
-                "tenant_id"
-            ],
-            "resource": "data.azurerm_client_config.current"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_user_assigned_identity.base"
         },
         {
             "attribute": [
@@ -2415,9 +2378,47 @@ mock_config := {
         },
         {
             "attribute": [
-                "primary_access_key"
+                "name"
+            ],
+            "resource": "azurerm_resource_group.rg"
+        },
+        {
+            "attribute": [],
+            "resource": "azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [],
+            "resource": "azurerm_windows_virtual_machine.vm"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "tenant_id"
+            ],
+            "resource": "data.azurerm_client_config.current"
+        },
+        {
+            "attribute": [
+                "name"
             ],
             "resource": "azurerm_storage_account.storageaccount"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.frontend"
+        },
+        {
+            "attribute": [
+                "ip_address"
+            ],
+            "resource": "azurerm_public_ip.pip"
         }
     ],
     "resource_changes": [
@@ -4285,7 +4286,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:57:40Z",
+    "timestamp": "2024-08-22T23:54:03Z",
     "variables": {
         "acmebot_contacts": {
             "value": "nicholasc001@hotmail.com"

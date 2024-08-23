@@ -1,0 +1,58 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": {
+            "azuread_group.admin_group": [],
+            "azurerm_key_vault_secret.key_vault_secret": [],
+            "azurerm_resource_group.rg1": [],
+            "azurerm_role_assignment.appgw_agic_role": [],
+            "azurerm_role_assignment.resourcegroup_agic_role": [],
+            "azurerm_role_assignment.rolekv_group": [],
+            "azurerm_role_assignment.rolekv_spn": [],
+            "azurerm_role_assignment.rolekv_user": [],
+            "azurerm_role_assignment.rolespn": [],
+            "azurerm_role_assignment.vnet_agic_role": [],
+            "azurerm_role_assignment.vnet_k8s_role": [],
+            "module.AKS.azurerm_kubernetes_cluster.k8s": [],
+            "module.AKS.azurerm_role_assignment.node_infrastructure_update_scale_set": [],
+            "module.AKS.data.azurerm_resource_group.node_resource_group": [],
+            "module.AppGateway.azurerm_application_gateway.network": [],
+            "module.AppGateway.azurerm_public_ip.AppGW_PIP": [
+              "module.AppGateway.azurerm_application_gateway.network"
+            ],
+            "module.AppGateway.azurerm_subnet.AKS_Subnet": [
+              "module.AppGateway.azurerm_subnet_nat_gateway_association.example"
+            ],
+            "module.AppGateway.azurerm_subnet.AppGW_Subnet": [
+              "module.AppGateway.azurerm_application_gateway.network"
+            ],
+            "module.AppGateway.azurerm_subnet_nat_gateway_association.example": [],
+            "module.AppGateway.azurerm_virtual_network.AKS_VNet": [],
+            "module.KeyVault.azurerm_key_vault.key_vault": [],
+            "module.KeyVault.data.azurerm_client_config.current": [],
+            "module.LogAnalytics.azurerm_log_analytics_solution.Log_Analytics_Solution_ContainerInsights": [],
+            "module.LogAnalytics.azurerm_log_analytics_workspace.Log_Analytics_WorkSpace": [],
+            "module.NATGateway.azurerm_nat_gateway.nat": [
+              "module.NATGateway.azurerm_nat_gateway_public_ip_association.nat_pip_assoc"
+            ],
+            "module.NATGateway.azurerm_nat_gateway_public_ip_association.nat_pip_assoc": [],
+            "module.NATGateway.azurerm_public_ip.nat_pip": [
+              "module.NATGateway.azurerm_nat_gateway_public_ip_association.nat_pip_assoc"
+            ],
+            "module.ServicePrincipal.azuread_application.spn_app": [],
+            "module.ServicePrincipal.azuread_service_principal.spn": [],
+            "module.ServicePrincipal.azuread_service_principal_password.spn_pass": [],
+            "module.ServicePrincipal.data.azuread_client_config.current": []
+          },
+          "text": "data.assemble.referencesSuccDict",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

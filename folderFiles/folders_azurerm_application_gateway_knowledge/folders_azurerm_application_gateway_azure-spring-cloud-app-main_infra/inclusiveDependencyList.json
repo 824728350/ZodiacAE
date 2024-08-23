@@ -6,14 +6,6 @@
           "value": [
             [
               "azurerm_application_gateway.this",
-              "azurerm_spring_cloud_app.this",
-              "backend_address_pool.0.fqdns",
-              "fqdn",
-              "backend_address_pool.0",
-              ""
-            ],
-            [
-              "azurerm_application_gateway.this",
               "azurerm_public_ip.public_ip",
               "frontend_ip_configuration.0.public_ip_address_id",
               "id",

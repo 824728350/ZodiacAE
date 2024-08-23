@@ -1,0 +1,53 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [
+            [
+              "azurerm_key_vault_secret.key_vault_secret",
+              "azurerm_role_assignment.rolekv_spn"
+            ],
+            [
+              "azurerm_key_vault_secret.key_vault_secret",
+              "azurerm_role_assignment.rolekv_user"
+            ],
+            [
+              "azurerm_role_assignment.rolekv_group",
+              "azuread_group.admin_group"
+            ],
+            [
+              "module.AKS.azurerm_role_assignment.node_infrastructure_update_scale_set",
+              "module.AKS.azurerm_kubernetes_cluster.k8s"
+            ],
+            [
+              "module.AKS.data.azurerm_resource_group.node_resource_group",
+              "module.AKS.azurerm_kubernetes_cluster.k8s"
+            ],
+            [
+              "module.AppGateway.azurerm_application_gateway.network",
+              "module.AppGateway.azurerm_public_ip.AppGW_PIP"
+            ],
+            [
+              "module.AppGateway.azurerm_application_gateway.network",
+              "module.AppGateway.azurerm_subnet.AppGW_Subnet"
+            ],
+            [
+              "module.AppGateway.azurerm_subnet.AKS_Subnet",
+              "module.AppGateway.azurerm_virtual_network.AKS_VNet"
+            ],
+            [
+              "module.AppGateway.azurerm_subnet.AppGW_Subnet",
+              "module.AppGateway.azurerm_virtual_network.AKS_VNet"
+            ]
+          ],
+          "text": "data.assemble.artificialDependencyList",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -22,10 +22,6 @@ repoViewTop := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -38,12 +34,10 @@ repoViewTop := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -114,8 +108,7 @@ repoViewTop := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -123,16 +116,10 @@ repoViewTop := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3362,10 +3349,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -3378,12 +3361,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -3454,8 +3435,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -3463,16 +3443,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -8014,7 +7988,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -9061,6 +9039,7 @@ ComboReferenceThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9108,6 +9087,7 @@ ComboReferenceThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9155,6 +9135,7 @@ ComboReferenceThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9202,6 +9183,7 @@ ComboReferenceThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -9538,6 +9520,7 @@ ComboNegationThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -9583,6 +9566,7 @@ ComboNegationThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10705,6 +10689,7 @@ ComboIntraThenAbsenceComboDownList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10759,6 +10744,7 @@ ComboIntraThenAbsenceComboUpList := [rule |
     not contains(idAttrThenAbsence, "address_space")
     not contains(idAttrThenAbsence, "id")
     not contains(idAttrThenAbsence, "certificate")
+    not contains(idAttrThenAbsence, "fqdn")
     not contains(idAttrThenAbsence, "_name")
 
     count(attrSliceThenAbsence) == 0
@@ -10813,6 +10799,7 @@ ComboIntraThenExistenceComboDownList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -10867,6 +10854,7 @@ ComboIntraThenExistenceComboUpList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     count(attrSliceThenExistence) == 0
@@ -12718,10 +12706,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -12734,12 +12718,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -12810,8 +12792,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -12819,16 +12800,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -15760,7 +15735,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -17078,7 +17057,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -24347,73 +24327,9 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "ip_configuration",
-                0,
-                "name"
+                "result"
             ],
-            "resource": "module.jumpbox-linux.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.webserver.azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_service_plan.example"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.jumpbox-linux.azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.jumpbox-linux.azurerm_linux_virtual_machine.linux"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.jumpbox-linux.azurerm_public_ip.pip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.jumpbox.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "default_hostname"
-            ],
-            "resource": "azurerm_linux_web_app.app2"
-        },
-        {
-            "attribute": [
-                "ip_configuration",
-                0,
-                "name"
-            ],
-            "resource": "module.webserver.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "ip_configuration"
-            ],
-            "resource": "module.webserver.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.example"
+            "resource": "random_string.uniqstr"
         },
         {
             "attribute": [
@@ -24425,13 +24341,25 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_service_plan.example"
+            "resource": "module.jumpbox.azurerm_windows_virtual_machine.windows"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "module.jumpbox.azurerm_windows_virtual_machine.windows"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.webserver.azurerm_linux_virtual_machine.linux"
         },
         {
             "attribute": [
                 "private_ip_address"
             ],
-            "resource": "module.jumpbox.azurerm_network_interface.nic"
+            "resource": "module.jumpbox-linux.azurerm_network_interface.nic"
         },
         {
             "attribute": [
@@ -24441,21 +24369,15 @@ mock_config := {
         },
         {
             "attribute": [
-                "id"
+                "name"
             ],
-            "resource": "azurerm_subnet.backend"
+            "resource": "azurerm_resource_group.example"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "module.jumpbox.azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.webserver.azurerm_network_security_group.nsg"
+            "resource": "module.jumpbox-linux.azurerm_network_interface.nic"
         },
         {
             "attribute": [
@@ -24467,31 +24389,19 @@ mock_config := {
             "attribute": [
                 "location"
             ],
-            "resource": "module.jumpbox.azurerm_windows_virtual_machine.windows"
-        },
-        {
-            "attribute": [
-                "private_ip_address"
-            ],
-            "resource": "module.jumpbox-linux.azurerm_network_interface.nic"
-        },
-        {
-            "attribute": [
-                "ip_configuration"
-            ],
-            "resource": "module.jumpbox.azurerm_network_interface.nic"
+            "resource": "azurerm_resource_group.example"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "module.bastion.azurerm_network_security_group.bastion"
+            "resource": "module.jumpbox.azurerm_public_ip.pip"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "module.webserver.azurerm_network_interface.nic"
+            "resource": "module.webserver.azurerm_network_security_group.nsg"
         },
         {
             "attribute": [
@@ -24501,21 +24411,43 @@ mock_config := {
         },
         {
             "attribute": [
+                "default_hostname"
+            ],
+            "resource": "azurerm_linux_web_app.app1"
+        },
+        {
+            "attribute": [
                 "id"
             ],
-            "resource": "module.bastion.azurerm_public_ip.bastion"
+            "resource": "module.jumpbox-linux.azurerm_linux_virtual_machine.linux"
+        },
+        {
+            "attribute": [
+                "ip_configuration",
+                0,
+                "name"
+            ],
+            "resource": "module.jumpbox-linux.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "ip_configuration",
+                0,
+                "name"
+            ],
+            "resource": "module.webserver.azurerm_network_interface.nic"
         },
         {
             "attribute": [
                 "name"
             ],
-            "resource": "azurerm_resource_group.example"
+            "resource": "azurerm_virtual_network.example"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "module.jumpbox.azurerm_public_ip.pip"
+            "resource": "module.bastion.azurerm_public_ip.bastion"
         },
         {
             "attribute": [
@@ -24527,19 +24459,67 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.frontend"
+            "resource": "azurerm_subnet.bastion"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.jumpbox-linux.azurerm_public_ip.pip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.jumpbox.azurerm_network_security_group.nsg"
         },
         {
             "attribute": [
                 "default_hostname"
             ],
-            "resource": "azurerm_linux_web_app.app1"
+            "resource": "azurerm_linux_web_app.app2"
         },
         {
             "attribute": [
-                "result"
+                "private_ip_address"
             ],
-            "resource": "random_string.uniqstr"
+            "resource": "module.jumpbox.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "ip_configuration"
+            ],
+            "resource": "module.jumpbox.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.backend"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.jumpbox-linux.azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "ip_configuration"
+            ],
+            "resource": "module.webserver.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.webserver.azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.jumpbox.azurerm_network_interface.nic"
         },
         {
             "attribute": [
@@ -24551,13 +24531,31 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "module.jumpbox-linux.azurerm_network_interface.nic"
+            "resource": "azurerm_service_plan.example"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_service_plan.example"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "module.jumpbox.azurerm_windows_virtual_machine.windows"
+            "resource": "module.jumpbox-linux.azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.webserver.azurerm_network_interface.nic"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.frontend"
         },
         {
             "attribute": [
@@ -24569,25 +24567,7 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_subnet.bastion"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.example"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.jumpbox-linux.azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.webserver.azurerm_linux_virtual_machine.linux"
+            "resource": "module.bastion.azurerm_network_security_group.bastion"
         }
     ],
     "resource_changes": [
@@ -27423,7 +27403,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:01:02Z",
+    "timestamp": "2024-08-22T23:57:26Z",
     "variables": {
         "rg": {
             "value": {

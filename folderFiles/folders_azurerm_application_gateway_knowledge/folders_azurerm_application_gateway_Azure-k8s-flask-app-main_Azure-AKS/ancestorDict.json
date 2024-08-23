@@ -1,7 +1,0 @@
-{
-  "errors": [
-    {
-      "message": "stat ../folderFiles/folders_azurerm_application_gateway_knowledge/folders_azurerm_application_gateway_Azure-k8s-flask-app-main_Azure-AKS/handled.rego: no such file or directory"
-    }
-  ]
-}

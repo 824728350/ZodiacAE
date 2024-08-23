@@ -1,0 +1,64 @@
+{
+    "locals": [
+        {
+            "agw_backend_address_pools": {
+                "imagens": {
+                    "backend_address_pool_fqdns": [
+                        "vm-01-imagens"
+                    ],
+                    "backend_address_pool_name": "backend-pool-imagens"
+                },
+                "url_default": {
+                    "backend_address_pool_fqdns": [
+                        "vm-03-default"
+                    ],
+                    "backend_address_pool_name": "backend-pool-default"
+                },
+                "videos": {
+                    "backend_address_pool_fqdns": [
+                        "vm-02-videos"
+                    ],
+                    "backend_address_pool_name": "backend-pool-videos"
+                }
+            }
+        }
+    ],
+    "provider": [
+        {
+            "azurerm": {
+                "features": [
+                    {}
+                ]
+            }
+        },
+        {
+            "google": {
+                "project": "ZODIAC",
+                "region": "us-central1"
+            }
+        },
+        {
+            "aws": {
+                "access_key": "mock_access_key",
+                "region": "us-east-1",
+                "s3_force_path_style": true,
+                "secret_key": "mock_secret_key",
+                "skip_credentials_validation": true,
+                "skip_metadata_api_check": true,
+                "skip_requesting_account_id": true
+            }
+        }
+    ],
+    "terraform": [
+        {
+            "required_providers": [
+                {
+                    "azurerm": {
+                        "source": "hashicorp/azurerm",
+                        "version": "=3.116.0"
+                    }
+                }
+            ]
+        }
+    ]
+}

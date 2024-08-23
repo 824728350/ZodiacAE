@@ -5,60 +5,56 @@ import future.keywords.in
 resourceTypeLabel := "azurerm_application_gateway"
 repoViewTop := {
     "azurerm_application_gateway": {
+        "autoscale_configuration.max_capacity": [],
+        "autoscale_configuration.min_capacity": [],
+        "backend_address_pool.ip_addresses": [],
         "backend_http_settings.cookie_based_affinity": [
             "Disabled",
             "Enabled"
         ],
+        "backend_http_settings.path": [],
         "backend_http_settings.protocol": [
-            "Http",
             "Https"
         ],
+        "backend_http_settings.request_timeout": [],
         "frontend_ip_configuration.private_ip_address_allocation": [
             "Dynamic",
             "Static"
         ],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
+        "frontend_port.port": [],
         "http_listener.protocol": [
-            "Http",
             "Https"
         ],
         "location": [
             "westeurope",
             "centralus",
-            "westus",
             "uaenorth",
             "westus2",
             "uksouth",
-            "eastus",
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
+        "probe.interval": [],
         "probe.match.body": [
             "Welcome",
             "App1",
             "App2"
         ],
         "probe.match.status_code": [
-            "200",
-            "399",
             "200-400",
             "200-399"
         ],
+        "probe.path": [],
         "probe.protocol": [
-            "Http",
             "Https"
         ],
+        "probe.timeout": [],
         "redirect_configuration.include_path": [
             true,
             false
@@ -66,6 +62,10 @@ repoViewTop := {
         "redirect_configuration.include_query_string": [
             true,
             false
+        ],
+        "redirect_configuration.target_url": [],
+        "request_routing_rule.priority": [
+            null
         ],
         "request_routing_rule.rule_type": [
             "Basic",
@@ -79,6 +79,7 @@ repoViewTop := {
             false,
             true
         ],
+        "rewrite_rule_set.rewrite_rule.condition.pattern": [],
         "rewrite_rule_set.rewrite_rule.condition.variable": [
             "http_req_X-Forwarded-For",
             "var_uri_path"
@@ -93,6 +94,7 @@ repoViewTop := {
         "rewrite_rule_set.rewrite_rule.url.query_string": [
             null
         ],
+        "sku.capacity": [],
         "sku.name": [
             "Standard_v2",
             "Standard_Small",
@@ -101,28 +103,23 @@ repoViewTop := {
         ],
         "sku.tier": [
             "Standard_v2",
-            "Standard",
             "WAF_v2"
         ],
+        "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
+        "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
             true,
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -558,7 +555,6 @@ repoViewTop := {
         ],
         "ip_configuration.private_ip_address_allocation": [
             "Dynamic",
-            "dynamic",
             "Static"
         ],
         "ip_configuration.private_ip_address_version": [
@@ -1501,6 +1497,8 @@ inclusiveDependencyList := [[address1, address2, idAttr1, idAttr2, idAttrSlice1,
     idAttrListSlice1 := array.slice(attr1, 0, count(attr1)-1)
     idAttrSlice1 := concat(".", idAttrListSlice1)
     idAttr2 := trim_prefix(value1, idAddr2)
+    not contains(idAttr1, "fqdn")
+    not contains(idAttr2, "fqdn")
     #any([idAttr2 == "name", idAttr2 == "id"])
     #any([contains(idAttr1, "_name"), contains(idAttr1, "_id")])
     idAttrList2 := split(idAttr2, ".")
@@ -1634,7 +1632,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "google": {
                 "expressions": {
@@ -1998,7 +1997,7 @@ mock_config := {
                     "description": "The supported Azure location where the resource deployed"
                 },
                 "resource_group_name": {
-                    "default": "hxzmhold",
+                    "default": "td5xhold",
                     "description": "The name of the resource group to deploy resources into"
                 },
                 "resource_prefix": {
@@ -2245,7 +2244,7 @@ mock_config := {
                                 "url_path_map_name": ""
                             }
                         ],
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "rewrite_rule_set": [],
                         "sku": [
                             {
@@ -2285,7 +2284,7 @@ mock_config := {
                         "location": "eastus",
                         "name": "zodiac-pip",
                         "public_ip_prefix_id": null,
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "reverse_fqdn": null,
                         "sku": "Standard",
                         "sku_tier": "Regional",
@@ -2314,7 +2313,7 @@ mock_config := {
                         "default_outbound_access_enabled": true,
                         "delegation": [],
                         "name": "backend",
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "service_endpoint_policy_ids": null,
                         "service_endpoints": null,
                         "timeouts": null,
@@ -2341,7 +2340,7 @@ mock_config := {
                         "default_outbound_access_enabled": true,
                         "delegation": [],
                         "name": "frontend",
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "service_endpoint_policy_ids": null,
                         "service_endpoints": null,
                         "timeouts": null,
@@ -2375,7 +2374,7 @@ mock_config := {
                         "flow_timeout_in_minutes": null,
                         "location": "eastus",
                         "name": "zodiac-net",
-                        "resource_group_name": "hxzmhold",
+                        "resource_group_name": "td5xhold",
                         "tags": null,
                         "timeouts": null
                     }
@@ -2407,29 +2406,17 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_public_ip.ingress"
-        },
-        {
-            "attribute": [
-                "ip_address"
-            ],
-            "resource": "azurerm_public_ip.ingress"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
             "resource": "azurerm_subnet.backend"
         },
         {
             "attribute": [
-                "name"
+                "id"
             ],
             "resource": "azurerm_application_gateway.gw"
         },
         {
             "attribute": [
-                "id"
+                "name"
             ],
             "resource": "azurerm_application_gateway.gw"
         },
@@ -2450,6 +2437,18 @@ mock_config := {
                 "id"
             ],
             "resource": "azurerm_subnet.frontend"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.ingress"
+        },
+        {
+            "attribute": [
+                "ip_address"
+            ],
+            "resource": "azurerm_public_ip.ingress"
         }
     ],
     "resource_changes": [
@@ -2545,7 +2544,7 @@ mock_config := {
                             "url_path_map_name": ""
                         }
                     ],
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "rewrite_rule_set": [],
                     "sku": [
                         {
@@ -2723,7 +2722,7 @@ mock_config := {
                     "location": "eastus",
                     "name": "zodiac-pip",
                     "public_ip_prefix_id": null,
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "reverse_fqdn": null,
                     "sku": "Standard",
                     "sku_tier": "Regional",
@@ -2758,7 +2757,7 @@ mock_config := {
                     "default_outbound_access_enabled": true,
                     "delegation": [],
                     "name": "backend",
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "service_endpoint_policy_ids": null,
                     "service_endpoints": null,
                     "timeouts": null,
@@ -2803,7 +2802,7 @@ mock_config := {
                     "default_outbound_access_enabled": true,
                     "delegation": [],
                     "name": "frontend",
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "service_endpoint_policy_ids": null,
                     "service_endpoints": null,
                     "timeouts": null,
@@ -2852,7 +2851,7 @@ mock_config := {
                     "flow_timeout_in_minutes": null,
                     "location": "eastus",
                     "name": "zodiac-net",
-                    "resource_group_name": "hxzmhold",
+                    "resource_group_name": "td5xhold",
                     "tags": null,
                     "timeouts": null
                 },
@@ -2886,7 +2885,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:04:05Z",
+    "timestamp": "2024-08-23T00:00:22Z",
     "variables": {
         "frontend_port": {
             "value": 8080
@@ -2895,7 +2894,7 @@ mock_config := {
             "value": "eastus"
         },
         "resource_group_name": {
-            "value": "hxzmhold"
+            "value": "td5xhold"
         },
         "resource_prefix": {
             "value": "zodiac"

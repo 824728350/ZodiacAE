@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -1743,31 +1744,7 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.aks"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_kubernetes_cluster.repro_502"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_log_analytics_workspace.repro_502"
-        },
-        {
-            "attribute": [
                 "name"
-            ],
-            "resource": "azurerm_resource_group.repro_502"
-        },
-        {
-            "attribute": [
-                "location"
             ],
             "resource": "azurerm_resource_group.repro_502"
         },
@@ -1781,13 +1758,7 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_public_ip.agw"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_application_gateway.repro_502"
+            "resource": "azurerm_subnet.aks"
         },
         {
             "attribute": [
@@ -1801,13 +1772,43 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_virtual_network.repro_502"
+            "resource": "azurerm_kubernetes_cluster.repro_502"
         },
         {
             "attribute": [
                 "id"
             ],
             "resource": "azurerm_subnet.ingress"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.repro_502"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.agw"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_log_analytics_workspace.repro_502"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_application_gateway.repro_502"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_virtual_network.repro_502"
         }
     ],
     "resource_changes": [
@@ -3122,7 +3123,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:22:36Z",
+    "timestamp": "2024-08-23T00:19:25Z",
     "variables": {
         "aks_network_plugin": {
             "value": "azure"

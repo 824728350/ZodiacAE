@@ -208,8 +208,6 @@
             "ConstantThenConstant #### azurerm_application_gateway sku.name WAF_v2 #### azurerm_application_gateway sku.tier WAF_v2": 1,
             "ExistenceThenConstant #### azurerm_application_gateway autoscale_configuration Existence #### azurerm_application_gateway sku.name WAF_v2": 1,
             "ExistenceThenConstant #### azurerm_application_gateway autoscale_configuration Existence #### azurerm_application_gateway sku.tier WAF_v2": 1,
-            "ExistenceThenConstant #### azurerm_application_gateway backend_address_pool.fqdns Existence #### azurerm_application_gateway sku.name WAF_v2": 1,
-            "ExistenceThenConstant #### azurerm_application_gateway backend_address_pool.fqdns Existence #### azurerm_application_gateway sku.tier WAF_v2": 1,
             "ExistenceThenConstant #### azurerm_application_gateway backend_http_settings.connection_draining Existence #### azurerm_application_gateway sku.name WAF_v2": 1,
             "ExistenceThenConstant #### azurerm_application_gateway backend_http_settings.connection_draining Existence #### azurerm_application_gateway sku.tier WAF_v2": 1,
             "ExistenceThenConstant #### azurerm_application_gateway backend_http_settings.path Existence #### azurerm_application_gateway sku.name WAF_v2": 1,

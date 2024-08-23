@@ -22,10 +22,6 @@ repoViewTop := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -38,12 +34,10 @@ repoViewTop := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -114,8 +108,7 @@ repoViewTop := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -123,16 +116,10 @@ repoViewTop := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3362,10 +3349,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -3378,12 +3361,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -3454,8 +3435,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -3463,16 +3443,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -7664,7 +7638,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -8078,6 +8056,7 @@ AttrAbsenceThenExistenceList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenExistence][1]["values"], [pathThenExistence, valueThenExistence])
@@ -8102,6 +8081,7 @@ AttrAbsenceThenExistenceList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     pathIfAbsence != pathThenExistence
@@ -8138,6 +8118,7 @@ AttrAbsenceThenConstantList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenConstant][1]["values"], [pathThenConstant, valueThenConstant])
@@ -8197,6 +8178,7 @@ AttrAbsenceThenEqualList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenEqual1][1]["values"], [pathThenEqual1, valueThenEqual1])
@@ -8268,6 +8250,7 @@ AttrAbsenceThenUnequalList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenUnequal1][1]["values"], [pathThenUnequal1, valueThenUnequal1])
@@ -8337,6 +8320,7 @@ AttrAbsenceThenCIDRIncludeList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenCIDRInclude1][1]["values"], [pathThenCIDRInclude1, valueThenCIDRInclude1])
@@ -8402,6 +8386,7 @@ AttrAbsenceThenCIDRExcludeList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenCIDRExclude1][1]["values"], [pathThenCIDRExclude1, valueThenCIDRExclude1])
@@ -8463,6 +8448,7 @@ AttrExistenceThenExistenceList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenExistence][1]["values"], [pathThenExistence, valueThenExistence])
@@ -8487,6 +8473,7 @@ AttrExistenceThenExistenceList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     pathIfExistence != pathThenExistence
@@ -8521,6 +8508,7 @@ AttrExistenceThenConstantList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenConstant][1]["values"], [pathThenConstant, valueThenConstant])
@@ -8578,6 +8566,7 @@ AttrExistenceThenEqualList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenEqual1][1]["values"], [pathThenEqual1, valueThenEqual1])
@@ -8647,6 +8636,7 @@ AttrExistenceThenUnequalList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenUnequal1][1]["values"], [pathThenUnequal1, valueThenUnequal1])
@@ -8714,6 +8704,7 @@ AttrExistenceThenCIDRIncludeList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenCIDRInclude1][1]["values"], [pathThenCIDRInclude1, valueThenCIDRInclude1])
@@ -8777,6 +8768,7 @@ AttrExistenceThenCIDRExcludeList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenCIDRExclude1][1]["values"], [pathThenCIDRExclude1, valueThenCIDRExclude1])
@@ -9767,7 +9759,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "helm": {
                 "expressions": {
@@ -10099,11 +10092,11 @@ mock_config := {
                         ],
                         "variables": {
                             "database_name": {
-                                "default": "jwtlhold",
+                                "default": "snffhold",
                                 "description": "The name of the database to create"
                             },
                             "name": {
-                                "default": "b2p2hold",
+                                "default": "j3prhold",
                                 "description": "The name of the PostgreSQL server"
                             },
                             "resource_group": {
@@ -10403,11 +10396,11 @@ mock_config := {
                         ],
                         "variables": {
                             "database_name": {
-                                "default": "jwtlhold",
+                                "default": "snffhold",
                                 "description": "The name of the database to create"
                             },
                             "name": {
-                                "default": "b2p2hold",
+                                "default": "j3prhold",
                                 "description": "The name of the PostgreSQL server"
                             },
                             "resource_group": {
@@ -15090,9 +15083,53 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "object_id"
+                "id"
             ],
-            "resource": "data.azurerm_client_config.current"
+            "resource": "azurerm_monitor_data_collection_endpoint.collection_endpoint"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.app_gateway"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.app_gateway"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_resource_group.group"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.userservicedb.azurerm_private_dns_zone.private_dns_zone"
+        },
+        {
+            "attribute": [
+                "identity",
+                0,
+                "principal_id"
+            ],
+            "resource": "azurerm_dashboard_grafana.grafana"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.bugservicedb.azurerm_subnet.subnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.userservicedb.azurerm_private_dns_zone.private_dns_zone"
         },
         {
             "attribute": [
@@ -15108,195 +15145,7 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_kubernetes_cluster.cluster"
-        },
-        {
-            "attribute": [
-                "key_vault_secrets_provider",
-                0,
-                "secret_identity",
-                0,
-                "client_id"
-            ],
-            "resource": "azurerm_kubernetes_cluster.cluster"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.bugservicedb.azurerm_postgresql_flexible_server_database.database"
-        },
-        {
-            "attribute": [
-                "identity",
-                0,
-                "principal_id"
-            ],
-            "resource": "azurerm_dashboard_grafana.grafana"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_monitor_data_collection_endpoint.collection_endpoint"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.bugservicedb.azurerm_postgresql_flexible_server.server"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_key_vault.vault"
-        },
-        {
-            "attribute": [
-                "fqdn"
-            ],
-            "resource": "module.bugservicedb.azurerm_postgresql_flexible_server.server"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.group"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.app_gateway"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_application_gateway.app_gateway"
-        },
-        {
-            "attribute": [
-                "administrator_login"
-            ],
-            "resource": "module.bugservicedb.azurerm_postgresql_flexible_server.server"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.bugservicedb.azurerm_subnet.subnet"
-        },
-        {
-            "attribute": [
-                "result"
-            ],
-            "resource": "module.bugservicedb.random_password.password"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
             "resource": "azurerm_monitor_data_collection_rule.ci_collection_rule"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.userservicedb.azurerm_postgresql_flexible_server_database.database"
-        },
-        {
-            "attribute": [
-                "administrator_login"
-            ],
-            "resource": "module.userservicedb.azurerm_postgresql_flexible_server.server"
-        },
-        {
-            "attribute": [],
-            "resource": "azurerm_resource_group.group"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_dashboard_grafana.grafana"
-        },
-        {
-            "attribute": [
-                "tenant_id"
-            ],
-            "resource": "data.azurerm_client_config.current"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.userservicedb.azurerm_private_dns_zone.private_dns_zone"
-        },
-        {
-            "attribute": [
-                "result"
-            ],
-            "resource": "module.userservicedb.random_password.password"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_virtual_network.network"
-        },
-        {
-            "attribute": [],
-            "resource": "azurerm_virtual_network.network"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_virtual_network.network"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_monitor_workspace.workspace"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.userservicedb.azurerm_subnet.subnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.userservicedb.azurerm_private_dns_zone.private_dns_zone"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.userservicedb.azurerm_postgresql_flexible_server.server"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.aks_subnet"
         },
         {
             "attribute": [
@@ -15308,37 +15157,35 @@ mock_config := {
             "attribute": [
                 "name"
             ],
-            "resource": "azurerm_kubernetes_cluster.cluster"
-        },
-        {
-            "attribute": [
-                "fqdn"
-            ],
-            "resource": "module.userservicedb.azurerm_postgresql_flexible_server.server"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_key_vault.vault"
+            "resource": "module.userservicedb.azurerm_postgresql_flexible_server_database.database"
         },
         {
             "attribute": [
                 "name"
             ],
-            "resource": "azurerm_resource_group.group"
+            "resource": "module.bugservicedb.azurerm_postgresql_flexible_server_database.database"
+        },
+        {
+            "attribute": [],
+            "resource": "azurerm_virtual_network.network"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone"
+        },
+        {
+            "attribute": [
+                "tenant_id"
+            ],
+            "resource": "data.azurerm_client_config.current"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "azurerm_log_analytics_workspace.workspace"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.app_gateway"
+            "resource": "azurerm_application_gateway.app_gateway"
         },
         {
             "attribute": [
@@ -15354,13 +15201,159 @@ mock_config := {
             "attribute": [
                 "name"
             ],
-            "resource": "azurerm_key_vault_secret.userservicedb_connectionstring"
+            "resource": "azurerm_key_vault_secret.bugservicedb_connectionstring"
         },
         {
             "attribute": [
                 "name"
             ],
-            "resource": "azurerm_key_vault_secret.bugservicedb_connectionstring"
+            "resource": "azurerm_virtual_network.network"
+        },
+        {
+            "attribute": [
+                "result"
+            ],
+            "resource": "module.bugservicedb.random_password.password"
+        },
+        {
+            "attribute": [
+                "result"
+            ],
+            "resource": "module.userservicedb.random_password.password"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.aks_subnet"
+        },
+        {
+            "attribute": [
+                "fqdn"
+            ],
+            "resource": "module.userservicedb.azurerm_postgresql_flexible_server.server"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_monitor_workspace.workspace"
+        },
+        {
+            "attribute": [
+                "object_id"
+            ],
+            "resource": "data.azurerm_client_config.current"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.userservicedb.azurerm_postgresql_flexible_server.server"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.bugservicedb.azurerm_postgresql_flexible_server.server"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_kubernetes_cluster.cluster"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_kubernetes_cluster.cluster"
+        },
+        {
+            "attribute": [
+                "administrator_login"
+            ],
+            "resource": "module.bugservicedb.azurerm_postgresql_flexible_server.server"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_log_analytics_workspace.workspace"
+        },
+        {
+            "attribute": [
+                "key_vault_secrets_provider",
+                0,
+                "secret_identity",
+                0,
+                "client_id"
+            ],
+            "resource": "azurerm_kubernetes_cluster.cluster"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_key_vault.vault"
+        },
+        {
+            "attribute": [
+                "administrator_login"
+            ],
+            "resource": "module.userservicedb.azurerm_postgresql_flexible_server.server"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_key_vault.vault"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.bugservicedb.azurerm_private_dns_zone.private_dns_zone"
+        },
+        {
+            "attribute": [
+                "fqdn"
+            ],
+            "resource": "module.bugservicedb.azurerm_postgresql_flexible_server.server"
+        },
+        {
+            "attribute": [],
+            "resource": "azurerm_resource_group.group"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.group"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_dashboard_grafana.grafana"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.userservicedb.azurerm_subnet.subnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_virtual_network.network"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_key_vault_secret.userservicedb_connectionstring"
         }
     ],
     "resource_changes": [
@@ -18573,7 +18566,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-17T00:14:40Z",
+    "timestamp": "2024-08-23T00:10:31Z",
     "variables": {
         "suffix": {
             "value": "ms02"

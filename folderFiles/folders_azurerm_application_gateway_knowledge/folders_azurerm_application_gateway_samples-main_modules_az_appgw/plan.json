@@ -150,7 +150,7 @@
                     "url_path_map_name": ""
                   }
                 ],
-                "resource_group_name": "hxzmhold",
+                "resource_group_name": "td5xhold",
                 "rewrite_rule_set": [],
                 "sku": [
                   {
@@ -190,7 +190,7 @@
                 "location": "eastus",
                 "name": "zodiac-pip",
                 "public_ip_prefix_id": null,
-                "resource_group_name": "hxzmhold",
+                "resource_group_name": "td5xhold",
                 "reverse_fqdn": null,
                 "sku": "Standard",
                 "sku_tier": "Regional",
@@ -219,7 +219,7 @@
                 "default_outbound_access_enabled": true,
                 "delegation": [],
                 "name": "backend",
-                "resource_group_name": "hxzmhold",
+                "resource_group_name": "td5xhold",
                 "service_endpoint_policy_ids": null,
                 "service_endpoints": null,
                 "timeouts": null,
@@ -246,7 +246,7 @@
                 "default_outbound_access_enabled": true,
                 "delegation": [],
                 "name": "frontend",
-                "resource_group_name": "hxzmhold",
+                "resource_group_name": "td5xhold",
                 "service_endpoint_policy_ids": null,
                 "service_endpoints": null,
                 "timeouts": null,
@@ -280,7 +280,7 @@
                 "flow_timeout_in_minutes": null,
                 "location": "eastus",
                 "name": "zodiac-net",
-                "resource_group_name": "hxzmhold",
+                "resource_group_name": "td5xhold",
                 "tags": null,
                 "timeouts": null
               }

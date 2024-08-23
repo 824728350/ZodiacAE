@@ -31,7 +31,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             },
             "random": {
                 "full_name": "registry.terraform.io/hashicorp/random",
@@ -1598,15 +1599,69 @@ mock_config := {
     "relevant_attributes": [
         {
             "attribute": [
-                "object_id"
+                "name"
             ],
-            "resource": "data.azurerm_client_config.current"
+            "resource": "azurerm_spring_cloud_service.this"
         },
         {
             "attribute": [
                 "name"
             ],
             "resource": "azurerm_virtual_network.this"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_postgresql_server.this"
+        },
+        {
+            "attribute": [
+                "result"
+            ],
+            "resource": "random_string.kv_random_string"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_key_vault.key_vault_main"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_public_ip.public_ip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "azurerm_subnet.waf"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "azurerm_resource_group.this"
+        },
+        {
+            "attribute": [
+                "location"
+            ],
+            "resource": "azurerm_resource_group.this"
+        },
+        {
+            "attribute": [
+                "tenant_id"
+            ],
+            "resource": "data.azurerm_client_config.current"
+        },
+        {
+            "attribute": [
+                "object_id"
+            ],
+            "resource": "data.azurerm_client_config.current"
         },
         {
             "attribute": [
@@ -1619,60 +1674,6 @@ mock_config := {
                 "fqdn"
             ],
             "resource": "azurerm_spring_cloud_app.this"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_public_ip.public_ip"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_resource_group.this"
-        },
-        {
-            "attribute": [
-                "tenant_id"
-            ],
-            "resource": "data.azurerm_client_config.current"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_spring_cloud_service.this"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "azurerm_postgresql_server.this"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_key_vault.key_vault_main"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "azurerm_subnet.waf"
-        },
-        {
-            "attribute": [
-                "location"
-            ],
-            "resource": "azurerm_resource_group.this"
-        },
-        {
-            "attribute": [
-                "result"
-            ],
-            "resource": "random_string.kv_random_string"
         }
     ],
     "resource_changes": [
@@ -2772,7 +2773,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:53:37Z",
+    "timestamp": "2024-08-22T23:49:57Z",
     "variables": {
         "admin_password": {
             "value": "Br@inb0ard"

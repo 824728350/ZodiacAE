@@ -1,0 +1,11 @@
+{
+    "variable": [
+        {
+            "tags": {
+                "default": {
+                    "source": "Dev/GitHub/AppGW"
+                }
+            }
+        }
+    ]
+}

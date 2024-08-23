@@ -22,10 +22,6 @@ repoViewTop := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -38,12 +34,10 @@ repoViewTop := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -114,8 +108,7 @@ repoViewTop := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -123,16 +116,10 @@ repoViewTop := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -3362,10 +3349,6 @@ resourceView := {
             "Static"
         ],
         "frontend_port.port": [],
-        "http_listener.custom_error_configuration.status_code": [
-            "HttpStatus502",
-            "HttpStatus403"
-        ],
         "http_listener.protocol": [
             "Https"
         ],
@@ -3378,12 +3361,10 @@ resourceView := {
             "northeurope",
             "centralindia",
             "japaneast",
-            "norwayeast",
             "eastus2",
             "southeastasia",
             "canadacentral",
             "southafricanorth",
-            "australiaeast",
             "westus3"
         ],
         "probe.interval": [],
@@ -3454,8 +3435,7 @@ resourceView := {
         "ssl_certificate.data": [],
         "ssl_certificate.password": [
             "export",
-            "bukhari",
-            "kalyan"
+            "bukhari"
         ],
         "url_path_map.path_rule.paths": [],
         "waf_configuration.enabled": [
@@ -3463,16 +3443,10 @@ resourceView := {
             false
         ],
         "waf_configuration.firewall_mode": [
-            "Detection",
-            "Prevention"
+            "Prevention",
+            "Detection"
         ],
-        "waf_configuration.rule_set_version": [],
-        "zones": [
-            null,
-            "1",
-            "2",
-            "3"
-        ]
+        "waf_configuration.rule_set_version": []
     },
     "azurerm_bastion_host": {
         "file_copy_enabled": [
@@ -7664,7 +7638,11 @@ resourceTrivialView := {
         "url_path_map.1.path_rule.0.backend_http_settings_name",
         "rewrite_rule_set.rewrite_rule.condition.ignore_case",
         "rewrite_rule_set.rewrite_rule.url.query_string",
-        "rewrite_rule_set.rewrite_rule.url.reroute"
+        "rewrite_rule_set.rewrite_rule.url.reroute",
+        "autoscale_configuration",
+        "autoscale_configuration.max_capacity",
+        "autoscale_configuration.min_capacity",
+        "frontend_ip_configuration.0.subnet_id"
     ],
     "azurerm_bastion_host": [
         "copy_paste_enabled",
@@ -8078,6 +8056,7 @@ AttrAbsenceThenExistenceList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenExistence][1]["values"], [pathThenExistence, valueThenExistence])
@@ -8102,6 +8081,7 @@ AttrAbsenceThenExistenceList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     pathIfAbsence != pathThenExistence
@@ -8138,6 +8118,7 @@ AttrAbsenceThenConstantList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenConstant][1]["values"], [pathThenConstant, valueThenConstant])
@@ -8197,6 +8178,7 @@ AttrAbsenceThenEqualList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenEqual1][1]["values"], [pathThenEqual1, valueThenEqual1])
@@ -8268,6 +8250,7 @@ AttrAbsenceThenUnequalList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenUnequal1][1]["values"], [pathThenUnequal1, valueThenUnequal1])
@@ -8337,6 +8320,7 @@ AttrAbsenceThenCIDRIncludeList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenCIDRInclude1][1]["values"], [pathThenCIDRInclude1, valueThenCIDRInclude1])
@@ -8402,6 +8386,7 @@ AttrAbsenceThenCIDRExcludeList := [rule |
     not contains(idAttrIfAbsence, "address_space")
     not contains(idAttrIfAbsence, "id")
     not contains(idAttrIfAbsence, "certificate")
+    not contains(idAttrIfAbsence, "fqdn")
     not contains(idAttrIfAbsence, "_name")
 
     walk(resourceDict[addressThenCIDRExclude1][1]["values"], [pathThenCIDRExclude1, valueThenCIDRExclude1])
@@ -8463,6 +8448,7 @@ AttrExistenceThenExistenceList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenExistence][1]["values"], [pathThenExistence, valueThenExistence])
@@ -8487,6 +8473,7 @@ AttrExistenceThenExistenceList := [rule |
     not contains(idAttrThenExistence, "address_space")
     not contains(idAttrThenExistence, "id")
     not contains(idAttrThenExistence, "certificate")
+    not contains(idAttrThenExistence, "fqdn")
     not contains(idAttrThenExistence, "_name")
 
     pathIfExistence != pathThenExistence
@@ -8521,6 +8508,7 @@ AttrExistenceThenConstantList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenConstant][1]["values"], [pathThenConstant, valueThenConstant])
@@ -8578,6 +8566,7 @@ AttrExistenceThenEqualList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenEqual1][1]["values"], [pathThenEqual1, valueThenEqual1])
@@ -8647,6 +8636,7 @@ AttrExistenceThenUnequalList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenUnequal1][1]["values"], [pathThenUnequal1, valueThenUnequal1])
@@ -8714,6 +8704,7 @@ AttrExistenceThenCIDRIncludeList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenCIDRInclude1][1]["values"], [pathThenCIDRInclude1, valueThenCIDRInclude1])
@@ -8777,6 +8768,7 @@ AttrExistenceThenCIDRExcludeList := [rule |
     not contains(idAttrIfExistence, "address_space")
     not contains(idAttrIfExistence, "id")
     not contains(idAttrIfExistence, "certificate")
+    not contains(idAttrIfExistence, "fqdn")
     not contains(idAttrIfExistence, "_name")
 
     walk(resourceDict[addressThenCIDRExclude1][1]["values"], [pathThenCIDRExclude1, valueThenCIDRExclude1])
@@ -9767,7 +9759,8 @@ mock_config := {
                     ]
                 },
                 "full_name": "registry.terraform.io/hashicorp/azurerm",
-                "name": "azurerm"
+                "name": "azurerm",
+                "version_constraint": "3.116.0"
             }
         },
         "root_module": {
@@ -14243,23 +14236,19 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "module.web_subnet.azurerm_subnet.web"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.loadbalancer.azurerm_lb_rule.web_lb_rule"
-        },
-        {
-            "attribute": [],
-            "resource": "module.virtualmachines.azurerm_virtual_machine.web_vm"
+            "resource": "module.security.azurerm_log_analytics_workspace.securitypostlog"
         },
         {
             "attribute": [
                 "name"
             ],
-            "resource": "module.db_nsg.azurerm_network_security_group.nsg"
+            "resource": "module.sql.azurerm_sql_server.zenpaysqlserver"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.keyvault_backup.azurerm_key_vault.zenpay_key_vault"
         },
         {
             "attribute": [
@@ -14269,13 +14258,27 @@ mock_config := {
         },
         {
             "attribute": [
-                "address_prefixes"
+                "address_space"
             ],
-            "resource": "module.db_subnet.azurerm_subnet.web"
+            "resource": "module.virtualnetwork.azurerm_virtual_network.zenpay_vnet"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.web_subnet.azurerm_subnet.web"
         },
         {
             "attribute": [
                 "id"
+            ],
+            "resource": "module.loadbalancer.azurerm_lb_probe.web_lb_probe"
+        },
+        {
+            "attribute": [
+                "frontend_ip_configuration",
+                0,
+                "name"
             ],
             "resource": "module.loadbalancer.azurerm_lb.web_lb"
         },
@@ -14289,165 +14292,7 @@ mock_config := {
             "attribute": [
                 "id"
             ],
-            "resource": "module.db_nsg.azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.web_subnet.azurerm_subnet.web"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.virtualmachines.azurerm_virtual_machine.db_vm"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.loadbalancer.azurerm_public_ip.web_lb_pip"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.virtualnetwork.azurerm_virtual_network.zenpay_vnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.web_nsg.azurerm_network_security_group.nsg"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.keyvault_backup.azurerm_recovery_services_vault.zenpay_recovery_vault"
-        },
-        {
-            "attribute": [
-                "object_id"
-            ],
-            "resource": "data.azurerm_client_config.owner"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
             "resource": "module.virtualmachines.azurerm_availability_set.avset"
-        },
-        {
-            "attribute": [
-                "frontend_ip_configuration",
-                0,
-                "name"
-            ],
-            "resource": "module.loadbalancer.azurerm_lb.web_lb"
-        },
-        {
-            "attribute": [
-                "address_prefixes"
-            ],
-            "resource": "module.web_subnet.azurerm_subnet.web"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.appgw_subnet.azurerm_subnet.web"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.sql.azurerm_sql_database.zenpaysqldb"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.applicationgateway.azurerm_application_gateway.zenpay_appgw"
-        },
-        {
-            "attribute": [
-                "tenant_id"
-            ],
-            "resource": "data.azurerm_client_config.owner"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.loadbalancer.azurerm_lb_probe.web_lb_probe"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.security.azurerm_log_analytics_workspace.securitypostlog"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.virtualnetwork.azurerm_virtual_network.zenpay_vnet"
-        },
-        {
-            "attribute": [
-                "address_prefixes"
-            ],
-            "resource": "module.appgw_subnet.azurerm_subnet.web"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.appgw_subnet.azurerm_subnet.web"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.db_subnet.azurerm_subnet.web"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.sql.azurerm_sql_server.zenpaysqlserver"
-        },
-        {
-            "attribute": [
-                "email"
-            ],
-            "resource": "module.security.azurerm_security_center_contact.security_contact"
-        },
-        {
-            "attribute": [
-                "name"
-            ],
-            "resource": "module.db_subnet.azurerm_subnet.web"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.keyvault_backup.azurerm_backup_policy_vm.vm_backup_policy"
-        },
-        {
-            "attribute": [
-                "address_space"
-            ],
-            "resource": "module.virtualnetwork.azurerm_virtual_network.zenpay_vnet"
-        },
-        {
-            "attribute": [
-                "id"
-            ],
-            "resource": "module.loadbalancer.azurerm_lb_backend_address_pool.web_lb_backend"
         },
         {
             "attribute": [],
@@ -14463,19 +14308,167 @@ mock_config := {
             "attribute": [
                 "name"
             ],
-            "resource": "module.web_nsg.azurerm_network_security_group.nsg"
+            "resource": "module.virtualnetwork.azurerm_virtual_network.zenpay_vnet"
+        },
+        {
+            "attribute": [
+                "address_prefixes"
+            ],
+            "resource": "module.appgw_subnet.azurerm_subnet.web"
+        },
+        {
+            "attribute": [
+                "address_prefixes"
+            ],
+            "resource": "module.db_subnet.azurerm_subnet.web"
         },
         {
             "attribute": [
                 "id"
             ],
-            "resource": "module.keyvault_backup.azurerm_key_vault.zenpay_key_vault"
+            "resource": "module.db_subnet.azurerm_subnet.web"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.keyvault_backup.azurerm_recovery_services_vault.zenpay_recovery_vault"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.applicationgateway.azurerm_application_gateway.zenpay_appgw"
         },
         {
             "attribute": [
                 "name"
             ],
             "resource": "module.keyvault_backup.azurerm_recovery_services_vault.zenpay_recovery_vault"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.web_nsg.azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.appgw_subnet.azurerm_subnet.web"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.web_subnet.azurerm_subnet.web"
+        },
+        {
+            "attribute": [
+                "object_id"
+            ],
+            "resource": "data.azurerm_client_config.owner"
+        },
+        {
+            "attribute": [
+                "email"
+            ],
+            "resource": "module.security.azurerm_security_center_contact.security_contact"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.db_nsg.azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.virtualnetwork.azurerm_virtual_network.zenpay_vnet"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.appgw_subnet.azurerm_subnet.web"
+        },
+        {
+            "attribute": [
+                "address_prefixes"
+            ],
+            "resource": "module.web_subnet.azurerm_subnet.web"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.loadbalancer.azurerm_lb_rule.web_lb_rule"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.sql.azurerm_sql_database.zenpaysqldb"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.loadbalancer.azurerm_public_ip.web_lb_pip"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.web_nsg.azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [],
+            "resource": "module.virtualmachines.azurerm_virtual_machine.web_vm"
+        },
+        {
+            "attribute": [
+                "tenant_id"
+            ],
+            "resource": "data.azurerm_client_config.owner"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.loadbalancer.azurerm_lb.web_lb"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.loadbalancer.azurerm_lb_backend_address_pool.web_lb_backend"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.db_nsg.azurerm_network_security_group.nsg"
+        },
+        {
+            "attribute": [
+                "name"
+            ],
+            "resource": "module.db_subnet.azurerm_subnet.web"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.keyvault_backup.azurerm_backup_policy_vm.vm_backup_policy"
+        },
+        {
+            "attribute": [
+                "id"
+            ],
+            "resource": "module.virtualmachines.azurerm_virtual_machine.db_vm"
         }
     ],
     "resource_changes": [
@@ -16472,7 +16465,7 @@ mock_config := {
         }
     ],
     "terraform_version": "1.9.4",
-    "timestamp": "2024-08-16T23:56:41Z",
+    "timestamp": "2024-08-22T23:53:14Z",
     "variables": {
         "address_space": {
             "value": [

@@ -1,7 +1,0 @@
-location                       = "uksouth"
-environment                    = "dev"
-acmebot_contacts               = "nicholasc001@hotmail.com"
-acmebot_vault_base_url         = "https://kv-xsgfjmmt.vault.azure.net"
-cloudflare_api_token           = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-# Acmebot:AzureDns:SubscriptionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-microsoft_authentication_secret = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"

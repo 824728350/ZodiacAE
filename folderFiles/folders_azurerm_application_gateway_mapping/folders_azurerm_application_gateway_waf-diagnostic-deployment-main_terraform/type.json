@@ -173,9 +173,6 @@
             {
                 "backend_address_pool": [
                     {
-                        "fqdns": [
-                            "app-prod-we-webdemo.azurewebsites.net"
-                        ],
                         "name": "${local.backend_address_pool_name}"
                     }
                 ],

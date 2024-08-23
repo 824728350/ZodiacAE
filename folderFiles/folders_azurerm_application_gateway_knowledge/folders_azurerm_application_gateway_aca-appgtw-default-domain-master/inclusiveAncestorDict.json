@@ -6,7 +6,6 @@
           "value": {
             "azurerm_application_gateway.appgtw": [
               "azurerm_application_gateway.appgtw",
-              "azurerm_container_app.main",
               "azurerm_container_app_environment.main",
               "azurerm_log_analytics_workspace.main",
               "azurerm_public_ip.pip",
