@@ -50,6 +50,9 @@
 "azurerm_windows_virtual_machine", 
 "azurerm_application_gateway",
 "azurerm_mssql_server",
-"azurerm_mssql_database"
-"azurerm_cosmosdb_account"
+"azurerm_mssql_database",
+"azurerm_cosmosdb_account",
+"azurerm_redis_cache",
+"azurerm_postgresql_server",
+"azurerm_postgresql_flexible_server"
 ]
